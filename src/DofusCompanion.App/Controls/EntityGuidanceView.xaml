@@ -65,7 +65,8 @@
                                             Command="{Binding DataContext.CopyCompactCommand, ElementName=Root}" CommandParameter="{Binding}" Margin="6,0,0,0"/>
                                     <WrapPanel>
                                         <TextBlock Style="{StaticResource H2}" Text="{Binding Title}"/>
-                                        <Border Style="{StaticResource Badge}" Background="{Binding VerificationTone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}">
+                                        <Border Style="{StaticResource Badge}" Background="{Binding VerificationTone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}"
+                                                Visibility="{Binding VerificationLabel, Converter={StaticResource VisibleWhen}}">
                                             <TextBlock Text="{Binding VerificationLabel}" FontSize="11" FontWeight="SemiBold"
                                                        Foreground="{Binding VerificationTone, Converter={StaticResource ToneBrush}}"/>
                                         </Border>
@@ -98,7 +99,7 @@
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate DataType="{x:Type vm:ConditionLine}">
                                                 <DockPanel Margin="0,1">
-                                                    <Border DockPanel.Dock="Right" Style="{StaticResource Badge}" Background="{Binding Tone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}">
+                                                    <Border DockPanel.Dock="Right" Style="{StaticResource Badge}" Background="{Binding Tone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}" Visibility="{Binding ResultLabel, Converter={StaticResource VisibleWhen}}">
                                                         <TextBlock Text="{Binding ResultLabel}" FontSize="11" Foreground="{Binding Tone, Converter={StaticResource ToneBrush}}"/>
                                                     </Border>
                                                     <TextBlock Style="{StaticResource Body}" Text="{Binding Text, StringFormat='• {0}'}"/>
@@ -133,7 +134,7 @@
                                                                     <TextBlock Style="{StaticResource MutedText}" Text="{Binding Details}" Visibility="{Binding Details, Converter={StaticResource VisibleWhen}}"/>
                                                                     <WrapPanel Visibility="{Binding Applicability, Converter={StaticResource VisibleWhen}}">
                                                                         <TextBlock Style="{StaticResource MutedText}" Text="{Binding Applicability.Text, StringFormat='↳ {0}'}"/>
-                                                                        <Border Style="{StaticResource Badge}" Background="{Binding Applicability.Tone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}">
+                                                                        <Border Style="{StaticResource Badge}" Background="{Binding Applicability.Tone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}" Visibility="{Binding Applicability.ResultLabel, Converter={StaticResource VisibleWhen}}">
                                                                             <TextBlock Text="{Binding Applicability.ResultLabel}" FontSize="11" Foreground="{Binding Applicability.Tone, Converter={StaticResource ToneBrush}}"/>
                                                                         </Border>
                                                                     </WrapPanel>

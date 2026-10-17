@@ -55,6 +55,28 @@ public sealed class DofusDbClient(HttpClient http, ClientOptions options, TextWr
         return all;
     }
 
+    /// <summary>
+    /// Records of <paramref name="endpoint"/> with the given ids, 50 per request (<c>id[$in][]=…</c>), each batch cached
+    /// like the pages. Used for the map positions of dungeon rooms only (a few dozen requests).
+    /// </summary>
+    public async Task<IReadOnlyList<JsonElement>> GetByIdsAsync(string endpoint, IReadOnlyList<int> ids, CancellationToken ct)
+    {
+        var all = new List<JsonElement>();
+        var sorted = ids.Distinct().Order().ToList();
+        for (var i = 0; i < sorted.Count; i += options.PageSize)
+        {
+            var batch = sorted.Skip(i).Take(options.PageSize).ToList();
+            var query = $"$limit={batch.Count}&" + string.Join("&", batch.Select(id => $"id[$in][]={id}"));
+            var cacheFile = Path.Combine(options.CacheDirectory, $"{endpoint}-ids-{batch[0]}-{batch[^1]}-{batch.Count}.json");
+            using var doc = JsonDocument.Parse(await GetCachedAsync(cacheFile, new Uri(options.BaseUri, $"{endpoint}?{query}"), ct));
+            if (doc.RootElement.TryGetProperty("data", out var data) && data.ValueKind == JsonValueKind.Array)
+                foreach (var e in data.EnumerateArray()) all.Add(e.Clone());
+            log.WriteLine($"  {endpoint}: {Math.Min(i + batch.Count, sorted.Count)}/{sorted.Count}");
+        }
+
+        return all;
+    }
+
     public const long MaxImageBytes = 5 * 1024 * 1024;
 
     /// <summary>
@@ -95,11 +117,16 @@ public sealed class DofusDbClient(HttpClient http, ClientOptions options, TextWr
     {
         Directory.CreateDirectory(options.CacheDirectory);
         var cacheFile = Path.Combine(options.CacheDirectory, $"{endpoint}-{skip:D6}.json");
+        return await GetCachedAsync(cacheFile, new Uri(options.BaseUri, $"{endpoint}?$limit={options.PageSize}&$skip={skip}"), ct);
+    }
+
+    private async Task<string> GetCachedAsync(string cacheFile, Uri uri, CancellationToken ct)
+    {
+        Directory.CreateDirectory(options.CacheDirectory);
         if (!options.Refresh && File.Exists(cacheFile)) return await File.ReadAllTextAsync(cacheFile, ct);
         if (options.Offline) throw new InvalidOperationException($"Offline mode: {cacheFile} is not cached.");
         if (_requests >= options.MaxRequests) throw new InvalidOperationException($"Request cap reached ({options.MaxRequests}). Re-run to continue from the cache.");
 
-        var uri = new Uri(options.BaseUri, $"{endpoint}?$limit={options.PageSize}&$skip={skip}");
         for (var attempt = 1; ; attempt++)
         {
             if (_requests > 0) await Task.Delay(options.Delay, ct);

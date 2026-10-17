@@ -2034,6 +2034,43 @@
           "sourceId": "src.dpln.on-recherche-aermyne-braco-scalptaras",
           "quote": "pour chaque tentative de retrait PA elle va se boost de 4PA (infini et cumulable) et pour chaque tentative de retrait PM, elle va se boost de 3PM (infini et cumulable).",
           "locator": "III- Stratégie du combat — Présentation rapide"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-aermyne-braco-scalptaras",
+          "quote": "Dès le tour 2 Aermyne se défend contre le retrait PA et PM en se boostant respectivement en PA et PM de manière infini et cumulable pour chaque tentative de retrait, il est donc inutile et contre-productif de lui en retirer.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne jamais tenter de lui retirer des PA ou des PM à partir de son 2e tour.",
+              "rationale": "« Implacable » : chaque tentative de retrait PA lui donne 4 PA, chaque tentative de retrait PM 3 PM, de façon infinie et cumulable."
+            },
+            {
+              "order": 2,
+              "action": "Savoir que l'effet n'est pas encore actif à son 1er tour.",
+              "rationale": "Le guide indique que la charge de l'effet ne s'applique qu'au tour suivant, puis reste pour tout le combat."
+            },
+            {
+              "order": 3,
+              "action": "Attention à son contact.",
+              "rationale": "« Malaxage » frappe 350 terre en mêlée et repousse de 3 cases."
+            },
+            {
+              "order": 4,
+              "action": "Tenir compte de son soutien aux monstres.",
+              "rationale": "« Câlin » (jusqu'à 6 PO, 3 fois par tour) soigne un allié d'environ 200 et lui donne 25 puissance et 2 à 3 PM pour 3 tours."
+            },
+            {
+              "order": 5,
+              "action": "À distance, prévoir « Sale marmot ».",
+              "rationale": "Frappe 200 neutre en vol de vie jusqu'à 8 PO (relance 4 tours)."
+            }
+          ]
         }
       ]
     },
@@ -2079,6 +2116,64 @@
           "sourceId": "src.dpln.on-recherche-aigripoil",
           "quote": "il va se boost de 1PM (infini et cumulable) à chacun de ses fins de tours durant tout le combat",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-aigripoil",
+          "quote": "Aigripoil ne possède pas d’état Invulnérable. Cependant Aigripoil possède un sort qui lui permet de vous OS en mêlée (une fois lancé le sort a un temps de relance de 3 tours).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-aigripoil",
+          "quote": "Le sort d’OS en mêlée d’Aigripoil à un intervalle de relance de 3 tours, il peut donc être intéressant d’invoquer et de laisser l’invocation se faire OS.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-aigripoil",
+          "quote": "De plus, ce sort nécessite une ligne de vue, vous permettant ainsi d’utiliser des obstacles ou des invocations pour l’empêcher de toucher vos personnages.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Prévoir des sorts Feu et Eau pour le focus en premier.",
+              "rationale": "Aigripoil a peu de résistances dans ces éléments (-5 % Feu et 5 % Eau) comparé aux autres."
+            },
+            {
+              "order": 2,
+              "action": "Rester hors de portée de sa mêlée pendant tout le combat.",
+              "position": "À bonne distance d'Aigripoil",
+              "rationale": "Empalladium : il OS la cible en mêlée (relance de 3 tours). Il gagne aussi 1 PM à chaque fin de tour (Galopage, infini et cumulable)."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas rester en ligne avec lui entre 2 et 7 PO ; couper sa ligne de vue avec des obstacles ou des invocations.",
+              "rationale": "Aigrippement (en ligne de 2 à 7 PO, ligne de vue requise) frappe ~180 terre, attire de 3 cases et retire 3 PM pour vous amener à sa mêlée."
+            },
+            {
+              "order": 4,
+              "action": "Si possible, lui retirer des PM ou le repousser.",
+              "rationale": "Le guide propose ces moyens pour l'empêcher de vous attirer et d'atteindre votre mêlée."
+            },
+            {
+              "order": 5,
+              "action": "Invoquer et laisser l'invocation se faire OS par Empalladium.",
+              "rationale": "Le sort a une relance de 3 tours : s'il OS au tour 2, il ne peut pas le relancer avant son tour 5. Vous êtes en sécurité pendant ce temps."
+            },
+            {
+              "order": 6,
+              "action": "Pendant ces 3 tours, concentrer tous les dégâts sur Aigripoil.",
+              "rationale": "Plus le combat dure, plus il gagne de PM et atteint facilement votre mêlée."
+            },
+            {
+              "order": 7,
+              "action": "S'il est encore en vie à la fin de la relance, recommencer à l'étape 5.",
+              "rationale": "« Renouvelez l'opération si vous n'avez pas pu éliminer Aigripoil d'ici là. »"
+            }
+          ]
         }
       ]
     },
@@ -2277,6 +2372,69 @@
           "sourceId": "src.dpln.on-recherche-amy-l-empoisonneuse",
           "quote": "Le personnage dans cet état subira 50% des dommages que vous infligez à Amy.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques — Contrez le renvoi"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-amy-l-empoisonneuse",
+          "quote": "Chaque tour elle met un de vos personnages dans l’état « Empathique » (non débuffable) pour 1 tour grâce au sort « Poison végétal ». Le personnage dans cet état subira 50% des dommages que vous infligez à Amy.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-amy-l-empoisonneuse",
+          "quote": "Une dernière solution est de sacrifier le personnage qui a l’état « Empathique » et finir Amy en un seul tour.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-amy-l-empoisonneuse",
+          "quote": "Dès que Amy subit une tentative de retrait PA ou PM, elle se boost de 5% de ses PV en bouclier (infini), ce qui correspond à 1600PB.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Choisir la composition : à beaucoup, éloigner les personnages et sacrifier celui qui subit le renvoi ; à peu, prendre un Pandawa tank qui porte le frappeur et une classe de protection.",
+              "rationale": "À beaucoup, Stranguronces se propage plus vite ; à peu, le renvoi de 50 % est difficile à gérer."
+            },
+            {
+              "order": 2,
+              "action": "En préparation, espacer les personnages (ou les placer près d'Amy / près de blocs du décor).",
+              "position": "Jamais dans un carré de taille 2 autour d'un allié",
+              "rationale": "Stranguronces se propage aux alliés proches ; près des éléments du décor, moins de ronces sont invoquées."
+            },
+            {
+              "order": 3,
+              "action": "Si un personnage a plus d'initiative qu'Amy, la frapper au maximum avant qu'elle ne joue.",
+              "rationale": "Au début il n'y a pas encore les ronces ni l'état Empathique sur un allié."
+            },
+            {
+              "order": 4,
+              "action": "Sortir des ronces : utiliser Flèche Fulminante (Crâ) ou percer un chemin ; ne pas laisser de ronces au contact d'Amy.",
+              "rationale": "Forêt épineuse aux tours 1, 7, 13… ; chaque ronce au contact donne 1000 PB à Amy. Attention au renvoi de 50 par ronce (~1200 sur le Crâ pour un bloc)."
+            },
+            {
+              "order": 5,
+              "action": "Avant de frapper, protéger le personnage « Empathique » (Barricade / Prohibition s'il est au contact d'Amy, Bastion s'il est à distance, ou Ataraxie, Égide, Sac Animé).",
+              "rationale": "Ce personnage subit 50 % des dommages infligés à Amy ; l'état n'est pas débuffable."
+            },
+            {
+              "order": 6,
+              "action": "À défaut, sacrifier le personnage Empathique et tuer Amy dans le même tour.",
+              "rationale": "Une fois mort, plus personne ne prend le renvoi jusqu'au prochain tour d'Amy."
+            },
+            {
+              "order": 7,
+              "action": "Ne jamais lui retirer de PA ou de PM.",
+              "rationale": "Chaque tentative lui donne 5 % de ses PV en bouclier (environ 1600 PB, infini)."
+            },
+            {
+              "order": 8,
+              "action": "Utiliser des sorts de vol de vie et la tuer rapidement.",
+              "rationale": "Ses faiblesses vont de -115 % à -60 % ; plus le combat dure, plus Stranguronces cumule poisons air et malus de Puissance."
+            }
+          ]
         }
       ]
     },
@@ -2357,6 +2515,59 @@
           "sourceId": "src.dpln.on-recherche-anatak-diskedor",
           "quote": "« Coup de Foudre » : OS en mêlée à condition que le personnage ciblé soit dans l’état Foudroyé",
           "locator": "III- Stratégie du combat — Présentation rapide"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-anatak-diskedor",
+          "quote": "Pour éviter un OS, pensez donc à éloigner au maximum les personnages dans l’état Foudroyé d’Anatak lorsque celui-ci devient « Bretteur Céleste » (les tours 3, 7, 11, etc…).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-anatak-diskedor",
+          "quote": "Attention au combo « Frappe purificatrice » et « Coup de Foudre » qui pourrait donc lui permettre de se téléporter et d’aller OS le personnage qui est Foudroyé.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-anatak-diskedor",
+          "quote": "Pour éviter d’avoir l’état Insoignable sur toute votre team évitez de laisser vos personnages groupés",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne pas laisser les personnages groupés.",
+              "rationale": "Lame-tempête frappe ~450 air en cercle de rayon 3 autour de lui et met Insoignable (1 fois par tour)."
+            },
+            {
+              "order": 2,
+              "action": "Suivre son cycle de charges : tour 1 +500 Puissance, tour 2 +1000 Puissance et 10 % critique, tour 3 état « Bretteur Céleste », tour 4 retrait de l'état Foudroyé.",
+              "rationale": "Effet « Puissance de la Foudre », réinitialisé tous les 4 tours (tours 5, 9, 13…)."
+            },
+            {
+              "order": 3,
+              "action": "Repérer les personnages touchés par Coup de Foudre (état Foudroyé).",
+              "rationale": "Coup de Foudre (mêlée, 1 fois par tour) frappe ~500 air et met Foudroyé (infini) ; il peut en marquer au maximum 2 avant Bretteur Céleste."
+            },
+            {
+              "order": 4,
+              "action": "Avant ses tours 3, 7, 11…, éloigner au maximum les personnages Foudroyés d'Anatak.",
+              "position": "Loin d'Anatak pour les Foudroyés",
+              "rationale": "En Bretteur Céleste, Coup de Foudre OS en mêlée un personnage Foudroyé."
+            },
+            {
+              "order": 5,
+              "action": "Se méfier du combo Frappe purificatrice + Coup de Foudre.",
+              "rationale": "Frappe purificatrice (en ligne jusqu'à 8 PO) le téléporte ; il peut ainsi atteindre le Foudroyé. En Bretteur Céleste elle retire aussi 100 PM pour 1 tour."
+            },
+            {
+              "order": 6,
+              "action": "Répéter ce placement à chaque cycle de 4 tours jusqu'à sa mort.",
+              "rationale": "Le tour 4 retire l'état Foudroyé, puis le cycle recommence au tour 5."
+            }
+          ]
         }
       ]
     },
@@ -2421,6 +2632,44 @@
           "sourceId": "src.dpln.on-recherche-bouflouth",
           "quote": "en restant continuellement à plus de 7PO de Bouflouth (ses 6PM de base + le PO de l’attaque en mêlée) vous ne subirez jamais de dommages de sa part",
           "locator": "III- Stratégie du combat — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-bouflouth",
+          "quote": "Ainsi en restant continuellement à plus de 7PO de Bouflouth (ses 6PM de base + le PO de l’attaque en mêlée) vous ne subirez jamais de dommages de sa part et donc évitez aussi le risque d’OS",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-bouflouth",
+          "quote": "Bouflouth ne possède pas d’état invulnérable. Néanmoins il peut se boost de 1 PM à chaque fois que vous le poussez et peut OS un personnage en mêlée uniquement à partir du tour 6 puis tous les 5 tours.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Se placer et rester à plus de 7 PO de Bouflouth.",
+              "position": "À plus de 7 PO du boss",
+              "rationale": "Il n'attaque qu'en mêlée ; 6 PM de base + la portée de mêlée : à plus de 7 PO, vous ne subissez jamais ses dommages."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas le pousser (sauf avec des sorts qui poussent assez loin).",
+              "rationale": "Effet « Poussmouth » : +1 PM (cumulable) pour 1 tour à chaque poussée."
+            },
+            {
+              "order": 3,
+              "action": "À partir du tour 6, ne jamais le laisser accéder au contact d'un personnage.",
+              "rationale": "Gloutmouth OS un personnage en mêlée et le remplace par un Bouftonmouth, à partir du tour 6 puis tous les 5 tours."
+            },
+            {
+              "order": 4,
+              "action": "Surveiller le Boufmouth légendaire s'il l'accompagne.",
+              "rationale": "Il peut donner 3 PM (6 en cc) à Bouflouth pour 2 tours ou pousser un personnage de 4 cases vers lui."
+            }
+          ]
         }
       ]
     },
@@ -2455,6 +2704,44 @@
           "sourceId": "src.dpln.on-recherche-bouss-baybe",
           "quote": "il est conseillé de toujours resté à distance en dehors de ses lignes et diagonales.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-bouss-baybe",
+          "quote": "Il est donc conseillé d’éviter d’invoquer lors de ce combat pour éviter de vous retrouver à devoir affronter des monstres en plus pour rien.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-bouss-baybe",
+          "quote": "À chacun de ses débuts de tour, Bouss Baybe va attirer tous les personnages qui se situent dans ses lignes et ses diagonales de 2 cases vers elle.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne pas placer d'invocations.",
+              "rationale": "Porkasserie (relance 2 tours) tue une invocation et la remplace par un Berger ou Cavalier Porkass boosté de 2 PA, 4 PM et 100 Puissance qui joue contre vous."
+            },
+            {
+              "order": 2,
+              "action": "Garder les personnages espacés les uns des autres.",
+              "rationale": "Éconduire (zone croix de taille 1, 1 fois par tour) met -200 Puissance et Affaibli pour 2 tours : un seul personnage doit être touché."
+            },
+            {
+              "order": 3,
+              "action": "Ne jamais terminer son tour en ligne ou en diagonale de Bouss Baybe.",
+              "position": "Hors de ses lignes et diagonales, à distance",
+              "rationale": "À chaque début de tour, elle attire de 2 cases tous les personnages dans ses lignes et diagonales."
+            },
+            {
+              "order": 4,
+              "action": "Rester à distance de son seul sort de frappe.",
+              "rationale": "Salon frappe ~130 eau jusqu'à 4 PO."
+            }
+          ]
         }
       ]
     },
@@ -2561,6 +2848,43 @@
           "sourceId": "src.dpln.on-recherche-carlita-de-l-aguerfelde",
           "quote": "Si vous passez dans le piège, vous perdez 15PM pour 2 tours et vous obtenez les états Pesanteur, Inébranlable et Piégé comme un Mulou pour 2 tours.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-carlita-de-l-aguerfelde",
+          "quote": "Dès le début du combat elle boost tous les monstres qui l’accompagnent de 2000 Vitalité (infini). Ce bonus en vitalité des monstres disparait si vous la tuez.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-carlita-de-l-aguerfelde",
+          "quote": "De ce fait, il est recommandé de ne pas tomber dans un des pièges de Carlita et le mieux est donc d’éviter de se déplacer au risque de tomber dans un des pièges.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Tuer Carlita pour retirer le bonus de vitalité de ses monstres.",
+              "rationale": "« Pas touche à mes manteaux ! » donne +2000 Vitalité à tous les monstres ; le bonus disparaît à sa mort."
+            },
+            {
+              "order": 2,
+              "action": "Se déplacer le moins possible.",
+              "rationale": "Elle pose jusqu'à 2 pièges de 1 case par tour (jusqu'à 8 PO sans ligne de vue)."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas tomber dans un Piège à Mulou.",
+              "rationale": "Le piège retire 15 PM pour 2 tours et met Piégé comme un Mulou, Pesanteur et Inébranlable pour 2 tours (non débuffable)."
+            },
+            {
+              "order": 4,
+              "action": "Si un personnage est piégé, se méfier de Dépeçage.",
+              "rationale": "Sur une cible Piégée (en ligne jusqu'à 6 PO), elle s'attire au contact et frappe ~3000 air."
+            }
+          ]
         }
       ]
     },
@@ -2603,6 +2927,50 @@
           "sourceId": "src.dpln.on-recherche-darma",
           "quote": "Invocation de glyphes verts les tours pairs, retrait des glyphes les tours impairs",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-darma",
+          "quote": "Ainsi lorsque Darma va jouer un tour Impair, prévoyez auparavant de placer tous vos personnages à plus de 3PO de chaque monstre. Lorsque Darma va jouer un tour Pair, cette fois-ci il faudra être dans un rayon de 3 autour d’un monstre pour ne pas prendre de malus ou de dégâts.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-darma",
+          "quote": "Darma possède 50% de résistances dans l’élément neutre, évitez donc de le taper dans cet élément",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Prévoir des dégâts directs, pas de glyphes ni de pièges, et éviter l'élément neutre (attention aux armes).",
+              "rationale": "Fumée Noire réduit les dommages des glyphes et pièges (réduction réelle de 80) ; Darma a 50 % de résistance neutre."
+            },
+            {
+              "order": 2,
+              "action": "Avant un tour impair de Darma : placer tous les personnages à plus de 3 PO de chaque monstre.",
+              "position": "À plus de 3 PO de chaque monstre",
+              "rationale": "Elle pose des glyphes verts de rayon 3 autour de chaque monstre : commencer son tour dedans frappe ~150 air et retire 6 PO pour 1 tour."
+            },
+            {
+              "order": 3,
+              "action": "Avant un tour pair de Darma : se placer à exactement 3 PO d'un monstre.",
+              "position": "Exactement 3 PO d'un monstre",
+              "rationale": "Elle frappe ~350 neutre et retire 4 PA à ceux qui ne sont pas dans un rayon 3 autour d'un monstre ; à 3 PO pile, on évite aussi Vue en Noir (rayon 2)."
+            },
+            {
+              "order": 4,
+              "action": "Ne jamais rester à 2 PO ou moins d'un monstre quand Darma joue.",
+              "rationale": "Vue en Noir frappe ~300 terre en cercle de rayon 2 autour d'elle et de chacun de ses alliés (plusieurs lignes si plusieurs monstres proches)."
+            },
+            {
+              "order": 5,
+              "action": "Répéter l'alternance de placement à chaque tour jusqu'à sa mort.",
+              "rationale": "L'effet Fumée Noire alterne glyphes et retrait des glyphes tout le combat."
+            }
+          ]
         }
       ]
     },
@@ -2677,6 +3045,44 @@
           "sourceId": "src.dpln.on-recherche-degolas",
           "quote": "Tous les sorts de Degolas lui permettent de vous retirer ou de vous voler de la PO.",
           "locator": "III- Stratégie du combat — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-degolas",
+          "quote": "Vous risquez donc rapidement de vous retrouver sans portée sur Degolas, c’est pourquoi il est conseillé de rester proche de lui afin de pouvoir le frapper même s’il vous a retiré beaucoup de portée.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-degolas",
+          "quote": "évitez de laisser vos personnages alignés les uns avec les autres.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Se rapprocher et rester proche de Degolas.",
+              "position": "Près du boss",
+              "rationale": "Tous ses sorts retirent ou volent de la PO (Flèche Aveuglante vole 4 PO cumulable) : de près, vous pouvez le frapper même sans portée."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas aligner ses personnages les uns avec les autres.",
+              "rationale": "Flèche Repoussante frappe ~300 terre en ligne de taille 3 et repousse le premier de 3 cases contre l'allié derrière (dommages de poussée)."
+            },
+            {
+              "order": 3,
+              "action": "Se méfier de ses tours 4, 7, 10…",
+              "rationale": "Effet « Tir Précis » : +50 % critique pour 1 tour à ces tours."
+            },
+            {
+              "order": 4,
+              "action": "Au contact, prévoir le retrait de PO et la poussée.",
+              "rationale": "Masque Aveuglant (mêlée) frappe ~150 eau, retire 3 PO pour 2 tours et repousse de 1 case."
+            }
+          ]
         }
       ]
     },
@@ -2731,6 +3137,38 @@
           "sourceId": "src.dpln.on-recherche-dragodingo",
           "quote": "Dragodingo a 15PM de base et peut donc fuir très loin.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-dragodingo",
+          "quote": "Dragodingo a 15PM de base et peut donc fuir très loin. Si vous n’avez pas beaucoup de portée, tentez de bloquer Dragodingo dans un coin ou de la tacler.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Bloquer Dragodingo dans un coin ou la tacler.",
+              "rationale": "Elle a 15 PM de base et peut fuir très loin, surtout si vous avez peu de portée."
+            },
+            {
+              "order": 2,
+              "action": "Regarder son humeur à chaque tour.",
+              "rationale": "Humeur Instable : +20 Fuite, +20 Esquive PA/PM ou +100 Puissance pour 1 tour, et ses sorts changent d'effet selon l'humeur."
+            },
+            {
+              "order": 3,
+              "action": "Au contact, prévoir ses effets de mêlée.",
+              "rationale": "Dingoboule (mêlée) : retrait de 3 PM + Pesanteur, repousse de 3 cases, ou ~300 neutre en vol de vie + Affaibli selon l'humeur."
+            },
+            {
+              "order": 4,
+              "action": "Attention à sa ligne jusqu'à 4 PO.",
+              "rationale": "Dingosouffle (zone ligne de taille 4, en ligne jusqu'à 4 PO) : Insoignable, 30 % érosion ou +20 % dommages subis pour 2 tours."
+            }
+          ]
         }
       ]
     },
@@ -2765,6 +3203,49 @@
           "sourceId": "src.dpln.on-recherche-fantomayte",
           "quote": "Une solution pour éviter le malus de puissance que vous subissez lorsque vous êtes déplacé est de vous coller dans un coin avec deux murs qui bloquent vos deux cases adjacentes.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-fantomayte",
+          "quote": "Dès qu’un de vos personnages est déplacé (par un monstre comme un de vos alliés) il perd 100 Puissance pour 2 tours (cumulable)",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-fantomayte",
+          "quote": "Ainsi à chaque fois que Fantômayte ou un monstre vous pousse, cela vous pousse contre un mur, vous fait des dommages de poussé mais vous n’êtes pas déplacé et vous ne perdez pas de Puissance.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Placer chaque personnage dans un coin de la carte, deux murs bloquant les cases adjacentes.",
+              "position": "Un coin par personnage",
+              "rationale": "Poussé contre un mur, vous subissez des dommages de poussée mais n'êtes pas déplacé et ne perdez pas de Puissance."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas pousser, attirer, échanger de place un allié ni se téléporter ; utiliser des sorts comme Stabilisation.",
+              "rationale": "Effet « Mille pompons » : chaque déplacement subi retire 100 Puissance pour 2 tours (cumulable)."
+            },
+            {
+              "order": 3,
+              "action": "Surveiller la Vigie pirate et le Fancrôme s'ils l'accompagnent.",
+              "rationale": "La Vigie pirate échange de place (2 à 4 PO) et le Fancrôme attire : le coin ne protège pas contre eux."
+            },
+            {
+              "order": 4,
+              "action": "Attention à Qui rit.",
+              "rationale": "Elle se téléporte jusqu'à 15 PO sans ligne de vue, frappe ~350 air au contact de sa case d'arrivée et repousse de 4 cases (2 fois par tour)."
+            },
+            {
+              "order": 5,
+              "action": "Tenir compte de son renvoi de dommages (Littérature).",
+              "rationale": "Renvoie 400 de dégâts pour 3 tours (4 en cc), débuffable."
+            }
+          ]
         }
       ]
     },
@@ -2817,6 +3298,43 @@
           "sourceId": "src.dpln.on-recherche-fojumo",
           "quote": "ses invocations disparaitront avec lui dès sa mort.",
           "locator": "III- Stratégie du combat — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-fojumo",
+          "quote": "il est conseillé de simplement trouver le Fojumo de base si il est invisible et de l’éliminer, ses invocations disparaitront avec lui dès sa mort.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-fojumo",
+          "quote": "Tous vos ennemis dans ce glyphe deviennent invisibles pour 2 tours et entrent dans l’état Intaclable pour 2 tours. Seul le Fojumo principal ne passe pas Intaclable.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne pas chercher à tuer tous les doubles.",
+              "rationale": "Il invoque autant de doubles (4400 PV) que de personnages dans le combat ; ce ne sont que ses invocations."
+            },
+            {
+              "order": 2,
+              "action": "Repérer le vrai Fojumo, même invisible.",
+              "rationale": "Dissimulation nocive (dès le tour 1, relance 4 tours) pose un glyphe noir de rayon 7 qui rend ses alliés invisibles et intaclables pour 2 tours ; seul le vrai Fojumo ne passe pas Intaclable."
+            },
+            {
+              "order": 3,
+              "action": "Éviter de se faire marquer par les doubles en mêlée.",
+              "rationale": "Marquage met Marque Ninja : Assassinat silencieux du vrai Fojumo frappe alors une seconde ligne de ~350 neutre."
+            },
+            {
+              "order": 4,
+              "action": "Concentrer les dégâts sur le vrai Fojumo jusqu'à sa mort.",
+              "rationale": "Ses invocations disparaissent avec lui dès sa mort."
+            }
+          ]
         }
       ]
     },
@@ -2874,6 +3392,44 @@
           "sourceId": "src.dpln.on-recherche-fouduglen-l-ecureuil",
           "quote": "Ainsi il deviendra invisible mais ne pourra pas se déplacer car il ne possède aucun sort de transposition, poussée ou de téléportation.",
           "locator": "III- Stratégie du combat — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-fouduglen-l-ecureuil",
+          "quote": "Ainsi il deviendra invisible mais ne pourra pas se déplacer car il ne possède aucun sort de transposition, poussée ou de téléportation. Pensez donc à avoir un personnage qui a l’initiative sur Fouduglen afin de le bloquer dès le premier tour avant qu’il ne joue.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-fouduglen-l-ecureuil",
+          "quote": "Le sort permet aussi de retirer n’importe quel état Invulnérable qu’un de vos personnages pourrait avoir.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Prévoir un personnage qui a l'initiative sur Fouduglen, idéalement un Pandawa.",
+              "rationale": "Il faut le bloquer dès le premier tour, avant qu'il ne joue."
+            },
+            {
+              "order": 2,
+              "action": "Au tour 1, placer Fouduglen dans un coin (Pandawa) et bloquer ses cases restantes avec le Pandawa et une invocation (ex. Pandawasta).",
+              "position": "Fouduglen dans un coin, entouré",
+              "rationale": "Il n'a aucun sort de transposition, poussée ou téléportation : encerclé, il ne peut plus bouger."
+            },
+            {
+              "order": 3,
+              "action": "Quand il devient invisible, le garder encerclé : vous savez où il est.",
+              "rationale": "Discrétion le rend invisible 3 tours (relance 7 tours) mais bloqué, il reste sur place."
+            },
+            {
+              "order": 4,
+              "action": "Ne pas compter sur les états Invulnérables contre lui.",
+              "rationale": "Casse-noisettes (jusqu'à 6 PO) frappe ~350 neutre + 50 terre et retire n'importe quel état Invulnérable."
+            }
+          ]
         }
       ]
     },
@@ -2936,6 +3492,50 @@
           "sourceId": "src.dpln.on-recherche-frakacia-leukocytine",
           "quote": "Pour éviter de devenir Pacifiste, pensez donc à vous éloigner de Frakacia les tours avant ce sort (les tours 1, 4, 7, 10, etc…).",
           "locator": "III- Stratégie du combat — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-frakacia-leukocytine",
+          "quote": "Sachant que Frakacia a 4PM de base, restez toujours à plus de 5PO d’elle pour éviter qu’elle vous mette ce malus.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-frakacia-leukocytine",
+          "quote": "NOTE : Le malus PA se retire quand elle est éliminée.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Prévoir de jouer avec 2 PA de moins jusqu'à sa mort.",
+              "rationale": "Effet « Manchot » : -2 PA à tous vos personnages tant qu'elle est en vie."
+            },
+            {
+              "order": 2,
+              "action": "Rester à plus de 5 PO d'elle en temps normal.",
+              "position": "À plus de 5 PO",
+              "rationale": "Crochet fracassant (mêlée) met -20 % résistance Neutre et Terre pour 2 tours ; elle a 4 PM de base."
+            },
+            {
+              "order": 3,
+              "action": "Aux tours 1, 4, 7, 10…, s'éloigner à plus de 6 PO de Frakacia.",
+              "position": "Hors du rayon 6 autour d'elle",
+              "rationale": "Aux tours 2, 5, 8, 11…, Hyperleukocytine rend Pacifiste (impossible d'infliger des dégâts) tous les personnages dans un rayon de 6."
+            },
+            {
+              "order": 4,
+              "action": "Pour un maximum de dégâts, privilégier les attaques en mêlée hors de ces tours.",
+              "rationale": "Elle réduit ses dommages subis à distance (réduction réelle de 5 par coup)."
+            },
+            {
+              "order": 5,
+              "action": "Recommencer à l'étape 3 tous les 3 tours jusqu'à sa mort.",
+              "rationale": "Hyperleukocytine a une relance de 3 tours."
+            }
+          ]
         }
       ]
     },
@@ -2970,6 +3570,49 @@
           "sourceId": "src.dpln.on-recherche-les-guman",
           "quote": "Exi Guman quant à lui reconstitue tous ses alliés et les boost de 100 Puissance (infini) lorsqu’il meurt.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-les-guman",
+          "quote": "Exi Guman possède un effet qui lui permet de reconstituer tous ses alliés dès qu’il meurt, de ce fait ne le tuez pas si vous aviez déjà entamé un monstre du combat sinon ce dernier sera de nouveau full PV.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-les-guman",
+          "quote": "Dès que vous effectuez une ligne de dommage sur Ambi Guman, il va se boost lui et ses alliés de 50Puissance et 1PO pour 4 tours.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-les-guman",
+          "quote": "Restez toujours à plus de 3PO de la Citwouillette (sa portée de 2PO + son PM) dès qu’elle est invoquée pour éviter de vous prendre ses malus en PA et caractéristiques.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Tuer en premier les monstres qui accompagnent les Guman.",
+              "rationale": "Le guide conseille de garder Ambi pour la fin (dernier ou avant-dernier) et Exi pour le tout dernier."
+            },
+            {
+              "order": 2,
+              "action": "Frapper Ambi Guman avec des sorts puissants, avec le moins de lignes de dommages possible.",
+              "rationale": "À chaque ligne de dommage, il se boost lui et ses alliés de 50 Puissance et 1 PO pour 4 tours (Fils du Soleil)."
+            },
+            {
+              "order": 3,
+              "action": "Rester à plus de 3 PO de toute Citwouillette, ou la tuer dès son invocation (130 PV).",
+              "position": "À plus de 3 PO de la Citwouillette",
+              "rationale": "Légumisation vole 2 PA et 50 dans chaque caractéristique pour 2 tours en cercle de rayon 2 (portée 2 + 1 PM)."
+            },
+            {
+              "order": 4,
+              "action": "Ne pas tuer Exi Guman tant que d'autres monstres sont entamés : le tuer en dernier.",
+              "rationale": "À sa mort, Dans les choux soigne tous ses alliés à leurs PV max et leur donne +100 Puissance (infini)."
+            }
+          ]
         }
       ]
     },
@@ -3117,6 +3760,49 @@
           "sourceId": "src.dpln.on-recherche-katigrou",
           "quote": "dès que vous avez entamé Katigrou il est préférable de rester à plus de 6PO de lui (ses 5PM de base + la portée de 1 en mêlée de son sort)",
           "locator": "III- Stratégie du combat — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-katigrou",
+          "quote": "Moins il aura de PV plus il tapera avec ce sort, donc dès que vous avez entamé Katigrou il est préférable de rester à plus de 6PO de lui (ses 5PM de base + la portée de 1 en mêlée de son sort) pour ne jamais être frappé par son sort en fonction de ses PV manquants.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-katigrou",
+          "quote": "mais vous pouvez facilement l’éviter en lui mettant l’état Pesanteur.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne pas rester au contact de Katigrou.",
+              "rationale": "Jovialité : à chaque début de tour, il vole 1 PA aux ennemis à son contact."
+            },
+            {
+              "order": 2,
+              "action": "Dès qu'il est entamé, rester à plus de 6 PO de lui.",
+              "position": "À plus de 6 PO",
+              "rationale": "Grougrou (mêlée) frappe ~200 neutre + 20 % de ses PV manquants en terre ; 5 PM de base + 1 de portée."
+            },
+            {
+              "order": 3,
+              "action": "Lui mettre l'état Pesanteur.",
+              "rationale": "Bond Improbable le téléporte jusqu'à 12 PO au contact d'une cible, combinable avec Grougrou ; la Pesanteur l'en empêche."
+            },
+            {
+              "order": 4,
+              "action": "Si vous ne pouvez pas rester à distance, l'éroder.",
+              "rationale": "L'érosion réduit ses PV maximum, donc ses PV manquants : il tape moins fort."
+            },
+            {
+              "order": 5,
+              "action": "Le focus et le finir rapidement une fois entamé.",
+              "rationale": "Plus il perd de PV, plus son sort de mêlée fait mal. Attention aux monstres qui peuvent vous pousser vers lui ou échanger de place."
+            }
+          ]
         }
       ]
     },
@@ -3174,6 +3860,49 @@
           "sourceId": "src.dpln.on-recherche-maitre-boulet",
           "quote": "si vous restez à plus de 6PO de lui (ses 5PM de base + sa PO de mêlée) il ne pourra jamais vous frapper directement.",
           "locator": "III- Stratégie du combat — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-maitre-boulet",
+          "quote": "Maître Boulet ne peut frapper qu'en mêlée, si vous restez à plus de 6PO de lui (ses 5PM de base + sa PO de mêlée) il ne pourra jamais vous frapper directement.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-maitre-boulet",
+          "quote": "Si vous tentez de lui retirer des PM il va se boost en PM, en puissance et en Do Pou c'est donc à proscrire car ça n'aura aucune utilité.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Prévoir des personnages qui tapent neutre, en jouant avec 2 PM de moins.",
+              "rationale": "10 % de faiblesse neutre ; Boulétisation retire 2 PM (infini) à vos personnages."
+            },
+            {
+              "order": 2,
+              "action": "Rester à plus de 6 PO de lui.",
+              "position": "À plus de 6 PO",
+              "rationale": "Il ne frappe qu'en mêlée (5 PM de base + mêlée) : il ne pourra jamais vous frapper directement."
+            },
+            {
+              "order": 3,
+              "action": "Ne jamais tenter de lui retirer des PM.",
+              "rationale": "Chaque tentative lui donne 2 PM, 100 Puissance et 20 dommages de poussée pour 1 tour (cumulable)."
+            },
+            {
+              "order": 4,
+              "action": "Tuer son Tournesol à chaque invocation (100 PV), surtout en petite équipe.",
+              "rationale": "Il en invoque un tous les 4 tours."
+            },
+            {
+              "order": 5,
+              "action": "Attention aux effets de Débitage sur un personnage touché.",
+              "rationale": "Pendant 1 tour, chaque soin reçu le frappe en terre (6 à 10) et chaque déplacement subi lui retire 1 PM."
+            }
+          ]
         }
       ]
     },
@@ -3245,6 +3974,49 @@
           "sourceId": "src.dpln.on-recherche-la-maxi-malle",
           "quote": "Augmente les dégâts de base de son sort « Décoffrage Brut » de 10 (infini et cumulable) à chaque ligne de dommages que vous lui effectuez.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-la-maxi-malle",
+          "quote": "La Maxi-Malle possède un effet qui lui permet de se boost de 1PM (infini et cumulable) à chaque fois que vous la poussez.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-la-maxi-malle",
+          "quote": "il est conseillé d’achever la Maxi-Malle en lui effectuant le moins de ligne de dommages possible, c’est-à-dire qu’il est recommandé d’utiliser des sorts qui tapent fort à une seule ligne de dommage.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne jamais pousser la Maxi-Malle.",
+              "rationale": "Gonflette : +1 PM (infini et cumulable) à chaque poussée."
+            },
+            {
+              "order": 2,
+              "action": "Rester suffisamment loin d'elle une fois le focus commencé ; si possible, lui retirer des PM.",
+              "position": "Hors de sa mêlée",
+              "rationale": "Décoffrage Brut (mêlée) frappe ~120 air en vol de vie en cercle de rayon 2, repousse de 2 cases et met -200 Puissance."
+            },
+            {
+              "order": 3,
+              "action": "La frapper avec des sorts puissants à une seule ligne de dommages.",
+              "rationale": "Chaque ligne de dommages augmente les dégâts de base de Décoffrage Brut de 10 (infini et cumulable)."
+            },
+            {
+              "order": 4,
+              "action": "Idéalement, l'achever en un seul tour.",
+              "rationale": "Le guide le cite comme moyen de pallier le boost de Décoffrage Brut."
+            },
+            {
+              "order": 5,
+              "action": "À distance, se méfier de Macro-Ondes.",
+              "rationale": "Macro-Ondes (jusqu'à 8 PO) frappe en cercle de rayon 2, vole 2 PM et met Pesanteur."
+            }
+          ]
         }
       ]
     },
@@ -3279,6 +4051,68 @@
           "sourceId": "src.dpln.on-recherche-mogligli",
           "quote": "Mogligli invoque aléatoirement Balours ou Bagarra ou Mulibre qui auront l’état Invulnérable pour tout le combat.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-mogligli",
+          "quote": "Dès le début du combat, Mogligli invoque aléatoirement Balours ou Bagarra ou Mulibre qui auront l’état Invulnérable pour tout le combat.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-mogligli",
+          "quote": "Parmi les trois monstres qui peuvent être invoqués, il y en a deux où il est recommandé de rester à distance : Balours et Bagarra étant donné que le premier met des malus en zone de rayon 3 autour de lui et le second frappe en mêlée.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-mogligli",
+          "quote": "L’un des sorts de Mogligli lui permet de repousser de 6 cases tous vos personnages en ligne avec celui ciblé de 6 cases.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au lancement : compter les monstres qui accompagnent Mogligli.",
+              "rationale": "« Alliés de circonstance » : il perd 1100 vitalité (infini) par monstre présent avec lui ; seul dans le combat, il n'a aucun malus."
+            },
+            {
+              "order": 2,
+              "action": "Début du combat : repérer quelle invocation il a sortie (Balours, Bagarra ou Mulibre). Ne pas essayer de la tuer.",
+              "rationale": "« Le livre de la Lande » invoque aléatoirement l'un des trois, Invulnérable pour tout le combat. Mogligli lui-même n'a pas d'état Invulnérable."
+            },
+            {
+              "order": 3,
+              "action": "Si c'est Balours : rester à plus de 3 cases de lui.",
+              "rationale": "« Landes Hostiles » : Pesanteur 1 tour, -20 Fuite et -2 PM esquivables en cercle de rayon 3 autour de lui."
+            },
+            {
+              "order": 4,
+              "action": "Si c'est Bagarra : ne pas rester à son contact.",
+              "rationale": "« Panthair » : échange de place avec la cible et frappe 300 air, uniquement en mêlée."
+            },
+            {
+              "order": 5,
+              "action": "Si c'est Mulibre : l'ignorer et frapper Mogligli.",
+              "rationale": "Mulibre ne fait que donner des PB (10 % des PV, 1 tour) aux monstres à 3 PO maximum ; vous ne risquez rien."
+            },
+            {
+              "order": 6,
+              "action": "Ne pas aligner vos personnages entre eux.",
+              "rationale": "« Au Kanig ! » (en ligne jusqu'à 4 PO) repousse de 6 cases tous les personnages en ligne perpendiculaire infinie avec la cible : risque d'être repoussé loin."
+            },
+            {
+              "order": 7,
+              "action": "Ne pas rester au contact de Mogligli.",
+              "rationale": "« Chienchien Rouge » frappe 450 feu, uniquement en mêlée."
+            },
+            {
+              "order": 8,
+              "action": "Ne pas compter sur l'invisibilité.",
+              "rationale": "« La chasse de Kaa-Kaa » (relance 5 tours) dévoile les personnages invisibles et boost tous les monstres de 2 PM, 20 Tacle et 20 Fuite pour 2 tours."
+            }
+          ]
         }
       ]
     },
@@ -3340,6 +4174,59 @@
           "sourceId": "src.dpln.on-recherche-monsieur-pingouin",
           "quote": "Dès le premier tour et uniquement ce tour, tous vos personnages perdent 100PM et obtiennent l’état Pesanteur pour 1 tour (non débuffable).",
           "locator": "III- Stratégie du combat — Présentation rapide"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-monsieur-pingouin",
+          "quote": "Au tour 1 toute votre équipe aura -100PM et l’état Pesanteur (non désenvoutable) vous empêchant de vous déplacer. Profitez donc de ce tour pour booster au maximum votre personnage pour les tours suivants où vous pourrez de nouveau vous déplacer librement.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-monsieur-pingouin",
+          "quote": "Tentez de toujours être à plus de 6PO de Monsieur Pingouin ce qui vous permet ainsi d’éviter son sort de frappe qui tape en mêlée mais en zone croix de taille 1 (la distance à éviter étant calculée via ses 4PM de base + la portée de 2 de son sort).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-monsieur-pingouin",
+          "quote": "Si le personnage qui a cet effet a peu de PV ou n’est pas capable de tank les dégâts que vont subir tous vos autres personnages, préférez vous éloigner à plus de 6PO de lui.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -900 vitalité et -50 puissance (infini) par monstre présent avec lui ; seul, aucun malus."
+            },
+            {
+              "order": 2,
+              "action": "Tour 1 : ne pas chercher à bouger, utiliser tout le tour pour se booster.",
+              "rationale": "« Gentleman du crime » : au tour 1 uniquement, tous vos personnages perdent 100 PM et sont en Pesanteur (non désenvoûtable)."
+            },
+            {
+              "order": 3,
+              "action": "Dès le tour 2 : se placer à plus de 6 PO de Monsieur Pingouin et y rester.",
+              "position": "Plus de 6 PO du boss",
+              "rationale": "« Parapluie Gadget » (mêlée, croix de taille 1) peut aléatoirement faire passer le tour ; 6 PO = ses 4 PM de base + portée 2."
+            },
+            {
+              "order": 4,
+              "action": "Surveiller les monstres qui peuvent le rapprocher de vous ou vous rapprocher de lui.",
+              "rationale": "La Mamansot peut lui donner 2 PM ; le Mansobèse (5 PO) et le Timansot (10 PO) échangent de position avec un personnage et repoussent en mêlée."
+            },
+            {
+              "order": 5,
+              "action": "Quand un allié reçoit « Mise en scène trompeuse » : éloigner les autres à plus de 6 PO de lui s'il ne peut pas encaisser.",
+              "rationale": "« Mascarade Rocambolesque » : pendant 1 tour, ce personnage intercepte les dommages de tous ses alliés dans un cercle de rayon 6."
+            },
+            {
+              "order": 6,
+              "action": "Frapper Monsieur Pingouin en tenant compte de ses soins.",
+              "rationale": "« Iceberg Saloon » (relance 4 tours) : soin de 400 PV et réduction de 5 (réelle de 37 par coup) pendant 3 tours en cercle de rayon 4."
+            }
+          ]
         }
       ]
     },
@@ -3402,6 +4289,44 @@
           "sourceId": "src.dpln.on-recherche-morblok",
           "quote": "il est conseillé de toujours rester à bonne distance de Morblok (plus de 2PO de lui)",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-morblok",
+          "quote": "Durant tout le combat, Morblok va répartir 50% des dommages qu’il va subir aux personnages dans un rayon de 2 autour de lui c’est pourquoi il est conseillé de toujours rester à bonne distance de Morblok (plus de 2PO de lui)",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : prévoir des personnages qui frappent en Eau ou en Feu.",
+              "rationale": "Il a le plus de résistance en Terre, Neutre et Air ; Terre/Neutre renvoie 50 % des dommages sur vous et autour de vous, Air vous met -50 puissance. Eau (-1 PA) et Feu (-4 durée des effets) sont beaucoup moins contraignants."
+            },
+            {
+              "order": 2,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -800 vitalité et -50 puissance (infini) par monstre présent avec lui."
+            },
+            {
+              "order": 3,
+              "action": "Se placer et rester à plus de 2 PO de Morblok.",
+              "position": "Plus de 2 PO du boss",
+              "rationale": "« Fragmentation » répartit 50 % des dommages qu'il subit sur tout le monde dans un rayon de 2 autour de lui, et vous gêneriez les alliés qui le frappent."
+            },
+            {
+              "order": 4,
+              "action": "Frapper uniquement en Eau ou en Feu, sans être collé à ses alliés.",
+              "rationale": "« Armure réfléchissante » punit l'attaquant et tous ceux dans un rayon de 2 autour de lui selon l'élément ; il réduit aussi tous ses dommages subis de 30 % tout le combat."
+            },
+            {
+              "order": 5,
+              "action": "Ne pas rester au contact de Morblok.",
+              "rationale": "« Rajeunissement » frappe 150 feu en mêlée et le soigne d'environ 160 PV ; « Saute-heure » le téléporte (5 PO), attire à 3 cases et frappe en cercle de rayon 3."
+            }
+          ]
         }
       ]
     },
@@ -3436,6 +4361,48 @@
           "sourceId": "src.dpln.on-recherche-musha-l-oni",
           "quote": "Durant tout le combat, Musha dévoile tous les personnages invisibles à chacun de ses débuts de tour.",
           "locator": "III- Stratégie du combat — Présentation rapide"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-musha-l-oni",
+          "quote": "Si vous avez un personnage pouvant se rendre invisible, ce sort ne lui sera d’aucune utilité car Musha dévoile tous les objets invisibles à chacun de ses débuts de tour durant l’intégralité du combat.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-musha-l-oni",
+          "quote": "Musha l’Oni peut vous désenvouter, maximiser vos effets aléatoires (les monstres taperont leur jet maximum), vous retirer de la PO, échanger de position avec un de vos personnages et vous mettre l’état Affaibli.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -400 vitalité et -50 puissance (infini) par monstre présent avec lui."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas utiliser les sorts d'invisibilité (Sram).",
+              "rationale": "« Onictifiant » (infini) dévoile tous les invisibles à chacun de ses débuts de tour."
+            },
+            {
+              "order": 3,
+              "action": "Prévoir de relancer vos boosts : il peut vous désenvoûter.",
+              "rationale": "« Onigaud » (12 PO, relance 3 tours) désenvoûte, met un poison neutre 4 tours et maximise vos effets aléatoires pour 1 tour."
+            },
+            {
+              "order": 4,
+              "action": "Après un « Onigaud », protéger le personnage touché.",
+              "rationale": "Les monstres effectueront leurs jets maximum sur le personnage qui a cet effet pendant 1 tour."
+            },
+            {
+              "order": 5,
+              "action": "Anticiper la perte de PO et l'échange de place.",
+              "rationale": "« Onivoirien » (12 PO) retire 4 PO (6 en cc) et met Affaibli pour 1 tour ; « Onigiri » (6 PO) échange de position avec la cible."
+            }
+          ]
         }
       ]
     },
@@ -3521,6 +4488,59 @@
           "sourceId": "src.dpln.on-recherche-nenufor-tilotus",
           "quote": "il est recommandé de tuer le premier Nufor invoqué dès son invocation",
           "locator": "III- Stratégie du combat — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-nenufor-tilotus",
+          "quote": "il est recommandé de tuer le premier Nufor invoqué dès son invocation pour éviter que d’autres n’apparaissent",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-nenufor-tilotus",
+          "quote": "En effet dès que Nenufor Tilotus lance son sort « Rhizome agressif » il sera de nouveau appliqué autant de fois que de Nufor dans la ligne de vue du personnage.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-nenufor-tilotus",
+          "quote": "De ce fait pour éviter de vous prendre les dommages terre, il est conseillé d’être à plus de 4PO de Nenufor lorsqu’il commence son tour.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -800 vitalité et -50 puissance (infini) par monstre présent avec lui."
+            },
+            {
+              "order": 2,
+              "action": "Dès qu'il invoque un Nufor : le tuer immédiatement.",
+              "rationale": "Ce Nufor (1000 PV, statique) en invoque 4 au bout d'1 tour puis 8 au bout de 2 tours ; seul celui invoqué par Nenufor se multiplie."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas rester en ligne de vue de plusieurs Nufor.",
+              "rationale": "« Rhizome agressif » (100 feu en rayon 3, -2 PM) est appliqué de nouveau autant de fois qu'il y a de Nufor dans la ligne de vue du personnage."
+            },
+            {
+              "order": 4,
+              "action": "Finir chaque tour à plus de 4 PO de Nenufor.",
+              "position": "Plus de 4 PO du boss",
+              "rationale": "« Spores de Nymphéacée » le fait frapper 120 terre dans un rayon de 4 autour de lui au début de son tour suivant."
+            },
+            {
+              "order": 5,
+              "action": "Sortir du glyphe vert.",
+              "rationale": "Le glyphe vert de rayon 4 retire jusqu'à 6 PM esquivables."
+            },
+            {
+              "order": 6,
+              "action": "Recommencer à l'étape 2 à chaque nouvelle invocation de Nufor.",
+              "rationale": "Il invoque un Nufor tous les 2 tours (relance de 2 tours)."
+            }
+          ]
         }
       ]
     },
@@ -3572,6 +4592,54 @@
           "sourceId": "src.dpln.on-recherche-nono-le-wobot",
           "quote": "Nono le Wobot ne possède pas d’état Invulnérable. Cependant, il réduit les dommages subis en mêlée ou à l’arme de 10 (réduction réelle de 40 par coup) pour tout le combat.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-nono-le-wobot",
+          "quote": "Pour éviter de frapper sous une réduction de dommages évitez simplement d’utiliser vos armes ou de frapper Nono en mêlée.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-nono-le-wobot",
+          "quote": "Pour éviter cela et donc vous faire frapper fort dans cet élément restez simplement à plus de 4PO de Nono (ses 3PM de base + le PO de la portée de son sort) car il ne peut lancer ce sort qu’en mêlée.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-nono-le-wobot",
+          "quote": "Ainsi si vous êtes invisible restez à plus de 3PO de vos alliés pour éviter d’être rendu visible.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -250 vitalité et -50 puissance (infini) par monstre présent avec lui."
+            },
+            {
+              "order": 2,
+              "action": "Se placer et rester à plus de 4 PO de Nono.",
+              "position": "Plus de 4 PO du boss",
+              "rationale": "« Massue matwaquante » (mêlée) retire 100 % de résistance neutre pour 4 tours, cumulable 2 fois ; 4 PO = ses 3 PM de base + portée."
+            },
+            {
+              "order": 3,
+              "action": "Le frapper uniquement avec des sorts à distance, jamais à l'arme.",
+              "rationale": "« Pwotection wappwochée » : -40 par coup en mêlée ou à l'arme, -80 avec une arme au contact."
+            },
+            {
+              "order": 4,
+              "action": "Si vous êtes invisible : rester à plus de 3 PO de vos alliés.",
+              "rationale": "Le personnage sous « Vewwouillage » rend visibles ses alliés dans un rayon de 3 au début de son tour."
+            },
+            {
+              "order": 5,
+              "action": "Ne pas grouper vos personnages autour de celui qui est Vewwouillé.",
+              "rationale": "« Wavelot explosif » frappe en rayon 3 ; sur une cible Vewwouillée il frappe plus fort, retire 4 PM et pose un glyphe vert de rayon 3 (100 feu) pour 2 tours."
+            }
+          ]
         }
       ]
     },
@@ -3623,6 +4691,59 @@
           "sourceId": "src.dpln.on-recherche-ogivol-scalarcin",
           "quote": "il esquive 100% des coups reçus en mêlée en reculant de 1 cases, il faudra donc impérativement le frapper à distance.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-ogivol-scalarcin",
+          "quote": "Durant tout le combat, vous devrez impérativement frapper Ogivol à distance sinon à chaque coup reçus en mêlée il esquivera les dégâts en reculant de 1 case.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-ogivol-scalarcin",
+          "quote": "Ainsi si vous restez à plus de 8PO d’Ogivol (portée du sort de 4PO + ses 4PM de base) il ne pourra jamais vous frapper.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-ogivol-scalarcin",
+          "quote": "Attention, lorsque Ogivol devient invisible il se boost de 1PM pour 4 tours il faudra donc prendre en considération ce PM en plus et donc rester à 9PO de lui pour éviter ses sorts.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : prévoir des personnages qui frappent à distance.",
+              "rationale": "« Ogivoltige » : il esquive 100 % des coups reçus en mêlée en reculant d'1 case, tout le combat."
+            },
+            {
+              "order": 2,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -200 vitalité et -50 puissance (infini) par monstre présent avec lui."
+            },
+            {
+              "order": 3,
+              "action": "Se placer et rester à plus de 8 PO d'Ogivol.",
+              "position": "Plus de 8 PO du boss",
+              "rationale": "Son sort de plus grande portée va à 4 PO, + ses 4 PM de base : il ne pourra jamais vous frapper."
+            },
+            {
+              "order": 4,
+              "action": "Ne jamais le frapper en mêlée : uniquement à distance.",
+              "rationale": "Chaque coup en mêlée est esquivé."
+            },
+            {
+              "order": 5,
+              "action": "Quand il devient invisible : passer à 9 PO de lui.",
+              "rationale": "« Ogivolatilisé » (relance 7 tours) le rend invisible 3 tours et lui donne +1 PM pour 4 tours."
+            },
+            {
+              "order": 6,
+              "action": "Ne pas rester à son contact.",
+              "rationale": "« Ogivolage » frappe air et terre, vole Agilité et Force et met de l'érosion à tous les personnages à son contact."
+            }
+          ]
         }
       ]
     },
@@ -3670,6 +4791,55 @@
           "sourceId": "src.dpln.on-recherche-padgref-demoel",
           "quote": "L’idéal serait donc de rester à plus de 11PO de Padgref et des monstres qui l’accompagnent à partir du tour 3.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-padgref-demoel",
+          "quote": "Vous pouvez facilement éviter ces dégâts en restant toujours à 3PO ou plus de chaque monstre du combat.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-padgref-demoel",
+          "quote": "Padgref peut taper très fort en mêlée (jusqu’à 4800) à partir du tour 3 puis tous les 2 tours, c’est pourquoi il faut toujours rester à plus de 6PO de lui (ses 5PM de base + son PO en mêlée).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -900 vitalité et -50 puissance (infini) par monstre présent avec lui."
+            },
+            {
+              "order": 2,
+              "action": "Rester à 3 PO ou plus de chaque monstre du combat.",
+              "position": "3 PO ou plus de chaque monstre",
+              "rationale": "« Transposition aqueuse » (14 PO, relance 4 tours) : il échange de place avec un monstre et frappe 200 eau en cercle de rayon 2 autour de sa position d'arrivée."
+            },
+            {
+              "order": 3,
+              "action": "Tours 1 et 2 : rester au moins à plus de 6 PO de lui.",
+              "rationale": "Ses 5 PM de base + sa portée en mêlée."
+            },
+            {
+              "order": 4,
+              "action": "À partir du tour 3 : se tenir à plus de 11 PO de Padgref et des monstres qui l'accompagnent.",
+              "position": "Plus de 11 PO du boss et de ses monstres",
+              "rationale": "« Sanction » frappe 30 % de sa vitalité maximale (jusqu'à 4800) en mêlée à partir du tour 3, et il peut échanger de place avec un monstre et vous attirer de 5 cases (« Attraction », en ligne, portée infinie)."
+            },
+            {
+              "order": 5,
+              "action": "Rester hors de ses lignes.",
+              "rationale": "« Attraction » se lance uniquement en ligne à portée infinie ; « Assaut aérien » en ligne jusqu'à 3 PO."
+            },
+            {
+              "order": 6,
+              "action": "Garder cette distance tout le combat.",
+              "rationale": "« Sanction » a une relance de 2 tours : elle revient tous les 2 tours."
+            }
+          ]
         }
       ]
     },
@@ -3721,6 +4891,54 @@
           "sourceId": "src.dpln.on-recherche-le-prince-marchand",
           "quote": "Le Prince Marchand a 50% de résistances dans l'élément Neutre",
           "locator": "III- Stratégie du combat — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-le-prince-marchand",
+          "quote": "Pour éviter de vous prendre trop de dommages restez à distance et ne laissez pas vos personnages collés pour éviter la zone croix.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-le-prince-marchand",
+          "quote": "essayez au maximum qu’il ne puisse toucher qu’un seul personnage sur ce sort de zone en gardant vos personnages espacés les uns des autres afin d’éviter que le Prince ne se boost trop en puissance et réduise trop ses dommages subis.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : éviter les personnages qui frappent en Neutre.",
+              "rationale": "Le Prince Marchand a 50 % de résistance Neutre."
+            },
+            {
+              "order": 2,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -600 vitalité et -50 puissance (infini) par monstre présent avec lui."
+            },
+            {
+              "order": 3,
+              "action": "Rester à distance du Prince et garder vos personnages espacés les uns des autres.",
+              "position": "Personnages non collés entre eux",
+              "rationale": "« Palouf » frappe en croix de taille 1 au contact et le boost de 50 puissance et de réduction de dommages par cible frappée (cumulable)."
+            },
+            {
+              "order": 4,
+              "action": "S'il arrive au contact, faire en sorte qu'il ne touche qu'un seul personnage.",
+              "rationale": "Il se déplace beaucoup : vol de PM (« Marchandage », 8 PO) et « Charge Héroïque » qui l'attire de 2 cases sur la cible."
+            },
+            {
+              "order": 5,
+              "action": "Ne pas se coller à lui avec un état Invulnérable.",
+              "rationale": "« Palouf » retire 100 % de résistance (150 en cc) pour 2 tours si la cible a un état Invulnérable (normal, à distance ou en mêlée)."
+            },
+            {
+              "order": 6,
+              "action": "Ne pas rester près de lui quand « Vente forcée » se déclenche.",
+              "rationale": "Tous les 1, 2 ou 3 tours (aléatoire), il maximise vos effets aléatoires dans une zone autour de lui (croix 1, carré 3x3 ou cercle de rayon 2)."
+            }
+          ]
         }
       ]
     },
@@ -3760,6 +4978,43 @@
           "sourceId": "src.dpln.on-recherche-qil-bil",
           "quote": "Durant 3 tours sur 4, Qil Bil aura un effet qui lui permet de se boost en puissance s’il subit les dommages d’un piège ou d’un glyphe.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-qil-bil",
+          "quote": "Durant tout le combat, Qil Bil possède un effet qui lui permet de se boost de 10% de ses PV restants en points de bouclier dès que vous tentez un retrait PM ou lorsque vous le poussez.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -300 vitalité et -50 puissance (infini) par monstre présent avec lui."
+            },
+            {
+              "order": 2,
+              "action": "Ne jamais pousser Qil Bil.",
+              "rationale": "« Cyberbwork » : chaque poussée lui donne 10 % de ses PV restants en PB (infini)."
+            },
+            {
+              "order": 3,
+              "action": "Ne jamais tenter de lui retirer des PM.",
+              "rationale": "Même effet : chaque tentative de retrait PM lui donne 10 % de ses PV restants en PB."
+            },
+            {
+              "order": 4,
+              "action": "Ne pas poser de pièges ni de glyphes.",
+              "rationale": "3 tours sur 4 (« Rage cybernétique »), les dommages d'un piège ou d'un glyphe le boostent en puissance et en dommages."
+            },
+            {
+              "order": 5,
+              "action": "Ne pas rester à son contact ni en ligne à 2 PO de lui.",
+              "rationale": "« Surchauffe » frappe 100 feu à son contact et repousse de 3 cases ; « Lancer de poing » (en ligne jusqu'à 2 PO) frappe 350 neutre et retire 2 PA."
+            }
+          ]
         }
       ]
     },
@@ -3799,6 +5054,64 @@
           "sourceId": "src.dpln.on-recherche-le-roi-camole",
           "quote": "il est recommandé de ne pas rester au contact des Cactrucs pour ne pas se prendre de dommages inutiles.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-le-roi-camole",
+          "quote": "Sachant qu'il a 5PM de base, il faudra toujours rester à plus de 7PM de lui pour éviter qu'il ne tape un de vos personnages (ou moins si vous pouvez lui retirer des PM).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-le-roi-camole",
+          "quote": "Si vous pensez OS le Cactruc en une seule ligne de dommages vous pouvez le frapper il n'y aura alors aucune conséquence si un de vos personnages est collé à lui.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-le-roi-camole",
+          "quote": "Sachant que le Roi Camole utilise les Cactrucs pour se boost en Puissance, il est recommandé d'en éliminer le plus avant qu'il ne joue son tour.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -900 vitalité et -50 puissance (infini) par monstre présent avec lui."
+            },
+            {
+              "order": 2,
+              "action": "Rester à plus de 7 PM de lui (moins si vous lui retirez des PM).",
+              "position": "Plus de 7 PM du boss",
+              "rationale": "« Épines et Mirages » (mêlée) frappe 250 terre, repousse de 4 cases et le rend invisible 1 tour ; il a 5 PM de base."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas rester au contact d'un Cactruc.",
+              "rationale": "« Coucalactus » frappe aussi de 200 air les personnages au contact d'un Cactruc ou d'un personnage Cacterrorisé dans un rayon de 4 autour de la cible."
+            },
+            {
+              "order": 4,
+              "action": "Ne pas frapper un Cactruc collé à un allié, sauf si vous le tuez en une seule ligne de dommages.",
+              "rationale": "Un Cactruc frappé tape les personnages sur ses cases adjacentes (60 terre)."
+            },
+            {
+              "order": 5,
+              "action": "Éliminer le maximum de Cactrucs avant le tour du Roi Camole.",
+              "rationale": "« Piktature » : +8 puissance chaque tour, plus 8 par Cactruc présent au début de son tour."
+            },
+            {
+              "order": 6,
+              "action": "Alternative : ignorer les Cactrucs et focus le Roi Camole pour le tuer au plus vite.",
+              "rationale": "Le guide propose aussi de garder les Cactrucs si vous pouvez encaisser ses dégâts une fois boosté."
+            },
+            {
+              "order": 7,
+              "action": "Recommencer à l'étape 3 à chaque nouvelle « Forêt de Cactus ».",
+              "rationale": "« Forêt de Cactus » (relance 2 tours) rend la cible Cacterrorisée 1 tour et pose des Cactrucs de 1500 PV en ligne et diagonale."
+            }
+          ]
         }
       ]
     },
@@ -3858,6 +5171,54 @@
           "sourceId": "src.dpln.on-recherche-rok-gnorok",
           "quote": "Pour rester hors de portée de ses sorts il vous faut toujours être à plus de 8PO de lui lorsqu’il commence son tour",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-rok-gnorok",
+          "quote": "Rok Gnorok gagne de la puissance à chacun de ses débuts de tour, il est donc préférable de le tuer rapidement car il tapera de plus en plus fort chaque tours.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-rok-gnorok",
+          "quote": "Deux tours sur trois, Rok va réduire les dommages qu’il subit mais vous pouvez annuler cet effet en le debuffant.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-rok-gnorok",
+          "quote": "Pour rester hors de portée de ses sorts il vous faut toujours être à plus de 8PO de lui lorsqu’il commence son tour (ses 5PM de base + la portée de 3 de son sort qui frappe le plus loin).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : prévoir si possible un personnage qui peut désenvoûter.",
+              "rationale": "Deux tours sur trois, « Armure rocailleuse » réduit ses dommages subis de 15 (réelle de 82 par coup) ; l'effet s'annule en le désenvoûtant."
+            },
+            {
+              "order": 2,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -500 vitalité et -50 puissance (infini) par monstre présent avec lui."
+            },
+            {
+              "order": 3,
+              "action": "Être à plus de 8 PO de Rok Gnorok à chaque début de son tour.",
+              "position": "Plus de 8 PO du boss",
+              "rationale": "Ses 5 PM de base + la portée 3 de son sort le plus long : vous évitez tous ses sorts, dont le malus de puissance de « Surt »."
+            },
+            {
+              "order": 4,
+              "action": "Concentrer les dégâts pour le tuer vite.",
+              "rationale": "« Bientôt la fin » : +20 puissance (infini, cumulable) à chacun de ses débuts de tour, il tape de plus en plus fort."
+            },
+            {
+              "order": 5,
+              "action": "Le désenvoûter dès qu'il réduit ses dommages subis.",
+              "rationale": "La réduction dure 2 tours (relance 3 tours) et s'applique aussi à ses alliés à son contact."
+            }
+          ]
         }
       ]
     },
@@ -3897,6 +5258,59 @@
           "sourceId": "src.dpln.on-recherche-roub-ignolles",
           "quote": "pensez à rester à plus de 3PO de chaque bombe pour être sûr de ne pas être dans la zone d’explosion.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-roub-ignolles",
+          "quote": "Si vous pensez ne pas avoir assez de PV et que vous ne voulez pas prendre de risque il peut être intéressant de tuer les 4 bombes dès leur invocation en faisant bien attention de ne pas être en mêlée avec.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-roub-ignolles",
+          "quote": "Si vous décidez de ne pas éliminer les bombes et de les laisser exploser toutes seules, pensez à rester à plus de 3PO de chaque bombe pour être sûr de ne pas être dans la zone d’explosion.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-roub-ignolles",
+          "quote": "Évitez donc de rester à 1PO en diagonale de Roub’Ignolles pour ne pas prendre de dégâts inutiles.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -150 vitalité et -50 puissance (infini) par monstre présent avec lui."
+            },
+            {
+              "order": 2,
+              "action": "Ne jamais se placer à 1 PO en diagonale de Roub' Ignolles.",
+              "rationale": "Il invoque ses bombes à 1 PO dans ses diagonales ; un personnage sur la case d'invocation prend 100 eau."
+            },
+            {
+              "order": 3,
+              "action": "Choisir une méthode : tuer les 4 bombes chaque tour, OU les laisser et s'en tenir éloigné.",
+              "rationale": "Si vous ne les tuez pas, il n'en invoque pas de nouvelles (4 au maximum) ; si vous les tuez, il en réinvoque à chacun de ses débuts de tour."
+            },
+            {
+              "order": 4,
+              "action": "Méthode 1 : tuer les 4 bombes dès leur invocation, sans être à leur contact.",
+              "rationale": "Une bombe tuée au tour de son invocation n'explose qu'en croix de taille 1 (50 feu). Utile si vous manquez de PV."
+            },
+            {
+              "order": 5,
+              "action": "Méthode 2 : rester à plus de 3 PO de chaque bombe.",
+              "position": "Plus de 3 PO de chaque bombe",
+              "rationale": "Une bombe explose au maximum en cercle de rayon 3, et toute seule au bout de 4 tours."
+            },
+            {
+              "order": 6,
+              "action": "Dans les deux cas, ne pas grouper l'équipe autour de lui.",
+              "rationale": "« Téléportabombe » (10 PO) : il échange de place avec une bombe, qui explose à son prochain tour comme si c'était son dernier tour."
+            }
+          ]
         }
       ]
     },
@@ -3936,6 +5350,43 @@
           "sourceId": "src.dpln.on-recherche-simbadas",
           "quote": "dès qu’un de vos personnages meurt, il se boost de 4PM et 400 Puissance (infini et cumulable) par personnage mort.",
           "locator": "III- Stratégie du combat — Présentation rapide"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-simbadas",
+          "quote": "De ce fait, essayez de garder tous vos personnages en vie sinon en plus d’être moins, vous allez rendre Simbadas encore plus fort.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -500 vitalité et -50 puissance (infini) par monstre présent avec lui."
+            },
+            {
+              "order": 2,
+              "action": "Début du combat : jouer en tenant compte de -10 PO sur tous vos personnages.",
+              "rationale": "« Appel de la faim » retire 10 PO à tous vos personnages pour toute la durée du combat."
+            },
+            {
+              "order": 3,
+              "action": "Garder tous vos personnages en vie.",
+              "rationale": "« Soif de Sang » : chaque personnage mort lui donne 4 PM et 400 puissance (infini, cumulable)."
+            },
+            {
+              "order": 4,
+              "action": "Ne pas rester groupés à portée de son saut.",
+              "rationale": "« Saut précipité » (en ligne de 2 à 6 PO) le téléporte et frappe 120 neutre en cercle de rayon 2 autour de sa position d'arrivée, avec -20 Fuite."
+            },
+            {
+              "order": 5,
+              "action": "Éviter son contact.",
+              "rationale": "« Grosse papatte » (mêlée) frappe 250 terre en vol de vie en ligne perpendiculaire de taille 3 et empoisonne 2 tours."
+            }
+          ]
         }
       ]
     },
@@ -3970,6 +5421,59 @@
           "sourceId": "src.dpln.on-recherche-tournade",
           "quote": "il faut prévoir une distance minimum de 7PO d'elle pour éviter qu'elle vienne vous mettre Pacifiste",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-tournade",
+          "quote": "En la gardant à distance en la repoussant elle ne pourra jamais rien faire et vous aurez juste à taper.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-tournade",
+          "quote": "Sachant qu'elle a 4PM de base il faut prévoir une distance minimum de 7PO d'elle pour éviter qu'elle vienne vous mettre Pacifiste (moins si vous pouvez lui retirer des PM).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-tournade",
+          "quote": "Tournade ayant 12% de faiblesses dans l'élément Eau",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : privilégier des personnages qui frappent en Eau.",
+              "rationale": "Tournade a 12 % de faiblesse à l'Eau."
+            },
+            {
+              "order": 2,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -400 vitalité et -50 puissance (infini) par monstre présent avec elle."
+            },
+            {
+              "order": 3,
+              "action": "Se tenir à au moins 7 PO de Tournade (moins si vous lui retirez des PM).",
+              "position": "7 PO ou plus de la boss",
+              "rationale": "« Tempête Dévastatrice » rend Pacifiste, retire 10 PO et empoisonne en air dans un rayon de 2 ; elle a 4 PM de base."
+            },
+            {
+              "order": 4,
+              "action": "La repousser pour la garder à distance, puis la frapper.",
+              "rationale": "Ses frappes sont à courte portée (2 et 5 PO) : gardée à distance, elle ne peut rien faire."
+            },
+            {
+              "order": 5,
+              "action": "Attention à la zone de 6 à 8 PO autour d'elle.",
+              "rationale": "« Aspiration de masse » attire de 3 cases, vole 2 PM et met -50 % de résistance pour 2 tours aux ennemis dans un rayon de 6 à 8."
+            },
+            {
+              "order": 6,
+              "action": "Ne pas avoir plusieurs personnages dans un rayon de 5 autour d'elle.",
+              "rationale": "« Tourbillon violent » (300 air en vol de vie, rayon 5) lui donne 620 PV pour 3 tours par personnage dans la zone."
+            }
+          ]
         }
       ]
     },
@@ -4027,6 +5531,64 @@
           "sourceId": "src.dpln.on-recherche-trukipik",
           "quote": "Pour ne jamais avoir l’état Pacifiste, il faut être dans un cercle de rayon 2 autour de lui lorsqu’il débute son tour.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-trukipik",
+          "quote": "Ainsi, pour être sûr de ne jamais être dans l’état Pacifiste il faut toujours être dans un rayon de 2PO autour de Trukipik lorsqu’il commence son tour.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-trukipik",
+          "quote": "Pour éviter d’être repoussé placez des invocations statiques (comme une cawotte) ou un obstacle du terrain derrière vos personnages à 3PO.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-trukipik",
+          "quote": "Trukipik va se soigner de 200PV par personnages et invocations à plus de 2PO de lui lorsqu’il commence son tour.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -600 vitalité et -50 puissance (infini) par monstre présent avec lui."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas invoquer (ou seulement des invocations qui restent près de lui).",
+              "rationale": "Il se soigne de 200 PV par personnage ou invocation à plus de 2 PO de lui au début de son tour."
+            },
+            {
+              "order": 3,
+              "action": "Finir chaque tour dans un rayon de 2 PO autour de Trukipik.",
+              "position": "2 PO ou moins du boss",
+              "rationale": "« Combat Rapproché » : au début de son tour, les personnages à plus de 2 PO deviennent Pacifistes (infini)."
+            },
+            {
+              "order": 4,
+              "action": "Ne pas finir son tour à exactement 3 PO, sauf pour perdre l'état Pacifiste.",
+              "rationale": "À 3 PO, si vous êtes Pacifiste vous le perdez, sinon vous le devenez."
+            },
+            {
+              "order": 5,
+              "action": "Placer un obstacle de la map ou une invocation statique (ex. une cawotte) derrière vos personnages, à 3 PO de lui.",
+              "rationale": "« Puissant balayage » repousse de 6 cases les personnages dans un rayon de 3 (sauf en état Duel)."
+            },
+            {
+              "order": 6,
+              "action": "Attention au personnage frappé par « Estoc fatal ».",
+              "rationale": "Il passe en état Duel ; au tour suivant, « Estoc fatal » ajoute une ligne de 200 % de ses PV érodés neutre."
+            },
+            {
+              "order": 7,
+              "action": "Répéter les étapes 3 à 5 à chaque tour.",
+              "rationale": "L'effet « Combat Rapproché » se déclenche tous les tours."
+            }
+          ]
         }
       ]
     },
@@ -4061,6 +5623,48 @@
           "sourceId": "src.dpln.on-recherche-tyranne-la-terrible",
           "quote": "Durant tout le combat dès que vous effectuez des dommages sur Tyranne, votre personnage échange de place avec elle.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-tyranne-la-terrible",
+          "quote": "Durant tout le combat dès que vous effectuez des dommages sur Tyranne, votre personnage échange de place avec elle. De plus si vous subissez des dommages de poussée, vous êtes repoussé de 6 cases et les personnages à votre contact sont eux aussi repoussés de 6 cases.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-tyranne-la-terrible",
+          "quote": "De ce fait, il recommandé de ne pas rester trop groupé pour éviter de la laisser se boost en dommages de poussée",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -400 vitalité et -50 puissance (infini) par monstre présent avec elle."
+            },
+            {
+              "order": 2,
+              "action": "Avant chaque frappe, prévoir que votre personnage va échanger de place avec Tyranne.",
+              "rationale": "« Pression constante » : pour chaque ligne de dommages que vous lui infligez, elle échange de position avec votre personnage."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas la frapper avec un sort qui la pousse vers vous.",
+              "rationale": "Exemple du guide : un Iop la frappe et la pousse, échange de place, elle est repoussée sur lui ; il subit des dommages de poussée et est repoussé de 6 cases."
+            },
+            {
+              "order": 4,
+              "action": "Ne pas rester groupés, ni collés entre vous.",
+              "rationale": "Des dommages de poussée vous repoussent de 6 cases avec les personnages à votre contact ; « Frappe dévastatrice » lui donne +50 dommages de poussée par personnage dans son cercle de rayon 3."
+            },
+            {
+              "order": 5,
+              "action": "Éviter d'être en ligne à 3 PO d'elle, surtout près d'un mur.",
+              "rationale": "« Hyper Kick » (en ligne jusqu'à 3 PO) frappe 100 neutre et repousse de 6 cases."
+            }
+          ]
         }
       ]
     },
@@ -4104,6 +5708,64 @@
           "sourceId": "src.dpln.on-recherche-la-vashkiwi",
           "quote": "si vous restez à plus de 5PO des fontianes vous ne subirez jamais de dommages ni de malus de puissance.",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-la-vashkiwi",
+          "quote": "Cependant les fontaiens sont des invocations fixes, si vous restez à plus de 5PO des fontianes vous ne subirez jamais de dommages ni de malus de puissance.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-la-vashkiwi",
+          "quote": "Ces deux effets peuvent facilement être désenvoutés si elle lance le sort sur elle-même afin de continuer à taper la Vashkiwi facilement.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-la-vashkiwi",
+          "quote": "Étant donné que la Vashkiwi a peu de résistances dans les éléments Feu (-5%) et Eau (5%) il est recommandé d’utiliser ces éléments pour la combattre et la vaincre plus facilement.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : prévoir des personnages qui frappent en Feu ou en Eau.",
+              "rationale": "La Vashkiwi a peu de résistance en Feu (-5 %) et Eau (5 %)."
+            },
+            {
+              "order": 2,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -800 vitalité (infini) par monstre présent avec elle."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas rester à 2 cases ou moins de vos alliés.",
+              "rationale": "« Amis pour la vie » : environ 100 terre sur chaque personnage qui commence son tour et sur ses alliés dans un rayon de 2."
+            },
+            {
+              "order": 4,
+              "action": "À chaque nouvelle Fontaine Laiteuse : se placer à plus de 5 PO d'elle. Ne pas essayer de la tuer.",
+              "position": "Plus de 5 PO de chaque fontaine",
+              "rationale": "Fixe et Invulnérable, elle meurt seule au bout de 2 tours ; son glyphe en damier (rayon 5) frappe 150 eau et retire 100 puissance pour 2 tours (cumulable)."
+            },
+            {
+              "order": 5,
+              "action": "Ne pas retirer de PA ni de PM aux monstres.",
+              "rationale": "« Sensations Pures » : un retrait PA leur donne 4 PA, un retrait PM les fait attirer en croix de taille 5."
+            },
+            {
+              "order": 6,
+              "action": "Si elle se lance « Laitage » sur elle-même : la désenvoûter, puis continuer à la frapper.",
+              "rationale": "Elle gagne 1300 PB et une réduction de dommages pour 2 tours, désenvoûtables."
+            },
+            {
+              "order": 7,
+              "action": "Recommencer à l'étape 4 à chaque tour.",
+              "rationale": "Elle invoque une fontaine par tour (jamais plus de deux en même temps)."
+            }
+          ]
         }
       ]
     },
@@ -4155,6 +5817,44 @@
           "sourceId": "src.dpln.on-recherche-zatoishwan",
           "quote": "il suffit de rester à plus de 7PO de lui lorsqu’il commence son tour (ses 6PM de base + la PO de son attaque en mêlée).",
           "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-zatoishwan",
+          "quote": "Sachant que Zatoïshwan réduit toutes les attaques qu’il subit en mêlée privilégiez au maximum des attaques à distance pour le vaincre plus facilement.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : privilégier des personnages qui frappent à distance.",
+              "rationale": "« Pandawushu » : il réduit les dommages subis en mêlée de 5 (réelle de 42 par coup) tout le combat."
+            },
+            {
+              "order": 2,
+              "action": "Au lancement : compter les monstres qui l'accompagnent.",
+              "rationale": "« Alliés de circonstance » : -1100 vitalité et -50 puissance (infini) par monstre présent avec lui."
+            },
+            {
+              "order": 3,
+              "action": "Être à plus de 7 PO de Zatoïshwan à chaque début de son tour.",
+              "position": "Plus de 7 PO du boss",
+              "rationale": "« Bâton virevoltant » frappe 900 air sur ses 4 cases adjacentes et repousse de 4 ; 7 PO = ses 6 PM de base + la mêlée."
+            },
+            {
+              "order": 4,
+              "action": "Le frapper à distance.",
+              "rationale": "Ses coups en mêlée sont réduits."
+            },
+            {
+              "order": 5,
+              "action": "À partir du tour 3, tenir compte de son boost et de son renvoi.",
+              "rationale": "« Colère liquide » (à partir du tour 3, relance 4 tours) : +200 puissance, +50 dommages, +4 PA pour 2 tours, soin de 700 PV et renvoi de 40 dommages pour 3 tours."
+            }
+          ]
         }
       ]
     },

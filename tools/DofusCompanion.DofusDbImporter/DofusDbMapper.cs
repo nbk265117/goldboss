@@ -11,7 +11,8 @@ public sealed record DofusDbSnapshot(
     IReadOnlyList<JsonElement> Monsters,
     IReadOnlyList<JsonElement> Races,
     IReadOnlyList<JsonElement> SubAreas,
-    IReadOnlyList<JsonElement> Areas);
+    IReadOnlyList<JsonElement> Areas,
+    IReadOnlyList<JsonElement>? MapPositions = null);
 
 /// <summary>
 /// Converts DofusDB records into a knowledge package of ENTITIES only (names, aliases, levels, families,
@@ -156,6 +157,20 @@ public static class DofusDbMapper
             Add(Entity(id, isBoss ? EntityType.Boss : EntityType.Monster, m, levelText, attributes), relations);
         }
 
+        // Coordinates of the dungeon's rooms ("x,y;x,y…", in room order): the detect button reads the coordinates
+        // shown at the top left of the game and finds the dungeon from them.
+        var positions = (s.MapPositions ?? [])
+            .Where(p => Int(p, "id") is not null && Int(p, "posX") is not null && Int(p, "posY") is not null)
+            .GroupBy(p => Int(p, "id")!.Value)
+            .ToDictionary(g => g.Key, g => $"{Int(g.First(), "posX")},{Int(g.First(), "posY")}");
+        foreach (var d in s.Dungeons.Where(d => Int(d, "id") is not null))
+        {
+            if (!entities.TryGetValue(DungeonId(Int(d, "id")!.Value), out var pe)) continue;
+            var coords = IntArray(d, "mapIds").Select(positions.GetValueOrDefault).OfType<string>().Distinct().ToList();
+            if (coords.Count > 0)
+                entities[pe.Entity.Id] = pe with { Entity = pe.Entity with { Attributes = new Dictionary<string, string>(pe.Entity.Attributes) { ["mapCoords"] = string.Join(";", coords) } } };
+        }
+
         // A dungeon has no picture of its own on DofusDB: show its (first) boss's one.
         foreach (var d in s.Dungeons.Where(d => Int(d, "id") is not null))
         {
@@ -218,6 +233,8 @@ public static class DofusDbMapper
 
     internal static int? Int(JsonElement r, string prop) =>
         r.ValueKind == JsonValueKind.Object && r.TryGetProperty(prop, out var v) && v.ValueKind == JsonValueKind.Number && v.TryGetInt32(out var i) ? i : null;
+
+    internal static IEnumerable<int> DungeonMapIds(IEnumerable<JsonElement> dungeons) => dungeons.SelectMany(d => IntArray(d, "mapIds"));
 
     internal static bool IsBoss(JsonElement m) => Bool(m, "isBoss") ?? false;
 

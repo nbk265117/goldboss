@@ -159,7 +159,7 @@
                             <Grid>
                                 <TextBlock Text="{l:T Analysis.NoImage}" Style="{StaticResource MutedText}" HorizontalAlignment="Center" VerticalAlignment="Center"
                                            TextAlignment="Center" Visibility="{Binding HasImage, Converter={StaticResource HiddenWhen}}"/>
-                                <Grid x:Name="ImageHost" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Grid x:Name="ImageHost" HorizontalAlignment="Center" VerticalAlignment="Center" FlowDirection="LeftToRight">
                                     <Image x:Name="PreviewImage" Source="{Binding Preview}" Stretch="Uniform" Cursor="Cross"
                                            MouseLeftButtonDown="PreviewImage_MouseDown" MouseMove="PreviewImage_MouseMove" MouseLeftButtonUp="PreviewImage_MouseUp"/>
                                     <Canvas IsHitTestVisible="False">

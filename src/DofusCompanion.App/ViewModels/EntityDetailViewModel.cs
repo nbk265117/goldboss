@@ -119,7 +119,7 @@ public sealed partial class EntityDetailViewModel : ObservableObject
         Level = e.LevelText;
         Description = e.Description;
         Attributes = e.Attributes.Count == 0 ? null : string.Join(Environment.NewLine, e.Attributes.Select(kv => $"{kv.Key} : {kv.Value}"));
-        EntityVerificationLabel = GuidancePresenter.VerificationLabel(e.Verification);
+        EntityVerificationLabel = GuidancePresenter.BadgeLabel(e.Verification);
         NoMechanicDocumented = guidance.NoMechanicDocumented;
 
         Mechanics.Clear();

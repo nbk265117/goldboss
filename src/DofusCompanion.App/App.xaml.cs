@@ -155,7 +155,7 @@ public partial class App : System.Windows.Application, IDisposable
         var overlayVm = Services.GetRequiredService<OverlayViewModel>();
         var analysis = Services.GetRequiredService<AnalysisViewModel>();
         analysis.CaptureReference = () => _overlay.IsVisible ? _overlay : _main;
-        analysis.BeforeCapture = async () => settings.Current.ExcludeOverlayFromCapture ? await _overlay.ExcludeFromCaptureScopeAsync() : null;
+        analysis.BeforeCapture = async () => settings.Current.ExcludeOverlayFromCapture ? await ExcludeOwnWindowsAsync() : null;
 
         mainVm.ToggleOverlayRequested += (_, _) => ToggleOverlay();
         overlayVm.HideRequested += (_, _) => SetOverlayVisible(false);
@@ -182,7 +182,7 @@ public partial class App : System.Windows.Application, IDisposable
             SetOverlayVisible(true);
             await overlayVm.ShowEntityAsync(id);
         };
-        autoDetect.BeforeCapture = async () => settings.Current.ExcludeOverlayFromCapture ? await _overlay.ExcludeFromCaptureScopeAsync() : null;
+        autoDetect.BeforeCapture = async () => settings.Current.ExcludeOverlayFromCapture ? await ExcludeOwnWindowsAsync() : null;
         autoDetect.CaptureFallback = () => Services.GetRequiredService<ScreenCaptureService>().CaptureMonitorOf(_overlay);
         overlayVm.AutoDetect = autoDetect;
 
@@ -252,6 +252,27 @@ public partial class App : System.Windows.Application, IDisposable
             MessageBox.Show(Loc.Instance.Format("Error.DatabaseAccess", path, ex.Message), Loc.Instance["App.Name"], MessageBoxButton.OK, MessageBoxImage.Error);
             return false;
         }
+    }
+
+    /// <summary>
+    /// Hides the overlay AND the main window from our own capture (they stay visible on screen and in Discord), so
+    /// names shown by the companion itself are never read back as what is in the game.
+    /// </summary>
+    private async Task<IDisposable?> ExcludeOwnWindowsAsync()
+    {
+        var overlayScope = await _overlay!.ExcludeFromCaptureScopeAsync();
+        var main = _main is { IsVisible: true, WindowState: not WindowState.Minimized } m && ScreenCaptureService.ExcludeFromCapture(m, true) ? m : null;
+        if (main is not null) await Task.Delay(60);
+        return new CallbackScope(() =>
+        {
+            overlayScope.Dispose();
+            if (main is not null) ScreenCaptureService.ExcludeFromCapture(main, false);
+        });
+    }
+
+    private sealed class CallbackScope(Action dispose) : IDisposable
+    {
+        public void Dispose() => dispose();
     }
 
     private void RegisterHotkeys()

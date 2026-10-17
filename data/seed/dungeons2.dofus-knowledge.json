@@ -2379,6 +2379,63 @@
           "sourceId": "src.dpln.cavernes-du-kolosso",
           "quote": "Comment rendre le Kolosso vulnérable ?Pour rendre le Kolosso vulnérable durant 1 tour, c’est assez simple, il suffit de lui infliger des dégâts avec une invocation.",
           "locator": "Boss — Comment rendre le Kolosso vulnérable ?"
+        },
+        {
+          "sourceId": "src.dpln.cavernes-du-kolosso",
+          "quote": "Tout d’abord il est important de savoir que dès le lancement du combat tous vos alliés se verront affectés d’un état qui leur met - 10 000 aux soins et non désenvoutable. En fait vous ne pourrez jamais soigner durant tout ce combat (à part les invocations telles que Lapino).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.cavernes-du-kolosso",
+          "quote": "Ce sort ne se lance que s’il a l’un de vos alliés ou l’un de ses alliés à son CàC (invocations comprises).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne pas compter sur vos soins pendant ce combat.",
+              "rationale": "Dès le lancement, tous vos alliés ont un état -10 000 aux soins, non désenvoûtable (seules les invocations comme le Lapino peuvent soigner)."
+            },
+            {
+              "order": 2,
+              "action": "Pour vous soigner, frapper les monstres pendant le sort du Professeur Xa en restant à 4 PO ou moins du monstre frappé.",
+              "rationale": "1 tour sur 2, le Xa donne à ses alliés un sort : chaque coup reçu par un monstre lui donne 100 dommages, mais soigne de 100 PV vos alliés à 4 PO du monstre frappé."
+            },
+            {
+              "order": 3,
+              "action": "Ne laisser personne au corps à corps du Kolosso (ni allié, ni invocation, ni monstre).",
+              "rationale": "Razepoutine ne se lance que si une entité est à son contact : très gros dégâts terre en triangle, de plus en plus forts quand il a peu de PV. Il peut attirer ses ennemis à son contact pour le lancer."
+            },
+            {
+              "order": 4,
+              "action": "Rendre le Kolosso vulnérable en lui infligeant des dégâts avec une invocation.",
+              "rationale": "Il devient alors vulnérable durant 1 tour."
+            },
+            {
+              "order": 5,
+              "action": "Pendant ce tour, toute l'équipe frappe le Kolosso.",
+              "rationale": "Attention : sous « Baikal », il gagne 10 % de dommages finaux à chaque dégât subi en mêlée."
+            },
+            {
+              "order": 6,
+              "action": "Recommencer : refrapper avec une invocation à chaque tour pour qu'il redevienne vulnérable.",
+              "rationale": "La vulnérabilité ne dure qu'1 tour."
+            },
+            {
+              "order": 7,
+              "action": "Savoir que tuer le Professeur Xa renforce le Kolosso.",
+              "rationale": "Il gagne 1 PM, 200 puissance et le sort Xalactite (350 eau en vol de vie, -30 % de fuite, jusqu'à 8 PO). Seul sur le terrain, il peut appliquer l'état insoignable en ligne jusqu'à 3 PO."
+            },
+            {
+              "order": 8,
+              "action": "Succès « Alliés passés au futur » : n'avoir aucun allié ni invocation à 5 PO d'un monstre frappé pendant Kirbili, et focus le Professeur Xa tôt.",
+              "rationale": "Kirbili est lancé au tour 1 puis tous les 2 tours ; le vol de vie n'est pas considéré comme du soin."
+            }
+          ]
         }
       ]
     },
@@ -2650,6 +2707,74 @@
           "sourceId": "src.dpln.camp-du-comte-razof",
           "quote": "NOTE : La Minikrone est comptée comme invocation et retire 20% de résistances au Comte Razof si elle est en vie.",
           "locator": "V- Présentation du Boss — Méthode pour retirer les résistances du Comte Razof"
+        },
+        {
+          "sourceId": "src.dpln.camp-du-comte-razof",
+          "quote": "Pour pouvoir lui retirer ses résistances, la mécanique est très simple : il faut invoquer des invocations (non-statique). Pour chaque invocation non-statique en vie à la fin du tour du Comte Razof, ce dernier va perdre 20% de résistances pour 1 tour.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.camp-du-comte-razof",
+          "quote": "La Minikrone étant Invulnérable, personne ne peut l'éliminer à l'exception du Comte Razof avec son sort « Trophée de Chasse » qu'il ne peut lancer qu'en mêlée.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.camp-du-comte-razof",
+          "quote": "Vous l'aurez compris dans le titre cette stratégie repose sur le fait de bloquer Razof en le taclant avec un personnage Tank. Pour tacler Razof suffisamment, il faudra donc prévoir un personnage avec environ 150 de Tacle.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant le donjon : apprendre les sorts d'invocation Chafer et Arakne (ou venir avec une classe invocatrice).",
+              "rationale": "Il faut des invocations non statiques pour retirer les résistances du Comte (100 à 135 % selon l'élément)."
+            },
+            {
+              "order": 2,
+              "action": "En préparation, éloigner du Comte le personnage qui ira au contact (tacleur) : la Minikrone apparaît au contact du personnage le plus proche de Razof.",
+              "rationale": "La Minikrone suit son invocateur ; il vaut mieux qu'elle soit invoquée par un personnage qui ne va pas en mêlée."
+            },
+            {
+              "order": 3,
+              "action": "Ne jamais laisser le Comte aller au contact de la Minikrone.",
+              "rationale": "Elle est invulnérable, mais Trophée de Chasse (mêlée, à partir du tour 2) la OS : vos personnages perdent alors 20 % de résistances et 2 PA pour tout le combat."
+            },
+            {
+              "order": 4,
+              "action": "Bloquer le Comte avec un personnage tank d'environ 150 de tacle, placé entre lui et vos autres personnages.",
+              "position": "Tacleur au contact du Comte, alliés hors de sa ligne de vue",
+              "rationale": "Pelliste (jusqu'à 15 PO) retire 6 PM et applique Pesanteur et Affaibli. Replacer le tacleur s'il est attiré par le Viandargh ou poussé par le Crâmbo."
+            },
+            {
+              "order": 5,
+              "action": "Tuer d'abord le Viandargh, puis les autres monstres (le Nemroz peut rester pour la fin).",
+              "rationale": "Le Viandargh est l'un des plus dangereux (malus de puissance, attirance). Éviter la ligne de vue du Crâmbo à 100 % de PV (Premier Sang)."
+            },
+            {
+              "order": 6,
+              "action": "Invoquer un maximum d'invocations, dispersées, loin du Comte et hors de sa ligne de vue.",
+              "rationale": "Chaque invocation non statique en vie à la fin du tour du Comte lui retire 20 % de résistances pour 1 tour (Minikrone comprise). Archi-Pelle frappe en cercle de rayon 2 jusqu'à 6 PO."
+            },
+            {
+              "order": 7,
+              "action": "Après la fin de son tour, frapper le Comte pendant qu'il a perdu ses résistances.",
+              "rationale": "Le malus est calculé à la fin de son tour et dure jusqu'à son tour suivant."
+            },
+            {
+              "order": 8,
+              "action": "Continuer de replacer et protéger les invocations à chaque tour jusqu'à sa mort.",
+              "rationale": "Si des invocations meurent, le malus suivant sera plus faible (ex. 3 invocations = -60 %)."
+            },
+            {
+              "order": 9,
+              "action": "Succès « Premier » : invoquer et se booster dès le tour 1 pour tuer le Comte au tour 2 ou 3.",
+              "rationale": "Le Comte doit être achevé en premier ; les monstres sont dangereux si le combat dure."
+            }
+          ]
         }
       ]
     },
@@ -2742,6 +2867,63 @@
           "sourceId": "src.dpln.bastion-des-marteaux-aigris",
           "quote": "Pour retirer l'état « Clochecuivre » d'un de vos personnages, il suffit d'effectuer des dommages de mêlée à Barbéryl Clochecuivre.",
           "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.bastion-des-marteaux-aigris",
+          "quote": "Afin d'appliquer cette stratégie correctement, l'idéal est de booster vos personnages au tour 1 pour pouvoir éliminer Barbéryl au tour 2.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Choisir la stratégie : tuer Barbéryl en premier (le plus simple) ou en dernier avec du retrait PM.",
+              "rationale": "Le plus grand danger est son sort d'OS en mêlée (Nindécence), débloqué en Nimpatience III ; tuée vite, elle n'a pas le temps d'y arriver."
+            },
+            {
+              "order": 2,
+              "action": "Tour 1 : booster vos personnages (et éventuellement la frapper à distance) pour la tuer au tour 2, en restant en retrait.",
+              "rationale": "Plus tard (tour 3 ou 4), elle pourra très certainement OS un personnage. Elle est dans l'état Lourd : elle ne peut pas être portée."
+            },
+            {
+              "order": 3,
+              "action": "Rester hors de portée de ses sorts et des monstres pour ne pas être touché.",
+              "rationale": "Le premier personnage touché dans le tour prend l'état « Clochecuivre » ; hors de portée de Nimparabilité (8 PO), elle ne monte pas en Nimpatience (+20 % de dommages finaux par état). Attention au Marthos qui frappe sur toute une ligne."
+            },
+            {
+              "order": 4,
+              "action": "Dès qu'un personnage a l'état « Clochecuivre », frapper Barbéryl en mêlée (personnage ou invocation) avant son tour.",
+              "rationale": "Sinon, au début de son tour, elle échange de place avec lui et lui retire 100 PM pour 1 tour. N'importe quel allié ou invocation peut faire ces dommages de mêlée."
+            },
+            {
+              "order": 5,
+              "action": "Sinon, mettre ce personnage ou Barbéryl en Pesanteur ou Enraciné (ou porter le personnage avec un Pandawa).",
+              "rationale": "Un état qui empêche l'échange de place annule l'échange et le malus de 100 PM. La Pesanteur bloque aussi le bond de Ninfernal."
+            },
+            {
+              "order": 6,
+              "action": "Ne pas la pousser quand vous la focus.",
+              "rationale": "Chaque poussée lui donne +20 % de résistances pour 2 tours (cumulable, non désenvoûtable)."
+            },
+            {
+              "order": 7,
+              "action": "Empêcher le Sanglirok de lancer « Ninspiration » sur elle (l'éloigner à plus de 5 PO, bloquer sa ligne de vue ou désenvoûter).",
+              "rationale": "Ce sort partage les dégâts entre le Sanglirok et sa cible pendant 2 tours."
+            },
+            {
+              "order": 8,
+              "action": "Si elle atteint Nimpatience III ou V, placer des invocations sur son chemin.",
+              "rationale": "Son IA a tendance à OS la première entité ennemie sur son chemin, souvent les invocations. En Nimpatience V, l'OS se lance une fois par tour."
+            },
+            {
+              "order": 9,
+              "action": "Une fois Barbéryl morte, finir les monstres restants.",
+              "rationale": "Le combat est ensuite tranquille. Succès « Dernier » : tuer les monstres d'abord (Marthos en premier) avec du retrait PM, puis Barbéryl à distance sans la repousser."
+            }
+          ]
         }
       ]
     },
@@ -2882,6 +3064,64 @@
           "sourceId": "src.dpln.grotte-du-bworker",
           "quote": "Astuce : Le Bworker frappe uniquement au càc. De ce fait il va falloir éviter qu'il vienne à votre càc en le tenant à distance (retrait PM, poussée etc..) ou tout simplement en le bloquant.",
           "locator": "IV- Présentation du Boss — Sorts du Boss"
+        },
+        {
+          "sourceId": "src.dpln.grotte-du-bworker",
+          "quote": "Dès que possible (avec un panda par exemple) placez le Bworker dans un coin et bloquez le avec deux ennemis (évitez de mettre le Cybwork qui va prendre les dommages du boss, de même pour la mama qui va le soigner).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.grotte-du-bworker",
+          "quote": "Ainsi si le Bworker n'arrive jamais à atteindre le càc d'un de vos personnage ce combat sera très simple.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne jamais laisser le Bworker atteindre le corps à corps d'un de vos personnages.",
+              "rationale": "Il frappe uniquement au càc et très fort : Sanction Bwork 2400 neutre, Correction Bwork 30 % de ses PV manquants, Fauchoir 350 et poussée de 2 cases."
+            },
+            {
+              "order": 2,
+              "action": "Option A : prendre un personnage retrait PM (par ex. un Enutrof) qui lui retire ses PM à chaque tour.",
+              "rationale": "S'il n'atteint jamais votre càc, le combat est très simple. Attention : Poursuite lui donne 3 PM tous les x tours."
+            },
+            {
+              "order": 3,
+              "action": "Option A : pendant ce temps, tuer les autres monstres avec le reste de l'équipe, et repousser le Bworker s'il avance trop.",
+              "rationale": "C'est la stratégie distance et retrait PM du guide."
+            },
+            {
+              "order": 4,
+              "action": "Option B : laisser le Bworker approcher sans qu'il atteigne votre càc, puis le placer dans un coin (un Pandawa est très utile).",
+              "position": "Bworker dans un coin de la map",
+              "rationale": "Stratégie de blocage du guide, qui demande des sorts de placement."
+            },
+            {
+              "order": 5,
+              "action": "Option B : le bloquer avec deux ennemis, mais pas le Cybwork ni la Mama.",
+              "rationale": "Le Cybwork prendrait les dommages du boss (Don de Soi) et la Mama le soignerait."
+            },
+            {
+              "order": 6,
+              "action": "Option B : mettre un allié avec beaucoup de tacle au càc de ces deux ennemis ; sinon les replacer dès qu'ils bougent.",
+              "rationale": "Pour que les monstres qui bloquent le boss ne bougent pas."
+            },
+            {
+              "order": 7,
+              "action": "Tuer ou éviter les Flammèches des Bworks en priorité.",
+              "rationale": "Elles attirent de 4 cases et explosent au càc pour environ 500, voire 1000 en coup critique, sur plusieurs personnages dès le premier tour."
+            },
+            {
+              "order": 8,
+              "action": "Succès « Baston équitable » : tuer le Bworker en premier, sans retrait PM/PA/PO ni déplacement ; sinon le coincer avec des invocations ou un tank.",
+              "rationale": "Les ennemis ne doivent subir ni retrait ni tentative de déplacement."
+            }
+          ]
         }
       ]
     },
@@ -2976,6 +3216,68 @@
           "sourceId": "src.dpln.maison-du-papa-nowel",
           "quote": "Vilain Garnement : Effet lancé dès le début du combat et qui reste durant tout le combat. Le Père Fwetar gagne 1PM pour toute la durée du combat à chaque fois qu'il subit une tentative de retrait PM (cumulable à l'infini).",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.maison-du-papa-nowel",
+          "quote": "Cependant, contrairement au Papa Nowel, il ne faut surtout pas tenter de lui retirer des PM dans le but de le rendre inoffensif car chaque tentative de retrait PM lui donnera 1PM (infini) pour le reste du combat.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.maison-du-papa-nowel",
+          "quote": "Son sort « Fwetage » n’est utilisable qu’à partir de 8PO. Si vous êtes à 7 cases ou moins de lui, il ne pourra pas vous toucher, ou il devra reculer pour le faire.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.maison-du-papa-nowel",
+          "quote": "ATTENTION : Si le Père Fwetar ne transforme pas le Poutch et lui donne 2PA il est conseillé d'éliminer le Poutch avant la relance du sort de transformation dans 3 tours.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne jamais tenter de retirer des PM au Père Fwetar (il peut être repoussé).",
+              "rationale": "Vilain Garnement : chaque tentative de retrait PM lui donne 1 PM pour tout le combat (cumulable à l'infini). Il n'a pas d'état invulnérable et seulement 2 PM."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas rester en ligne avec lui et ne jamais finir à son contact ; utiliser les obstacles.",
+              "rationale": "Aspir'nenfan attire de 3 cases en ligne, et Infantophagie OS en mêlée (il se soigne de 2100 PV)."
+            },
+            {
+              "order": 3,
+              "action": "Se tenir à 7 cases ou moins de lui, sans se coller, quand c'est possible.",
+              "rationale": "Fwetage (700 dans un élément aléatoire, chaque tour, sans ligne de vue) ne se lance qu'à partir de 8 PO."
+            },
+            {
+              "order": 4,
+              "action": "Tuer d'abord la peluche Wabbit, puis les Cadob' en butin 5+, puis la peluche Tofu, et la peluche Bouftou en dernier.",
+              "rationale": "La Wabbit soigne énormément ; le Cadob' peut invoquer un Cadob'Omb qui OS en cercle de rayon 2."
+            },
+            {
+              "order": 5,
+              "action": "Aux tours 1, 4, 7, 10… : si le Poutch Ingball n'est pas transformé, le tuer dans les 3 tours.",
+              "rationale": "S'il reçoit 2 PA deux fois, il a 4 PA et lance « Tuerie », qui OS toute l'équipe. En invoquant, le Père Fwetar gagne aussi 1 PM pour un tour."
+            },
+            {
+              "order": 6,
+              "action": "Si c'est une marionnette, s'adapter : tuer vite le Dragon Cochon (ou désenvoûter « Étourderie quasi-mortelle »), tacler/couper la vue du Bouftou Royal, garder à distance Mulou, Minotoror et Dark Vlad.",
+              "rationale": "Ne pas tuer le Milimeulou du Mulou : à sa mort, les monstres gagnent 2 PM et 200 puissance."
+            },
+            {
+              "order": 7,
+              "action": "Une fois les monstres morts, frapper le Père Fwetar, de préférence en terre.",
+              "rationale": "Il a des faiblesses terre."
+            },
+            {
+              "order": 8,
+              "action": "Le tuer en un seul tour préparé, ou le laisser vers 35-40 % de PV et le finir d'un coup au tour suivant.",
+              "rationale": "Embûche de Nowel (tous les 10 tours, vers 30 % de PV) le soigne entièrement et donne 100 puissance à tous les monstres pour 10 tours."
+            }
+          ]
         }
       ]
     },
@@ -3222,6 +3524,63 @@
           "sourceId": "src.dpln.taniegravere-givrefoux",
           "quote": "Instinct maternel (passif) : Quand un monstre du combat est éliminé, tous les monstres gagnent 1PM pour 1 tour. Fuji Givrefoux et Tengu Givrefoux gagnent également 1 000 dommages pour 1 tour. Les effets de ce sort ne sont pas débuffables.",
           "locator": "IV- Présentation du Boss — Sorts de Fuji Givrefoux"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Il faut donc faire très attention que ni Fuji ni Tengu ne puissent vous toucher quand vous éliminez un monstre.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Restez en ligne avec Fuji pour qu’elle ne puisse pas vous toucher.Son sort de dégât tape uniquement en diagonale, si vous restez en face d’elle, elle ne pourra jamais vous toucher.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Il est plutôt conseillé de focus Fuji en premier car elle n’a pas d’état invulnérable mais si vous arrivez à retirer l’invulnérabilité du Tengu au deuxième tour il peut être intéressant de l’éliminer en premier.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Prévoir une classe qui peut repousser et/ou retirer des PM.",
+              "rationale": "La map avec Tengu et Fuji est beaucoup plus petite : il est plus difficile d'éviter les dégâts."
+            },
+            {
+              "order": 2,
+              "action": "Rester en ligne avec Fuji, jamais en diagonale.",
+              "rationale": "Son sort de dégâts (Foufoux) ne tape qu'en diagonale : en face d'elle, elle ne peut jamais vous toucher."
+            },
+            {
+              "order": 3,
+              "action": "Ne jamais finir au contact de Fuji, et ne pas laisser d'invocation près d'elle.",
+              "rationale": "Progéniture OS la cible en mêlée et la remplace par un monstre aléatoire de la zone."
+            },
+            {
+              "order": 4,
+              "action": "Focus Fuji en premier (sauf si vous retirez l'invulnérabilité du Tengu dès le tour 2).",
+              "rationale": "Fuji n'a pas d'état invulnérable."
+            },
+            {
+              "order": 5,
+              "action": "Avant de tuer un monstre, vérifier que ni Fuji ni le Tengu ne pourront vous toucher.",
+              "rationale": "Instinct maternel : à chaque monstre tué, tous les monstres gagnent 1 PM pour 1 tour, Fuji et le Tengu +1 000 dommages pour 1 tour (cumulable, non débuffable)."
+            },
+            {
+              "order": 6,
+              "action": "Se cacher derrière les obstacles pour éviter l'attirance du Tengu.",
+              "rationale": "Le Tengu attire de 3 cases en ligne et ne tape qu'en mêlée."
+            },
+            {
+              "order": 7,
+              "action": "Pour le Tengu : le même tour, frapper le Yomi avec une arme quand il est en ligne avec le Tengu, et pousser ou attirer le Yokaï dans sa diagonale.",
+              "rationale": "Avec Fulguration et Floutage, le Tengu perd son invulnérabilité pour 4 tours au début de son tour suivant."
+            }
+          ]
         }
       ]
     },
@@ -4330,6 +4689,64 @@
           "sourceId": "src.dpln.clairiegravere-du-checircne-mou",
           "quote": "Il attire les personnages se trouvant en ligne avec lui puis les frappe très fort dans l’élément eau puis les repousses.",
           "locator": "Boss"
+        },
+        {
+          "sourceId": "src.dpln.clairiegravere-du-checircne-mou",
+          "quote": "Pour pouvoir retirer l’invulnérabilité des branches, il faut tuer le Chêne Mou.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.clairiegravere-du-checircne-mou",
+          "quote": "Retirez les PM du Chêne Mou afin d’éviter qu'il vous attire à ",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Placer les personnages avec le moins de PV au fond de la map.",
+              "position": "Personnages fragiles au fond de la map",
+              "rationale": "Le Chêne Mou attire les personnages en ligne avec lui, les frappe très fort en eau puis les repousse ; sans personne en ligne, il frappe à distance (environ 500 terre avec retrait de PA)."
+            },
+            {
+              "order": 2,
+              "action": "Se booster, puis désenvoûter le Chêne Mou s'il s'ajoute de la PO et lui retirer de la PO (par ex. avec un Enutrof).",
+              "rationale": "Il peut se booster énormément en PO, coups critiques et dommages."
+            },
+            {
+              "order": 3,
+              "action": "Retirer ses PM.",
+              "rationale": "Pour éviter qu'il vous attire à son corps à corps."
+            },
+            {
+              "order": 4,
+              "action": "Tuer d'abord les 2 branches.",
+              "rationale": "Elles risquent d'être très gênantes pour la suite du combat."
+            },
+            {
+              "order": 5,
+              "action": "Tuer le reste des monstres en gardant le Chêne Mou hors de portée de l'équipe.",
+              "rationale": "Stratégie indiquée par le guide."
+            },
+            {
+              "order": 6,
+              "action": "Quand il est seul, frapper le Chêne Mou en privilégiant les sorts air et eau.",
+              "rationale": "Conseil du guide ; la section expédition précise qu'il a moins de résistances dans ces deux éléments."
+            },
+            {
+              "order": 7,
+              "action": "Expédition de guilde : tuer les monstres, puis le Chêne Mou, puis seulement les branches.",
+              "rationale": "Les branches sont invulnérables tant que le Chêne Mou est en vie ; la Branche Invocatrice invoque un monstre tous les deux tours."
+            },
+            {
+              "order": 8,
+              "action": "Succès « Enchaînemou » : finir chaque tour en ligne d'un ennemi, en évitant de finir trop souvent en ligne avec le Chêne Mou.",
+              "rationale": "Le tuer en premier peut aider, car une fois seul il faudra forcément finir en ligne avec lui."
+            }
+          ]
         }
       ]
     },
@@ -4399,6 +4816,74 @@
           "sourceId": "src.dpln.excavation-du-mansot-royal",
           "quote": "ATTENTION : Si le joueur qui a reçu le soin en mêlée du Mansot Royal meurt ce dernier récupère son été invulnérable.",
           "locator": "IV- Présentation du Boss — Principe du combat / Comment rendre le Mansot Royal vulnérable ?"
+        },
+        {
+          "sourceId": "src.dpln.excavation-du-mansot-royal",
+          "quote": "Tout d'abord sachez qu'une personne pouvant soigner est plutôt utile car c'est le soin qui va vous permettre de retirer l'invulnérabilité (la glyphe d'une cawotte fonctionne aussi mais c'est un peu plus compliqué à mettre en place).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.excavation-du-mansot-royal",
+          "quote": "Le combattant désigné a une icône de cœur au dessus de lui. Il sera le seul à pouvoir être soignée et par conséquent le seul à pouvoir se coller au Mansot Royal pour lui retirer son état Invulnérable.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.excavation-du-mansot-royal",
+          "quote": "Si le Mansot Royal est invulnérable, il gagne 2PM et 30 de fuite pour 2 tours. S'il est vulnérable, il gagne 200% de son niveau en bouclier pour 2 tours.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : prévoir un personnage qui peut soigner.",
+              "rationale": "C'est un soin qui retire l'invulnérabilité du Mansot Royal (la glyphe d'une cawotte marche aussi, mais c'est plus compliqué)."
+            },
+            {
+              "order": 2,
+              "action": "Début du combat : le Mansot Royal est invulnérable. Choisir de le tuer en premier, surtout en petite équipe.",
+              "rationale": "Mansomon : chaque monstre allié qui meurt lui donne +1000 vitalité, +10 % de dommages finaux et +1 PM, sans limite de durée et non désenvoûtable."
+            },
+            {
+              "order": 3,
+              "action": "Envoyer UN personnage (pas une invocation) au corps à corps du Mansot Royal, sans aucun allié collé à lui.",
+              "position": "Au contact du boss, cases autour du personnage libres d'alliés",
+              "rationale": "Le soin déclenche Mansodah, qui frappe d'environ 200 eau les alliés au contact du personnage soigné."
+            },
+            {
+              "order": 4,
+              "action": "Le soigneur soigne ce personnage à distance, sans être collé à lui.",
+              "rationale": "Si le soigneur soigne quelqu'un à son contact, Mansodah le frappe beaucoup plus fort (environ 900)."
+            },
+            {
+              "order": 5,
+              "action": "Le Mansot Royal est vulnérable pendant 6 tours à partir de ce soin : toute l'équipe concentre ses dégâts sur lui.",
+              "rationale": "Les 6 tours commencent au moment du soin. Attention : vulnérable, il peut lancer Mansolénoïde au corps à corps et Mansoxygène lui donne un bouclier de 200 % de son niveau pendant 2 tours (non débuffable)."
+            },
+            {
+              "order": 6,
+              "action": "Protéger le personnage qui a été soigné au contact : il ne doit pas mourir.",
+              "rationale": "S'il meurt, le Mansot Royal redevient invulnérable."
+            },
+            {
+              "order": 7,
+              "action": "Option : pousser ou attirer le Mansot Royal avant de le frapper, pour se soigner, à condition de n'avoir aucun allié à côté de soi.",
+              "rationale": "Mansomnanbule (1 tour) : on se soigne de 100 % des dégâts qu'on lui inflige, mais ce soin déclenche aussi Mansodah sur les alliés au contact."
+            },
+            {
+              "order": 8,
+              "action": "S'il n'est pas mort à la fin des 6 tours, recommencer à l'étape 3.",
+              "rationale": "La vulnérabilité ne dure que 6 tours."
+            },
+            {
+              "order": 9,
+              "action": "Succès « Privilège royal » : seul le combattant désigné (icône de cœur au-dessus de lui) peut être soigné, c'est donc lui qui doit aller au contact du Mansot Royal.",
+              "rationale": "Le Mansot Royal désigne ce combattant au début de chaque tour."
+            }
+          ]
         }
       ]
     },
@@ -4537,6 +5022,58 @@
           "sourceId": "src.dpln.dojo-du-vent",
           "quote": "Hanshi réduit les dommages de mêlée de 50%.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.dojo-du-vent",
+          "quote": "Shihan réduit les dommages à distance de 50%.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.dojo-du-vent",
+          "quote": "Prévoyez donc un minimum de fuite (60/70 devrait être largement suffisant) pour au moins détacler Hanshi de 1PM si il réussi à vous bloquer à son corps à corps et ne pas faire échouer le succès Pusillanime.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Tuer d'abord les monstres avant de s'attaquer aux deux gardiens.",
+              "rationale": "Le guide le conseille de préférence."
+            },
+            {
+              "order": 2,
+              "action": "Frapper Hanshi plutôt à distance, et Shihan plutôt en mêlée.",
+              "rationale": "Hanshi et Shihan se partagent les dommages subis ; Hanshi réduit les dommages de mêlée de 50 %, Shihan les dommages à distance de 50 %."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas rester en ligne avec Hanshi à 7 PO ou moins.",
+              "rationale": "Da Bàng (200 terre) attire la cible jusqu'à son corps à corps, uniquement en ligne jusqu'à 7 PO."
+            },
+            {
+              "order": 4,
+              "action": "Prévoir 60 à 70 de fuite (ou Stabilisation du Pandawa, Brume/Invisibilité du Sram) pour sortir de son contact.",
+              "rationale": "Jufang applique Pesanteur et Indéplaçable à la cible et à lui-même ; il perd 100 PM mais gagne 50 de tacle pendant 1 tour (relance de 3 tours)."
+            },
+            {
+              "order": 5,
+              "action": "Se méfier de ses seuils de PV : rester loin quand il approche de 2 900 puis 1 450 PV.",
+              "rationale": "À 2 900 PV il gagne 4 PM pour 2 tours ; à 1 450 PV, 4 PM et 20 % de dommages mêlée pour 2 tours."
+            },
+            {
+              "order": 6,
+              "action": "Succès « Dernier » (Hanshi achevé en dernier) : rush Shihan en mêlée.",
+              "rationale": "Hanshi perdra ainsi moins de PV que Shihan, et vous pourrez tuer Shihan sans tuer Hanshi."
+            },
+            {
+              "order": 7,
+              "action": "Succès « Vents contraires » : n'infliger à Hanshi que des dommages à distance.",
+              "rationale": "Hanshi maîtrise le souffle du Wukang : il ne doit subir que des dommages à distance."
+            }
+          ]
         }
       ]
     },
@@ -4588,6 +5125,48 @@
           "sourceId": "src.dpln.dojo-du-vent",
           "quote": "Shihan réduit les dommages à distance de 50%.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.dojo-du-vent",
+          "quote": "Pour ce succès, il faut tuer Hanshi en dernier, sachant que Hanshi et Shihan partagent leurs dommages subis et que Hanshi réduit les dégâts de mêlée de 50% alors que Shihan réduit de 50% les dégâts à distance, il est préférable de rush Shihan en mêlée. ",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Tuer d'abord les monstres avant de s'attaquer aux deux gardiens.",
+              "rationale": "Le guide le conseille de préférence."
+            },
+            {
+              "order": 2,
+              "action": "Frapper Shihan plutôt en mêlée, et Hanshi plutôt à distance.",
+              "rationale": "Shihan et Hanshi se partagent les dommages subis ; Shihan réduit les dommages à distance de 50 %, Hanshi les dommages de mêlée de 50 %."
+            },
+            {
+              "order": 3,
+              "action": "Se méfier de son piège Qìkǒng et de sa Grande Lame du Vent (en ligne).",
+              "rationale": "Qìkǒng (150 feu) téléporte l'ennemi le plus proche à son corps à corps ; Grande Lame du Vent (270 air, ligne de 5, jusqu'à 7 PO) repousse de 3 cases et pose un glyphe qui retire 2 PM."
+            },
+            {
+              "order": 4,
+              "action": "Anticiper ses seuils de PV à 4 350 et 1 450 PV.",
+              "rationale": "À chaque seuil, Shihan gagne 2 PM pour 2 tours."
+            },
+            {
+              "order": 5,
+              "action": "Succès « Dernier » (Hanshi achevé en dernier) : rush Shihan en mêlée pour le tuer avant Hanshi.",
+              "rationale": "Hanshi perdra moins de PV que Shihan grâce à sa réduction de mêlée."
+            },
+            {
+              "order": 6,
+              "action": "Succès « Vents contraires » : n'infliger à Shihan que des dommages en mêlée.",
+              "rationale": "Shihan maîtrise le souffle du Wukin : il ne doit subir que des dommages en mêlée."
+            }
+          ]
         }
       ]
     },
@@ -4818,6 +5397,58 @@
           "sourceId": "src.dpln.caverne-d-el-piko",
           "quote": "Lorsqu'un personnage finit son tour, tous les autres personnages sur une cellule adjacente avec lui subissent des dégâts.",
           "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.caverne-d-el-piko",
+          "quote": "Tout d’abord il faut savoir que El Piko possède un renvoie de 50 dommages pour chaque ligne de dégâts subis pour tout le combat (caractéristiques de base du monstre).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.caverne-d-el-piko",
+          "quote": "Faites attention à ne pas finir en mêlée avec des alliés pendant toute la durée du combat afin de ne pas leur infliger de dommages.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.caverne-d-el-piko",
+          "quote": "Commencez par tuer les monstres en mettant la priorité sur le(s) Lévito(s).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne jamais finir son tour au contact d'un allié, pendant tout le combat.",
+              "rationale": "Guerillero : quand un personnage finit son tour, tous les personnages sur une case adjacente subissent 110 de dégâts (élément selon l'état Tactique)."
+            },
+            {
+              "order": 2,
+              "action": "Tuer en priorité le(s) Lévito(s).",
+              "rationale": "Ils peuvent retirer plusieurs PA et PM et appliquer différents états qui compliquent le combat."
+            },
+            {
+              "order": 3,
+              "action": "Tuer ensuite les autres monstres en jouant plutôt à distance.",
+              "rationale": "Plusieurs sorts des monstres et d'El Piko se lancent uniquement en mêlée (ex. Pikak, 300 de dégâts)."
+            },
+            {
+              "order": 4,
+              "action": "Ne pas s'inquiéter des états Tactique A/B/C/D.",
+              "rationale": "Ils sont tirés au hasard à chaque début de tour d'El Piko et ne changent que très légèrement le combat."
+            },
+            {
+              "order": 5,
+              "action": "Une fois les monstres morts, focus El Piko seul.",
+              "rationale": "Il n'a pas d'état invulnérable mais renvoie 50 dommages pour chaque ligne de dégâts subie, pendant tout le combat."
+            },
+            {
+              "order": 6,
+              "action": "Succès « Blitzkrieg » : préparer un tour de dégâts boostés pour le tuer en un tour, et éviter de le faire en Tactique A si vous manquez de force de frappe.",
+              "rationale": "Un ennemi attaqué doit être achevé avant son tour ; Tactique A donne 10 % de résistances à tous les ennemis pendant 1 tour."
+            }
+          ]
         }
       ]
     },

@@ -21,7 +21,9 @@ public sealed record ResultLine(SearchResult Result)
     public bool MatchedAlias => !string.Equals(Result.MatchedText, Result.Entity.CanonicalName, StringComparison.Ordinal) && Result.Kind != SearchMatchKind.MechanicText;
     public string MechanicsLabel => Result.MechanicCount == 0
         ? Loc.Instance["Browser.NoMechanic"]
-        : Loc.Instance.Format("Browser.MechanicCount", Result.MechanicCount, GuidancePresenter.VerificationLabel(Result.BestMechanicVerification));
+        : GuidancePresenter.BadgeLabel(Result.BestMechanicVerification) is { Length: > 0 } badge
+            ? Loc.Instance.Format("Browser.MechanicCount", Result.MechanicCount, badge)
+            : Loc.Instance.Format("Browser.MechanicCountPlain", Result.MechanicCount);
     public Tone Tone => Result.MechanicCount == 0 ? Tone.Neutral : GuidancePresenter.VerificationTone(Result.BestMechanicVerification);
     /// <summary>Small picture for result lists; null shows the initial-letter placeholder.</summary>
     public System.Windows.Media.ImageSource? Thumbnail => EntityImageProvider.Current?.Get(Result.Entity, EntityImageProvider.ThumbnailSize);

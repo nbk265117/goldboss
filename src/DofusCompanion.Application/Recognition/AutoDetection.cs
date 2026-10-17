@@ -1,4 +1,5 @@
 using DofusCompanion.Application.Imaging;
+using DofusCompanion.Application.Matching;
 using DofusCompanion.Domain;
 
 namespace DofusCompanion.Application.Recognition;
@@ -52,6 +53,19 @@ public sealed class ImageFingerprint
     }
 }
 
+/// <summary>Map coordinates as shown at the top left of the game ("-82,-48", "[-82, -48]", "-82 , -48").</summary>
+public static partial class MapCoordinates
+{
+    [System.Text.RegularExpressions.GeneratedRegex(@"(?<![\d.,])(-?\d{1,3})\s*[,;]\s*(-?\d{1,3})(?![\d.,])(?!\s*%)")]
+    private static partial System.Text.RegularExpressions.Regex Pattern();
+
+    public static IReadOnlyList<(int X, int Y)> Find(string text) => Pattern().Matches(text)
+        .Select(m => (X: int.Parse(m.Groups[1].Value, System.Globalization.CultureInfo.InvariantCulture), Y: int.Parse(m.Groups[2].Value, System.Globalization.CultureInfo.InvariantCulture)))
+        .Where(c => Math.Abs(c.X) <= 200 && Math.Abs(c.Y) <= 200)
+        .Distinct()
+        .ToList();
+}
+
 public enum AutoDetectAction
 {
     /// <summary>Nothing reliable found, or the same entity is already shown.</summary>
@@ -69,7 +83,7 @@ public sealed record AutoDetectDecision(AutoDetectAction Action, GameEntity? Ent
 /// monster, area/map. A new entity is shown only when two consecutive scans agree (an exact boss name is
 /// shown at once), so a name glimpsed once in the chat does not hijack the overlay.
 /// </summary>
-public sealed class AutoDetectDecider(double minScore = 0.88)
+public sealed partial class AutoDetectDecider(double minScore = 0.88)
 {
     private string? _pendingId;
     private int _pendingHits;
@@ -85,14 +99,40 @@ public sealed class AutoDetectDecider(double minScore = 0.88)
         _ => 9,
     };
 
-    /// <summary>One-shot choice (detect button): the best reliable candidate by priority, no confirmation scan.</summary>
-    public static AutoDetectDecision Pick(IReadOnlyList<RecognizedCandidate> candidates, double minScore = 0.88)
+    /// <summary>
+    /// One-shot choice (detect button): the best reliable candidate by priority, no confirmation scan. When a
+    /// dungeon/area is recognised too, <paramref name="bossesIn"/> (place id → its bosses) keeps only the bosses of
+    /// that place: a boss name read in the chat must not win over the dungeon the player is in. If none of the
+    /// recognised bosses belongs to it, the place itself is shown (its sheet lists its bosses).
+    /// </summary>
+    public static AutoDetectDecision Pick(IReadOnlyList<RecognizedCandidate> candidates, double minScore = 0.88,
+        IReadOnlyDictionary<string, IReadOnlySet<string>>? bossesIn = null)
     {
-        var reliable = candidates.Where(c => c.Score >= minScore && Priority(c.Entity.Type) < 9).ToList();
+        var reliable = WithoutChat(candidates).Where(c => c.Score >= minScore && Priority(c.Entity.Type) < 9).ToList();
+        if (bossesIn is { Count: > 0 })
+        {
+            var local = bossesIn.Values.SelectMany(b => b).ToHashSet(StringComparer.Ordinal);
+            reliable.RemoveAll(c => c.Entity.Type == EntityType.Boss && !local.Contains(c.Entity.Id));
+        }
+
         var monsters = reliable.Where(c => c.Entity.Type is EntityType.Monster or EntityType.Boss).Select(c => c.Entity).DistinctBy(e => e.Id).ToList();
-        var best = reliable.OrderBy(c => Priority(c.Entity.Type)).ThenByDescending(c => c.Score).FirstOrDefault();
+        // A name alone on its line (the map name at the top left, a hovered monster's tooltip) beats a name found
+        // inside a sentence.
+        var best = reliable.OrderBy(c => Priority(c.Entity.Type)).ThenByDescending(IsWholeLine).ThenByDescending(c => c.Score).FirstOrDefault();
         return new AutoDetectDecision(best is null ? AutoDetectAction.None : AutoDetectAction.Show, best?.Entity, best?.Score ?? 0, monsters);
     }
+
+    [System.Text.RegularExpressions.GeneratedRegex(@"^\W{0,3}\[?\d{1,2}[:h]\d{2}\]")]
+    private static partial System.Text.RegularExpressions.Regex ChatTimestamp();
+
+    /// <summary>A chat message ("[16:32] Les portes de l'Antre du Kralamoure Géant sont ouvertes."): not what is on the map.</summary>
+    public static bool IsChatLine(string ocrText) => ChatTimestamp().IsMatch(ocrText.TrimStart());
+
+    public static IEnumerable<RecognizedCandidate> WithoutChat(IEnumerable<RecognizedCandidate> candidates) =>
+        candidates.Where(c => !IsChatLine(c.OcrText));
+
+    private static bool IsWholeLine(RecognizedCandidate c) =>
+        TextNormalizer.Normalize(c.OcrText).Length <= TextNormalizer.Normalize(c.MatchedName).Length + 4;
 
     public void Reset()
     {

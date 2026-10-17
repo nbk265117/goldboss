@@ -122,6 +122,10 @@ public class SeedAndImportTests
         // Search shows the bosses' mechanics count for the dungeon, not "no documented mechanic".
         var hit = (await host.Knowledge.SearchAsync("memoire d'orukam")).First(r => r.Entity.Id == "dungeon.memoire-d-orukam");
         Assert.True(hit.MechanicCount > 0);
+
+        // Detection uses the bosses of the dungeon on screen.
+        var bosses = await host.Knowledge.GetBossIdsInAsync("dungeon.memoire-d-orukam");
+        Assert.Contains(boss.Entity.Id, bosses);
     }
 
     [Fact]

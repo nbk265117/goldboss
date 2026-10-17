@@ -116,6 +116,13 @@ public sealed partial class OverlayViewModel : ObservableObject
         await Detail.ShowAsync(id);
     }
 
+    /// <summary>Click on a monster/boss chip of the current fight.</summary>
+    [RelayCommand]
+    private async Task ShowObservedAsync(DofusCompanion.Domain.GameEntity? entity)
+    {
+        if (entity is not null) await ShowEntityAsync(entity.Id);
+    }
+
     [RelayCommand]
     private void ToggleCompact() => Compact = !Compact;
 

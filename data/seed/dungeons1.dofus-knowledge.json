@@ -3111,6 +3111,53 @@
           "sourceId": "src.dpln.malice",
           "quote": "Lorsque vous tapez un personnage vulnérable il devient invulnérable et gagne 200 de puissance (infini et cumulable). ",
           "locator": "II- Combattre Malice"
+        },
+        {
+          "sourceId": "src.dpln.malice",
+          "quote": "ATTENTION : Vous devez absolument être seul dans le combat avant le tour 15 sinon vous perdez tous !",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Venir à 4 personnages au total pour lancer le combat.",
+              "rationale": "Il faut être au minimum 4 personnages pour affronter Malice (vous et 3 amis)."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas s'inquiéter de ses points de vie avant d'entrer.",
+              "rationale": "Dès le début du combat, tous les personnages sont automatiquement soignés."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas frapper Malice : se battre entre alliés.",
+              "rationale": "Malice reste toujours invulnérable. C'est une sorte de Battle Royal : il faut être le dernier survivant."
+            },
+            {
+              "order": 4,
+              "action": "Frapper le ou les alliés vulnérables (la plupart sont invulnérables).",
+              "rationale": "Seulement un ou deux alliés sont vulnérables, et pas longtemps."
+            },
+            {
+              "order": 5,
+              "action": "Après chaque coup, chercher le nouvel allié vulnérable et le frapper à son tour.",
+              "rationale": "Un personnage vulnérable frappé devient invulnérable et gagne 200 de puissance (infini et cumulable), puis un autre devient vulnérable, et ainsi de suite."
+            },
+            {
+              "order": 6,
+              "action": "Faire en sorte qu'il ne reste qu'un seul personnage avant le tour 15.",
+              "rationale": "Si vous n'êtes pas seul dans le combat avant le tour 15, tout le monde perd."
+            },
+            {
+              "order": 7,
+              "action": "Viser la dernière place pour maximiser les badges.",
+              "rationale": "Le dernier survivant gagne 5 Badges de Malicien, les autres 1 seul."
+            }
+          ]
         }
       ]
     },
@@ -4943,6 +4990,68 @@
           "sourceId": "src.dpln.tempete-de-l-eliocalypse",
           "quote": "Guerre : Ne devient vulnérable qu'une fois qu'elle est seule sur le terrain.",
           "locator": "III- Présentation des Boss — Principe du combat (rappel des cavaliers)"
+        },
+        {
+          "sourceId": "src.dpln.tempete-de-l-eliocalypse",
+          "quote": "Guerre perd son état Invulnérable que lorsqu’elle est seule sur le terrain. Il faudra donc obligatoirement la focus en dernier. Il peut être intéressant de la tacler avec un personnage tank afin qu’elle ne vous embête pas trop en attendant.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.tempete-de-l-eliocalypse",
+          "quote": "Cependant le sort qui met l’état Brave a une portée maximale de 3, c’est pourquoi il est possible de l’éviter en restant suffisamment loin de Guerre. Tous vos personnages pourront alors la taper sans aucune contrainte.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.tempete-de-l-eliocalypse",
+          "quote": "IMPORTANT : Si le personnage qui invoque le Feu Primordial meurt, le combat est automatiquement perdu !",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Mettre un personnage tank en tête d'initiative : c'est lui qui invoque le Feu Primordial, le garder en vie.",
+              "rationale": "Le premier en initiative invoque le Feu Primordial au centre ; si ce personnage meurt, le combat est automatiquement perdu."
+            },
+            {
+              "order": 2,
+              "action": "Garder Guerre pour la fin : tuer d'abord Corruption, puis Servitude, puis Misère.",
+              "rationale": "Guerre est invulnérable tant qu'elle n'est pas seule sur le terrain ; ordre conseillé Corruption > Servitude > Misère > Guerre."
+            },
+            {
+              "order": 3,
+              "action": "En attendant, tacler Guerre avec un personnage tank.",
+              "rationale": "Le guide conseille de la tacler avec un tank (par exemple un Féca) pour qu'elle ne vous embête pas trop."
+            },
+            {
+              "order": 4,
+              "action": "Une fois seule, Guerre devient vulnérable : choisir de tuer ses armes ou de l'ignorer et la frapper à distance.",
+              "rationale": "Elle devient vulnérable en montant sur sa monture au début de son tour ; tous les 20 % de PV retirés, elle invoque une arme qui frappe en zone."
+            },
+            {
+              "order": 5,
+              "action": "Si vous tuez les armes : déclencher le seuil juste après le tour de Guerre, puis tuer l'arme avant qu'elle ne rejoue.",
+              "rationale": "Si une arme est en vie à son tour, Guerre se boost ; si vous tuez l'arme après qu'elle a joué avec, Guerre gagne résistances, PM et se soigne."
+            },
+            {
+              "order": 6,
+              "action": "Si vous ignorez les armes : frapper Guerre à distance, le plus loin possible d'elle et de ses armes.",
+              "rationale": "Vous subissez ainsi le moins de dégâts possible."
+            },
+            {
+              "order": 7,
+              "action": "Rester à plus de 3 cases de Guerre pour éviter l'état Brave.",
+              "rationale": "1 tour sur 3, elle place un personnage en état Brave (2 tours) ; les autres passent Pacifiste 1 tour après une ligne de dommages. Le sort a une portée maximale de 3."
+            },
+            {
+              "order": 8,
+              "action": "Succès Hardi : ne jamais laisser Guerre jouer avec une arme en vie ; frapper jusqu'au seuil, déclencher le seuil après son tour, tuer l'arme, et répéter à chaque seuil.",
+              "rationale": "Bloquer la ligne de vue du Feu Primordial avec une invocation pour éviter qu'il fasse passer un seuil au mauvais moment."
+            }
+          ]
         }
       ]
     },
@@ -5006,6 +5115,58 @@
           "sourceId": "src.dpln.tempete-de-l-eliocalypse",
           "quote": "Elle monte sur sa monture quand elle atteint son seuil de 50% PV.",
           "locator": "III- Présentation des Boss — Principe du combat (rappel des cavaliers)"
+        },
+        {
+          "sourceId": "src.dpln.tempete-de-l-eliocalypse",
+          "quote": "L’idéal étant de passer son seuil avec un personnage qui joue parmi les premiers en initiative car elle redeviendra vulnérable au tour suivant au tour de ce même personnage. Vous aurez ainsi un tour complet pour la finir.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.tempete-de-l-eliocalypse",
+          "quote": "Dans un premier temps, il faudra uniquement la focus à distance tout en la repoussant à chaque tour afin qu’elle vous inflige le moins de dégâts possible. ",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Se placer en prévoyant l'attirance de Misère.",
+              "rationale": "Elle attire toutes les entités vers elle au début de son tour et quand elle subit des dégâts (1 à 4 cases, plus elle a de PV moins elle attire), y compris au tour du Feu Primordial qui la frappe s'il la voit."
+            },
+            {
+              "order": 2,
+              "action": "Garder Misère à distance tant que Corruption et Servitude ne sont pas morts.",
+              "rationale": "En première phase elle n'est pas dangereuse ; il faut éviter qu'elle vous touche, notamment avec Dahkma."
+            },
+            {
+              "order": 3,
+              "action": "Si un allié est touché par Dahkma, lui lancer un sort de dégâts pour retirer l'effet.",
+              "rationale": "Dahkma rend la cible invulnérable, la renvoie à sa case de début de tour et lui retire 100 PA et PM pendant 1 tour."
+            },
+            {
+              "order": 4,
+              "action": "Quand c'est son tour d'être focus : la frapper à distance en la repoussant à chaque tour.",
+              "rationale": "Elle vous inflige ainsi le moins de dégâts possible."
+            },
+            {
+              "order": 5,
+              "action": "Faire passer son seuil (50 % PV) avec un personnage qui joue parmi les premiers en initiative.",
+              "rationale": "Elle monte sur sa monture et devient invulnérable 1 tour ; elle redevient vulnérable au tour de ce même personnage, ce qui laisse un tour complet pour la finir."
+            },
+            {
+              "order": 6,
+              "action": "Pendant son tour d'invulnérabilité, se booster au maximum (option : Féca « Trêve » ou Enutrof « Corruption » pour annuler son tour suivant).",
+              "rationale": "Il faut l'éliminer avant qu'elle ne rejoue."
+            },
+            {
+              "order": 7,
+              "action": "La tuer d'une traite ; sinon, se soigner et se protéger.",
+              "rationale": "Si vous ne pouvez pas la finir en 1 tour, protégez-vous pour qu'elle ne puisse pas vous anéantir."
+            }
+          ]
         }
       ]
     },
@@ -5040,6 +5201,73 @@
           "sourceId": "src.dpln.tempete-de-l-eliocalypse",
           "quote": "Pour lui infliger des dégâts, il faut être dans l’état traître qui s’obtient en finissant son tour dans le glyphe blanc qu’il pose tous les deux tours.",
           "locator": "III- Présentation des Boss — Principe du combat (rappel des cavaliers)"
+        },
+        {
+          "sourceId": "src.dpln.tempete-de-l-eliocalypse",
+          "quote": "Servitude renvoie 200% des dommages qui lui sont infligés. Pour ne pas être affecté par ce renvoi, il faut obtenir des états « Traître » qui peuvent s’incrémenter jusqu’à 5.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.tempete-de-l-eliocalypse",
+          "quote": "ATTENTION : Ne consommez jamais votre dernier état sinon vous serez obligé de le récupérer dans un glyphe. Gardez 1 état de Traîtrise et réincrémentez-vous en tapant vos alliés.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.tempete-de-l-eliocalypse",
+          "quote": "Lorsque Servitude atteint son seuil de 1PV, il effectuera un rollback et se soignera de 25% de ses PV. Pour éviter ce soin, il est fortement recommandé de lui appliquer l’état Insoignable (Prohibiton du Pandawa, Fougue du Zobal) avant de lui faire passer son seuil.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Tuer Corruption d'abord, puis focus Servitude en deuxième.",
+              "rationale": "Ordre conseillé : Corruption > Servitude > Misère > Guerre."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas frapper Servitude sans protection : obtenir l'état « Traître » en finissant son tour dans un glyphe blanc.",
+              "rationale": "Servitude renvoie 200 % des dommages subis ; il pose un glyphe blanc tous les deux tours (tours 2, 4, 6…), qui reste tant que personne n'y a fini son tour."
+            },
+            {
+              "order": 3,
+              "action": "Finir son tour sur les glyphes avec les personnages qui font le plus de dégâts, dès que possible.",
+              "rationale": "Si le glyphe est sous le Feu Primordial, c'est lui qui prend l'état Traître, ce qui est inutile."
+            },
+            {
+              "order": 4,
+              "action": "Monter l'état Traître (jusqu'à 5) en frappant ses alliés.",
+              "rationale": "+1 incrémentation par ligne de dégâts sur un allié."
+            },
+            {
+              "order": 5,
+              "action": "Frapper Servitude : 1 ligne de dégâts par état, mais ne jamais consommer le dernier état.",
+              "rationale": "Sinon il faut retourner le chercher dans un glyphe ; garder 1 état et se réincrémenter sur ses alliés."
+            },
+            {
+              "order": 6,
+              "action": "Avec un Féca : protéger les gros frappeurs (Barricade, Bastion, Ataraxie) pour frapper sans état Traître.",
+              "rationale": "Le guide indique que ces sorts permettent de taper Servitude sans subir de dégâts."
+            },
+            {
+              "order": 7,
+              "action": "Placer Servitude en ligne de vue du Feu Primordial à chaque tour.",
+              "rationale": "Le Feu Primordial lui ajoute 600 de dégâts par tour."
+            },
+            {
+              "order": 8,
+              "action": "Continuer d'éliminer les Armécréantes au fur et à mesure.",
+              "rationale": "Servitude en invoque une au premier tour puis tous les deux tours (6 maximum en vie)."
+            },
+            {
+              "order": 9,
+              "action": "Avant de le mettre à 1 PV, lui appliquer l'état Insoignable (Prohibition du Pandawa, Fougue du Zobal), puis le finir.",
+              "rationale": "À 1 PV, il ramène tout le monde aux positions de début de combat et se soigne de 25 % de ses PV."
+            }
+          ]
         }
       ]
     },
@@ -5131,6 +5359,74 @@
           "sourceId": "src.dpln.temple-de-gargandyas",
           "quote": "Gargandyas reste vulnérable pendant 2 tours complets (il redevient invulnérable dans 2 tours, au tour du personnage qui a achevé le dernier monstre). ",
           "locator": "IV- Présentation de Gargandyas — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.temple-de-gargandyas",
+          "quote": "Pour le rendre vulnérable, il faut éliminer les 3 monstres qu'il a invoqué. Au moment où le dernier monstre est achevé, il tombera lourdement sur le sol et perdra son état invulnérable. Pendant la durée de sa vulnérabilité, il ne pourra pas jouer et vous pourrez le taper autant que vous voulez. ",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.temple-de-gargandyas",
+          "quote": "Quand un personnage est dans l’état Bénidyas, tous les personnages doivent se rassembler dans le glyphe bleu autour de lui avant le prochain tour de Gargandyas sous peine d’être OS.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.temple-de-gargandyas",
+          "quote": "Sur les côtés, vous n’aurez qu’à faire attention au sort « Rafale Bestiale » qui ramène vers le milieu. Les coups de pattes et le Gargameha ne pourront pas vous toucher.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Venir à 4 personnages, avec du retrait PM et du soin.",
+              "rationale": "Le combat se fait à 4 maximum et il est déconseillé d'être moins ; le retrait PM gère les monstres à distance, le soin aide à tenir sur la durée."
+            },
+            {
+              "order": 2,
+              "action": "Dès qu'un personnage reçoit l'état Bénidyas, rassembler toute l'équipe dans le glyphe bleu autour de lui avant le prochain tour de Gargandyas.",
+              "rationale": "Rituel Primordial : tous les personnages hors du glyphe sont OS (phases 1 à 3). Zone : cercle 3 en phase 1, carré 1 en phase 2, croix 1 en phase 3."
+            },
+            {
+              "order": 3,
+              "action": "Se placer sur les côtés de la map, en évitant les 3 lignes du côté où tombe la prochaine Rafale Bestiale.",
+              "position": "Bords gauche/droite du terrain",
+              "rationale": "Sur les côtés, coups de patte et Gargameha ne touchent pas. Rafale Bestiale (dès le tour 2, puis tous les 2 tours, gauche puis droite) inflige 500 air, repousse de 7 cases vers le milieu et retire 20 % de résistances pendant 3 tours."
+            },
+            {
+              "order": 4,
+              "action": "Ne jamais finir son tour dans un glyphe rouge de coup de patte.",
+              "rationale": "Impact Sauvagial : 2000 feu dans la zone au moment du coup, 1500 si on traverse le glyphe, OS si on y termine son tour."
+            },
+            {
+              "order": 5,
+              "action": "Gargandyas est invulnérable : éliminer ses monstres (3 en phase 1, 4 en phase 2) en les tenant à distance.",
+              "rationale": "Quand le dernier monstre meurt, il tombe au sol et perd son état invulnérable. À partir de la phase 2, les monstres qui apparaissent sont invulnérables 1 tour."
+            },
+            {
+              "order": 6,
+              "action": "Ne pas être dans le glyphe rouge où il tombe ; achever le dernier monstre avec votre personnage placeur.",
+              "rationale": "Être dans la zone au moment de sa chute = OS. Les monstres de la phase suivante apparaissent près de vous."
+            },
+            {
+              "order": 7,
+              "action": "Pendant les 2 tours au sol, frapper Gargandyas sur les 6 cases autour de lui jusqu'à son seuil (50 000 PV en phase 1, 1 000 PV en phase 2).",
+              "rationale": "Il subit 100 % de dégâts en plus. S'il se réveille sans seuil atteint, il retire 3 tours d'envoûtements et inflige 1 000 terre + 1 000 neutre à tous."
+            },
+            {
+              "order": 8,
+              "action": "Phase 3 : éliminer les 5 monstres en gérant ses poussées/attirances de 6 cases, puis frapper la Corruption du graogarm avant la fin de son 3e tour.",
+              "rationale": "Gargandyas n'est plus frappable. La Corruption a 100 000 PV, subit 4 fois plus de dégâts ; sinon elle inflige des dégâts neutres à tous. Pour fuir, le faire avant qu'elle disparaisse."
+            },
+            {
+              "order": 9,
+              "action": "Phase 4 : Gargandyas est allié ; focus vite la Déchireuse ou le Supervizoeuf, ou tenir le Vénérable Endormi à distance et tuer les monstres d'abord.",
+              "rationale": "Le combat se termine quand le boss et ses 5 monstres sont éliminés ; placer les monstres dans les zones des sorts de Gargandyas."
+            }
+          ]
         }
       ]
     },

@@ -19,7 +19,10 @@ public sealed partial class FightContext : ObservableObject
     [ObservableProperty] public partial int? TurnNumber { get; set; }
     [ObservableProperty] public partial bool RosterIsComplete { get; set; }
 
+    /// <summary>Monsters and bosses seen in the current fight (each detection adds to it: rooms with several monsters, waves).</summary>
     public ObservableCollection<GameEntity> ObservedEntities { get; } = [];
+
+    public bool HasObserved => ObservedEntities.Count > 0;
 
     public event EventHandler? Changed;
 
@@ -33,12 +36,14 @@ public sealed partial class FightContext : ObservableObject
     public void AddObserved(GameEntity entity)
     {
         if (ObservedEntities.All(e => e.Id != entity.Id)) ObservedEntities.Add(entity);
+        OnPropertyChanged(nameof(HasObserved));
         Changed?.Invoke(this, EventArgs.Empty);
     }
 
     public void Reset()
     {
         ObservedEntities.Clear();
+        OnPropertyChanged(nameof(HasObserved));
         TurnNumber = null;
         RosterIsComplete = false;
         Changed?.Invoke(this, EventArgs.Empty);

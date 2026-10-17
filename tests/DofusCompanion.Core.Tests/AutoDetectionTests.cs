@@ -6,8 +6,29 @@ namespace DofusCompanion.Core.Tests;
 
 public class AutoDetectionTests
 {
-    private static RecognizedCandidate C(string id, EntityType type, double score) =>
-        new(new GameEntity { Id = id, Type = type, CanonicalName = id }, score, id, id, null, "original");
+    private static RecognizedCandidate C(string id, EntityType type, double score, string? line = null) =>
+        new(new GameEntity { Id = id, Type = type, CanonicalName = id }, score, id, line ?? id, null, "original");
+
+    [Fact]
+    public void Real_case_chat_message_about_kralamoure_while_in_royalmouth()
+    {
+        const string chat = "[16:32] Les portes de l'Antre du Kralamoure Géant sont";
+        var candidates = new[]
+        {
+            C("dungeon.antre-du-kralamoure-geant", EntityType.Dungeon, 1.0, chat),
+            C("boss.kralamoure-geant", EntityType.Boss, 1.0, chat),
+            C("boss.royalmouth", EntityType.Boss, 1.0, "Serre du Royalmouth"),
+            C("dungeon.serre-du-royalmouth", EntityType.Dungeon, 1.0, "Serre du Royalmouth"),
+        };
+        var bossesIn = new Dictionary<string, IReadOnlySet<string>>
+        {
+            ["dungeon.antre-du-kralamoure-geant"] = new HashSet<string> { "boss.kralamoure-geant" },
+            ["dungeon.serre-du-royalmouth"] = new HashSet<string> { "boss.royalmouth" },
+        };
+        Assert.Equal("boss.royalmouth", AutoDetectDecider.Pick(candidates, bossesIn: bossesIn).Entity!.Id);
+        Assert.True(AutoDetectDecider.IsChatLine("[16:05] (Guilde) Message de guilde"));
+        Assert.False(AutoDetectDecider.IsChatLine("Serre du Royalmouth"));
+    }
 
     [Fact]
     public void Exact_boss_is_shown_immediately()
@@ -56,6 +77,34 @@ public class AutoDetectionTests
         Assert.Empty(r.MonstersSeen); // the low-score monster is not trusted
         Assert.Equal(AutoDetectAction.None, AutoDetectDecider.Pick([C("boss.a", EntityType.Boss, 0.7)]).Action);
     }
+
+    [Fact]
+    public void Boss_read_in_chat_does_not_win_over_the_dungeon_on_screen()
+    {
+        // In Royalmouth's room the map name is read, and "Kralamoure" appears in the chat.
+        var bossesIn = new Dictionary<string, IReadOnlySet<string>> { ["dungeon.serre"] = new HashSet<string> { "boss.royalmouth" } };
+        var chatOnly = AutoDetectDecider.Pick([C("boss.kralamoure", EntityType.Boss, 1.0), C("dungeon.serre", EntityType.Dungeon, 1.0)], bossesIn: bossesIn);
+        Assert.Equal("dungeon.serre", chatOnly.Entity!.Id); // the dungeon sheet shows Royalmouth's steps
+
+        var both = AutoDetectDecider.Pick([C("boss.kralamoure", EntityType.Boss, 1.0), C("boss.royalmouth", EntityType.Boss, 0.95), C("dungeon.serre", EntityType.Dungeon, 1.0)], bossesIn: bossesIn);
+        Assert.Equal("boss.royalmouth", both.Entity!.Id);
+
+        // No place recognised: unchanged behaviour.
+        Assert.Equal("boss.kralamoure", AutoDetectDecider.Pick([C("boss.kralamoure", EntityType.Boss, 1.0)]).Entity!.Id);
+    }
+
+    [Theory]
+    [InlineData("Serre du Royalmouth -82,-48", -82, -48)]
+    [InlineData("[-82, -48] Niveau 190", -82, -48)]
+    [InlineData("Ile de Frigost -82 , -48", -82, -48)]
+    [InlineData("pos 3,7", 3, 7)]
+    public void Map_coordinates_are_read(string text, int x, int y) => Assert.Contains((x, y), MapCoordinates.Find(text));
+
+    [Theory]
+    [InlineData("1,5 % de chance")]
+    [InlineData("12,345 kamas")]
+    [InlineData("3,14.5")]
+    public void Numbers_that_are_not_coordinates_are_ignored(string text) => Assert.Empty(MapCoordinates.Find(text));
 
     [Fact]
     public void Low_scores_are_ignored()

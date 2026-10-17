@@ -69,7 +69,7 @@ public sealed class JsonSettingsStore : ISettingsStore
         s.ScreenshotRetentionDays = (int)Clamp(s.ScreenshotRetentionDays, 1, 365, 7);
         s.SearchHistory ??= [];
         if (s.SearchHistory.Count > 50) s.SearchHistory = s.SearchHistory.Take(50).ToList();
-        if (s.Language is not ("fr" or "en")) s.Language = "fr";
+        if (s.Language is not ("fr" or "en" or "ar")) s.Language = "fr"; // ar = Moroccan Darija
         if (s.Theme is not ("Dark" or "Light")) s.Theme = "Dark";
         s.HotkeyToggleOverlay ??= "";
         s.HotkeyToggleClickThrough ??= "";

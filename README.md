@@ -127,6 +127,9 @@ Conseils :
 - Pour montrer l'overlay sur **Discord**, partage ton **écran entier** (pas seulement la fenêtre Dofus).
 - La capture d'écran à la demande est **autorisée par défaut** : elle ne se fait que quand tu cliques (**Détecter**,
   capture, raccourci), reste sur ton PC et peut être coupée dans *Paramètres › Capture et confidentialité*.
+- Langue : français, anglais ou **darija marocaine** (الدارجة المغربية), dans *Paramètres*.
+- Dans les salles à plusieurs monstres (Songes) ou à vagues, reclique sur **Détecter** à chaque vague : la ligne
+  « Dans ce combat » liste tout ce qui a été reconnu ; clique un nom pour voir ses étapes.
 - **Détecter** lit une fois l'écran de Dofus (sur ton PC, rien n'est envoyé au jeu ni à Internet) et choisit dans
   l'ordre : boss, donjon, monstre, zone. Pour aider : **survole le boss** (son nom s'affiche) ou garde le nom de la
   carte visible. Tu peux limiter la lecture à une zone de l'écran : onglet **Analyse**, capture, sélectionne la
@@ -181,8 +184,8 @@ Tu peux ajouter tes propres mécaniques (onglet **Connaissances**) ou importer u
 
 ## Nouveautés
 
-Voir [CHANGELOG.md](CHANGELOG.md). Version 0.5.0 : bouton **Détecter** dans l'overlay (boss, donjon, monstre ou
-carte à l'écran en un clic).
+Voir [CHANGELOG.md](CHANGELOG.md). Version 0.6.0 : **darija marocaine**, étapes numérotées pour 108 boss de plus,
+détection qui ignore le chat et lit les coordonnées de la carte, liste des monstres « Dans ce combat ».
 
 ## Mettre à jour / désinstaller
 

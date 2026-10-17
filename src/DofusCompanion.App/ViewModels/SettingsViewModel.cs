@@ -34,7 +34,7 @@ public sealed partial class SettingsViewModel : ObservableObject
     /// <summary>Raised after Save so the shell can re-apply theme, hotkeys, overlay and matching options.</summary>
     public event EventHandler? Applied;
 
-    public ObservableCollection<FilterOption<string>> Languages { get; } = [new("Français", "fr"), new("English", "en")];
+    public ObservableCollection<FilterOption<string>> Languages { get; } = [new("Français", "fr"), new("English", "en"), new("الدارجة المغربية", "ar")];
     public ObservableCollection<FilterOption<string>> Themes { get; } = [];
     public ObservableCollection<string> OcrLanguages { get; } = [];
     public ObservableCollection<string> LogLevels { get; } = ["Debug", "Information", "Warning", "Error"];

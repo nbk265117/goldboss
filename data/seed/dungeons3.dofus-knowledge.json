@@ -3289,6 +3289,53 @@
           "sourceId": "src.dpln.bambusaie-de-damadrya",
           "quote": "Pas de stratégie particulière ici, le boss est assez simple, il suffit juste taper !",
           "locator": "IV- Présentation du Boss"
+        },
+        {
+          "sourceId": "src.dpln.bambusaie-de-damadrya",
+          "quote": "De plus, quand un personnage termine son tour en mêlée d'un monstre ennemi le soigne d'environ 150. Si le monstre a tout ses PV, lui donne un bouclier équivalent à 100% de son niveau.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.bambusaie-de-damadrya",
+          "quote": "Les Bourgeons ayant 20PM, il est difficile d'éviter leur explosion. Il est donc conseillé d'éliminer Damadrya rapidement en premier pour réussir ce succès.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Savoir que le combat n'a pas de mécanique particulière : il suffit de frapper.",
+              "rationale": "Le guide indique : pas de stratégie particulière, le boss est assez simple."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas finir son tour au corps à corps d'un monstre ennemi.",
+              "rationale": "Sangsuc : un personnage qui termine son tour en mêlée d'un monstre le soigne d'environ 150 ; si le monstre a tous ses PV, il lui donne un bouclier de 100 % de son niveau."
+            },
+            {
+              "order": 3,
+              "action": "Tenir compte de l'érosion qui s'accumule à chaque fin de tour.",
+              "rationale": "Sangsuc, actif sur tous les personnages tout le combat, applique 20 % d'érosion et 50 de dégâts en vol de vie à la fin du tour de chaque personnage."
+            },
+            {
+              "order": 4,
+              "action": "Ne pas rester en ligne à 2 PO ou moins de Damadrya.",
+              "rationale": "Urticaire frappe de 100 toutes les cases à 2 PO ou moins en ligne et retire 50 puissance pour 1 tour."
+            },
+            {
+              "order": 5,
+              "action": "Se méfier des Bourgeons : ils foncent sur vous et explosent à votre contact.",
+              "rationale": "Bourgeonnement invoque un bourgeon à 20 PM qui explose à votre corps à corps (80 de dégâts)."
+            },
+            {
+              "order": 6,
+              "action": "Succès « On lui pèlera le bourgeon » : tuer Damadrya rapidement, en premier.",
+              "rationale": "Un allié ne doit pas subir plus d'une fois l'explosion d'un Bourgeon, difficile à éviter vu leurs 20 PM."
+            }
+          ]
         }
       ]
     },
@@ -3318,6 +3365,63 @@
           "sourceId": "src.dpln.garde-manger-du-rat-blanc",
           "quote": "Cependant cet effet est débuffable, vous pouvez débuff le sort au moment où il le lance pour l’empêcher de gagner des résistances mais vous pouvez également le débuff quand il est à 100% de résistance et il retombera à 0%.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.garde-manger-du-rat-blanc",
+          "quote": "À cause de son sort « Rascasse », le Rat Blanc gagne 50% de résistances dans l'élément dans lequel vous le frappez.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.garde-manger-du-rat-blanc",
+          "quote": "Le sort « Peste Blanche » vous désenvoûte si vous êtes soigné.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Venir si possible avec des sorts de désenvoûtement.",
+              "rationale": "Ils permettent de retirer les résistances du Rat Blanc ou de l'empêcher d'en gagner via Rascasse."
+            },
+            {
+              "order": 2,
+              "action": "Tuer d'abord l'Aloevée Rat (sauf succès « Premier »), et se méfier du Capoei Rat en mêlée.",
+              "rationale": "L'Aloevée Rat soigne ; le Capoei Rat peut faire assez mal en mêlée pour son niveau."
+            },
+            {
+              "order": 3,
+              "action": "Quand le Rat Blanc lance Rascasse, le désenvoûter tout de suite.",
+              "rationale": "Pendant 2 tours, chaque attaque subie lui donne +50 % de résistance dans l'élément de l'attaque (relance de 5 tours, débuffable)."
+            },
+            {
+              "order": 4,
+              "action": "Sinon, changer d'élément après chaque ligne de dégâts.",
+              "rationale": "Au bout de deux lignes dans un élément, il atteint 100 % de résistance et devient impossible à taper dans cet élément."
+            },
+            {
+              "order": 5,
+              "action": "S'il est déjà à 100 % dans un élément, le désenvoûter.",
+              "rationale": "Ses résistances gagnées retombent alors à 0 %."
+            },
+            {
+              "order": 6,
+              "action": "Ne pas soigner un personnage sous « Peste Blanche » s'il porte des boosts utiles ; le soigner s'il porte des malus.",
+              "rationale": "Si la cible est soignée, elle perd tous ses envoûtements (état de 4 tours, 6 en critique)."
+            },
+            {
+              "order": 7,
+              "action": "Succès « Premier » : focus le Rat Blanc au plus vite avec des désenvoûtements, en l'éloignant de l'Aloevée Rat.",
+              "rationale": "L'Aloevée Rat, fuyarde, peut être occupée en lui donnant une invocation à taper."
+            },
+            {
+              "order": 8,
+              "action": "Expédition de guilde : placer le Chak Rat au contact du Rat Blanc avant le tour du Chak Rat, 3 tours d'affilée, sans tuer tous les monstres avant.",
+              "rationale": "Il faut que le Rat Blanc soit frappé 3 fois par ses alliés pour perdre son renvoi de 100 % et sa réduction de dégâts."
+            }
+          ]
         }
       ]
     },
@@ -3415,6 +3519,63 @@
           "sourceId": "src.dpln.sousouriciere-du-rat-noir",
           "quote": "Vous pouvez lui donner une invocation, de préférence avec du tacle (bloqueuse, sacrifiée, pandawasta…) afin qu’il utilise le sort sur cette dernière.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.sousouriciere-du-rat-noir",
+          "quote": "Attention à ne pas soigner la cible dans l’état « Peste Noire » !",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.sousouriciere-du-rat-noir",
+          "quote": "Le Rat Noir ne peut lancer « Kackitu » qu’en mêlée, il est donc assez facile à éviter, cependant avec des idoles, ou le succès Hardi il peut être plus difficile à ne pas en être la cible.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.sousouriciere-du-rat-noir",
+          "quote": "Privilégiez plutôt les éléments feu et air où le Rat Noir a 20% de faiblesse dans ces deux éléments.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Venir avec des personnages qui frappent feu ou air, pas terre ni neutre.",
+              "rationale": "Le Rat Noir a 50 % de résistance terre et 20 % de faiblesse feu et air ; Kackisoigne soigne entièrement l'allié ciblé s'il subit des dégâts terre ou neutre."
+            },
+            {
+              "order": 2,
+              "action": "Rester à distance du Rat Noir.",
+              "rationale": "Kackitu ne se lance qu'en mêlée (croix de taille 1) : une entité avec cet état meurt si elle subit des dommages terre ou neutre (1 tour, relance 7 tours)."
+            },
+            {
+              "order": 3,
+              "action": "Option : lui donner une invocation (de préférence avec du tacle) au contact pour qu'il gaspille Kackitu dessus.",
+              "rationale": "Avec 7 tours de relance, vous êtes ensuite tranquille pour un bon moment."
+            },
+            {
+              "order": 4,
+              "action": "Si un personnage a l'état Kackitu, l'éloigner de toute source de dégâts terre ce tour-là.",
+              "rationale": "Il meurt s'il subit des dommages terre ou neutre pendant l'état."
+            },
+            {
+              "order": 5,
+              "action": "Ne jamais soigner un personnage sous « Peste Noire » ; utiliser le vol de vie pour se soigner.",
+              "rationale": "Soigné, il subit 50 % des PV actuels du Rat Noir en dégâts air (2000 si le Rat a 4 000 PV). Le vol de vie ne compte pas comme soin."
+            },
+            {
+              "order": 6,
+              "action": "Ne pas frapper terre ou neutre un monstre sous « Kackisoigne ».",
+              "rationale": "Il serait entièrement soigné."
+            },
+            {
+              "order": 7,
+              "action": "Succès « Blitzkrieg » : se booster et le commencer avec le personnage qui joue juste après lui, pour tomber ses 4 400 PV en un tour.",
+              "rationale": "Les poisons appliqués font effet avant son tour et valident le succès s'ils le tuent."
+            }
+          ]
         }
       ]
     },
@@ -3448,6 +3609,48 @@
           "sourceId": "src.dpln.antre-du-dragon-cochon",
           "quote": "Après sachez que le Dragon Cochon ne frappe que au CAC, vous pouvez donc ne jamais être touché du combat en lui retirant des PM par exemple.",
           "locator": "Boss"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : prévoir des sorts de désenvoûtement (par exemple Jouvence, Lait de Bambou).",
+              "rationale": "Ils permettent de retirer le poison d'Étourderie Mortelle lancé au premier tour (page signalée à réviser)."
+            },
+            {
+              "order": 2,
+              "action": "Au premier tour du Dragon Cochon : ne plus utiliser le moindre PA dès qu'Étourderie Mortelle est lancée.",
+              "rationale": "Ce sort pose sur tous les joueurs un poison de 2 tours : utiliser ne serait-ce que 1 PA fait perdre énormément de PV, voire tue sur le coup."
+            },
+            {
+              "order": 3,
+              "action": "Attendre la fin des 2 tours de poison, ou se désenvoûter pour pouvoir rejouer normalement.",
+              "rationale": "Le poison est débuffable."
+            },
+            {
+              "order": 4,
+              "action": "Rester hors de sa mêlée et lui retirer des PM.",
+              "rationale": "Le Dragon Cochon ne frappe qu'au corps à corps : on peut ne jamais être touché du combat en lui retirant des PM."
+            },
+            {
+              "order": 5,
+              "action": "Se méfier de son sort Immobilisation.",
+              "rationale": "Il retire des PM, le plus souvent tous les PM, ce qui peut empêcher de rester loin de lui."
+            },
+            {
+              "order": 6,
+              "action": "Si vous êtes à son contact, ne pas rester dos à un obstacle.",
+              "rationale": "Il pousse en frappant ; poussé contre un obstacle, on subit encore plus de dommages. Il fait très mal au CAC, surtout en coup critique."
+            },
+            {
+              "order": 7,
+              "action": "Succès « Faut pas pousser les cochons dans la confiture d'orties » : ne jamais être en mêlée avec le Dragon Cochon et l'éliminer en premier.",
+              "rationale": "Il est le seul à infliger des dommages de poussée ; attention aussi à ne pas en infliger vous-même à vos alliés."
+            }
+          ]
         }
       ]
     },
@@ -3487,6 +3690,59 @@
           "sourceId": "src.dpln.caverne-du-koulosse",
           "quote": "Les effets de ce sort sont débuffables par un allié.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.caverne-du-koulosse",
+          "quote": "Le Koulosse ayant l’initiative, il est préférable de se placer à l’opposé de lui pendant la phase de préparation pour ne pas qu’il puisse vous attirer au tour 1.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : prendre des classes à sorts de débuff (Pandawa, Sadida, Enutrof, Eniripsa…) et varier les éléments (2 personnages eau/feu, 2 terre/air).",
+              "rationale": "Souffle du Koulosse, Calumet de la Paix et Bise du Boufcoul sont débuffables. Le Koulosse et le Boufcoul sont faibles eau et feu, les Bouftous des Cavernes terre et air."
+            },
+            {
+              "order": 2,
+              "action": "En préparation : se placer à l'opposé du Koulosse.",
+              "position": "Cases de départ les plus éloignées du Koulosse",
+              "rationale": "Il a énormément d'initiative et son attirance (10 cases, en ligne jusqu'à 8 PO) est le seul sort qu'il peut utiliser au tour 1."
+            },
+            {
+              "order": 3,
+              "action": "Pendant tout le combat : ne jamais être en ligne avec lui, et se cacher derrière les obstacles.",
+              "rationale": "À partir du tour 2, Souffle du Koulosse (en ligne, 5 PO, ligne de vue requise, 3 fois par tour) transforme en Boufcoul : -100 PA, on ne peut plus que se déplacer jusqu'à son tour suivant."
+            },
+            {
+              "order": 4,
+              "action": "Le garder à distance : lui retirer des PM, le repousser, et si possible lui retirer sa PO.",
+              "rationale": "Tous ses sorts sont à PO modifiable : sans PO, il ne peut lancer ses sorts qu'en mêlée et devient quasiment inoffensif."
+            },
+            {
+              "order": 5,
+              "action": "Si un allié est transformé en Boufcoul : le désenvoûter, ou le placer hors de portée du Koulosse.",
+              "rationale": "Les effets du Souffle sont débuffables par un allié. Une invocation ciblée par ce sort est tuée net."
+            },
+            {
+              "order": 6,
+              "action": "S'il invoque un Boufcoul (coup critique, 10 %) : concentrer toutes les attaques dessus, ou l'empêcher d'approcher du Koulosse.",
+              "rationale": "Le Boufcoul peut rendre le Koulosse invisible et lui donner 5 PM (sort en mêlée). Si le Koulosse est déjà invisible, le désenvoûter avant qu'il joue."
+            },
+            {
+              "order": 7,
+              "action": "Éliminer les Bouftous des Cavernes et les invocations, puis le Koulosse (méthode la plus sûre).",
+              "rationale": "Le Koulosse ne fait aucun dégât lui-même. Il ne peut avoir que 2 invocations : si vous encaissez les 2 Bouftous invoqués, les laisser en vie évite une invocation de Boufcoul. Avec seulement des personnages eau/feu, on peut focus le Koulosse en premier."
+            },
+            {
+              "order": 8,
+              "action": "Succès « À la cool » : aucun allié ne doit être transformé ; le tuer avant son tour 2 retire toute contrainte.",
+              "rationale": "Le Souffle ne peut pas être lancé au tour 1 ; ensuite, il ne doit jamais être en ligne (et en ligne de vue) avec vos personnages, en surveillant aussi l'attirance à 8 PO."
+            }
+          ]
         }
       ]
     },
@@ -3694,6 +3950,68 @@
           "sourceId": "src.dpln.potager-dhalouine",
           "quote": "Cet effet est cumulable 5 fois et dure 3 tours mais il peut être désenvouté.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.potager-dhalouine",
+          "quote": "Au début de son tour, Halouine perdra 660 Vitalité, s’il a 660PV ou moins au début de son tour, il mourra avant de pouvoir jouer.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.potager-dhalouine",
+          "quote": "À partir du tour 3, Halouine ressuscitera le dernier monstre allié mort avec 1% de ses PV. C’est pourquoi, il est préférable de finir la Lanverne avant le tour 3 pour que ça soit elle qui soit ressuscitée plutôt que le Cauchemarakne.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.potager-dhalouine",
+          "quote": "NOTE : S’il arrive tout de même à se booster en vitalité, retirez-lui un maximum de PV et lorsqu’il ne lui reste plus que sa vitalité bonus, désenvoûtez-le pour en finir.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : prévoir si possible des sorts de débuff (Puissance Sylvestre du Sadida, Souillure du Pandawa, Mot interdit de l'Eniripsa).",
+              "rationale": "Ils retirent le bonus de vitalité de Moissonnage et l'invulnérabilité des monstres ressuscités. Halouine n'a pas d'état invulnérable."
+            },
+            {
+              "order": 2,
+              "action": "Pendant tout le combat : garder Halouine à distance, en lui retirant PO et PM.",
+              "rationale": "Moissonnage (mêlée uniquement) lui donne +20 % de vitalité pendant 3 tours, cumulable 5 fois. Sans PO, il ne peut plus utiliser Râttirance (attire de 5 cases en ligne)."
+            },
+            {
+              "order": 3,
+              "action": "Focus d'abord le Cauchemarakne, sans finir votre tour dans son glyphe.",
+              "rationale": "Le glyphe retire jusqu'à 4 PM ; le Cauchemarakne retire aussi 10 % de résistance et met Affaibli en mêlée."
+            },
+            {
+              "order": 4,
+              "action": "Tuer ensuite la Lanverne, idéalement avant le tour 3 d'Halouine, puis finir par le Champêtrouille (la Chauffe-Soutrille avant lui en butin 6 et plus).",
+              "rationale": "À partir du tour 3, puis tous les deux tours, Halouine ressuscite le dernier monstre allié mort : mieux vaut que ce soit un monstre peu dangereux."
+            },
+            {
+              "order": 5,
+              "action": "Achever chaque monstre ressuscité dès qu'il perd son invulnérabilité (ou le débuffer pour l'achever tout de suite).",
+              "rationale": "Il revient avec 1 % de ses PV et n'est invulnérable que 1 tour (2 en critique) ; n'importe quelle attaque l'achève ensuite."
+            },
+            {
+              "order": 6,
+              "action": "Quand Halouine est seul : le frapper à distance, en éliminant les monstres qu'il ressuscite tous les deux tours.",
+              "rationale": "À distance, il ne peut pas se booster en vitalité."
+            },
+            {
+              "order": 7,
+              "action": "S'il s'est boosté : lui retirer un maximum de PV, puis le désenvoûter quand il ne lui reste que sa vitalité bonus.",
+              "rationale": "Quand un bonus expire au début de son tour, il perd ces PV (environ 660 en butin 4) ; s'il a ce montant ou moins, il meurt avant de jouer."
+            },
+            {
+              "order": 8,
+              "action": "Succès « Dernier » : achever Halouine en dernier, comme dans la stratégie ci-dessus.",
+              "rationale": "Le guide conseille de toute façon de l'achever en dernier."
+            }
+          ]
         }
       ]
     },
@@ -3922,6 +4240,48 @@
           "sourceId": "src.dpln.repaire-du-kharnozor",
           "quote": "Si vous frappez le Boss en étant dans une zone de 2PO autour de lui, vous êtes attiré à son càc et il vous frappe avec le sort Mort sûre pour chaque coup reçu.",
           "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.repaire-du-kharnozor",
+          "quote": "Quand un monstre meurt, le Kharnozor se boost de 710 vitalité et augmente ses dommages finaux occasionnés de 10% (infini).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne pas compter sur les sorts de déplacement contre lui.",
+              "rationale": "Kharnage le met en état indéplaçable (infini)."
+            },
+            {
+              "order": 2,
+              "action": "Frapper le Kharnozor depuis plus de 2 PO, jamais de plus près.",
+              "rationale": "Réflexe Primitif : si on le frappe dans une zone de 2 PO autour de lui, on est attiré à son contact et il riposte avec Mort sûre pour chaque coup reçu."
+            },
+            {
+              "order": 3,
+              "action": "Éviter d'être à son contact, surtout en état Assourdi.",
+              "rationale": "Mort sûre inflige 350 terre au corps à corps ; sur une cible Assourdie (Cri déchirant : cercle de rayon 7, -3 PA), elle ajoute Insoignable et Pesanteur pour 2 tours."
+            },
+            {
+              "order": 4,
+              "action": "Se méfier de la ligne droite jusqu'à 6 PO.",
+              "rationale": "Emplafonnement (en ligne, 6 PO) inflige 350 neutre et le Kharnozor s'attire sur la cible en la repoussant de 6 cases."
+            },
+            {
+              "order": 5,
+              "action": "Garder en tête que chaque monstre tué le renforce.",
+              "rationale": "À chaque mort de monstre, il gagne 710 de vitalité et +10 % de dommages finaux, sans limite de durée."
+            },
+            {
+              "order": 6,
+              "action": "Succès spécial « Les yeux aussi gros que le ventre » : finir chaque tour en ligne de vue d'au moins un ennemi.",
+              "rationale": "Les ennemis doivent avoir au moins un allié en ligne de vue au début de leur tour ; attention aux obstacles de la map."
+            }
+          ]
         }
       ]
     },
@@ -3972,6 +4332,78 @@
           "sourceId": "src.dpln.antre-de-la-reine-nyeacutee",
           "quote": "Si vous tapez la Reine Nyée alors qu’il y a une ou plusieurs Trégénaires sur le terrain, ces dernières entreront dans l’état « Dévoué »",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.antre-de-la-reine-nyeacutee",
+          "quote": "Évitez également de taper la Reine Nyée tant qu’il reste des monstres en vie pour ne pas boost les Trégénaires.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.antre-de-la-reine-nyeacutee",
+          "quote": "Si un personnage en Cocon reçoit des dommages d’un allié, cela retire les effets du sort.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.antre-de-la-reine-nyeacutee",
+          "quote": "De plus, si un personnage inflige des dégâts à cet Oeuf, il sera soigné de la moitié des dégâts qu’il inflige.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : préférer des personnages qui frappent eau ou feu.",
+              "rationale": "La Reine Nyée a -20 % en eau et feu (30 % terre, 40 % air) ; la Dardalaine et la Néfileuse sont aussi faibles feu."
+            },
+            {
+              "order": 2,
+              "action": "Se placer loin de la Dardalaine et de la Néfileuse, leur retirer des PM ou les bloquer avec des invocations.",
+              "rationale": "La plupart de leurs sorts se lancent uniquement en ligne."
+            },
+            {
+              "order": 3,
+              "action": "Focus la Néfileuse en premier, à distance.",
+              "rationale": "Elle attire (5 cases, en ligne jusqu'à 6 PO) puis transforme en Cocon (-100 PA, -100 PM pendant 2 tours), ce qui laisse la cible à la merci de l'Arapex."
+            },
+            {
+              "order": 4,
+              "action": "Si un allié est en Cocon : lui infliger une ligne de dégâts avec un sort faible. Sinon, tenir l'Arapex loin de lui.",
+              "rationale": "Des dégâts directs d'un allié retirent le Cocon. L'Arapex tue net un personnage en Cocon avec Exécution (2 PO, sans ligne de vue, tous les 3 tours)."
+            },
+            {
+              "order": 5,
+              "action": "Si la Néfileuse ne peut pas être tuée tout de suite, détruire ses Toiles.",
+              "rationale": "La Toile (400 PV) pose un glyphe qui retire 100 PM et met Pesanteur et Inébranlable ; la tuer fait disparaître ces effets."
+            },
+            {
+              "order": 6,
+              "action": "Ne pas frapper la Reine Nyée tant qu'il reste des monstres ou des Trégénaires en vie.",
+              "rationale": "Si elle subit des dégâts, les Trégénaires passent « Dévouées » (+2 PM, +50 puissance) et viennent exploser au contact (200 neutre en zone)."
+            },
+            {
+              "order": 7,
+              "action": "Tuer ensuite la Dardalaine, uniquement à distance.",
+              "rationale": "Elle renvoie des dégâts neutre quand elle est frappée en mêlée, et Sécrétion acide retire 200 puissance."
+            },
+            {
+              "order": 8,
+              "action": "Au besoin, frapper les Oeufs de Trégénaire pour se soigner, sans perdre de temps à focus les Trégénaires.",
+              "rationale": "On est soigné de la moitié des dégâts infligés à l'Oeuf (800 PV, invoqué au tour 1 puis tous les deux tours)."
+            },
+            {
+              "order": 9,
+              "action": "Finir par l'Arapex, puis la Reine Nyée en écartant vos personnages les uns des autres.",
+              "rationale": "Seule, elle n'est plus dangereuse, mais elle frappe toujours en zone."
+            },
+            {
+              "order": 10,
+              "action": "Succès spécial « On ne peut la Nyée » : détruire chaque Oeuf (800 PV) avant le début du tour suivant de la Reine.",
+              "rationale": "Elle invoque un Oeuf aux tours impairs (1, 3, 5…)."
+            }
+          ]
         }
       ]
     },
@@ -3999,6 +4431,69 @@
           "sourceId": "src.dpln.bateau-du-chouque",
           "quote": "Si un personnage qui a 30% de ses PV ou moins est touché par le passif « Malédiction Pirate », il sera OS par le Chouque et un pirate aléatoire apparaîtra sur la case de sa mort.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.bateau-du-chouque",
+          "quote": "Si le Chouque est dans l’état « Pesanteur », il ne peut plus échanger de place et il aura de grandes difficultés à venir en mêlée avec vous.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.bateau-du-chouque",
+          "quote": "Il est conseillé d’éliminer les monstres en premier car, une fois que le Chouque est seul, il ne représente plus aucun danger.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : prévoir un soigneur et éviter une équipe qui joue eau.",
+              "rationale": "Les classes de soin sont un atout pour rester au-dessus des seuils de PV ; le Chouque a 36 % de résistance eau."
+            },
+            {
+              "order": 2,
+              "action": "Garder le Chouque, le Nakunbra et le Ricanif à distance : aucun monstre à 6 cases ou moins de vous.",
+              "rationale": "Le Chouque a 5 PM et peut échanger de place avec un monstre allié une fois par tour pour se rapprocher."
+            },
+            {
+              "order": 3,
+              "action": "Mettre l'état Pesanteur sur le Chouque, ou sur les monstres proches de lui.",
+              "rationale": "Il ne peut pas échanger de place si lui ou le monstre ciblé est en Pesanteur."
+            },
+            {
+              "order": 4,
+              "action": "Garder tous les personnages à 50 % de leurs PV ou plus.",
+              "rationale": "Malédiction Pirate tue net un personnage touché à 30 % de PV ou moins ; le Nakunbra tue en mêlée une cible à 50 % ou moins, et le Coup de Sabre du Chouque invoque un pirate sur une cible à 50 % ou moins."
+            },
+            {
+              "order": 5,
+              "action": "Placer comme personnage le plus proche du Chouque un « tank » au-dessus de 30 % de PV, et éloigner vos meilleurs attaquants.",
+              "position": "Le tank le plus près du Chouque, les attaquants loin",
+              "rationale": "À chaque début de tour, le passif vise le personnage le plus proche non « Maudit » et tous les « Maudits » : effets aléatoires minimisés et 110 dégâts eau."
+            },
+            {
+              "order": 6,
+              "action": "Focus d'abord l'Ivremor, sans rester dans son glyphe rouge.",
+              "rationale": "Il frappe à distance, cumule de l'intelligence et son glyphe inflige des dégâts feu en début de tour."
+            },
+            {
+              "order": 7,
+              "action": "Tuer le Nakunbra en un seul tour, et ne jamais finir son tour en ligne avec lui.",
+              "rationale": "Il gagne 1 PM à chaque dégât subi ; s'il commence son tour en ligne avec des personnages, il peut tous les attirer."
+            },
+            {
+              "order": 8,
+              "action": "Une fois tous les monstres morts, finir le Chouque à distance.",
+              "rationale": "Seul, il ne peut plus échanger de place et frappe presque uniquement en mêlée."
+            },
+            {
+              "order": 9,
+              "action": "Succès spécial « Saute-pirate » : achever en moins de deux tours chaque monstre avec qui le Chouque échange de place, idéalement avant son tour suivant.",
+              "rationale": "Il ne peut échanger qu'avec un allié par tour et a peu d'initiative ; le Chouque est tué en dernier."
+            }
+          ]
         }
       ]
     },
@@ -4058,6 +4553,43 @@
           "sourceId": "src.dpln.domaine-ancestral",
           "quote": "Sinon le meilleur élément pour le vaincre reste l’élément feu.",
           "locator": "Boss (page signalée à réviser)"
+        },
+        {
+          "sourceId": "src.dpln.domaine-ancestral",
+          "quote": "Il faut rester à distance tout en faisant attention de rester également à distance des invocations des ennemis (Champa, Arakne Majeure et Tronknyde).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : prévoir surtout des personnages qui frappent feu.",
+              "rationale": "Il a 53 % de résistances partout sauf en agilité (air) et en feu ; le feu reste le meilleur élément car il peut infliger un malus d'agilité (page signalée à réviser)."
+            },
+            {
+              "order": 2,
+              "action": "Se méfier de Branche Paralysante : chaque PA utilisé sous ce poison coûte des PV.",
+              "rationale": "Poison de fin de tour pendant 3 tours : 28 neutre (56 en critique) par PA utilisé, lancé jusqu'à 8 PO ; il est débuffable."
+            },
+            {
+              "order": 3,
+              "action": "Éviter de rester à 2 PO ou moins de lui.",
+              "rationale": "Morsure Sylvestre (jusqu'à 2 PO) retire 2 PA, inflige 200 neutre et retire 100 puissance pendant 2 tours."
+            },
+            {
+              "order": 4,
+              "action": "À partir du tour 3, s'attendre à l'Arakne Majeure, et à partir du tour 4 à un soin de 2 000 PV.",
+              "rationale": "Invocation d'Arakne Majeure (relance de 5 tours, dès le tour 3) ; Reconstitution Abraknydienne le soigne de 2 000 PV (relance de 5 tours, dès le tour 4)."
+            },
+            {
+              "order": 5,
+              "action": "Succès spécial « Distance respectueuse » : ne frapper qu'avec aucun ennemi, invocations comprises, à 3 PO ou moins.",
+              "rationale": "Attention aux invocations ennemies : Champa, Arakne Majeure et Tronknyde."
+            }
+          ]
         }
       ]
     },
@@ -4090,6 +4622,68 @@
           "sourceId": "src.dpln.chapiteau-des-magik-riktus",
           "quote": "NOTE : Choudini n’échange de place qu’avec un seul personnage par tour.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.chapiteau-des-magik-riktus",
+          "quote": "Commencez par focus les monstres dès le tour 1. Ignorez le Choudini tant que tous les monstres n’ont pas été achevés",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.chapiteau-des-magik-riktus",
+          "quote": "Ce sort peut vous faire extrêmement mal si vous utilisez 5PM ou plus dans votre tour.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.chapiteau-des-magik-riktus",
+          "quote": "Quand il commence son tour, Choudini va échanger de place avec un personnage ou une invocation au contact avec lui.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : varier les éléments de l'équipe.",
+              "rationale": "Chaque monstre a 60 % de résistance dans un élément (Bozoteur neutre, Graboule air, Pirolienne feu, Roukouto eau, Tivelo terre)."
+            },
+            {
+              "order": 2,
+              "action": "Dès le tour 1, focus les monstres et ignorer Choudini, en commençant par celui que vous tuez le plus vite (le guide préfère le Roukouto).",
+              "rationale": "Les monstres sont dangereux et plus faciles à tuer que Choudini, qui a une IA fuyarde. Le Roukouto retire de la puissance."
+            },
+            {
+              "order": 3,
+              "action": "Sous « Reste assis » : limiter les PM utilisés, ou se désenvoûter (par exemple Lait de Bambou).",
+              "rationale": "Poison de 2 tours : dégâts terre pour chaque PM utilisé ; il fait très mal à partir de 5 PM utilisés dans le tour."
+            },
+            {
+              "order": 4,
+              "action": "Si vous êtes au contact de Choudini, prévoir qu'il échange de place avec vous au début de son tour.",
+              "rationale": "« Prends ma place » : un seul échange par tour, priorité horaire. Un personnage en Pesanteur ou Enraciné subit 180 de dégâts feu au lieu d'être échangé."
+            },
+            {
+              "order": 5,
+              "action": "Anticiper Vinriktus : la cible échange de place avec l'allié le plus proche, quelle que soit la distance.",
+              "rationale": "L'échange ne se fait pas si la cible est en Pesanteur ou Enraciné ; un allié dans un de ces états est sauté au profit du suivant."
+            },
+            {
+              "order": 6,
+              "action": "Ne pas compter sur le retrait PM ou PO.",
+              "rationale": "Les sorts de Choudini et des monstres ont 12 PO ou plus : ils pourront toujours vous toucher."
+            },
+            {
+              "order": 7,
+              "action": "Choudini seul : le faire poursuivre par les personnages sans « Reste assis » ; ceux qui l'ont avancent par téléportation ou frappent avec des sorts à longue PO.",
+              "rationale": "Il n'est pas très résistant une fois rattrapé."
+            },
+            {
+              "order": 8,
+              "action": "Succès spécial « Chacun son tour de magie » : si Choudini déplace un allié avec Détriktus, le déplacer avant son prochain tour (échange, attirance, poussée, porter du Pandawa) ou l'achever.",
+              "rationale": "Une icône au-dessus de lui le signale. Des personnages indéplaçables, inébranlables, enracinés ou collés à un mur évitent la contrainte."
+            }
+          ]
         }
       ]
     },
@@ -4225,6 +4819,68 @@
           "sourceId": "src.dpln.cimetiere-des-mastodontes",
           "quote": "Le Mantiscore n’a pas d’état Invulnérable, il est donc assez facilement tuable.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.cimetiere-des-mastodontes",
+          "quote": "Quand vous le tapez à distance, le Mantiscore s’éloignera d’une case par rapport au personnage qui le frappe vous permettant de le garder à distance tout en le tapant.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.cimetiere-des-mastodontes",
+          "quote": "La stratégie pour ce donjon est assez simple, vous devez tuer les monstres en premier en commençant par la Léolhyène et en essayant de garder à distance le Mantiscore.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.cimetiere-des-mastodontes",
+          "quote": "Le Mantiscore attire également tous ses ennemis de 3 cases vers lui aux tours 1/6/11/etc… (tous les 5 tours).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Focus la ou les Léolhyènes en premier.",
+              "rationale": "Mort Sûre tue net un personnage frappé une seconde fois après la relance du sort (tête de mort bleue au-dessus du personnage visé)."
+            },
+            {
+              "order": 2,
+              "action": "Tuer tous les monstres en gardant le Mantiscore à distance.",
+              "rationale": "Il n'a pas d'état invulnérable ; le danger vient de sa mêlée."
+            },
+            {
+              "order": 3,
+              "action": "Frapper le Mantiscore à distance pour le faire reculer.",
+              "rationale": "Garde-Bouclier : frappé à distance, il se téléporte sur une case adjacente, en général en s'éloignant de celui qui frappe. En mêlée, il ne bouge pas."
+            },
+            {
+              "order": 4,
+              "action": "Ne pas se faire frapper en mêlée deux tours de suite, surtout en état Sursis.",
+              "rationale": "Darmoclès pose Sursis ; sur une cible déjà en Sursis, il inflige 300 feu et se soigne de 600 PV."
+            },
+            {
+              "order": 5,
+              "action": "Aux tours 1, 6, 11… se cacher derrière des blocs de la map ou des invocations statiques.",
+              "rationale": "Provocaspion attire tous les ennemis de 3 cases (tous les 5 tours) et lui donne de la puissance par ennemi à son contact."
+            },
+            {
+              "order": 6,
+              "action": "Option : le frapper à distance quand ses 4 cases adjacentes sont indisponibles.",
+              "rationale": "Il perd alors 50 % de résistance mais gagne 200 puissance pendant 2 tours, et l'état Dérèglement l'empêche de se téléporter pendant ces 2 tours."
+            },
+            {
+              "order": 7,
+              "action": "Une fois les monstres morts, focus le Mantiscore jusqu'à sa mort sans le laisser vous attaquer en mêlée.",
+              "rationale": "Ainsi il ne se soigne pas."
+            },
+            {
+              "order": 8,
+              "action": "Succès spécial « À portée de dard » : tuer tous les monstres, puis attaquer le Mantiscore uniquement en mêlée.",
+              "rationale": "Il ne doit recevoir aucun dégât à distance ; en mêlée, Garde-Bouclier ne s'active pas."
+            }
+          ]
         }
       ]
     },
@@ -4372,6 +5028,38 @@
           "quote": "Rappel : Le Craqueleur Légendaire invoque au tour 1 puis tous les 3 tours.",
           "locator": "Boss / Tactique pour le succès Spécial"
         }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Repérer les monstres à 2 PO ou moins du Craqueleur Légendaire.",
+              "rationale": "Peau de Silex leur donne, ainsi qu'à lui, 70 % de résistances."
+            },
+            {
+              "order": 2,
+              "action": "Éviter son corps à corps.",
+              "rationale": "Pierre Étourdissante (au corps à corps uniquement) frappe feu et retire 100 PA pour 1 tour."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas rester à 2 PO ou moins de lui.",
+              "rationale": "Frappe du Craqueleur Légendaire touche en cercle de rayon 2 PO, alliés comme ennemis."
+            },
+            {
+              "order": 4,
+              "action": "S'attendre à une nouvelle invocation au tour 1 puis tous les 3 tours.",
+              "rationale": "Invocation Montagnarde invoque un monstre du donjon. Peau de Topaze réduit aussi de 1 000 les dommages subis par un de ses alliés pendant 3 tours."
+            },
+            {
+              "order": 5,
+              "action": "Succès spécial « De véritables craqu' » : tant qu'une invocation ennemie est en vie, ne frapper qu'elle ; ou tuer le Craqueleur Légendaire avant qu'il joue.",
+              "rationale": "Aucun ennemi ne doit subir de dégâts quand des invocations ennemies sont en vie ; le tuer avant son premier tour supprime la contrainte (fiche non datée)."
+            }
+          ]
+        }
       ]
     },
     {
@@ -4440,6 +5128,68 @@
           "sourceId": "src.dpln.chateau-du-wa-wabbit",
           "quote": "Il a des résistances très correctes dans les éléments neutre, terre et feu mais a des faiblesses dans les éléments eau et air.",
           "locator": "IV- Présentation du Boss — Sorts du Boss / Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.chateau-du-wa-wabbit",
+          "quote": "Le Wo Wabbit est probablement la meilleure cible car il a moins de PV que les Grand Pa et ses invocations peuvent vous gêner.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.chateau-du-wa-wabbit",
+          "quote": "Ignorez-le pendant que vous éliminez les monstres qui l’accompagnent.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.chateau-du-wa-wabbit",
+          "quote": "Le Wa Wabbit invoque sa Cawotte dès le tour 1. Vous ne pouvez pas éliminer la Cawotte, cela fait échouer le succès.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : avoir si possible au moins un personnage qui frappe air ou eau.",
+              "rationale": "Le Wa Wabbit est faible eau et air, et résiste bien en neutre, terre et feu. Il a beaucoup de PV."
+            },
+            {
+              "order": 2,
+              "action": "Écarter vos personnages les uns des autres.",
+              "rationale": "Les Grand Pa Wabbit frappent et entravent en cercle de taille 2."
+            },
+            {
+              "order": 3,
+              "action": "Ignorer le Wa Wabbit au début du combat.",
+              "rationale": "Il a une IA fuyarde, reste au fond de la map et ne fait de gros dégâts qu'en coup critique (240 neutre)."
+            },
+            {
+              "order": 4,
+              "action": "Focus d'abord le Wo Wabbit, puis les Grand Pa Wabbit l'un après l'autre.",
+              "rationale": "Le Wo Wabbit a moins de PV et ses invocations gênent ; les Grand Pa (environ 1 200 PV) sont plus longs à tuer."
+            },
+            {
+              "order": 5,
+              "action": "Se désenvoûter après « Abrutissement » (par exemple Mot de Jouvence, Lait de Bambou).",
+              "rationale": "Ce sort retire 150 puissance pendant 1 tour à tout le monde, tous les 3 tours."
+            },
+            {
+              "order": 6,
+              "action": "Ne pas commencer ni finir son tour dans le glyphe d'une Cawotte Woyale.",
+              "rationale": "On devient Insoignable pendant 2 tours ; chaque Cawotte donne aussi +10 % de critique au Wa Wabbit."
+            },
+            {
+              "order": 7,
+              "action": "Une fois tous les monstres morts, attaquer le Wa Wabbit.",
+              "rationale": "Seul, il gagne des effets (bouclier d'Awmuwe Woyale, Abrutissement renforcé), mais il n'est plus assez dangereux ; il faut quelques tours à cause de ses PV."
+            },
+            {
+              "order": 8,
+              "action": "Succès spécial « Mené à la cawotte » : ne jamais frapper la Cawotte ; tuer si possible le Wo Wabbit avant le premier tour du Wa Wabbit, puis tout concentrer sur lui.",
+              "rationale": "Il invoque sa Cawotte dès le tour 1, et tant qu'elle est présente, seul le Wa Wabbit doit recevoir des dommages. Il joue après les Grand Pa Wabbit."
+            }
+          ]
         }
       ]
     },
@@ -4495,6 +5245,58 @@
           "sourceId": "src.dpln.clos-des-blops",
           "quote": "Le Blop Royal peut également donner 100% de résistance dans son élément à un allié.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.clos-des-blops",
+          "quote": "Si vous en avez la possibilité, éliminez le Blop en premier avant qu’il ne joue.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.clos-des-blops",
+          "quote": "Occupez-vous ensuite du Blopignon, il tape à distance, c’est le monstre qui fait le plus mal et il a relativement peu de PV et de résistances.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : venir avec au moins 2 personnages d'éléments différents, et ne pas compter sur l'air.",
+              "rationale": "Le Blop Coco Royal a 94 % de résistance air et 12 % de faiblesse dans tous les autres éléments."
+            },
+            {
+              "order": 2,
+              "action": "Au tour 1 : tuer si possible le Blop Coco avant qu'il joue, sinon le laisser fuir et le tuer à la fin.",
+              "rationale": "Les Blops ont beaucoup de PO et une IA fuyarde, mais 50 % de faiblesse dans l'élément opposé."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas finir son tour sur les glyphes blancs.",
+              "rationale": "Blyphe : 60 dégâts et 1 PM en moins pour qui y termine son tour."
+            },
+            {
+              "order": 4,
+              "action": "Tuer ensuite le Blopignon, puis le Tronkoblop.",
+              "rationale": "Le Blopignon frappe à distance, fait le plus mal et a peu de PV ; le Tronkoblop soigne ses alliés."
+            },
+            {
+              "order": 5,
+              "action": "S'il invoque un Gloutoblop, ne jamais le laisser vous atteindre en mêlée.",
+              "rationale": "Le Gloutoblop tue net en mêlée et grossit à chaque entité mangée (risque d'environ 4,5 %)."
+            },
+            {
+              "order": 6,
+              "action": "Surveiller Blotection.",
+              "rationale": "Le monstre ciblé gagne 100 % de résistance air pendant 3 tours (6 en critique)."
+            },
+            {
+              "order": 7,
+              "action": "Focus le Blop Coco Royal jusqu'à sa mort, en tuant ses invocations Tronkoblop, Blopignon ou Gloutoblop et en ignorant les autres.",
+              "rationale": "Il frappe à courte portée et n'est pas très dangereux. Finir par le Blop s'il est encore en vie."
+            }
+          ]
         }
       ]
     },
@@ -4527,6 +5329,58 @@
           "sourceId": "src.dpln.clos-des-blops",
           "quote": "Le Blop Royal peut également donner 100% de résistance dans son élément à un allié.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.clos-des-blops",
+          "quote": "Si vous en avez la possibilité, éliminez le Blop en premier avant qu’il ne joue.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.clos-des-blops",
+          "quote": "Occupez-vous ensuite du Blopignon, il tape à distance, c’est le monstre qui fait le plus mal et il a relativement peu de PV et de résistances.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : venir avec au moins 2 personnages d'éléments différents, et ne pas compter sur le feu.",
+              "rationale": "Le Blop Griotte Royal a 94 % de résistance feu et 12 % de faiblesse dans tous les autres éléments."
+            },
+            {
+              "order": 2,
+              "action": "Au tour 1 : tuer si possible le Blop Griotte avant qu'il joue, sinon le laisser fuir et le tuer à la fin.",
+              "rationale": "Les Blops ont beaucoup de PO et une IA fuyarde, mais 50 % de faiblesse dans l'élément opposé."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas finir son tour sur les glyphes blancs.",
+              "rationale": "Blyphe : 60 dégâts et 1 PM en moins pour qui y termine son tour."
+            },
+            {
+              "order": 4,
+              "action": "Tuer ensuite le Blopignon, puis le Tronkoblop.",
+              "rationale": "Le Blopignon frappe à distance, fait le plus mal et a peu de PV ; le Tronkoblop soigne ses alliés."
+            },
+            {
+              "order": 5,
+              "action": "S'il invoque un Gloutoblop, ne jamais le laisser vous atteindre en mêlée.",
+              "rationale": "Le Gloutoblop tue net en mêlée et grossit à chaque entité mangée (risque d'environ 4,5 %)."
+            },
+            {
+              "order": 6,
+              "action": "Surveiller Blotection.",
+              "rationale": "Le monstre ciblé gagne 100 % de résistance feu pendant 3 tours (6 en critique)."
+            },
+            {
+              "order": 7,
+              "action": "Focus le Blop Griotte Royal jusqu'à sa mort, en tuant ses invocations Tronkoblop, Blopignon ou Gloutoblop et en ignorant les autres.",
+              "rationale": "Il frappe à courte portée et n'est pas très dangereux. Finir par le Blop s'il est encore en vie."
+            }
+          ]
         }
       ]
     },
@@ -4559,6 +5413,58 @@
           "sourceId": "src.dpln.clos-des-blops",
           "quote": "Le Blop Royal peut également donner 100% de résistance dans son élément à un allié.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.clos-des-blops",
+          "quote": "Si vous en avez la possibilité, éliminez le Blop en premier avant qu’il ne joue.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.clos-des-blops",
+          "quote": "Occupez-vous ensuite du Blopignon, il tape à distance, c’est le monstre qui fait le plus mal et il a relativement peu de PV et de résistances.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : venir avec au moins 2 personnages d'éléments différents, et ne pas compter sur l'eau.",
+              "rationale": "Le Blop Indigo Royal a 94 % de résistance eau et 12 % de faiblesse dans tous les autres éléments."
+            },
+            {
+              "order": 2,
+              "action": "Au tour 1 : tuer si possible le Blop Indigo avant qu'il joue, sinon le laisser fuir et le tuer à la fin.",
+              "rationale": "Les Blops ont beaucoup de PO et une IA fuyarde, mais 50 % de faiblesse dans l'élément opposé."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas finir son tour sur les glyphes blancs.",
+              "rationale": "Blyphe : 60 dégâts et 1 PM en moins pour qui y termine son tour."
+            },
+            {
+              "order": 4,
+              "action": "Tuer ensuite le Blopignon, puis le Tronkoblop.",
+              "rationale": "Le Blopignon frappe à distance, fait le plus mal et a peu de PV ; le Tronkoblop soigne ses alliés."
+            },
+            {
+              "order": 5,
+              "action": "S'il invoque un Gloutoblop, ne jamais le laisser vous atteindre en mêlée.",
+              "rationale": "Le Gloutoblop tue net en mêlée et grossit à chaque entité mangée (risque d'environ 4,5 %)."
+            },
+            {
+              "order": 6,
+              "action": "Surveiller Blotection.",
+              "rationale": "Le monstre ciblé gagne 100 % de résistance eau pendant 3 tours (6 en critique)."
+            },
+            {
+              "order": 7,
+              "action": "Focus le Blop Indigo Royal jusqu'à sa mort, en tuant ses invocations Tronkoblop, Blopignon ou Gloutoblop et en ignorant les autres.",
+              "rationale": "Il frappe à courte portée et n'est pas très dangereux. Finir par le Blop s'il est encore en vie."
+            }
+          ]
         }
       ]
     },
@@ -4591,6 +5497,58 @@
           "sourceId": "src.dpln.clos-des-blops",
           "quote": "Le Blop Royal peut également donner 100% de résistance dans son élément à un allié.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.clos-des-blops",
+          "quote": "Si vous en avez la possibilité, éliminez le Blop en premier avant qu’il ne joue.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.clos-des-blops",
+          "quote": "Occupez-vous ensuite du Blopignon, il tape à distance, c’est le monstre qui fait le plus mal et il a relativement peu de PV et de résistances.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : venir avec au moins 2 personnages d'éléments différents, et ne pas compter sur la terre.",
+              "rationale": "Le Blop Reinette Royal a 94 % de résistance terre et 12 % de faiblesse dans tous les autres éléments."
+            },
+            {
+              "order": 2,
+              "action": "Au tour 1 : tuer si possible le Blop Reinette avant qu'il joue, sinon le laisser fuir et le tuer à la fin.",
+              "rationale": "Les Blops ont beaucoup de PO et une IA fuyarde, mais 50 % de faiblesse dans l'élément opposé."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas finir son tour sur les glyphes blancs.",
+              "rationale": "Blyphe : 60 dégâts et 1 PM en moins pour qui y termine son tour."
+            },
+            {
+              "order": 4,
+              "action": "Tuer ensuite le Blopignon, puis le Tronkoblop.",
+              "rationale": "Le Blopignon frappe à distance, fait le plus mal et a peu de PV ; le Tronkoblop soigne ses alliés."
+            },
+            {
+              "order": 5,
+              "action": "S'il invoque un Gloutoblop, ne jamais le laisser vous atteindre en mêlée.",
+              "rationale": "Le Gloutoblop tue net en mêlée et grossit à chaque entité mangée (risque d'environ 4,5 %)."
+            },
+            {
+              "order": 6,
+              "action": "Surveiller Blotection.",
+              "rationale": "Le monstre ciblé gagne 100 % de résistance terre pendant 3 tours (6 en critique)."
+            },
+            {
+              "order": 7,
+              "action": "Focus le Blop Reinette Royal jusqu'à sa mort, en tuant ses invocations Tronkoblop, Blopignon ou Gloutoblop et en ignorant les autres.",
+              "rationale": "Il frappe à courte portée et n'est pas très dangereux. Finir par le Blop s'il est encore en vie."
+            }
+          ]
         }
       ]
     },
@@ -4628,6 +5586,63 @@
           "sourceId": "src.dpln.gelaxieme-dimension",
           "quote": "NOTE : Le malus de résistances via les glyphes est cumulable. Les gelées invoquées ont 20% de PV en moins.",
           "locator": "V- Présentation des Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.gelaxieme-dimension",
+          "quote": "De cette façon, vous pouvez baisser les résistances des Gelées Royale en les plaçant dans les glyphes correspondant à votre élément de frappe.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.gelaxieme-dimension",
+          "quote": "Chaque Gelée Royale invoque une Gelée au tour 1.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : éviter une équipe mono-élément ; frapper la Gelée Royale Bleuet en eau.",
+              "rationale": "Elle a 10 % de faiblesse eau et 70 % de résistances dans les autres éléments."
+            },
+            {
+              "order": 2,
+              "action": "Au tour 1 : s'attendre à une Gelée Bleuet invoquée à ses côtés.",
+              "rationale": "Chaque Gelée Royale invoque une Gelée au tour 1 (les gelées invoquées ont 20 % de PV en moins)."
+            },
+            {
+              "order": 3,
+              "action": "Sans personnage eau, comparer avec vos sorts qui frappent en eau même hors de votre élément.",
+              "rationale": "Sur 10 % de faiblesse, ils peuvent faire plus de dégâts que vos sorts de votre élément sur 70 % de résistance."
+            },
+            {
+              "order": 4,
+              "action": "À partir du tour 2 : placer la Gelée Royale Bleuet dans le glyphe d'une gelée de la couleur de votre élément de frappe.",
+              "rationale": "Tartinade : une gelée d'une autre couleur qui commence son tour dans ce glyphe perd 15 % de résistance dans cet élément pendant 3 tours, cumulable."
+            },
+            {
+              "order": 5,
+              "action": "Ne pas commencer son tour dans le glyphe bleu.",
+              "rationale": "Un personnage qui y commence son tour subit 65 dégâts eau ; une gelée Bleuet y est soignée de 20 PV."
+            },
+            {
+              "order": 6,
+              "action": "Si vos dégâts sont faibles, la pousser contre un obstacle pour infliger des dommages de poussée.",
+              "rationale": "Les Gelées n'ont aucune résistance poussée."
+            },
+            {
+              "order": 7,
+              "action": "Contre les 4 Gelées Royales : chaque personnage s'occupe de celle de son élément, puis tous focus la dernière.",
+              "rationale": "Avec 3 éléments ou plus, c'est la stratégie du guide. Royale Bleuet Os retire aussi 2 PA à la cible."
+            },
+            {
+              "order": 8,
+              "action": "Succès spécial « Privé de dessert » : ne jamais toucher les invocations, même en zone ou par poussée.",
+              "rationale": "Leurs glyphes servent alors à retirer plus de résistances aux Gelées Royales."
+            }
+          ]
         }
       ]
     },
@@ -4665,6 +5680,63 @@
           "sourceId": "src.dpln.gelaxieme-dimension",
           "quote": "NOTE : Le malus de résistances via les glyphes est cumulable. Les gelées invoquées ont 20% de PV en moins.",
           "locator": "V- Présentation des Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.gelaxieme-dimension",
+          "quote": "De cette façon, vous pouvez baisser les résistances des Gelées Royale en les plaçant dans les glyphes correspondant à votre élément de frappe.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.gelaxieme-dimension",
+          "quote": "Chaque Gelée Royale invoque une Gelée au tour 1.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : éviter une équipe mono-élément ; frapper la Gelée Royale Citron en air.",
+              "rationale": "Elle a 10 % de faiblesse air et 70 % de résistances dans les autres éléments."
+            },
+            {
+              "order": 2,
+              "action": "Au tour 1 : s'attendre à une Gelée Citron invoquée à ses côtés.",
+              "rationale": "Chaque Gelée Royale invoque une Gelée au tour 1 (les gelées invoquées ont 20 % de PV en moins)."
+            },
+            {
+              "order": 3,
+              "action": "Sans personnage air, comparer avec vos sorts qui frappent en air même hors de votre élément.",
+              "rationale": "Sur 10 % de faiblesse, ils peuvent faire plus de dégâts que vos sorts de votre élément sur 70 % de résistance."
+            },
+            {
+              "order": 4,
+              "action": "À partir du tour 2 : placer la Gelée Royale Citron dans le glyphe d'une gelée de la couleur de votre élément de frappe.",
+              "rationale": "Tartinade : une gelée d'une autre couleur qui commence son tour dans ce glyphe perd 15 % de résistance dans cet élément pendant 3 tours, cumulable."
+            },
+            {
+              "order": 5,
+              "action": "Ne pas commencer son tour dans le glyphe jaune.",
+              "rationale": "Un personnage qui y commence son tour subit 65 dégâts air ; une gelée Citron y est soignée de 20 PV."
+            },
+            {
+              "order": 6,
+              "action": "Si vos dégâts sont faibles, la pousser contre un obstacle pour infliger des dommages de poussée.",
+              "rationale": "Les Gelées n'ont aucune résistance poussée. Fixation Béton réduit aussi de 24 les dommages qu'elle subit pendant 2 tours."
+            },
+            {
+              "order": 7,
+              "action": "Contre les 4 Gelées Royales : chaque personnage s'occupe de celle de son élément, puis tous focus la dernière.",
+              "rationale": "Avec 3 éléments ou plus, c'est la stratégie du guide. Royale Citron Os retire aussi 30 puissance à la cible."
+            },
+            {
+              "order": 8,
+              "action": "Succès spécial « Privé de dessert » : ne jamais toucher les invocations, même en zone ou par poussée.",
+              "rationale": "Leurs glyphes servent alors à retirer plus de résistances aux Gelées Royales."
+            }
+          ]
         }
       ]
     },
@@ -4702,6 +5774,53 @@
           "sourceId": "src.dpln.gelaxieme-dimension",
           "quote": "NOTE : Le malus de résistances via les glyphes est cumulable. Les gelées invoquées ont 20% de PV en moins.",
           "locator": "V- Présentation des Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.gelaxieme-dimension",
+          "quote": "De cette façon, vous pouvez baisser les résistances des Gelées Royale en les plaçant dans les glyphes correspondant à votre élément de frappe.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.gelaxieme-dimension",
+          "quote": "Quand une Gelée Fraise ou une Gelée Royale Fraise commence son tour dedans, elle est soignée de 65PV.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : composer une équipe qui tape dans plusieurs éléments, idéalement avec du feu.",
+              "rationale": "Chaque Gelée Royale a 10 % de faiblesse dans son élément (feu pour la Fraise) et 70 % de résistances dans les autres ; le guide déconseille de jouer toute l'équipe dans le même élément."
+            },
+            {
+              "order": 2,
+              "action": "Début du combat : s'attendre à une Gelée Fraise invoquée dès le tour 1.",
+              "rationale": "Chaque Gelée Royale invoque une Gelée au tour 1 (Invocation de Gelée Fraise, relance de 5 tours) ; le principal danger du combat est le nombre d'ennemis."
+            },
+            {
+              "order": 3,
+              "action": "Si vous avez du feu : frapper directement la Gelée Royale Fraise dans l'élément feu.",
+              "rationale": "Avec une bonne couverture élémentaire, inutile de tuer les invocations : grâce à leurs -10 % de résistances, les Gelées Royales tombent très vite. Un sort feu hors de votre élément peut même faire plus de dégâts que vos sorts sur ses 70 %."
+            },
+            {
+              "order": 4,
+              "action": "Sans feu : éliminer d'abord les invocations, puis placer la Gelée Royale Fraise dans le glyphe (Tartinade) de la couleur de votre élément de frappe.",
+              "rationale": "À partir du tour 2, les gelées posent des glyphes de leur couleur ; une gelée d'une autre couleur qui commence son tour dedans perd 15 % de résistance dans cet élément pendant 3 tours, cumulable."
+            },
+            {
+              "order": 5,
+              "action": "Ne pas rester dans le glyphe rouge de la Fraise et ne pas la laisser y commencer son tour.",
+              "rationale": "Le glyphe rouge de la Gelée Royale Fraise inflige 65 feu aux personnages qui y commencent leur tour et soigne de 65 PV les Gelées Fraise qui y commencent le leur."
+            },
+            {
+              "order": 6,
+              "action": "Si elle reste seule et que vous manquez de dégâts : la coller à un obstacle et lui infliger des dommages de poussée.",
+              "rationale": "Les Gelées n'ont aucune résistance poussée ; il faut au préalable placer la Gelée contre un obstacle."
+            }
+          ]
         }
       ]
     },
@@ -4739,6 +5858,53 @@
           "sourceId": "src.dpln.gelaxieme-dimension",
           "quote": "NOTE : Le malus de résistances via les glyphes est cumulable. Les gelées invoquées ont 20% de PV en moins.",
           "locator": "V- Présentation des Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.gelaxieme-dimension",
+          "quote": "De cette façon, vous pouvez baisser les résistances des Gelées Royale en les plaçant dans les glyphes correspondant à votre élément de frappe.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.gelaxieme-dimension",
+          "quote": "La Gelée Royale Menthe peut vous retirer 2PM et compliquer la réussite du succès si vous êtes loin de vos alliés.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : composer une équipe qui tape dans plusieurs éléments, idéalement avec de la terre.",
+              "rationale": "Chaque Gelée Royale a 10 % de faiblesse dans son élément (terre pour la Menthe) et 70 % de résistances dans les autres ; le guide déconseille de jouer toute l'équipe dans le même élément."
+            },
+            {
+              "order": 2,
+              "action": "Début du combat : s'attendre à une Gelée Menthe invoquée dès le tour 1.",
+              "rationale": "Chaque Gelée Royale invoque une Gelée au tour 1 (Invocation de Gelée Menthe, relance de 5 tours) ; le principal danger du combat est le nombre d'ennemis."
+            },
+            {
+              "order": 3,
+              "action": "Si vous avez de la terre : frapper directement la Gelée Royale Menthe dans l'élément terre.",
+              "rationale": "Avec une bonne couverture élémentaire, inutile de tuer les invocations : grâce à leurs -10 % de résistances, les Gelées Royales tombent très vite. Un sort terre hors de votre élément peut même faire plus de dégâts que vos sorts sur ses 70 %."
+            },
+            {
+              "order": 4,
+              "action": "Sans terre : éliminer d'abord les invocations, puis placer la Gelée Royale Menthe dans le glyphe (Tartinade) de la couleur de votre élément de frappe.",
+              "rationale": "À partir du tour 2, les gelées posent des glyphes de leur couleur ; une gelée d'une autre couleur qui commence son tour dedans perd 15 % de résistance dans cet élément pendant 3 tours, cumulable."
+            },
+            {
+              "order": 5,
+              "action": "Ne pas rester loin de vos alliés face à elle si vous faites le succès Collant.",
+              "rationale": "Royale Menthe Os inflige 80 terre et retire 2 PM pour un tour, ce qui peut empêcher de se coller à un allié."
+            },
+            {
+              "order": 6,
+              "action": "Si elle reste seule et que vous manquez de dégâts : la coller à un obstacle et lui infliger des dommages de poussée.",
+              "rationale": "Les Gelées n'ont aucune résistance poussée ; il faut au préalable placer la Gelée contre un obstacle."
+            }
+          ]
         }
       ]
     },
@@ -4756,6 +5922,68 @@
           "sourceId": "src.dpln.village-kanniboul",
           "quote": "Bénédiction Moonesque (passif) : Applique l’état « Bénédiction Moonesque » sur le Kanniboul Ebil et tous les monstres du combat. Quand un monstre subit des dégâts, ses alliés dans une zone cercle de taille 2 autour de lui sont soignés de 50% des dégâts subis.",
           "locator": "V- Présentation du Boss — Sorts du Boss"
+        },
+        {
+          "sourceId": "src.dpln.village-kanniboul",
+          "quote": "Le Kanniboul Ebil peut taper uniquement en ligne. Si vous restez suffisamment loin de lui, il ne pourra rien faire et en plus, aucun personnage ne sera dans l’état « Maudit ».",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.village-kanniboul",
+          "quote": "Le passif « Bénédiction Moonesque » permet aux ennemis de se soigner si un monstre dans un cercle de taille 2 autour d’eux subit des dégâts. Pour en réduire l’impact, il est préférable de focus les monstres les uns après les autres.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.village-kanniboul",
+          "quote": "Rappel : Essayez de ne jamais taper la Poupée Aycetroy, laissez-la faire sa vie de son côté.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Rester à distance du Kanniboul Ebil et hors de ses lignes.",
+              "rationale": "Il ne tape qu'en ligne (Bouboule, jusqu'à 6 PO modifiable, 1 fois par tour) : loin de lui, il ne peut rien faire et personne n'entre dans l'état Maudit."
+            },
+            {
+              "order": 2,
+              "action": "Ignorer la Poupée Aycetroy et rester loin d'elle.",
+              "rationale": "Il la réinvoque au tour suivant si elle meurt ; elle frappe en cercle de taille 2 autour d'elle à chaque fin de tour (45 neutre, +50 puissance par tour). Au tour 1 elle peut échanger de place avec un personnage, puis pas avant le tour 5."
+            },
+            {
+              "order": 3,
+              "action": "Ne jamais frapper la Poupée quand un allié est Maudit.",
+              "rationale": "Tous les dégâts reçus par la Poupée sont renvoyés au personnage Maudit (sauf la ligne qui l'achève)."
+            },
+            {
+              "order": 4,
+              "action": "Tuer le Kanniboul Sarbak en premier, ou lui retirer sa PO.",
+              "rationale": "C'est le plus dangereux : Sarbakanniboul pose un poison qui frappe selon les PA utilisés. Sous ce poison, utiliser peu de PA."
+            },
+            {
+              "order": 5,
+              "action": "À 6 personnages ou plus : focus les Kannibouls Eth en premier en restant à distance.",
+              "rationale": "En mêlée, Éternuement Collatéral fait intercepter par sa cible tous les dégâts reçus par le Kanniboul Eth (débuffer le Kanniboul Eth, pas le personnage)."
+            },
+            {
+              "order": 6,
+              "action": "Focus les monstres un par un et ne pas frapper un monstre à 2 cases ou moins d'un autre.",
+              "rationale": "Bénédiction Moonesque : les alliés dans un cercle de taille 2 autour du monstre frappé sont soignés de 50 % des dégâts subis."
+            },
+            {
+              "order": 7,
+              "action": "Tuer ensuite le Kanniboul Jav, puis le Kanniboul Tam en dernier.",
+              "rationale": "Le Jav est plus dangereux à distance que l'Ark ; le Tam ne tape qu'en zone autour de lui."
+            },
+            {
+              "order": 8,
+              "action": "Une fois tous les monstres morts, focus le Kanniboul Ebil, de préférence en air.",
+              "rationale": "Il a peu de PV, 30 % de résistance terre et 10 % de faiblesse air."
+            }
+          ]
         }
       ]
     },
@@ -5030,6 +6258,58 @@
           "sourceId": "src.dpln.grotte-hesque",
           "quote": "N’allez jamais au contact du Corailleur Magistral.",
           "locator": "IV- Présentation du Boss — Principe du combat / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.grotte-hesque",
+          "quote": "Il est absolument inoffensif à distance et n’est dangereux qu’en mêlée.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.grotte-hesque",
+          "quote": "Ce sort coûte 16PA et ne peut être lancé que sous l’effet du sort « Coraillement Magistral ».",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.grotte-hesque",
+          "quote": "Une fois que tous les monstres sont morts, il ne vous reste plus qu’à éliminer le Corailleur Magistral à distance sans jamais aller en mêlée avec lui.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Phase de préparation : placer tous les personnages loin du Corailleur Magistral.",
+              "rationale": "Il est absolument inoffensif à distance et n'est dangereux qu'en mêlée."
+            },
+            {
+              "order": 2,
+              "action": "Ne jamais aller au contact du Corailleur Magistral.",
+              "rationale": "Sous Coraillement Magistral (+12 PA, +400 puissance pendant 4 tours), Frappe de Corail Magistrale (16 PA) inflige 20 000 air en mêlée et tue même un personnage invulnérable."
+            },
+            {
+              "order": 3,
+              "action": "Tuer les Palmifleurs en premier.",
+              "rationale": "Leur sort Décapsulage réduit les résistances d'un personnage de 100 % pendant 2 tours ; ce malus est débuffable (Mot de Jouvence, Lait de Bambou…)."
+            },
+            {
+              "order": 4,
+              "action": "Tuer ensuite les Crustorail et le Corailleur (ordre libre).",
+              "rationale": "Le Corailleur Magistral a beaucoup de PV (2000 à 2900) : le guide conseille de s'occuper des monstres d'abord."
+            },
+            {
+              "order": 5,
+              "action": "Garder ses distances même quand il retrouve ses PM.",
+              "rationale": "Coraillement Magistral lui fait perdre ses 3 PM pendant 4 tours, mais avec sa relance de 5 tours il a un tour avec ses PM (sans pouvoir utiliser son sort d'OS)."
+            },
+            {
+              "order": 6,
+              "action": "Une fois les monstres morts, le tuer à distance, de préférence en terre ou en air.",
+              "rationale": "Il a très peu de résistances et une faiblesse en terre et en air."
+            }
+          ]
         }
       ]
     },
@@ -5098,6 +6378,58 @@
           "sourceId": "src.dpln.donjon-des-larves",
           "quote": "Afin d’en profiter au maximum, il est conseillé de bien se placer le tour avant que la Shin Larve n’utilise ce sort. C’est-à-dire aux tours 1, 4 , 7, etc…",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.donjon-des-larves",
+          "quote": "Placez-vous de sorte à ce que vous ayez la portée et la ligne de vue pour la taper au tour 2 car la Shin Larve utilisera son sort Enlisement et vous n’aurez aucun PM.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.donjon-des-larves",
+          "quote": "La Shin Larve invoque à chaque tour pair (2, 4, 6, etc …). Vous pouvez décider de focus les invocations ou de les ignorer. Cependant si elle invoque une Larve Saphir, il vous faudra absolument la focus.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : prévoir si possible des personnages eau ou air.",
+              "rationale": "La Shin Larve a de bonnes résistances neutre, terre et feu mais de grosses faiblesses eau et air, avec 2000 à 2900 PV."
+            },
+            {
+              "order": 2,
+              "action": "Tour 1 : se booster puis se placer avec portée et ligne de vue sur la cible du tour suivant, loin des larves.",
+              "rationale": "Au tour 2, Enlisement retire 6 PM aux personnages et donne 4 PA à toutes les entités pour un tour : vous ne pourrez pas bouger."
+            },
+            {
+              "order": 3,
+              "action": "Tour 2 : utiliser les PA bonus pour un maximum de dégâts.",
+              "rationale": "Avec plusieurs personnages eau/air, la Shin Larve peut être éliminée dès le tour 2 ; sinon, servez-vous-en pour tuer un maximum de larves."
+            },
+            {
+              "order": 4,
+              "action": "Sans (ou avec un seul) personnage eau/air : tuer d'abord les monstres, la Larve Saphir en priorité.",
+              "rationale": "La Larve Saphir peut soigner jusqu'à 200 par tour un de ses alliés. À 4 personnages, tapez la larve la plus proche."
+            },
+            {
+              "order": 5,
+              "action": "Aux tours pairs, surveiller l'invocation : si c'est une Larve Saphir, la tuer rapidement.",
+              "rationale": "La Shin Larve invoque une larve aléatoire à chaque tour pair (2, 4, 6…). Exception : si vous êtes en train de finir la Shin Larve au tour 2, concentrez-vous sur elle."
+            },
+            {
+              "order": 6,
+              "action": "Se replacer aux tours 1, 4, 7… avant chaque Enlisement.",
+              "rationale": "Elle lance Enlisement au tour 2 puis tous les 3 tours."
+            },
+            {
+              "order": 7,
+              "action": "Une fois les monstres morts, frapper la Shin Larve en restant hors de sa mêlée.",
+              "rationale": "Elle n'a que 2 PM et tape uniquement en mêlée (Déglutition : 120 neutre, -3 PA, repousse de 4 cases)."
+            }
+          ]
         }
       ]
     },
@@ -5200,6 +6532,48 @@
           "sourceId": "src.dpln.donjon-de-nowel",
           "quote": "À chacun de ses débuts de tour, il invoque un Kipik de Sapik (maximum 5 invocations sur le terrain) qui vont venir vous gêner.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.donjon-de-nowel",
+          "quote": "NOTE : Le Kitsou Nakwatus donne 2PM tous les 3 tours à ses alliés et donc au Sapik, raison de plus pour le focus rapidement.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.donjon-de-nowel",
+          "quote": "Évitez d’aller en mêlée avec lui pour ne pas subir de dommages inutilement. S'il vous reste peu de PV, cachez-vous derrière des obstacles ou des invocations afin d’être hors de sa ligne de vue.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Se placer et jouer hors de la ligne de vue du Sapik.",
+              "rationale": "Il a 0 PM et ne peut pas être déplacé ; son sort Enguirlandage frappe à portée infinie mais a besoin d'une ligne de vue."
+            },
+            {
+              "order": 2,
+              "action": "Tuer le Kwakus et le Kitsou Nakwatus en premier, de préférence en feu.",
+              "rationale": "Ce sont les plus dangereux ; le Kitsou Nakwatus donne 2 PM tous les 3 tours à ses alliés, donc au Sapik. Tous les monstres ont des faiblesses feu (100 % pour le Kwakus)."
+            },
+            {
+              "order": 3,
+              "action": "Tuer chaque Kipik de Sapik dès qu'il est invoqué.",
+              "rationale": "Il invoque un Kipik à chacun de ses débuts de tour (5 au maximum) : plus le combat dure, plus ils gênent vos déplacements et vous tapent."
+            },
+            {
+              "order": 4,
+              "action": "Une fois les monstres morts, frapper le Sapik sans aller en mêlée.",
+              "rationale": "Il n'a pas d'état invulnérable ; en mêlée, Câlin Kipik frappe 80 air en croix et retire 10 fuite."
+            },
+            {
+              "order": 5,
+              "action": "Avec peu de PV : se cacher derrière un obstacle ou une invocation.",
+              "rationale": "Hors de sa ligne de vue, il ne peut pas vous toucher à distance."
+            }
+          ]
         }
       ]
     },
@@ -5222,6 +6596,43 @@
           "sourceId": "src.dpln.refuge-sylvestre",
           "quote": "Il met un malus de 10% de résistances dans tous les éléments à sa cible et à lui-même pour 2 tours (cumulable 3 fois).",
           "locator": "V- Présentation du Boss — Principe du combat / Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.refuge-sylvestre",
+          "quote": "Afin de vaincre le Rakoopeur, la meilleure stratégie consiste à éliminer les monstres en commençant par le Timangouste. Il est préférable ensuite de focus le Buffalourd puis le Grolours avant de finalement s’attaquer au Rakoopeur en dernier.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.refuge-sylvestre",
+          "quote": "Sachant que le Rakoopeur va lancer son sort « Camaraderie » (qui boost un de ses alliés en PB) au premier tour, il est conseillé de laisser le monstre ciblé tranquille et de s'occuper des autres le temps qu'il perde le bonus de PB de lui-même.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Tuer le Timangouste en premier.",
+              "rationale": "Ordre conseillé par le guide : Timangouste, Buffalourd, Grolours, puis le Rakoopeur en dernier."
+            },
+            {
+              "order": 2,
+              "action": "Laisser tranquille le monstre qui reçoit le bouclier de Camaraderie et frapper les autres.",
+              "rationale": "Au premier tour, le Rakoopeur se téléporte au contact d'un allié et lui donne un bouclier de 200 % de son niveau pendant 2 tours ; il le perd de lui-même."
+            },
+            {
+              "order": 3,
+              "action": "Tuer ensuite le Buffalourd, puis le Grolours, en évitant un monstre qui partage les dégâts.",
+              "rationale": "Empressement du Grolours partage les dommages entre ses alliés en croix de taille 1 : focus un monstre non concerné par le partage."
+            },
+            {
+              "order": 4,
+              "action": "Finir par le Rakoopeur.",
+              "rationale": "Il n'a aucun état invulnérable. Ses frappes multi-élémentaires (Serpe boomerang jusqu'à 4 PO, Serpette jusqu'à 6 PO) retirent 10 % de résistances à sa cible et à lui-même pendant 2 tours, cumulable 3 fois."
+            }
+          ]
         }
       ]
     },
@@ -5244,6 +6655,53 @@
           "sourceId": "src.dpln.cache-de-kankreblath",
           "quote": "Il y a une chance sur 3 qu’il invoque un monstre aléatoire et ensuite 3 chances sur 5 qu’il invoque un monstre qui peut vous poser problème.",
           "locator": "IV- Présentation du Boss — Principe du combat / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.cache-de-kankreblath",
+          "quote": "Il faudra commencer par éliminer le Pyrasite qui est le monstre le plus dangereux. Si, au tour 2, le Kankreblath a invoqué un autre Pyrasite ou si le monstre invoqué est proche de vous, il faudra le focus dès que le premier Pyrasite est mort.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.cache-de-kankreblath",
+          "quote": "Une fois les monstres morts, il faudra vous attaquer au Kankreblath qui ne devrait pas vous poser de problèmes. Attention toutefois à ses invocations qu’il est préférable d’éliminer dès leur arrivée sur le terrain.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : prévoir si possible un ou deux personnages eau.",
+              "rationale": "3 monstres du donjon ont des faiblesses eau et les deux autres 0 % ; seul le Kankreblath résiste à l'eau (26 %) et à la terre (34 %)."
+            },
+            {
+              "order": 2,
+              "action": "Rester à distance de tous les ennemis.",
+              "rationale": "Tous les monstres tapent à courte portée ou en mêlée ; le Kankreblath frappe en zone (ligne de taille 6, cercle de taille 3)."
+            },
+            {
+              "order": 3,
+              "action": "Tuer le Pyrasite en premier, de préférence en eau.",
+              "rationale": "C'est le monstre le plus dangereux (dégâts, poison, boost PM et puissance de ses alliés) ; il a 20 % de faiblesse eau."
+            },
+            {
+              "order": 4,
+              "action": "Dès le tour 2, tuer immédiatement tout monstre invoqué par le Kankreblath s'il est dangereux ou proche.",
+              "rationale": "Sfvc%$*$R ? (dès le tour 2, relance de 3 tours) a 1 chance sur 3 d'invoquer un monstre aléatoire de la zone jusqu'à 6 PO, souvent près de vous."
+            },
+            {
+              "order": 5,
+              "action": "Continuer par le Céglumen et le Sakarien, puis le Cafarcher et enfin le Mirgrillon.",
+              "rationale": "Le Cafarcher tape jusqu'à 6 PO alors que le Mirgrillon ne tape qu'en mêlée."
+            },
+            {
+              "order": 6,
+              "action": "Finir par le Kankreblath, en éliminant ses invocations dès leur arrivée.",
+              "rationale": "Il n'a pas de mécanique spéciale ; son sort aléatoire peut aussi le rendre invisible ou le téléporter."
+            }
+          ]
         }
       ]
     },
@@ -5293,6 +6751,53 @@
           "sourceId": "src.dpln.donjon-des-scarafeuilles",
           "quote": "Au premier tour et puis tous les 4 tours, le Scarabosse Doré enlèvera 2PM et 6PO à toute votre équipe pour un tour réduisant alors vos déplacements et votre capacité à infliger des dégâts à distance.",
           "locator": "V- Présentation du Boss — Principe du combat / Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.donjon-des-scarafeuilles",
+          "quote": "Il est préférable de focus le Scarabosse Doré en dernier. En effet, il a beaucoup de PV pour un donjon de niveau 40 et ses résistances sont loin d’être ridicules (24% dans tous les éléments), de plus, il peut se soigner tous les 3 tours.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.donjon-des-scarafeuilles",
+          "quote": "Une fois que tous les monstres sont morts, il ne vous reste plus qu’à gérer le Scarabosse Doré en continuant d’éliminer ses invocations au fur et à mesure du combat.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : composer une équipe qui tape dans différents éléments.",
+              "rationale": "Chaque Scarafeuille a 100 % de résistance dans son élément et 50 % de faiblesse dans l'élément opposé."
+            },
+            {
+              "order": 2,
+              "action": "Rester au maximum à distance des ennemis.",
+              "rationale": "La plupart des sorts ennemis ne tapent qu'à courte portée. Au tour 1 puis tous les 4 tours, Brouillard Empoisonné retire 2 PM et 6 PO à toute l'équipe pour un tour."
+            },
+            {
+              "order": 3,
+              "action": "Si vous en avez les dégâts : tuer le Scarafeuille Noir avant son 2e tour.",
+              "rationale": "Il ne peut se rendre invisible (lui et ses alliés) qu'à partir du tour 2."
+            },
+            {
+              "order": 4,
+              "action": "Tuer les Scarafeuilles en commençant par ceux faibles à votre élément.",
+              "rationale": "Profiter de leurs 50 % de faiblesse pour les éliminer rapidement."
+            },
+            {
+              "order": 5,
+              "action": "Tuer les Flammèches et les Scarafeuilles Immatures dès leur invocation.",
+              "rationale": "Les Flammèches ont très peu de PV ; le Scarabosse invoque un Immature tous les 5 tours, qui se transforme en Scarafeuille au bout de 2 tours."
+            },
+            {
+              "order": 6,
+              "action": "Garder le Scarabosse Doré pour la fin et continuer d'éliminer ses invocations.",
+              "rationale": "Il n'a pas d'état invulnérable, mais beaucoup de PV, 24 % de résistances partout, et se soigne tous les 3 tours."
+            }
+          ]
         }
       ]
     },
@@ -5341,6 +6846,68 @@
           "sourceId": "src.dpln.donjon-des-squelettes",
           "quote": "Quand ce seuil est déclenché, l’entité se transforme en « Tas d’Os », devient invulnérable et perd 100PA et PM.",
           "locator": "VII- Expédition de guilde — Fonctionnement de l'expédition"
+        },
+        {
+          "sourceId": "src.dpln.donjon-des-squelettes",
+          "quote": "Le but de ce combat étant d’atteindre le seuil de PV de tous les adversaires puis de les placer dans les glyphes noirs quand ils sont sous la forme « Tas d’Os ». Quand tous les adversaires sont dans la forme « Tas d’Os » et dans un glyphe, le combat se termine par votre victoire.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.donjon-des-squelettes",
+          "quote": "Si un personnage atteint son seuil de PV et se transforme en « Tas d’Os », il vous suffit de placer ce personnage dans un glyphe noir avant le début de son tour de jeu pour qu’il se régénère de 50% de ses PV.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Expédition de guilde, avant d'entrer : éviter de jouer air.",
+              "rationale": "Tous les ennemis sauf le Chafer Rönin ont 50 % de résistance air ou plus, et des faiblesses dans les autres éléments pour la plupart."
+            },
+            {
+              "order": 2,
+              "action": "Repérer les 8 glyphes noirs posés au début du combat.",
+              "rationale": "Leurs positions sont fixes et identiques à chaque tentative."
+            },
+            {
+              "order": 3,
+              "action": "Frapper chaque monstre jusqu'à son seuil de 1 % de PV.",
+              "rationale": "À ce seuil, l'entité devient un « Tas d'Os » invulnérable qui perd 100 PA et PM ; un monstre redevient normal et se soigne de 100 % au bout de son 2e tour en Tas d'Os."
+            },
+            {
+              "order": 4,
+              "action": "Placer immédiatement chaque Tas d'Os ennemi dans un glyphe noir (en le frappant pour l'attirer si besoin).",
+              "rationale": "Dans un glyphe, il devient indéplaçable et passe tous ses tours. Chaque attaque sur un Tas d'Os l'attire d'une case vers l'attaquant."
+            },
+            {
+              "order": 5,
+              "action": "Faire commencer son tour au Chafer Rönin sur un glyphe noir.",
+              "rationale": "Il est invulnérable ; s'il commence son tour dans un glyphe noir, il perd son invulnérabilité pendant 2 tours."
+            },
+            {
+              "order": 6,
+              "action": "Trouver le vrai Chafer Rönin parmi ses illusions en les frappant.",
+              "rationale": "À la fin de chaque tour à partir du tour 2, il crée des illusions ; toucher le bon les fait toutes disparaître."
+            },
+            {
+              "order": 7,
+              "action": "Si un allié devient Tas d'Os : le placer dans un glyphe noir avant le début de son tour.",
+              "rationale": "Sinon il meurt au début de son prochain tour ; dans le glyphe, il redevient normal et se soigne de 50 % de ses PV."
+            },
+            {
+              "order": 8,
+              "action": "Ne pas rester en mêlée du Rib.",
+              "rationale": "S'il vous inflige des dégâts de poussée avec Rip (1 case), il vous enlève 99 % de vos PV et vous passe en Tas d'Os."
+            },
+            {
+              "order": 9,
+              "action": "Gagner en mettant tous les adversaires en Tas d'Os dans un glyphe.",
+              "rationale": "Le combat se termine par votre victoire quand tous les adversaires sont en Tas d'Os dans un glyphe."
+            }
+          ]
         }
       ]
     },
@@ -5396,6 +6963,58 @@
           "sourceId": "src.dpln.donjon-des-tofus",
           "quote": "Le Batofu a également beaucoup de résistance air (36%) et il sera plus facile de l’éliminer avec des personnages qui tapent dans les éléments feu et eau.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.donjon-des-tofus",
+          "quote": "Stratégiquement, il est préférable de focus le Tofukaz en premier et de l’éliminer avant le début de son tour 2.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.donjon-des-tofus",
+          "quote": "N’éliminez pas les Tofus Fugace invoqués par le Batofu, ils mourront automatiquement à la fin de leur deuxième tour de jeu.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : prévoir au moins un personnage eau, et plutôt du feu et de l'eau que de l'air.",
+              "rationale": "Le Batofu a 36 % de résistance air ; le Tofu Ventripotent, très résistant, a une grosse faiblesse eau (-21 %)."
+            },
+            {
+              "order": 2,
+              "action": "Tuer le Tofukaz avant le début de son tour 2.",
+              "rationale": "Au tour 2, il peut se rendre invisible lui et ses alliés en cercle de taille 2."
+            },
+            {
+              "order": 3,
+              "action": "Reculer plutôt qu'avancer pour attirer les Tofus.",
+              "rationale": "Ils ont beaucoup de PM et une IA fuyarde : si vous reculez, ils utilisent leurs PM pour venir vers vous et sont plus faciles à focus."
+            },
+            {
+              "order": 4,
+              "action": "Dès que possible, bloquer le Batofu dans un coin de la map (idéalement avec 2 invocations) ou l'entourer.",
+              "rationale": "Bloqué, il ne fait que taper et ne peut plus invoquer ; vous pouvez alors le focus dès que le Tofukaz est mort."
+            },
+            {
+              "order": 5,
+              "action": "Tuer ensuite la Tofoune (et à plus de 4 : le Tofu Mutant et le Tofu Noir).",
+              "rationale": "Ordre de focus conseillé par le guide."
+            },
+            {
+              "order": 6,
+              "action": "Ne pas tuer les Tofus Fugaces ; tuer les Tofus Noirs invoqués si le combat dure.",
+              "rationale": "Les Tofus Fugaces meurent seuls à la fin de leur 2e tour ; les Tofus Noirs peuvent éroder."
+            },
+            {
+              "order": 7,
+              "action": "Tuer le Batofu avant le Tofu Ventripotent, qui est à garder pour la fin.",
+              "rationale": "Le Batofu sera plus rapide à éliminer ; le Tofu Ventripotent est à frapper seulement si rien d'autre n'est à portée."
+            }
+          ]
         }
       ]
     },
@@ -5453,6 +7072,53 @@
           "sourceId": "src.dpln.cour-du-bouftou-royal",
           "quote": "Il ne peut pas se soigner lui-même, cependant il a beaucoup de PV et de résistances pour un monstre de niveau 30 et il est difficile de le focus en premier.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.cour-du-bouftou-royal",
+          "quote": "Pour cela, vous pouvez placer un personnage proche du Bouftou Royal pendant la phase de préparation afin que le Bouftou Royal tape ce personnage puis recule. ",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.cour-du-bouftou-royal",
+          "quote": "Le Bouftou Noir et le Chef de Guerre Bouftou sont les plus dangereux et donc à focus en premier.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.cour-du-bouftou-royal",
+          "quote": "Une fois qu’il ne reste plus que le Bouftou Royal, vous devez juste le focus en faisant attention de ne jamais être à sa portée (il a 5PM, il faudra donc au moins se trouver à 7 cases de lui).",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Phase de préparation : placer un personnage proche du Bouftou Royal (pas un personnage avec de l'agilité ou du tacle), les autres loin.",
+              "rationale": "Il a une IA fuyarde : il tape ce personnage puis recule. S'il est taclé, il ne recule pas."
+            },
+            {
+              "order": 2,
+              "action": "Après sa frappe, reculer loin de lui.",
+              "rationale": "Il ne tape qu'en mêlée : il faut le garder à distance pour qu'il ne vienne pas vous taper à chaque tour."
+            },
+            {
+              "order": 3,
+              "action": "S'il se rapproche trop, placer une invocation près de lui.",
+              "rationale": "Il tape l'invocation puis recule."
+            },
+            {
+              "order": 4,
+              "action": "Tuer les monstres un par un, Bouftou Noir et Chef de Guerre Bouftou en premier.",
+              "rationale": "Il soigne ses alliés jusqu'à 6 PO (Guérison Bouftou, 200 PV) ; ces deux monstres sont les plus dangereux."
+            },
+            {
+              "order": 5,
+              "action": "Une fois seul, le focus en restant à au moins 7 cases de lui.",
+              "rationale": "Il a 5 PM ; il ne peut pas se soigner lui-même."
+            }
+          ]
         }
       ]
     },
@@ -5498,6 +7164,53 @@
           "sourceId": "src.dpln.grange-du-tournesol-affame",
           "quote": "Étant invulnérable à distance, il faut absolument le taper en mêlée.",
           "locator": "V- Expédition de guilde — Fonctionnement de l'expédition"
+        },
+        {
+          "sourceId": "src.dpln.grange-du-tournesol-affame",
+          "quote": "Pour la première partie du combat, il faut tuer tous les monstres en restant absolument à distance de tous les ennemis.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.grange-du-tournesol-affame",
+          "quote": "Soit vous le tuez à petit feu en le tapant puis vous vous mettez hors de portée afin qu’il ne puisse pas vous atteindre en mêlée. Soit vous vous préparez pour le tuer en un tour.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Expédition de guilde, avant d'entrer : prévoir du retrait PM.",
+              "rationale": "Le Tournesol Affamé est indéplaçable, mais on peut lui retirer des PM pour le garder à distance."
+            },
+            {
+              "order": 2,
+              "action": "Tuer tous les monstres en restant absolument à distance de tous les ennemis.",
+              "rationale": "Il OS en mêlée et peut se téléporter au contact d'un allié ou échanger de place avec lui : un monstre proche de vous peut vous coûter un personnage."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas invoquer près des ennemis.",
+              "rationale": "S'il OS une invocation, il gagne 4 PM et 20 % de ses PV en bouclier pendant 4 tours (désenvoûtable)."
+            },
+            {
+              "order": 4,
+              "action": "Aux tours pairs, s'éloigner de ses invocations.",
+              "rationale": "Appel des Champs invoque un monstre jusqu'à 4 PO, sur lequel il peut se téléporter. Soin Feuillu lui donne aussi 4 PM pour un tour tous les deux tours."
+            },
+            {
+              "order": 5,
+              "action": "Une fois les monstres morts, le frapper en mêlée puis se remettre hors de sa portée.",
+              "rationale": "Il est invulnérable à distance : il faut le taper en mêlée. À distance, il est absolument inoffensif."
+            },
+            {
+              "order": 6,
+              "action": "Ou bien se préparer pour le tuer en un tour (par exemple full boost au tour 1, tuer au tour 2).",
+              "rationale": "Alternative proposée par le guide avec une bonne composition en mêlée. Avec un Roublard, faire exploser des bombes posées en mêlée de lui."
+            }
+          ]
         }
       ]
     },
@@ -5549,6 +7262,58 @@
           "sourceId": "src.dpln.chateau-ensable",
           "quote": "Quand on tape un Pichon ennemi, le Mob l’éponge perd 1% de résistance (infini) pour chaque ligne de dégâts et il subit 100% des dégâts infligés à ce Pichon dans l’élément du Pichon :",
           "locator": "V- Expédition de guilde — Fonctionnement de l'expédition"
+        },
+        {
+          "sourceId": "src.dpln.chateau-ensable",
+          "quote": "Si vous tuez le Mob l’éponge, le combat se termine par votre victoire, il n’est pas nécessaire de tuer les monstres.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.chateau-ensable",
+          "quote": "Gardez le Mob l’éponge à distance. Il n’est dangereux qu’à 2PO.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Expédition de guilde, avant d'entrer : éviter l'air, préférer des sorts de zone multi-lignes, équiper un Dofus Abyssal ; butin 5 conseillé.",
+              "rationale": "Les ennemis ont 50 à 66 % de résistance air ; chaque ligne compte ; le Dofus Abyssal donne 1 PM que le glyphe rouge ne peut pas retirer."
+            },
+            {
+              "order": 2,
+              "action": "Garder Mob l'Éponge à distance ou le bloquer entre deux monstres dans un coin / le tacler.",
+              "rationale": "Il n'est dangereux qu'à 2 PO ; son poison « Dégraissage » se lance à 3 PO minimum avec ligne de vue (attention au Pichon Bleu qui rend intacleur)."
+            },
+            {
+              "order": 3,
+              "action": "Frapper les Pichons (invulnérables), pas le boss, avec un maximum de lignes de dégâts et en zone.",
+              "rationale": "Chaque ligne sur un Pichon retire 1 % de résistance (infini) au Mob l'Éponge et lui renvoie 100 % des dégâts dans l'élément du Pichon, quelle que soit la distance."
+            },
+            {
+              "order": 4,
+              "action": "Sans sorts de zone : se concentrer sur un seul Pichon, le plus proche.",
+              "rationale": "Mieux vaut baisser ses résistances dans un seul élément que dans plusieurs."
+            },
+            {
+              "order": 5,
+              "action": "Ne jamais finir son tour dans le glyphe rouge du Pichon Orange.",
+              "rationale": "Il retire 10 PM, applique Pesanteur (pas de téléportation), fait d'énormes dégâts et 30 % d'érosion ; en sortir avec un gain de PM ou un rush."
+            },
+            {
+              "order": 6,
+              "action": "Option : tuer le Pichon Kloune, le protéger, et utiliser « Klounerie ».",
+              "rationale": "Celui qui le tue en prend le contrôle ; Klounerie double les dégâts subis par Mob l'Éponge via les renvois."
+            },
+            {
+              "order": 7,
+              "action": "Continuer jusqu'à la mort de Mob l'Éponge.",
+              "rationale": "Le tuer termine le combat par une victoire, inutile de tuer les monstres."
+            }
+          ]
         }
       ]
     },
@@ -5571,6 +7336,43 @@
           "sourceId": "src.dpln.crypte-de-kardorim",
           "quote": "Le plus simple est de focus le Kardorim en premier.",
           "locator": "IV- Présentation du Boss — Principe du combat / Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.crypte-de-kardorim",
+          "quote": "Si le Kardorib vous gène, vous pouvez l’éliminer, il ne pourra pas être réinvoqué avant 6 tours.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Focus le Kardorim en premier, de préférence en eau ou en terre.",
+              "rationale": "Il n'a que 140 à 200 PV, 4 PM, et des faiblesses eau et terre."
+            },
+            {
+              "order": 2,
+              "action": "Tour 1 : s'attendre à ce qu'il avance et invoque son Kardorib.",
+              "rationale": "Le Kardorib tape en mêlée et repousse de 2 cases (dommages de poussée si vous êtes contre un obstacle)."
+            },
+            {
+              "order": 3,
+              "action": "Si le Kardorib gêne, le tuer ; sinon le garder à distance.",
+              "rationale": "Il ne peut pas être réinvoqué avant 6 tours."
+            },
+            {
+              "order": 4,
+              "action": "Rester hors de la mêlée du Kardorim.",
+              "rationale": "Il tape uniquement en mêlée et se donne 1 PM pour 1 tour tous les 3 tours à partir du tour 2."
+            },
+            {
+              "order": 5,
+              "action": "Une fois le Kardorim mort, finir les monstres.",
+              "rationale": "Il tombe en général en 1 à 2 tours."
+            }
+          ]
         }
       ]
     },
@@ -5629,6 +7431,58 @@
           "sourceId": "src.dpln.grozilla-et-grasmera",
           "quote": "Le sort Apocalypse OS tous les personnages du combat, ce qui résulte en une défaite.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Le personnage OS est choisi aléatoirement et il n’y aucune façon de contrer cet effet. Le seul moyen de l’éviter est d'éliminer les deux lors du même tour global.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Grozilla et Grasmera ont une PO minimale de 2 sur leur sort de rush et d’attirance, s’ils sont taclés, ils ne pourront pas les utiliser et ils ne pourront pas annuler vos tours avec les combos Tyrannisation + Magnétisme et Météore + Gravité.",
+          "locator": "Étapes à suivre (synthèse du guide)"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Choisir sa stratégie : à distance (repousser / retrait PM) ou bloquer-tacler les deux boss côte à côte.",
+              "rationale": "Le guide propose ces deux stratégies ; ils sont inoffensifs à distance et ne peuvent pas être portés ni échangés, mais peuvent être poussés ou attirés."
+            },
+            {
+              "order": 2,
+              "action": "Garder Grozilla et Grasmera proches l'un de l'autre pendant tout le combat.",
+              "rationale": "Cela permet de les replacer facilement au tour 5 (version niveau 190)."
+            },
+            {
+              "order": 3,
+              "action": "Au tour 5 (puis tous les 5 tours), placer Grozilla à 2 PO ou moins de Grasmera avant le début du tour de Grozilla.",
+              "rationale": "Version 190 : Atomes Crochus est lancé au tour 5 ; si aux tours 6, 11, 16… ils ne sont pas à 2 PO ou moins, Grasmera passe en état Apocalypse et son sort tue tous les personnages (défaite)."
+            },
+            {
+              "order": 4,
+              "action": "Ne pas se faire frapper par l'un puis par l'autre.",
+              "rationale": "Tyrannisé + Météoroïde : dégâts égaux à 50 % de vos PV actuels ; dégâts de l'un + attirance/rush de l'autre : votre prochain tour est annulé."
+            },
+            {
+              "order": 5,
+              "action": "Les tacler (environ 180 de tacle) ou les garder à distance pour empêcher leurs sorts de placement.",
+              "rationale": "Leurs sorts de rush et d'attirance ont une PO minimale de 2 : taclés, ils ne peuvent pas les utiliser."
+            },
+            {
+              "order": 6,
+              "action": "Se cacher derrière les obstacles en stratégie à distance.",
+              "rationale": "Si Grasmera ne peut pas s'attirer sur un ennemi, son IA le fait souvent s'attirer sur Grozilla."
+            },
+            {
+              "order": 7,
+              "action": "Répartir les dégâts équitablement et les tuer tous les deux dans le même tour global.",
+              "rationale": "Version 190 : si l'un meurt, le survivant tue un personnage aléatoire à chaque début de tour, sans parade possible."
+            }
+          ]
         }
       ]
     },

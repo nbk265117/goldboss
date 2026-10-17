@@ -8,14 +8,14 @@ using System.Windows.Markup;
 namespace DofusCompanion.App.Localization;
 
 /// <summary>
-/// UI string table loaded from embedded JSON files (Localization/fr.json, en.json). Changing
+/// UI string table loaded from embedded JSON files (Localization/fr.json, en.json, ar.json — Moroccan Darija). Changing
 /// <see cref="Language"/> raises PropertyChanged("Item[]") so every bound string updates live.
 /// Canonical entity names are never translated here: they come from the knowledge base.
 /// </summary>
 public sealed class Loc : INotifyPropertyChanged
 {
     public const string DefaultLanguage = "fr";
-    public static IReadOnlyList<string> Supported { get; } = ["fr", "en"];
+    public static IReadOnlyList<string> Supported { get; } = ["fr", "en", "ar"];
     public static Loc Instance { get; } = new();
 
     private readonly Dictionary<string, Dictionary<string, string>> _tables = new(StringComparer.Ordinal);
@@ -45,7 +45,7 @@ public sealed class Loc : INotifyPropertyChanged
         if (!_tables.TryGetValue(language, out var table)) language = DefaultLanguage;
         Language = language;
         _current = _tables[language];
-        var culture = CultureInfo.GetCultureInfo(language == "fr" ? "fr-FR" : "en-US");
+        var culture = CultureInfo.GetCultureInfo(language switch { "fr" => "fr-FR", "ar" => "ar-MA", _ => "en-US" });
         CultureInfo.CurrentUICulture = culture;
         CultureInfo.DefaultThreadCurrentUICulture = culture;
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Item[]"));

@@ -61,12 +61,24 @@ Console.CancelKeyPress += (_, e) => { e.Cancel = true; cts.Cancel(); };
 try
 {
     Console.WriteLine($"Reading DofusDB ({(offline ? "cache only" : $"network, {options.Delay.TotalMilliseconds:0} ms between requests")})…");
+    var dungeons = await client.GetAllAsync("dungeons", cts.Token);
+    IReadOnlyList<System.Text.Json.JsonElement> mapPositions = [];
+    try
+    {
+        mapPositions = await client.GetByIdsAsync("map-positions", DofusDbMapper.DungeonMapIds(dungeons).ToList(), cts.Token);
+    }
+    catch (Exception ex) when (ex is HttpRequestException or InvalidOperationException or System.Text.Json.JsonException)
+    {
+        Console.WriteLine($"  warning: dungeon map coordinates unavailable ({ex.Message}); detection by coordinates disabled.");
+    }
+
     var snapshot = new DofusDbSnapshot(
-        await client.GetAllAsync("dungeons", cts.Token),
+        dungeons,
         await client.GetAllAsync("monsters", cts.Token),
         await client.GetAllAsync("monster-races", cts.Token),
         await client.GetAllAsync("subareas", cts.Token),
-        await client.GetAllAsync("areas", cts.Token));
+        await client.GetAllAsync("areas", cts.Token),
+        mapPositions);
 
     Func<int, string?>? imageFor = null;
     if (Flag("--images"))

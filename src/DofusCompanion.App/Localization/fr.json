@@ -4,16 +4,13 @@
   "App.Credit": "Développé avec ❤ en 2026 par AYOUB YOUB JOE",
   "Status.AutoImported": "Données importées automatiquement : {0}",
   "Status.Ready": "Prêt.",
-
   "Tab.Browser": "Encyclopédie",
   "Tab.Analysis": "Analyse de capture",
   "Tab.Knowledge": "Connaissances",
   "Tab.Settings": "Paramètres",
   "Tab.Diagnostics": "Diagnostic",
-
   "Main.ToggleOverlay": "Afficher / masquer l'overlay",
   "Main.ToggleOverlayTip": "Affiche ou masque le panneau toujours au premier plan.",
-
   "Overlay.Title": "Dofus Gold Boss - DGB — overlay",
   "Overlay.Search": "Rechercher un boss, un monstre…",
   "Overlay.SearchTip": "Tapez un nom ou un alias (accents et majuscules ignorés). Entrée = premier résultat.",
@@ -34,7 +31,6 @@
   "Overlay.OpenSource": "Ouvrir la source",
   "Overlay.ResetDone": "Overlay réinitialisé.",
   "Overlay.ClickThroughOn": "Clic traversant actif : l'overlay ignore la souris. Raccourci {0} pour reprendre la main.",
-
   "Browser.Search": "Rechercher par nom, alias, état, effet…",
   "Browser.SearchTip": "Recherche locale, insensible aux accents. Cherche aussi dans le texte des mécaniques (états, déclencheurs).",
   "Browser.Results": "Résultats",
@@ -42,7 +38,6 @@
   "Browser.NoResult": "Aucun résultat pour « {0} ». L'entité n'est peut-être pas encore dans la base.",
   "Browser.NoMechanic": "aucune mécanique documentée",
   "Browser.MechanicCount": "{0} mécanique(s) — {1}",
-
   "Filter.Type": "Type d'entité",
   "Filter.AllTypes": "Tous les types",
   "Filter.Location": "Zone ou donjon",
@@ -52,7 +47,6 @@
   "Filter.Mechanic": "Type de mécanique",
   "Filter.AnyMechanic": "Toute mécanique",
   "Filter.Clear": "Effacer les filtres",
-
   "Image.Add": "Ajouter une image…",
   "Image.Paste": "Coller une image",
   "Image.Remove": "Retirer l'image",
@@ -108,11 +102,9 @@
   "Detail.Export": "Exporter",
   "Detail.RosterComplete": "Liste des monstres complète",
   "Detail.RosterCompleteTip": "Cochez si tous les monstres présents ont été reconnus : l'absence d'un monstre peut alors être prise en compte.",
-
   "Step.Target": "Cible :",
   "Step.Position": "Position :",
   "Step.State": "État requis :",
-
   "Compact.Boss": "BOSS :",
   "Compact.Objective": "OBJECTIF :",
   "Compact.Status": "STATUT :",
@@ -125,32 +117,26 @@
   "Compact.Unknown": "INCONNU :",
   "Compact.Outdated": "À REVÉRIFIER :",
   "Compact.Source": "SOURCE :",
-
   "Verification.Verified": "Vérifié",
   "Verification.CommunityReported": "Rapporté par la communauté",
   "Verification.Inferred": "Déduit (non confirmé)",
   "Verification.Unknown": "Inconnu",
-
   "Condition.Satisfied": "remplie",
   "Condition.NotSatisfied": "non remplie",
   "Condition.Unknown": "à vérifier",
-
   "Gap.NoActionSequence": "Aucune séquence d'actions documentée.",
   "Gap.NoExpectedResult": "Résultat attendu non documenté.",
   "Gap.NoVulnerabilityDuration": "Durée de vulnérabilité non documentée.",
   "Gap.NoSource": "Aucune source citée.",
   "Gap.Documented": "",
-
   "Stale.SourcePredatesGameVersion": "Source antérieure à la version de référence du jeu : {0}",
   "Stale.NotRecentlyVerified": "Pas revérifié depuis le {0}",
   "Stale.NeverVerified": "Jamais vérifié",
-
   "NoteKind.Warning": "Attention",
   "NoteKind.CommonMistake": "Erreur fréquente",
   "NoteKind.FailureCase": "Échec",
   "NoteKind.Exception": "Exception",
   "NoteKind.Restriction": "Restriction",
-
   "EntityType.Monster": "Monstre",
   "EntityType.Boss": "Boss",
   "EntityType.Dungeon": "Donjon",
@@ -161,7 +147,6 @@
   "EntityType.CharacterClass": "Classe",
   "EntityType.Quest": "Quête",
   "EntityType.Achievement": "Succès",
-
   "MechanicType.Other": "Autre",
   "MechanicType.Invulnerability": "Invulnérabilité",
   "MechanicType.Unlock": "Déblocage",
@@ -171,13 +156,11 @@
   "MechanicType.Positioning": "Placement",
   "MechanicType.SpellEffect": "Effet de sort",
   "MechanicType.Resistance": "Résistances",
-
   "Reliability.Official": "Source officielle",
   "Reliability.ReputableGuide": "Guide reconnu",
   "Reliability.Community": "Communauté",
   "Reliability.UserSubmitted": "Saisie utilisateur",
   "Reliability.Unknown": "Fiabilité inconnue",
-
   "Relation.LocatedIn.Out": "Se trouve dans",
   "Relation.LocatedIn.In": "Contient",
   "Relation.PartOf.Out": "Fait partie de",
@@ -188,7 +171,6 @@
   "Relation.Summons.In": "Invoqué par",
   "Relation.CastsSpell.Out": "Lance",
   "Relation.CastsSpell.In": "Lancé par",
-
   "Analysis.Import": "Importer une image…",
   "Analysis.Paste": "Coller",
   "Analysis.PasteTip": "Analyse l'image du presse-papiers (par ex. après Win+Maj+S).",
@@ -229,13 +211,11 @@
   "Analysis.AttemptFailed": "{0} : échec — {1}",
   "Analysis.OcrText": "TEXTE LU",
   "Analysis.AliasLearned": "« {0} » mémorisé comme alias local de {1}.",
-
   "Confirmation.Pending": "à confirmer",
   "Confirmation.AutoAccepted": "accepté automatiquement",
   "Confirmation.ConfirmedByUser": "confirmé",
   "Confirmation.CorrectedByUser": "corrigé",
   "Confirmation.RejectedByUser": "rejeté",
-
   "Knowledge.ImportExport": "Importer / exporter des connaissances",
   "Knowledge.ImportHelp": "Les paquets JSON sont validés (schéma + cohérence) avant tout changement. Vous voyez l'effet exact avant d'appliquer ; les données vérifiées ou modifiées par vous ne sont jamais écrasées sans votre accord.",
   "Knowledge.Import": "Importer un paquet…",
@@ -256,7 +236,6 @@
   "Knowledge.ImportFailed": "Échec de l'import (aucune modification appliquée) : {0}",
   "Knowledge.Exported": "Exporté vers {0}",
   "Knowledge.ExportFailed": "Échec de l'export : {0}",
-
   "RecordKind.GameVersion": "Version du jeu",
   "RecordKind.Source": "Source",
   "RecordKind.Entity": "Entité",
@@ -274,7 +253,6 @@
   "Resolution.KeepExisting": "Garder l'existant",
   "Resolution.TakeIncoming": "Remplacer",
   "Resolution.MergeIntoExisting": "Fusionner (ajouter alias/attributs)",
-
   "Editor.Title": "Créer ou modifier",
   "Editor.Help": "Une mécanique doit citer une source. Ne marquez « Vérifié » que ce que vous avez contrôlé dans la source. Une ligne = un élément.",
   "Editor.Find": "Chercher une entité à modifier",
@@ -316,7 +294,6 @@
   "Editor.EntitySaved": "Entité « {0} » enregistrée.",
   "Editor.MechanicSaved": "Mécanique « {0} » enregistrée.",
   "Editor.SourceSaved": "Source « {0} » ajoutée.",
-
   "Settings.Save": "Enregistrer",
   "Settings.Revert": "Annuler les modifications",
   "Settings.Saved": "Paramètres enregistrés.",
@@ -362,14 +339,11 @@
   "Settings.BadDatabasePath": "Le fichier de base doit avoir l'extension .db.",
   "Settings.LogLevel": "Niveau de journalisation",
   "Settings.OpenData": "Ouvrir le dossier des données",
-
   "Theme.Dark": "Sombre",
   "Theme.Light": "Clair",
-
   "Hotkey.ToggleOverlay": "Afficher / masquer l'overlay",
   "Hotkey.ToggleClickThrough": "Clic traversant de l'overlay",
   "Hotkey.Capture": "Capturer et analyser l'écran",
-
   "Diag.Refresh": "Actualiser",
   "Diag.Export": "Préparer un rapport…",
   "Diag.OpenLogs": "Ouvrir les journaux",
@@ -396,7 +370,6 @@
   "Diag.DataFolder": "Dossier des données",
   "Diag.RecentErrors": "Avertissements et erreurs récents",
   "Diag.NoErrors": "Aucune erreur depuis le démarrage.",
-
   "Error.AlreadyRunning": "Dofus Gold Boss - DGB est déjà ouvert.",
   "Error.SettingsReset": "Paramètres illisibles, valeurs par défaut utilisées : {0}",
   "Error.Seed": "Les données de base n'ont pas pu être installées : {0}",
@@ -407,5 +380,8 @@
   "Error.ImageFormat": "Format d'image non pris en charge (PNG, JPEG, BMP, GIF, TIFF).",
   "Error.ImageTooLarge": "Image trop volumineuse.",
   "Error.Search": "Erreur de recherche : {0}",
-  "Error.Unexpected": "Erreur inattendue (détails dans Diagnostic) : {0}"
+  "Error.Unexpected": "Erreur inattendue (détails dans Diagnostic) : {0}",
+  "Overlay.InFight": "Dans ce combat :",
+  "Overlay.InFightTip": "Voir ses étapes. Reclique sur « Détecter » à chaque nouvelle vague ; l’icône « Tout effacer » vide la liste.",
+  "Browser.MechanicCountPlain": "{0} mécanique(s)"
 }

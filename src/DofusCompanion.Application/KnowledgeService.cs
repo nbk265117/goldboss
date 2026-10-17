@@ -177,6 +177,24 @@ public sealed class KnowledgeService(IKnowledgeRepository repository, MechanicsE
         return summary;
     }
 
+    /// <summary>Dungeons with a room at these map coordinates (from the "mapCoords" attribute of the DofusDB import).</summary>
+    public async Task<IReadOnlyList<GameEntity>> GetDungeonsAtAsync(int x, int y, CancellationToken ct = default)
+    {
+        var s = await GetSnapshotAsync(ct).ConfigureAwait(false);
+        var key = $"{x},{y}";
+        return s.Entities.Values
+            .Where(e => e.Type == EntityType.Dungeon && e.Attributes.TryGetValue("mapCoords", out var c) && c.Split(';').Contains(key))
+            .ToList();
+    }
+
+    /// <summary>Ids of the bosses located in a dungeon or area, directly or through its sub-areas/dungeons.</summary>
+    public async Task<IReadOnlySet<string>> GetBossIdsInAsync(string placeId, CancellationToken ct = default)
+    {
+        var s = await GetSnapshotAsync(ct).ConfigureAwait(false);
+        var filter = BuildFilter(s, new SearchFilter { LocationId = placeId, Types = new HashSet<EntityType> { EntityType.Boss } });
+        return s.Entities.Values.Where(filter).Select(e => e.Id).ToHashSet(StringComparer.Ordinal);
+    }
+
     /// <summary>Entities related to the given one (bosses of a dungeon, dungeons of an area, summons...).</summary>
     public async Task<IReadOnlyList<(EntityRelation Relation, GameEntity Other)>> GetRelatedAsync(string entityId, CancellationToken ct = default)
     {

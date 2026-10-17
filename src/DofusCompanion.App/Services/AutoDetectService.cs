@@ -61,10 +61,29 @@ public sealed class AutoDetectService(ISettingsStore settings, RecognitionServic
                 Language = settings.Current.OcrLanguage,
             }, await knowledge.GetMatcherAsync(ct), null, ct);
 
-            var pick = AutoDetectDecider.Pick(report.Candidates);
+            // Map coordinates at the top left of the game ("-82,-48") are the most reliable hint of the dungeon.
+            var candidates = AutoDetectDecider.WithoutChat(report.Candidates).ToList(); // chat lines are not the map
+            foreach (var (x, y) in MapCoordinates.Find(report.AllOcrText))
+                foreach (var d in await knowledge.GetDungeonsAtAsync(x, y, ct))
+                    if (candidates.All(c => c.Entity.Id != d.Id))
+                        candidates.Insert(0, new RecognizedCandidate(d, 1.0, d.CanonicalName, $"{x},{y}", null, "coordinates"));
+
+            // Places recognised on screen (dungeon / zone) and their bosses: used to ignore a boss read in the chat.
+            var bossesIn = new Dictionary<string, IReadOnlySet<string>>(StringComparer.Ordinal);
+            foreach (var place in candidates.Where(c => c.Score >= 0.88 && c.Entity.Type is EntityType.Dungeon or EntityType.Area or EntityType.Map)
+                         .Select(c => c.Entity.Id).Distinct())
+            {
+                var bosses = await knowledge.GetBossIdsInAsync(place, ct);
+                if (bosses.Count > 0) bossesIn[place] = bosses;
+            }
+
+            var pick = AutoDetectDecider.Pick(candidates, bossesIn: bossesIn);
+            logger.LogInformation("Detection read: {Candidates}; places with bosses: {Places}",
+                string.Join(" | ", candidates.Take(12).Select(c => $"{c.Entity.CanonicalName} ({c.Entity.Type}, {c.Score:0.00}, \"{c.OcrText}\")")),
+                string.Join(", ", bossesIn.Keys));
             foreach (var m in pick.MonstersSeen) fight.AddObserved(m);
             logger.LogInformation("Detection: {Entity} ({Score:0.00}) in {Ms} ms, {Count} candidates",
-                pick.Entity?.Id, pick.Score, sw.ElapsedMilliseconds, report.Candidates.Count);
+                pick.Entity?.Id, pick.Score, sw.ElapsedMilliseconds, candidates.Count);
 
             if (pick.Entity is { } e && Show is not null)
             {
@@ -73,7 +92,7 @@ public sealed class AutoDetectService(ISettingsStore settings, RecognitionServic
                 return e;
             }
 
-            var guesses = report.Candidates.Select(c => c.Entity.CanonicalName).Distinct().Take(3).ToList();
+            var guesses = candidates.Select(c => c.Entity.CanonicalName).Distinct().Take(3).ToList();
             status.Error(guesses.Count > 0
                 ? Loc.Instance.Format("AutoDetect.Unsure", string.Join(", ", guesses))
                 : Loc.Instance["AutoDetect.Nothing"]);

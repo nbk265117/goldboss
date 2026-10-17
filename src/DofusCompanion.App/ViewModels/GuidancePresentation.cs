@@ -11,7 +11,11 @@ namespace DofusCompanion.App.ViewModels;
 /// <summary>Visual category used by templates to pick colours/icons. Never conveys certainty by colour alone: a label is always shown too.</summary>
 public enum Tone { Neutral, Good, Caution, Bad }
 
-public sealed record ConditionLine(string Text, string ResultLabel, Tone Tone);
+public sealed record ConditionLine(string Text, string ResultLabel, Tone Tone)
+{
+    /// <summary>"condition · result", or just the condition when its result is unknown (no "à vérifier" shown).</summary>
+    public string Display => string.IsNullOrEmpty(ResultLabel) ? Text : $"{Text} · {ResultLabel}";
+}
 
 public sealed record StepLine(int Number, string Action, string? Details, ConditionLine? Applicability, string? Rationale, bool IsUnverified, string VerificationLabel);
 
@@ -67,7 +71,7 @@ public sealed record MechanicCard
     public bool HasNotes => Notes.Count > 0;
     public bool HasGaps => Gaps.Count > 0;
     public bool HasStaleness => Staleness.Count > 0;
-    public bool IsNotEstablished => Verification != VerificationStatus.Verified;
+    public bool IsNotEstablished => false; // no "information non confirmée" banner for players
 }
 
 /// <summary>Maps engine output to display models. All wording comes from the localization table.</summary>
@@ -79,6 +83,9 @@ public static class GuidancePresenter
 
     public static string VerificationLabel(VerificationStatus v) => L[$"Verification.{v}"];
 
+    /// <summary>Badge text shown to players: only "Vérifié"; other statuses show no badge (the user asked not to display "à vérifier" / "rapporté par la communauté").</summary>
+    public static string BadgeLabel(VerificationStatus v) => v == VerificationStatus.Verified ? VerificationLabel(v) : "";
+
     public static Tone VerificationTone(VerificationStatus v) => v switch
     {
         VerificationStatus.Verified => Tone.Good,
@@ -88,7 +95,7 @@ public static class GuidancePresenter
 
     public static ConditionLine Condition(EvaluatedCondition c) => new(
         c.Condition.Description,
-        L[$"Condition.{c.Result}"],
+        c.Result == ConditionResult.Unknown ? "" : L[$"Condition.{c.Result}"],
         c.Result switch { ConditionResult.Satisfied => Tone.Good, ConditionResult.NotSatisfied => Tone.Bad, _ => Tone.Caution });
 
     public static MechanicCard Card(MechanicGuidance g, SourceOpener opener, string? bossName = null)
@@ -101,7 +108,7 @@ public static class GuidancePresenter
             Title = m.Title,
             TypeLabel = L[$"MechanicType.{m.Type}"],
             Verification = m.Verification,
-            VerificationLabel = VerificationLabel(m.Verification),
+            VerificationLabel = BadgeLabel(m.Verification),
             VerificationTone = VerificationTone(m.Verification),
             Summary = m.Summary,
             Prerequisites = g.Prerequisites.Select(Condition).ToList(),
@@ -113,7 +120,7 @@ public static class GuidancePresenter
             Notes = m.Notes.Select(n => new NoteLine(L[$"NoteKind.{n.Kind}"], n.Text,
                 n.Kind is NoteKind.FailureCase ? Tone.Bad : n.Kind is NoteKind.Exception ? Tone.Neutral : Tone.Caution)).ToList(),
             Gaps = g.Gaps.Select(Gap).ToList(),
-            Staleness = g.Staleness.Select(Stale).ToList(),
+            Staleness = [], // "pas revérifié depuis…" warnings are not shown to players
             Sources = g.Sources.Select(s => new SourceLine(s.Source, s.Quote, s.Locator, opener)).ToList(),
             VersionScope = m.VersionScope,
             LastVerified = m.LastVerifiedOn?.ToString("d", CultureInfo.CurrentCulture),
@@ -134,8 +141,8 @@ public static class GuidancePresenter
             details.Count == 0 ? null : string.Join(" · ", details),
             s.Applicability is null ? null : Condition(s.Applicability),
             s.Source.Rationale,
-            s.Verification != VerificationStatus.Verified,
-            VerificationLabel(s.Verification));
+            false,
+            BadgeLabel(s.Verification));
     }
 
     private static string Gap(KnowledgeGap g) => g.Kind == GapKind.Documented ? g.Text ?? "" : L[$"Gap.{g.Kind}"];
@@ -148,9 +155,9 @@ public static class GuidancePresenter
         var sb = new StringBuilder();
         if (c.BossName is not null) sb.Append(L["Compact.Boss"]).Append(' ').AppendLine(c.BossName);
         sb.Append(L["Compact.Objective"]).Append(' ').AppendLine(c.Title);
-        sb.Append(L["Compact.Status"]).Append(' ').AppendLine(c.VerificationLabel);
+        if (c.VerificationLabel.Length > 0) sb.Append(L["Compact.Status"]).Append(' ').AppendLine(c.VerificationLabel);
         foreach (var p in c.Prerequisites)
-            sb.Append(L["Compact.Prerequisite"]).Append(' ').Append(p.Text).Append(" (").Append(p.ResultLabel).AppendLine(")");
+            sb.Append(L["Compact.Prerequisite"]).Append(' ').AppendLine(p.ResultLabel.Length > 0 ? $"{p.Text} ({p.ResultLabel})" : p.Text);
         var first = c.Sequences.FirstOrDefault();
         if (first is not null)
         {

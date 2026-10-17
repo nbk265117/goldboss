@@ -130,8 +130,9 @@
                            Visibility="{Binding Query, Converter={StaticResource HiddenWhen}}"/>
 
                 <!-- One-click detection, on its own line under the search -->
+                <StackPanel Grid.Row="1">
                 <Button ToolTip="{l:T Overlay.DetectTip}" AutomationProperties.Name="{l:T Overlay.Detect}" Command="{Binding DetectCommand}"
-                        Grid.Row="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Padding="8,4" Margin="0,6,0,0" FontWeight="SemiBold" Background="{DynamicResource Accent}" Foreground="{DynamicResource AccentText}">
+                        HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Padding="8,4" Margin="0,6,0,0" FontWeight="SemiBold" Background="{DynamicResource Accent}" Foreground="{DynamicResource AccentText}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE707;" VerticalAlignment="Center" Margin="0,0,5,0"/>
                         <TextBlock VerticalAlignment="Center">
@@ -148,6 +149,23 @@
                         </TextBlock>
                     </StackPanel>
                 </Button>
+                <!-- Monsters and bosses detected in this fight (several per room in the Songes, waves in the last room) -->
+                <DockPanel Margin="0,4,0,0" Visibility="{Binding Fight.HasObserved, Converter={StaticResource VisibleWhen}}">
+                    <TextBlock DockPanel.Dock="Left" Text="{l:T Overlay.InFight}" Foreground="{DynamicResource Muted}" FontSize="11.5" VerticalAlignment="Top" Margin="0,3,6,0"/>
+                    <ItemsControl ItemsSource="{Binding Fight.ObservedEntities}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Content="{Binding CanonicalName}" ToolTip="{l:T Overlay.InFightTip}" AutomationProperties.Name="{Binding CanonicalName}"
+                                        Command="{Binding DataContext.ShowObservedCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}"
+                                        Padding="6,1" Margin="0,0,4,4" FontSize="11.5"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </DockPanel>
+                </StackPanel>
 
                 <!-- Search results -->
                 <Border Grid.Row="2" Margin="0,4,0,0" BorderBrush="{DynamicResource Border}" BorderThickness="1" Background="{DynamicResource Panel}"
@@ -269,6 +287,7 @@
                                                                Visibility="{Binding BossName, Converter={StaticResource VisibleWhen}}" Margin="0,0,0,2"/>
                                                     <DockPanel>
                                                         <Border DockPanel.Dock="Right" Style="{StaticResource Badge}" VerticalAlignment="Top"
+                                                                Visibility="{Binding VerificationLabel, Converter={StaticResource VisibleWhen}}"
                                                                 Background="{Binding VerificationTone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}">
                                                             <TextBlock Text="{Binding VerificationLabel}" FontSize="10" FontWeight="SemiBold" Foreground="{Binding VerificationTone, Converter={StaticResource ToneBrush}}"/>
                                                         </Border>
@@ -290,7 +309,7 @@
                                                             <DataTemplate DataType="{x:Type vm:ConditionLine}">
                                                                 <DockPanel Margin="0,1">
                                                                     <Border DockPanel.Dock="Right" Style="{StaticResource Badge}" VerticalAlignment="Top"
-                                                                            Background="{Binding Tone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}">
+                                                                            Background="{Binding Tone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}" Visibility="{Binding ResultLabel, Converter={StaticResource VisibleWhen}}">
                                                                         <TextBlock Text="{Binding ResultLabel}" FontSize="10" Foreground="{Binding Tone, Converter={StaticResource ToneBrush}}"/>
                                                                     </Border>
                                                                     <TextBlock Text="{Binding Text, StringFormat='◆ {0}'}" FontSize="12" TextWrapping="Wrap" Foreground="{DynamicResource Muted}"/>
@@ -328,7 +347,7 @@
                                                                                                     Visibility="{Binding Applicability, Converter={StaticResource VisibleWhen}}"
                                                                                                     Background="{Binding Applicability.Tone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}">
                                                                                                 <TextBlock FontSize="10" TextWrapping="Wrap" Foreground="{Binding Applicability.Tone, Converter={StaticResource ToneBrush}}">
-                                                                                                    <Run Text="{Binding Applicability.Text, Mode=OneWay}"/><Run Text=" · "/><Run Text="{Binding Applicability.ResultLabel, Mode=OneWay}"/>
+                                                                                                    <Run Text="{Binding Applicability.Display, Mode=OneWay}"/>
                                                                                                 </TextBlock>
                                                                                             </Border>
                                                                                             <TextBlock Text="{Binding VerificationLabel, StringFormat='⚠ {0}'}" FontSize="10.5" Foreground="{DynamicResource Caution}" Margin="0,2,0,0"

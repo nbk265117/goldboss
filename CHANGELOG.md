@@ -1,5 +1,23 @@
 # Historique des versions
 
+## 0.6.0 — 17/10/2026
+
+- **Darija marocaine** : nouvelle langue « الدارجة المغربية » (Paramètres › Langue). Seuls les textes sont
+  traduits ; la disposition (fenêtres, icônes, curseurs) reste la même. Les mécaniques des boss restent en
+  français (texte des guides).
+- **Étapes claires pour 108 boss de plus** (dont le Mansot Royal) : une liste « Étapes à suivre » numérotée, chaque
+  étape expliquée, tirée du guide Dofus pour les Noobs, et chaque citation vérifiée mot pour mot.
+- **Détection plus juste** :
+  - les lignes du chat (« [16:32] Les portes de l'Antre du Kralamoure Géant sont ouvertes ») sont ignorées ;
+  - un nom seul sur sa ligne (le nom de la carte en haut à gauche) passe avant un nom lu dans une phrase ;
+  - un boss qui n'appartient pas au donjon reconnu est écarté ;
+  - les fenêtres de DGB elles-mêmes ne sont plus lues ;
+  - les **coordonnées de la carte** (« -82,-48 ») permettent de reconnaître le donjon, après avoir relancé
+    l'importateur DofusDB.
+- **« Dans ce combat »** : l'overlay liste les monstres et boss détectés (salles des Songes avec plusieurs
+  monstres, vagues de la dernière salle). Reclique sur Détecter à chaque vague, puis clique un nom pour voir ses étapes.
+- Les mentions « à vérifier », « rapporté par la communauté » et « pas revérifié depuis » ne sont plus affichées.
+
 ## 0.5.1 — 17/10/2026
 
 - La **capture d'écran est autorisée par défaut** (y compris pour les installations existantes) : le bouton
