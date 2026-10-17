@@ -24,6 +24,7 @@
         <Border DockPanel.Dock="Bottom" Background="{DynamicResource Panel}" BorderBrush="{DynamicResource Border}" BorderThickness="0,1,0,0" Padding="12,4">
             <DockPanel>
                 <ProgressBar DockPanel.Dock="Top" IsIndeterminate="True" Visibility="{Binding Status.IsBusy, Converter={StaticResource VisibleWhen}}"/>
+                <TextBlock DockPanel.Dock="Right" Text="{l:T App.Credit}" Foreground="{DynamicResource Muted}" FontSize="11" Margin="12,0,0,0" VerticalAlignment="Center"/>
                 <TextBlock Text="{Binding Status.Message}" TextTrimming="CharacterEllipsis" ToolTip="{Binding Status.Message}">
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">

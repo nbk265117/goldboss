@@ -86,6 +86,9 @@ if ($ring) {
     Check 'missing knowledge is reported explicitly' ([bool]$none)
 } else { Check 'boss without mechanic found' $false }
 
+# --- Credit footer
+Check 'credit footer shown' ([bool](WaitFor { (AllText $main) -match 'AYOUB YOUB JOE' }))
+
 # --- No result
 SetText $search 'zzzz entité inexistante'
 Check 'no-result message' ([bool](WaitFor { (AllText $main) -match 'Aucun résultat' }))
@@ -113,8 +116,9 @@ if ($overlay) {
     Check 'overlay search lists results' ($null -ne $res)
     if ($res) {
         Click $res   # UI Automation Invoke on our own button; no keystrokes are sent anywhere
-        Check 'overlay shows compact guidance' ([bool](WaitFor { (AllText $overlay) -match 'OBJECTIF' }))
-        Check 'overlay compact shows ordered steps' ([bool](WaitFor { (AllText $overlay) -match 'ÉTAPE 1' }))
+        # Styled compact card: mechanic title, numbered step badges and the expected-result box.
+        Check 'overlay shows compact guidance' ([bool](WaitFor { (AllText $overlay) -match 'Glyphes paires' }))
+        Check 'overlay compact shows ordered steps' ([bool](WaitFor { $t = AllText $overlay; $t -match '(?m)^1$' -and $t -match '(?m)^2$' -and $t -match 'Frapper le Kimbo' }))
     }
 }
 

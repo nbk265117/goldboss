@@ -7,12 +7,19 @@ t'explique **comment battre chaque boss** — comment lever son invulnérabilit�
 > Outil indépendant, **non affilié à Ankama ni autorisé par Ankama**. Il ne touche jamais au jeu : il ne lit
 > pas sa mémoire, ne modifie aucun fichier, n'envoie aucune touche ni aucun clic. Tu joues, il t'informe.
 
+<p align="center">
+  <img src="docs/images/overlay-kimbo.png" alt="L'overlay affichant les étapes pour battre le Kimbo" width="380">
+</p>
+
+Chaque mécanique s'affiche en étapes numérotées : prérequis (avec leur état), actions dans l'ordre, variantes
+possibles, résultat attendu et sa durée en vert, pièges mortels en rouge, et un lien vers la source.
+
 ---
 
 ## Télécharger et lancer
 
-1. Va sur la page **[Releases](https://github.com/nbk265117/goldboss/releases/latest)**.
-2. Télécharge le fichier **`DofusCompanion-0.1.0-win-x64.zip`** (≈ 80 Mo).
+1. Va sur la page **[Releases](https://github.com/nbk265117/goldboss/releases/latest)** (dernière version).
+2. Dans **Assets**, télécharge le fichier **`DofusCompanion-<version>-win-x64.zip`** (≈ 80 Mo).
 3. Fais un clic droit sur le zip → **Extraire tout…** (par exemple dans `Documents\DofusCompanion`).
 4. Ouvre le dossier extrait et double-clique sur **`DofusCompanion.exe`**.
 
@@ -23,15 +30,32 @@ par Windows). Les suivants prennent environ 1 à 2 secondes.
 
 ### Si Windows bloque l'application
 
-L'application n'est pas encore signée numériquement, Windows peut donc se méfier :
+L'application n'est pas signée numériquement (un certificat coûte de l'argent), Windows peut donc se méfier.
+Deux messages possibles :
 
-- **« Windows a protégé votre ordinateur »** (SmartScreen) → clique sur **Informations complémentaires**, puis
-  **Exécuter quand même**.
-- **« Une stratégie de contrôle d'application a bloqué ce fichier »** → c'est *Smart App Control* (Windows 11).
-  Il bloque les programmes non signés qu'il ne connaît pas et ne propose pas d'exception par application.
-  La seule solution est de le désactiver (*Sécurité Windows › Contrôle des applications et du navigateur ›
-  Smart App Control*). Attention : selon ta version de Windows, il peut être impossible de le réactiver
-  ensuite sans réinstaller Windows. À toi de décider.
+#### 1. « Windows a protégé votre ordinateur » (SmartScreen)
+
+Clique sur **Informations complémentaires**, puis sur **Exécuter quand même**. Ce message n'apparaît qu'une fois.
+
+#### 2. L'application ne s'ouvre pas, ou « Une stratégie de contrôle d'application a bloqué ce fichier »
+
+C'est **Smart App Control**, une protection de Windows 11 qui bloque tous les programmes non signés qu'elle ne
+connaît pas. Elle ne permet pas d'autoriser une application en particulier : la seule solution est de la
+désactiver.
+
+1. Appuie sur la touche **Windows**, tape **Sécurité Windows** et ouvre-la.
+2. Va dans **Contrôle des applications et du navigateur**.
+3. Sous **Smart App Control**, clique sur **Paramètres de Smart App Control**.
+4. Choisis **Désactivé** et confirme.
+5. Redémarre le PC si Windows le demande, puis relance `DofusCompanion.exe`.
+
+> ⚠️ Selon ta version de Windows, Smart App Control peut **ne plus être réactivable** ensuite sans réinstaller
+> Windows. Ton antivirus (Microsoft Defender) continue de te protéger normalement ; seul ce filtre
+> supplémentaire est retiré. C'est ton choix.
+
+Pour vérifier si Smart App Control est actif, dans PowerShell :
+`Get-ItemPropertyValue 'HKLM:\SYSTEM\CurrentControlSet\Control\CI\Policy' VerifiedAndReputablePolicyState`
+(`0` = désactivé, `1` = activé, `2` = évaluation).
 
 ### Configuration requise
 
@@ -79,6 +103,11 @@ Tu peux ajouter tes propres mécaniques (onglet **Connaissances**) ou importer u
 - Les captures sont analysées sur ton PC et ne sont pas conservées (sauf si tu l'actives).
 - Tes données sont dans `%LOCALAPPDATA%\DofusCompanion`.
 
+## Nouveautés
+
+Voir [CHANGELOG.md](CHANGELOG.md). Version 0.2.0 : nouveau style des étapes, la fiche d'un donjon affiche les
+mécaniques de ses boss, overlay visible dans les partages Discord/OBS.
+
 ## Mettre à jour / désinstaller
 
 - **Mettre à jour :** télécharge la nouvelle version et remplace le dossier. Tes données sont conservées.
@@ -105,3 +134,7 @@ Documentation technique : [`docs/`](docs) — architecture, format des connaissa
 
 Les textes des mécaniques sont reformulés à partir des guides de *Dofus pour les Noobs*, avec attribution et
 lien vers chaque page. DOFUS est une marque d'Ankama Games. Aucune ressource graphique du jeu n'est incluse.
+
+---
+
+<p align="center">Développé avec ❤️ en 2026 par <strong>AYOUB YOUB JOE</strong></p>
