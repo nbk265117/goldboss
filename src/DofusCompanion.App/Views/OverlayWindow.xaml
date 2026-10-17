@@ -1,0 +1,360 @@
+<Window x:Class="DofusCompanion.App.Views.OverlayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:l="clr-namespace:DofusCompanion.App.Localization"
+        xmlns:vm="clr-namespace:DofusCompanion.App.ViewModels"
+        xmlns:c="clr-namespace:DofusCompanion.App.Controls"
+        Title="{l:T Overlay.Title}"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Topmost="True" ShowInTaskbar="False" ShowActivated="False"
+        ResizeMode="CanResizeWithGrip" MinWidth="260" MinHeight="160"
+        Style="{StaticResource {x:Type Window}}">
+    <Window.InputBindings>
+        <KeyBinding Key="Escape" Command="{Binding HideCommand}"/>
+    </Window.InputBindings>
+    <Grid>
+    <!-- Opacity applies to this background layer only, so text stays fully opaque and readable over the game. -->
+    <Border Background="{DynamicResource Bg}" CornerRadius="8" Opacity="{Binding Opacity}"/>
+    <Border BorderBrush="{DynamicResource Border}" BorderThickness="1" CornerRadius="8">
+        <DockPanel>
+            <!-- Title bar: drag area + controls (each has a tooltip and an accessible name) -->
+            <Border DockPanel.Dock="Top" x:Name="TitleBar" Background="{DynamicResource Panel}" CornerRadius="8,8,0,0" Padding="8,4"
+                    MouseLeftButtonDown="TitleBar_MouseLeftButtonDown" Cursor="SizeAll">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                        <Button Style="{StaticResource IconButton}" Content="&#xE8B9;" ToolTip="{l:T Overlay.ImportTip}" AutomationProperties.Name="{l:T Overlay.ImportTip}"
+                                Command="{Binding Analysis.ImportFileCommand}"/>
+                        <Button Style="{StaticResource IconButton}" Content="&#xE722;" ToolTip="{l:T Overlay.CaptureTip}" AutomationProperties.Name="{l:T Overlay.CaptureTip}"
+                                Command="{Binding Analysis.CaptureCommand}" Visibility="{Binding Analysis.CaptureEnabled, Converter={StaticResource VisibleWhen}}"/>
+                        <Button ToolTip="{l:T Overlay.PauseTip}" AutomationProperties.Name="{l:T Overlay.PauseTip}"
+                                Command="{Binding Analysis.TogglePauseCommand}" Visibility="{Binding Analysis.CaptureEnabled, Converter={StaticResource VisibleWhen}}">
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource IconButton}">
+                                    <Setter Property="Content" Value="&#xE769;"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Analysis.IsPaused}" Value="True">
+                                            <Setter Property="Content" Value="&#xE768;"/>
+                                            <Setter Property="Foreground" Value="{DynamicResource Caution}"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Style="{StaticResource IconButton}" Content="&#xE72C;" ToolTip="{l:T Overlay.RefreshTip}" AutomationProperties.Name="{l:T Overlay.RefreshTip}"
+                                Command="{Binding RefreshCommand}"/>
+                        <Button Style="{StaticResource IconButton}" Content="&#xE894;" ToolTip="{l:T Overlay.ResetTip}" AutomationProperties.Name="{l:T Overlay.ResetTip}"
+                                Command="{Binding ResetCommand}"/>
+                        <Button ToolTip="{l:T Overlay.CompactTip}" AutomationProperties.Name="{l:T Overlay.CompactTip}"
+                                Command="{Binding ToggleCompactCommand}">
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource IconButton}">
+                                    <Setter Property="Content" Value="&#xE73F;"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Compact}" Value="True">
+                                            <Setter Property="Content" Value="&#xE740;"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button ToolTip="{l:T Overlay.LockTip}" AutomationProperties.Name="{l:T Overlay.LockTip}" Command="{Binding ToggleLockCommand}">
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource IconButton}">
+                                    <Setter Property="Content" Value="&#xE785;"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Locked}" Value="True">
+                                            <Setter Property="Content" Value="&#xE72E;"/>
+                                            <Setter Property="Foreground" Value="{DynamicResource Accent}"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Style="{StaticResource IconButton}" Content="&#xE8A7;" ToolTip="{l:T Overlay.OpenMainTip}" AutomationProperties.Name="{l:T Overlay.OpenMainTip}"
+                                Command="{Binding OpenMainCommand}" CommandParameter="browser"/>
+                        <Button Style="{StaticResource IconButton}" Content="&#xE711;" ToolTip="{l:T Overlay.HideTip}" AutomationProperties.Name="{l:T Overlay.HideTip}"
+                                Command="{Binding HideCommand}"/>
+                    </StackPanel>
+                    <TextBlock Text="{l:T App.Name}" FontWeight="SemiBold" VerticalAlignment="Center" Foreground="{DynamicResource Muted}" FontSize="12"/>
+                </DockPanel>
+            </Border>
+
+            <!-- Click-through warning: tells how to regain control -->
+            <Border DockPanel.Dock="Top" Background="{DynamicResource CautionBg}" Padding="8,3"
+                    Visibility="{Binding ClickThrough, Converter={StaticResource VisibleWhen}}">
+                <TextBlock x:Name="ClickThroughBanner" TextWrapping="Wrap" FontSize="11" Foreground="{DynamicResource Caution}"/>
+            </Border>
+
+            <!-- Status / error area, always visible -->
+            <Border DockPanel.Dock="Bottom" Padding="8,3" Background="{DynamicResource Panel}" CornerRadius="0,0,8,8">
+                <DockPanel>
+                    <ProgressBar DockPanel.Dock="Top" IsIndeterminate="True" Visibility="{Binding Status.IsBusy, Converter={StaticResource VisibleWhen}}"/>
+                    <TextBlock Text="{Binding Status.Message}" TextTrimming="CharacterEllipsis" FontSize="11" ToolTip="{Binding Status.Message}">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Foreground" Value="{DynamicResource Muted}"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Status.IsError}" Value="True">
+                                        <Setter Property="Foreground" Value="{DynamicResource Bad}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </DockPanel>
+            </Border>
+
+            <Grid Margin="8,6,8,4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Search + turn counter -->
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" Margin="6,0,0,0" ToolTip="{l:T Overlay.TurnTip}">
+                        <TextBlock Text="{l:T Overlay.Turn}" VerticalAlignment="Center" Foreground="{DynamicResource Muted}" Margin="0,0,4,0"/>
+                        <Button Style="{StaticResource IconButton}" Content="&#xE738;" Command="{Binding TurnDownCommand}" AutomationProperties.Name="-"/>
+                        <TextBox Width="32" TextAlignment="Center" AutomationProperties.Name="{l:T Overlay.Turn}"
+                                 Text="{Binding Fight.TurnNumber, Converter={StaticResource NullableInt}, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Button Style="{StaticResource IconButton}" Content="&#xE710;" Command="{Binding TurnUpCommand}" AutomationProperties.Name="+"/>
+                    </StackPanel>
+                    <TextBox x:Name="SearchBox" Text="{Binding Query, UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="{l:T Overlay.Search}"
+                             ToolTip="{l:T Overlay.SearchTip}" PreviewKeyDown="SearchBox_PreviewKeyDown"/>
+                </DockPanel>
+                <TextBlock IsHitTestVisible="False" Text="{l:T Overlay.Search}" Foreground="{DynamicResource Muted}" Margin="8,0,0,0" VerticalAlignment="Center"
+                           Visibility="{Binding Query, Converter={StaticResource HiddenWhen}}"/>
+
+                <!-- Search results -->
+                <Border Grid.Row="1" Margin="0,4,0,0" BorderBrush="{DynamicResource Border}" BorderThickness="1" Background="{DynamicResource Panel}"
+                        Visibility="{Binding ShowResults, Converter={StaticResource VisibleWhen}}">
+                    <ScrollViewer MaxHeight="200">
+                        <ItemsControl x:Name="ResultsList" ItemsSource="{Binding Results}" KeyboardNavigation.DirectionalNavigation="Cycle">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="{x:Type vm:ResultLine}">
+                                    <Button Command="{Binding DataContext.PickCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}"
+                                            HorizontalContentAlignment="Left" Margin="0" Padding="6,3" Background="Transparent" BorderBrush="Transparent"
+                                            AutomationProperties.Name="{Binding Name}">
+                                        <StackPanel HorizontalAlignment="Left">
+                                            <TextBlock Text="{Binding Name}" FontWeight="SemiBold"/>
+                                            <TextBlock FontSize="11" Foreground="{DynamicResource Muted}">
+                                                <Run Text="{Binding TypeLabel, Mode=OneWay}"/><Run Text=" · "/><Run Text="{Binding MechanicsLabel, Mode=OneWay}"/>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </Button>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Border>
+                <TextBlock Grid.Row="1" Text="{l:T Overlay.NoResult}" Foreground="{DynamicResource Muted}" Margin="0,4,0,0">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding ShowResults}" Value="True"/>
+                                        <Condition Binding="{Binding Results.Count}" Value="0"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </MultiDataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <!-- Recognition status and candidate selector -->
+                <Border Grid.Row="2" Margin="0,6,0,0" Padding="6,4" CornerRadius="4"
+                        Background="{Binding Analysis.OutcomeTone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}"
+                        Visibility="{Binding Analysis.OutcomeText, Converter={StaticResource VisibleWhen}}">
+                    <StackPanel>
+                        <DockPanel>
+                            <Button DockPanel.Dock="Right" Style="{StaticResource LinkButton}" Command="{Binding ToggleCandidatesCommand}"
+                                    Content="{Binding Analysis.Candidates.Count, Mode=OneWay}" ContentStringFormat="{}{0} ▾"
+                                    ToolTip="{l:T Overlay.CandidatesTip}" Visibility="{Binding Analysis.Candidates.Count, Converter={StaticResource VisibleWhen}}"/>
+                            <TextBlock Text="{Binding Analysis.OutcomeText}" TextWrapping="Wrap" FontSize="12"/>
+                        </DockPanel>
+                        <ItemsControl ItemsSource="{Binding Analysis.Candidates}" Visibility="{Binding ShowCandidates, Converter={StaticResource VisibleWhen}}" Margin="0,4,0,0">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="{x:Type vm:CandidateLine}">
+                                    <DockPanel Margin="0,2">
+                                        <Button DockPanel.Dock="Right" Content="{l:T Analysis.Confirm}" Padding="6,1"
+                                                Command="{Binding DataContext.Analysis.ConfirmCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}"/>
+                                        <TextBlock TextWrapping="Wrap" ToolTip="{Binding Evidence}">
+                                            <Run Text="{Binding Name, Mode=OneWay}" FontWeight="SemiBold"/>
+                                            <Run Text="{Binding ScoreText, Mode=OneWay}" Foreground="{DynamicResource Muted}"/>
+                                            <Run Text="{Binding StateLabel, Mode=OneWay}" Foreground="{DynamicResource Muted}" FontSize="11"/>
+                                        </TextBlock>
+                                    </DockPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </Border>
+
+                <!-- Mechanics panel -->
+                <ScrollViewer Grid.Row="3" Margin="0,6,0,0" VerticalScrollBarVisibility="Auto">
+                    <Grid>
+                        <!-- Compact: ordered instruction block per mechanic -->
+                        <StackPanel Visibility="{Binding Compact, Converter={StaticResource VisibleWhen}}">
+                            <TextBlock Text="{l:T Overlay.Empty}" Foreground="{DynamicResource Muted}" TextWrapping="Wrap"
+                                       Visibility="{Binding Detail.HasEntity, Converter={StaticResource HiddenWhen}}"/>
+                            <StackPanel Visibility="{Binding Detail.HasEntity, Converter={StaticResource VisibleWhen}}">
+                                <TextBlock FontSize="15" FontWeight="SemiBold" Text="{Binding Detail.Name}" TextWrapping="Wrap"/>
+                                <TextBlock FontSize="11" Foreground="{DynamicResource Muted}" TextWrapping="Wrap">
+                                    <Run Text="{Binding Detail.TypeLabel, Mode=OneWay}"/><Run Text="{Binding Detail.Locations, Mode=OneWay, StringFormat=' · {0}'}"/>
+                                </TextBlock>
+                                <Border Background="{DynamicResource CautionBg}" CornerRadius="4" Padding="6,4" Margin="0,6,0,0"
+                                        Visibility="{Binding Detail.NoMechanicDocumented, Converter={StaticResource VisibleWhen}}">
+                                    <TextBlock Text="{l:T Detail.NoMechanicTitle}" TextWrapping="Wrap" Foreground="{DynamicResource Caution}"/>
+                                </Border>
+                                <ItemsControl ItemsSource="{Binding Detail.Mechanics}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="{x:Type vm:MechanicCard}">
+                                            <!-- Styled compact card: objective, prerequisites, numbered steps, result, traps, gaps, source. -->
+                                            <Border Background="{DynamicResource Panel}" BorderBrush="{DynamicResource Border}" BorderThickness="1"
+                                                    CornerRadius="6" Padding="10,8" Margin="0,8,0,0">
+                                                <StackPanel>
+                                                    <TextBlock Text="{Binding BossName, StringFormat='BOSS · {0}'}" FontSize="11" FontWeight="Bold" Foreground="{DynamicResource Accent}"
+                                                               Visibility="{Binding BossName, Converter={StaticResource VisibleWhen}}" Margin="0,0,0,2"/>
+                                                    <DockPanel>
+                                                        <Border DockPanel.Dock="Right" Style="{StaticResource Badge}" VerticalAlignment="Top"
+                                                                Background="{Binding VerificationTone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}">
+                                                            <TextBlock Text="{Binding VerificationLabel}" FontSize="10" FontWeight="SemiBold" Foreground="{Binding VerificationTone, Converter={StaticResource ToneBrush}}"/>
+                                                        </Border>
+                                                        <TextBlock Text="{Binding Title}" FontSize="13.5" FontWeight="SemiBold" TextWrapping="Wrap" Foreground="{DynamicResource Text}"/>
+                                                    </DockPanel>
+
+                                                    <!-- Staleness -->
+                                                    <ItemsControl ItemsSource="{Binding Staleness}" Margin="0,4,0,0">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{Binding StringFormat='⟳ {0}'}" FontSize="11" TextWrapping="Wrap" Foreground="{DynamicResource Caution}"/>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+
+                                                    <!-- Prerequisites with evaluated status chips -->
+                                                    <ItemsControl ItemsSource="{Binding Prerequisites}" Margin="0,6,0,0" Visibility="{Binding HasPrerequisites, Converter={StaticResource VisibleWhen}}">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate DataType="{x:Type vm:ConditionLine}">
+                                                                <DockPanel Margin="0,1">
+                                                                    <Border DockPanel.Dock="Right" Style="{StaticResource Badge}" VerticalAlignment="Top"
+                                                                            Background="{Binding Tone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}">
+                                                                        <TextBlock Text="{Binding ResultLabel}" FontSize="10" Foreground="{Binding Tone, Converter={StaticResource ToneBrush}}"/>
+                                                                    </Border>
+                                                                    <TextBlock Text="{Binding Text, StringFormat='◆ {0}'}" FontSize="12" TextWrapping="Wrap" Foreground="{DynamicResource Muted}"/>
+                                                                </DockPanel>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+
+                                                    <!-- Numbered steps (timeline); each alternative gets its own labelled block -->
+                                                    <ItemsControl ItemsSource="{Binding Sequences}" Margin="0,4,0,0">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate DataType="{x:Type vm:SequenceBlock}">
+                                                                <StackPanel Margin="0,2,0,0">
+                                                                    <TextBlock Text="{Binding Label}" FontSize="11" FontWeight="SemiBold" Foreground="{DynamicResource Accent}" Margin="0,4,0,2"
+                                                                               Visibility="{Binding Label, Converter={StaticResource VisibleWhen}}"/>
+                                                                    <ItemsControl ItemsSource="{Binding Steps}">
+                                                                        <ItemsControl.ItemTemplate>
+                                                                            <DataTemplate DataType="{x:Type vm:StepLine}">
+                                                                                <Grid Margin="0,3">
+                                                                                    <Grid.ColumnDefinitions>
+                                                                                        <ColumnDefinition Width="28"/>
+                                                                                        <ColumnDefinition/>
+                                                                                    </Grid.ColumnDefinitions>
+                                                                                    <Rectangle Width="2" Fill="{DynamicResource Border}" HorizontalAlignment="Center" Margin="0,22,0,-6"/>
+                                                                                    <Border Width="22" Height="22" CornerRadius="11" Background="{DynamicResource Accent}" VerticalAlignment="Top">
+                                                                                        <TextBlock Text="{Binding Number}" FontWeight="Bold" FontSize="11.5" Foreground="{DynamicResource AccentText}"
+                                                                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                    </Border>
+                                                                                    <Border Grid.Column="1" Background="{DynamicResource PanelAlt}" CornerRadius="5" Padding="8,5" Margin="4,0,0,0">
+                                                                                        <StackPanel>
+                                                                                            <TextBlock Text="{Binding Action}" TextWrapping="Wrap" FontSize="12.5" LineHeight="17" Foreground="{DynamicResource Text}"/>
+                                                                                            <TextBlock Text="{Binding Details}" TextWrapping="Wrap" FontSize="11" Foreground="{DynamicResource Muted}" Margin="0,2,0,0"
+                                                                                                       Visibility="{Binding Details, Converter={StaticResource VisibleWhen}}"/>
+                                                                                            <Border Style="{StaticResource Badge}" Margin="0,3,0,0" HorizontalAlignment="Left"
+                                                                                                    Visibility="{Binding Applicability, Converter={StaticResource VisibleWhen}}"
+                                                                                                    Background="{Binding Applicability.Tone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}">
+                                                                                                <TextBlock FontSize="10" TextWrapping="Wrap" Foreground="{Binding Applicability.Tone, Converter={StaticResource ToneBrush}}">
+                                                                                                    <Run Text="{Binding Applicability.Text, Mode=OneWay}"/><Run Text=" · "/><Run Text="{Binding Applicability.ResultLabel, Mode=OneWay}"/>
+                                                                                                </TextBlock>
+                                                                                            </Border>
+                                                                                            <TextBlock Text="{Binding VerificationLabel, StringFormat='⚠ {0}'}" FontSize="10.5" Foreground="{DynamicResource Caution}" Margin="0,2,0,0"
+                                                                                                       Visibility="{Binding IsUnverified, Converter={StaticResource VisibleWhen}}"/>
+                                                                                        </StackPanel>
+                                                                                    </Border>
+                                                                                </Grid>
+                                                                            </DataTemplate>
+                                                                        </ItemsControl.ItemTemplate>
+                                                                    </ItemsControl>
+                                                                </StackPanel>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+
+                                                    <!-- Expected result and duration -->
+                                                    <Border Background="{DynamicResource GoodBg}" BorderBrush="{DynamicResource Good}" BorderThickness="3,0,0,0" CornerRadius="3"
+                                                            Padding="8,5" Margin="0,8,0,0" Visibility="{Binding ExpectedResult, Converter={StaticResource VisibleWhen}}">
+                                                        <StackPanel>
+                                                            <TextBlock TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource Text}">
+                                                                <Run Text="✔ " Foreground="{DynamicResource Good}" FontWeight="Bold"/><Run Text="{Binding ExpectedResult, Mode=OneWay}"/>
+                                                            </TextBlock>
+                                                            <TextBlock FontSize="11" Foreground="{DynamicResource Good}" FontWeight="SemiBold" Margin="0,2,0,0" TextWrapping="Wrap"
+                                                                       Text="{Binding VulnerabilityDuration, StringFormat='⏱ {0}'}" Visibility="{Binding VulnerabilityDuration, Converter={StaticResource VisibleWhen}}"/>
+                                                        </StackPanel>
+                                                    </Border>
+
+                                                    <TextBlock Text="{Binding TurnConditions, StringFormat='↻ {0}'}" FontSize="11.5" TextWrapping="Wrap" Foreground="{DynamicResource Muted}" Margin="0,6,0,0"
+                                                               Visibility="{Binding TurnConditions, Converter={StaticResource VisibleWhen}}"/>
+
+                                                    <!-- Traps that make the fight fail -->
+                                                    <ItemsControl ItemsSource="{Binding KeyWarnings}" Margin="0,6,0,0" Visibility="{Binding HasKeyWarnings, Converter={StaticResource VisibleWhen}}">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate DataType="{x:Type vm:NoteLine}">
+                                                                <Border Background="{DynamicResource BadBg}" BorderBrush="{DynamicResource Bad}" BorderThickness="3,0,0,0" CornerRadius="3" Padding="8,4" Margin="0,2">
+                                                                    <TextBlock TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource Text}">
+                                                                        <Run Text="✖ " Foreground="{DynamicResource Bad}" FontWeight="Bold"/><Run Text="{Binding Text, Mode=OneWay}"/>
+                                                                    </TextBlock>
+                                                                </Border>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+
+                                                    <!-- Explicit unknowns -->
+                                                    <ItemsControl ItemsSource="{Binding Gaps}" Margin="0,6,0,0">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{Binding StringFormat='? {0}'}" FontSize="11" FontStyle="Italic" TextWrapping="Wrap" Foreground="{DynamicResource Muted}"/>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+
+                                                    <ItemsControl ItemsSource="{Binding DistinctSources}">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate DataType="{x:Type vm:SourceLine}">
+                                                                <Button Style="{StaticResource LinkButton}" Content="{l:T Overlay.OpenSource}" Command="{Binding OpenCommand}"
+                                                                        ToolTip="{Binding Url}" HorizontalAlignment="Left" Margin="0,6,0,0" FontSize="11.5"/>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                </StackPanel>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </StackPanel>
+                        <!-- Expanded: the full detailed view -->
+                        <c:EntityGuidanceView DataContext="{Binding Detail}" Visibility="{Binding DataContext.Compact, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource HiddenWhen}}"/>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </DockPanel>
+    </Border>
+    </Grid>
+</Window>

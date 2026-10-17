@@ -1,0 +1,67 @@
+﻿[
+    {
+        "file":  "clean-single.png",
+        "text":  "Kralamoure Géant",
+        "entities":  [
+                         "boss.kralamoure-geant"
+                     ]
+    },
+    {
+        "file":  "clean-level-suffix.png",
+        "text":  "Comte Harebourg (Niv. 200)",
+        "entities":  [
+                         "boss.comte-harebourg"
+                     ]
+    },
+    {
+        "file":  "dark-ui.png",
+        "text":  "Missiz Frizz\nPV 12000  PA 8  PM 4",
+        "entities":  [
+                         "boss.missiz-frizz"
+                     ]
+    },
+    {
+        "file":  "multi-names.png",
+        "text":  "Tal Kasha\nKimbo\nMerkator",
+        "entities":  [
+                         "boss.tal-kasha",
+                         "boss.kimbo",
+                         "boss.merkator"
+                     ]
+    },
+    {
+        "file":  "small-text.png",
+        "text":  "Founoroshi",
+        "entities":  [
+                         "boss.founoroshi"
+                     ]
+    },
+    {
+        "file":  "blurred.png",
+        "text":  "Guerre",
+        "entities":  [
+                         "boss.guerre"
+                     ]
+    },
+    {
+        "file":  "noisy.png",
+        "text":  "Meulou",
+        "entities":  [
+                         "boss.meulou"
+                     ]
+    },
+    {
+        "file":  "no-entity.png",
+        "text":  "Tour 4 - Fin du tour dans 20 s\nPA 11  PM 6",
+        "entities":  [
+
+                     ]
+    },
+    {
+        "file":  "downscaled-low-res.png",
+        "text":  "Kralamoure Géant",
+        "entities":  [
+                         "boss.kralamoure-geant"
+                     ]
+    }
+]

@@ -1,0 +1,437 @@
+{
+  "$schema": "../schemas/knowledge-package.schema.json",
+  "formatVersion": 1,
+  "packageId": "seed-core",
+  "name": "Base vérifiée — boss à mécanique (Dofus pour les Noobs)",
+  "description": "Petit jeu de données initial. Chaque mécanique est reformulée à partir d'une page de guide relue le 2026-10-17 ; la citation courte de chaque mécanique a été retrouvée mot pour mot dans la page. Ce n'est PAS une base complète.",
+  "author": "Dofus Companion contributors",
+  "createdOn": "2026-10-17",
+  "gameVersions": [
+    {
+      "id": "dofus-3.0",
+      "version": "DOFUS 3.0 (Unity)",
+      "releaseDate": "2024-12-03",
+      "sourceId": "src.ankama.support.lancement-dofus-3",
+      "verifiedOn": "2026-10-17",
+      "notes": "Sert de référence : un guide dont la dernière mise à jour est antérieure à cette date est signalé comme potentiellement obsolète."
+    }
+  ],
+  "sources": [
+    {
+      "id": "src.ankama.support.lancement-dofus-3",
+      "title": "[DOFUS] Lancement DOFUS 3.0",
+      "url": "https://support.ankama.com/hc/fr/articles/30236552776593",
+      "publisher": "Ankama",
+      "category": "Official",
+      "reliability": "Official",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17"
+    },
+    {
+      "id": "src.dpln.donjon-du-comte-harebourg",
+      "title": "Donjon du comte Harebourg",
+      "url": "https://www.dofuspourlesnoobs.com/donjon-du-comte-harebourg.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2026-03-02",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17"
+    },
+    {
+      "id": "src.dpln.chambre-de-tal-kasha",
+      "title": "Chambre de Tal Kasha",
+      "url": "https://www.dofuspourlesnoobs.com/chambre-de-tal-kasha.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2020-07-20",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17"
+    },
+    {
+      "id": "src.dpln.fabrique-de-foux-d-artifice",
+      "title": "Fabrique de foux d'artifice",
+      "url": "https://www.dofuspourlesnoobs.com/fabrique-de-foux-d-artifice.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2026-10-05",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17"
+    },
+    {
+      "id": "src.dpln.trone-de-sang",
+      "title": "Trône de sang",
+      "url": "https://www.dofuspourlesnoobs.com/trone-de-sang.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2026-01-21",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17"
+    },
+    {
+      "id": "src.dpln.antre-du-kralamoure-geant",
+      "title": "Antre du Kralamoure Géant",
+      "url": "https://www.dofuspourlesnoobs.com/antre-du-kralamoure-geacuteant.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2026-10-13",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17"
+    },
+    {
+      "id": "src.dpln.forgefroide-de-missiz-frizz",
+      "title": "Forgefroide de Missiz Frizz",
+      "url": "https://www.dofuspourlesnoobs.com/forgefroide-de-missiz-frizz.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2022-09-25",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17"
+    },
+    {
+      "id": "src.dpln.canopee-du-kimbo",
+      "title": "Canopée du Kimbo",
+      "url": "https://www.dofuspourlesnoobs.com/canopeacutee-du-kimbo.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2025-04-22",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17"
+    },
+    {
+      "id": "src.dpln.aquadome-de-merkator",
+      "title": "Aquadôme de Merkator",
+      "url": "https://www.dofuspourlesnoobs.com/aquadocircme-de-merkator.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2025-10-04",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17"
+    },
+    {
+      "id": "src.dpln.taniere-du-meulou",
+      "title": "Tanière du Meulou",
+      "url": "https://www.dofuspourlesnoobs.com/taniere-du-meulou.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": null,
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "La page n'affiche pas de date de mise à jour."
+    }
+  ],
+  "entities": [
+    { "id": "dungeon.donjon-du-comte-harebourg", "type": "Dungeon", "canonicalName": "Donjon du comte Harebourg", "verification": "VERIFIED", "sourceIds": ["src.dpln.donjon-du-comte-harebourg"] },
+    { "id": "boss.comte-harebourg", "type": "Boss", "canonicalName": "Comte Harebourg", "aliases": [{ "text": "Le Comte Harebourg", "locale": "fr" }], "verification": "VERIFIED", "sourceIds": ["src.dpln.donjon-du-comte-harebourg"], "relations": [{ "type": "LocatedIn", "to": "dungeon.donjon-du-comte-harebourg" }] },
+
+    { "id": "dungeon.chambre-de-tal-kasha", "type": "Dungeon", "canonicalName": "Chambre de Tal Kasha", "verification": "VERIFIED", "sourceIds": ["src.dpln.chambre-de-tal-kasha"] },
+    { "id": "boss.tal-kasha", "type": "Boss", "canonicalName": "Tal Kasha", "verification": "VERIFIED", "sourceIds": ["src.dpln.chambre-de-tal-kasha"], "relations": [{ "type": "LocatedIn", "to": "dungeon.chambre-de-tal-kasha" }] },
+
+    { "id": "dungeon.fabrique-de-foux-d-artifice", "type": "Dungeon", "canonicalName": "Fabrique de foux d'artifice", "verification": "VERIFIED", "sourceIds": ["src.dpln.fabrique-de-foux-d-artifice"] },
+    { "id": "boss.founoroshi", "type": "Boss", "canonicalName": "Founoroshi", "verification": "VERIFIED", "sourceIds": ["src.dpln.fabrique-de-foux-d-artifice"], "relations": [{ "type": "LocatedIn", "to": "dungeon.fabrique-de-foux-d-artifice" }] },
+
+    { "id": "dungeon.trone-de-sang", "type": "Dungeon", "canonicalName": "Trône de sang", "verification": "VERIFIED", "sourceIds": ["src.dpln.trone-de-sang"] },
+    { "id": "boss.guerre", "type": "Boss", "canonicalName": "Guerre", "verification": "VERIFIED", "sourceIds": ["src.dpln.trone-de-sang"], "relations": [{ "type": "LocatedIn", "to": "dungeon.trone-de-sang" }] },
+
+    { "id": "dungeon.antre-du-kralamoure-geant", "type": "Dungeon", "canonicalName": "Antre du Kralamoure Géant", "verification": "VERIFIED", "sourceIds": ["src.dpln.antre-du-kralamoure-geant"] },
+    { "id": "boss.kralamoure-geant", "type": "Boss", "canonicalName": "Kralamoure Géant", "aliases": [{ "text": "Krala", "locale": "fr" }], "attributes": { "resistances": "900 % dans chaque élément (selon la source)" }, "verification": "VERIFIED", "sourceIds": ["src.dpln.antre-du-kralamoure-geant"], "relations": [{ "type": "LocatedIn", "to": "dungeon.antre-du-kralamoure-geant" }] },
+
+    { "id": "dungeon.forgefroide-de-missiz-frizz", "type": "Dungeon", "canonicalName": "Forgefroide de Missiz Frizz", "verification": "VERIFIED", "sourceIds": ["src.dpln.forgefroide-de-missiz-frizz"] },
+    { "id": "boss.missiz-frizz", "type": "Boss", "canonicalName": "Missiz Frizz", "verification": "VERIFIED", "sourceIds": ["src.dpln.forgefroide-de-missiz-frizz"], "relations": [{ "type": "LocatedIn", "to": "dungeon.forgefroide-de-missiz-frizz" }] },
+
+    { "id": "dungeon.canopee-du-kimbo", "type": "Dungeon", "canonicalName": "Canopée du Kimbo", "verification": "VERIFIED", "sourceIds": ["src.dpln.canopee-du-kimbo"] },
+    { "id": "boss.kimbo", "type": "Boss", "canonicalName": "Kimbo", "attributes": { "resistances": "400 % dans chaque élément (selon la source)" }, "verification": "VERIFIED", "sourceIds": ["src.dpln.canopee-du-kimbo"], "relations": [{ "type": "LocatedIn", "to": "dungeon.canopee-du-kimbo" }] },
+
+    { "id": "dungeon.aquadome-de-merkator", "type": "Dungeon", "canonicalName": "Aquadôme de Merkator", "verification": "VERIFIED", "sourceIds": ["src.dpln.aquadome-de-merkator"] },
+    { "id": "boss.merkator", "type": "Boss", "canonicalName": "Merkator", "verification": "VERIFIED", "sourceIds": ["src.dpln.aquadome-de-merkator"], "relations": [{ "type": "LocatedIn", "to": "dungeon.aquadome-de-merkator" }] },
+
+    { "id": "dungeon.taniere-du-meulou", "type": "Dungeon", "canonicalName": "Tanière du Meulou", "verification": "VERIFIED", "sourceIds": ["src.dpln.taniere-du-meulou"] },
+    { "id": "boss.meulou", "type": "Boss", "canonicalName": "Meulou", "aliases": [{ "text": "Le Meulou", "locale": "fr" }], "verification": "VERIFIED", "sourceIds": ["src.dpln.taniere-du-meulou"], "relations": [{ "type": "LocatedIn", "to": "dungeon.taniere-du-meulou" }] }
+  ],
+  "mechanics": [
+    {
+      "id": "mech.comte-harebourg.invulnerabilite",
+      "entityId": "boss.comte-harebourg",
+      "type": "Invulnerability",
+      "title": "Retirer l'invulnérabilité (tours pairs uniquement)",
+      "summary": "Le Comte reste invulnérable tout le combat ; l'état ne peut sauter que lors des tours pairs. Quand on le frappe un tour pair, c'est lui qui se téléporte symétriquement (180°) par rapport à l'attaquant : il faut que ce déplacement provoque un échange de place avec une entité.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        { "kind": "TurnEven", "description": "Être sur un tour pair (2, 4, 6…)." }
+      ],
+      "sequences": [
+        {
+          "steps": [
+            { "order": 1, "action": "Frapper le Comte pendant un tour pair : il se téléporte alors symétriquement par rapport au personnage qui frappe.", "target": "Comte Harebourg", "when": { "kind": "TurnEven", "description": "Tour pair" } },
+            { "order": 2, "action": "S'arranger pour que ce changement de position du Comte génère un échange de place avec une entité (alliée ou ennemie).", "rationale": "C'est cet échange de place qui désactive l'état invulnérable selon le guide." }
+          ]
+        }
+      ],
+      "expectedStateChange": "Invulnérable → vulnérable",
+      "expectedResult": "Le Comte Harebourg perd son état invulnérable.",
+      "turnConditions": "Les tours impairs, frapper le Comte téléporte au contraire l'attaquant symétriquement par rapport à lui.",
+      "notes": [
+        { "kind": "FailureCase", "text": "Si la rotation après un coup est impossible (case d'arrivée indisponible), le combat se termine et tous vos personnages meurent." },
+        { "kind": "Warning", "text": "À chaque début de son tour, le Comte pose un glyphe en croix (taille 3, centre compris depuis la 3.5) : un allié qui commence son tour dedans est tué." },
+        { "kind": "Warning", "text": "Le tour après la perte de l'invulnérabilité, son sort Contretemps renvoie la cible à sa case de début de tour : attention à ne pas finir dans son glyphe." },
+        { "kind": "Exception", "text": "Depuis la 3.6, un état affiché au-dessus du Comte indique qui sera téléporté (vous ou lui) quand vous le frappez." },
+        { "kind": "CommonMistake", "text": "Un allié qui échange sa place avec le Comte (tour pair) gagne 100 dommages pendant un tour : à exploiter." }
+      ],
+      "unknownAspects": ["Durée de la vulnérabilité non précisée par la source."],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-03-02)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        { "sourceId": "src.dpln.donjon-du-comte-harebourg", "quote": "Pour rendre le Comte Harebourg vulnérable, il vous suffira de générer un changement de place avec une entité (alliée ou ennemie) lors du changement de position du Comte.", "locator": "Rendre le Comte Harebourg vulnérable" }
+      ]
+    },
+    {
+      "id": "mech.tal-kasha.glyphes",
+      "entityId": "boss.tal-kasha",
+      "type": "Unlock",
+      "title": "Glyphes de trois monstres différents",
+      "summary": "Chaque monstre tué laisse un glyphe marron sur sa case puis ressuscite. Placer Tal Kasha sur les glyphes de trois monstres différents lui retire définitivement son invulnérabilité.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "steps": [
+            { "order": 1, "action": "Tuer un monstre : il dépose un glyphe marron sur la case de sa mort (il ressuscitera au tour de Tal Kasha).", "target": "Monstres accompagnant Tal Kasha" },
+            { "order": 2, "action": "Amener Tal Kasha sur ce glyphe ; un compteur (I à III) au-dessus d'elle indique le nombre de glyphes validés.", "target": "Tal Kasha", "position": "Sur le glyphe d'un monstre mort" },
+            { "order": 3, "action": "Recommencer avec deux autres monstres différents jusqu'au compteur III.", "target": "Tal Kasha" }
+          ]
+        }
+      ],
+      "expectedStateChange": "Invulnérable → vulnérable",
+      "expectedResult": "Tal Kasha perd son état invulnérable pour le reste du combat.",
+      "vulnerabilityDuration": "Définitive (jusqu'à la fin du combat)",
+      "notes": [
+        { "kind": "Warning", "text": "Si vous lui retirez des PM, elle échange de place avec le personnage responsable (une fois par tour)." },
+        { "kind": "Warning", "text": "Une fois vulnérable, elle débloque une téléportation jusqu'à 4 PO : gardez-la loin du groupe." },
+        { "kind": "Exception", "text": "À plus de 4 joueurs, il suffit de 3 glyphes de 3 monstres différents même s'il y a plus de glyphes." },
+        { "kind": "Warning", "text": "Retuer un monstre ressuscité déplace son glyphe sur la case de sa dernière mort." }
+      ],
+      "unknownAspects": ["Le guide écrit à un endroit qu'il faut « faire passer » Tal Kasha sur les glyphes, et ailleurs qu'elle doit « commencer son tour » dessus : la condition exacte n'est pas tranchée."],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier (guide mis à jour le 2020-07-20)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        { "sourceId": "src.dpln.chambre-de-tal-kasha", "quote": "Afin de désactiver l'état invulnérable de Tal Kasha et ceci de manière infini il faut simplement faire passer celle-ci sur 3 gyphes laissées par trois monstres différents.", "locator": "Désactiver l'état invulnérable de Tal Kasha" }
+      ]
+    },
+    {
+      "id": "mech.founoroshi.feux",
+      "entityId": "boss.founoroshi",
+      "type": "Unlock",
+      "title": "Éteindre les 8 feux",
+      "summary": "Tous les monstres et le Founoroshi sont invulnérables. Il faut éteindre les 8 feux de la carte, chacun nécessitant l'état « Extinction des feux » obtenu dans un glyphe noir posé par le boss.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "steps": [
+            { "order": 1, "action": "Marcher dans un glyphe noir (affiché en bleu aujourd'hui) posé par le Founoroshi à la fin de son tour pour obtenir l'état « Extinction des feux ».", "requiredState": null, "rationale": "Sans cet état, entrer dans le glyphe d'un feu ne l'éteint pas." },
+            { "order": 2, "action": "Se placer sur le glyphe marron situé à droite d'un feu pour l'éteindre.", "position": "Glyphe marron d'un case à droite du feu", "requiredState": "Extinction des feux" },
+            { "order": 3, "action": "Répéter jusqu'à ce que les 8 feux soient éteints (un état = un feu)." }
+          ]
+        }
+      ],
+      "expectedStateChange": "Invulnérable → vulnérable (boss et monstres)",
+      "expectedResult": "Les monstres et le Founoroshi deviennent vulnérables et le restent ; vous gagnez en plus 15 % de dégâts par tour de jeu.",
+      "vulnerabilityDuration": "Jusqu'à la fin du combat",
+      "turnConditions": "Un feu éteint se rallume au bout de 8 tours tant que l'invulnérabilité n'a pas été retirée.",
+      "notes": [
+        { "kind": "Warning", "text": "Pour chaque feu éteint, le Founoroshi gagne 1 PM, 10 % de dommages et 1 PO pendant 4 tours." },
+        { "kind": "Restriction", "text": "L'état « Extinction des feux » n'est pas cumulable : un passage dans deux glyphes noirs ne permet d'éteindre qu'un seul feu." },
+        { "kind": "Warning", "text": "L'état « Extinction des feux » retire 3 PO et 20 d'esquive PA/PM." },
+        { "kind": "Warning", "text": "Les glyphes noirs encore présents au début du tour du Founoroshi disparaissent." },
+        { "kind": "Exception", "text": "Depuis la 2.70, les compagnons et les invocations non statiques peuvent aussi éteindre les feux." }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-10-05)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        { "sourceId": "src.dpln.fabrique-de-foux-d-artifice", "quote": "Pour ce combat, tous les monstres et le Founoroshi sont dans l’état Invulnérable, pour les rendre vulnérables il faut éteindre tous les feux présents sur la map.", "locator": "Principe du combat" }
+      ]
+    },
+    {
+      "id": "mech.guerre.arsenal",
+      "entityId": "boss.guerre",
+      "type": "Invulnerability",
+      "title": "Tuer tous les monstres accompagnateurs",
+      "summary": "Le sort Arsenal donne l'état « Compagnon de combat » aux monstres : tant qu'il en reste un, Guerre est invulnérable. Elle devient vulnérable le tour suivant la mort du dernier monstre.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        { "kind": "EntityAbsent", "description": "Tous les monstres qui accompagnent Guerre sont morts." }
+      ],
+      "sequences": [
+        {
+          "steps": [
+            { "order": 1, "action": "Tuer tous les monstres qui accompagnent Guerre.", "target": "Monstres ayant l'état « Compagnon de combat »" },
+            { "order": 2, "action": "Le tour suivant, Guerre monte sur sa monture et devient vulnérable ; elle place l'un de vos personnages (ou invocation) dans l'état « Brave » et le cible pendant 2 tours.", "target": "Guerre" }
+          ]
+        }
+      ],
+      "expectedStateChange": "Invulnérable → vulnérable",
+      "expectedResult": "Guerre devient vulnérable (et nettement plus dangereuse).",
+      "turnConditions": "Vulnérable le tour suivant la mort du dernier monstre.",
+      "notes": [
+        { "kind": "Restriction", "text": "Guerre est indéplaçable pendant tout le combat." },
+        { "kind": "Warning", "text": "Vulnérable, elle invoque une arme à chaque seuil de PV (80, 60, 40 et 20 %)." },
+        { "kind": "CommonMistake", "text": "Tuer une arme après que Guerre a rejoué la soigne et lui donne résistances et PM (cumulable) : tuez l'arme avant son tour, ou ne la tuez pas." },
+        { "kind": "Warning", "text": "Les armes sont invulnérables pendant un tour après leur invocation." }
+      ],
+      "unknownAspects": ["Durée de la vulnérabilité non précisée (la source n'indique pas de retour à l'invulnérabilité)."],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-01-21)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        { "sourceId": "src.dpln.trone-de-sang", "quote": "Met l’état Compagnon de combat (infini) à tous les monstres qui l’accompagne ce qui fait que tant qu’il reste des monstres, Guerre reste invulnérable.", "locator": "Sorts de Guerre — Arsenal" }
+      ]
+    },
+    {
+      "id": "mech.kralamoure-geant.tentacules",
+      "entityId": "boss.kralamoure-geant",
+      "type": "Unlock",
+      "title": "Faire tomber les 900 % de résistances (tentacules)",
+      "summary": "Le Kralamoure a 900 % de résistances partout. Le frapper dans un élément invoque le tentacule correspondant au tour suivant. Une fois les 4 tentacules en place, le Primaire doit gober une invocation que les trois autres frappent le même tour sans la tuer, puis en gober une autre le tour suivant : le Kralamoure perd alors ses résistances pendant 1 tour.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Déroulé conseillé par le guide",
+          "steps": [
+            { "order": 1, "action": "Tour 1 : frapper le Kralamoure en Eau (invoque le tentacule Quaternaire).", "target": "Kralamoure Géant", "when": { "kind": "TurnAtMost", "number": 4, "description": "Pendant les 4 premiers tours" } },
+            { "order": 2, "action": "Tour 2 : frapper en Feu (invoque le Tertiaire).", "target": "Kralamoure Géant" },
+            { "order": 3, "action": "Tour 3 : frapper en Terre (invoque le Secondaire).", "target": "Kralamoure Géant" },
+            { "order": 4, "action": "Tour 4 : frapper en Air (invoque le Primaire, à invoquer en dernier car il tue au corps à corps sauf à son premier tour).", "target": "Kralamoure Géant" },
+            { "order": 5, "action": "Placer le Primaire devant le Kralamoure et une invocation à son contact, cachée derrière lui (hors ligne de vue du Kralamoure).", "position": "Primaire face au Kralamoure ; invocation derrière le Primaire" },
+            { "order": 6, "action": "Faire gober l'invocation par le Primaire ; le même tour, les trois autres tentacules doivent frapper une même invocation sans la tuer.", "target": "Invocation" },
+            { "order": 7, "action": "Le tour suivant, le Primaire doit à nouveau tuer une invocation.", "rationale": "Dans le déroulé type du guide, le Kralamoure perd ses résistances au tour 7." }
+          ]
+        }
+      ],
+      "expectedStateChange": "Perte de 900 % de résistances",
+      "expectedResult": "Le Kralamoure perd ses 900 % de résistances pendant 1 tour.",
+      "vulnerabilityDuration": "1 tour",
+      "notes": [
+        { "kind": "CommonMistake", "text": "Le malus de résistances est débuffable : n'utilisez pas de sort de désenvoûtement, sinon il faut tout recommencer." },
+        { "kind": "Warning", "text": "Ce même tour, les tentacules gagnent 1000 vitalité et 2 PM et peuvent tuer au corps à corps : empêchez-les d'atteindre vos personnages." },
+        { "kind": "Warning", "text": "Sans résistances, le Kralamoure frappe très fort (peut tuer deux personnages) : tuez-le dans le tour ou replacez le Primaire devant lui." },
+        { "kind": "FailureCase", "text": "Si vous ne le finissez pas, replacez les tentacules et refaites la mise en place (étapes 5 à 7)." }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-10-13)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        { "sourceId": "src.dpln.antre-du-kralamoure-geant", "quote": "Pour que le Krala passe vulnérable, il faut absolument faire gober une invocation au tentacule primaire, puis durant ce même tour les trois autres tentacules doivent taper tous les trois la même invocation (par exemple wasta) sans la tuer.", "locator": "Comment rendre le Kralamoure Géant vulnérable" }
+      ]
+    },
+    {
+      "id": "mech.missiz-frizz.congeres",
+      "entityId": "boss.missiz-frizz",
+      "type": "Invulnerability",
+      "title": "Repousser avec les congères",
+      "summary": "Missiz Frizz et ses monstres sont lourds et commencent invulnérables. Un ennemi repoussé par l'effet d'une congère (glyphe noir) perd son invulnérabilité pendant 1 tour.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "steps": [
+            { "order": 1, "action": "Au début du tour de chaque personnage, des congères (glyphes noirs) apparaissent sur les 4 cases adjacentes.", "rationale": "Les invocations ne font pas apparaître de congère." },
+            { "order": 2, "action": "Déclencher une congère en marchant dedans : vous êtes poussé d'une case et les entités autour de votre case d'arrivée (ligne et diagonales) sont repoussées.", "target": "Ennemi à repousser" },
+            { "order": 3, "action": "Frapper l'ennemi repoussé pendant le tour où il est vulnérable.", "target": "Ennemi repoussé" }
+          ]
+        }
+      ],
+      "expectedStateChange": "Invulnérable → vulnérable",
+      "expectedResult": "L'ennemi repoussé perd son invulnérabilité pendant 1 tour.",
+      "vulnerabilityDuration": "1 tour",
+      "notes": [
+        { "kind": "Warning", "text": "L'effet « Monogel » agit aussi comme une congère quand une entité est poussée par un sort, mais soigne l'entité poussée de 15 % de ses PV max." },
+        { "kind": "CommonMistake", "text": "Attention à ne pas pousser un allié contre un obstacle en déclenchant une congère (dommages de poussée)." },
+        { "kind": "Exception", "text": "Les états indéplaçable, enraciné ou inébranlable empêchent d'être poussé par les congères (utile aussi sur Missiz pour ne pas la soigner)." }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier (guide mis à jour le 2022-09-25)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        { "sourceId": "src.dpln.forgefroide-de-missiz-frizz", "quote": "Si un ennemi est repoussé par les effets de la congère alors il perd son invulnérabilité pour 1 tour.", "locator": "Principe du combat" }
+      ]
+    },
+    {
+      "id": "mech.kimbo.glyphes",
+      "entityId": "boss.kimbo",
+      "type": "Unlock",
+      "title": "Glyphes paires / impaires",
+      "summary": "Le Kimbo n'est pas invulnérable mais a 400 % de résistances partout. Le frapper dans un duo d'éléments fait poser des glyphes par son Disciple ; s'il commence son tour sur l'un d'eux, il perd 400 % de résistances dans ce duo pendant 1 tour.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Duo Terre / Eau",
+          "steps": [
+            { "order": 1, "action": "Frapper le Kimbo en Terre ou en Eau : il passe dans l'état Glyphe impaire et le Disciple pose des glyphes sur toutes les cases à distance impaire de lui.", "target": "Kimbo" },
+            { "order": 2, "action": "Faire commencer son tour au Kimbo sur l'un de ces glyphes.", "position": "Kimbo sur un glyphe impair" },
+            { "order": 3, "action": "Frapper en Terre ou Eau pendant le tour où il a perdu ses résistances.", "target": "Kimbo", "rationale": "Il gagne en même temps 800 % de résistances Air/Feu." }
+          ]
+        },
+        {
+          "label": "Duo Air / Feu",
+          "steps": [
+            { "order": 1, "action": "Frapper le Kimbo en Air ou en Feu : il passe dans l'état Glyphe paire et le Disciple pose des glyphes sur toutes les cases à distance paire de lui.", "target": "Kimbo" },
+            { "order": 2, "action": "Faire commencer son tour au Kimbo sur l'un de ces glyphes.", "position": "Kimbo sur un glyphe pair" },
+            { "order": 3, "action": "Frapper en Air ou Feu pendant le tour où il a perdu ses résistances.", "target": "Kimbo", "rationale": "Il gagne en même temps 800 % de résistances Eau/Terre." }
+          ]
+        }
+      ],
+      "expectedStateChange": "Perte de 400 % de résistances dans le duo choisi",
+      "expectedResult": "Le Kimbo perd 400 % de résistances dans les deux éléments choisis pendant 1 tour.",
+      "vulnerabilityDuration": "1 tour",
+      "notes": [
+        { "kind": "FailureCase", "text": "Un personnage qui commence son tour sur un de ces glyphes est tué : prévoyez vos placements avant le tour du Disciple." },
+        { "kind": "Warning", "text": "Une fois ses glyphes lancés, le Disciple tue aussi au corps à corps." },
+        { "kind": "CommonMistake", "text": "Si vous ne le finissez pas en 1 tour, remettez-lui l'état pour que le Disciple relance les glyphes au tour suivant." }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2025-04-22)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        { "sourceId": "src.dpln.canopee-du-kimbo", "quote": "Le Kimbo n'a pas d'état invulnérable mais c'est un peu comme si c'était le cas car il a 400% de résistances dans chaque élément.", "locator": "Rendre le Kimbo Vulnérable" }
+      ]
+    },
+    {
+      "id": "mech.merkator.mer-kantile",
+      "entityId": "boss.merkator",
+      "type": "SpecialRule",
+      "title": "Mer Kantile : dégâts à distance réduits",
+      "summary": "Dès le début du combat et jusqu'à la fin, Merkator subit 50 % de dégâts en moins à distance, et lui comme tous les monstres sont indéplaçables.",
+      "verification": "VERIFIED",
+      "expectedResult": null,
+      "notes": [
+        { "kind": "Restriction", "text": "Merkator et tous les monstres sont dans l'état Indéplaçable pendant tout le combat." },
+        { "kind": "Warning", "text": "À partir du tour 7 (relance de 5 tours), Bouche-à-Bouche réinvoque le dernier allié mort avec 50 % de sa vitalité." }
+      ],
+      "unknownAspects": ["La source ne donne pas de méthode pour annuler Mer Kantile."],
+      "versionScope": "Dofus 3 (guide mis à jour le 2025-10-04)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        { "sourceId": "src.dpln.aquadome-de-merkator", "quote": "Merkator réduit les dégâts subis à distance de 50% pendant toute la durée du combat.", "locator": "Principe du donjon" }
+      ]
+    },
+    {
+      "id": "mech.meulou.fureur",
+      "entityId": "boss.meulou",
+      "type": "SpecialRule",
+      "title": "Fureur : première attaque réduite et gain de puissance",
+      "summary": "La première attaque de chaque personnage contre le Meulou est réduite de 50 %. Chaque ligne de dégâts subie par le Meulou ou un monstre allié lui donne 30 de puissance (cumulable, débuffable).",
+      "verification": "VERIFIED",
+      "notes": [
+        { "kind": "CommonMistake", "text": "Chaque ligne de dégâts compte : un sort à 4 lignes donne 4 × 30 de puissance. Évitez de le frapper tant qu'il n'est pas votre cible prioritaire." },
+        { "kind": "Warning", "text": "Un Milimeulou qui meurt donne 2 PM et 200 de puissance pour 2 tours à tous ses alliés : ne le tuez que si nécessaire." }
+      ],
+      "unknownAspects": ["Durée du bonus de puissance : la page indique 3 tours à deux endroits et 4 tours à un autre."],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        { "sourceId": "src.dpln.taniere-du-meulou", "quote": "le Meulou réduit les dégâts de la première attaque de chaque personnage de 50%.", "locator": "Principe du combat" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,579 @@
+<Window x:Class="DofusCompanion.App.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:l="clr-namespace:DofusCompanion.App.Localization"
+        xmlns:vm="clr-namespace:DofusCompanion.App.ViewModels"
+        xmlns:c="clr-namespace:DofusCompanion.App.Controls"
+        Title="{l:T App.Name}" MinWidth="760" MinHeight="500"
+        Style="{StaticResource {x:Type Window}}">
+    <DockPanel>
+        <!-- Header -->
+        <Border DockPanel.Dock="Top" Background="{DynamicResource Panel}" BorderBrush="{DynamicResource Border}" BorderThickness="0,0,0,1" Padding="14,8">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                    <Button Content="{l:T Main.ToggleOverlay}" Command="{Binding ToggleOverlayCommand}" ToolTip="{l:T Main.ToggleOverlayTip}"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="{l:T App.Name}" FontSize="17" FontWeight="SemiBold"/>
+                    <TextBlock Text="{l:T App.Disclaimer}" Style="{StaticResource MutedText}" FontSize="11"/>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+
+        <!-- Status bar: errors are always surfaced here -->
+        <Border DockPanel.Dock="Bottom" Background="{DynamicResource Panel}" BorderBrush="{DynamicResource Border}" BorderThickness="0,1,0,0" Padding="12,4">
+            <DockPanel>
+                <ProgressBar DockPanel.Dock="Top" IsIndeterminate="True" Visibility="{Binding Status.IsBusy, Converter={StaticResource VisibleWhen}}"/>
+                <TextBlock Text="{Binding Status.Message}" TextTrimming="CharacterEllipsis" ToolTip="{Binding Status.Message}">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="{DynamicResource Muted}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Status.IsError}" Value="True">
+                                    <Setter Property="Foreground" Value="{DynamicResource Bad}"/>
+                                    <Setter Property="FontWeight" Value="SemiBold"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </DockPanel>
+        </Border>
+
+        <TabControl SelectedIndex="{Binding SelectedTab}" Margin="8,4,8,0">
+            <!-- ============================================================ A/B/C. Browser + detail -->
+            <TabItem Header="{l:T Tab.Browser}">
+                <Grid DataContext="{Binding Browser}" Margin="0,8,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="340" MinWidth="260"/>
+                        <ColumnDefinition Width="6"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Top">
+                            <Grid>
+                                <TextBox x:Name="BrowserSearch" Text="{Binding Query, UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="{l:T Browser.Search}"
+                                         ToolTip="{l:T Browser.SearchTip}" LostFocus="BrowserSearch_LostFocus"/>
+                                <TextBlock IsHitTestVisible="False" Text="{l:T Browser.Search}" Foreground="{DynamicResource Muted}" Margin="8,0,0,0" VerticalAlignment="Center"
+                                           Visibility="{Binding Query, Converter={StaticResource HiddenWhen}}"/>
+                            </Grid>
+                            <UniformGrid Columns="2" Margin="0,6,0,0">
+                                <ComboBox ItemsSource="{Binding TypeOptions}" SelectedItem="{Binding SelectedType}" DisplayMemberPath="Label" Margin="0,0,3,3" ToolTip="{l:T Filter.Type}"/>
+                                <ComboBox ItemsSource="{Binding MechanicOptions}" SelectedItem="{Binding SelectedMechanic}" DisplayMemberPath="Label" Margin="3,0,0,3" ToolTip="{l:T Filter.Mechanic}"/>
+                                <ComboBox ItemsSource="{Binding LocationOptions}" SelectedItem="{Binding SelectedLocation}" DisplayMemberPath="Label" Margin="0,0,3,0" ToolTip="{l:T Filter.Location}" IsTextSearchEnabled="True"/>
+                                <ComboBox ItemsSource="{Binding FamilyOptions}" SelectedItem="{Binding SelectedFamily}" DisplayMemberPath="Label" Margin="3,0,0,0" ToolTip="{l:T Filter.Family}"/>
+                            </UniformGrid>
+                            <DockPanel Margin="0,6,0,4">
+                                <Button DockPanel.Dock="Right" Style="{StaticResource LinkButton}" Content="{l:T Filter.Clear}" Command="{Binding ClearFiltersCommand}"/>
+                                <TextBlock Style="{StaticResource MutedText}" Text="{Binding ResultSummary}"/>
+                            </DockPanel>
+                            <ItemsControl ItemsSource="{Binding History}" Visibility="{Binding History.Count, Converter={StaticResource VisibleWhen}}" Margin="0,0,0,4">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Button Content="{Binding}" Padding="6,1" Margin="0,0,4,2" FontSize="11" Click="HistoryButton_Click"/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                        <ListBox ItemsSource="{Binding Results}" SelectedItem="{Binding SelectedResult}" VirtualizingPanel.IsVirtualizing="True"
+                                 AutomationProperties.Name="{l:T Browser.Results}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate DataType="{x:Type vm:ResultLine}">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Name}" FontWeight="SemiBold" TextWrapping="Wrap"/>
+                                        <TextBlock FontSize="11" Foreground="{DynamicResource Muted}" TextWrapping="Wrap">
+                                            <Run Text="{Binding TypeLabel, Mode=OneWay}"/><Run Text=" · "/><Run Text="{Binding MechanicsLabel, Mode=OneWay}"
+                                                Foreground="{Binding Tone, Converter={StaticResource ToneBrush}, Mode=OneWay}"/>
+                                        </TextBlock>
+                                        <TextBlock FontSize="11" Foreground="{DynamicResource Muted}" FontStyle="Italic" Text="{Binding MatchedText, StringFormat='≈ {0}'}"
+                                                   Visibility="{Binding MatchedAlias, Converter={StaticResource VisibleWhen}}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </DockPanel>
+                    <GridSplitter Grid.Column="1" Width="6" HorizontalAlignment="Stretch" Background="Transparent"/>
+                    <DockPanel Grid.Column="2">
+                        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,6" Visibility="{Binding Detail.HasEntity, Converter={StaticResource VisibleWhen}}">
+                            <Button Content="{l:T Detail.Edit}" Command="{Binding DataContext.EditSelectedCommand, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                            <Button Content="{l:T Detail.Export}" Command="{Binding DataContext.ExportSelectedCommand, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                            <TextBlock Text="{l:T Overlay.Turn}" VerticalAlignment="Center" Margin="12,0,4,0" Foreground="{DynamicResource Muted}" ToolTip="{l:T Overlay.TurnTip}"/>
+                            <TextBox Width="40" Text="{Binding Detail.Fight.TurnNumber, Converter={StaticResource NullableInt}, UpdateSourceTrigger=PropertyChanged}"
+                                     AutomationProperties.Name="{l:T Overlay.Turn}" ToolTip="{l:T Overlay.TurnTip}"/>
+                            <CheckBox Content="{l:T Detail.RosterComplete}" IsChecked="{Binding Detail.Fight.RosterIsComplete}" Margin="10,0,0,0" ToolTip="{l:T Detail.RosterCompleteTip}"/>
+                        </StackPanel>
+                        <ScrollViewer>
+                            <c:EntityGuidanceView DataContext="{Binding Detail}" Margin="0,0,10,10"/>
+                        </ScrollViewer>
+                    </DockPanel>
+                </Grid>
+            </TabItem>
+
+            <!-- ============================================================ D. Screenshot analysis -->
+            <TabItem Header="{l:T Tab.Analysis}">
+                <Grid DataContext="{Binding Analysis}" Margin="0,8,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="6"/>
+                        <ColumnDefinition Width="380" MinWidth="300"/>
+                    </Grid.ColumnDefinitions>
+                    <DockPanel>
+                        <WrapPanel DockPanel.Dock="Top" Margin="0,0,0,6">
+                            <Button Style="{StaticResource Primary}" Content="{l:T Analysis.Import}" Command="{Binding ImportFileCommand}"/>
+                            <Button Content="{l:T Analysis.Paste}" Command="{Binding PasteCommand}" ToolTip="{l:T Analysis.PasteTip}"/>
+                            <Button Content="{l:T Analysis.Capture}" Command="{Binding CaptureCommand}" ToolTip="{l:T Analysis.CaptureTip}"
+                                    IsEnabled="{Binding CaptureEnabled}"/>
+                            <Button Content="{l:T Analysis.Rerun}" Command="{Binding RunCommand}" IsEnabled="{Binding HasImage}"/>
+                            <Button Content="{l:T Analysis.Cancel}" Command="{Binding CancelCommand}" IsEnabled="{Binding IsRunning}"/>
+                            <Button Content="{l:T Analysis.Clear}" Command="{Binding ClearCommand}" IsEnabled="{Binding HasImage}"/>
+                        </WrapPanel>
+                        <TextBlock DockPanel.Dock="Top" Style="{StaticResource MutedText}" Text="{l:T Analysis.Privacy}" Margin="0,0,0,4"/>
+                        <TextBlock DockPanel.Dock="Top" Style="{StaticResource MutedText}" Text="{l:T Analysis.CaptureOff}" Margin="0,0,0,4"
+                                   Visibility="{Binding CaptureEnabled, Converter={StaticResource HiddenWhen}}"/>
+                        <DockPanel DockPanel.Dock="Bottom" Margin="0,4,0,0" Visibility="{Binding HasImage, Converter={StaticResource VisibleWhen}}">
+                            <Button DockPanel.Dock="Right" Style="{StaticResource LinkButton}" Content="{l:T Analysis.ClearRegion}" Command="{Binding ClearRegionCommand}"/>
+                            <TextBlock Style="{StaticResource MutedText}">
+                                <Run Text="{l:T Analysis.RegionHint}"/> <Run Text="{Binding RegionText, Mode=OneWay}"/>
+                            </TextBlock>
+                        </DockPanel>
+                        <Border Background="{DynamicResource Panel}" BorderBrush="{DynamicResource Border}" BorderThickness="1" ClipToBounds="True">
+                            <Grid>
+                                <TextBlock Text="{l:T Analysis.NoImage}" Style="{StaticResource MutedText}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                           TextAlignment="Center" Visibility="{Binding HasImage, Converter={StaticResource HiddenWhen}}"/>
+                                <Grid x:Name="ImageHost" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Image x:Name="PreviewImage" Source="{Binding Preview}" Stretch="Uniform" Cursor="Cross"
+                                           MouseLeftButtonDown="PreviewImage_MouseDown" MouseMove="PreviewImage_MouseMove" MouseLeftButtonUp="PreviewImage_MouseUp"/>
+                                    <Canvas IsHitTestVisible="False">
+                                        <Rectangle x:Name="SelectionRect" Stroke="{DynamicResource Accent}" StrokeThickness="2" Fill="#223FB59B" Visibility="Collapsed"/>
+                                    </Canvas>
+                                    <Canvas x:Name="CandidateBoxes" IsHitTestVisible="False"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </DockPanel>
+                    <GridSplitter Grid.Column="1" Width="6" HorizontalAlignment="Stretch" Background="Transparent"/>
+                    <ScrollViewer Grid.Column="2">
+                        <StackPanel Margin="0,0,8,8">
+                            <Border CornerRadius="4" Padding="8,6" Background="{Binding OutcomeTone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}"
+                                    Visibility="{Binding OutcomeText, Converter={StaticResource VisibleWhen}}">
+                                <StackPanel>
+                                    <TextBlock Style="{StaticResource Body}" Text="{Binding OutcomeText}" FontWeight="SemiBold"/>
+                                    <TextBlock Style="{StaticResource MutedText}" Text="{Binding Progress}" Visibility="{Binding IsRunning, Converter={StaticResource VisibleWhen}}"/>
+                                </StackPanel>
+                            </Border>
+
+                            <TextBlock Style="{StaticResource H3}" Text="{l:T Analysis.Candidates}"/>
+                            <TextBlock Style="{StaticResource MutedText}" Text="{l:T Analysis.ScoreMeaning}"/>
+                            <ListBox ItemsSource="{Binding Candidates}" SelectedItem="{Binding SelectedCandidate}" Margin="0,4,0,0" MaxHeight="260">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type vm:CandidateLine}">
+                                        <DockPanel>
+                                            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                                                <Button Content="{l:T Analysis.Confirm}" Padding="6,1"
+                                                        Command="{Binding DataContext.ConfirmCommand, RelativeSource={RelativeSource AncestorType=ListBox}}" CommandParameter="{Binding}"/>
+                                                <Button Content="{l:T Analysis.Reject}" Padding="6,1"
+                                                        Command="{Binding DataContext.RejectCommand, RelativeSource={RelativeSource AncestorType=ListBox}}" CommandParameter="{Binding}"/>
+                                            </StackPanel>
+                                            <StackPanel>
+                                                <TextBlock TextWrapping="Wrap">
+                                                    <Run Text="{Binding Name, Mode=OneWay}" FontWeight="SemiBold"/>
+                                                    <Run Text="{Binding TypeLabel, Mode=OneWay}" Foreground="{DynamicResource Muted}"/>
+                                                </TextBlock>
+                                                <TextBlock FontSize="11" Foreground="{DynamicResource Muted}" TextWrapping="Wrap">
+                                                    <Run Text="{l:T Analysis.Score}"/> <Run Text="{Binding ScoreText, Mode=OneWay}"/><Run Text=" · "/><Run Text="{Binding StateLabel, Mode=OneWay}"/>
+                                                </TextBlock>
+                                                <TextBlock FontSize="11" Foreground="{DynamicResource Muted}" TextWrapping="Wrap" Text="{Binding Evidence}"/>
+                                            </StackPanel>
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+
+                            <TextBlock Style="{StaticResource H3}" Text="{l:T Analysis.Manual}"/>
+                            <TextBox Text="{Binding ManualQuery, UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="{l:T Analysis.Manual}" ToolTip="{l:T Analysis.ManualTip}"/>
+                            <ItemsControl ItemsSource="{Binding ManualResults}" Margin="0,2,0,0">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type vm:ResultLine}">
+                                        <Button Style="{StaticResource LinkButton}" HorizontalAlignment="Left" Margin="0,2"
+                                                Command="{Binding DataContext.ChooseManualCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding}">
+                                            <Button.Content>
+                                                <MultiBinding StringFormat="{}{0} ({1})">
+                                                    <Binding Path="Name"/>
+                                                    <Binding Path="TypeLabel"/>
+                                                </MultiBinding>
+                                            </Button.Content>
+                                        </Button>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+
+                            <TextBlock Style="{StaticResource H3}" Text="{l:T Analysis.Attempts}"/>
+                            <TextBlock Style="{StaticResource MutedText}" Text="{Binding AttemptsSummary}"/>
+                            <TextBlock Style="{StaticResource H3}" Text="{l:T Analysis.OcrText}"/>
+                            <TextBox Style="{StaticResource MultiLine}" IsReadOnly="True" Text="{Binding OcrText, Mode=OneWay}" MinHeight="120" MaxHeight="300"
+                                     FontFamily="Consolas" FontSize="12" AutomationProperties.Name="{l:T Analysis.OcrText}"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+
+            <!-- ============================================================ E. Knowledge management -->
+            <TabItem Header="{l:T Tab.Knowledge}">
+                <ScrollViewer DataContext="{Binding Knowledge}" Margin="0,8,0,0">
+                    <StackPanel Margin="0,0,12,12">
+                        <Border Style="{StaticResource Card}">
+                            <StackPanel>
+                                <TextBlock Style="{StaticResource H2}" Text="{l:T Knowledge.ImportExport}"/>
+                                <TextBlock Style="{StaticResource MutedText}" Text="{l:T Knowledge.ImportHelp}"/>
+                                <WrapPanel Margin="0,6,0,0">
+                                    <Button Style="{StaticResource Primary}" Content="{l:T Knowledge.Import}" Command="{Binding ChooseImportCommand}"/>
+                                    <Button Content="{l:T Knowledge.ExportAll}" Command="{Binding ExportAllCommand}"/>
+                                </WrapPanel>
+                                <TextBox Style="{StaticResource MultiLine}" IsReadOnly="True" Text="{Binding ValidationErrors, Mode=OneWay}" Foreground="{DynamicResource Bad}"
+                                         Margin="0,6,0,0" Visibility="{Binding ValidationErrors, Converter={StaticResource VisibleWhen}}" MaxHeight="160"/>
+                                <StackPanel Visibility="{Binding HasPreview, Converter={StaticResource VisibleWhen}}" Margin="0,8,0,0">
+                                    <TextBlock Style="{StaticResource Body}" Text="{Binding PreviewSummary}" FontWeight="SemiBold"/>
+                                    <CheckBox Content="{l:T Knowledge.ShowUnchanged}" IsChecked="{Binding ShowUnchanged}"/>
+                                    <DataGrid ItemsSource="{Binding PreviewChanges}" MaxHeight="320" Margin="0,4,0,0">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="{l:T Knowledge.ColChange}" Binding="{Binding ChangeLabel}" IsReadOnly="True"/>
+                                            <DataGridTextColumn Header="{l:T Knowledge.ColKind}" Binding="{Binding KindLabel}" IsReadOnly="True"/>
+                                            <DataGridTextColumn Header="{l:T Knowledge.ColName}" Binding="{Binding Name}" IsReadOnly="True" Width="*"/>
+                                            <DataGridTemplateColumn Header="{l:T Knowledge.ColResolution}">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate DataType="{x:Type vm:ChangeLine}">
+                                                        <ComboBox ItemsSource="{Binding Options}" SelectedItem="{Binding SelectedOption, UpdateSourceTrigger=PropertyChanged}"
+                                                                  DisplayMemberPath="Label" Visibility="{Binding IsConflict, Converter={StaticResource VisibleWhen}}"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                            <DataGridTextColumn Header="{l:T Knowledge.ColReason}" Binding="{Binding Reason}" IsReadOnly="True" Width="2*">
+                                                <DataGridTextColumn.ElementStyle>
+                                                    <Style TargetType="TextBlock"><Setter Property="TextWrapping" Value="Wrap"/></Style>
+                                                </DataGridTextColumn.ElementStyle>
+                                            </DataGridTextColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                    <ItemsControl ItemsSource="{Binding PreviewWarnings}" Margin="0,4,0,0">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate><TextBlock Style="{StaticResource MutedText}" Foreground="{DynamicResource Caution}" Text="{Binding}"/></DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                    <WrapPanel Margin="0,6,0,0">
+                                        <Button Style="{StaticResource Primary}" Content="{l:T Knowledge.Apply}" Command="{Binding ApplyImportCommand}"/>
+                                        <Button Content="{l:T Knowledge.CancelImport}" Command="{Binding CancelImportCommand}"/>
+                                    </WrapPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Style="{StaticResource Card}">
+                            <StackPanel>
+                                <TextBlock Style="{StaticResource H2}" Text="{l:T Editor.Title}"/>
+                                <TextBlock Style="{StaticResource MutedText}" Text="{l:T Editor.Help}"/>
+                                <TextBlock Text="{Binding EditorMessage}" TextWrapping="Wrap" Margin="0,4" FontWeight="SemiBold"
+                                           Visibility="{Binding EditorMessage, Converter={StaticResource VisibleWhen}}">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="{DynamicResource Good}"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding EditorMessageIsError}" Value="True">
+                                                    <Setter Property="Foreground" Value="{DynamicResource Bad}"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                                <Label Content="{l:T Editor.Find}"/>
+                                <TextBox Text="{Binding LookupQuery, UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="{l:T Editor.Find}"/>
+                                <ItemsControl ItemsSource="{Binding EntityLookup}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="{x:Type vm:ResultLine}">
+                                            <Button Style="{StaticResource LinkButton}" HorizontalAlignment="Left" Margin="0,2" Content="{Binding Name}"
+                                                    Command="{Binding DataContext.EditEntityCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding}"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+
+                                <Grid Margin="0,8,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="16"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <!-- Entity -->
+                                    <StackPanel>
+                                        <TextBlock Style="{StaticResource H3}" Text="{l:T Editor.Entity}"/>
+                                        <TextBlock Style="{StaticResource MutedText}" Text="{Binding EntityId}"/>
+                                        <Label Content="{l:T Editor.Type}"/>
+                                        <ComboBox ItemsSource="{Binding EntityTypes}" SelectedItem="{Binding EntityType}" DisplayMemberPath="Label"/>
+                                        <Label Content="{l:T Editor.Name}"/>
+                                        <TextBox Text="{Binding EntityName, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Label Content="{l:T Editor.Aliases}"/>
+                                        <TextBox Style="{StaticResource MultiLine}" Text="{Binding EntityAliases, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Label Content="{l:T Editor.Location}"/>
+                                        <ComboBox ItemsSource="{Binding LocationChoices}" SelectedItem="{Binding EntityLocation}" DisplayMemberPath="Label"/>
+                                        <Label Content="{l:T Editor.Level}"/>
+                                        <TextBox Text="{Binding EntityLevel, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Label Content="{l:T Editor.Description}"/>
+                                        <TextBox Style="{StaticResource MultiLine}" Text="{Binding EntityDescription, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Label Content="{l:T Editor.Verification}"/>
+                                        <ComboBox ItemsSource="{Binding Verifications}" SelectedItem="{Binding EntityVerification}" DisplayMemberPath="Label"/>
+                                        <Label Content="{l:T Editor.Source}"/>
+                                        <ComboBox ItemsSource="{Binding SourceChoices}" SelectedItem="{Binding EntitySource}" DisplayMemberPath="Label"/>
+                                        <WrapPanel Margin="0,8,0,0">
+                                            <Button Style="{StaticResource Primary}" Content="{l:T Editor.SaveEntity}" Command="{Binding SaveEntityCommand}"/>
+                                            <Button Content="{l:T Editor.New}" Command="{Binding NewEntityCommand}"/>
+                                        </WrapPanel>
+
+                                        <TextBlock Style="{StaticResource H3}" Text="{l:T Editor.NewSource}" Margin="0,16,0,2"/>
+                                        <Label Content="{l:T Editor.SourceTitle}"/>
+                                        <TextBox Text="{Binding SourceTitle, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Label Content="URL"/>
+                                        <TextBox Text="{Binding SourceUrl, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Label Content="{l:T Editor.Publisher}"/>
+                                        <TextBox Text="{Binding SourcePublisher, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Label Content="{l:T Editor.Reliability}"/>
+                                        <ComboBox ItemsSource="{Binding Reliabilities}" SelectedItem="{Binding SourceReliability}" DisplayMemberPath="Label"/>
+                                        <Label Content="{l:T Editor.SourceDate}"/>
+                                        <TextBox Text="{Binding SourceUpdatedOn, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Button Content="{l:T Editor.SaveSource}" Command="{Binding SaveSourceCommand}" Margin="0,8,0,0" HorizontalAlignment="Left"/>
+                                    </StackPanel>
+                                    <!-- Mechanic -->
+                                    <StackPanel Grid.Column="2">
+                                        <TextBlock Style="{StaticResource H3}" Text="{l:T Editor.Mechanic}"/>
+                                        <TextBlock Style="{StaticResource Body}">
+                                            <Run Text="{l:T Editor.ForEntity}"/> <Run Text="{Binding MechanicEntityName, Mode=OneWay}" FontWeight="SemiBold"/>
+                                        </TextBlock>
+                                        <TextBlock Style="{StaticResource MutedText}" Text="{Binding MechanicId}"/>
+                                        <Label Content="{l:T Editor.MechTitle}"/>
+                                        <TextBox Text="{Binding MechanicTitle, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <UniformGrid Columns="2">
+                                            <StackPanel Margin="0,0,3,0">
+                                                <Label Content="{l:T Editor.Type}"/>
+                                                <ComboBox ItemsSource="{Binding MechanicTypes}" SelectedItem="{Binding MechanicType}" DisplayMemberPath="Label"/>
+                                            </StackPanel>
+                                            <StackPanel Margin="3,0,0,0">
+                                                <Label Content="{l:T Editor.Verification}"/>
+                                                <ComboBox ItemsSource="{Binding Verifications}" SelectedItem="{Binding MechanicVerification}" DisplayMemberPath="Label"/>
+                                            </StackPanel>
+                                        </UniformGrid>
+                                        <Label Content="{l:T Editor.Summary}"/>
+                                        <TextBox Style="{StaticResource MultiLine}" Text="{Binding MechanicSummary, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Label Content="{l:T Editor.Prerequisites}"/>
+                                        <TextBox Style="{StaticResource MultiLine}" Text="{Binding MechanicPrerequisites, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Label Content="{l:T Editor.Steps}"/>
+                                        <TextBox Style="{StaticResource MultiLine}" MinHeight="90" Text="{Binding MechanicSteps, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Label Content="{l:T Detail.Expected}"/>
+                                        <TextBox Text="{Binding MechanicExpected, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <UniformGrid Columns="2">
+                                            <StackPanel Margin="0,0,3,0">
+                                                <Label Content="{l:T Detail.Duration}"/>
+                                                <TextBox Text="{Binding MechanicDuration, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </StackPanel>
+                                            <StackPanel Margin="3,0,0,0">
+                                                <Label Content="{l:T Detail.Turns}"/>
+                                                <TextBox Text="{Binding MechanicTurns, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </StackPanel>
+                                        </UniformGrid>
+                                        <Label Content="{l:T Editor.Warnings}"/>
+                                        <TextBox Style="{StaticResource MultiLine}" Text="{Binding MechanicWarnings, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Label Content="{l:T Editor.Unknowns}"/>
+                                        <TextBox Style="{StaticResource MultiLine}" Text="{Binding MechanicUnknowns, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Label Content="{l:T Editor.Source}"/>
+                                        <ComboBox ItemsSource="{Binding SourceChoices}" SelectedItem="{Binding MechanicSource}" DisplayMemberPath="Label"/>
+                                        <Label Content="{l:T Editor.Quote}"/>
+                                        <TextBox Style="{StaticResource MultiLine}" Text="{Binding MechanicQuote, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Label Content="{l:T Detail.Version}"/>
+                                        <TextBox Text="{Binding MechanicVersion, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <WrapPanel Margin="0,8,0,0">
+                                            <Button Style="{StaticResource Primary}" Content="{l:T Editor.SaveMechanic}" Command="{Binding SaveMechanicCommand}"/>
+                                            <Button Content="{l:T Editor.New}" Command="{Binding NewMechanicCommand}"/>
+                                        </WrapPanel>
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <!-- ============================================================ F. Settings -->
+            <TabItem Header="{l:T Tab.Settings}">
+                <ScrollViewer DataContext="{Binding Settings}" Margin="0,8,0,0">
+                    <StackPanel Margin="0,0,12,12" MaxWidth="760" HorizontalAlignment="Left">
+                        <TextBlock Text="{Binding Message}" Foreground="{DynamicResource Accent}" FontWeight="SemiBold" TextWrapping="Wrap"
+                                   Visibility="{Binding Message, Converter={StaticResource VisibleWhen}}" Margin="0,0,0,6"/>
+                        <WrapPanel Margin="0,0,0,8">
+                            <Button Style="{StaticResource Primary}" Content="{l:T Settings.Save}" Command="{Binding SaveCommand}"/>
+                            <Button Content="{l:T Settings.Revert}" Command="{Binding RevertCommand}"/>
+                        </WrapPanel>
+
+                        <Border Style="{StaticResource Card}">
+                            <StackPanel>
+                                <TextBlock Style="{StaticResource H2}" Text="{l:T Settings.Interface}"/>
+                                <Label Content="{l:T Settings.Language}"/>
+                                <ComboBox ItemsSource="{Binding Languages}" SelectedItem="{Binding Language}" DisplayMemberPath="Label" HorizontalAlignment="Left" Width="220"/>
+                                <Label Content="{l:T Settings.Theme}"/>
+                                <ComboBox ItemsSource="{Binding Themes}" SelectedItem="{Binding Theme}" DisplayMemberPath="Label" HorizontalAlignment="Left" Width="220"/>
+                                <CheckBox Content="{l:T Settings.StartWithOverlay}" IsChecked="{Binding StartWithOverlay}"/>
+                                <CheckBox Content="{l:T Settings.StartMinimized}" IsChecked="{Binding StartMinimized}"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Style="{StaticResource Card}">
+                            <StackPanel>
+                                <TextBlock Style="{StaticResource H2}" Text="{l:T Settings.Overlay}"/>
+                                <Label>
+                                    <TextBlock><Run Text="{l:T Settings.Opacity}"/> <Run Text="{Binding OverlayOpacity, Converter={StaticResource Percent}, Mode=OneWay}"/></TextBlock>
+                                </Label>
+                                <Slider Minimum="0.3" Maximum="1" Value="{Binding OverlayOpacity}" Width="260" HorizontalAlignment="Left" SmallChange="0.05" LargeChange="0.1"/>
+                                <UniformGrid Columns="2" Width="300" HorizontalAlignment="Left">
+                                    <StackPanel Margin="0,0,3,0">
+                                        <Label Content="{l:T Settings.Width}"/>
+                                        <TextBox Text="{Binding OverlayWidth}"/>
+                                    </StackPanel>
+                                    <StackPanel Margin="3,0,0,0">
+                                        <Label Content="{l:T Settings.Height}"/>
+                                        <TextBox Text="{Binding OverlayHeight}"/>
+                                    </StackPanel>
+                                </UniformGrid>
+                                <CheckBox Content="{l:T Settings.Locked}" IsChecked="{Binding OverlayLocked}"/>
+                                <CheckBox Content="{l:T Settings.NoActivate}" IsChecked="{Binding OverlayNoActivate}"/>
+                                <TextBlock Style="{StaticResource MutedText}" Text="{l:T Settings.NoActivateHelp}"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Style="{StaticResource Card}">
+                            <StackPanel>
+                                <TextBlock Style="{StaticResource H2}" Text="{l:T Settings.Shortcuts}"/>
+                                <TextBlock Style="{StaticResource MutedText}" Text="{l:T Settings.ShortcutsHelp}"/>
+                                <Label Content="{l:T Hotkey.ToggleOverlay}"/>
+                                <TextBox Text="{Binding HotkeyToggleOverlay, UpdateSourceTrigger=PropertyChanged}" Width="220" HorizontalAlignment="Left"/>
+                                <Label Content="{l:T Hotkey.ToggleClickThrough}"/>
+                                <TextBox Text="{Binding HotkeyToggleClickThrough, UpdateSourceTrigger=PropertyChanged}" Width="220" HorizontalAlignment="Left"/>
+                                <Label Content="{l:T Hotkey.Capture}"/>
+                                <TextBox Text="{Binding HotkeyCapture, UpdateSourceTrigger=PropertyChanged}" Width="220" HorizontalAlignment="Left"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Style="{StaticResource Card}">
+                            <StackPanel>
+                                <TextBlock Style="{StaticResource H2}" Text="{l:T Settings.Recognition}"/>
+                                <TextBlock Style="{StaticResource MutedText}" Text="{Binding OcrStatus}"/>
+                                <Label Content="{l:T Settings.OcrLanguage}"/>
+                                <ComboBox ItemsSource="{Binding OcrLanguages}" SelectedItem="{Binding OcrLanguage}" Width="220" HorizontalAlignment="Left"/>
+                                <CheckBox Content="{l:T Settings.OcrVariants}" IsChecked="{Binding OcrUseVariants}"/>
+                                <Label>
+                                    <TextBlock><Run Text="{l:T Settings.MinScore}"/> <Run Text="{Binding MatchMinScore, Converter={StaticResource Percent}, Mode=OneWay}"/></TextBlock>
+                                </Label>
+                                <Slider Minimum="0.5" Maximum="0.99" Value="{Binding MatchMinScore}" Width="260" HorizontalAlignment="Left"/>
+                                <Label>
+                                    <TextBlock><Run Text="{l:T Settings.AutoScore}"/> <Run Text="{Binding MatchAutoAcceptScore, Converter={StaticResource Percent}, Mode=OneWay}"/></TextBlock>
+                                </Label>
+                                <Slider Minimum="0.5" Maximum="1" Value="{Binding MatchAutoAcceptScore}" Width="260" HorizontalAlignment="Left"/>
+                                <TextBlock Style="{StaticResource MutedText}" Text="{l:T Analysis.ScoreMeaning}"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Style="{StaticResource Card}">
+                            <StackPanel>
+                                <TextBlock Style="{StaticResource H2}" Text="{l:T Settings.CapturePrivacy}"/>
+                                <CheckBox Content="{l:T Settings.CaptureEnabled}" IsChecked="{Binding ScreenCaptureEnabled}"/>
+                                <TextBlock Style="{StaticResource MutedText}" Text="{l:T Settings.CaptureHelp}"/>
+                                <CheckBox Content="{l:T Settings.ExcludeOverlay}" IsChecked="{Binding ExcludeOverlayFromCapture}"/>
+                                <CheckBox Content="{l:T Settings.SaveObservations}" IsChecked="{Binding SaveObservations}"/>
+                                <CheckBox Content="{l:T Settings.KeepScreenshots}" IsChecked="{Binding KeepScreenshots}"/>
+                                <StackPanel Orientation="Horizontal" Visibility="{Binding KeepScreenshots, Converter={StaticResource VisibleWhen}}">
+                                    <TextBlock Text="{l:T Settings.Retention}" VerticalAlignment="Center" Margin="20,0,6,0"/>
+                                    <TextBox Width="50" Text="{Binding ScreenshotRetentionDays}"/>
+                                </StackPanel>
+                                <CheckBox Content="{l:T Settings.LearnCorrections}" IsChecked="{Binding LearnFromCorrections}"/>
+                                <CheckBox Content="{l:T Settings.SearchHistory}" IsChecked="{Binding SearchHistoryEnabled}"/>
+                                <Button Content="{l:T Settings.DeletePrivate}" Command="{Binding DeleteObservationsCommand}" HorizontalAlignment="Left" Margin="0,6,0,0"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Style="{StaticResource Card}">
+                            <StackPanel>
+                                <TextBlock Style="{StaticResource H2}" Text="{l:T Settings.Storage}"/>
+                                <TextBlock Style="{StaticResource MutedText}">
+                                    <Run Text="{l:T Settings.DataFolder}"/> <Run Text="{Binding DataFolder, Mode=OneWay}"/>
+                                </TextBlock>
+                                <Label Content="{l:T Settings.Database}"/>
+                                <DockPanel>
+                                    <Button DockPanel.Dock="Right" Content="…" Command="{Binding BrowseDatabaseCommand}" Margin="6,0,0,0"/>
+                                    <TextBox Text="{Binding DatabasePath, UpdateSourceTrigger=PropertyChanged}"/>
+                                </DockPanel>
+                                <TextBlock Style="{StaticResource MutedText}" Text="{l:T Settings.DatabaseHelp}"/>
+                                <Label Content="{l:T Settings.LogLevel}"/>
+                                <ComboBox ItemsSource="{Binding LogLevels}" SelectedItem="{Binding LogLevel}" Width="220" HorizontalAlignment="Left"/>
+                                <Button Content="{l:T Settings.OpenData}" Command="{Binding OpenDataFolderCommand}" HorizontalAlignment="Left" Margin="0,8,0,0"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <!-- ============================================================ G. Diagnostics -->
+            <TabItem Header="{l:T Tab.Diagnostics}">
+                <ScrollViewer DataContext="{Binding Diagnostics}" Margin="0,8,0,0">
+                    <StackPanel Margin="0,0,12,12">
+                        <WrapPanel Margin="0,0,0,8">
+                            <Button Content="{l:T Diag.Refresh}" Command="{Binding RefreshCommand}"/>
+                            <Button Content="{l:T Diag.Export}" Command="{Binding PrepareExportCommand}"/>
+                            <Button Content="{l:T Diag.OpenLogs}" Command="{Binding OpenLogsCommand}"/>
+                        </WrapPanel>
+                        <Border Style="{StaticResource Card}" Visibility="{Binding HasExportPreview, Converter={StaticResource VisibleWhen}}">
+                            <StackPanel>
+                                <TextBlock Style="{StaticResource H2}" Text="{l:T Diag.ExportReview}"/>
+                                <TextBox Style="{StaticResource MultiLine}" IsReadOnly="True" Text="{Binding ExportPreview, Mode=OneWay}" MaxHeight="260" FontFamily="Consolas" FontSize="11"/>
+                                <WrapPanel Margin="0,6,0,0">
+                                    <Button Style="{StaticResource Primary}" Content="{l:T Diag.SaveExport}" Command="{Binding SaveExportCommand}"/>
+                                    <Button Content="{l:T Diag.CloseExport}" Command="{Binding CloseExportCommand}"/>
+                                </WrapPanel>
+                            </StackPanel>
+                        </Border>
+                        <Border Style="{StaticResource Card}">
+                            <ItemsControl ItemsSource="{Binding Lines}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type vm:DiagnosticLine}">
+                                        <Grid Margin="0,2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="220"/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Text="{Binding Label}" Foreground="{DynamicResource Muted}" TextWrapping="Wrap"/>
+                                            <TextBlock Grid.Column="1" Text="{Binding Value}" TextWrapping="Wrap"
+                                                       Foreground="{Binding Tone, Converter={StaticResource ToneBrush}}"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Border>
+                        <Border Style="{StaticResource Card}">
+                            <StackPanel>
+                                <TextBlock Style="{StaticResource H2}" Text="{l:T Diag.RecentErrors}"/>
+                                <TextBlock Style="{StaticResource MutedText}" Text="{l:T Diag.NoErrors}" Visibility="{Binding RecentErrors.Count, Converter={StaticResource HiddenWhen}}"/>
+                                <ItemsControl ItemsSource="{Binding RecentErrors}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock TextWrapping="Wrap" FontSize="12" Margin="0,2">
+                                                <Run Text="{Binding Timestamp, StringFormat='HH:mm:ss', Mode=OneWay}" Foreground="{DynamicResource Muted}"/>
+                                                <Run Text="{Binding Level, Mode=OneWay}" FontWeight="SemiBold"/>
+                                                <Run Text="{Binding Message, Mode=OneWay}"/>
+                                            </TextBlock>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>

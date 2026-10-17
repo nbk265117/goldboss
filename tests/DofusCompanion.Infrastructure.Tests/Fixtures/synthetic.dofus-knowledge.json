@@ -1,0 +1,37 @@
+{
+  "formatVersion": 1,
+  "packageId": "test-synthetic",
+  "name": "SYNTHETIC TEST FIXTURE — not game knowledge",
+  "description": "Invented names and mechanics used only by automated tests. Never ship as knowledge.",
+  "createdOn": "2026-10-17",
+  "sources": [
+    { "id": "src.synthetic", "title": "Synthetic source", "url": "https://example.invalid/synthetic", "category": "Other", "reliability": "Unknown" }
+  ],
+  "entities": [
+    { "id": "area.zone-test", "type": "Area", "canonicalName": "Zone Synthétique", "verification": "UNKNOWN" },
+    { "id": "dungeon.test", "type": "Dungeon", "canonicalName": "Donjon Synthétique", "verification": "UNKNOWN", "relations": [{ "type": "PartOf", "to": "area.zone-test" }] },
+    { "id": "boss.test", "type": "Boss", "canonicalName": "Boss Synthétique", "aliases": [{ "text": "Synthbot", "locale": "en" }], "verification": "UNKNOWN", "relations": [{ "type": "LocatedIn", "to": "dungeon.test" }] },
+    { "id": "family.test", "type": "MonsterFamily", "canonicalName": "Famille Synthétique", "verification": "UNKNOWN" },
+    { "id": "monster.test", "type": "Monster", "canonicalName": "Monstre Synthétique", "verification": "UNKNOWN", "relations": [{ "type": "LocatedIn", "to": "dungeon.test" }, { "type": "MemberOfFamily", "to": "family.test" }] }
+  ],
+  "mechanics": [
+    {
+      "id": "mech.test.unlock",
+      "entityId": "boss.test",
+      "type": "Unlock",
+      "title": "Mécanique synthétique",
+      "verification": "INFERRED",
+      "prerequisites": [{ "kind": "TurnEven", "description": "Tour pair" }],
+      "sequences": [
+        { "label": "A", "steps": [{ "order": 1, "action": "Étape A1", "when": { "kind": "TurnAtLeast", "number": 3, "description": "À partir du tour 3" } }, { "order": 2, "action": "Étape A2", "verification": "UNKNOWN" }] },
+        { "label": "B", "steps": [{ "order": 1, "action": "Étape B1 avec état Brumeux", "requiredState": "Brumeux" }] }
+      ],
+      "notes": [{ "kind": "FailureCase", "text": "Échec synthétique" }],
+      "unknownAspects": ["Durée inconnue"],
+      "sources": [
+        { "sourceId": "src.synthetic", "quote": "quote one" },
+        { "sourceId": "src.synthetic", "quote": "quote two" }
+      ]
+    }
+  ]
+}

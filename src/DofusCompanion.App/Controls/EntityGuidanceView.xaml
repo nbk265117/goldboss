@@ -1,0 +1,239 @@
+<UserControl x:Class="DofusCompanion.App.Controls.EntityGuidanceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:l="clr-namespace:DofusCompanion.App.Localization"
+             xmlns:vm="clr-namespace:DofusCompanion.App.ViewModels"
+             x:Name="Root">
+    <!-- DataContext: EntityDetailViewModel. Detailed mode: every structured field, evidence and source. -->
+    <StackPanel>
+        <TextBlock Style="{StaticResource MutedText}" Text="{l:T Detail.Empty}"
+                   Visibility="{Binding HasEntity, Converter={StaticResource HiddenWhen}}" Margin="0,8"/>
+
+        <StackPanel Visibility="{Binding HasEntity, Converter={StaticResource VisibleWhen}}">
+            <!-- Identity -->
+            <WrapPanel>
+                <TextBlock Style="{StaticResource H1}" Text="{Binding Name}"/>
+                <Border Style="{StaticResource Badge}" Background="{DynamicResource PanelAlt}">
+                    <TextBlock Text="{Binding TypeLabel}" FontSize="11" Foreground="{DynamicResource Muted}"/>
+                </Border>
+            </WrapPanel>
+            <TextBlock Style="{StaticResource MutedText}" Visibility="{Binding Locations, Converter={StaticResource VisibleWhen}}">
+                <Run Text="{l:T Detail.Location}"/> <Run Text="{Binding Locations, Mode=OneWay}"/>
+            </TextBlock>
+            <TextBlock Style="{StaticResource MutedText}" Visibility="{Binding Aliases, Converter={StaticResource VisibleWhen}}">
+                <Run Text="{l:T Detail.Aliases}"/> <Run Text="{Binding Aliases, Mode=OneWay}"/>
+            </TextBlock>
+            <TextBlock Style="{StaticResource MutedText}" Visibility="{Binding Level, Converter={StaticResource VisibleWhen}}">
+                <Run Text="{l:T Detail.Level}"/> <Run Text="{Binding Level, Mode=OneWay}"/>
+            </TextBlock>
+            <TextBlock Style="{StaticResource Body}" Text="{Binding Description}" Margin="0,6,0,0"
+                       Visibility="{Binding Description, Converter={StaticResource VisibleWhen}}"/>
+            <TextBlock Style="{StaticResource MutedText}" Text="{Binding Attributes}" Margin="0,4,0,0"
+                       Visibility="{Binding Attributes, Converter={StaticResource VisibleWhen}}"/>
+
+            <!-- Explicit "nothing known" instead of invented content -->
+            <Border Style="{StaticResource Card}" Background="{DynamicResource CautionBg}" Margin="0,10,0,10"
+                    Visibility="{Binding NoMechanicDocumented, Converter={StaticResource VisibleWhen}}">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource H2}" Text="{l:T Detail.NoMechanicTitle}"/>
+                    <TextBlock Style="{StaticResource Body}" Text="{l:T Detail.NoMechanicBody}"/>
+                </StackPanel>
+            </Border>
+
+            <ItemsControl ItemsSource="{Binding Mechanics}" Margin="0,10,0,0">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="{x:Type vm:MechanicCard}">
+                        <Border Style="{StaticResource Card}">
+                            <StackPanel>
+                                <TextBlock Style="{StaticResource H3}" Margin="0,0,0,4" Foreground="{DynamicResource Accent}"
+                                           Text="{Binding BossName, StringFormat='BOSS · {0}'}" Visibility="{Binding BossName, Converter={StaticResource VisibleWhen}}"/>
+                                <DockPanel>
+                                    <Button DockPanel.Dock="Right" Content="{l:T Detail.CopyCompact}" ToolTip="{l:T Detail.CopyCompactTip}"
+                                            Command="{Binding DataContext.CopyCompactCommand, ElementName=Root}" CommandParameter="{Binding}" Margin="6,0,0,0"/>
+                                    <WrapPanel>
+                                        <TextBlock Style="{StaticResource H2}" Text="{Binding Title}"/>
+                                        <Border Style="{StaticResource Badge}" Background="{Binding VerificationTone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}">
+                                            <TextBlock Text="{Binding VerificationLabel}" FontSize="11" FontWeight="SemiBold"
+                                                       Foreground="{Binding VerificationTone, Converter={StaticResource ToneBrush}}"/>
+                                        </Border>
+                                        <Border Style="{StaticResource Badge}" Background="{DynamicResource PanelAlt}">
+                                            <TextBlock Text="{Binding TypeLabel}" FontSize="11" Foreground="{DynamicResource Muted}"/>
+                                        </Border>
+                                    </WrapPanel>
+                                </DockPanel>
+
+                                <TextBlock Style="{StaticResource Body}" Text="{l:T Detail.NotEstablished}" Foreground="{DynamicResource Caution}" FontWeight="SemiBold"
+                                           Visibility="{Binding IsNotEstablished, Converter={StaticResource VisibleWhen}}" Margin="0,2,0,4"/>
+                                <TextBlock Style="{StaticResource Body}" Text="{Binding Summary}" Margin="0,4,0,0"
+                                           Visibility="{Binding Summary, Converter={StaticResource VisibleWhen}}"/>
+
+                                <!-- Staleness -->
+                                <ItemsControl ItemsSource="{Binding Staleness}" Margin="0,6,0,0" Visibility="{Binding HasStaleness, Converter={StaticResource VisibleWhen}}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border Background="{DynamicResource CautionBg}" CornerRadius="4" Padding="8,4" Margin="0,2">
+                                                <TextBlock Text="{Binding}" TextWrapping="Wrap" Foreground="{DynamicResource Caution}"/>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+
+                                <!-- Prerequisites -->
+                                <StackPanel Visibility="{Binding HasPrerequisites, Converter={StaticResource VisibleWhen}}">
+                                    <TextBlock Style="{StaticResource H3}" Text="{l:T Detail.Prerequisites}"/>
+                                    <ItemsControl ItemsSource="{Binding Prerequisites}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate DataType="{x:Type vm:ConditionLine}">
+                                                <DockPanel Margin="0,1">
+                                                    <Border DockPanel.Dock="Right" Style="{StaticResource Badge}" Background="{Binding Tone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}">
+                                                        <TextBlock Text="{Binding ResultLabel}" FontSize="11" Foreground="{Binding Tone, Converter={StaticResource ToneBrush}}"/>
+                                                    </Border>
+                                                    <TextBlock Style="{StaticResource Body}" Text="{Binding Text, StringFormat='• {0}'}"/>
+                                                </DockPanel>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+
+                                <!-- Ordered sequences (alternatives shown as separate blocks) -->
+                                <ItemsControl ItemsSource="{Binding Sequences}" Visibility="{Binding HasSequences, Converter={StaticResource VisibleWhen}}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="{x:Type vm:SequenceBlock}">
+                                            <StackPanel>
+                                                <TextBlock Style="{StaticResource H3}">
+                                                    <Run Text="{l:T Detail.Steps}"/><Run Text="{Binding Label, StringFormat=' — {0}', Mode=OneWay}"/>
+                                                </TextBlock>
+                                                <ItemsControl ItemsSource="{Binding Steps}">
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate DataType="{x:Type vm:StepLine}">
+                                                            <Grid Margin="0,3">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="26"/>
+                                                                    <ColumnDefinition/>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Border Width="20" Height="20" CornerRadius="10" Background="{DynamicResource Accent}" VerticalAlignment="Top">
+                                                                    <TextBlock Text="{Binding Number}" Foreground="{DynamicResource AccentText}" FontWeight="Bold" FontSize="11"
+                                                                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                </Border>
+                                                                <StackPanel Grid.Column="1">
+                                                                    <TextBlock Style="{StaticResource Body}" Text="{Binding Action}"/>
+                                                                    <TextBlock Style="{StaticResource MutedText}" Text="{Binding Details}" Visibility="{Binding Details, Converter={StaticResource VisibleWhen}}"/>
+                                                                    <WrapPanel Visibility="{Binding Applicability, Converter={StaticResource VisibleWhen}}">
+                                                                        <TextBlock Style="{StaticResource MutedText}" Text="{Binding Applicability.Text, StringFormat='↳ {0}'}"/>
+                                                                        <Border Style="{StaticResource Badge}" Background="{Binding Applicability.Tone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}">
+                                                                            <TextBlock Text="{Binding Applicability.ResultLabel}" FontSize="11" Foreground="{Binding Applicability.Tone, Converter={StaticResource ToneBrush}}"/>
+                                                                        </Border>
+                                                                    </WrapPanel>
+                                                                    <TextBlock Style="{StaticResource MutedText}" FontStyle="Italic" Text="{Binding Rationale, StringFormat='({0})'}"
+                                                                               Visibility="{Binding Rationale, Converter={StaticResource VisibleWhen}}"/>
+                                                                    <TextBlock Style="{StaticResource MutedText}" Foreground="{DynamicResource Caution}"
+                                                                               Text="{Binding VerificationLabel, StringFormat='⚠ {0}'}"
+                                                                               Visibility="{Binding IsUnverified, Converter={StaticResource VisibleWhen}}"/>
+                                                                </StackPanel>
+                                                            </Grid>
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+
+                                <!-- Results and timing -->
+                                <Grid Margin="0,8,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Style="{StaticResource H3}" Margin="0,0,10,2" Text="{l:T Detail.Expected}" Visibility="{Binding ExpectedResult, Converter={StaticResource VisibleWhen}}"/>
+                                    <TextBlock Grid.Column="1" Style="{StaticResource Body}" Text="{Binding ExpectedResult}" Visibility="{Binding ExpectedResult, Converter={StaticResource VisibleWhen}}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource H3}" Margin="0,0,10,2" Text="{l:T Detail.StateChange}" Visibility="{Binding ExpectedStateChange, Converter={StaticResource VisibleWhen}}"/>
+                                    <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource Body}" Text="{Binding ExpectedStateChange}" Visibility="{Binding ExpectedStateChange, Converter={StaticResource VisibleWhen}}"/>
+                                    <TextBlock Grid.Row="2" Style="{StaticResource H3}" Margin="0,0,10,2" Text="{l:T Detail.Duration}" Visibility="{Binding VulnerabilityDuration, Converter={StaticResource VisibleWhen}}"/>
+                                    <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource Body}" Text="{Binding VulnerabilityDuration}" Visibility="{Binding VulnerabilityDuration, Converter={StaticResource VisibleWhen}}"/>
+                                    <TextBlock Grid.Row="3" Style="{StaticResource H3}" Margin="0,0,10,2" Text="{l:T Detail.Turns}" Visibility="{Binding TurnConditions, Converter={StaticResource VisibleWhen}}"/>
+                                    <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource Body}" Text="{Binding TurnConditions}" Visibility="{Binding TurnConditions, Converter={StaticResource VisibleWhen}}"/>
+                                </Grid>
+
+                                <!-- Warnings, mistakes, failure cases, exceptions -->
+                                <StackPanel Visibility="{Binding HasNotes, Converter={StaticResource VisibleWhen}}">
+                                    <TextBlock Style="{StaticResource H3}" Text="{l:T Detail.Notes}"/>
+                                    <ItemsControl ItemsSource="{Binding Notes}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate DataType="{x:Type vm:NoteLine}">
+                                                <TextBlock Style="{StaticResource Body}" Margin="0,1">
+                                                    <Run Text="{Binding KindLabel, Mode=OneWay}" FontWeight="SemiBold" Foreground="{Binding Tone, Converter={StaticResource ToneBrush}}"/><Run Text=" — "/><Run Text="{Binding Text, Mode=OneWay}"/>
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+
+                                <!-- Explicit gaps -->
+                                <Border Background="{DynamicResource PanelAlt}" CornerRadius="4" Padding="8,6" Margin="0,8,0,0"
+                                        Visibility="{Binding HasGaps, Converter={StaticResource VisibleWhen}}">
+                                    <StackPanel>
+                                        <TextBlock Style="{StaticResource H3}" Margin="0" Text="{l:T Detail.Gaps}"/>
+                                        <ItemsControl ItemsSource="{Binding Gaps}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Style="{StaticResource Body}" Text="{Binding StringFormat='? {0}'}"/>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+
+                                <!-- Sources -->
+                                <TextBlock Style="{StaticResource H3}" Text="{l:T Detail.Sources}"/>
+                                <ItemsControl ItemsSource="{Binding Sources}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="{x:Type vm:SourceLine}">
+                                            <StackPanel Margin="0,0,0,6">
+                                                <Button Style="{StaticResource LinkButton}" Content="{Binding Title}" Command="{Binding OpenCommand}"
+                                                        ToolTip="{Binding Url}" HorizontalAlignment="Left" AutomationProperties.Name="{Binding Title}"/>
+                                                <TextBlock Style="{StaticResource MutedText}">
+                                                    <Run Text="{Binding Publisher, Mode=OneWay}"/><Run Text=" · "/><Run Text="{Binding ReliabilityLabel, Mode=OneWay}"/>
+                                                    <Run Text=" · "/><Run Text="{l:T Detail.UpdatedOn}"/> <Run Text="{Binding UpdatedOn, Mode=OneWay, TargetNullValue='—'}"/>
+                                                </TextBlock>
+                                                <TextBlock Style="{StaticResource MutedText}" FontStyle="Italic" Text="{Binding Quote, StringFormat='« {0} »'}"
+                                                           Visibility="{Binding Quote, Converter={StaticResource VisibleWhen}}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                                <TextBlock Style="{StaticResource MutedText}">
+                                    <Run Text="{l:T Detail.Version}"/> <Run Text="{Binding VersionScope, Mode=OneWay, TargetNullValue='—'}"/>
+                                    <Run Text=" · "/><Run Text="{l:T Detail.Checked}"/> <Run Text="{Binding LastVerified, Mode=OneWay, TargetNullValue='—'}"/>
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <!-- Related entities -->
+            <StackPanel Visibility="{Binding Related.Count, Converter={StaticResource VisibleWhen}}">
+                <TextBlock Style="{StaticResource H3}" Text="{l:T Detail.Related}"/>
+                <ItemsControl ItemsSource="{Binding Related}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type vm:RelatedEntityLine}">
+                            <WrapPanel Margin="0,1">
+                                <TextBlock Style="{StaticResource MutedText}" Text="{Binding Relation}" Margin="0,0,6,0"/>
+                                <Button Style="{StaticResource LinkButton}" Content="{Binding Name}"
+                                        Command="{Binding DataContext.NavigateCommand, ElementName=Root}" CommandParameter="{Binding Id}"/>
+                                <TextBlock Style="{StaticResource MutedText}" Text="{Binding TypeLabel, StringFormat=' ({0})'}"/>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

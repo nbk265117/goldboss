@@ -1,0 +1,21 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Light palette. Text/background pairs keep WCAG AA contrast (>= 4.5:1). -->
+    <SolidColorBrush x:Key="Bg" Color="#F3F5F7"/>
+    <SolidColorBrush x:Key="Panel" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="PanelAlt" Color="#EEF1F4"/>
+    <SolidColorBrush x:Key="Border" Color="#CDD4DB"/>
+    <SolidColorBrush x:Key="Text" Color="#1C232A"/>
+    <SolidColorBrush x:Key="Muted" Color="#55616D"/>
+    <SolidColorBrush x:Key="Accent" Color="#13806A"/>
+    <SolidColorBrush x:Key="AccentText" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="Good" Color="#1E7A4C"/>
+    <SolidColorBrush x:Key="Caution" Color="#8A5A00"/>
+    <SolidColorBrush x:Key="Bad" Color="#B42318"/>
+    <SolidColorBrush x:Key="GoodBg" Color="#E3F3EA"/>
+    <SolidColorBrush x:Key="CautionBg" Color="#FBF0DB"/>
+    <SolidColorBrush x:Key="BadBg" Color="#FBE5E2"/>
+    <SolidColorBrush x:Key="Hover" Color="#E6EAEE"/>
+    <SolidColorBrush x:Key="Selection" Color="#CDEBE3"/>
+    <SolidColorBrush x:Key="InputBg" Color="#FFFFFF"/>
+</ResourceDictionary>

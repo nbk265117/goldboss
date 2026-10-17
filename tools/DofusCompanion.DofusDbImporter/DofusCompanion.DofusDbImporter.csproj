@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- User-run acquisition tool, deliberately separate from the application (the app never goes online). -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>DofusCompanion.DofusDbImporter</RootNamespace>
+    <AssemblyName>dofusdb-import</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DofusCompanion.Infrastructure\DofusCompanion.Infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="DofusCompanion.Infrastructure.Tests" />
+  </ItemGroup>
+</Project>

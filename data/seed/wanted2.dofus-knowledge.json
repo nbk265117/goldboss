@@ -1,0 +1,4179 @@
+{
+  "formatVersion": 1,
+  "packageId": "wanted-dpln-2",
+  "name": "Avis de recherche (lot 2) — mécaniques des recherchés (Dofus pour les Noobs)",
+  "description": "Cibles des avis de recherche (second lot : Astrub, Amakna, Justiciers, Frigost, Saharach, dimensions divines, milices d'alignement) d'après les pages de Dofus pour les Noobs relevées le 2026-10-17. Textes reformulés ; citations courtes vérifiées mot pour mot.",
+  "author": "Dofus Companion research",
+  "createdOn": "2026-10-17",
+  "sources": [
+    {
+      "id": "src.dpln.avis-de-recherche",
+      "title": "Avis de recherche",
+      "url": "https://www.dofuspourlesnoobs.com/avis-de-recherche.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": null,
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Index de tous les avis de recherche (zone de l'affiche, protection, jetons). Aucune date affichée."
+    },
+    {
+      "id": "src.dpln.on-recherche-aermyne-braco-scalptaras",
+      "title": "On recherche Aermyne 'Braco' Scalptaras",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-aermyne-braco-scalptaras.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-06-15",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (15/06/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-aigripoil",
+      "title": "On recherche Aigripoil",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-aigripoil.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-08-17",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (17/08/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-ali-grothor",
+      "title": "On recherche Ali Grothor",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-ali-grothor.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-08-31",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 18/06/2014."
+    },
+    {
+      "id": "src.dpln.on-recherche-amy-l-empoisonneuse",
+      "title": "On recherche Amy l'empoisonneuse",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-amy-l-empoisonneuse.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2026-06-21",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 30/07/2021."
+    },
+    {
+      "id": "src.dpln.on-recherche-anatak-diskedor",
+      "title": "On recherche Anatak Diskedor",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-anatak-diskedor.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-08-31",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 24/04/2015."
+    },
+    {
+      "id": "src.dpln.on-recherche-bouflouth",
+      "title": "On recherche Bouflouth",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-bouflouth.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-06-16",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (16/06/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-bouss-baybe",
+      "title": "On recherche Bouss Baybe",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-bouss-baybe.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2023-08-30",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (30/08/2023)."
+    },
+    {
+      "id": "src.dpln.on-recherche-brumen-tinctorias",
+      "title": "On recherche Brumen Tinctorias",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-brumen-tinctorias.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-06-15",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (15/06/2021). Page sans conseils tactiques détaillés."
+    },
+    {
+      "id": "src.dpln.on-recherche-carlita-de-l-aguerfelde",
+      "title": "On recherche Carlita de l'Aguerfelde",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-carlita-de-l-aguerfelde.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-08-31",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (31/08/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-darma",
+      "title": "On recherche Darma",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-darma.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2023-08-30",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (30/08/2023)."
+    },
+    {
+      "id": "src.dpln.on-recherche-degolas",
+      "title": "On recherche Degolas",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-degolas.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2023-08-30",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (30/08/2023)."
+    },
+    {
+      "id": "src.dpln.on-recherche-dragodingo",
+      "title": "On recherche Dragodingo",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-dragodingo.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2023-08-30",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (30/08/2023)."
+    },
+    {
+      "id": "src.dpln.on-recherche-fantomayte",
+      "title": "On recherche Fantômayte",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-fantomayte.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2026-06-21",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 16/06/2021."
+    },
+    {
+      "id": "src.dpln.on-recherche-fojumo",
+      "title": "On recherche Fojumo",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-fojumo.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-08-31",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 24/04/2015."
+    },
+    {
+      "id": "src.dpln.on-recherche-fouduglen-l-ecureuil",
+      "title": "On recherche Fouduglen l'Écureuil",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-fouduglen-l-ecureuil.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-06-15",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (15/06/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-frakacia-leukocytine",
+      "title": "On recherche Frakacia Leukocytine",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-frakacia-leukocytine.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2026-06-21",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 15/06/2021."
+    },
+    {
+      "id": "src.dpln.on-recherche-les-guman",
+      "title": "On recherche les Guman",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-les-guman.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-07-30",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (30/07/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-jerart-dupaindur",
+      "title": "On recherche Jérart Dupaindur",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-jerart-dupaindur.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2023-08-30",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (30/08/2023)."
+    },
+    {
+      "id": "src.dpln.on-recherche-katigrou",
+      "title": "On recherche Katigrou",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-katigrou.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-06-16",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (16/06/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-maitre-boulet",
+      "title": "On recherche Maître Boulet",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-maitre-boulet.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2023-08-30",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (30/08/2023)."
+    },
+    {
+      "id": "src.dpln.on-recherche-marzwel-le-gobelin",
+      "title": "On recherche Marzwel le Gobelin",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-marzwel-le-gobelin.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-06-15",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (15/06/2021). Page sans conseils tactiques."
+    },
+    {
+      "id": "src.dpln.on-recherche-la-maxi-malle",
+      "title": "On recherche la Maxi-Malle",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-la-maxi-malle.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-08-17",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (17/08/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-mogligli",
+      "title": "On recherche Mogligli",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-mogligli.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2023-08-30",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (30/08/2023)."
+    },
+    {
+      "id": "src.dpln.on-recherche-monsieur-pingouin",
+      "title": "On recherche Monsieur Pingouin",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-monsieur-pingouin.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-06-16",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (16/06/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-morblok",
+      "title": "On recherche Morblok",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-morblok.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-08-17",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (17/08/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-musha-l-oni",
+      "title": "On recherche Musha l'Oni",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-musha-l-oni.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-06-15",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (15/06/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-naganita",
+      "title": "On recherche Naganita",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-naganita.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-08-31",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 24/04/2015."
+    },
+    {
+      "id": "src.dpln.on-recherche-nenufor-tilotus",
+      "title": "On recherche Nenufor Tilotus",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-nenufor-tilotus.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-08-31",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 24/04/2015."
+    },
+    {
+      "id": "src.dpln.on-recherche-nono-le-wobot",
+      "title": "On recherche Nono le Wobot",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-nono-le-wobot.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2023-08-30",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (30/08/2023)."
+    },
+    {
+      "id": "src.dpln.on-recherche-ogivol-scalarcin",
+      "title": "On recherche Ogivol Scalarcin",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-ogivol-scalarcin.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-06-15",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (15/06/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-padgref-demoel",
+      "title": "On recherche Padgref Demoël",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-padgref-demoel.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-06-15",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (15/06/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-le-prince-marchand",
+      "title": "On recherche le Prince Marchand",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-le-prince-marchand.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2023-08-30",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (30/08/2023)."
+    },
+    {
+      "id": "src.dpln.on-recherche-qil-bil",
+      "title": "On recherche Qil Bil",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-qil-bil.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-06-15",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (15/06/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-le-roi-camole",
+      "title": "On recherche le Roi Camole",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-le-roi-camole.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2023-08-18",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (18/08/2023)."
+    },
+    {
+      "id": "src.dpln.on-recherche-rok-gnorok",
+      "title": "On recherche Rok Gnorok",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-rok-gnorok.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-06-15",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (15/06/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-roub-ignolles",
+      "title": "On recherche Roub' Ignolles",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-roub-ignolles.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2023-08-30",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (30/08/2023)."
+    },
+    {
+      "id": "src.dpln.on-recherche-simbadas",
+      "title": "On recherche Simbadas",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-simbadas.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-08-31",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (31/08/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-tournade",
+      "title": "On recherche Tournade",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-tournade.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2023-08-18",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (18/08/2023)."
+    },
+    {
+      "id": "src.dpln.on-recherche-trukipik",
+      "title": "On recherche Trukipik",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-trukipik.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-08-31",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (31/08/2021)."
+    },
+    {
+      "id": "src.dpln.on-recherche-tyranne-la-terrible",
+      "title": "On recherche Tyranne la Terrible",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-tyranne-la-terrible.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-08-31",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 24/04/2015."
+    },
+    {
+      "id": "src.dpln.on-recherche-la-vashkiwi",
+      "title": "On recherche la Vashkiwi",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-la-vashkiwi.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2023-08-30",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (30/08/2023)."
+    },
+    {
+      "id": "src.dpln.on-recherche-zatoishwan",
+      "title": "On recherche Zatoïshwan",
+      "url": "https://www.dofuspourlesnoobs.com/on-recherche-zatoishwan.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2021-06-15",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (15/06/2021)."
+    }
+  ],
+  "entities": [
+    {
+      "id": "area.foret-de-kaliptus",
+      "type": "Area",
+      "canonicalName": "Forêt de Kaliptus",
+      "locale": "fr",
+      "description": "Zone de la Montagne des Koalaks.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-aermyne-braco-scalptaras"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.carriere-aurifere",
+      "type": "Area",
+      "canonicalName": "Carrière Aurifère",
+      "locale": "fr",
+      "description": "Zone de la dimension divine Enutrosor.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-aigripoil"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.tourbiere-nauseabonde",
+      "type": "Area",
+      "canonicalName": "Tourbière nauséabonde",
+      "locale": "fr",
+      "description": "Zone de l'Île d'Otomaï.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-ali-grothor"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.jungle-obscure",
+      "type": "Area",
+      "canonicalName": "Jungle obscure",
+      "locale": "fr",
+      "description": "Zone de l'Île d'Otomaï.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-amy-l-empoisonneuse"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.dents-de-pierre",
+      "type": "Area",
+      "canonicalName": "Dents de Pierre",
+      "locale": "fr",
+      "description": "Zone des Plaines de Cania.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-anatak-diskedor"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.champs-de-glace",
+      "type": "Area",
+      "canonicalName": "Champs de glace",
+      "locale": "fr",
+      "description": "Zone de Frigost.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-bouflouth"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.plaine-des-porkass",
+      "type": "Area",
+      "canonicalName": "Plaine des Porkass",
+      "locale": "fr",
+      "description": "Zone des Plaines de Cania.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-bouss-baybe"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.desolation-de-sidimote",
+      "type": "Area",
+      "canonicalName": "Désolation de Sidimote",
+      "locale": "fr",
+      "description": "Zone des Landes de Sidimote.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-brumen-tinctorias"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.hauts-des-hurlements",
+      "type": "Area",
+      "canonicalName": "Hauts des Hurlements",
+      "locale": "fr",
+      "description": "Zone des Landes de Sidimote.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-carlita-de-l-aguerfelde"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.village-de-la-canopee",
+      "type": "Area",
+      "canonicalName": "Village de la Canopée",
+      "locale": "fr",
+      "description": "Zone de l'Île d'Otomaï.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-darma"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.chemin-du-crane",
+      "type": "Area",
+      "canonicalName": "Chemin du Crâne",
+      "locale": "fr",
+      "description": "Zone de l'Île de Moon.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-degolas"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.territoire-des-dragodindes-sauvages",
+      "type": "Area",
+      "canonicalName": "Territoire des Dragodindes Sauvages",
+      "locale": "fr",
+      "description": "Zone de la Montagne des Koalaks.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-dragodingo"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.berceau-d-alma",
+      "type": "Area",
+      "canonicalName": "Berceau d'Alma",
+      "locale": "fr",
+      "description": "Zone de Frigost.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-fantomayte"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.cirque-de-cania",
+      "type": "Area",
+      "canonicalName": "Cirque de Cania",
+      "locale": "fr",
+      "description": "Zone des Plaines de Cania.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-fojumo"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.cite-d-astrub",
+      "type": "Area",
+      "canonicalName": "Cité d'Astrub",
+      "locale": "fr",
+      "description": "Zone indiquée par la page (zone parente non précisée).",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-fouduglen-l-ecureuil"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.foret-d-astrub",
+      "type": "Area",
+      "canonicalName": "Forêt d'Astrub",
+      "locale": "fr",
+      "description": "Zone indiquée par la page (zone parente non précisée).",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-frakacia-leukocytine"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.champ-des-ingalsse",
+      "type": "Area",
+      "canonicalName": "Champ des Ingalsse",
+      "locale": "fr",
+      "description": "Zone d'Amakna.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-les-guman"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.terrdala",
+      "type": "Area",
+      "canonicalName": "Terrdala",
+      "locale": "fr",
+      "description": "Zone de l'Île de Pandala.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-jerart-dupaindur"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.foret-des-pins-perdus",
+      "type": "Area",
+      "canonicalName": "Forêt des pins perdus",
+      "locale": "fr",
+      "description": "Zone de Frigost.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-katigrou"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.bord-de-la-foret-malefique",
+      "type": "Area",
+      "canonicalName": "Bord de la forêt maléfique",
+      "locale": "fr",
+      "description": "Zone d'Amakna.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-maitre-boulet"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.massif-de-cania",
+      "type": "Area",
+      "canonicalName": "Massif de Cania",
+      "locale": "fr",
+      "description": "Zone des Plaines de Cania.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-marzwel-le-gobelin"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.creuset-des-fortunes",
+      "type": "Area",
+      "canonicalName": "Creuset des Fortunés",
+      "locale": "fr",
+      "description": "Zone de la dimension divine Enutrosor.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-la-maxi-malle"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.landes-de-cania",
+      "type": "Area",
+      "canonicalName": "Landes de Cania",
+      "locale": "fr",
+      "description": "Zone des Plaines de Cania.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-mogligli"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.lac-gele",
+      "type": "Area",
+      "canonicalName": "Lac gelé",
+      "locale": "fr",
+      "description": "Zone de Frigost.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-monsieur-pingouin"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.chemins-d-hier",
+      "type": "Area",
+      "canonicalName": "Chemins d'hier",
+      "locale": "fr",
+      "description": "Zone de la dimension divine Xélorium.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-morblok"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.baie-de-cania",
+      "type": "Area",
+      "canonicalName": "Baie de Cania",
+      "locale": "fr",
+      "description": "Zone indiquée par la page (zone parente non précisée).",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-musha-l-oni"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.ile-de-kartonpath",
+      "type": "Area",
+      "canonicalName": "Île de Kartonpath",
+      "locale": "fr",
+      "description": "Zone indiquée par la page (zone parente non précisée).",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-naganita"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.tourbiere-sans-fond",
+      "type": "Area",
+      "canonicalName": "Tourbière sans fond",
+      "locale": "fr",
+      "description": "Zone de l'Île d'Otomaï.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-nenufor-tilotus"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.ilot-de-la-couronne",
+      "type": "Area",
+      "canonicalName": "Îlot de la Couronne",
+      "locale": "fr",
+      "description": "Zone de l'Île des Wabbits.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-nono-le-wobot"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.bordure-de-brakmar",
+      "type": "Area",
+      "canonicalName": "Bordure de Brâkmar",
+      "locale": "fr",
+      "description": "Zone indiquée par la page (zone parente non précisée).",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-ogivol-scalarcin"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.bois-de-litneg",
+      "type": "Area",
+      "canonicalName": "Bois de Litneg",
+      "locale": "fr",
+      "description": "Zone des Plaines de Cania.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-padgref-demoel"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.territoire-des-porcos",
+      "type": "Area",
+      "canonicalName": "Territoire des Porcos",
+      "locale": "fr",
+      "description": "Zone d'Amakna.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-le-prince-marchand"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.cimetiere-des-tortures",
+      "type": "Area",
+      "canonicalName": "Cimetière des Torturés",
+      "locale": "fr",
+      "description": "Zone de Brâkmar.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-qil-bil"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.territoire-cacterre",
+      "type": "Area",
+      "canonicalName": "Territoire Cacterre",
+      "locale": "fr",
+      "description": "Zone de Saharach.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-le-roi-camole"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.lacs-enchantes",
+      "type": "Area",
+      "canonicalName": "Lacs enchantés",
+      "locale": "fr",
+      "description": "Zone de la Montagne des Koalaks.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-rok-gnorok"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.cimetiere-d-amakna",
+      "type": "Area",
+      "canonicalName": "Cimetière d'Amakna",
+      "locale": "fr",
+      "description": "Zone indiquée par la page (zone parente non précisée).",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-roub-ignolles"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.route-des-roulottes",
+      "type": "Area",
+      "canonicalName": "Route des Roulottes",
+      "locale": "fr",
+      "description": "Zone des Landes de Sidimote.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-simbadas"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.dunes-des-ossements",
+      "type": "Area",
+      "canonicalName": "Dunes des ossements",
+      "locale": "fr",
+      "description": "Zone de Saharach.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-tournade"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.jungle-interdite",
+      "type": "Area",
+      "canonicalName": "Jungle Interdite",
+      "locale": "fr",
+      "description": "Zone de l'Île de Moon.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-trukipik"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.foret-sombre",
+      "type": "Area",
+      "canonicalName": "Forêt Sombre",
+      "locale": "fr",
+      "description": "Zone de la Forêt des Abraknydes.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-tyranne-la-terrible"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.ile-du-minotoror",
+      "type": "Area",
+      "canonicalName": "Île du Minotoror",
+      "locale": "fr",
+      "description": "Zone indiquée par la page (zone parente non précisée).",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-la-vashkiwi"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.feudala",
+      "type": "Area",
+      "canonicalName": "Feudala",
+      "locale": "fr",
+      "description": "Zone de l'Île de Pandala.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-zatoishwan"
+      ],
+      "relations": []
+    },
+    {
+      "id": "boss.wanted.aermyne-braco-scalptaras",
+      "type": "Boss",
+      "canonicalName": "Aermyne 'Braco' Scalptaras",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Aermyne",
+          "locale": "fr"
+        }
+      ],
+      "description": "Avis de recherche d'Astrub (prérequis de quête : niveau supérieur à 59) : affiche à la milice d'Astrub ([5,-19]), qui mène directement à la salle des recherchés ; livraison au Gardien des Geôles d'Astrub (prison au sous-sol de la milice).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-aermyne-braco-scalptaras",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.foret-de-kaliptus"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.aigripoil",
+      "type": "Boss",
+      "canonicalName": "Aigripoil",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'Enutrosor (prérequis de quête : niveau supérieur à 129) : affiche à l'avant-poste des Voyageurs d'Enutrosor ([-1,-1]) ; livraison au Krosmoglob du Colonel dans la Tour des Voyageurs ([-22,-24]).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-aigripoil",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.carriere-aurifere"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.ali-grothor",
+      "type": "Boss",
+      "canonicalName": "Ali Grothor",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche du Château d'Amakna (prérequis de quête : niveau supérieur à 109) : affiche à la milice du Château d'Amakna ([5,-6]) ; livraison à Maeva Danselumière.",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-ali-grothor",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.tourbiere-nauseabonde"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.amy-l-empoisonneuse",
+      "type": "Boss",
+      "canonicalName": "Amy l'empoisonneuse",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche des Justiciers (prérequis de quête : niveau supérieur à 119) : affiche à la Base des Justiciers ([4,4]) ; livraison au Garde des sots. Ne peut être ni portée ni échangée de place ; renvoi constant de 100 dommages (50 pour ses ronces).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-amy-l-empoisonneuse",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.jungle-obscure"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.anatak-diskedor",
+      "type": "Boss",
+      "canonicalName": "Anatak Diskedor",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche du Château d'Amakna (prérequis de quête : niveau supérieur à 139) : affiche à la milice du Château d'Amakna ([5,-6]) ; livraison à Maeva Danselumière.",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-anatak-diskedor",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.dents-de-pierre"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.bouflouth",
+      "type": "Boss",
+      "canonicalName": "Bouflouth",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche de la Bourgade de Frigost (prérequis de quête : niveau supérieur à 99) : affiche dans la salle des recherchés de la milice de la Bourgade de Frigost ([-76,-42]) ; livraison à Fab Berthazien dans la prison de cette milice.",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-bouflouth",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.champs-de-glace"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.bouss-baybe",
+      "type": "Boss",
+      "canonicalName": "Bouss Baybe",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'alignement (prérequis indiqué : alignement supérieur à 9). Avis d'alignement : affiche dans la salle des recherchés de la milice de Brâkmar ([-25,33]) ou de Bonta ([-32,-57]) ; livraison à Lobo Tommy (Brâkmar) ou Fée Valentine (Bonta). Décrite comme peu dangereuse.",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-bouss-baybe",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.plaine-des-porkass"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.brumen-tinctorias",
+      "type": "Boss",
+      "canonicalName": "Brumen Tinctorias",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'Astrub (prérequis de quête : niveau supérieur à 39) : affiche à la milice d'Astrub ([5,-19]), qui mène directement à la salle des recherchés ; livraison au Gardien des Geôles d'Astrub (prison au sous-sol de la milice).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-brumen-tinctorias",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.desolation-de-sidimote"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.carlita-de-l-aguerfelde",
+      "type": "Boss",
+      "canonicalName": "Carlita de l'Aguerfelde",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Carlita",
+          "locale": "fr"
+        }
+      ],
+      "description": "Avis de recherche du Château d'Amakna (prérequis de quête : niveau supérieur à 79) : affiche à la milice du Château d'Amakna ([5,-6]) ; livraison à Maeva Danselumière.",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-carlita-de-l-aguerfelde",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.hauts-des-hurlements"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.darma",
+      "type": "Boss",
+      "canonicalName": "Darma",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'alignement (ordre 3 ou plus). Avis d'alignement : affiche dans la salle des recherchés de la milice de Brâkmar ([-25,33]) ou de Bonta ([-32,-57]) ; livraison à Lobo Tommy (Brâkmar) ou Fée Valentine (Bonta).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-darma",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.village-de-la-canopee"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.degolas",
+      "type": "Boss",
+      "canonicalName": "Degolas",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'alignement (ordre 1 ou plus). Avis d'alignement : affiche dans la salle des recherchés de la milice de Brâkmar ([-25,33]) ou de Bonta ([-32,-57]) ; livraison à Lobo Tommy (Brâkmar) ou Fée Valentine (Bonta).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-degolas",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.chemin-du-crane"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.dragodingo",
+      "type": "Boss",
+      "canonicalName": "Dragodingo",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'alignement (ordre 1 ou plus). Avis d'alignement : affiche dans la salle des recherchés de la milice de Brâkmar ([-25,33]) ou de Bonta ([-32,-57]) ; livraison à Lobo Tommy (Brâkmar) ou Fée Valentine (Bonta).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-dragodingo",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.territoire-des-dragodindes-sauvages"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.fantomayte",
+      "type": "Boss",
+      "canonicalName": "Fantômayte",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche de la Bourgade de Frigost (prérequis de quête : niveau supérieur à 129) : affiche dans la salle des recherchés de la milice de la Bourgade de Frigost ([-76,-42]) ; livraison à Fab Berthazien dans la prison de cette milice.",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-fantomayte",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.berceau-d-alma"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.fojumo",
+      "type": "Boss",
+      "canonicalName": "Fojumo",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche du Château d'Amakna (prérequis de quête : niveau supérieur à 119) : affiche à la milice du Château d'Amakna ([5,-6]) ; livraison à Maeva Danselumière.",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-fojumo",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.cirque-de-cania"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.fouduglen-l-ecureuil",
+      "type": "Boss",
+      "canonicalName": "Fouduglen l'Écureuil",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Fouduglen",
+          "locale": "fr"
+        }
+      ],
+      "description": "Avis de recherche d'Astrub (prérequis de quête : niveau supérieur à 9) : affiche à la milice d'Astrub ([5,-19]), qui mène directement à la salle des recherchés ; livraison au Gardien des Geôles d'Astrub (prison au sous-sol de la milice).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-fouduglen-l-ecureuil",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.cite-d-astrub"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.frakacia-leukocytine",
+      "type": "Boss",
+      "canonicalName": "Frakacia Leukocytine",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Frakacia",
+          "locale": "fr"
+        }
+      ],
+      "description": "Avis de recherche d'Astrub (prérequis de quête : niveau supérieur à 19) : affiche à la milice d'Astrub ([5,-19]), qui mène directement à la salle des recherchés ; livraison au Gardien des Geôles d'Astrub (prison au sous-sol de la milice).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-frakacia-leukocytine",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.foret-d-astrub"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.guman",
+      "type": "Boss",
+      "canonicalName": "Les Guman",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Guman",
+          "locale": "fr"
+        },
+        {
+          "text": "Ambi Guman",
+          "locale": "fr"
+        },
+        {
+          "text": "Exi Guman",
+          "locale": "fr"
+        }
+      ],
+      "description": "Avis de recherche des Justiciers (prérequis de quête : niveau supérieur à 9) : affiche à la Base des Justiciers ([4,4]) ; livraison au Garde des sots. Duo de recherchés : Ambi Guman et Exi Guman.",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-les-guman",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.champ-des-ingalsse"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.jerart-dupaindur",
+      "type": "Boss",
+      "canonicalName": "Jérart Dupaindur",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'alignement (ordre 2 ou plus). Avis d'alignement : affiche dans la salle des recherchés de la milice de Brâkmar ([-25,33]) ou de Bonta ([-32,-57]) ; livraison à Lobo Tommy (Brâkmar) ou Fée Valentine (Bonta).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-jerart-dupaindur",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.terrdala"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.katigrou",
+      "type": "Boss",
+      "canonicalName": "Katigrou",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche de la Bourgade de Frigost (prérequis de quête : niveau supérieur à 119) : affiche dans la salle des recherchés de la milice de la Bourgade de Frigost ([-76,-42]) ; livraison à Fab Berthazien dans la prison de cette milice.",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-katigrou",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.foret-des-pins-perdus"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.maitre-boulet",
+      "type": "Boss",
+      "canonicalName": "Maître Boulet",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'alignement (prérequis indiqué : alignement 1 ou plus). Avis d'alignement : affiche dans la salle des recherchés de la milice de Brâkmar ([-25,33]) ou de Bonta ([-32,-57]) ; livraison à Lobo Tommy (Brâkmar) ou Fée Valentine (Bonta).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-maitre-boulet",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.bord-de-la-foret-malefique"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.marzwel-le-gobelin",
+      "type": "Boss",
+      "canonicalName": "Marzwel le Gobelin",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'Astrub (prérequis de quête : niveau supérieur à 39) : affiche à la milice d'Astrub ([5,-19]), qui mène directement à la salle des recherchés ; livraison au Gardien des Geôles d'Astrub (prison au sous-sol de la milice).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-marzwel-le-gobelin",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.massif-de-cania"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.maxi-malle",
+      "type": "Boss",
+      "canonicalName": "Maxi-Malle",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "La Maxi-Malle",
+          "locale": "fr"
+        }
+      ],
+      "description": "Avis de recherche d'Enutrosor (prérequis de quête : niveau supérieur à 79) : affiche à l'avant-poste des Voyageurs d'Enutrosor ([-1,-1]) ; livraison au Krosmoglob du Colonel dans la Tour des Voyageurs ([-22,-24]).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-la-maxi-malle",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.creuset-des-fortunes"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.mogligli",
+      "type": "Boss",
+      "canonicalName": "Mogligli",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'alignement (ordre 3 ou plus). Avis d'alignement : affiche dans la salle des recherchés de la milice de Brâkmar ([-25,33]) ou de Bonta ([-32,-57]) ; livraison à Lobo Tommy (Brâkmar) ou Fée Valentine (Bonta).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-mogligli",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.landes-de-cania"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.monsieur-pingouin",
+      "type": "Boss",
+      "canonicalName": "Monsieur Pingouin",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche de la Bourgade de Frigost (prérequis de quête : niveau supérieur à 109) : affiche dans la salle des recherchés de la milice de la Bourgade de Frigost ([-76,-42]) ; livraison à Fab Berthazien dans la prison de cette milice.",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-monsieur-pingouin",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.lac-gele"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.morblok",
+      "type": "Boss",
+      "canonicalName": "Morblok",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche du Xélorium (prérequis de quête : niveau supérieur à 99) : affiche à l'avant-poste des Voyageurs du Xélorium ([1,6]) ; livraison au Krosmoglob du Colonel dans la Tour des Voyageurs ([-22,-24]).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-morblok",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.chemins-d-hier"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.musha-l-oni",
+      "type": "Boss",
+      "canonicalName": "Musha l'Oni",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'Astrub (prérequis de quête : niveau supérieur à 59) : affiche à la milice d'Astrub ([5,-19]), qui mène directement à la salle des recherchés ; livraison au Gardien des Geôles d'Astrub (prison au sous-sol de la milice).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-musha-l-oni",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.baie-de-cania"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.naganita",
+      "type": "Boss",
+      "canonicalName": "Naganita",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche du Château d'Amakna (prérequis de quête : niveau supérieur à 79) : affiche à la milice du Château d'Amakna ([5,-6]) ; livraison à Maeva Danselumière.",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-naganita",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.ile-de-kartonpath"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.nenufor-tilotus",
+      "type": "Boss",
+      "canonicalName": "Nenufor Tilotus",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche du Château d'Amakna (prérequis de quête : niveau supérieur à 99) : affiche à la milice du Château d'Amakna ([5,-6]) ; livraison à Maeva Danselumière.",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-nenufor-tilotus",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.tourbiere-sans-fond"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.nono-le-wobot",
+      "type": "Boss",
+      "canonicalName": "Nono le Wobot",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'alignement (ordre 1 ou plus). Avis d'alignement : affiche dans la salle des recherchés de la milice de Brâkmar ([-25,33]) ou de Bonta ([-32,-57]) ; livraison à Lobo Tommy (Brâkmar) ou Fée Valentine (Bonta).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-nono-le-wobot",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.ilot-de-la-couronne"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.ogivol-scalarcin",
+      "type": "Boss",
+      "canonicalName": "Ogivol Scalarcin",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'Astrub (prérequis de quête : niveau supérieur à 40) : affiche à la milice d'Astrub ([5,-19]), qui mène directement à la salle des recherchés ; livraison au Gardien des Geôles d'Astrub (prison au sous-sol de la milice).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-ogivol-scalarcin",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.bordure-de-brakmar"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.padgref-demoel",
+      "type": "Boss",
+      "canonicalName": "Padgref Demoël",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'Astrub (prérequis de quête : niveau supérieur à 109) : affiche à la milice d'Astrub ([5,-19]), qui mène directement à la salle des recherchés ; livraison au Gardien des Geôles d'Astrub (prison au sous-sol de la milice).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-padgref-demoel",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.bois-de-litneg"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.prince-marchand",
+      "type": "Boss",
+      "canonicalName": "Prince Marchand",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Le Prince Marchand",
+          "locale": "fr"
+        }
+      ],
+      "description": "Avis de recherche d'alignement (ordre 2 ou plus). Avis d'alignement : affiche dans la salle des recherchés de la milice de Brâkmar ([-25,33]) ou de Bonta ([-32,-57]) ; livraison à Lobo Tommy (Brâkmar) ou Fée Valentine (Bonta).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-le-prince-marchand",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.territoire-des-porcos"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.qil-bil",
+      "type": "Boss",
+      "canonicalName": "Qil Bil",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'Astrub (prérequis de quête : niveau supérieur à 49) : affiche à la milice d'Astrub ([5,-19]), qui mène directement à la salle des recherchés ; livraison au Gardien des Geôles d'Astrub (prison au sous-sol de la milice).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-qil-bil",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.cimetiere-des-tortures"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.roi-camole",
+      "type": "Boss",
+      "canonicalName": "Roi Camole",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Le Roi Camole",
+          "locale": "fr"
+        }
+      ],
+      "description": "Avis de recherche de Saharach (prérequis de quête : niveau supérieur à 109) : affiche au Sabloon de Saharach ([15,-57]) ; livraison à Tokie Walker au bureau du Shérif ([15,-56]).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-le-roi-camole",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.territoire-cacterre"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.rok-gnorok",
+      "type": "Boss",
+      "canonicalName": "Rok Gnorok",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'Astrub (prérequis de quête : niveau supérieur à 69) : affiche à la milice d'Astrub ([5,-19]), qui mène directement à la salle des recherchés ; livraison au Gardien des Geôles d'Astrub (prison au sous-sol de la milice).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-rok-gnorok",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.lacs-enchantes"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.roub-ignolles",
+      "type": "Boss",
+      "canonicalName": "Roub' Ignolles",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'alignement (prérequis indiqué : alignement supérieur à 9). Avis d'alignement : affiche dans la salle des recherchés de la milice de Brâkmar ([-25,33]) ou de Bonta ([-32,-57]) ; livraison à Lobo Tommy (Brâkmar) ou Fée Valentine (Bonta).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-roub-ignolles",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.cimetiere-d-amakna"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.simbadas",
+      "type": "Boss",
+      "canonicalName": "Simbadas",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche du Château d'Amakna (prérequis de quête : niveau supérieur à 69) : affiche à la milice du Château d'Amakna ([5,-6]) ; livraison à Maeva Danselumière.",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-simbadas",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.route-des-roulottes"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.tournade",
+      "type": "Boss",
+      "canonicalName": "Tournade",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche de Saharach (prérequis de quête : niveau supérieur à 59) : affiche au Sabloon de Saharach ([15,-57]) ; livraison à Tokie Walker au bureau du Shérif ([15,-56]).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-tournade",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.dunes-des-ossements"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.trukipik",
+      "type": "Boss",
+      "canonicalName": "Trukipik",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche du Château d'Amakna (prérequis de quête : niveau supérieur à 79) : affiche à la milice du Château d'Amakna ([5,-6]) ; livraison à Maeva Danselumière.",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-trukipik",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.jungle-interdite"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.tyranne-la-terrible",
+      "type": "Boss",
+      "canonicalName": "Tyranne la Terrible",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche du Château d'Amakna (prérequis de quête : niveau supérieur à 59) : affiche à la milice du Château d'Amakna ([5,-6]) ; livraison à Maeva Danselumière.",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-tyranne-la-terrible",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.foret-sombre"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.vashkiwi",
+      "type": "Boss",
+      "canonicalName": "Vashkiwi",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "La Vashkiwi",
+          "locale": "fr"
+        }
+      ],
+      "description": "Avis de recherche d'alignement (ordre 2 ou plus). Avis d'alignement : affiche dans la salle des recherchés de la milice de Brâkmar ([-25,33]) ou de Bonta ([-32,-57]) ; livraison à Lobo Tommy (Brâkmar) ou Fée Valentine (Bonta).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-la-vashkiwi",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.ile-du-minotoror"
+        }
+      ]
+    },
+    {
+      "id": "boss.wanted.zatoishwan",
+      "type": "Boss",
+      "canonicalName": "Zatoïshwan",
+      "locale": "fr",
+      "aliases": [],
+      "description": "Avis de recherche d'Astrub (prérequis de quête : niveau supérieur à 129) : affiche à la milice d'Astrub ([5,-19]), qui mène directement à la salle des recherchés ; livraison au Gardien des Geôles d'Astrub (prison au sous-sol de la milice).",
+      "attributes": {
+        "category": "avis-de-recherche"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.on-recherche-zatoishwan",
+        "src.dpln.avis-de-recherche"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "area.feudala"
+        }
+      ]
+    }
+  ],
+  "mechanics": [
+    {
+      "id": "mech.wanted.aermyne-braco-scalptaras.retraits",
+      "entityId": "boss.wanted.aermyne-braco-scalptaras",
+      "type": "SpecialRule",
+      "title": "Ne jamais lui retirer de PA ou de PM (dès le tour 2)",
+      "summary": "Pas d'invulnérabilité. À partir de son deuxième tour, chaque tentative de retrait de PA lui donne 4 PA et chaque tentative de retrait de PM 3 PM, de façon infinie et cumulable : les retraits sont inutiles et contre-productifs.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "TurnAtLeast",
+          "description": "À partir de son second tour de jeu.",
+          "number": 2
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Elle soigne et booste ses alliés (puissance, PM) et repousse de 3 cases au contact."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-aermyne-braco-scalptaras",
+          "quote": "pour chaque tentative de retrait PA elle va se boost de 4PA (infini et cumulable) et pour chaque tentative de retrait PM, elle va se boost de 3PM (infini et cumulable).",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.aermyne-braco-scalptaras.allies-de-circonstance",
+      "entityId": "boss.wanted.aermyne-braco-scalptaras",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -400 vitalité et -50 puissance (infini) par monstre présent avec elle. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-aermyne-braco-scalptaras",
+          "quote": "-400 vitalité (infini) par monstres présents avec elle.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.aigripoil.os-melee",
+      "entityId": "boss.wanted.aigripoil",
+      "type": "Positioning",
+      "title": "OS au contact (relance 3 tours) : rester hors de sa portée",
+      "summary": "Pas d'invulnérabilité, mais un sort tue un personnage au contact (relance 3 tours). Il gagne 1 PM à chaque fin de tour (infini, cumulable) et peut attirer de 3 cases en ligne jusqu'à 7 PO avec ligne de vue (retire aussi 3 PM). Rester loin, couper la ligne de vue, et le tuer vite.",
+      "verification": "VERIFIED",
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Son attirance de 3 cases peut le mettre à votre contact ; obstacles et invocations bloquent sa ligne de vue."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-aigripoil",
+          "quote": "Aigripoil possède un sort qui lui permet de vous OS en mêlée (une fois lancé le sort a un temps de relance de 3 tours).",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-aigripoil",
+          "quote": "il va se boost de 1PM (infini et cumulable) à chacun de ses fins de tours durant tout le combat",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.aigripoil.sacrifice-invocation",
+      "entityId": "boss.wanted.aigripoil",
+      "type": "SpecialRule",
+      "title": "Sacrifier une invocation pour lancer la relance de l'OS",
+      "summary": "Laisser une invocation se faire tuer par l'OS donne 3 tours de sécurité (ex. OS au tour 2, pas avant le tour 5). Recommencer si besoin.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-aigripoil",
+          "quote": "il peut donc être intéressant d’invoquer et de laisser l’invocation se faire OS.",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.aigripoil.resistances",
+      "entityId": "boss.wanted.aigripoil",
+      "type": "Resistance",
+      "title": "Faible en feu et eau",
+      "summary": "Peu de résistances en feu (-5 %) et eau (5 %) : éléments conseillés pour le tuer vite.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-aigripoil",
+          "quote": "(-5% Feu et 5% Eau)",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.aigripoil.allies-de-circonstance",
+      "entityId": "boss.wanted.aigripoil",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -1100 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-aigripoil",
+          "quote": "-1100 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.ali-grothor.invulnerabilite",
+      "entityId": "boss.wanted.ali-grothor",
+      "type": "Invulnerability",
+      "title": "Invulnérable 2 tours sur 3, retirée via « Grillade »",
+      "summary": "Au tour 2 puis tous les 3 tours, il devient invulnérable (non désenvoûtable) pendant 2 tours : il n'est vulnérable de base qu'aux tours 1, 4, 7, 10… En même temps il pose « Grillade » sur tous les personnages pour 2 tours : si Ali est dans un rayon de 2 autour d'un personnage sous « Grillade » qui commence son tour, il perd son invulnérabilité.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "StateActive",
+          "description": "Le personnage qui commence son tour est sous « Grillade ».",
+          "state": "Grillade"
+        },
+        {
+          "kind": "Manual",
+          "description": "Ali Grothor est à 2 PO ou moins de ce personnage."
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Retirer l'invulnérabilité",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Dès qu'il passe invulnérable, placer un personnage qui n'a pas encore joué à 2 PO ou moins d'Ali (en déplaçant Ali ou le personnage).",
+              "position": "Rayon 2 autour d'Ali"
+            },
+            {
+              "order": 2,
+              "action": "Attendre le début du tour de ce personnage.",
+              "rationale": "« Grillade » se déclenche au début du tour et retire l'invulnérabilité."
+            }
+          ]
+        }
+      ],
+      "expectedStateChange": "Ali Grothor perd son invulnérabilité temporaire.",
+      "turnConditions": "Invulnérable aux tours 2-3, 5-6, 8-9… ; vulnérable de base aux tours 1, 4, 7, 10…",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-ali-grothor",
+          "quote": "Pour annuler son état Invulnérabilité, il suffit qu’Ali Grothor soit dans un rayon de 2 autour d’un personnage dans l’état « Grillade » qui commence son tour.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-ali-grothor",
+          "quote": "il sera vulnérable uniquement aux tours 1, 4, 7, 10, etc…",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.ali-grothor.grillade-malus",
+      "entityId": "boss.wanted.ali-grothor",
+      "type": "SpellEffect",
+      "title": "« Grillade » : s'espacer et soigner en dernier",
+      "summary": "Chaque début de tour sous « Grillade » frappe le personnage et ses voisins (rayon 2) d'environ 500 feu et ajoute l'état Foudroyé (3 tours, cumulable) qui renforce ses sorts. Garder plus de 2 PO entre alliés ; un soin reçu après le déclenchement de « Grillade » retire Foudroyé, d'où un soigneur jouant en dernier (ou en premier s'il a l'initiative sur Ali).",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-ali-grothor",
+          "quote": "il est fortement recommandé d’espacer vos personnages à plus de 2PO les uns des autres pour éviter de vous prendre des dommages inutiles.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-ali-grothor",
+          "quote": "En soignant un personnage dans l’état Foudroyé, vous lui retirez son état Foudroyé",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.ali-grothor.retrait-po",
+      "entityId": "boss.wanted.ali-grothor",
+      "type": "SpecialRule",
+      "title": "Ne pas lui retirer de PO",
+      "summary": "Chaque retrait de PO lui donne 1 PM (infini, cumulable). Son sort de mêlée frappe fort et il peut se téléporter jusqu'à 5 PO chaque tour.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-ali-grothor",
+          "quote": "Ali Grothor possède un effet qui lui permet de se boost de 1PM (infini et cumulable) pour chaque retrait PO que vous lui effectuez durant le combat.",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.ali-grothor.allies-de-circonstance",
+      "entityId": "boss.wanted.ali-grothor",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -900 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-ali-grothor",
+          "quote": "-900 vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.amy-l-empoisonneuse.ronces",
+      "entityId": "boss.wanted.amy-l-empoisonneuse",
+      "type": "Summon",
+      "title": "Blocs de ronces autour de chaque personnage (tours 1, 7, 13…)",
+      "summary": "Pas d'invulnérabilité. Au tour 1 puis tous les 6 tours, elle entoure chaque personnage d'un carré de ronces statiques (taille 2) et met Pesanteur 2 tours (désenvoûtable). Elle gagne 1000 PB pour 1 tour par ronce à son contact en début de tour. Le guide conseille de se frayer un passage ou d'utiliser « Flèche Fulminante » du Crâ (en tenant compte du renvoi de 50 par ronce).",
+      "verification": "VERIFIED",
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-amy-l-empoisonneuse",
+          "quote": "Tous les 6 tours elle tue toutes les ronces et en invoque d’autres via le même principe (elle invoque donc des ronces autour de vos personnages aux tours 1, 7, 13, etc...).",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-amy-l-empoisonneuse",
+          "quote": "Elle se boost de 1000PB pour 1 tour par ronce en mêlée avec elle quand elle commence son tour.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.amy-l-empoisonneuse.empathique",
+      "entityId": "boss.wanted.amy-l-empoisonneuse",
+      "type": "SpellEffect",
+      "title": "État « Empathique » : un personnage subit 50 % des dommages infligés à Amy",
+      "summary": "Chaque tour, « Poison végétal » rend un personnage Empathique (1 tour, non désenvoûtable) : il subit 50 % des dommages infligés à Amy. Solutions du guide : protéger ce personnage (Barricade ou Prohibition au contact d'Amy, Bastion à distance, Ataraxie, Égide, Sac Animé), réduire les dommages, ou le sacrifier et finir Amy dans le tour.",
+      "verification": "VERIFIED",
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-amy-l-empoisonneuse",
+          "quote": "Le personnage dans cet état subira 50% des dommages que vous infligez à Amy.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques — Contrez le renvoi"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.amy-l-empoisonneuse.stranguronces",
+      "entityId": "boss.wanted.amy-l-empoisonneuse",
+      "type": "SpellEffect",
+      "title": "« Stranguronces » se propage : ne pas rester groupé",
+      "summary": "Ce sort (terre, poison air et malus de 150 puissance sur 3 tours, cumulables) se propage au début de chaque tour d'Amy depuis chaque personnage touché, sur une zone qui grandit : contact (Parasite granuleux), carré 3x3 (éclos), carré 5x5 (fleuri). Ne jamais rester dans un carré de taille 2 autour d'un allié.",
+      "verification": "VERIFIED",
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-amy-l-empoisonneuse",
+          "quote": "Dans l’idéal restez jamais dans la zone carré de taille 2 autour d’un allié.",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.amy-l-empoisonneuse.retraits",
+      "entityId": "boss.wanted.amy-l-empoisonneuse",
+      "type": "SpecialRule",
+      "title": "Ne pas lui retirer de PA ou de PM",
+      "summary": "Chaque tentative de retrait de PA ou PM lui donne un bouclier de 5 % de ses PV (infini), environ 1600 PB.",
+      "verification": "VERIFIED",
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Un personnage mort est remplacé par un Abrakleur Sombre qui joue contre l'équipe."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-amy-l-empoisonneuse",
+          "quote": "Si vous tentez un retrait PA ou PM sur Amy, celle-ci se protège en se boostant de 5% de ses PV en bouclier (infini) soit environ 1600PB.",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.amy-l-empoisonneuse.allies-de-circonstance",
+      "entityId": "boss.wanted.amy-l-empoisonneuse",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -2000 vitalité et -50 puissance (infini) par monstre présent avec elle. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-amy-l-empoisonneuse",
+          "quote": "-2000 vitalité (infini) par monstres présents avec elle.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.anatak-diskedor.charges",
+      "entityId": "boss.wanted.anatak-diskedor",
+      "type": "Phase",
+      "title": "Cycle de charges de 4 tours et état « Bretteur Céleste » (tours 3, 7, 11…)",
+      "summary": "Pas d'invulnérabilité. Charge 1 : +500 puissance (3 tours) ; charge 2 : +1000 puissance et +10 % critique (2 tours) ; charge 3 : état « Bretteur Céleste » (1 tour) ; charge 4 : retire Foudroyé des personnages ; puis le cycle reprend (tours 5, 9, 13…). En Bretteur Céleste, « Coup de Foudre » tue au contact un personnage Foudroyé, « Frappe purificatrice » retire 100 PM 1 tour, « Lame-tempête » vole de la vie.",
+      "verification": "VERIFIED",
+      "turnConditions": "Bretteur Céleste aux tours 3, 7, 11…",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-anatak-diskedor",
+          "quote": "Charge 3 (tour 3) : Se met l’état « Bretteur Céleste » pour 1 tour.",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-anatak-diskedor",
+          "quote": "« Coup de Foudre » : OS en mêlée à condition que le personnage ciblé soit dans l’état Foudroyé",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.anatak-diskedor.eviter-os",
+      "entityId": "boss.wanted.anatak-diskedor",
+      "type": "Positioning",
+      "title": "Éloigner les personnages Foudroyés aux tours de Bretteur Céleste",
+      "summary": "Il ne met Foudroyé qu'une fois par tour avant de devenir Bretteur Céleste (au plus 2 personnages). Aux tours 3, 7, 11…, éloigner ces personnages ; attention au combo téléportation « Frappe purificatrice » puis « Coup de Foudre ». Ne pas grouper l'équipe : son sort d'Insoignable (une fois par tour) touche un rayon de 3 autour de lui.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-anatak-diskedor",
+          "quote": "pensez donc à éloigner au maximum les personnages dans l’état Foudroyé d’Anatak lorsque celui-ci devient « Bretteur Céleste »",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.anatak-diskedor.allies-de-circonstance",
+      "entityId": "boss.wanted.anatak-diskedor",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -1300 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-anatak-diskedor",
+          "quote": "-1300 vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.bouflouth.os-melee",
+      "entityId": "boss.wanted.bouflouth",
+      "type": "Positioning",
+      "title": "OS au contact à partir du tour 6 : rester à plus de 7 PO",
+      "summary": "Pas d'invulnérabilité. Il ne frappe qu'au contact ; à partir du tour 6 puis tous les 5 tours, il peut tuer net un personnage à son contact et le remplacer par un monstre. Rester à plus de 7 PO (6 PM + mêlée) et éviter de le pousser : chaque poussée lui donne 1 PM.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "TurnAtLeast",
+          "description": "OS possible à partir du tour 6, puis tous les 5 tours.",
+          "number": 6
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Le Boufmouth légendaire peut lui donner 3 PM (6 en critique) pour 2 tours ou pousser un personnage de 4 cases vers lui."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-bouflouth",
+          "quote": "en restant continuellement à plus de 7PO de Bouflouth (ses 6PM de base + le PO de l’attaque en mêlée) vous ne subirez jamais de dommages de sa part",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.bouflouth.allies-de-circonstance",
+      "entityId": "boss.wanted.bouflouth",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -800 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-bouflouth",
+          "quote": "-800 vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.bouss-baybe.attirance",
+      "entityId": "boss.wanted.bouss-baybe",
+      "type": "Positioning",
+      "title": "Ne pas finir son tour dans ses lignes ou diagonales",
+      "summary": "Pas d'invulnérabilité. Au début de chacun de ses tours, elle attire de 2 cases tous les personnages en ligne ou en diagonale avec elle ; son seul sort de frappe (eau) a une portée de 4. Elle booste ses monstres de 2 PA, 4 PM et 100 puissance pour tout le combat.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-bouss-baybe",
+          "quote": "il est conseillé de toujours resté à distance en dehors de ses lignes et diagonales.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.bouss-baybe.invocations",
+      "entityId": "boss.wanted.bouss-baybe",
+      "type": "SpecialRule",
+      "title": "Éviter d'invoquer et rester espacés",
+      "summary": "Tous les 2 tours, elle peut tuer une invocation et la remplacer par un Porkass boosté qui joue contre vous. Son malus (-200 puissance et Affaibli, 2 tours) touche une croix de taille 1, une fois par tour : espacer les personnages.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-bouss-baybe",
+          "quote": "Il est donc conseillé d’éviter d’invoquer lors de ce combat",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.bouss-baybe.allies-de-circonstance",
+      "entityId": "boss.wanted.bouss-baybe",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -200 vitalité et -50 puissance (infini) par monstre présent avec elle. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-bouss-baybe",
+          "quote": "-200 vitalité (infini) par monstres présents avec elle.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.brumen-tinctorias.simple",
+      "entityId": "boss.wanted.brumen-tinctorias",
+      "type": "Other",
+      "title": "Cible sans mécanique particulière",
+      "summary": "Pas d'invulnérabilité ni de mécanique spéciale décrite : il booste en PA, soigne et frappe.",
+      "verification": "VERIFIED",
+      "unknownAspects": [
+        "La page ne donne ni éléments de frappe, ni résistances, ni conseils tactiques."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-brumen-tinctorias",
+          "quote": "Brumen Tinctorias ne possède pas d’état invulnérable et n’est pas très dangereux.",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.brumen-tinctorias.allies-de-circonstance",
+      "entityId": "boss.wanted.brumen-tinctorias",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -250 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-brumen-tinctorias",
+          "quote": "-250 vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.carlita-de-l-aguerfelde.vitalite-allies",
+      "entityId": "boss.wanted.carlita-de-l-aguerfelde",
+      "type": "SpecialRule",
+      "title": "+2000 vitalité à ses monstres tant qu'elle vit",
+      "summary": "Pas d'invulnérabilité. Au début du combat, elle donne 2000 vitalité (infini) à ses monstres ; ce bonus disparaît à sa mort.",
+      "verification": "VERIFIED",
+      "expectedStateChange": "À sa mort, les monstres perdent le bonus de 2000 vitalité.",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-carlita-de-l-aguerfelde",
+          "quote": "Ce bonus en vitalité des monstres disparait si vous la tuez.",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.carlita-de-l-aguerfelde.pieges",
+      "entityId": "boss.wanted.carlita-de-l-aguerfelde",
+      "type": "SpecialRule",
+      "title": "Pièges à Mulou : limiter ses déplacements",
+      "summary": "Elle pose jusqu'à 2 pièges d'une case par tour : y entrer retire 15 PM et donne Pesanteur, Inébranlable et « Piégé comme un Mulou » pendant 2 tours. Sur une cible piégée, elle peut s'attirer au contact et frapper très fort en air (environ 3000). Le guide conseille d'éviter de se déplacer.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-carlita-de-l-aguerfelde",
+          "quote": "Si vous passez dans le piège, vous perdez 15PM pour 2 tours et vous obtenez les états Pesanteur, Inébranlable et Piégé comme un Mulou pour 2 tours.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.carlita-de-l-aguerfelde.allies-de-circonstance",
+      "entityId": "boss.wanted.carlita-de-l-aguerfelde",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -600 vitalité et -50 puissance (infini) par monstre présent avec elle. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-carlita-de-l-aguerfelde",
+          "quote": "-600 Vitalité (infini) par monstres présents avec elle.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.darma.fumee-noire",
+      "entityId": "boss.wanted.darma",
+      "type": "Positioning",
+      "title": "« Fumée Noire » : placement différent selon la parité du tour",
+      "summary": "Pas d'invulnérabilité. Elle alterne les tours avec et sans glyphes verts (rayon 3 autour de chaque monstre : frappe air et malus PO si on commence son tour dedans) ; l'autre parité, elle retire les glyphes et frappe neutre en retirant des PA aux personnages à plus de 3 PO d'un monstre. Le guide conseille d'être à plus de 3 PO des monstres avant un tour impair, et à exactement 3 PO d'un monstre avant un tour pair.",
+      "verification": "COMMUNITY_REPORTED",
+      "unknownAspects": [
+        "Contradiction sur la page : le texte place les glyphes aux tours impairs, la légende d'image aux tours pairs."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-darma",
+          "quote": "Les tours impairs, elle invoque des glyphes verts de rayon 3 autour de tous les monstres.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-darma",
+          "quote": "Invocation de glyphes verts les tours pairs, retrait des glyphes les tours impairs",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.darma.zone-allies",
+      "entityId": "boss.wanted.darma",
+      "type": "Positioning",
+      "title": "Rester à plus de 2 PO de chaque monstre",
+      "summary": "Elle frappe en zone de rayon 2 autour de chacun de ses alliés, plusieurs lignes possibles.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-darma",
+          "quote": "il est recommandé de rester à plus de 2PO de chaque monstre lorsque vient son tour",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.darma.glyphes-pieges",
+      "entityId": "boss.wanted.darma",
+      "type": "Resistance",
+      "title": "Glyphes et pièges très réduits ; 50 % neutre",
+      "summary": "Elle réduit de 10 (réduction réelle de 80) les dommages de glyphes et pièges : privilégier les dégâts directs. Elle a 50 % de résistance neutre (attention aux armes).",
+      "verification": "VERIFIED",
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Elle peut rendre tout son camp invisible 1 tour et réduire les dommages subis de 20 % tous les 4 tours."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-darma",
+          "quote": "Darma possède 50% de résistances dans l’élément neutre",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.darma.allies-de-circonstance",
+      "entityId": "boss.wanted.darma",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -1000 vitalité (infini) par monstre présent avec elle. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-darma",
+          "quote": "-1000 Vitalité (infini) par monstres présents avec elle.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.degolas.vol-po",
+      "entityId": "boss.wanted.degolas",
+      "type": "Positioning",
+      "title": "Rester proche de lui (retraits/vols de PO)",
+      "summary": "Pas d'invulnérabilité. Tous ses sorts retirent ou volent de la PO : rester proche pour pouvoir le frapper malgré tout.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-degolas",
+          "quote": "Tous les sorts de Degolas lui permettent de vous retirer ou de vous voler de la PO.",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.degolas.ligne",
+      "entityId": "boss.wanted.degolas",
+      "type": "Positioning",
+      "title": "Ne pas aligner ses personnages",
+      "summary": "Son sort de zone en ligne repousse le premier personnage de 3 cases : un allié derrière cause des dommages de poussée.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-degolas",
+          "quote": "évitez de laisser vos personnages alignés les uns avec les autres.",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.degolas.allies-de-circonstance",
+      "entityId": "boss.wanted.degolas",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -500 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-degolas",
+          "quote": "-500 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.dragodingo.humeurs",
+      "entityId": "boss.wanted.dragodingo",
+      "type": "SpecialRule",
+      "title": "Humeurs aléatoires et 15 PM : la bloquer ou la tacler",
+      "summary": "Pas d'invulnérabilité. Chaque tour, une humeur aléatoire lui donne un bonus (fuite, esquive PA/PM ou puissance) et modifie ses sorts (élément aléatoire). Avec 15 PM de base, elle peut fuir loin : la bloquer dans un coin ou la tacler.",
+      "verification": "VERIFIED",
+      "unknownAspects": [
+        "La page ne détaille pas quel effet correspond à quelle humeur."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-dragodingo",
+          "quote": "Dragodingo a 15PM de base et peut donc fuir très loin.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.dragodingo.allies-de-circonstance",
+      "entityId": "boss.wanted.dragodingo",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -400 vitalité et -50 puissance (infini) par monstre présent avec elle. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-dragodingo",
+          "quote": "-400 Vitalité (infini) par monstres présents avec elle.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.fantomayte.deplacements",
+      "entityId": "boss.wanted.fantomayte",
+      "type": "SpecialRule",
+      "title": "-100 puissance par déplacement subi : éviter d'être déplacé",
+      "summary": "Pas d'invulnérabilité. Tout personnage repoussé, attiré, téléporté ou échangé de place perd 100 puissance pour 2 tours (cumulable). Ne pas déplacer ses alliés ; « Stabilisation » aide ; se coller dans un coin bloqué par deux murs évite le déplacement (dommages de poussée seulement), sauf échange de place (Vigie pirate) ou attirance (Fancrôme).",
+      "verification": "VERIFIED",
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-fantomayte",
+          "quote": "Une solution pour éviter le malus de puissance que vous subissez lorsque vous êtes déplacé est de vous coller dans un coin avec deux murs qui bloquent vos deux cases adjacentes.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.fantomayte.renvoi",
+      "entityId": "boss.wanted.fantomayte",
+      "type": "SpellEffect",
+      "title": "Renvoi de dommages débuffable (3 tours)",
+      "summary": "Un de ses sorts lui donne un renvoi de dommages pendant 3 tours, que l'on peut désenvoûter.",
+      "verification": "VERIFIED",
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-fantomayte",
+          "quote": "elle possède un sort qui lui permet de renvoyer les dégâts pour une durée de 3 tours (débuffable).",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.fantomayte.allies-de-circonstance",
+      "entityId": "boss.wanted.fantomayte",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -1100 vitalité et -50 puissance (infini) par monstre présent avec elle. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-fantomayte",
+          "quote": "-1100 Vitalité (infini) par monstres présents avec elle.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.fojumo.doubles",
+      "entityId": "boss.wanted.fojumo",
+      "type": "Summon",
+      "title": "Doubles : trouver et tuer le vrai Fojumo",
+      "summary": "Pas d'invulnérabilité. Il invoque dès le début autant de doubles que de personnages ; ils frappent et posent Marque Ninja (le vrai Fojumo frappe plus fort sur ces cibles). Les doubles disparaissent à sa mort : inutile de les tuer.",
+      "verification": "VERIFIED",
+      "expectedStateChange": "La mort de Fojumo fait disparaître tous les doubles.",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-fojumo",
+          "quote": "ses invocations disparaitront avec lui dès sa mort.",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.fojumo.glyphe-noir",
+      "entityId": "boss.wanted.fojumo",
+      "type": "SpecialRule",
+      "title": "Glyphe noir : invisibilité et intaclabilité",
+      "summary": "Au tour 1 puis tous les 4 tours, il pose un glyphe noir de rayon 7 qui rend son camp invisible et intaclable 2 tours tant qu'il est dedans.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-fojumo",
+          "quote": "Ce glyphe le rend lui et tous ses alliés Invisibles et Intaclable pour 2 tours tant qu’ils sont dedans.",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.fojumo.allies-de-circonstance",
+      "entityId": "boss.wanted.fojumo",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -1000 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-fojumo",
+          "quote": "-1000 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.fouduglen-l-ecureuil.invisibilite",
+      "entityId": "boss.wanted.fouduglen-l-ecureuil",
+      "type": "Positioning",
+      "title": "L'encercler pour le retrouver quand il est invisible",
+      "summary": "Pas d'invulnérabilité. Il peut devenir invisible 3 tours (relance 7) ; sans sort de déplacement forcé, il ne peut pas bouger s'il est entouré. Idéalement un personnage avec l'initiative (Pandawa) le bloque dans un coin dès le tour 1.",
+      "verification": "VERIFIED",
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Il peut retirer les états invulnérables de vos personnages."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-fouduglen-l-ecureuil",
+          "quote": "Ainsi il deviendra invisible mais ne pourra pas se déplacer car il ne possède aucun sort de transposition, poussée ou de téléportation.",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.fouduglen-l-ecureuil.allies-de-circonstance",
+      "entityId": "boss.wanted.fouduglen-l-ecureuil",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -40 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-fouduglen-l-ecureuil",
+          "quote": "-40 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.frakacia-leukocytine.malus-pa",
+      "entityId": "boss.wanted.frakacia-leukocytine",
+      "type": "SpecialRule",
+      "title": "-2 PA à toute l'équipe jusqu'à sa mort ; réduction à distance",
+      "summary": "Pas d'invulnérabilité. Dès le début, elle retire 2 PA à tous les personnages (retiré à sa mort) et réduit les dommages à distance de 2 (réduction réelle de 5 par coup) : les attaques en mêlée sont légèrement plus efficaces.",
+      "verification": "VERIFIED",
+      "expectedStateChange": "À sa mort, le malus de 2 PA disparaît.",
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-frakacia-leukocytine",
+          "quote": "Le malus PA se retire quand elle est éliminée.",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.frakacia-leukocytine.pacifiste",
+      "entityId": "boss.wanted.frakacia-leukocytine",
+      "type": "Positioning",
+      "title": "S'éloigner avant son sort de Pacifiste (tours 2, 5, 8…)",
+      "summary": "Aux tours 2, 5, 8, 11…, son sort rend Pacifiste les personnages dans un rayon de 6 et réduit de 4 la durée des effets des personnages à 7 PO ou plus. S'éloigner les tours précédents (1, 4, 7…). Rester à plus de 5 PO pour éviter son malus de résistance en mêlée.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "TurnAtLeast",
+          "description": "À partir du tour 2, puis tous les 3 tours.",
+          "number": 2
+        }
+      ],
+      "unknownAspects": [
+        "Le nom du sort est orthographié « Hyperleukocytine » et « Hyperleukocytrine » sur la page."
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-frakacia-leukocytine",
+          "quote": "Pour éviter de devenir Pacifiste, pensez donc à vous éloigner de Frakacia les tours avant ce sort (les tours 1, 4, 7, 10, etc…).",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.frakacia-leukocytine.allies-de-circonstance",
+      "entityId": "boss.wanted.frakacia-leukocytine",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -80 vitalité et -50 puissance (infini) par monstre présent avec elle. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-frakacia-leukocytine",
+          "quote": "-80 Vitalité (infini) par monstres présents avec elle.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.guman.exi-dernier",
+      "entityId": "boss.wanted.guman",
+      "type": "SpecialRule",
+      "title": "Tuer Exi Guman en dernier (reconstitution des alliés)",
+      "summary": "Pas d'invulnérabilité. À sa mort, Exi Guman remet tous ses alliés à pleine vie et leur donne 100 puissance (infini) : ne pas le tuer si d'autres monstres sont entamés, le garder pour la fin.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-les-guman",
+          "quote": "Exi Guman quant à lui reconstitue tous ses alliés et les boost de 100 Puissance (infini) lorsqu’il meurt.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.guman.ambi-lignes",
+      "entityId": "boss.wanted.guman",
+      "type": "SpecialRule",
+      "title": "Ambi Guman : le moins de lignes de dommages possible",
+      "summary": "Chaque fois qu'il est frappé, Ambi Guman donne à lui et ses alliés 50 puissance et 1 PO pour 4 tours : utiliser des sorts puissants à une ligne, ou le garder pour la fin.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-les-guman",
+          "quote": "Ambi Guman se boost lui et ses alliés de 50 Puissance et 1PO pour 4 tours à chaque fois que vous le frappez.",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.guman.citwouillette",
+      "entityId": "boss.wanted.guman",
+      "type": "Summon",
+      "title": "Citwouillette : rester à plus de 3 PO",
+      "summary": "Ambi Guman invoque une Citwouillette (1 PM, 130 PV) qui vole PA et caractéristiques en rayon 2 : rester à plus de 3 PO ou la tuer dès son invocation.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-les-guman",
+          "quote": "Restez toujours à plus de 3PO de la Citwouillette (sa portée de 2PO + son PM)",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.guman.allies-de-circonstance",
+      "entityId": "boss.wanted.guman",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -90 vitalité par monstre présent, et -40 puissance (Ambi Guman) ou -35 puissance (Exi Guman), en infini. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-les-guman",
+          "quote": "-35 Puissance (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.jerart-dupaindur.bouteille",
+      "entityId": "boss.wanted.jerart-dupaindur",
+      "type": "Summon",
+      "title": "Bouteille de Pandabsynthe : +80 % de résistance, à tuer le tour de son invocation",
+      "summary": "Pas d'invulnérabilité. Il invoque une Bouteille de Pandabsynthe (tous les 2 tours, normalement aux tours impairs). Quand elle joue, s'il est à 10 PO ou moins, il gagne 80 % de résistance (95 % au total), Pesanteur, Indéplaçable, Lourd, -4 PM et -100 puissance pour 1 tour. Les effets durent jusqu'à son prochain tour même si la bouteille meurt : la tuer le tour même de son invocation pour le frapper aux tours pairs.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Cycle conseillé",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Tuer la bouteille pendant le tour où elle est invoquée."
+            },
+            {
+              "order": 2,
+              "action": "Frapper Jérart au tour pair suivant, une fois qu'il a rejoué.",
+              "rationale": "Les effets restent jusqu'à son prochain tour."
+            }
+          ]
+        }
+      ],
+      "turnConditions": "Bouteille normalement invoquée aux tours impairs ; fenêtre de frappe aux tours pairs.",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-jerart-dupaindur",
+          "quote": "il faut donc simplement tuer la Bouteille de Pandabsynthe le même tour qu’il l’invoque.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-jerart-dupaindur",
+          "quote": "Vous ne pourrez donc retirer les bonus et notamment ceux de résistance que les tours pairs.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.jerart-dupaindur.bloquer-invocation",
+      "entityId": "boss.wanted.jerart-dupaindur",
+      "type": "Positioning",
+      "title": "Empêcher l'invocation en bloquant ses 8 cases",
+      "summary": "Bloquer les 8 cases à sa portée d'invocation (4 au contact, 4 en diagonale à 1 PO) l'empêche d'invoquer : le placer contre un bord laisse 5 cases à occuper. Rester en place même aux tours pairs, car la relance décalée peut lui permettre d'invoquer à un tour pair.",
+      "verification": "VERIFIED",
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Lui et ses bouteilles attirent tout le monde de 4 cases en étoile au début de leurs tours ; il peut soigner un allié de 100 % de sa vie."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-jerart-dupaindur",
+          "quote": "il suffit de bloquer toutes les cases dans sa ligne de vue (il y en a normalement 8, les 4 cases en mêlée et les 4 à 1PO en diagonale).",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.jerart-dupaindur.allies-de-circonstance",
+      "entityId": "boss.wanted.jerart-dupaindur",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -900 vitalité (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-jerart-dupaindur",
+          "quote": "-900 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.katigrou.pv-manquants",
+      "entityId": "boss.wanted.katigrou",
+      "type": "Positioning",
+      "title": "Frappe selon ses PV manquants : rester à plus de 6 PO",
+      "summary": "Pas d'invulnérabilité. Son sort de mêlée frappe 20 % de ses PV manquants ; il vole 1 PA au contact en début de tour et peut se téléporter jusqu'à 12 PO (évitable avec Pesanteur). Une fois entamé, rester à plus de 6 PO, le finir vite ; l'érosion réduit ses PV manquants.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-katigrou",
+          "quote": "dès que vous avez entamé Katigrou il est préférable de rester à plus de 6PO de lui (ses 5PM de base + la portée de 1 en mêlée de son sort)",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.katigrou.allies-de-circonstance",
+      "entityId": "boss.wanted.katigrou",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -1000 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-katigrou",
+          "quote": "-1000 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.maitre-boulet.retrait-pm",
+      "entityId": "boss.wanted.maitre-boulet",
+      "type": "SpecialRule",
+      "title": "-2 PM pour l'équipe ; ne pas lui retirer de PM",
+      "summary": "Pas d'invulnérabilité. Tout le combat, vos personnages ont 2 PM de moins ; chaque tentative de retrait de PM lui donne 2 PM, 100 puissance et 20 dommages de poussée pour 1 tour (cumulable).",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-maitre-boulet",
+          "quote": "Durant tout le combat, tous vos personnages auront 2PM en moins",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.maitre-boulet.distance",
+      "entityId": "boss.wanted.maitre-boulet",
+      "type": "Positioning",
+      "title": "Rester à plus de 6 PO ; faible en neutre",
+      "summary": "Il ne frappe qu'en mêlée (neutre, terre) : à plus de 6 PO (5 PM + mêlée) il ne peut pas frapper directement. Il a 10 % de faiblesse neutre. Tuer son Tournesol affamé (100 PV, tous les 4 tours) si le combat dure.",
+      "verification": "VERIFIED",
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Son poison spécial frappe en terre si on vous soigne et retire 1 PM si on vous déplace."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-maitre-boulet",
+          "quote": "si vous restez à plus de 6PO de lui (ses 5PM de base + sa PO de mêlée) il ne pourra jamais vous frapper directement.",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.maitre-boulet.allies-de-circonstance",
+      "entityId": "boss.wanted.maitre-boulet",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -80 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-maitre-boulet",
+          "quote": "-80 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.marzwel-le-gobelin.malus-tacle",
+      "entityId": "boss.wanted.marzwel-le-gobelin",
+      "type": "SpecialRule",
+      "title": "-10 tacle à toute l'équipe pour tout le combat",
+      "summary": "Pas d'invulnérabilité. Dès le début, il retire 10 tacle à tous vos personnages pour tout le combat ; il peut gagner fuite et portée, voler des PM, repousser et retirer de la puissance.",
+      "verification": "VERIFIED",
+      "unknownAspects": [
+        "La page ne donne pas de conseils tactiques."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-marzwel-le-gobelin",
+          "quote": "Dès le début du combat, Marzwel met un malus de 10 Tacle à tous vos personnages pour toute la durée du combat.",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.marzwel-le-gobelin.allies-de-circonstance",
+      "entityId": "boss.wanted.marzwel-le-gobelin",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -250 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-marzwel-le-gobelin",
+          "quote": "-250 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.maxi-malle.gonflette",
+      "entityId": "boss.wanted.maxi-malle",
+      "type": "SpecialRule",
+      "title": "« Gonflette » : ne pas la pousser, peu de lignes de dommages",
+      "summary": "Pas d'invulnérabilité. Chaque poussée lui donne 1 PM (infini, cumulable) et chaque ligne de dommages subie augmente de 10 les dégâts de base de « Décoffrage Brut » (mêlée). Utiliser des sorts puissants à une ligne, rester à distance (retrait de PM possible) ou la finir en un tour.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-la-maxi-malle",
+          "quote": "Augmente les dégâts de base de son sort « Décoffrage Brut » de 10 (infini et cumulable) à chaque ligne de dommages que vous lui effectuez.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.maxi-malle.allies-de-circonstance",
+      "entityId": "boss.wanted.maxi-malle",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -600 vitalité et -50 puissance (infini) par monstre présent avec elle. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-la-maxi-malle",
+          "quote": "-600 Vitalité (infini) par monstres présents avec elle.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.mogligli.invocation",
+      "entityId": "boss.wanted.mogligli",
+      "type": "Summon",
+      "title": "Invocation invulnérable aléatoire (Balours, Bagarra ou Mulibre)",
+      "summary": "Pas d'invulnérabilité pour Mogligli. Au début du combat, il invoque au hasard Balours (Pesanteur, retraits fuite/PM en rayon 3), Bagarra (frappe air en mêlée avec échange de place) ou Mulibre (boucliers), invulnérable pour tout le combat. Rester à distance des deux premiers.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-mogligli",
+          "quote": "Mogligli invoque aléatoirement Balours ou Bagarra ou Mulibre qui auront l’état Invulnérable pour tout le combat.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.mogligli.poussee-ligne",
+      "entityId": "boss.wanted.mogligli",
+      "type": "Positioning",
+      "title": "Ne pas rester en ligne avec ses alliés",
+      "summary": "Un de ses sorts repousse de 6 cases les personnages en ligne avec la cible.",
+      "verification": "COMMUNITY_REPORTED",
+      "unknownAspects": [
+        "Formulation ambiguë : on ne sait pas si « de 6 cases » désigne la portée de la ligne ou seulement la poussée."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-mogligli",
+          "quote": "L’un des sorts de Mogligli lui permet de repousser de 6 cases tous vos personnages en ligne avec celui ciblé de 6 cases.",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.mogligli.allies-de-circonstance",
+      "entityId": "boss.wanted.mogligli",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -1100 vitalité (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-mogligli",
+          "quote": "-1100 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.monsieur-pingouin.tour-1",
+      "entityId": "boss.wanted.monsieur-pingouin",
+      "type": "SpecialRule",
+      "title": "Tour 1 : immobilisés, en profiter pour se booster",
+      "summary": "Pas d'invulnérabilité. Au premier tour uniquement, tous vos personnages perdent 100 PM et sont en Pesanteur (non désenvoûtable) : utiliser ce tour pour se booster.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "TurnAtMost",
+          "description": "Uniquement au tour 1.",
+          "number": 1
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-monsieur-pingouin",
+          "quote": "Dès le premier tour et uniquement ce tour, tous vos personnages perdent 100PM et obtiennent l’état Pesanteur pour 1 tour (non débuffable).",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.monsieur-pingouin.distances",
+      "entityId": "boss.wanted.monsieur-pingouin",
+      "type": "Positioning",
+      "title": "Plus de 6 PO de lui et de l'allié sous « Mise en scène trompeuse »",
+      "summary": "Son sort en croix au contact peut faire passer le tour : rester à plus de 6 PO (4 PM + portée 2). L'effet « Mise en scène trompeuse » (1 tour) fait intercepter à un personnage les dégâts de ses alliés à 6 PO ou moins : s'en éloigner s'il ne peut pas encaisser.",
+      "verification": "VERIFIED",
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Mamansot (+2 PM), Mansobèse et Timansot (échanges de place, poussées) peuvent vous rapprocher de lui."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-monsieur-pingouin",
+          "quote": "Tentez de toujours être à plus de 6PO de Monsieur Pingouin",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.monsieur-pingouin.allies-de-circonstance",
+      "entityId": "boss.wanted.monsieur-pingouin",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -900 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-monsieur-pingouin",
+          "quote": "-900 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.morblok.repartition",
+      "entityId": "boss.wanted.morblok",
+      "type": "Resistance",
+      "title": "-30 % de dommages, répartition et malus selon l'élément : frapper eau ou feu à distance",
+      "summary": "Pas d'invulnérabilité. Il réduit tous ses dommages subis de 30 %, répartit 50 % des dommages subis dans un rayon de 2 autour de lui, et punit l'attaquant et ses voisins (rayon 2) selon l'élément : eau -1 PA, feu -4 durée des effets, air -50 puissance, terre/neutre répartition de 50 %. Le guide conseille eau ou feu et de rester à plus de 2 PO de lui.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-morblok",
+          "quote": "Le taper dans les éléments Eau ou Feu semble beaucoup moins contraignant.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-morblok",
+          "quote": "il est conseillé de toujours rester à bonne distance de Morblok (plus de 2PO de lui)",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.morblok.allies-de-circonstance",
+      "entityId": "boss.wanted.morblok",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -800 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-morblok",
+          "quote": "-800 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.musha-l-oni.devoile",
+      "entityId": "boss.wanted.musha-l-oni",
+      "type": "SpecialRule",
+      "title": "Dévoile les invisibles à chaque début de tour",
+      "summary": "Pas d'invulnérabilité. Au début de chacun de ses tours, il rend visibles tous les personnages invisibles : l'invisibilité (Sram) est inutile. Il peut aussi désenvoûter, maximiser vos effets aléatoires, retirer de la PO, échanger de place et mettre Affaibli.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-musha-l-oni",
+          "quote": "Durant tout le combat, Musha dévoile tous les personnages invisibles à chacun de ses débuts de tour.",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.musha-l-oni.allies-de-circonstance",
+      "entityId": "boss.wanted.musha-l-oni",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -400 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-musha-l-oni",
+          "quote": "-400 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.naganita.pacifiste",
+      "entityId": "boss.wanted.naganita",
+      "type": "Positioning",
+      "title": "Pacifiste à plus de 2 PO : rester dans un rayon de 2 au début de son tour",
+      "summary": "Pas d'invulnérabilité. Au début de son tour, les personnages à plus de 2 PO deviennent Pacifistes (infini) et elle se soigne de 200 PV par personnage ou invocation à plus de 2 PO. À exactement 3 PO, l'état bascule (retiré si présent, posé sinon). Elle repousse ensuite de 6 cases ceux dans un rayon de 3 : placer un obstacle ou une invocation statique derrière soi, et éviter d'invoquer.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Éviter Pacifiste",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Finir son tour à 2 PO ou moins de Naganita.",
+              "position": "Rayon 2 autour de Naganita"
+            },
+            {
+              "order": 2,
+              "action": "Placer un obstacle ou une invocation statique derrière soi.",
+              "rationale": "Éviter la poussée de 6 cases."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-naganita",
+          "quote": "Pour ne jamais avoir l’état Pacifiste, il faut être dans un cercle de rayon 2 autour d’elle lorsqu’elle débute son tour.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.naganita.allies-de-circonstance",
+      "entityId": "boss.wanted.naganita",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -600 vitalité et -50 puissance (infini) par monstre présent avec elle. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-naganita",
+          "quote": "-600 Vitalité (infini) par monstres présents avec elle.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.nenufor-tilotus.nufor",
+      "entityId": "boss.wanted.nenufor-tilotus",
+      "type": "Summon",
+      "title": "Tuer le premier Nufor dès son invocation",
+      "summary": "Pas d'invulnérabilité. Il invoque un Nufor statique (1000 PV) qui en invoque 4 au bout d'un tour puis 8 au bout de deux (12 au maximum) ; seul le Nufor invoqué par Nenufor se multiplie. « Rhizome agressif » (feu, -2 PM) se répète pour chaque Nufor en ligne de vue du personnage.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-nenufor-tilotus",
+          "quote": "il est recommandé de tuer le premier Nufor invoqué dès son invocation",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.nenufor-tilotus.glyphe-vert",
+      "entityId": "boss.wanted.nenufor-tilotus",
+      "type": "Positioning",
+      "title": "Rester à plus de 4 PO au début de son tour",
+      "summary": "Chaque tour il pose un glyphe vert de rayon 4 (jusqu'à 6 PM retirés) et frappe en terre dans un rayon de 4 au début de son tour suivant.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-nenufor-tilotus",
+          "quote": "il est conseillé d’être à plus de 4PO de Nenufor lorsqu’il commence son tour.",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.nenufor-tilotus.allies-de-circonstance",
+      "entityId": "boss.wanted.nenufor-tilotus",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -800 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-nenufor-tilotus",
+          "quote": "-800 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.nono-le-wobot.reduction",
+      "entityId": "boss.wanted.nono-le-wobot",
+      "type": "Resistance",
+      "title": "Réduction en mêlée et à l'arme : sorts à distance",
+      "summary": "Pas d'invulnérabilité. Il réduit de 10 (réduction réelle de 40 par coup) les dommages en mêlée et à l'arme, cumulés à 80 pour une arme au contact : frapper avec des sorts à distance.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-nono-le-wobot",
+          "quote": "Nono le Wobot ne possède pas d’état Invulnérable. Cependant, il réduit les dommages subis en mêlée ou à l’arme de 10 (réduction réelle de 40 par coup) pour tout le combat.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.nono-le-wobot.distance",
+      "entityId": "boss.wanted.nono-le-wobot",
+      "type": "Positioning",
+      "title": "Plus de 4 PO de lui ; invisibles à plus de 3 PO des alliés",
+      "summary": "En mêlée, il retire 100 % de résistance neutre pour 4 tours (cumulable) : rester à plus de 4 PO (3 PM + portée). Le personnage sous « Vewwouillage » rend visibles ses alliés à 3 PO ou moins au début de son tour.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-nono-le-wobot",
+          "quote": "restez simplement à plus de 4PO de Nono (ses 3PM de base + le PO de la portée de son sort) car il ne peut lancer ce sort qu’en mêlée.",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.nono-le-wobot.allies-de-circonstance",
+      "entityId": "boss.wanted.nono-le-wobot",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -250 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-nono-le-wobot",
+          "quote": "-250 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.ogivol-scalarcin.esquive-melee",
+      "entityId": "boss.wanted.ogivol-scalarcin",
+      "type": "Invulnerability",
+      "title": "Esquive 100 % des coups en mêlée : le frapper à distance",
+      "summary": "Pas d'état invulnérable, mais il esquive tous les coups reçus en mêlée en reculant d'une case : il faut le frapper à distance. Rester à plus de 8 PO (portée 4 + 4 PM), 9 PO quand il devient invisible (+1 PM 4 tours), pour ne jamais être frappé.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-ogivol-scalarcin",
+          "quote": "il esquive 100% des coups reçus en mêlée en reculant de 1 cases, il faudra donc impérativement le frapper à distance.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.ogivol-scalarcin.allies-de-circonstance",
+      "entityId": "boss.wanted.ogivol-scalarcin",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -200 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-ogivol-scalarcin",
+          "quote": "-200 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.padgref-demoel.frappe-melee",
+      "entityId": "boss.wanted.padgref-demoel",
+      "type": "Positioning",
+      "title": "Frappe de 30 % de sa vitalité (tour 3 puis tous les 2 tours) : rester très loin",
+      "summary": "Pas d'invulnérabilité. À partir du tour 3 puis tous les 2 tours, il frappe en mêlée 30 % de sa vitalité maximale (jusqu'à 4800). Comme il échange de place avec ses monstres et attire de 5 cases, l'idéal est de rester à plus de 11 PO de lui et de ses monstres dès le tour 3. Rester à 3 PO ou plus de chaque monstre évite la frappe eau de son échange.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "TurnAtLeast",
+          "description": "À partir du tour 3, puis tous les 2 tours.",
+          "number": 3
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Chaque fois qu'il est frappé, il gagne 100 en force, agilité, chance et intelligence pour 5 tours (une fois par tour)."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-padgref-demoel",
+          "quote": "L’idéal serait donc de rester à plus de 11PO de Padgref et des monstres qui l’accompagnent à partir du tour 3.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.padgref-demoel.allies-de-circonstance",
+      "entityId": "boss.wanted.padgref-demoel",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -900 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-padgref-demoel",
+          "quote": "-900 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.prince-marchand.invulnerables-punis",
+      "entityId": "boss.wanted.prince-marchand",
+      "type": "SpecialRule",
+      "title": "-100 % de résistance aux personnages invulnérables",
+      "summary": "Pas d'invulnérabilité. Il peut retirer 100 % de résistance pour 2 tours aux seuls personnages ayant un état invulnérable (normal, à distance ou en mêlée). Il maximise aussi périodiquement les effets aléatoires contre vous (tous les 1 à 3 tours).",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-le-prince-marchand",
+          "quote": "Il peut aussi mettre un malus de 100% Résistance pour 2 tours uniquement aux personnages qui ont un état Invulnérable (normal, à distance ou en mêlée).",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.prince-marchand.distance",
+      "entityId": "boss.wanted.prince-marchand",
+      "type": "Positioning",
+      "title": "Rester à distance et espacés ; éviter le neutre",
+      "summary": "Il ne frappe qu'en croix de taille 1 au contact (élément aléatoire) mais se déplace beaucoup (vol de PM, attirance de 2 cases) : rester espacés pour qu'il ne touche qu'un personnage. 50 % de résistance neutre.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-le-prince-marchand",
+          "quote": "Le Prince Marchand a 50% de résistances dans l'élément Neutre",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.prince-marchand.allies-de-circonstance",
+      "entityId": "boss.wanted.prince-marchand",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -600 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-le-prince-marchand",
+          "quote": "-600 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.qil-bil.bouclier",
+      "entityId": "boss.wanted.qil-bil",
+      "type": "SpecialRule",
+      "title": "Ne pas le pousser ni lui retirer de PM ; éviter pièges et glyphes",
+      "summary": "Pas d'invulnérabilité. Chaque poussée ou tentative de retrait de PM lui donne un bouclier de 10 % de ses PV restants. 3 tours sur 4, les dommages de pièges ou glyphes le boostent en puissance.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-qil-bil",
+          "quote": "dès que vous poussez Qil Bil ou que vous tentez de lui retirer des PM, il se boost de 10% de ses PV restants.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-qil-bil",
+          "quote": "Durant 3 tours sur 4, Qil Bil aura un effet qui lui permet de se boost en puissance s’il subit les dommages d’un piège ou d’un glyphe.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.qil-bil.allies-de-circonstance",
+      "entityId": "boss.wanted.qil-bil",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -300 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-qil-bil",
+          "quote": "-300 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.roi-camole.cactrucs",
+      "entityId": "boss.wanted.roi-camole",
+      "type": "Summon",
+      "title": "Cactrucs : boost de puissance et frappes au contact",
+      "summary": "Pas d'invulnérabilité. Il gagne 8 puissance par tour, plus 8 par Cactruc présent. Il peut rendre une cible Cacterrorisée et invoquer 16 Cactrucs dans ses lignes et diagonales. Un Cactruc attaqué frappe ses voisins, et son sort air touche les personnages au contact d'un Cactruc. Ne pas rester collé aux Cactrucs ni en frapper un collé à un allié (sauf OS en une ligne) ; en tuer un maximum avant son tour, ou le focus directement.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-le-roi-camole",
+          "quote": "Si des Cactruc (qu’il peut invoquer) sont présents sur le terrain au début de son tour, il se boost aussi de 8 Puissance pour 1 tour pour chaque Cactruc présent.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-le-roi-camole",
+          "quote": "il est recommandé de ne pas rester au contact des Cactrucs pour ne pas se prendre de dommages inutiles.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.roi-camole.melee",
+      "entityId": "boss.wanted.roi-camole",
+      "type": "Positioning",
+      "title": "Ne pas le laisser frapper en mêlée (invisibilité)",
+      "summary": "Son sort de mêlée le rend invisible : rester à plus de 7 PM de lui (5 PM de base), moins si on lui retire des PM.",
+      "verification": "VERIFIED",
+      "unknownAspects": [
+        "Le guide écrit « 7PM » là où une distance en PO semble visée."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-le-roi-camole",
+          "quote": "il faudra toujours rester à plus de 7PM de lui pour éviter qu'il ne tape un de vos personnages",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.roi-camole.allies-de-circonstance",
+      "entityId": "boss.wanted.roi-camole",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -900 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-le-roi-camole",
+          "quote": "-900 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.rok-gnorok.puissance",
+      "entityId": "boss.wanted.rok-gnorok",
+      "type": "SpecialRule",
+      "title": "+20 puissance par tour : le tuer vite, le désenvoûter",
+      "summary": "Pas d'invulnérabilité. Il gagne 20 puissance (infini, cumulable) à chaque début de tour. Deux tours sur trois il réduit ses dommages subis (désenvoûtable). Rester à plus de 8 PO (5 PM + portée 3) au début de son tour évite tous ses sorts.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-rok-gnorok",
+          "quote": "Rok Gnorok possède un effet qui lui permet de se boost de 20 Puissance de manière infini et cumulable à chacun de ses débuts de tour.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-rok-gnorok",
+          "quote": "Pour rester hors de portée de ses sorts il vous faut toujours être à plus de 8PO de lui lorsqu’il commence son tour",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.rok-gnorok.allies-de-circonstance",
+      "entityId": "boss.wanted.rok-gnorok",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -500 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-rok-gnorok",
+          "quote": "-500 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.roub-ignolles.bombes",
+      "entityId": "boss.wanted.roub-ignolles",
+      "type": "Summon",
+      "title": "Bomb'Ignolles : les tuer ou rester à plus de 3 PO",
+      "summary": "Pas d'invulnérabilité. Chaque tour il invoque des bombes à 1 PO dans ses diagonales (4 au maximum) ; elles explosent au bout de 4 tours ou à leur mort, plus fort et plus large (jusqu'au rayon 3) avec le temps. Il peut échanger de place avec une bombe pour la faire exploser au tour suivant. Soit tuer les 4 bombes chaque tour (sans être à leur contact), soit rester à plus de 3 PO de chacune ; ne pas se placer à 1 PO en diagonale de lui.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-roub-ignolles",
+          "quote": "Les bombes explosent automatiquement au bout de 4 tours et peuvent exploser avant si vous les tuez.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-roub-ignolles",
+          "quote": "pensez à rester à plus de 3PO de chaque bombe pour être sûr de ne pas être dans la zone d’explosion.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.roub-ignolles.allies-de-circonstance",
+      "entityId": "boss.wanted.roub-ignolles",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -150 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-roub-ignolles",
+          "quote": "-150 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.simbadas.malus-po-mort",
+      "entityId": "boss.wanted.simbadas",
+      "type": "SpecialRule",
+      "title": "-10 PO pour l'équipe ; chaque mort le renforce",
+      "summary": "Pas d'invulnérabilité. Dès le début, tous vos personnages perdent 10 PO pour tout le combat. Chaque personnage mort lui donne 4 PM et 400 puissance (infini, cumulable) : garder tout le monde en vie.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-simbadas",
+          "quote": "Dès le début du combat, il retire 10PO à tous vos personnages pour tout le combat.",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        },
+        {
+          "sourceId": "src.dpln.on-recherche-simbadas",
+          "quote": "dès qu’un de vos personnages meurt, il se boost de 4PM et 400 Puissance (infini et cumulable) par personnage mort.",
+          "locator": "III- Stratégie du combat — Présentation rapide"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.simbadas.allies-de-circonstance",
+      "entityId": "boss.wanted.simbadas",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -500 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-simbadas",
+          "quote": "-500 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.tournade.distance",
+      "entityId": "boss.wanted.tournade",
+      "type": "Positioning",
+      "title": "La garder à distance (Pacifiste à 2 PO)",
+      "summary": "Pas d'invulnérabilité. Dans un rayon de 2 autour d'elle, elle retire 10 PO, rend Pacifiste et empoisonne en air : rester à au moins 7 PO (4 PM de base). Elle frappe à courte portée (2 et 5 PO) mais attire jusqu'à 8 PO ; la repousser la rend inoffensive. Elle gagne 620 PV (3 tours) par personnage touché dans un rayon de 5 : ne pas s'y regrouper.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-tournade",
+          "quote": "il faut prévoir une distance minimum de 7PO d'elle pour éviter qu'elle vienne vous mettre Pacifiste",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.tournade.faiblesse-eau",
+      "entityId": "boss.wanted.tournade",
+      "type": "Resistance",
+      "title": "Faible en eau",
+      "summary": "12 % de faiblesse à l'eau.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-tournade",
+          "quote": "Tournade ayant 12% de faiblesses dans l'élément Eau",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.tournade.allies-de-circonstance",
+      "entityId": "boss.wanted.tournade",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -400 vitalité et -50 puissance (infini) par monstre présent avec elle. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-tournade",
+          "quote": "-400 Vitalité (infini) par monstres présents avec elle.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.trukipik.pacifiste",
+      "entityId": "boss.wanted.trukipik",
+      "type": "Positioning",
+      "title": "Pacifiste à plus de 2 PO : rester dans un rayon de 2 au début de son tour",
+      "summary": "Pas d'invulnérabilité. Au début de son tour, les personnages à plus de 2 PO deviennent Pacifistes (infini) et il se soigne de 200 PV par personnage ou invocation à plus de 2 PO. À exactement 3 PO, l'état bascule. Il repousse de 6 cases ceux dans un rayon de 3 (sauf en état Duel) : placer un obstacle ou une invocation statique derrière soi, éviter d'invoquer.",
+      "verification": "VERIFIED",
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Sa frappe neutre en mêlée pose Duel, qui ajoute au tour suivant une ligne de 200 % des PV érodés de la cible."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-trukipik",
+          "quote": "Pour ne jamais avoir l’état Pacifiste, il faut être dans un cercle de rayon 2 autour de lui lorsqu’il débute son tour.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.trukipik.allies-de-circonstance",
+      "entityId": "boss.wanted.trukipik",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -600 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-trukipik",
+          "quote": "-600 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.tyranne-la-terrible.echange-poussee",
+      "entityId": "boss.wanted.tyranne-la-terrible",
+      "type": "SpecialRule",
+      "title": "Échange de place à chaque frappe ; poussées en chaîne",
+      "summary": "Pas d'invulnérabilité. Tout personnage qui lui inflige des dommages échange de place avec elle. Subir des dommages de poussée repousse de 6 cases le personnage et ceux à son contact. Elle gagne des dommages de poussée selon le nombre de personnages autour d'elle : ne pas rester groupés.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-tyranne-la-terrible",
+          "quote": "Durant tout le combat dès que vous effectuez des dommages sur Tyranne, votre personnage échange de place avec elle.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.tyranne-la-terrible.allies-de-circonstance",
+      "entityId": "boss.wanted.tyranne-la-terrible",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -400 vitalité et -50 puissance (infini) par monstre présent avec elle. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-tyranne-la-terrible",
+          "quote": "-400 Vitalité (infini) par monstres présents avec elle.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.vashkiwi.fontaines",
+      "entityId": "boss.wanted.vashkiwi",
+      "type": "Summon",
+      "title": "Fontaines Laiteuses : rester à plus de 5 PO",
+      "summary": "Pas d'invulnérabilité. Elle n'a aucun sort de frappe directe ; chaque tour elle invoque une Fontaine Laiteuse fixe, invulnérable, qui meurt au bout de 2 tours, et dont le glyphe en damier frappe en eau et retire 100 puissance. À plus de 5 PO des fontaines, on ne subit ni dommages ni malus.",
+      "verification": "VERIFIED",
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Un poison permanent frappe en terre chaque personnage et ses alliés dans un rayon de 2 au début de son tour."
+        }
+      ],
+      "unknownAspects": [
+        "La condition exacte du glyphe (début de votre tour et/ou de celui de la fontaine) est formulée de façon ambiguë."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-la-vashkiwi",
+          "quote": "si vous restez à plus de 5PO des fontianes vous ne subirez jamais de dommages ni de malus de puissance.",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.vashkiwi.conseils",
+      "entityId": "boss.wanted.vashkiwi",
+      "type": "SpecialRule",
+      "title": "Feu/eau, pas de retraits PA/PM, la désenvoûter",
+      "summary": "Peu de résistance en feu (-5 %) et eau (5 %). Ses alliés protégés gagnent des PA ou attirent quand on tente de leur retirer PA ou PM. Si elle se protège elle-même (boucliers, réduction 2 tours), la désenvoûter.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-la-vashkiwi",
+          "quote": "Ces deux effets peuvent facilement être désenvoutés si elle lance le sort sur elle-même",
+          "locator": "III- Stratégie du combat — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.vashkiwi.allies-de-circonstance",
+      "entityId": "boss.wanted.vashkiwi",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -800 vitalité (infini) par monstre présent avec elle. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-la-vashkiwi",
+          "quote": "-800 Vitalité (infini) par monstres présents avec elle.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.zatoishwan.distance",
+      "entityId": "boss.wanted.zatoishwan",
+      "type": "Positioning",
+      "title": "Attaquer à distance, rester à plus de 7 PO",
+      "summary": "Pas d'invulnérabilité, mais il réduit de 5 (réduction réelle de 42 par coup) les dommages en mêlée : privilégier la distance. Son « Bâton virevoltant » frappe très fort au contact : rester à plus de 7 PO (6 PM + mêlée) au début de son tour.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-zatoishwan",
+          "quote": "il suffit de rester à plus de 7PO de lui lorsqu’il commence son tour (ses 6PM de base + la PO de son attaque en mêlée).",
+          "locator": "III- Stratégie du combat — Présentation rapide / Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.wanted.zatoishwan.allies-de-circonstance",
+      "entityId": "boss.wanted.zatoishwan",
+      "type": "SpecialRule",
+      "title": "« Alliés de circonstance » : malus par monstre accompagnant",
+      "summary": "Effet commun aux recherchés : -1100 vitalité et -50 puissance (infini) par monstre présent avec lui. Seul dans le combat, il n'a aucun malus.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.on-recherche-zatoishwan",
+          "quote": "-1100 Vitalité (infini) par monstres présents avec lui.",
+          "locator": "III- Stratégie du combat — Effet commun « Alliés de circonstance »"
+        }
+      ]
+    }
+  ]
+}

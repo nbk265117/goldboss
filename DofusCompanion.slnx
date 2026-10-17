@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DofusCompanion.App/DofusCompanion.App.csproj" />
+    <Project Path="src/DofusCompanion.Application/DofusCompanion.Application.csproj" />
+    <Project Path="src/DofusCompanion.Domain/DofusCompanion.Domain.csproj" />
+    <Project Path="src/DofusCompanion.Infrastructure/DofusCompanion.Infrastructure.csproj" />
+    <Project Path="src/DofusCompanion.Ocr.Windows/DofusCompanion.Ocr.Windows.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/DofusCompanion.Core.Tests/DofusCompanion.Core.Tests.csproj" />
+    <Project Path="tests/DofusCompanion.Infrastructure.Tests/DofusCompanion.Infrastructure.Tests.csproj" />
+    <Project Path="tests/DofusCompanion.Ocr.Tests/DofusCompanion.Ocr.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tools/">
+    <Project Path="tools/DofusCompanion.DofusDbImporter/DofusCompanion.DofusDbImporter.csproj" />
+  </Folder>
+</Solution>

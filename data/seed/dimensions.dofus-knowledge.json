@@ -1,0 +1,1972 @@
+{
+  "formatVersion": 1,
+  "packageId": "dimensions-dpln",
+  "name": "Dimensions divines — mécaniques de boss (Dofus pour les Noobs)",
+  "description": "Boss des donjons d'Enutrosor, Srambad, Xélorium et Ecaflipus, d'après les pages de Dofus pour les Noobs relevées le 2026-10-17. Textes reformulés ; citations courtes vérifiées mot pour mot.",
+  "author": "Dofus Companion research",
+  "createdOn": "2026-10-17",
+  "sources": [
+    {
+      "id": "src.dpln.donjons",
+      "title": "Donjons",
+      "url": "https://www.dofuspourlesnoobs.com/donjons.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": null,
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Liste des donjons (niveaux de donjon). Aucune date de mise à jour affichée."
+    },
+    {
+      "id": "src.dpln.enutrosor",
+      "title": "Enutrosor",
+      "url": "https://www.dofuspourlesnoobs.com/enutrosor.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": null,
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Page de dimension. Aucune date de mise à jour affichée."
+    },
+    {
+      "id": "src.dpln.srambad",
+      "title": "Srambad",
+      "url": "https://www.dofuspourlesnoobs.com/srambad.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": null,
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Page de dimension. Aucune date de mise à jour affichée."
+    },
+    {
+      "id": "src.dpln.xeacutelorium",
+      "title": "Xélorium",
+      "url": "https://www.dofuspourlesnoobs.com/xeacutelorium.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": null,
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Page de dimension. Aucune date de mise à jour affichée."
+    },
+    {
+      "id": "src.dpln.ecaflipus",
+      "title": "Ecaflipus",
+      "url": "https://www.dofuspourlesnoobs.com/ecaflipus.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": null,
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Page de dimension. Aucune date de mise à jour affichée."
+    },
+    {
+      "id": "src.dpln.fabrique-mallefisk",
+      "title": "Fabrique Mallefisk",
+      "url": "https://www.dofuspourlesnoobs.com/fabrique-mallefisk.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": null,
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Aucune date affichée. La page porte un bandeau indiquant qu'elle nécessite une révision (informations possiblement erronées ou manquantes)."
+    },
+    {
+      "id": "src.dpln.galerie-du-phossile",
+      "title": "Galerie du Phossile",
+      "url": "https://www.dofuspourlesnoobs.com/galerie-du-phossile.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2026-06-21",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 19/04/2014."
+    },
+    {
+      "id": "src.dpln.palais-du-roi-nidas",
+      "title": "Palais du roi Nidas",
+      "url": "https://www.dofuspourlesnoobs.com/palais-du-roi-nidas.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2026-06-21",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 10/08/2018."
+    },
+    {
+      "id": "src.dpln.ring-du-capitaine-ekarlatte",
+      "title": "Ring du Capitaine Ekarlatte",
+      "url": "https://www.dofuspourlesnoobs.com/ring-du-capitaine-ekarlatte.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": null,
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Aucune date affichée. Bandeau 'nécessite une révision'; sorts du boss 'A venir'. Aucune mécanique de boss exploitable."
+    },
+    {
+      "id": "src.dpln.cave-du-toxoliath",
+      "title": "Cave du Toxoliath",
+      "url": "https://www.dofuspourlesnoobs.com/cave-du-toxoliath.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2022-02-10",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 01/07/2014."
+    },
+    {
+      "id": "src.dpln.trone-de-la-cour-sombre",
+      "title": "Trône de la Cour Sombre",
+      "url": "https://www.dofuspourlesnoobs.com/trone-de-la-cour-sombre.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2019-11-11",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Dernière mise à jour affichée '-' ; date utilisée = mise en ligne (11/11/2019)."
+    },
+    {
+      "id": "src.dpln.meacutegalithe-de-fraktale",
+      "title": "Mégalithe de Fraktale",
+      "url": "https://www.dofuspourlesnoobs.com/meacutegalithe-de-fraktale.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": null,
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Aucune date affichée. Sorts du boss indiqués 'à l'étude et à venir'."
+    },
+    {
+      "id": "src.dpln.horologium-de-xlii",
+      "title": "Horologium de XLII",
+      "url": "https://www.dofuspourlesnoobs.com/horologium-de-xlii.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2022-10-01",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 28/09/2014."
+    },
+    {
+      "id": "src.dpln.oeil-de-vortex",
+      "title": "Œil de Vortex",
+      "url": "https://www.dofuspourlesnoobs.com/oeil-de-vortex.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2026-10-05",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 06/09/2014."
+    },
+    {
+      "id": "src.dpln.miausoleacutee-du-pounicheur",
+      "title": "Miausolée du Pounicheur",
+      "url": "https://www.dofuspourlesnoobs.com/miausoleacutee-du-pounicheur.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": null,
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Aucune date affichée."
+    },
+    {
+      "id": "src.dpln.plateau-de-ush",
+      "title": "Plateau de Ush",
+      "url": "https://www.dofuspourlesnoobs.com/plateau-de-ush.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": null,
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Aucune date affichée."
+    },
+    {
+      "id": "src.dpln.defi-du-chaloeil",
+      "title": "Défi du Chaloeil",
+      "url": "https://www.dofuspourlesnoobs.com/defi-du-chaloeil.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2023-06-29",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 21/01/2016."
+    }
+  ],
+  "entities": [
+    {
+      "id": "area.enutrosor",
+      "type": "Area",
+      "canonicalName": "Enutrosor",
+      "locale": "fr",
+      "description": "Dimension divine.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.enutrosor"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.srambad",
+      "type": "Area",
+      "canonicalName": "Srambad",
+      "locale": "fr",
+      "description": "Dimension divine.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.srambad"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.xelorium",
+      "type": "Area",
+      "canonicalName": "Xélorium",
+      "locale": "fr",
+      "description": "Dimension divine.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.xeacutelorium"
+      ],
+      "relations": []
+    },
+    {
+      "id": "area.ecaflipus",
+      "type": "Area",
+      "canonicalName": "Ecaflipus",
+      "locale": "fr",
+      "description": "Dimension divine.",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.ecaflipus"
+      ],
+      "relations": []
+    },
+    {
+      "id": "dungeon.fabrique-de-mallefisk",
+      "type": "Dungeon",
+      "canonicalName": "Fabrique de Malléfisk",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Fabrique Mallefisk",
+          "locale": "fr"
+        }
+      ],
+      "levelText": "100",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.fabrique-mallefisk",
+        "src.dpln.donjons",
+        "src.dpln.enutrosor"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.enutrosor"
+        }
+      ]
+    },
+    {
+      "id": "boss.mallefisk",
+      "type": "Boss",
+      "canonicalName": "Malléfisk",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Mallefisk",
+          "locale": "fr"
+        }
+      ],
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.fabrique-mallefisk"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.fabrique-de-mallefisk"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.galerie-du-phossile",
+      "type": "Dungeon",
+      "canonicalName": "Galerie du Phossile",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "150",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.galerie-du-phossile",
+        "src.dpln.donjons",
+        "src.dpln.enutrosor"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.enutrosor"
+        }
+      ]
+    },
+    {
+      "id": "boss.phossile",
+      "type": "Boss",
+      "canonicalName": "Phossile",
+      "locale": "fr",
+      "aliases": [],
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.galerie-du-phossile"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.galerie-du-phossile"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.palais-du-roi-nidas",
+      "type": "Dungeon",
+      "canonicalName": "Palais du roi Nidas",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.palais-du-roi-nidas",
+        "src.dpln.donjons",
+        "src.dpln.enutrosor"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.enutrosor"
+        }
+      ]
+    },
+    {
+      "id": "boss.roi-nidas",
+      "type": "Boss",
+      "canonicalName": "Roi Nidas",
+      "locale": "fr",
+      "aliases": [],
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.palais-du-roi-nidas"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.palais-du-roi-nidas"
+        }
+      ],
+      "levelText": "220"
+    },
+    {
+      "id": "dungeon.ring-du-capitaine-ekarlatte",
+      "type": "Dungeon",
+      "canonicalName": "Ring du Capitaine Ekarlatte",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "130",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.ring-du-capitaine-ekarlatte",
+        "src.dpln.donjons",
+        "src.dpln.srambad"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.srambad"
+        }
+      ]
+    },
+    {
+      "id": "boss.capitaine-ekarlatte",
+      "type": "Boss",
+      "canonicalName": "Capitaine Ekarlatte",
+      "locale": "fr",
+      "aliases": [],
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.ring-du-capitaine-ekarlatte"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.ring-du-capitaine-ekarlatte"
+        }
+      ],
+      "description": "Page source incomplète : sorts et mécanique du boss non documentés."
+    },
+    {
+      "id": "dungeon.cave-du-toxoliath",
+      "type": "Dungeon",
+      "canonicalName": "Cave du Toxoliath",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "180",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.cave-du-toxoliath",
+        "src.dpln.donjons",
+        "src.dpln.srambad"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.srambad"
+        }
+      ]
+    },
+    {
+      "id": "boss.toxoliath",
+      "type": "Boss",
+      "canonicalName": "Toxoliath",
+      "locale": "fr",
+      "aliases": [],
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.cave-du-toxoliath"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.cave-du-toxoliath"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.trone-de-la-cour-sombre",
+      "type": "Dungeon",
+      "canonicalName": "Trône de la Cour Sombre",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.trone-de-la-cour-sombre",
+        "src.dpln.donjons",
+        "src.dpln.srambad"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.srambad"
+        }
+      ]
+    },
+    {
+      "id": "boss.reine-des-voleurs",
+      "type": "Boss",
+      "canonicalName": "Reine des Voleurs",
+      "locale": "fr",
+      "aliases": [],
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.trone-de-la-cour-sombre"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.trone-de-la-cour-sombre"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.megalithe-de-fraktale",
+      "type": "Dungeon",
+      "canonicalName": "Mégalithe de Fraktale",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "120",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.meacutegalithe-de-fraktale",
+        "src.dpln.donjons",
+        "src.dpln.xeacutelorium"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.xelorium"
+        }
+      ]
+    },
+    {
+      "id": "boss.fraktale",
+      "type": "Boss",
+      "canonicalName": "Fraktale",
+      "locale": "fr",
+      "aliases": [],
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.meacutegalithe-de-fraktale"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.megalithe-de-fraktale"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.horologium-de-xlii",
+      "type": "Dungeon",
+      "canonicalName": "Horologium de XLII",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "170",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.horologium-de-xlii",
+        "src.dpln.donjons",
+        "src.dpln.xeacutelorium"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.xelorium"
+        }
+      ]
+    },
+    {
+      "id": "boss.xlii",
+      "type": "Boss",
+      "canonicalName": "XLII",
+      "locale": "fr",
+      "aliases": [],
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.horologium-de-xlii"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.horologium-de-xlii"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.oeil-de-vortex",
+      "type": "Dungeon",
+      "canonicalName": "Œil de Vortex",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.oeil-de-vortex",
+        "src.dpln.donjons",
+        "src.dpln.xeacutelorium"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.xelorium"
+        }
+      ]
+    },
+    {
+      "id": "boss.vortex",
+      "type": "Boss",
+      "canonicalName": "Vortex",
+      "locale": "fr",
+      "aliases": [],
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.oeil-de-vortex"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.oeil-de-vortex"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.miausolee-du-pounicheur",
+      "type": "Dungeon",
+      "canonicalName": "Miausolée du Pounicheur",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "110",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.miausoleacutee-du-pounicheur",
+        "src.dpln.donjons",
+        "src.dpln.ecaflipus"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.ecaflipus"
+        }
+      ]
+    },
+    {
+      "id": "boss.pounicheur",
+      "type": "Boss",
+      "canonicalName": "Pounicheur",
+      "locale": "fr",
+      "aliases": [],
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.miausoleacutee-du-pounicheur"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.miausolee-du-pounicheur"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.plateau-de-ush",
+      "type": "Dungeon",
+      "canonicalName": "Plateau de Ush",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "160",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.plateau-de-ush",
+        "src.dpln.donjons",
+        "src.dpln.ecaflipus"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.ecaflipus"
+        }
+      ]
+    },
+    {
+      "id": "boss.ush-galesh",
+      "type": "Boss",
+      "canonicalName": "Ush Galesh",
+      "locale": "fr",
+      "aliases": [],
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.plateau-de-ush"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.plateau-de-ush"
+        }
+      ],
+      "description": "Le combat oppose deux Ush Galesh (un rouge, un noir) qui partagent leurs dommages."
+    },
+    {
+      "id": "dungeon.defi-du-chaloeil",
+      "type": "Dungeon",
+      "canonicalName": "Défi du Chaloeil",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.defi-du-chaloeil",
+        "src.dpln.donjons",
+        "src.dpln.ecaflipus"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.ecaflipus"
+        }
+      ]
+    },
+    {
+      "id": "boss.chaloeil",
+      "type": "Boss",
+      "canonicalName": "Chaloeil",
+      "locale": "fr",
+      "aliases": [],
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.defi-du-chaloeil"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.defi-du-chaloeil"
+        }
+      ]
+    }
+  ],
+  "mechanics": [
+    {
+      "id": "mech.mallefisk.interets",
+      "entityId": "boss.mallefisk",
+      "type": "SpecialRule",
+      "title": "Effet « Intérêts » : puissance partagée puis boucliers sous 50 % PV",
+      "summary": "Dès le début du combat et jusqu'à sa mort, Malléfisk porte l'effet « Intérêts » (non désenvoûtable) : lui et le personnage qui l'attaque gagnent de la puissance de façon permanente. Une fois Malléfisk descendu à la moitié de sa vitalité maximale, chaque ligne de dommages qu'il reçoit lui donne des points de bouclier.",
+      "verification": "COMMUNITY_REPORTED",
+      "sequences": [
+        {
+          "label": "Conseil du guide",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Amener Malléfisk à 50 % de sa vitalité.",
+              "rationale": "Le gain de boucliers ne s'applique qu'à partir de la moitié de sa vitalité."
+            },
+            {
+              "order": 2,
+              "action": "Ensuite, frapper avec peu de lignes de dommages mais des coups puissants (le guide cite la Colère de Iop).",
+              "rationale": "Chaque ligne de dommages reçue sous 50 % lui donne des boucliers."
+            },
+            {
+              "order": 3,
+              "action": "Si ses boucliers s'accumulent, les lui retirer par un désenvoûtement.",
+              "rationale": "Le guide indique que les PB peuvent être retirés en le débuffant."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "L'effet « Intérêts » lui-même est décrit comme non désenvoûtable ; seuls les boucliers gagnés sont présentés comme retirables par désenvoûtement."
+        }
+      ],
+      "unknownAspects": [
+        "La page porte un bandeau indiquant qu'elle nécessite une révision et que des informations peuvent être erronées ou manquantes.",
+        "Page non datée : impossible de savoir si la mécanique correspond à la version actuelle (Dofus 3).",
+        "Durée des boucliers gagnés non indiquée."
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.fabrique-mallefisk",
+          "quote": "L'effet permet de faire gagner à Malléfisk et à son attaquant 100 de puissance infini, de plus lorsque Malléfisk est la moitié de sa vitalité maximale, alors il gagne 500 PB par ligne de dommages reçus.",
+          "locator": "Boss — sort Ofranor"
+        }
+      ]
+    },
+    {
+      "id": "mech.mallefisk.vagues",
+      "entityId": "boss.mallefisk",
+      "type": "SpecialRule",
+      "title": "Arrivée des vagues tous les 5 tours",
+      "summary": "Combat en une seule salle avec 5 vagues : le boss est présent dès le début ; les vagues suivantes arrivent aux tours 6, 11, 16 et 21, ou immédiatement si la vague en cours est entièrement éliminée.",
+      "verification": "COMMUNITY_REPORTED",
+      "turnConditions": "Vagues 2 à 5 aux tours 6, 11, 16 et 21 (plus tôt si la vague précédente est éliminée).",
+      "unknownAspects": [
+        "La page porte un bandeau 'nécessite une révision'.",
+        "Page non datée."
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.fabrique-mallefisk",
+          "quote": "Pour ce combat, les vagues arrivent tous les 5 tours soit :",
+          "locator": "Boss"
+        },
+        {
+          "sourceId": "src.dpln.fabrique-mallefisk",
+          "quote": "Vague 4 : Tour 16.",
+          "locator": "Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.phossile.abime",
+      "entityId": "boss.phossile",
+      "type": "SpellEffect",
+      "title": "« Abîme » : mort instantanée à 3 cases ou moins au tour 5 puis tous les 4 tours",
+      "summary": "Au début de son tour, à partir du tour 5 puis tous les 4 tours (T5, T9, T13…), le Phossile tue instantanément tous les personnages situés dans un cercle de rayon 3 autour de lui.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "TurnAtLeast",
+          "description": "À partir du tour 5, puis tous les 4 tours (5, 9, 13…).",
+          "number": 5
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Éviter Abîme",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Idéalement, tuer le Phossile avant son tour 5.",
+              "rationale": "Il ne peut alors pas lancer Abîme."
+            },
+            {
+              "order": 2,
+              "action": "S'il est encore en vie au tour 4, éloigner tous les personnages à plus de 3 cases de lui avant qu'il ne joue son tour 5.",
+              "position": "À plus de 3 PO du Phossile"
+            }
+          ]
+        }
+      ],
+      "turnConditions": "Tours 5, 9, 13… (tous les 4 tours à partir du tour 5), au début du tour du Phossile.",
+      "notes": [
+        {
+          "kind": "FailureCase",
+          "text": "Tout personnage à 3 cases ou moins du Phossile au début de son tour d'Abîme est tué (OS)."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.galerie-du-phossile",
+          "quote": "Abîme : Tous les 4 tours (T5/T9/T13) etc …, il OS tous les personnages dans un cercle de rayon 3 autour de lui au début de son tour.",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.phossile.centrage",
+      "entityId": "boss.phossile",
+      "type": "SpecialRule",
+      "title": "« Centrage » : bonus aux ennemis éloignés en fin de tour",
+      "summary": "Quand un personnage termine son tour, les ennemis situés à plus de 8 PO de lui gagnent 1 PM pour 1 tour (non cumulable) et un bouclier égal à 150 % de leur niveau ; les alliés de ce personnage dans un rayon de 4 autour de lui reçoivent aussi le bouclier.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Conseil du guide",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Finir ses tours à 8 PO ou moins du Phossile.",
+              "position": "À moins de 8 PO du Phossile (mais à plus de 3 PO pour Abîme)",
+              "rationale": "Le Phossile ne profite alors pas du bonus de Centrage."
+            }
+          ]
+        }
+      ],
+      "unknownAspects": [
+        "Durée du bouclier non indiquée."
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.galerie-du-phossile",
+          "quote": "Centrage : Quand un personnage finit son tour, les ennemis à plus de 8PO de lui gagnent 1PM pour 1 tour (non cumulable) et gagnent 150% de leur niveau en bouclier.",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.phossile.glyphiphi",
+      "entityId": "boss.phossile",
+      "type": "SpecialRule",
+      "title": "« Glyphiphi » : glyphe rouge sur poussée/attirance",
+      "summary": "Chaque fois qu'un personnage ou un monstre (sauf le Phossile) est poussé ou attiré, un glyphe rouge d'une case apparaît sous lui ; il dure 3 tours et augmente de 30 % les dommages subis par qui s'y trouve.",
+      "verification": "VERIFIED",
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.galerie-du-phossile",
+          "quote": "Glyphiphi : À chaque fois qu'un personnage ou un monstre (hors Phossile) est poussé ou attiré, il dépose un glyphe rouge d'une case en dessous de lui.",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.phossile.vagues",
+      "entityId": "boss.phossile",
+      "type": "SpecialRule",
+      "title": "Vagues tous les 5 tours, invulnérables 1 tour à l'arrivée",
+      "summary": "Les vagues 2 à 5 arrivent aux tours 6, 11, 16 et 21, ou plus tôt si la vague en cours est éliminée. Une vague qui arrive est invulnérable pendant 1 tour.",
+      "verification": "VERIFIED",
+      "turnConditions": "Vagues 2 à 5 aux tours 6, 11, 16 et 21.",
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.galerie-du-phossile",
+          "quote": "Attention, lors de l'arrivée d'une vague celle-ci est invulnérable durant 1 tour",
+          "locator": "II- Rappel : particularités des donjons de dimensions / Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.galerie-du-phossile",
+          "quote": "Ou plus tôt si vous achevez la vague avant son repop automatique.",
+          "locator": "II- Rappel : particularités des donjons de dimensions / Principe du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.roi-nidas.boubourse",
+      "entityId": "boss.roi-nidas",
+      "type": "Summon",
+      "title": "Boubourse : change de camp à 1 PV pendant 2 tours",
+      "summary": "La Boubourse commence au contact du Roi Nidas ; ce n'est pas une invocation et elle joue en dernier. Elle a un seuil à 1 PV : une fois atteint, elle passe dans votre camp pendant 2 tours puis revient côté ennemi, au contact du Roi Nidas. Côté ennemi, son sort « Cadeau Empoisonné » renforce les monstres (davantage le Roi Nidas) ; côté allié, il donne des boucliers à vos personnages, réduit la durée de ses effets et tue les invocations au contact de la cible.",
+      "verification": "VERIFIED",
+      "expectedStateChange": "La Boubourse passe dans le camp des joueurs pendant 2 tours.",
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Dans le camp ennemi, Cadeau Empoisonné donne 200 puissance et 30 % de critique aux monstres, et 300 puissance et 50 % de critique au Roi Nidas (valeurs du guide)."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "La Boubourse possède un seuil à 1PV, quand il est atteint, elle change de camp et devient votre allié pendant 2 tours.",
+          "locator": "V- Présentation du Boss — Informations sur la Boubourse"
+        }
+      ]
+    },
+    {
+      "id": "mech.roi-nidas.zizanie",
+      "entityId": "boss.roi-nidas",
+      "type": "SpellEffect",
+      "title": "« Confusion » et état Zizanie",
+      "summary": "Le sort « Confusion » du Roi Nidas applique l'état Zizanie. Au tour suivant du Nidas, chaque personnage sous Zizanie inflige des dommages en cercle de 2 PO autour de lui, et les cibles touchées perdent 2 tours d'effets.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Conseil du guide",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant le tour suivant du Roi Nidas, éloigner les personnages sous Zizanie de leurs alliés.",
+              "position": "Aucun allié à 2 PO d'un personnage sous Zizanie",
+              "rationale": "Sinon ils sont frappés et désenvoûtés de 2 tours."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "Au tour suivant du Nidas, tous les personnages affectés par l’état Zizanie infligeront des dommages autour d’eux (cercle de 2PO).",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.roi-nidas.mon-precieux",
+      "entityId": "boss.roi-nidas",
+      "type": "SpellEffect",
+      "title": "« Mon Précieux » : échange de position avec la Boubourse",
+      "summary": "Le Roi Nidas peut échanger sa position avec la Boubourse jusqu'à 10 PO sans ligne de vue, à partir du tour 3 puis tous les 2 tours.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "TurnAtLeast",
+          "description": "À partir du tour 3.",
+          "number": 3
+        },
+        {
+          "kind": "TurnOdd",
+          "description": "Puis tous les 2 tours : tours 3, 5, 7, 9…"
+        }
+      ],
+      "turnConditions": "Tours 3, 5, 7, 9…",
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "Il lancera donc le sort à partir du tour 3 (et ensuite tour 5, 7, 9 …).",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.roi-nidas.vagues",
+      "entityId": "boss.roi-nidas",
+      "type": "SpecialRule",
+      "title": "Vagues aux tours 1, 6, 11, 16, 21 ; nouvelles vagues invulnérables",
+      "summary": "La première vague est présente au tour 1, puis une vague arrive tous les 5 tours (6, 11, 16, 21). Les monstres des nouvelles vagues apparaissent aux cases de départ des monstres, ont 25 % de vitalité en moins et restent invulnérables tant qu'ils n'ont pas joué au moins un tour.",
+      "verification": "VERIFIED",
+      "turnConditions": "Vagues aux tours 1, 6, 11, 16 et 21.",
+      "unknownAspects": [
+        "La page ne précise pas ici si une vague arrive plus tôt lorsque la précédente est éliminée (indiqué de façon générale pour les donjons de dimension dans d'autres pages)."
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 21/06/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "Notez cependant que les monstres apparaissant lors des nouvelles vagues seront invulnérable jusqu’à ce qu’ils aient joué au moins un tour.",
+          "locator": "V- Présentation du Boss — Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "(Soit tour 1, 6, 11, 16 et 21)",
+          "locator": "V- Présentation du Boss — Stratégie globale du donjon"
+        }
+      ]
+    },
+    {
+      "id": "mech.toxoliath.toxmose",
+      "entityId": "boss.toxoliath",
+      "type": "SpecialRule",
+      "title": "« Toxmose » : poison par PM utilisé après avoir frappé le Toxoliath",
+      "summary": "Le Toxoliath n'a pas d'état invulnérable. Pendant tout le combat, chaque ligne de dégâts directs qu'il subit inflige à l'attaquant un poison eau (non cumulable) de 700 dégâts par PM utilisé, pendant 2 tours. Le poison disparaît si le Toxoliath meurt.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Conseils du guide",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Se placer avant de commencer à frapper le Toxoliath (éliminer éventuellement d'abord un ou plusieurs monstres).",
+              "rationale": "Une fois le Toxoliath frappé, utiliser des PM coûte 700 dégâts par PM."
+            },
+            {
+              "order": 2,
+              "action": "Après l'avoir frappé, se déplacer seulement par sorts (téléportation, bond…) plutôt qu'avec des PM."
+            },
+            {
+              "order": 3,
+              "action": "Option : le tuer en un seul tour avec un personnage.",
+              "rationale": "Le poison disparaît à la mort du Toxoliath."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Exception",
+          "text": "Le personnage qui achève le Toxoliath peut utiliser ses PM normalement, le poison disparaissant à sa mort."
+        },
+        {
+          "kind": "CommonMistake",
+          "text": "Utiliser ses PM avant de frapper n'évite pas le poison (selon le guide)."
+        },
+        {
+          "kind": "Restriction",
+          "text": "Le poison est désenvoûtable, mais il reste actif pour le tour en cours même si on retire un tour d'envoûtement."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Pour chaque ligne de dégâts direct subit par le Toxoliath, applique à la cible un poison eau qui inflige 700 de dégâts pour chaque PM utilisé pendant 2 tours (poison non cumulable).",
+          "locator": "V- Présentation du Boss — Sorts du Boss / Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Le Toxoliath ne possède pas d’état Invulnérable.",
+          "locator": "V- Présentation du Boss — Sorts du Boss / Principe du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.toxoliath.poison-volatile",
+      "entityId": "boss.toxoliath",
+      "type": "SpellEffect",
+      "title": "« Poison Volatile » à partir du tour 6",
+      "summary": "À partir du tour 6 (relance de 4 tours), le Toxoliath lance « Poison Volatile » : pendant 2 tours tous les personnages gagnent 2 PM, perdent 2 PA et subissent un poison feu de début de tour, et un glyphe en cercle inversé de taille 8 augmente les dégâts subis. Le guide conseille de tuer le Toxoliath avant le tour 6.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "TurnAtLeast",
+          "description": "À partir du tour 6, puis tous les 4 tours.",
+          "number": 6
+        }
+      ],
+      "turnConditions": "À partir du tour 6, relance de 4 tours.",
+      "unknownAspects": [
+        "Effet exact du glyphe formulé différemment selon les sections : « augmente les dégâts subis de 50% pendant 2 tours » (sorts du boss) contre « augmente les dommages subis de 50% à chaque poison subi » (succès Relation toxique)."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "(Se lance uniquement à partir du tour 6, relance de 4 tours).",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.toxoliath.venin-salvateur",
+      "entityId": "boss.toxoliath",
+      "type": "SpellEffect",
+      "title": "« Venin Salvateur » : cible violette qui soigne ses attaquants",
+      "summary": "Une fois par tour, à portée infinie, le Toxoliath place un personnage dans l'état « Venin Salvateur » pour 1 tour : il subit 50 % de dommages en plus, perd 1 tour d'envoûtement à chaque dégât reçu, et soigne ceux qui l'attaquent de 150 % des dégâts infligés. L'état « Jouvence » l'empêche d'être ciblé à nouveau pendant 2 tours.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Elle subit 50% de dommages en plus, perd 1 tour d'envoûtement à chaque fois qu’elle subit des dégâts et soigne les ennemis qui l’attaquent de 150% des dégâts subis.",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.reine-des-voleurs.bombes-reduction",
+      "entityId": "boss.reine-des-voleurs",
+      "type": "Resistance",
+      "title": "Réduction de 10 % des dégâts subis par Bonbombe présente ; immunité aux bombes",
+      "summary": "La Reine des Voleurs subit 10 % de dégâts en moins pour chaque Bonbombe présente sur le terrain, et elle est immunisée aux dégâts d'explosion des bombes.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Conseil du guide",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Concentrer les dégâts sur la Reine aux moments où peu de Bonbombes sont sur le terrain.",
+              "rationale": "Sa réduction de dégâts dépend du nombre de bombes."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Pour chaque Bombe présente sur le terrain, la Reine des Voleurs subit 10% de dégâts en moins.",
+          "locator": "V- Présentation du Boss"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Il faut noter que la Reine des Voleurs est immunisée aux dégâts des bombes, elle ne peut donc pas perdre de PV lors de l’explosion de bombes.",
+          "locator": "V- Présentation du Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.reine-des-voleurs.bonbombes",
+      "entityId": "boss.reine-des-voleurs",
+      "type": "SpecialRule",
+      "title": "Bonbombes invoquées par les joueurs : rouges mortelles, bleues soignantes",
+      "summary": "Chaque tour, chaque personnage invoque une Bonbombe à 2 PO devant lui (puis dans le sens horaire si la case est occupée). Quand un personnage a 2 Bonbombes, la plus ancienne explose à son tour et déclenche en chaîne celles en ligne. Une bombe rouge tue tous les personnages en ligne jusqu'à 10 PO ; les bombes en diagonale d'une explosion deviennent bleues et soignent alors intégralement les personnages en ligne. Les deux couleurs infligent environ 1200 dégâts feu aux monstres. Les Bonbombes sont invulnérables, poussables mais pas portables.",
+      "verification": "VERIFIED",
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Une bombe bleue ne protège pas d'une bombe rouge située dans la même ligne : le personnage meurt quand même."
+        },
+        {
+          "kind": "Restriction",
+          "text": "Les Bonbombes sont invulnérables : elles ne peuvent pas être tuées, seulement déplacées par poussée (pas par porter/jeter)."
+        }
+      ],
+      "unknownAspects": [
+        "Le placement 'autowin' du guide repose sur des schémas (images) non lisibles dans le texte extrait."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Si ces Bonbombes sont rouges, elles OS tous les personnages (invocations comprises) en ligne à 10PO lorsqu’elles explosent et frappent environ du 1200 feu vos ennemis dans cette même zone.",
+          "locator": "V- Présentation du Boss — Fonctionnement des Bombes"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Lorsqu'une Bonbombe explose, toutes les Bonbombes en diagonale de celle qui explose deviennent bleues",
+          "locator": "V- Présentation du Boss — Fonctionnement des Bombes"
+        }
+      ]
+    },
+    {
+      "id": "mech.reine-des-voleurs.mort-en-sursis",
+      "entityId": "boss.reine-des-voleurs",
+      "type": "SpellEffect",
+      "title": "« Mort en Sursis » : mort après 6 tours sans soin de Bonbombe",
+      "summary": "Le sort « Mort en Sursis » (en ligne, jusqu'à 5 PO) attire la Reine vers la cible et échange leurs positions. Un ennemi touché reçoit l'état « Mort en sursis » : il meurt au bout de 6 tours, sauf s'il a été soigné par une Bonbombe (bleue) ou si la Reine est tuée avant.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Contre-mesures citées par le guide",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Garder la Reine et les monstres à distance.",
+              "rationale": "Éviter Mort en sursis et les échanges de position."
+            },
+            {
+              "order": 2,
+              "action": "Si un personnage est sous Mort en sursis, le faire soigner par une Bonbombe bleue ou tuer la Reine dans les 6 tours."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "qui vous tuera dans 6 tours si vous n'avez pas été soigné par une Bonbombe ou si vous n’avez pas tué la Reine d’ici là",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.reine-des-voleurs.peche-mignon",
+      "entityId": "boss.reine-des-voleurs",
+      "type": "SpecialRule",
+      "title": "« Péché Mignon » : +50 % de dommages subis après la mort de la Reine",
+      "summary": "Lorsque la Reine des Voleurs meurt, vos personnages subissent 50 % de dommages en plus pour le reste du combat.",
+      "verification": "VERIFIED",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Péché Mignon : Lorsque la reine meurt, vous subissez 50% de dommages en plus pour le reste du combat.",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.reine-des-voleurs.brume",
+      "entityId": "boss.reine-des-voleurs",
+      "type": "SpellEffect",
+      "title": "« Brume » : invisibilité dans un glyphe, 3 cases possibles",
+      "summary": "À la fin de son tour, la Reine pose un glyphe noir de rayon 3 qui la rend invisible (ainsi que les monstres présents dedans). Elle se trouve obligatoirement sur l'une des 3 cellules du rayon supérieur du glyphe. Pas avant le tour 4, relance de 3 tours.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "TurnAtLeast",
+          "description": "Pas avant le tour 4 ; relance de 3 tours.",
+          "number": 4
+        }
+      ],
+      "unknownAspects": [
+        "Le schéma des 3 cases possibles est une image non lisible dans le texte extrait."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "(Ne peut pas être lancé avant le tour 4, relance de 3 tours)",
+          "locator": "V- Présentation du Boss — Sorts du Boss / Retrouver la Reine des Voleurs dans sa brume"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "la Reine se trouve obligatoirement sur une des 3 cellules du rayon supérieur du glyphe",
+          "locator": "V- Présentation du Boss — Sorts du Boss / Retrouver la Reine des Voleurs dans sa brume"
+        }
+      ]
+    },
+    {
+      "id": "mech.fraktale.auroraire",
+      "entityId": "boss.fraktale",
+      "type": "SpecialRule",
+      "title": "Auroraire : sens de rotation selon la distance au boss",
+      "summary": "Au premier tour, Fraktale invoque une Auroraire sur la case I de l'horloge du sol. Si elle avance dans le sens horaire, vos attaques font des dégâts ; si elle recule (sens trigo), vos sorts de frappe soignent ennemis et alliés. Au-dessus de 50 % de vitalité du boss : boss à plus de 4 PO de l'Auroraire → sens horaire, boss dans les 4 PO → sens trigo. Sous 50 % : effet inversé. Elle se déplace au début du tour de chaque joueur.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Gestion de la distance",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Tant que Fraktale a plus de 50 % de sa vitalité : le maintenir à plus de 4 PO de l'Auroraire.",
+              "position": "Boss à > 4 PO de l'Auroraire",
+              "rationale": "L'Auroraire avance alors dans le sens horaire et vos dégâts frappent."
+            },
+            {
+              "order": 2,
+              "action": "Quand Fraktale passe sous 50 % de sa vitalité : le maintenir à 4 PO ou moins de l'Auroraire.",
+              "position": "Boss à ≤ 4 PO de l'Auroraire",
+              "rationale": "L'effet est inversé sous 50 %."
+            },
+            {
+              "order": 3,
+              "action": "Vérifier l'icône d'état en forme de cœur au-dessus de l'Auroraire avant de frapper.",
+              "rationale": "Elle indique que les dommages soignent."
+            }
+          ]
+        }
+      ],
+      "unknownAspects": [
+        "Page non datée ; les sorts du boss sont indiqués « à l'étude et à venir ».",
+        "Comportement exact à exactement 4 PO formulé comme « dans la zone des 4 PO » ; non précisé davantage."
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.meacutegalithe-de-fraktale",
+          "quote": "Si l'Auroraire recule, c'est à dire si elle va dans le sens Trigo (anti-horaire) alors vos sorts de frappe effectuerons des soins sur les ennemis mais aussi sur les alliés.",
+          "locator": "Boss — Fonctionnement du combat"
+        },
+        {
+          "sourceId": "src.dpln.meacutegalithe-de-fraktale",
+          "quote": "Pour résumer il vous faut gérer la distance entre le Boss et son invocation.",
+          "locator": "Boss — Fonctionnement du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.fraktale.vagues",
+      "entityId": "boss.fraktale",
+      "type": "SpecialRule",
+      "title": "Arrivée des vagues tous les 5 tours",
+      "summary": "Les vagues 2 à 5 arrivent aux tours 6, 11, 16 et 21, sauf si la vague en cours est éliminée plus tôt.",
+      "verification": "VERIFIED",
+      "turnConditions": "Vagues 2 à 5 aux tours 6, 11, 16 et 21.",
+      "unknownAspects": [
+        "Page non datée."
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.meacutegalithe-de-fraktale",
+          "quote": "Pour ce combat, les vagues arrivent tous les 5 tours soit :",
+          "locator": "Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.xlii.auroraire",
+      "entityId": "boss.xlii",
+      "type": "SpecialRule",
+      "title": "Auroraire : modificateur de dommages selon l'heure",
+      "summary": "XLII n'a pas d'état invulnérable. Son Auroraire part de 12 h et avance d'une heure à chaque tour de jeu d'un allié. De 12 h à 5 h, vous et les monstres frappez moins ; de 6 h à 11 h, tout le monde frappe plus (voir tableau du guide). L'Auroraire est invulnérable et indéplaçable ; la frapper vous téléporte symétriquement. Tuer XLII fait disparaître l'Auroraire et ses bonus/malus.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Stratégie globale du guide",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Pendant les heures défavorables (12 h à 5 h), se booster et se placer."
+            },
+            {
+              "order": 2,
+              "action": "À partir de la 6e heure, éliminer les monstres (priorité au Trantroa selon le guide)."
+            },
+            {
+              "order": 3,
+              "action": "Vers la 9e-10e heure, entamer XLII pour le tuer avant la 12e heure.",
+              "rationale": "À la 12e heure les dégâts infligés sont de nouveau fortement réduits."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Plus il y a de personnages dans le combat, plus l'Auroraire tourne vite."
+        }
+      ],
+      "unknownAspects": [
+        "Valeurs détaillées par heure (x40 % à x150 %) issues d'un tableau de la page antérieure à Dofus 3 ; à revérifier en jeu."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "XLII ne possède pas d'état Invulnérable cependant les dommages que vous allez effectuer dans ce donjon vont évoluer à chaque tour !",
+          "locator": "VI- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "L'Auroraire est cependant liée au XLII et si vous éliminez XLII, l'Auroraire et ses bonus/malus disparaissent avec lui",
+          "locator": "VI- Présentation du Boss — Principe du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.xlii.dereglement",
+      "entityId": "boss.xlii",
+      "type": "SpellEffect",
+      "title": "État Dérèglement : échange de position si XLII est déplacé",
+      "summary": "XLII est dans l'état Lourd tout le combat. S'il est déplacé, il entre dans l'état Dérèglement, qui lui permet de lancer « Dérèglement » : échange de position avec un allié à portée infinie (2 fois par tour).",
+      "verification": "VERIFIED",
+      "notes": [
+        {
+          "kind": "CommonMistake",
+          "text": "Le repousser peut lui permettre de se rapprocher via un allié ; le guide conseille, si on le repousse, d'éloigner aussi ses alliés ou de lui appliquer l'état Pesanteur."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Ce sort ne peut être lancé uniquement si XLII est dans l'état Dérèglement (obtenu si il a été déplacé).",
+          "locator": "VI- Présentation du Boss — Sorts du Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.xlii.pacifiste",
+      "entityId": "boss.xlii",
+      "type": "SpellEffect",
+      "title": "« Souffle démoniaque » : état Pacifiste à 3 PO",
+      "summary": "XLII peut frapper et appliquer l'état Pacifiste pour 1 tour (empêche de frapper) jusqu'à 3 PO sans ligne de vue. L'état est débuffable.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Conseil du guide",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Rester à plus de 3 PO de XLII.",
+              "position": "> 3 PO de XLII"
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Frappe du 650 dans l'élément eau et met l'état Pacifiste pour 1 tour. Se lance jusqu'à 3PO sans ligne de vue",
+          "locator": "VI- Présentation du Boss — Sorts du Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.vortex.invulnerabilite",
+      "entityId": "boss.vortex",
+      "type": "Invulnerability",
+      "title": "Invulnérabilité : éliminer définitivement les 5 vagues",
+      "summary": "Le Vortex perd tous ses PM en début de combat, est indéplaçable et invulnérable, et ressuscite chaque monstre tué. Pour le rendre vulnérable, il faut éliminer définitivement les 5 vagues : chaque monstre doit être tué une seconde fois à la même heure de l'Auroraire que lors d'une mort précédente. Depuis la 3.7, un monstre tué deux fois à la même heure n'est plus réinvoqué.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "EntityAbsent",
+          "description": "Tous les monstres des 5 vagues doivent avoir été éliminés définitivement (tués une seconde fois à une heure où ils avaient déjà été tués).",
+          "entityId": null
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Rendre le Vortex vulnérable",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Tuer un monstre et noter l'heure de l'Auroraire à ce moment.",
+              "rationale": "Le Vortex le ressuscite avec le bonus de cette heure."
+            },
+            {
+              "order": 2,
+              "action": "Le tuer de nouveau quand l'Auroraire revient à cette même heure.",
+              "requiredState": "Étoile jaune au-dessus du monstre (indique la bonne heure)"
+            },
+            {
+              "order": 3,
+              "action": "Répéter pour tous les monstres des 5 vagues."
+            },
+            {
+              "order": 4,
+              "action": "Après la mort définitive du dernier monstre : tour où le Vortex reste invulnérable sans jouer et où les personnages retournent à leur position de départ ; en profiter pour se booster et se placer."
+            },
+            {
+              "order": 5,
+              "action": "Au tour suivant, le Vortex perd l'invulnérabilité et joue ; rester hors de portée de ses sorts en ligne (8 PO sans ligne de vue)."
+            }
+          ]
+        }
+      ],
+      "expectedStateChange": "Le Vortex perd l'état Invulnérable un tour après la mort définitive du dernier monstre.",
+      "expectedResult": "Le Vortex devient attaquable.",
+      "notes": [
+        {
+          "kind": "Exception",
+          "text": "Un monstre tué à une autre heure que la précédente est ressuscité de nouveau et pourra ensuite être éliminé définitivement à l'une ou l'autre de ces heures."
+        },
+        {
+          "kind": "Warning",
+          "text": "Pendant ou juste après le tour de transition, le Vortex utilise « Heurage » (téléportation au contact de l'Auroraire) s'il est disponible."
+        }
+      ],
+      "unknownAspects": [
+        "Durée de vulnérabilité non indiquée (le guide ne mentionne pas de retour à l'invulnérabilité)."
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 05/10/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.oeil-de-vortex",
+          "quote": "Pour le rendre vulnérable, il faut éliminer définitivement les 5 vagues de mobs, pour cela il faut tuer chaque monstre une seconde fois à la même heure où vous l'avez tué précédemment.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.oeil-de-vortex",
+          "quote": "Depuis la 3.7, les monstres qui ont été éliminés 2 fois à même heure ne sont plus réinvoqués par le Vortex.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.vortex.auroraire",
+      "entityId": "boss.vortex",
+      "type": "SpecialRule",
+      "title": "Auroraire : bonus horaires aux monstres ressuscités",
+      "summary": "L'Auroraire avance d'une heure au début du tour de chaque personnage. Chaque heure donne un bonus spécifique (cumulable) au monstre tué à cette heure pour sa résurrection ; le Vortex gagne aussi ces bonus, une seule fois par heure. Une entité sur la case d'arrivée de l'Auroraire échange sa place avec elle.",
+      "verification": "VERIFIED",
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Avec un nombre de personnages diviseur de 12 (2, 3, 4, 6), le cycle de l'Auroraire est régulier : c'est le même personnage qui pourra retuer un monstre qu'il a tué."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 05/10/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.oeil-de-vortex",
+          "quote": "À chaque début de tour d'un personnage l'Auroraire avance d'une heure, chaque heure correspond à un buff qui sera appliqué au monstre que vous venez de tuer pour sa prochaine résurrection.",
+          "locator": "V- Présentation du Boss — Fonctionnement de l'Auroraire"
+        }
+      ]
+    },
+    {
+      "id": "mech.vortex.en-temps-et-en-heure",
+      "entityId": "boss.vortex",
+      "type": "SpellEffect",
+      "title": "« En temps et en heure » : frappe dans les lignes de l'Auroraire",
+      "summary": "À chaque tour du Vortex, ce sort frappe automatiquement les personnages et invocations en ligne avec l'Auroraire et leur applique 20 % d'érosion.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Placement",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne pas finir son tour en ligne avec la position qu'occupera l'Auroraire au tour du Vortex.",
+              "rationale": "À 4 joueurs elle n'est qu'en 4 h, 8 h et 12 h à son tour ; à 6, en 6 h et 12 h ; à 3, en 3 h, 6 h, 9 h et 12 h (si aucun glyphe n'est piétiné)."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 05/10/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.oeil-de-vortex",
+          "quote": "Ainsi à chaque tour, le Vortex va taper les personnages, invocations etc... qui se trouvent en ligne avec l'Auroraire.",
+          "locator": "V- Présentation du Boss — Fonctionnement de l'Auroraire"
+        }
+      ]
+    },
+    {
+      "id": "mech.vortex.glyphes",
+      "entityId": "boss.vortex",
+      "type": "SpecialRule",
+      "title": "Glyphes des monstres : échange de place et avance de l'Auroraire",
+      "summary": "Au début de son tour, chaque monstre laisse un glyphe sur sa case. Marcher dedans fait échanger de place avec ce monstre, avance l'Auroraire d'une heure et donne un bonus (dépendant du monstre) au monstre et au personnage.",
+      "verification": "VERIFIED",
+      "notes": [
+        {
+          "kind": "CommonMistake",
+          "text": "Piétiner un glyphe décale le cycle de l'Auroraire et donc les heures prévues pour retuer les monstres."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 05/10/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.oeil-de-vortex",
+          "quote": "Chaque monstre au début de son tour laisse un glyphe sur la case où il le commence, si vous marchez dans ce glyphe, vous échangez de place avec le monstre et l'Auroraire avance d'une heure.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.vortex.heurage",
+      "entityId": "boss.vortex",
+      "type": "SpellEffect",
+      "title": "« Heurage » : téléportation au contact de l'Auroraire",
+      "summary": "Une fois qu'il a récupéré ses PM, le Vortex peut se téléporter au contact de l'Auroraire (relance de 3 tours). Le guide le décrit comme le danger principal du Vortex seul.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Conseil du guide",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Retenir le tour où il utilise Heurage, puis s'éloigner de l'Auroraire tous les 3 tours."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 05/10/2026)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.oeil-de-vortex",
+          "quote": "Heurage : Téléporte le Vortex au CàC de l'Auroraire (relance de 3 tours).",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.pounicheur.pupuces",
+      "entityId": "boss.pounicheur",
+      "type": "Unlock",
+      "title": "Aligner l'état des 3 pupuces pour frapper sans renvoi",
+      "summary": "Au début du combat, le Pounicheur invoque trois puces invulnérables (Tipoune, Tipoune, Tipoude) en état I, II ou III ; le boss porte les états de ses puces. Si on le frappe alors que les puces n'ont pas toutes le même état, il renvoie les dommages à toute l'équipe. Frapper une puce depuis une case adjacente incrémente son état (I→II→III→I) et vous repousse de 2 cases, tandis que les deux autres puces décrémentent.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "StateActive",
+          "description": "Les trois pupuces doivent avoir le même numéro d'état (I, II ou III).",
+          "state": "Même état I/II/III sur les 3 pupuces"
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Désactiver le renvoi de dommages",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Lire l'état (I, II ou III) de chaque pupuce."
+            },
+            {
+              "order": 2,
+              "action": "Frapper une pupuce depuis une case adjacente (pas forcément avec l'arme).",
+              "target": "Pupuce",
+              "position": "Case adjacente à la pupuce",
+              "rationale": "Son état augmente d'un cran et celui des deux autres diminue d'un cran ; le personnage est repoussé de 2 cases."
+            },
+            {
+              "order": 3,
+              "action": "Répéter jusqu'à ce que les trois pupuces aient le même état."
+            },
+            {
+              "order": 4,
+              "action": "Frapper le Pounicheur.",
+              "target": "Pounicheur",
+              "requiredState": "Les 3 pupuces dans le même état"
+            }
+          ]
+        }
+      ],
+      "expectedStateChange": "Le Pounicheur n'a plus qu'un seul numéro d'état ; le renvoi de dommages ne s'applique pas.",
+      "turnConditions": "Le Pounicheur change l'état de ses puces au début de chacun de ses tours.",
+      "notes": [
+        {
+          "kind": "Exception",
+          "text": "Selon le guide, les poisons ne sont pas renvoyés."
+        },
+        {
+          "kind": "Exception",
+          "text": "Selon le guide, le renvoi n'a pas lieu si le Pounicheur meurt en une seule ligne de dégâts."
+        },
+        {
+          "kind": "Warning",
+          "text": "Selon les états, il n'est pas toujours possible d'aligner les trois puces dans le tour ; le guide conseille alors d'attendre un tour."
+        },
+        {
+          "kind": "Warning",
+          "text": "Quand les trois puces sont dans le même état, le Pounicheur lance « Pourrification », qui retire un tour d'effet « à tous les alliés »."
+        }
+      ],
+      "unknownAspects": [
+        "Valeur du renvoi incohérente dans la page : « presque le double » dans la section Boss, « 200% » dans la section du succès.",
+        "Pour Pourrification, la page ne précise pas si « alliés » désigne les alliés du Pounicheur ou les personnages des joueurs.",
+        "Page non datée : version du jeu non confirmée."
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.miausoleacutee-du-pounicheur",
+          "quote": "Pour ce faire il suffit d'attaquer une invocation à son càc (non pas avec un càc mais en étant sur sa case adjacente), vous changerez alors l'état de la puce et vous serez repoussé de 2 cases.",
+          "locator": "Boss"
+        },
+        {
+          "sourceId": "src.dpln.miausoleacutee-du-pounicheur",
+          "quote": "Si vous tapez le Pounicheur alors que les pupuces n'ont pas le même état, il renvoi 200% des dommages subis sur tous les personnages.",
+          "locator": "Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.ush-galesh.partage-dommages",
+      "entityId": "boss.ush-galesh",
+      "type": "SpecialRule",
+      "title": "Deux Ush Galesh qui se partagent les dommages",
+      "summary": "Le combat comporte deux Ush Galesh. Les dommages infligés à l'un sont divisés par deux et appliqués à chacun des deux.",
+      "verification": "VERIFIED",
+      "unknownAspects": [
+        "Page non datée : version du jeu non confirmée."
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.plateau-de-ush",
+          "quote": "Lorsque vous en frapper un les dommages sont divisés par deux et s'appliqueront sur chacun des deux Ush.",
+          "locator": "Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.ush-galesh.alternance",
+      "entityId": "boss.ush-galesh",
+      "type": "Invulnerability",
+      "title": "Alterner frappe à distance et frappe au contact",
+      "summary": "Ush ne subit des dommages que si l'on alterne les types de frappe : après une frappe à distance, la suivante doit être portée depuis une case adjacente (pas forcément à l'arme), puis de nouveau à distance, etc. Chaque coup reçu change son état ; état rouge = frapper au contact, état noir = frapper à distance.",
+      "verification": "COMMUNITY_REPORTED",
+      "sequences": [
+        {
+          "label": "Faire subir des dommages",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Regarder l'état du Ush ciblé.",
+              "target": "Ush Galesh"
+            },
+            {
+              "order": 2,
+              "action": "État rouge : le frapper depuis une case adjacente.",
+              "position": "Case adjacente",
+              "when": {
+                "kind": "StateActive",
+                "description": "Le Ush ciblé est dans l'état Rouge.",
+                "state": "Rouge"
+              }
+            },
+            {
+              "order": 3,
+              "action": "État noir : le frapper à distance.",
+              "position": "À distance",
+              "when": {
+                "kind": "StateActive",
+                "description": "Le Ush ciblé est dans l'état Noir.",
+                "state": "Noir"
+              }
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "FailureCase",
+          "text": "Deux frappes à distance de suite : la seconde n'inflige aucun dommage (exemple du guide)."
+        },
+        {
+          "kind": "Warning",
+          "text": "Ush tacle bien et les deux Ush partagent l'état Lourd : sortir de son contact ou le pousser n'est pas toujours possible."
+        }
+      ],
+      "unknownAspects": [
+        "Description des états partiellement contradictoire : le sort « Rouge et Noir » est décrit comme appliquant à la fois l'état Rouge et l'état Noir à l'un des Ush, alors que la règle de frappe dépend d'un seul état.",
+        "On ne sait pas si l'alternance est suivie par Ush individuellement ou commune aux deux, ni si elle dépend du personnage qui frappe.",
+        "Page non datée : version du jeu non confirmée."
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.plateau-de-ush",
+          "quote": "Il suffit d'alterner frappe à distance et frappe au càc (je ne parle pas de l'arme mais bien d'être sur la cellule adjacente du monstre).",
+          "locator": "Boss"
+        },
+        {
+          "sourceId": "src.dpln.plateau-de-ush",
+          "quote": "État rouge : Frapper à son CàC.",
+          "locator": "Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.chaloeil.invulnerabilite",
+      "entityId": "boss.chaloeil",
+      "type": "Invulnerability",
+      "title": "Invulnérable jusqu'au tour 21 (survie)",
+      "summary": "Le Chaloeil ne peut pas être rendu vulnérable par une action : il devient vulnérable automatiquement après 20 tours (au tour 21), en même temps que l'arrivée de la 5e vague. Il gagne alors 200 esquive PM et l'état Inébranlable pour le reste du combat. Les vagues arrivent donc forcément aux tours 1, 6, 11, 16 et 21.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "TurnAtLeast",
+          "description": "Tour 21 atteint (après 20 tours de jeu).",
+          "number": 21
+        }
+      ],
+      "expectedStateChange": "Le Chaloeil perd l'invulnérabilité et gagne 200 esquive PM et l'état Inébranlable.",
+      "turnConditions": "Vulnérable à partir du tour 21.",
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "La vague 5 arrive au même moment ; le guide la décrit comme très dangereuse si des monstres des vagues précédentes sont encore en vie."
+        }
+      ],
+      "unknownAspects": [
+        "Durée de vulnérabilité : le guide indique seulement « pour tout le reste du combat » pour les bonus ; il ne mentionne pas de retour à l'invulnérabilité."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "le Chaloeil devient vulnérable automatiquement après 20 tours de jeu (donc au tour 21) en même temps que l’arrivée de la cinquième et dernière vague de monstres.",
+          "locator": "VI- Présentation du Boss — Invulnérabilité du Chaloeil"
+        }
+      ]
+    },
+    {
+      "id": "mech.chaloeil.des-et-glyphes",
+      "entityId": "boss.chaloeil",
+      "type": "SpecialRule",
+      "title": "Cases-dés : invocation de Dés et glyphes soignants",
+      "summary": "Chaque cellule de la carte porte une valeur de dé de 1 à 6. Selon la valeur de la case où le Chaloeil finit son tour, il invoque des Dés (invocations statiques, 2000 PV) sur les cellules de même valeur à distance paire de lui, et pose des glyphes blancs (soin intégral en fin de tour) sur celles à distance impaire. Les Dés disparaissent au début de son tour. Chaque entité prend l'état de Dé de la case où elle finit son tour.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Conseils du guide",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Retirer des PM au Chaloeil (il n'en a que 4) pour choisir la case où il finit son tour.",
+              "rationale": "Contrôler l'emplacement des Dés et des glyphes."
+            },
+            {
+              "order": 2,
+              "action": "Finir son tour sur un glyphe blanc pour être soigné intégralement."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Restriction",
+          "text": "Les Dés ne sont pas invoqués sur une case déjà occupée."
+        },
+        {
+          "kind": "Warning",
+          "text": "Les schémas des 12 placements possibles sont des images non lisibles dans le texte extrait."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "Les Dés sont tout le temps invoqués à une distance paire du Chaloeil sur chaque cellule possédant le même chiffre que celle où il se trouve",
+          "locator": "VI- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "Les glyphes blanc sont eux posés à une distance impaire du Chaloeil.",
+          "locator": "VI- Présentation du Boss — Principe du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.chaloeil.malus-meme-etat",
+      "entityId": "boss.chaloeil",
+      "type": "SpecialRule",
+      "title": "Monstres frappant les personnages du même état de Dé",
+      "summary": "À partir du tour 2, à chaque tour, chaque monstre (sauf le Chaloeil) frappe de 450 dans un élément aléatoire et applique 20 % d'érosion pour 1 tour à tous les personnages et invocations qui ont le même état de Dé que lui.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "TurnAtLeast",
+          "description": "À partir du tour 2.",
+          "number": 2
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "chaque monstre (sauf le Chaloeil) va appliquer 20% d'érosion pour 1 tour et frapper du 450 dans un élément aléatoire tous les personnages et invocations qui sont dans le même état de Dé qu'eux.",
+          "locator": "VI- Présentation du Boss — Interaction des états de Dés avec les monstres"
+        }
+      ]
+    },
+    {
+      "id": "mech.chaloeil.gros-yeux",
+      "entityId": "boss.chaloeil",
+      "type": "SpellEffect",
+      "title": "« Gros Yeux » : boosts selon l'état de Dé (tours 3, 6, 9…)",
+      "summary": "À partir du tour 3 puis tous les 3 tours, le Chaloeil booste pour 1 tour lui-même et les monstres selon leur état de Dé : Dé 1 esquive PM, Dé 2 portée, Dé 3 indéplaçable, Dé 4 PM, Dé 5 soin, Dé 6 puissance. Le guide signale Dé 4 (3 PM) et Dé 6 (600 puissance) comme les plus dangereux.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "TurnAtLeast",
+          "description": "À partir du tour 3, puis tous les 3 tours (3, 6, 9, 12…).",
+          "number": 3
+        }
+      ],
+      "turnConditions": "Tours 3, 6, 9, 12…",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "Se lance uniquement à partir du tour 3 puis tous les 3 tours. (3, 6, 9, 12, etc …)",
+          "locator": "VI- Présentation du Boss — Sorts du Boss"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "$schema": "../schemas/knowledge-package.schema.json",
+  "formatVersion": 1,
+  "packageId": "example-kimbo",
+  "name": "Exemple de paquet — Kimbo (extrait de la base vérifiée)",
+  "description": "Exemple de format : une source, un donjon, un boss et une mécanique structurée avec deux variantes. Contenu repris de la base vérifiée fournie (pas d'invention).",
+  "author": "Dofus Companion contributors",
+  "createdOn": "2026-10-17",
+  "sources": [
+    {
+      "id": "src.dpln.canopee-du-kimbo",
+      "title": "Canopée du Kimbo",
+      "url": "https://www.dofuspourlesnoobs.com/canopeacutee-du-kimbo.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2025-04-22",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17"
+    }
+  ],
+  "entities": [
+    {
+      "id": "dungeon.canopee-du-kimbo",
+      "type": "Dungeon",
+      "canonicalName": "Canopée du Kimbo",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.canopee-du-kimbo"
+      ]
+    },
+    {
+      "id": "boss.kimbo",
+      "type": "Boss",
+      "canonicalName": "Kimbo",
+      "attributes": {
+        "resistances": "400 % dans chaque élément (selon la source)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.canopee-du-kimbo"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.canopee-du-kimbo"
+        }
+      ]
+    }
+  ],
+  "mechanics": [
+    {
+      "id": "mech.kimbo.glyphes",
+      "entityId": "boss.kimbo",
+      "type": "Unlock",
+      "title": "Glyphes paires / impaires",
+      "summary": "Le Kimbo n'est pas invulnérable mais a 400 % de résistances partout. Le frapper dans un duo d'éléments fait poser des glyphes par son Disciple ; s'il commence son tour sur l'un d'eux, il perd 400 % de résistances dans ce duo pendant 1 tour.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Duo Terre / Eau",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Frapper le Kimbo en Terre ou en Eau : il passe dans l'état Glyphe impaire et le Disciple pose des glyphes sur toutes les cases à distance impaire de lui.",
+              "target": "Kimbo"
+            },
+            {
+              "order": 2,
+              "action": "Faire commencer son tour au Kimbo sur l'un de ces glyphes.",
+              "position": "Kimbo sur un glyphe impair"
+            },
+            {
+              "order": 3,
+              "action": "Frapper en Terre ou Eau pendant le tour où il a perdu ses résistances.",
+              "target": "Kimbo",
+              "rationale": "Il gagne en même temps 800 % de résistances Air/Feu."
+            }
+          ]
+        },
+        {
+          "label": "Duo Air / Feu",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Frapper le Kimbo en Air ou en Feu : il passe dans l'état Glyphe paire et le Disciple pose des glyphes sur toutes les cases à distance paire de lui.",
+              "target": "Kimbo"
+            },
+            {
+              "order": 2,
+              "action": "Faire commencer son tour au Kimbo sur l'un de ces glyphes.",
+              "position": "Kimbo sur un glyphe pair"
+            },
+            {
+              "order": 3,
+              "action": "Frapper en Air ou Feu pendant le tour où il a perdu ses résistances.",
+              "target": "Kimbo",
+              "rationale": "Il gagne en même temps 800 % de résistances Eau/Terre."
+            }
+          ]
+        }
+      ],
+      "expectedStateChange": "Perte de 400 % de résistances dans le duo choisi",
+      "expectedResult": "Le Kimbo perd 400 % de résistances dans les deux éléments choisis pendant 1 tour.",
+      "vulnerabilityDuration": "1 tour",
+      "notes": [
+        {
+          "kind": "FailureCase",
+          "text": "Un personnage qui commence son tour sur un de ces glyphes est tué : prévoyez vos placements avant le tour du Disciple."
+        },
+        {
+          "kind": "Warning",
+          "text": "Une fois ses glyphes lancés, le Disciple tue aussi au corps à corps."
+        },
+        {
+          "kind": "CommonMistake",
+          "text": "Si vous ne le finissez pas en 1 tour, remettez-lui l'état pour que le Disciple relance les glyphes au tour suivant."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2025-04-22)",
+      "lastVerifiedOn": "2026-10-17",
+      "sources": [
+        {
+          "sourceId": "src.dpln.canopee-du-kimbo",
+          "quote": "Le Kimbo n'a pas d'état invulnérable mais c'est un peu comme si c'était le cas car il a 400% de résistances dans chaque élément.",
+          "locator": "Rendre le Kimbo Vulnérable"
+        }
+      ]
+    }
+  ]
+}

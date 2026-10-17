@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>DofusCompanion.Infrastructure</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DofusCompanion.Application\DofusCompanion.Application.csproj" />
+    <PackageReference Include="Microsoft.Data.Sqlite" />
+    <PackageReference Include="NJsonSchema" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- The schema and verified seed package ship next to the binaries and are also embedded as a fallback. -->
+    <EmbeddedResource Include="..\..\data\schemas\knowledge-package.schema.json" LogicalName="knowledge-package.schema.json" />
+    <EmbeddedResource Include="..\..\data\seed\*.dofus-knowledge.json" LogicalName="seed/%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>

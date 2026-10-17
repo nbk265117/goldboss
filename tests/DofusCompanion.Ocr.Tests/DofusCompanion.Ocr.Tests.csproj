@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+    <IsPackable>false</IsPackable>
+    <NoWarn>$(NoWarn);CA1707;CA2201</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DofusCompanion.Ocr.Windows\DofusCompanion.Ocr.Windows.csproj" />
+    <ProjectReference Include="..\..\src\DofusCompanion.Infrastructure\DofusCompanion.Infrastructure.csproj" />
+    <!-- Reuses TestHost (temp database wired with the real services). -->
+    <ProjectReference Include="..\DofusCompanion.Infrastructure.Tests\DofusCompanion.Infrastructure.Tests.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Fixtures\**\*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>
