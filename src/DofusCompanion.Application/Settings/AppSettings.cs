@@ -33,6 +33,9 @@ public sealed class AppSettings
     public string HotkeyToggleClickThrough { get; set; } = "Ctrl+Shift+F10";
     /// <summary>Only registered while screen capture is enabled.</summary>
     public string HotkeyCapture { get; set; } = "Ctrl+Shift+F11";
+    /// <summary>Same as the overlay's "Détecter" button, without moving the mouse: hover a monster in the fight
+    /// (its name appears) then press it. Only registered while screen capture is enabled.</summary>
+    public string HotkeyDetect { get; set; } = "Ctrl+Shift+F12";
 
     // ---- recognition
     public string OcrLanguage { get; set; } = "fr-FR";

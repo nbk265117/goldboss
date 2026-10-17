@@ -97,6 +97,42 @@ public sealed class KnowledgeImportService(
         return results;
     }
 
+    /// <summary>
+    /// Applies the DofusDB data shipped with the release (data\dofusdb beside the exe): its pictures are copied to
+    /// &lt;data&gt;\images\dofusdb (missing or changed files only) and its package is imported once, with the
+    /// planner's safe defaults. Returns the number of pictures copied and of packages applied.
+    /// </summary>
+    public async Task<(int Images, int Packages)> ApplyBundledDofusDbAsync(string bundleDir, string imagesDir, CancellationToken ct = default)
+    {
+        if (!Directory.Exists(bundleDir)) return (0, 0);
+        var images = 0;
+        var source = Path.Combine(bundleDir, "images");
+        if (Directory.Exists(source))
+        {
+            Directory.CreateDirectory(imagesDir);
+            foreach (var file in Directory.GetFiles(source, "*.png"))
+            {
+                var target = Path.Combine(imagesDir, Path.GetFileName(file));
+                if (File.Exists(target) && new FileInfo(target).Length == new FileInfo(file).Length) continue;
+                File.Copy(file, target, overwrite: true);
+                images++;
+            }
+        }
+
+        var packages = 0;
+        foreach (var file in Directory.GetFiles(bundleDir, "*" + KnowledgePackageSerializer.FileExtension).Order(StringComparer.Ordinal))
+        {
+            var hash = Hash(await File.ReadAllBytesAsync(file, ct).ConfigureAwait(false));
+            var package = await serializer.ReadFileAsync(file, ct).ConfigureAwait(false);
+            if (await repository.WasImportedAsync(package.PackageId, hash, ct).ConfigureAwait(false)) continue;
+            await ApplyAsync(await PreviewFileAsync(file, ct).ConfigureAwait(false), ct).ConfigureAwait(false);
+            logger.LogInformation("Bundled package {Package} applied ({Hash})", package.PackageId, hash[..12]);
+            packages++;
+        }
+
+        return (images, packages);
+    }
+
     /// <summary>Exports the given entities (or everything) with their mechanics, the sources they cite and their relation targets.</summary>
     public async Task<KnowledgePackage> BuildExportAsync(IReadOnlyCollection<string>? entityIds, string name, CancellationToken ct = default)
     {

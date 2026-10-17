@@ -52,6 +52,7 @@ public sealed partial class SettingsViewModel : ObservableObject
     [ObservableProperty] public partial string HotkeyToggleOverlay { get; set; } = "";
     [ObservableProperty] public partial string HotkeyToggleClickThrough { get; set; } = "";
     [ObservableProperty] public partial string HotkeyCapture { get; set; } = "";
+    [ObservableProperty] public partial string HotkeyDetect { get; set; } = "";
     [ObservableProperty] public partial string? OcrLanguage { get; set; }
     [ObservableProperty] public partial bool OcrUseVariants { get; set; }
     [ObservableProperty] public partial double MatchMinScore { get; set; }
@@ -90,6 +91,7 @@ public sealed partial class SettingsViewModel : ObservableObject
         HotkeyToggleOverlay = s.HotkeyToggleOverlay;
         HotkeyToggleClickThrough = s.HotkeyToggleClickThrough;
         HotkeyCapture = s.HotkeyCapture;
+        HotkeyDetect = s.HotkeyDetect;
         OcrUseVariants = s.OcrUseVariants;
         MatchMinScore = s.MatchMinScore;
         MatchAutoAcceptScore = s.MatchAutoAcceptScore;
@@ -139,7 +141,7 @@ public sealed partial class SettingsViewModel : ObservableObject
     [RelayCommand]
     private void Save()
     {
-        foreach (var hk in new[] { HotkeyToggleOverlay, HotkeyToggleClickThrough, HotkeyCapture })
+        foreach (var hk in new[] { HotkeyToggleOverlay, HotkeyToggleClickThrough, HotkeyCapture, HotkeyDetect })
         {
             if (!string.IsNullOrWhiteSpace(hk) && !HotkeyService.TryParse(hk, out _, out _, out var err))
             {
@@ -170,6 +172,7 @@ public sealed partial class SettingsViewModel : ObservableObject
         s.HotkeyToggleOverlay = HotkeyToggleOverlay.Trim();
         s.HotkeyToggleClickThrough = HotkeyToggleClickThrough.Trim();
         s.HotkeyCapture = HotkeyCapture.Trim();
+        s.HotkeyDetect = HotkeyDetect.Trim();
         s.OcrLanguage = OcrLanguage ?? "fr-FR";
         s.OcrUseVariants = OcrUseVariants;
         s.MatchMinScore = MatchMinScore;

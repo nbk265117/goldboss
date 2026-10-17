@@ -137,6 +137,19 @@ public partial class App : System.Windows.Application, IDisposable
 
         try
         {
+            // Monsters, zones and pictures from DofusDB shipped with the release: a fresh install shows the images.
+            var (images, packages) = await Services.GetRequiredService<KnowledgeImportService>().ApplyBundledDofusDbAsync(
+                Path.Combine(AppContext.BaseDirectory, "data", "dofusdb"), Path.Combine(paths.Root, "images", "dofusdb"));
+            if (images + packages > 0) _logger.LogInformation("Bundled DofusDB data: {Images} picture(s), {Packages} package(s)", images, packages);
+        }
+        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or PackageValidationException
+                                       or InvalidOperationException or Microsoft.Data.Sqlite.SqliteException)
+        {
+            _logger.LogError(ex, "Bundled DofusDB data could not be applied");
+        }
+
+        try
+        {
             var dropped = await Services.GetRequiredService<KnowledgeImportService>().ApplyDroppedPackagesAsync(paths.Imports);
             if (dropped.Count > 0) status.Info(Loc.Instance.Format("Status.AutoImported", string.Join(" · ", dropped)));
         }
@@ -293,6 +306,11 @@ public partial class App : System.Windows.Application, IDisposable
             }),
             // Not taking a key combination away from other programs for a feature that is switched off.
             _hotkeys.Register("Capture", s.ScreenCaptureEnabled ? s.HotkeyCapture : "", () => _ = analysis.CaptureAsync()),
+            _hotkeys.Register("Detect", s.ScreenCaptureEnabled ? s.HotkeyDetect : "", () =>
+            {
+                SetOverlayVisible(true);
+                if (overlayVm.DetectCommand.CanExecute(null)) overlayVm.DetectCommand.Execute(null);
+            }),
         };
         foreach (var failed in results.Where(r => !r.Success && !string.IsNullOrEmpty(r.Gesture)))
             status.Error(Loc.Instance.Format("Error.HotkeyConflict", failed.Gesture, Loc.Instance[$"Hotkey.{failed.Name}"]));

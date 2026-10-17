@@ -41,16 +41,20 @@ public sealed class AutoDetectService(ISettingsStore settings, RecognitionServic
         status.Info(Loc.Instance["AutoDetect.Running"]);
         try
         {
+            // Clicking "Détecter" puts the overlay in front: look for the Dofus window itself in that case.
             var dofus = DofusForegroundWindow();
+            if (dofus == 0) dofus = DofusWindow();
+            var region = settings.Current.AutoDetectRegion is { Width: > 8, Height: > 8 } zone ? zone : null;
             RasterImage image;
             using (BeforeCapture is null ? null : await BeforeCapture())
             {
-                image = dofus != 0 ? ScreenCaptureService.CaptureMonitorOf(dofus)
-                    : CaptureFallback?.Invoke() ?? ScreenCaptureService.CapturePrimary();
+                // A chosen zone is relative to the whole monitor; otherwise only the game window is read.
+                image = dofus == 0 ? CaptureFallback?.Invoke() ?? ScreenCaptureService.CapturePrimary()
+                    : region is null ? ScreenCaptureService.CaptureWindowArea(dofus)
+                    : ScreenCaptureService.CaptureMonitorOf(dofus);
             }
 
-            if (settings.Current.AutoDetectRegion is { Width: > 8, Height: > 8 } r
-                && r.X + r.Width <= image.Width && r.Y + r.Height <= image.Height)
+            if (region is { } r && r.X + r.Width <= image.Width && r.Y + r.Height <= image.Height)
                 image = ImagePreprocessor.Crop(image, new PixelRect(r.X, r.Y, r.Width, r.Height));
 
             var sw = Stopwatch.StartNew();
@@ -108,6 +112,32 @@ public sealed class AutoDetectService(ISettingsStore settings, RecognitionServic
         {
             IsBusy = false;
         }
+    }
+
+    /// <summary>
+    /// The main window of a running Dofus client (not minimised). Only process names and window handles are
+    /// read; the game process is never opened or inspected.
+    /// </summary>
+    private static nint DofusWindow()
+    {
+        foreach (var p in Process.GetProcesses())
+        {
+            using (p)
+            {
+                try
+                {
+                    if (p.Id == Environment.ProcessId
+                        || !p.ProcessName.StartsWith("Dofus", StringComparison.OrdinalIgnoreCase)
+                        || p.ProcessName.StartsWith("DofusGoldBoss", StringComparison.OrdinalIgnoreCase)) continue;
+                    var h = p.MainWindowHandle;
+                    if (h != 0 && !NativeMethods.IsIconic(h)) return h;
+                }
+                catch (InvalidOperationException) { }
+                catch (System.ComponentModel.Win32Exception) { }
+            }
+        }
+
+        return 0;
     }
 
     /// <summary>

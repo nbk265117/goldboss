@@ -29,6 +29,25 @@ public sealed class ScreenCaptureService
         return Capture(r.Left, r.Top, r.Right - r.Left, r.Bottom - r.Top);
     }
 
+    /// <summary>
+    /// Captures the screen area covered by the given window, clipped to its monitor: without the taskbar, other
+    /// windows' titles or a second screen, which would only add noise to the text reading.
+    /// </summary>
+    public static RasterImage CaptureWindowArea(nint hwnd)
+    {
+        var monitor = NativeMethods.MonitorFromWindow(hwnd, NativeMethods.MONITOR_DEFAULTTONEAREST);
+        var info = new NativeMethods.MONITORINFO { cbSize = Marshal.SizeOf<NativeMethods.MONITORINFO>() };
+        if (!NativeMethods.GetMonitorInfo(monitor, ref info) || !NativeMethods.GetWindowRect(hwnd, out var w))
+            throw new CaptureException("Unable to read the window position.");
+
+        var m = info.rcMonitor;
+        int left = Math.Max(w.Left, m.Left), top = Math.Max(w.Top, m.Top);
+        int right = Math.Min(w.Right, m.Right), bottom = Math.Min(w.Bottom, m.Bottom);
+        return right - left < 200 || bottom - top < 200
+            ? Capture(m.Left, m.Top, m.Right - m.Left, m.Bottom - m.Top)
+            : Capture(left, top, right - left, bottom - top);
+    }
+
     public static RasterImage CapturePrimary() =>
         Capture(0, 0, (int)SystemParameters.PrimaryScreenWidth, (int)SystemParameters.PrimaryScreenHeight);
 

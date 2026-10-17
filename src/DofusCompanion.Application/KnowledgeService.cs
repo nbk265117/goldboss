@@ -50,6 +50,7 @@ public sealed class KnowledgeService(IKnowledgeRepository repository, MechanicsE
         IReadOnlyList<EntityRelation> Relations,
         ILookup<string, Mechanic> MechanicsByEntity,
         IReadOnlyDictionary<string, string> MechanicTextByEntity,
+        IReadOnlyDictionary<string, string> VariantBase,
         IReadOnlyDictionary<string, (int Count, VerificationStatus Best)> MechanicSummary,
         IReadOnlyDictionary<string, KnowledgeSource> Sources,
         GameVersion? CurrentVersion,
@@ -146,6 +147,17 @@ public sealed class KnowledgeService(IKnowledgeRepository repository, MechanicsE
             .ToList();
 
         var guidance = engine.ExplainEntity(entity, Localized(s.MechanicsByEntity[entityId]).ToList(), s.Sources, locations, context, s.CurrentVersion);
+        if (s.VariantBase.TryGetValue(entityId, out var baseId) && s.Entities.TryGetValue(baseId, out var baseBoss))
+        {
+            // "Tynril Ahuri" has no sheet of its own: show the verified mechanics of "Tynril", labelled with its name.
+            var baseLocations = s.Relations.Where(r => r.FromId == baseId && r.Type is RelationType.LocatedIn or RelationType.PartOf)
+                .Select(r => s.Entities.GetValueOrDefault(r.ToId)).OfType<GameEntity>().ToList();
+            return guidance with
+            {
+                ContainedBosses = [engine.ExplainEntity(baseBoss, Localized(s.MechanicsByEntity[baseId]).ToList(), s.Sources, baseLocations, context, s.CurrentVersion)],
+            };
+        }
+
         if (entity.Type != EntityType.Dungeon) return guidance;
 
         // Searching a dungeon must show how to beat its bosses: mechanics are attached to the bosses.
@@ -165,10 +177,13 @@ public sealed class KnowledgeService(IKnowledgeRepository repository, MechanicsE
     /// bosses, because its sheet shows them (otherwise search would say "no documented mechanic").
     /// </summary>
     private static Dictionary<string, (int Count, VerificationStatus Best)> MechanicSummaries(
-        IReadOnlyList<GameEntity> entities, IReadOnlyList<EntityRelation> relations, IReadOnlyList<Mechanic> mechanics)
+        IReadOnlyList<GameEntity> entities, IReadOnlyList<EntityRelation> relations, IReadOnlyList<Mechanic> mechanics,
+        IReadOnlyDictionary<string, string> variantBase)
     {
         var summary = mechanics.GroupBy(m => m.EntityId)
             .ToDictionary(g => g.Key, g => (g.Count(), g.Max(m => m.Verification)), StringComparer.Ordinal);
+        foreach (var (variant, baseId) in variantBase)
+            if (summary.TryGetValue(baseId, out var b)) summary[variant] = b;
         var types = entities.ToDictionary(e => e.Id, e => e.Type, StringComparer.Ordinal);
         foreach (var dungeon in relations
                      .Where(r => r.Type == RelationType.LocatedIn
@@ -184,6 +199,30 @@ public sealed class KnowledgeService(IKnowledgeRepository repository, MechanicsE
         }
 
         return summary;
+    }
+
+    /// <summary>
+    /// Boss without mechanics whose name is a documented boss's name plus a qualifier ("Tynril Ahuri",
+    /// "Grozilla Fatigué" → "Tynril", "Grozilla"): variants of the same fight, which share its mechanics.
+    /// </summary>
+    internal static Dictionary<string, string> VariantBases(IReadOnlyList<GameEntity> entities, IReadOnlyList<Mechanic> mechanics)
+    {
+        var documented = mechanics.Select(m => m.EntityId).ToHashSet(StringComparer.Ordinal);
+        var bases = entities
+            .Where(e => e.Type == EntityType.Boss && documented.Contains(e.Id))
+            .Select(e => (e.Id, Name: TextNormalizer.Normalize(e.CanonicalName)))
+            .Where(b => b.Name.Length >= 4)
+            .OrderByDescending(b => b.Name.Length)
+            .ToList();
+        var result = new Dictionary<string, string>(StringComparer.Ordinal);
+        foreach (var e in entities.Where(e => e.Type == EntityType.Boss && !documented.Contains(e.Id)))
+        {
+            var name = TextNormalizer.Normalize(e.CanonicalName);
+            var b = bases.FirstOrDefault(b => name.StartsWith(b.Name + " ", StringComparison.Ordinal));
+            if (b.Id is not null) result[e.Id] = b.Id;
+        }
+
+        return result;
     }
 
     /// <summary>Dungeons with a room at these map coordinates (from the "mapCoords" attribute of the DofusDB import).</summary>
@@ -284,13 +323,15 @@ public sealed class KnowledgeService(IKnowledgeRepository repository, MechanicsE
                 .GroupBy(m => m.EntityId)
                 .ToDictionary(g => g.Key, g => TextNormalizer.Normalize(string.Join(' ', g.SelectMany(MechanicTexts))), StringComparer.Ordinal);
 
+            var variants = VariantBases(entities, mechanics);
             _snapshot = new Snapshot(
                 entities.ToDictionary(e => e.Id, StringComparer.Ordinal),
                 names,
                 relations,
                 mechanics.ToLookup(m => m.EntityId, StringComparer.Ordinal),
                 mechText,
-                MechanicSummaries(entities, relations, mechanics),
+                variants,
+                MechanicSummaries(entities, relations, mechanics, variants),
                 sources.ToDictionary(x => x.Id, StringComparer.Ordinal),
                 // The most recent dated release is the staleness baseline.
                 versions.Where(v => v.ReleaseDate is not null).MaxBy(v => v.ReleaseDate),

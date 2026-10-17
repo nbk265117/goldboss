@@ -1,5 +1,18 @@
 # Historique des versions
 
+## 0.6.3 — 17/10/2026
+
+- **Images incluses** : les images des boss (environ 270) et les monstres et zones de DofusDB sont livrés avec
+  la version et s'installent au premier lancement. Plus besoin de lancer l'outil d'import pour les voir.
+- **Détection dans les Songes** : un mot court d'une phrase (« de » dans « Songe de : … ») n'est plus pris pour le
+  monstre « Dé ». Quand l'overlay est au premier plan, seule la fenêtre de Dofus est lue (plus la barre des
+  tâches : « Ankama Launcher » n'est plus reconnu comme une zone).
+- **Raccourci Détecter** (Ctrl+Maj+F12) : en combat, survole un monstre (son nom s'affiche) puis appuie, sans
+  bouger la souris. Modifiable dans Paramètres › Raccourcis.
+- **Variantes de boss** : « Tynril Ahuri », « Grozilla Fatigué », les boss « perturbés » des Songes, etc.
+  affichent les mécaniques vérifiées de leur boss de base (Tynril, Grozilla…) au lieu de « Aucune mécanique
+  documentée ».
+
 ## 0.6.2 — 17/10/2026
 
 - **Darija lisible** : les textes arabes se lisent de droite à gauche et sont alignés à droite, avec la ponctuation

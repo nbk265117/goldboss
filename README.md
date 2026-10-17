@@ -141,9 +141,13 @@ Conseils :
 ## Images des boss et monstres
 
 L'application affiche une petite image dans les résultats de recherche (overlay et fenêtre principale) et une
-grande image dans la fiche du boss. Les images du jeu appartiennent à Ankama : elles **ne sont pas fournies** avec
-l'application et ne sont jamais publiées ; tu les télécharges **sur ton PC uniquement**, en une commande, avec
-l'outil d'import DofusDB (il faut le [.NET 10 SDK](https://dotnet.microsoft.com/download)) :
+grande image dans la fiche du boss. Les **images des boss** (environ 270, boss de donjon, d'avis de recherche et
+de dimension ; un donjon affiche l'image de son boss) et la liste des monstres et zones issues de DofusDB sont
+**incluses dans la version** (dossier `data\dofusdb`) : elles s'installent toutes seules au premier lancement.
+Les images du jeu appartiennent à Ankama.
+
+Pour mettre à jour ces données ou ajouter les images de **tous les monstres**, utilise l'outil d'import DofusDB
+(il faut le [.NET 10 SDK](https://dotnet.microsoft.com/download)) :
 
 ```powershell
 git clone https://github.com/nbk265117/goldboss.git

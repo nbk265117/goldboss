@@ -3,9 +3,9 @@ using DofusCompanion.Domain;
 namespace DofusCompanion.Infrastructure;
 
 /// <summary>
-/// Local, per-user entity pictures (boss/monster portraits) under &lt;data&gt;\images. Pictures are never
-/// bundled with the application: the user adds them (file, clipboard) or downloads them for personal use with
-/// the DofusDB importer. Lookup order: a picture the user attached (&lt;entityId&gt;.png), then the entity's
+/// Local entity pictures (boss/monster portraits) under &lt;data&gt;\images: the boss pictures shipped with the
+/// release (copied from data\dofusdb at first start), those the DofusDB importer downloads, and those the user
+/// adds (file, clipboard). Lookup order: a picture the user attached (&lt;entityId&gt;.png), then the entity's
 /// "image" attribute (a path relative to the images folder, e.g. "dofusdb/31.png").
 /// </summary>
 public sealed class EntityImageStore(AppPaths paths)

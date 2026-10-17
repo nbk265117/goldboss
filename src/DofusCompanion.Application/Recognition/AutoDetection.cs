@@ -108,7 +108,9 @@ public sealed partial class AutoDetectDecider(double minScore = 0.88)
     public static AutoDetectDecision Pick(IReadOnlyList<RecognizedCandidate> candidates, double minScore = 0.88,
         IReadOnlyDictionary<string, IReadOnlySet<string>>? bossesIn = null)
     {
-        var reliable = WithoutChat(candidates).Where(c => c.Score >= minScore && Priority(c.Entity.Type) < 9).ToList();
+        var reliable = WithoutChat(candidates)
+            .Where(c => c.Score >= minScore && Priority(c.Entity.Type) < 9 && !IsShortWordInSentence(c))
+            .ToList();
         if (bossesIn is { Count: > 0 })
         {
             var local = bossesIn.Values.SelectMany(b => b).ToHashSet(StringComparer.Ordinal);
@@ -130,6 +132,13 @@ public sealed partial class AutoDetectDecider(double minScore = 0.88)
 
     public static IEnumerable<RecognizedCandidate> WithoutChat(IEnumerable<RecognizedCandidate> candidates) =>
         candidates.Where(c => !IsChatLine(c.OcrText));
+
+    /// <summary>
+    /// A very short name ("Dé") found inside a sentence ("Songe de : …") is an ordinary word, not that monster;
+    /// it counts only when it stands alone on its line (a tooltip).
+    /// </summary>
+    private static bool IsShortWordInSentence(RecognizedCandidate c) =>
+        TextNormalizer.Normalize(c.MatchedName).Length < 4 && !IsWholeLine(c);
 
     private static bool IsWholeLine(RecognizedCandidate c) =>
         TextNormalizer.Normalize(c.OcrText).Length <= TextNormalizer.Normalize(c.MatchedName).Length + 4;

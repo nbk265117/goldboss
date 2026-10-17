@@ -122,4 +122,46 @@ public class AutoDetectionTests
         Assert.Equal(0, ImageFingerprint.Of(a).DistanceTo(ImageFingerprint.Of(b)));
         Assert.True(ImageFingerprint.Of(a).DistanceTo(ImageFingerprint.Of(c)) > 100);
     }
+
+    [Fact]
+    public void Real_case_songes_short_word_is_not_a_monster()
+    {
+        // Songes, 2026-10-17: "de" in "Songe de : Faouzi-ahmar" matched the monster "Dé" and hid the zone.
+        static RecognizedCandidate N(string id, EntityType type, string name, string line) =>
+            new(new GameEntity { Id = id, Type = type, CanonicalName = name }, 1.0, name, line, null, "original");
+        var pick = AutoDetectDecider.Pick(
+        [
+            N("monster.de", EntityType.Monster, "Dé", "Songe de : Faouzi-ahmar"),
+            N("area.songes", EntityType.Area, "Songes Infinis", "@ SONGES INFINIS"),
+        ]);
+        Assert.Equal("area.songes", pick.Entity!.Id);
+        Assert.Empty(pick.MonstersSeen);
+
+        // Alone on its line (a hovered monster's tooltip), the short name still counts.
+        Assert.Equal("monster.de", AutoDetectDecider.Pick([N("monster.de", EntityType.Monster, "Dé", "Dé")]).Entity!.Id);
+    }
+}
+
+public class VariantBossTests
+{
+    [Fact]
+    public void Boss_variant_without_mechanics_uses_its_base_boss()
+    {
+        GameEntity E(string id, string name, EntityType t = EntityType.Boss) => new() { Id = id, Type = t, CanonicalName = name };
+        var entities = new[]
+        {
+            E("boss.tynril", "Tynril"), E("boss.tynril-ahuri", "Tynril Ahuri"), E("boss.grozilla-fatigue", "Grozilla Fatigué"),
+            E("boss.ombre", "Ombre"), E("monster.ombre-ailee", "Ombre Ailée", EntityType.Monster), E("boss.tynrils", "Tynrilsss"),
+        };
+        var mechanics = new[]
+        {
+            new Mechanic { Id = "m1", EntityId = "boss.tynril", Title = "t" },
+            new Mechanic { Id = "m2", EntityId = "boss.ombre", Title = "t" },
+        };
+        var v = DofusCompanion.Application.KnowledgeService.VariantBases(entities, mechanics);
+        Assert.Equal("boss.tynril", v["boss.tynril-ahuri"]);
+        Assert.False(v.ContainsKey("monster.ombre-ailee")); // a different monster, not a variant of the boss
+        Assert.False(v.ContainsKey("boss.tynrils"));       // whole word only
+        Assert.False(v.ContainsKey("boss.grozilla-fatigue")); // its base has no mechanics here
+    }
 }

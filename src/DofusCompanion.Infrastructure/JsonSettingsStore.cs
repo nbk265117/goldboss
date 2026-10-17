@@ -74,6 +74,7 @@ public sealed class JsonSettingsStore : ISettingsStore
         s.HotkeyToggleOverlay ??= "";
         s.HotkeyToggleClickThrough ??= "";
         s.HotkeyCapture ??= "";
+        s.HotkeyDetect ??= "";
         s.OcrLanguage ??= "fr-FR";
         s.LogLevel ??= "Information";
     }

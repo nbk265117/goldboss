@@ -474,6 +474,8 @@
                                 <TextBox Text="{Binding HotkeyToggleClickThrough, UpdateSourceTrigger=PropertyChanged}" Width="220" HorizontalAlignment="Left"/>
                                 <Label Content="{l:T Hotkey.Capture}"/>
                                 <TextBox Text="{Binding HotkeyCapture, UpdateSourceTrigger=PropertyChanged}" Width="220" HorizontalAlignment="Left"/>
+                                <Label Content="{l:T Hotkey.Detect}"/>
+                                <TextBox Text="{Binding HotkeyDetect, UpdateSourceTrigger=PropertyChanged}" Width="220" HorizontalAlignment="Left"/>
                             </StackPanel>
                         </Border>
 

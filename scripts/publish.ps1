@@ -22,6 +22,8 @@ Invoke-Checked $dotnet @('publish', (Join-Path $Root 'src\DofusCompanion.App\Dof
 New-Item -ItemType Directory -Force (Join-Path $out 'data') | Out-Null
 Copy-Item -Recurse -Force (Join-Path $Root 'data\schemas') (Join-Path $out 'data\schemas')
 Copy-Item -Recurse -Force (Join-Path $Root 'data\seed') (Join-Path $out 'data\seed')
+# DofusDB monsters / zones and their pictures, applied by the app at first start (see ApplyBundledDofusDbAsync).
+Copy-Item -Recurse -Force (Join-Path $Root 'data\dofusdb') (Join-Path $out 'data\dofusdb')
 Copy-Item (Join-Path $Root 'README.md'), (Join-Path $Root 'LICENSE-NOTICES.md'), (Join-Path $Root 'CHANGELOG.md') $out -ErrorAction SilentlyContinue
 Get-ChildItem $out -Recurse -Include *.pdb | Remove-Item -Force
 
