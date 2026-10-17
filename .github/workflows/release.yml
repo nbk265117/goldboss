@@ -1,0 +1,94 @@
+# Pushing a tag "v0.7.1" builds, tests and publishes the GitHub release: Setup.exe, the Velopack update packages
+# (installed copies then offer the update by themselves) and the plain zip. The tag must match the <Version> of
+# Directory.Build.props. "Run workflow" (manual) does a dry run: everything is built and kept as a workflow
+# artifact, nothing is published.
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: windows-latest
+    timeout-minutes: 60
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      DOTNET_NOLOGO: '1'
+      REPO_URL: https://github.com/${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Version
+        shell: pwsh
+        run: |
+          $v = ([xml](Get-Content Directory.Build.props)).Project.PropertyGroup.Version | Where-Object { $_ } | Select-Object -First 1
+          if ($env:GITHUB_REF_TYPE -eq 'tag' -and $env:GITHUB_REF_NAME -ne "v$v") {
+            throw "Tag $env:GITHUB_REF_NAME does not match the version in Directory.Build.props ($v)."
+          }
+          "VERSION=$v" >> $env:GITHUB_ENV
+          if ($env:GITHUB_REF_TYPE -eq 'tag') {
+            # The release must not exist yet: vpk would otherwise refuse or mix two builds.
+            gh release view $env:GITHUB_REF_NAME --repo $env:GITHUB_REPOSITORY 2>$null
+            if ($LASTEXITCODE -eq 0) { throw "Release $env:GITHUB_REF_NAME already exists." }
+            $global:LASTEXITCODE = 0
+          }
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Tests (OCR excluded, see ci.yml), self-contained build, zip, Velopack pack (delta from the previous release).
+      - name: Build, test and package
+        shell: pwsh
+        run: ./scripts/publish.ps1 -SkipOcr
+
+      - name: Keep the build (dry run)
+        if: github.ref_type != 'tag'
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ env.VERSION }}
+          path: |
+            artifacts/releases/*Setup.exe
+            artifacts/releases/*.nupkg
+            artifacts/releases/releases.win.json
+            artifacts/publish/*.zip
+          retention-days: 7
+
+      - name: Publish GitHub release
+        if: github.ref_type == 'tag'
+        shell: pwsh
+        run: |
+          dotnet vpk upload github -o artifacts/releases --repoUrl $env:REPO_URL --token $env:GH_TOKEN --publish `
+            --releaseName "Dofus Gold Boss - DGB $env:VERSION" --tag $env:GITHUB_REF_NAME
+          if ($LASTEXITCODE -ne 0) { throw "vpk upload failed ($LASTEXITCODE)" }
+          gh release upload $env:GITHUB_REF_NAME "artifacts/publish/DofusGoldBoss-$env:VERSION-win-x64.zip" --repo $env:GITHUB_REPOSITORY
+          $notes = (gh release view $env:GITHUB_REF_NAME --repo $env:GITHUB_REPOSITORY --json body -q .body) -join "`n"
+          $notes += @"
+
+
+          ### Installation
+          - **Recommandé** : télécharge **``DofusGoldBoss-DGB-win-Setup.exe``** et lance-le. L'application s'installe et se met ensuite à jour toute seule.
+          - **Déjà installée (0.7.0 ou plus)** : rien à faire, un bandeau « Nouvelle version disponible » apparaît au démarrage.
+          - **Sans installation** : ``DofusGoldBoss-$env:VERSION-win-x64.zip`` (à extraire), mais cette copie ne se met pas à jour automatiquement.
+
+          Tes données (``%LOCALAPPDATA%\DofusGoldBoss``) sont conservées.
+          "@
+          Set-Content -Path release-notes.md -Value $notes -Encoding utf8
+          gh release edit $env:GITHUB_REF_NAME --repo $env:GITHUB_REPOSITORY --notes-file release-notes.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

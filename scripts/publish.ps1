@@ -1,11 +1,12 @@
 <#
  Produces a self-contained Windows x64 release folder (no .NET installation needed on the target PC)
- and a zip next to it. Usage: .\scripts\publish.ps1 [-SkipTests]
+ and a zip next to it, plus the Velopack installer / update packages.
+ Usage: .\scripts\publish.ps1 [-SkipTests] [-SkipOcr]
 #>
-param([switch]$SkipTests)
+param([switch]$SkipTests, [switch]$SkipOcr)
 . (Join-Path $PSScriptRoot 'common.ps1')
 $dotnet = Get-Dotnet
-if (-not $SkipTests) { & (Join-Path $PSScriptRoot 'test.ps1') }
+if (-not $SkipTests) { & (Join-Path $PSScriptRoot 'test.ps1') -SkipOcr:$SkipOcr }
 
 $version = ([xml](Get-Content (Join-Path $Root 'Directory.Build.props'))).Project.PropertyGroup.Version
 $out = Join-Path $Root "artifacts\publish\DofusGoldBoss-$version-win-x64"

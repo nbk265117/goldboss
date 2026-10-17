@@ -215,15 +215,27 @@ git clone https://github.com/nbk265117/goldboss.git
 cd goldboss
 .\scripts\build.ps1      # compile (Release)
 .\scripts\test.ps1       # lance les tests
-.\scripts\publish.ps1    # crée le zip dans artifacts\publish
+.\scripts\publish.ps1    # crée le zip (artifacts\publish) et l'installeur + mises à jour (artifactseleases)
 ```
+
+**Publier une version** (GitHub Actions, workflow `Release`) : mets à jour `<Version>` dans
+`Directory.Build.props` et le `CHANGELOG.md`, pousse, puis crée le tag correspondant :
+
+```powershell
+git tag v0.7.1
+git push origin v0.7.1
+```
+
+Le workflow lance les tests, construit l'application, crée `DofusGoldBoss-DGB-win-Setup.exe`, les paquets de
+mise à jour et le zip, puis publie la release : les copies installées proposent la mise à jour d'elles-mêmes.
+« Run workflow » sur `Release` fait un essai à blanc (rien n'est publié). Le workflow `CI` teste chaque push.
 
 Documentation technique : [`docs/`](docs) — architecture, format des connaissances, tests, limites connues.
 
 ---
 
 Les textes des mécaniques sont reformulés à partir des guides de *Dofus pour les Noobs*, avec attribution et
-lien vers chaque page. DOFUS est une marque d'Ankama Games. Aucune ressource graphique du jeu n'est incluse.
+lien vers chaque page. DOFUS est une marque d'Ankama Games ; les images des boss incluses lui appartiennent.
 
 ---
 
