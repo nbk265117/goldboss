@@ -48,6 +48,9 @@ public sealed class AppSettings
     /// Discord, OBS and other screen sharing at all times.
     /// </summary>
     public bool ExcludeOverlayFromCapture { get; set; } = true;
+
+    /// <summary>Zone of the screen read by the overlay's "Détecter" button (pixels of the captured monitor); null = whole screen.</summary>
+    public CaptureRegion? AutoDetectRegion { get; set; }
     /// <summary>Store recognition observations (text + candidates, no image) locally.</summary>
     public bool SaveObservations { get; set; }
     /// <summary>Store analysed screenshots locally. Requires SaveObservations.</summary>
@@ -62,6 +65,14 @@ public sealed class AppSettings
     /// <summary>Null = default location under %LOCALAPPDATA%.</summary>
     public string? DatabasePath { get; set; }
     public string LogLevel { get; set; } = "Information";
+}
+
+public sealed class CaptureRegion
+{
+    public int X { get; set; }
+    public int Y { get; set; }
+    public int Width { get; set; }
+    public int Height { get; set; }
 }
 
 public sealed class WindowPlacement

@@ -1,5 +1,13 @@
 # Historique des versions
 
+## 0.5.0 — 17/10/2026
+
+- **Bouton « Détecter » dans l'overlay** : un clic lit l'écran de Dofus (localement) et affiche directement les
+  étapes du boss, du donjon, du monstre ou de la zone reconnu (priorité boss › donjon › monstre › zone). Les
+  monstres reconnus sont ajoutés au combat en cours. Nécessite d'autoriser la capture d'écran dans les Paramètres.
+- Zone de détection optionnelle : onglet **Analyse** › « Utiliser cette zone pour la détection auto ».
+- Importateur DofusDB : corrige le plantage final quand le dossier `imports` n'existait pas encore.
+
 ## 0.4.0 — 17/10/2026
 
 - **Nouveau nom : Dofus Gold Boss - DGB.** Programme `DofusGoldBoss.exe`, zip `DofusGoldBoss-<version>-win-x64.zip`,

@@ -87,6 +87,7 @@ public partial class App : System.Windows.Application, IDisposable
         services.AddSingleton<ScreenCaptureService>();
         services.AddSingleton<SourceOpener>();
         services.AddSingleton<EntityImageStore>();
+        services.AddSingleton<AutoDetectService>();
         services.AddSingleton<EntityImageProvider>();
         services.AddSingleton<HotkeyService>();
         services.AddSingleton<FightContext>();
@@ -174,6 +175,16 @@ public partial class App : System.Windows.Application, IDisposable
                 settings.Save();
             }
         };
+
+        var autoDetect = Services.GetRequiredService<AutoDetectService>();
+        autoDetect.Show = async id =>
+        {
+            SetOverlayVisible(true);
+            await overlayVm.ShowEntityAsync(id);
+        };
+        autoDetect.BeforeCapture = async () => settings.Current.ExcludeOverlayFromCapture ? await _overlay.ExcludeFromCaptureScopeAsync() : null;
+        autoDetect.CaptureFallback = () => Services.GetRequiredService<ScreenCaptureService>().CaptureMonitorOf(_overlay);
+        overlayVm.AutoDetect = autoDetect;
 
         _tray = new TrayIconService();
         _tray.ToggleOverlay += (_, _) => ToggleOverlay();

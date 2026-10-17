@@ -115,6 +115,7 @@ Sources : [FAQ Microsoft sur le Contrôle intelligent des applications](https://
 |---|---|
 | Afficher / masquer l'overlay | `Ctrl+Shift+F9`, le bouton dans la fenêtre principale, ou **clic sur l'icône** près de l'heure |
 | Icône de notification (à côté de l'heure / dans les icônes cachées `^`) | clic : overlay · double-clic : fenêtre · clic droit : menu et **Quitter** |
+| **Détecter le boss / donjon / monstre / la carte à l'écran** | Bouton vert **Détecter** de l'overlay : un clic et les étapes s'affichent |
 | Chercher un boss ou un donjon | Tape son nom dans l'overlay, puis **Entrée** |
 | Indiquer le tour actuel | Champ **Tour** de l'overlay (pour les conditions « tour pair », « à partir du tour 7 »…) |
 | Lire une capture d'écran | Icône image de l'overlay, ou onglet **Analyse de capture** (fichier, ou `Win+Maj+S` puis **Coller**) |
@@ -124,7 +125,12 @@ Sources : [FAQ Microsoft sur le Contrôle intelligent des applications](https://
 Conseils :
 - Joue en mode **fenêtré** ou **plein écran fenêtré** pour que l'overlay reste au-dessus du jeu.
 - Pour montrer l'overlay sur **Discord**, partage ton **écran entier** (pas seulement la fenêtre Dofus).
-- La capture d'écran à la demande est **désactivée par défaut** : *Paramètres › Capture et confidentialité*.
+- La capture d'écran à la demande est **désactivée par défaut** : active-la dans *Paramètres › Capture et
+  confidentialité* pour utiliser le bouton **Détecter**.
+- **Détecter** lit une fois l'écran de Dofus (sur ton PC, rien n'est envoyé au jeu ni à Internet) et choisit dans
+  l'ordre : boss, donjon, monstre, zone. Pour aider : **survole le boss** (son nom s'affiche) ou garde le nom de la
+  carte visible. Tu peux limiter la lecture à une zone de l'écran : onglet **Analyse**, capture, sélectionne la
+  zone, puis « Utiliser cette zone pour la détection auto ».
 - Les raccourcis se changent dans **Paramètres**.
 
 ---
@@ -167,8 +173,8 @@ Tu peux ajouter tes propres mécaniques (onglet **Connaissances**) ou importer u
 
 ## Nouveautés
 
-Voir [CHANGELOG.md](CHANGELOG.md). Version 0.2.0 : nouveau style des étapes, la fiche d'un donjon affiche les
-mécaniques de ses boss, overlay visible dans les partages Discord/OBS.
+Voir [CHANGELOG.md](CHANGELOG.md). Version 0.5.0 : bouton **Détecter** dans l'overlay (boss, donjon, monstre ou
+carte à l'écran en un clic).
 
 ## Mettre à jour / désinstaller
 

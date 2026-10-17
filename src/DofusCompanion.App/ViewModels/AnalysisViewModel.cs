@@ -342,6 +342,21 @@ public sealed partial class AnalysisViewModel : ObservableObject
     [RelayCommand]
     private void ClearRegion() => Region = null;
 
+    /// <summary>Saves the selected zone of a screen capture as the zone automatic detection reads.</summary>
+    [RelayCommand]
+    private void UseRegionForAutoDetect()
+    {
+        if (Region is not { } r || _method != DetectionMethod.ScreenCapture)
+        {
+            _status.Error(Loc.Instance["AutoDetect.ZoneNeedsCapture"]);
+            return;
+        }
+
+        _settings.Current.AutoDetectRegion = new CaptureRegion { X = r.X, Y = r.Y, Width = r.Width, Height = r.Height };
+        _settings.Save();
+        _status.Info(Loc.Instance.Format("AutoDetect.ZoneSaved", r.Width, r.Height));
+    }
+
     /// <summary>
     /// With explicit consent (Settings › learn from corrections), a confirmed OCR reading that differs from
     /// every known name becomes a local alias, improving later matches. Never done silently.

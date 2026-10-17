@@ -46,6 +46,20 @@ public sealed partial class OverlayViewModel : ObservableObject
     [ObservableProperty] public partial bool ClickThrough { get; set; }
     [ObservableProperty] public partial double Opacity { get; set; }
     [ObservableProperty] public partial bool ShowCandidates { get; set; }
+    [ObservableProperty] public partial bool Detecting { get; set; }
+
+    /// <summary>Set by the shell once the detection service exists.</summary>
+    public AutoDetectService? AutoDetect { get; set; }
+
+    /// <summary>"Détecter" button: reads the Dofus screen once and shows the boss / dungeon / monster / zone found.</summary>
+    [RelayCommand]
+    private async Task DetectAsync()
+    {
+        if (AutoDetect is null || Detecting) return;
+        Detecting = true;
+        try { await AutoDetect.DetectAsync(); }
+        finally { Detecting = false; }
+    }
 
     /// <summary>Raised to ask the host to hide the overlay window.</summary>
     public event EventHandler? HideRequested;

@@ -58,6 +58,7 @@ public sealed partial class SettingsViewModel : ObservableObject
     [ObservableProperty] public partial double MatchAutoAcceptScore { get; set; }
     [ObservableProperty] public partial bool ScreenCaptureEnabled { get; set; }
     [ObservableProperty] public partial bool ExcludeOverlayFromCapture { get; set; }
+    [ObservableProperty] public partial string AutoDetectRegionText { get; private set; } = "";
     [ObservableProperty] public partial bool SaveObservations { get; set; }
     [ObservableProperty] public partial bool KeepScreenshots { get; set; }
     [ObservableProperty] public partial int ScreenshotRetentionDays { get; set; }
@@ -94,6 +95,7 @@ public sealed partial class SettingsViewModel : ObservableObject
         MatchAutoAcceptScore = s.MatchAutoAcceptScore;
         ScreenCaptureEnabled = s.ScreenCaptureEnabled;
         ExcludeOverlayFromCapture = s.ExcludeOverlayFromCapture;
+        AutoDetectRegionText = s.AutoDetectRegion is { } r ? Loc.Instance.Format("Analysis.Region", r.X, r.Y, r.Width, r.Height) : Loc.Instance["AutoDetect.WholeScreen"];
         SaveObservations = s.SaveObservations;
         KeepScreenshots = s.KeepScreenshots;
         ScreenshotRetentionDays = s.ScreenshotRetentionDays;
@@ -206,6 +208,14 @@ public sealed partial class SettingsViewModel : ObservableObject
         Load();
         Loc.Instance.SetLanguage(_store.Current.Language);
         ThemeManager.Apply(_store.Current.Theme);
+    }
+
+    [RelayCommand]
+    private void ClearAutoDetectRegion()
+    {
+        _store.Current.AutoDetectRegion = null;
+        _store.Save();
+        Load();
     }
 
     [RelayCommand]

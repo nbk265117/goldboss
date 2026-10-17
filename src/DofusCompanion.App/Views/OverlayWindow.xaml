@@ -23,6 +23,24 @@
                     MouseLeftButtonDown="TitleBar_MouseLeftButtonDown" Cursor="SizeAll">
                 <DockPanel>
                     <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                        <Button ToolTip="{l:T Overlay.DetectTip}" AutomationProperties.Name="{l:T Overlay.Detect}" Command="{Binding DetectCommand}"
+                                Padding="8,2" Margin="0,0,4,0" FontWeight="SemiBold" Background="{DynamicResource Accent}" Foreground="{DynamicResource AccentText}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE707;" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                <TextBlock VerticalAlignment="Center">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Text" Value="{l:T Overlay.Detect}"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Detecting}" Value="True">
+                                                    <Setter Property="Text" Value="{l:T Overlay.Detecting}"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
                         <Button Style="{StaticResource IconButton}" Content="&#xE8B9;" ToolTip="{l:T Overlay.ImportTip}" AutomationProperties.Name="{l:T Overlay.ImportTip}"
                                 Command="{Binding Analysis.ImportFileCommand}"/>
                         <Button Style="{StaticResource IconButton}" Content="&#xE722;" ToolTip="{l:T Overlay.CaptureTip}" AutomationProperties.Name="{l:T Overlay.CaptureTip}"

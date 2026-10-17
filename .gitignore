@@ -7,3 +7,6 @@ TestResults/
 *.db
 *.db-shm
 *.db-wal
+
+# DofusDB importer cache (personal use, never published)
+dofusdb-cache/

@@ -15,9 +15,11 @@ public sealed class CaptureException(string message) : Exception(message);
 public sealed class ScreenCaptureService
 {
     /// <summary>Captures the monitor that contains <paramref name="reference"/> (or the nearest one).</summary>
-    public RasterImage CaptureMonitorOf(Window reference)
+    public RasterImage CaptureMonitorOf(Window reference) => CaptureMonitorOf(new WindowInteropHelper(reference).Handle);
+
+    /// <summary>Captures the monitor showing the given window (e.g. the Dofus window in front).</summary>
+    public static RasterImage CaptureMonitorOf(nint hwnd)
     {
-        var hwnd = new WindowInteropHelper(reference).Handle;
         var monitor = NativeMethods.MonitorFromWindow(hwnd, NativeMethods.MONITOR_DEFAULTTONEAREST);
         var info = new NativeMethods.MONITORINFO { cbSize = Marshal.SizeOf<NativeMethods.MONITORINFO>() };
         if (!NativeMethods.GetMonitorInfo(monitor, ref info))
@@ -26,6 +28,9 @@ public sealed class ScreenCaptureService
         var r = info.rcMonitor;
         return Capture(r.Left, r.Top, r.Right - r.Left, r.Bottom - r.Top);
     }
+
+    public static RasterImage CapturePrimary() =>
+        Capture(0, 0, (int)SystemParameters.PrimaryScreenWidth, (int)SystemParameters.PrimaryScreenHeight);
 
     /// <summary>Captures a rectangle in physical screen pixels.</summary>
     public static RasterImage Capture(int x, int y, int width, int height)

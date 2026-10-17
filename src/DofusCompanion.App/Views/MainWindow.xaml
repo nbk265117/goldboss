@@ -150,6 +150,7 @@
                                    Visibility="{Binding CaptureEnabled, Converter={StaticResource HiddenWhen}}"/>
                         <DockPanel DockPanel.Dock="Bottom" Margin="0,4,0,0" Visibility="{Binding HasImage, Converter={StaticResource VisibleWhen}}">
                             <Button DockPanel.Dock="Right" Style="{StaticResource LinkButton}" Content="{l:T Analysis.ClearRegion}" Command="{Binding ClearRegionCommand}"/>
+                            <Button DockPanel.Dock="Right" Style="{StaticResource LinkButton}" Content="{l:T Analysis.UseForAutoDetect}" Command="{Binding UseRegionForAutoDetectCommand}" Margin="0,0,14,0"/>
                             <TextBlock Style="{StaticResource MutedText}">
                                 <Run Text="{l:T Analysis.RegionHint}"/> <Run Text="{Binding RegionText, Mode=OneWay}"/>
                             </TextBlock>
@@ -501,6 +502,14 @@
                                 <CheckBox Content="{l:T Settings.CaptureEnabled}" IsChecked="{Binding ScreenCaptureEnabled}"/>
                                 <TextBlock Style="{StaticResource MutedText}" Text="{l:T Settings.CaptureHelp}"/>
                                 <CheckBox Content="{l:T Settings.ExcludeOverlay}" IsChecked="{Binding ExcludeOverlayFromCapture}"/>
+                                <TextBlock Style="{StaticResource H3}" Text="{l:T Settings.AutoDetect}"/>
+                                <TextBlock Style="{StaticResource MutedText}" Text="{l:T Settings.AutoDetectHelp}"/>
+                                <DockPanel Margin="0,4,0,0">
+                                    <Button DockPanel.Dock="Right" Content="{l:T Settings.AutoDetectWhole}" Command="{Binding ClearAutoDetectRegionCommand}" Margin="6,0,0,0"/>
+                                    <TextBlock Style="{StaticResource MutedText}" VerticalAlignment="Center">
+                                        <Run Text="{l:T Settings.AutoDetectZone}"/> <Run Text="{Binding AutoDetectRegionText, Mode=OneWay}"/>
+                                    </TextBlock>
+                                </DockPanel>
                                 <CheckBox Content="{l:T Settings.SaveObservations}" IsChecked="{Binding SaveObservations}"/>
                                 <CheckBox Content="{l:T Settings.KeepScreenshots}" IsChecked="{Binding KeepScreenshots}"/>
                                 <StackPanel Orientation="Horizontal" Visibility="{Binding KeepScreenshots, Converter={StaticResource VisibleWhen}}">

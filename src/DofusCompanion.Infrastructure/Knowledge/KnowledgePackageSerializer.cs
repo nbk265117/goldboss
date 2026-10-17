@@ -114,6 +114,7 @@ public sealed class KnowledgePackageSerializer
             throw new IOException("The export target is a directory.");
 
         // Write to a temp file then move, so a failed export never leaves a truncated package behind.
+        Directory.CreateDirectory(Path.GetDirectoryName(full)!);
         var temp = full + ".tmp";
         await File.WriteAllTextAsync(temp, Write(package), new UTF8Encoding(false), ct).ConfigureAwait(false);
         File.Move(temp, full, overwrite: true);
