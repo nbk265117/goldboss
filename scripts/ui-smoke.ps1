@@ -5,7 +5,7 @@
 .PARAMETER Exe
   Path to DofusCompanion.exe. If given and the app is not running, it is started.
 #>
-param([string]$Exe)
+param([string]$Exe, [int]$ProcessId = 0)
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName UIAutomationClient, UIAutomationTypes
 
@@ -16,7 +16,8 @@ function Check([string]$name, [bool]$ok, [string]$detail = '') {
     if (-not $ok) { $script:failed++ }
 }
 
-$proc = Get-Process DofusCompanion -ErrorAction SilentlyContinue | Select-Object -First 1
+# -ProcessId targets one instance (several copies of the app may be running).
+$proc = if ($ProcessId) { Get-Process -Id $ProcessId -ErrorAction SilentlyContinue } else { Get-Process DofusCompanion -ErrorAction SilentlyContinue | Select-Object -First 1 }
 if (-not $proc -and $Exe) {
     $proc = Start-Process $Exe -PassThru
 }
