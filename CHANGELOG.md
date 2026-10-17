@@ -1,5 +1,12 @@
 # Historique des versions
 
+## 0.3.1 — 17/10/2026
+
+- **Images des boss en une commande** : l'importateur DofusDB (`--images`) ne télécharge plus que les images des
+  224 boss de l'application (quelques minutes au lieu de plusieurs heures) et dépose son résultat dans le dossier
+  de l'application, qui **l'importe automatiquement** au démarrage.
+- Les boutons « Ajouter / Coller / Retirer une image » sont retirés de la fiche : l'image s'affiche directement.
+
 ## 0.3.0 — 17/10/2026
 
 - **Images des boss et monstres** : vignette dans les résultats de recherche (overlay et application), image en

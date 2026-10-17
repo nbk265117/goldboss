@@ -60,10 +60,12 @@ public sealed class EntityImageStore(AppPaths paths)
 
     public bool HasUserImage(string entityId) => File.Exists(UserImagePath(entityId));
 
+    private static string SafeName(string entityId) =>
+        new(entityId.Select(c => char.IsAsciiLetterOrDigit(c) || c is '.' or '-' or '_' ? c : '_').ToArray());
+
     /// <summary>Entity ids are [a-z0-9._-] (schema-enforced), so they are safe file names.</summary>
     private string UserImagePath(string entityId)
     {
-        var safe = new string(entityId.Select(c => char.IsAsciiLetterOrDigit(c) || c is '.' or '-' or '_' ? c : '_').ToArray());
-        return Path.Combine(Directory, "user", safe + ".png");
+        return Path.Combine(Directory, "user", SafeName(entityId) + ".png");
     }
 }

@@ -2,6 +2,7 @@
   "App.Name": "Dofus Companion",
   "App.Disclaimer": "Independent tool, not affiliated with or authorised by Ankama. It never acts in the game: you play, it informs.",
   "App.Credit": "Developed with ❤ in 2026 by AYOUB YOUB JOE",
+  "Status.AutoImported": "Automatically imported: {0}",
   "Status.Ready": "Ready.",
 
   "Tab.Browser": "Encyclopedia",

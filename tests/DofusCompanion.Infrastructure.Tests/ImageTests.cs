@@ -125,4 +125,32 @@ public sealed class ImageTests : IDisposable
         Assert.Equal(EntityType.Boss, boss.Type);
         Assert.Equal("dofusdb/555.png", boss.Attributes["image"]);
     }
+
+    [Fact]
+    public async Task Dropped_packages_are_applied_at_startup_and_archived()
+    {
+        using var host = new TestHost();
+        var drop = Path.Combine(host.Directory, "imports");
+        Directory.CreateDirectory(drop);
+        File.Copy(Path.Combine(AppContext.BaseDirectory, "Fixtures", "synthetic.dofus-knowledge.json"), Path.Combine(drop, "good.json"));
+        File.WriteAllText(Path.Combine(drop, "bad.json"), "{ not json");
+
+        var results = await host.Import.ApplyDroppedPackagesAsync(drop);
+
+        Assert.Equal(2, results.Count);
+        Assert.NotNull(await host.Repository.GetEntityAsync("boss.test"));        // valid package applied
+        Assert.Empty(Directory.GetFiles(drop, "*.json"));                         // nothing left to re-apply
+        Assert.Single(Directory.GetFiles(Path.Combine(drop, "applied")));
+        Assert.Single(Directory.GetFiles(Path.Combine(drop, "rejected")));
+    }
+
+    [Fact]
+    public void Importer_knows_bundled_boss_names_for_picture_filtering()
+    {
+        var names = KnownNames.Bosses();
+        Assert.Contains("royalmouth", names);
+        Assert.Contains("kimbo", names);
+        Assert.Contains("crasper", names);   // wanted-notice target
+        Assert.Contains("guerre", names);    // "Guerre (Tempête de l'Eliocalypse)" -> "guerre"
+    }
 }

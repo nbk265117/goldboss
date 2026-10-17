@@ -10,14 +10,15 @@ Usage: dofusdb-import --accept-terms [options]
 
   --accept-terms        Required for network access. Confirms you checked DofusDB's conditions of use
                         (and Ankama's CGU) and accept responsibility for this personal, low-volume use.
-  --out <file.json>     Output package (default: dofusdb.dofus-knowledge.json)
+  --out <file.json>     Output package (default: the app's imports folder, applied automatically at next start)
   --cache <dir>         Cache folder for raw API pages (default: dofusdb-cache)
   --delay-ms <n>        Pause between requests, minimum 1000 (default: 1500)
   --max-requests <n>    Network request cap for this run (default: 600)
   --offline             Use only the cache, never the network
   --refresh             Re-download pages even if cached
   --lang <fr|en|...>    Language of canonical names (default: fr)
-  --images              Also download monster/boss pictures (personal use) into the app's images folder
+  --images              Also download pictures (personal use) of the bosses the app knows, into its images folder
+  --all-images          With --images: download the pictures of every monster (thousands; much longer)
   --images-dir <dir>    Pictures folder (default: %LOCALAPPDATA%\DofusCompanion\images)
   --image-url <tpl>     Picture URL template when a record has none (default: https://api.dofusdb.fr/img/monsters/{id}.png)
 
@@ -46,7 +47,8 @@ var options = new ClientOptions
     Offline = offline,
     Refresh = Flag("--refresh"),
 };
-var output = Path.GetFullPath(Opt("--out") ?? "dofusdb.dofus-knowledge.json");
+var appData = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DofusCompanion");
+var output = Path.GetFullPath(Opt("--out") ?? Path.Combine(appData, "imports", "dofusdb.dofus-knowledge.json"));
 var lang = Opt("--lang") ?? "fr";
 
 using var http = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
@@ -68,8 +70,8 @@ try
     Func<int, string?>? imageFor = null;
     if (Flag("--images"))
     {
-        var imagesDir = Path.GetFullPath(Opt("--images-dir") ?? Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DofusCompanion", "images"));
+        var imagesDir = Path.GetFullPath(Opt("--images-dir") ?? Path.Combine(appData, "images"));
+        var wanted = Flag("--all-images") ? null : KnownNames.Bosses();
         var template = Opt("--image-url") ?? "https://api.dofusdb.fr/img/monsters/{id}.png";
         var available = new HashSet<int>();
         var done = 0;
@@ -77,9 +79,10 @@ try
         foreach (var m in snapshot.Monsters)
         {
             if (DofusDbMapper.Int(m, "id") is not { } gameId || DofusDbMapper.ImageUrl(m, template) is not { } url) continue;
+            if (wanted is not null && !DofusDbMapper.Names(m).Values.Any(n => wanted.Contains(DofusCompanion.Application.Matching.TextNormalizer.Normalize(n)))) continue;
             var target = Path.Combine(imagesDir, DofusDbMapper.ImageRelativePath(gameId).Replace('/', Path.DirectorySeparatorChar));
             if (await client.DownloadImageAsync(url, target, cts.Token)) available.Add(gameId);
-            if (++done % 100 == 0) Console.WriteLine($"  pictures: {done}/{snapshot.Monsters.Count} checked, {available.Count} available");
+            if (++done % 25 == 0) Console.WriteLine($"  pictures: {done} checked, {available.Count} available");
         }
 
         Console.WriteLine($"  pictures available: {available.Count}");
@@ -96,6 +99,7 @@ try
     Console.WriteLine($"Entities: {result.Package.Entities.Count} ({string.Join(", ", result.Package.Entities.GroupBy(e => e.Entity.Type).Select(g => $"{g.Count()} {g.Key}"))})");
     foreach (var w in result.Warnings.Distinct().Take(20)) Console.WriteLine($"  warning: {w}");
     Console.WriteLine($"Written: {output}");
+    Console.WriteLine("Start (or restart) Dofus Companion: the package is imported automatically.");
     return 0;
 }
 catch (OperationCanceledException)

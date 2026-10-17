@@ -131,25 +131,21 @@ Conseils :
 
 ## Images des boss et monstres
 
-L'application affiche une petite image dans les résultats de recherche et une grande image dans la fiche du
-boss ou du monstre. Les images du jeu appartiennent à Ankama : elles **ne sont pas fournies** avec l'application,
-tu les ajoutes **sur ton PC uniquement** (elles ne sont jamais publiées) :
+L'application affiche une petite image dans les résultats de recherche (overlay et fenêtre principale) et une
+grande image dans la fiche du boss. Les images du jeu appartiennent à Ankama : elles **ne sont pas fournies** avec
+l'application et ne sont jamais publiées ; tu les télécharges **sur ton PC uniquement**, en une commande, avec
+l'outil d'import DofusDB (il faut le [.NET 10 SDK](https://dotnet.microsoft.com/download)) :
 
-- **Une image à la fois** : dans la fiche (fenêtre principale), bouton **Ajouter une image…** (fichier) ou
-  **Coller une image** (fais `Win+Maj+S` sur le monstre en jeu, puis clique sur le bouton).
-- **Toutes d'un coup** : l'outil d'import DofusDB télécharge les images de tous les monstres et boss. Il faut le
-  [.NET 10 SDK](https://dotnet.microsoft.com/download) et une copie du dépôt :
+```powershell
+git clone https://github.com/nbk265117/goldboss.git
+cd goldboss
+dotnet run --project tools\DofusCompanion.DofusDbImporter -c Release -- --accept-terms --images
+```
 
-  ```powershell
-  git clone https://github.com/nbk265117/goldboss.git
-  cd goldboss
-  dotnet run --project tools\DofusCompanion.DofusDbImporter -c Release -- --accept-terms --images
-  ```
-
-  Puis dans l'application : **Connaissances › Importer un paquet…** → choisis `dofusdb.dofus-knowledge.json`
-  → **Appliquer**. L'outil fait une requête toutes les 1,5 s : compte quelques dizaines de minutes la première
-  fois ; les relances reprennent là où il s'est arrêté. Vérifie les conditions d'utilisation de DofusDB avant
-  de l'utiliser (usage personnel).
+Puis **redémarre Dofus Companion** : les données et les images sont importées automatiquement.
+L'outil fait une requête toutes les 1,5 s (quelques minutes pour les 224 boss ; `--all-images` pour tous les
+monstres, beaucoup plus long). Vérifie les conditions d'utilisation de DofusDB avant de l'utiliser (usage personnel).
+Sans image, une pastille avec l'initiale du boss s'affiche.
 
 ## Ce que contient l'application
 

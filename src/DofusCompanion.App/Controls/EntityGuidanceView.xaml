@@ -21,15 +21,6 @@
                     <Image Source="{Binding Image}" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality"
                            Visibility="{Binding HasImage, Converter={StaticResource VisibleWhen}}"/>
                 </Grid>
-                <StackPanel VerticalAlignment="Bottom">
-                    <WrapPanel>
-                        <Button Content="{l:T Image.Add}" Command="{Binding AddImageFromFileCommand}" Margin="0,0,6,6"/>
-                        <Button Content="{l:T Image.Paste}" Command="{Binding PasteImageCommand}" Margin="0,0,6,6"/>
-                        <Button Content="{l:T Image.Remove}" Command="{Binding RemoveImageCommand}" Margin="0,0,6,6"
-                                Visibility="{Binding HasUserImage, Converter={StaticResource VisibleWhen}}"/>
-                    </WrapPanel>
-                    <TextBlock Style="{StaticResource MutedText}" Text="{l:T Image.Hint}" MaxWidth="460" HorizontalAlignment="Left"/>
-                </StackPanel>
             </DockPanel>
 
             <!-- Identity -->

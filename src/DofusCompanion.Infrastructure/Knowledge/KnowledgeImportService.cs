@@ -64,6 +64,39 @@ public sealed class KnowledgeImportService(
         return applied;
     }
 
+    /// <summary>
+    /// Applies every package found in <paramref name="folder"/> (e.g. written by the DofusDB importer) with the
+    /// planner's safe defaults — verified and user-edited records kept, duplicates merged — then moves it to
+    /// "applied" (or "rejected" if invalid). Returns a short summary per package.
+    /// </summary>
+    public async Task<IReadOnlyList<string>> ApplyDroppedPackagesAsync(string folder, CancellationToken ct = default)
+    {
+        var results = new List<string>();
+        if (!Directory.Exists(folder)) return results;
+        foreach (var file in Directory.GetFiles(folder, "*" + KnowledgePackageSerializer.FileExtension).Order(StringComparer.Ordinal))
+        {
+            string target;
+            try
+            {
+                var plan = await PreviewFileAsync(file, ct).ConfigureAwait(false);
+                await ApplyAsync(plan, ct).ConfigureAwait(false);
+                results.Add($"{plan.Package.Name}: +{plan.Count(ChangeKind.Add)}, ~{plan.Count(ChangeKind.Update)}, ={plan.Count(ChangeKind.Conflict)}");
+                target = Path.Combine(folder, "applied");
+            }
+            catch (Exception ex) when (ex is PackageValidationException or InvalidOperationException or IOException or Microsoft.Data.Sqlite.SqliteException)
+            {
+                logger.LogWarning(ex, "Dropped package {File} rejected", file);
+                results.Add($"{Path.GetFileName(file)}: {ex.Message.Split('\n')[0]}");
+                target = Path.Combine(folder, "rejected");
+            }
+
+            Directory.CreateDirectory(target);
+            File.Move(file, Path.Combine(target, $"{DateTime.Now:yyyyMMdd-HHmmss}-{Path.GetFileName(file)}"), overwrite: true);
+        }
+
+        return results;
+    }
+
     /// <summary>Exports the given entities (or everything) with their mechanics, the sources they cite and their relation targets.</summary>
     public async Task<KnowledgePackage> BuildExportAsync(IReadOnlyCollection<string>? entityIds, string name, CancellationToken ct = default)
     {

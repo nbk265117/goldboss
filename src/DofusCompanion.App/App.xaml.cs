@@ -134,6 +134,16 @@ public partial class App : System.Windows.Application, IDisposable
             status.Error(Loc.Instance.Format("Error.Seed", ex.Message));
         }
 
+        try
+        {
+            var dropped = await Services.GetRequiredService<KnowledgeImportService>().ApplyDroppedPackagesAsync(paths.Imports);
+            if (dropped.Count > 0) status.Info(Loc.Instance.Format("Status.AutoImported", string.Join(" · ", dropped)));
+        }
+        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
+        {
+            _logger.LogError(ex, "Automatic import failed");
+        }
+
         var knowledge = Services.GetRequiredService<KnowledgeService>();
         knowledge.MatchingOptions = MatchingFromSettings(settings.Current);
         EntityImageProvider.Current = Services.GetRequiredService<EntityImageProvider>();

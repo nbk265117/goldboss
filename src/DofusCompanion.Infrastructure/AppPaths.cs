@@ -19,6 +19,8 @@ public sealed class AppPaths
     public string Logs => Path.Combine(Root, "logs");
     public string Screenshots => Path.Combine(Root, "screenshots");
     public string Exports => Path.Combine(Root, "exports");
+    /// <summary>Knowledge packages dropped here (e.g. by the DofusDB importer) are applied at startup.</summary>
+    public string Imports => Path.Combine(Root, "imports");
 
     /// <summary>Resolves a user-chosen database path; rejects anything that is not a plain .db file path.</summary>
     public string ResolveDatabase(string? configured)
