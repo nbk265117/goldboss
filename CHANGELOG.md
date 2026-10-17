@@ -1,5 +1,12 @@
 # Historique des versions
 
+## 0.6.2 — 17/10/2026
+
+- **Darija lisible** : les textes arabes se lisent de droite à gauche et sont alignés à droite, avec la ponctuation
+  et les mots français (noms de boss, de sorts) à la bonne place dans la phrase. La disposition des fenêtres, des
+  icônes et des curseurs ne change pas.
+- Le texte d'aide de la recherche reste dans son champ.
+
 ## 0.6.1 — 17/10/2026
 
 - **Mécaniques traduites** : titres, explications, étapes, conseils et mises en garde des 604 mécaniques (boss de

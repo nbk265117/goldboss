@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Reflection;
 using System.Text.Json;
+using System.Windows;
 using System.Windows.Data;
 using System.Windows.Markup;
 
@@ -35,6 +36,12 @@ public sealed class Loc : INotifyPropertyChanged
 
     public string Language { get; private set; } = DefaultLanguage;
 
+    /// <summary>
+    /// Reading direction of TEXT only (right-to-left for Darija, so punctuation and French words mixed in Arabic
+    /// sentences land in the right place). Window layout, icons and sliders stay left-to-right.
+    /// </summary>
+    public FlowDirection TextFlowDirection { get; private set; } = FlowDirection.LeftToRight;
+
     public string this[string key] =>
         _current.TryGetValue(key, out var v) ? v : _fallback.TryGetValue(key, out var f) ? f : $"[{key}]";
 
@@ -44,12 +51,14 @@ public sealed class Loc : INotifyPropertyChanged
     {
         if (!_tables.TryGetValue(language, out var table)) language = DefaultLanguage;
         Language = language;
+        TextFlowDirection = language == "ar" ? FlowDirection.RightToLeft : FlowDirection.LeftToRight;
         _current = _tables[language];
         var culture = CultureInfo.GetCultureInfo(language switch { "fr" => "fr-FR", "ar" => "ar-MA", _ => "en-US" });
         CultureInfo.CurrentUICulture = culture;
         CultureInfo.DefaultThreadCurrentUICulture = culture;
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Item[]"));
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Language)));
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TextFlowDirection)));
         LanguageChanged?.Invoke(this, EventArgs.Empty);
     }
 

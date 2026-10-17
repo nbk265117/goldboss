@@ -123,11 +123,14 @@
                                  Text="{Binding Fight.TurnNumber, Converter={StaticResource NullableInt}, UpdateSourceTrigger=PropertyChanged}"/>
                         <Button Style="{StaticResource IconButton}" Content="&#xE710;" Command="{Binding TurnUpCommand}" AutomationProperties.Name="+"/>
                     </StackPanel>
-                    <TextBox x:Name="SearchBox" Text="{Binding Query, UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="{l:T Overlay.Search}"
-                             ToolTip="{l:T Overlay.SearchTip}" PreviewKeyDown="SearchBox_PreviewKeyDown"/>
+                    <Grid>
+                        <TextBox x:Name="SearchBox" Text="{Binding Query, UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="{l:T Overlay.Search}"
+                                 ToolTip="{l:T Overlay.SearchTip}" PreviewKeyDown="SearchBox_PreviewKeyDown"/>
+                        <!-- Placeholder inside the search box (stays there in right-to-left Darija text) -->
+                        <TextBlock IsHitTestVisible="False" Text="{l:T Overlay.Search}" Foreground="{DynamicResource Muted}" Margin="8,0" VerticalAlignment="Center"
+                                   TextTrimming="CharacterEllipsis" Visibility="{Binding Query, Converter={StaticResource HiddenWhen}}"/>
+                    </Grid>
                 </DockPanel>
-                <TextBlock IsHitTestVisible="False" Text="{l:T Overlay.Search}" Foreground="{DynamicResource Muted}" Margin="8,0,0,0" VerticalAlignment="Center"
-                           Visibility="{Binding Query, Converter={StaticResource HiddenWhen}}"/>
 
                 <!-- One-click detection, on its own line under the search -->
                 <StackPanel Grid.Row="1">

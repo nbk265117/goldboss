@@ -68,7 +68,7 @@
                                 <ComboBox ItemsSource="{Binding FamilyOptions}" SelectedItem="{Binding SelectedFamily}" DisplayMemberPath="Label" Margin="3,0,0,0" ToolTip="{l:T Filter.Family}"/>
                             </UniformGrid>
                             <DockPanel Margin="0,6,0,4">
-                                <Button DockPanel.Dock="Right" Style="{StaticResource LinkButton}" Content="{l:T Filter.Clear}" Command="{Binding ClearFiltersCommand}"/>
+                                <Button DockPanel.Dock="Right" Style="{StaticResource LinkButton}" Content="{l:T Filter.Clear}" Command="{Binding ClearFiltersCommand}" Margin="10,0,0,0"/>
                                 <TextBlock Style="{StaticResource MutedText}" Text="{Binding ResultSummary}"/>
                             </DockPanel>
                             <ItemsControl ItemsSource="{Binding History}" Visibility="{Binding History.Count, Converter={StaticResource VisibleWhen}}" Margin="0,0,0,4">
