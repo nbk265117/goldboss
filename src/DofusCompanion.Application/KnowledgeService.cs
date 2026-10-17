@@ -33,6 +33,15 @@ public sealed class KnowledgeService(IKnowledgeRepository repository, MechanicsE
     private readonly SemaphoreSlim _gate = new(1, 1);
     private Snapshot? _snapshot;
 
+    /// <summary>
+    /// Optional translation of mechanic texts into the interface language (titles, summaries, steps, notes).
+    /// Source quotes stay in their original language. Set by the app; null = texts as stored (French).
+    /// </summary>
+    public Func<Mechanic, Mechanic>? TranslateMechanic { get; set; }
+
+    private IEnumerable<Mechanic> Localized(IEnumerable<Mechanic> mechanics) =>
+        TranslateMechanic is { } t ? mechanics.Select(t) : mechanics;
+
     private sealed record IndexedName(GameEntity Entity, string Normalized, string[] Tokens, string Sorted, string Display, string[] Trigrams);
 
     private sealed record Snapshot(
@@ -136,7 +145,7 @@ public sealed class KnowledgeService(IKnowledgeRepository repository, MechanicsE
             .OfType<GameEntity>()
             .ToList();
 
-        var guidance = engine.ExplainEntity(entity, s.MechanicsByEntity[entityId], s.Sources, locations, context, s.CurrentVersion);
+        var guidance = engine.ExplainEntity(entity, Localized(s.MechanicsByEntity[entityId]).ToList(), s.Sources, locations, context, s.CurrentVersion);
         if (entity.Type != EntityType.Dungeon) return guidance;
 
         // Searching a dungeon must show how to beat its bosses: mechanics are attached to the bosses.
@@ -146,7 +155,7 @@ public sealed class KnowledgeService(IKnowledgeRepository repository, MechanicsE
             .OfType<GameEntity>()
             .Where(e => e.Type == EntityType.Boss)
             .OrderBy(e => e.CanonicalName, StringComparer.CurrentCulture)
-            .Select(b => engine.ExplainEntity(b, s.MechanicsByEntity[b.Id], s.Sources, [entity], context, s.CurrentVersion))
+            .Select(b => engine.ExplainEntity(b, Localized(s.MechanicsByEntity[b.Id]).ToList(), s.Sources, [entity], context, s.CurrentVersion))
             .ToList();
         return guidance with { ContainedBosses = bosses };
     }

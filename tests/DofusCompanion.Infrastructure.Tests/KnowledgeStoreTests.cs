@@ -250,6 +250,29 @@ public class SeedAndImportTests
         await host.Import.EnsureSeedAsync();
         Assert.Equal("Ma note perso", (await host.Repository.GetEntityAsync("boss.kimbo"))!.Description);
     }
+    [Fact]
+    public async Task Picture_and_aliases_from_dofusdb_survive_a_new_seed_version()
+    {
+        using var host = new TestHost();
+        await host.Import.EnsureSeedAsync();
+        var kimbo = (await host.Repository.GetEntityAsync("boss.kimbo"))!;
+        var attrs = new Dictionary<string, string>(kimbo.Attributes) { ["image"] = "dofusdb/2973.png" };
+        await host.Repository.UpsertEntityAsync(kimbo with { Attributes = attrs, Aliases = [.. kimbo.Aliases, new EntityAlias("Kimbo-DE", "de", RecordOrigin.Import)] }, []);
+
+        using (var c = new SqliteConnection($"Data Source={host.DatabasePath}"))
+        {
+            c.Open();
+            using var cmd = c.CreateCommand();
+            cmd.CommandText = "DELETE FROM import_log"; // a new app version re-applies its bundled data
+            cmd.ExecuteNonQuery();
+        }
+
+        host.Knowledge.Invalidate();
+        await host.Import.EnsureSeedAsync();
+        var after = (await host.Repository.GetEntityAsync("boss.kimbo"))!;
+        Assert.Equal("dofusdb/2973.png", after.Attributes["image"]);
+        Assert.Contains(after.Aliases, a => a.Text == "Kimbo-DE");
+    }
 }
 
 [Collection(PerformanceCollection.Name)]

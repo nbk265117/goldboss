@@ -147,6 +147,7 @@ public partial class App : System.Windows.Application, IDisposable
 
         var knowledge = Services.GetRequiredService<KnowledgeService>();
         knowledge.MatchingOptions = MatchingFromSettings(settings.Current);
+        knowledge.TranslateMechanic = MechanicTranslations.Apply; // steps and explanations in the chosen language
         EntityImageProvider.Current = Services.GetRequiredService<EntityImageProvider>();
 
         _main = Services.GetRequiredService<MainWindow>();

@@ -27,6 +27,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Localization\*.json" />
+    <!-- WithCulture=false: "mechanics.ar.json" must stay in the main assembly, not become an "ar" satellite assembly. -->
+    <EmbeddedResource Include="Localization\Mechanics\*.json" WithCulture="false" />
     <Resource Include="Assets\app.ico" />
   </ItemGroup>
   <ItemGroup>

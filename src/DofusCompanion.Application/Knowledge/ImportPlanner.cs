@@ -168,7 +168,14 @@ public static class ImportPlanner
                 // Imports only ever ADD relations: a partial package (e.g. an export of a few entities) must
                 // not delete relations it simply did not include.
                 var union = ExistingRelations(existing, current.Id).Union(incoming.Relations).ToList();
-                incoming = incoming with { Relations = union };
+                // Same for attributes and aliases: an update of the bundled data must keep what another package
+                // added (e.g. the DofusDB picture "image", map coordinates, names in other languages).
+                var attributes = new Dictionary<string, string>(current.Attributes, StringComparer.Ordinal);
+                foreach (var (k, v) in incoming.Entity.Attributes) attributes[k] = v;
+                var aliases = incoming.Entity.Aliases
+                    .Concat(current.Aliases.Where(a => incoming.Entity.Aliases.All(i => !string.Equals(i.Text, a.Text, StringComparison.OrdinalIgnoreCase))))
+                    .ToList();
+                incoming = incoming with { Relations = union, Entity = incoming.Entity with { Attributes = attributes, Aliases = aliases } };
             }
 
             var change = PlanSimple(RecordKind.Entity, incoming.Entity.Id, incoming.Entity.CanonicalName, incoming,

@@ -1,5 +1,13 @@
 # Historique des versions
 
+## 0.6.1 — 17/10/2026
+
+- **Mécaniques traduites** : titres, explications, étapes, conseils et mises en garde des 604 mécaniques (boss de
+  donjon, avis de recherche, dimensions) s'affichent dans la langue choisie : français, **anglais** ou **darija**.
+  Les citations des guides restent en français (ce sont des extraits exacts).
+- **Images conservées** : une nouvelle version n'efface plus les images DofusDB ni les noms dans les autres langues
+  quand elle met à jour ses données de boss (bug de la 0.6.0). Le paquet DofusDB est réimporté au démarrage.
+
 ## 0.6.0 — 17/10/2026
 
 - **Darija marocaine** : nouvelle langue « الدارجة المغربية » (Paramètres › Langue). Seuls les textes sont
