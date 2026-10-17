@@ -4,6 +4,8 @@
     <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
     <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
     <UseWPF>true</UseWPF>
+    <!-- Only for the notification-area icon (NotifyIcon); not imported globally to avoid WPF/WinForms name clashes. -->
+    <UseWindowsForms>true</UseWindowsForms>
     <RootNamespace>DofusCompanion.App</RootNamespace>
     <AssemblyName>DofusCompanion</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -13,7 +15,8 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <!-- CA1001: view models are app-lifetime singletons; their CancellationTokenSources own no timers or handles.
          CA1826: FirstOrDefault on small UI lists is clearer than index checks. -->
-    <NoWarn>$(NoWarn);CA1001;CA1826;CA1834</NoWarn>
+    <!-- WFO0003: WinForms is only used for the tray icon; the WPF app keeps its per-monitor DPI setting in app.manifest. -->
+    <NoWarn>$(NoWarn);CA1001;CA1826;CA1834;WFO0003</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\DofusCompanion.Infrastructure\DofusCompanion.Infrastructure.csproj" />
@@ -28,6 +31,8 @@
   </ItemGroup>
   <ItemGroup>
     <Using Include="System.IO" />
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
     <InternalsVisibleTo Include="DofusCompanion.Core.Tests" />
   </ItemGroup>
 </Project>

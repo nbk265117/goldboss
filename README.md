@@ -113,7 +113,8 @@ Sources : [FAQ Microsoft sur le Contrôle intelligent des applications](https://
 
 | Action | Comment |
 |---|---|
-| Afficher / masquer l'overlay | `Ctrl+Shift+F9` ou le bouton dans la fenêtre principale |
+| Afficher / masquer l'overlay | `Ctrl+Shift+F9`, le bouton dans la fenêtre principale, ou **clic sur l'icône** près de l'heure |
+| Icône de notification (à côté de l'heure / dans les icônes cachées `^`) | clic : overlay · double-clic : fenêtre · clic droit : menu et **Quitter** |
 | Chercher un boss ou un donjon | Tape son nom dans l'overlay, puis **Entrée** |
 | Indiquer le tour actuel | Champ **Tour** de l'overlay (pour les conditions « tour pair », « à partir du tour 7 »…) |
 | Lire une capture d'écran | Icône image de l'overlay, ou onglet **Analyse de capture** (fichier, ou `Win+Maj+S` puis **Coller**) |
@@ -127,6 +128,28 @@ Conseils :
 - Les raccourcis se changent dans **Paramètres**.
 
 ---
+
+## Images des boss et monstres
+
+L'application affiche une petite image dans les résultats de recherche et une grande image dans la fiche du
+boss ou du monstre. Les images du jeu appartiennent à Ankama : elles **ne sont pas fournies** avec l'application,
+tu les ajoutes **sur ton PC uniquement** (elles ne sont jamais publiées) :
+
+- **Une image à la fois** : dans la fiche (fenêtre principale), bouton **Ajouter une image…** (fichier) ou
+  **Coller une image** (fais `Win+Maj+S` sur le monstre en jeu, puis clique sur le bouton).
+- **Toutes d'un coup** : l'outil d'import DofusDB télécharge les images de tous les monstres et boss. Il faut le
+  [.NET 10 SDK](https://dotnet.microsoft.com/download) et une copie du dépôt :
+
+  ```powershell
+  git clone https://github.com/nbk265117/goldboss.git
+  cd goldboss
+  dotnet run --project tools\DofusCompanion.DofusDbImporter -c Release -- --accept-terms --images
+  ```
+
+  Puis dans l'application : **Connaissances › Importer un paquet…** → choisis `dofusdb.dofus-knowledge.json`
+  → **Appliquer**. L'outil fait une requête toutes les 1,5 s : compte quelques dizaines de minutes la première
+  fois ; les relances reprennent là où il s'est arrêté. Vérifie les conditions d'utilisation de DofusDB avant
+  de l'utiliser (usage personnel).
 
 ## Ce que contient l'application
 

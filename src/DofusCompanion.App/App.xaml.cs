@@ -30,6 +30,8 @@ public partial class App : System.Windows.Application, IDisposable
     private OverlayWindow? _overlay;
     private HotkeyService? _hotkeys;
     private Mutex? _singleInstance;
+    private TrayIconService? _tray;
+    private bool _quitting;
 
     private ServiceProvider Services => _services ?? throw new InvalidOperationException("Services are not initialized yet.");
 
@@ -84,6 +86,8 @@ public partial class App : System.Windows.Application, IDisposable
         services.AddSingleton<ImageInputService>();
         services.AddSingleton<ScreenCaptureService>();
         services.AddSingleton<SourceOpener>();
+        services.AddSingleton<EntityImageStore>();
+        services.AddSingleton<EntityImageProvider>();
         services.AddSingleton<HotkeyService>();
         services.AddSingleton<FightContext>();
         services.AddSingleton<StatusService>();
@@ -132,6 +136,7 @@ public partial class App : System.Windows.Application, IDisposable
 
         var knowledge = Services.GetRequiredService<KnowledgeService>();
         knowledge.MatchingOptions = MatchingFromSettings(settings.Current);
+        EntityImageProvider.Current = Services.GetRequiredService<EntityImageProvider>();
 
         _main = Services.GetRequiredService<MainWindow>();
         _overlay = Services.GetRequiredService<OverlayWindow>();
@@ -146,6 +151,30 @@ public partial class App : System.Windows.Application, IDisposable
         overlayVm.OpenMainRequested += (_, tab) => ShowMain(tab);
         mainVm.Settings.Applied += (_, _) => ApplySettings();
         _main.Closed += (_, _) => Shutdown();
+        _main.Closing += (_, args) =>
+        {
+            if (_quitting || !settings.Current.CloseToTray) { _quitting = true; return; }
+            // Keep running in the notification area; quit from the tray menu.
+            args.Cancel = true;
+            _main.Hide();
+            if (!settings.Current.TrayHintShown)
+            {
+                _tray?.Notify(Loc.Instance["Tray.StillRunning"]);
+                settings.Current.TrayHintShown = true;
+                settings.Save();
+            }
+        };
+
+        _tray = new TrayIconService();
+        _tray.ToggleOverlay += (_, _) => ToggleOverlay();
+        _tray.OpenMain += (_, _) => ShowMain("browser");
+        _tray.ToggleClickThrough += (_, _) =>
+        {
+            overlayVm.ClickThrough = !overlayVm.ClickThrough;
+            if (overlayVm.ClickThrough) SetOverlayVisible(true);
+        };
+        _tray.Quit += (_, _) => QuitApplication();
+        _tray.Show();
 
         _hotkeys = Services.GetRequiredService<HotkeyService>();
         RegisterHotkeys();
@@ -263,6 +292,13 @@ public partial class App : System.Windows.Application, IDisposable
         settings.Save();
     }
 
+    private void QuitApplication()
+    {
+        _quitting = true;
+        _main?.Close(); // saves window placement, then Closed → Shutdown
+        if (_main is null) Shutdown();
+    }
+
     private void ShowMain(string tab)
     {
         if (_main is null) return;
@@ -304,6 +340,7 @@ public partial class App : System.Windows.Application, IDisposable
 
     protected override void OnExit(ExitEventArgs e)
     {
+        _tray?.Dispose();
         _hotkeys?.Dispose();
         _services?.Dispose();
         SqliteKnowledgeRepository.ReleaseFileHandles();

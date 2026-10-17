@@ -5,7 +5,8 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\DofusCompanion.Application\DofusCompanion.Application.csproj" />
-    <PackageReference Include="Microsoft.Data.Sqlite" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" />
+    <PackageReference Include="SQLitePCLRaw.provider.winsqlite3" />
     <PackageReference Include="NJsonSchema" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
   </ItemGroup>

@@ -105,7 +105,7 @@ public static class ImportPlanner
         var existingMechanics = existing.Mechanics.ToDictionary(m => m.Id, StringComparer.Ordinal);
         var existingVersions = existing.GameVersions.ToDictionary(v => v.Id, StringComparer.Ordinal);
         var byName = existing.Entities
-            .GroupBy(e => (e.Type, TextNormalizer.Normalize(e.CanonicalName)))
+            .GroupBy(e => (Type: NameGroup(e.Type), TextNormalizer.Normalize(e.CanonicalName)))
             .ToDictionary(g => g.Key, g => g.First());
 
         // 1. Entities first, to build the id remapping used by relations and mechanics.
@@ -114,7 +114,7 @@ public static class ImportPlanner
         foreach (var pe in package.Entities)
         {
             if (!existingEntities.ContainsKey(pe.Entity.Id)
-                && byName.TryGetValue((pe.Entity.Type, TextNormalizer.Normalize(pe.Entity.CanonicalName)), out var same))
+                && byName.TryGetValue((NameGroup(pe.Entity.Type), TextNormalizer.Normalize(pe.Entity.CanonicalName)), out var same))
             {
                 idMap[pe.Entity.Id] = same.Id;
                 duplicates.Add((pe, same));
@@ -219,6 +219,12 @@ public static class ImportPlanner
 
         return new ImportPlan(package, changes, warnings);
     }
+
+    /// <summary>
+    /// Monster and Boss share one namespace for duplicate detection: game data lists bosses (and wanted-notice
+    /// targets) as monsters, while the guides classify them as bosses.
+    /// </summary>
+    private static EntityType NameGroup(EntityType t) => t == EntityType.Boss ? EntityType.Monster : t;
 
     private static IReadOnlyList<EntityRelation> ExistingRelations(ExistingKnowledge existing, string id) =>
         existing.Relations.Where(r => r.FromId == id).ToList();

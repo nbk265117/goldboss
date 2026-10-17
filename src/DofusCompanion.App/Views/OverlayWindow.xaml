@@ -135,13 +135,25 @@
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate DataType="{x:Type vm:ResultLine}">
                                     <Button Command="{Binding DataContext.PickCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}"
-                                            HorizontalContentAlignment="Left" Margin="0" Padding="6,3" Background="Transparent" BorderBrush="Transparent"
+                                            HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0" Padding="6,3" Background="Transparent" BorderBrush="Transparent"
                                             AutomationProperties.Name="{Binding Name}">
-                                        <StackPanel HorizontalAlignment="Left">
+                                        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                                        <Grid Width="32" Height="32" Margin="0,0,8,0" VerticalAlignment="Center">
+                                            <Border CornerRadius="16" Background="{DynamicResource PanelAlt}" BorderBrush="{DynamicResource Border}" BorderThickness="1"
+                                                    Visibility="{Binding HasThumbnail, Converter={StaticResource HiddenWhen}}">
+                                                <TextBlock Text="{Binding Initial}" FontWeight="Bold" FontSize="14" Foreground="{DynamicResource Muted}"
+                                                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                            <Border CornerRadius="6" ClipToBounds="True" Visibility="{Binding HasThumbnail, Converter={StaticResource VisibleWhen}}">
+                                                <Image Source="{Binding Thumbnail}" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality"/>
+                                            </Border>
+                                        </Grid>
+                                        <StackPanel VerticalAlignment="Center">
                                             <TextBlock Text="{Binding Name}" FontWeight="SemiBold"/>
                                             <TextBlock FontSize="11" Foreground="{DynamicResource Muted}">
                                                 <Run Text="{Binding TypeLabel, Mode=OneWay}"/><Run Text=" · "/><Run Text="{Binding MechanicsLabel, Mode=OneWay}"/>
                                             </TextBlock>
+                                        </StackPanel>
                                         </StackPanel>
                                     </Button>
                                 </DataTemplate>
@@ -203,10 +215,23 @@
                             <TextBlock Text="{l:T Overlay.Empty}" Foreground="{DynamicResource Muted}" TextWrapping="Wrap"
                                        Visibility="{Binding Detail.HasEntity, Converter={StaticResource HiddenWhen}}"/>
                             <StackPanel Visibility="{Binding Detail.HasEntity, Converter={StaticResource VisibleWhen}}">
-                                <TextBlock FontSize="15" FontWeight="SemiBold" Text="{Binding Detail.Name}" TextWrapping="Wrap"/>
-                                <TextBlock FontSize="11" Foreground="{DynamicResource Muted}" TextWrapping="Wrap">
-                                    <Run Text="{Binding Detail.TypeLabel, Mode=OneWay}"/><Run Text="{Binding Detail.Locations, Mode=OneWay, StringFormat=' · {0}'}"/>
-                                </TextBlock>
+                                <DockPanel>
+                                    <Grid DockPanel.Dock="Left" Width="64" Height="64" Margin="0,0,10,0">
+                                        <Border CornerRadius="32" Background="{DynamicResource PanelAlt}" BorderBrush="{DynamicResource Border}" BorderThickness="1"
+                                                Visibility="{Binding Detail.HasImage, Converter={StaticResource HiddenWhen}}">
+                                            <TextBlock Text="{Binding Detail.Initial}" FontWeight="Bold" FontSize="26" Foreground="{DynamicResource Muted}"
+                                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                        <Image Source="{Binding Detail.Image}" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality"
+                                               Visibility="{Binding Detail.HasImage, Converter={StaticResource VisibleWhen}}"/>
+                                    </Grid>
+                                    <StackPanel VerticalAlignment="Center">
+                                        <TextBlock FontSize="15" FontWeight="SemiBold" Text="{Binding Detail.Name}" TextWrapping="Wrap"/>
+                                        <TextBlock FontSize="11" Foreground="{DynamicResource Muted}" TextWrapping="Wrap">
+                                            <Run Text="{Binding Detail.TypeLabel, Mode=OneWay}"/><Run Text="{Binding Detail.Locations, Mode=OneWay, StringFormat=' · {0}'}"/>
+                                        </TextBlock>
+                                    </StackPanel>
+                                </DockPanel>
                                 <Border Background="{DynamicResource CautionBg}" CornerRadius="4" Padding="6,4" Margin="0,6,0,0"
                                         Visibility="{Binding Detail.NoMechanicDocumented, Converter={StaticResource VisibleWhen}}">
                                     <TextBlock Text="{l:T Detail.NoMechanicTitle}" TextWrapping="Wrap" Foreground="{DynamicResource Caution}"/>

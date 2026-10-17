@@ -18,6 +18,12 @@ public sealed class SqliteKnowledgeRepository : IKnowledgeRepository
     private readonly string _connectionString;
     private readonly ILogger<SqliteKnowledgeRepository> _logger;
 
+    static SqliteKnowledgeRepository()
+    {
+        // Use the SQLite engine that ships with Windows (System32\winsqlite3.dll, Microsoft-signed).
+        SQLitePCL.raw.SetProvider(new SQLitePCL.SQLite3Provider_winsqlite3());
+    }
+
     public SqliteKnowledgeRepository(string databasePath, ILogger<SqliteKnowledgeRepository> logger)
     {
         DatabasePath = Path.GetFullPath(databasePath);

@@ -25,7 +25,31 @@ public static class DofusDbMapper
 
     public sealed record Result(KnowledgePackage Package, IReadOnlyList<string> Warnings);
 
-    public static Result Map(DofusDbSnapshot s, DateOnly today, string primaryLanguage = "fr")
+    /// <summary>
+    /// Picture URL of a monster record: its "img" field when it is an https URL on dofusdb.fr, otherwise the
+    /// given template ("{id}" replaced by the game id). Anything else is ignored.
+    /// </summary>
+    public static Uri? ImageUrl(JsonElement monster, string? template)
+    {
+        if (Int(monster, "id") is not { } id) return null;
+        foreach (var field in new[] { "img", "image" })
+        {
+            if (monster.TryGetProperty(field, out var v) && v.ValueKind == JsonValueKind.String
+                && Uri.TryCreate(v.GetString(), UriKind.Absolute, out var u) && IsAllowedImageHost(u))
+                return u;
+        }
+
+        return template is not null && Uri.TryCreate(template.Replace("{id}", id.ToString(CultureInfo.InvariantCulture), StringComparison.Ordinal), UriKind.Absolute, out var t)
+               && IsAllowedImageHost(t) ? t : null;
+    }
+
+    private static bool IsAllowedImageHost(Uri u) =>
+        u.Scheme == Uri.UriSchemeHttps && (u.Host.Equals("dofusdb.fr", StringComparison.OrdinalIgnoreCase) || u.Host.EndsWith(".dofusdb.fr", StringComparison.OrdinalIgnoreCase));
+
+    public static string ImageRelativePath(int gameId) => $"dofusdb/{gameId}.png";
+
+    /// <param name="imageFor">Returns the picture path (relative to the app's images folder) for a monster game id, or null.</param>
+    public static Result Map(DofusDbSnapshot s, DateOnly today, string primaryLanguage = "fr", Func<int, string?>? imageFor = null)
     {
         var warnings = new List<string>();
         var entities = new Dictionary<string, PackageEntity>(StringComparer.Ordinal);
@@ -127,7 +151,9 @@ public static class DofusDbMapper
             else
                 relations.AddRange(IntArray(m, "subareas").Select(SubAreaId).Where(entities.ContainsKey).Take(20)
                     .Select(sa => new EntityRelation(id, RelationType.LocatedIn, sa)));
-            Add(Entity(id, isBoss ? EntityType.Boss : EntityType.Monster, m, levelText, GameId(m)), relations);
+            var attributes = GameId(m);
+            if (imageFor?.Invoke(gameId) is { } picture) attributes["image"] = picture;
+            Add(Entity(id, isBoss ? EntityType.Boss : EntityType.Monster, m, levelText, attributes), relations);
         }
 
         // Relations may point to entities added later in the loop order; drop any that still dangle.

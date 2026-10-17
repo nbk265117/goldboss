@@ -22,8 +22,15 @@ public sealed partial class EntityDetailViewModel : ObservableObject
     private readonly SourceOpener _opener;
     private CancellationTokenSource? _cts;
 
-    public EntityDetailViewModel(KnowledgeService knowledge, FightContext fight, SourceOpener opener)
+    private readonly EntityImageProvider _images;
+    private readonly StatusService _status;
+    private GameEntity? _entity;
+
+    public EntityDetailViewModel(KnowledgeService knowledge, FightContext fight, SourceOpener opener, EntityImageProvider images, StatusService status)
     {
+        _images = images;
+        _status = status;
+        _images.Changed += (_, id) => { if (id == EntityId) RefreshImage(); };
         _knowledge = knowledge;
         _fight = fight;
         _opener = opener;
@@ -57,8 +64,91 @@ public sealed partial class EntityDetailViewModel : ObservableObject
         await ReloadAsync();
     }
 
+    [ObservableProperty] public partial System.Windows.Media.ImageSource? Image { get; private set; }
+    [ObservableProperty] public partial bool HasImage { get; private set; }
+    [ObservableProperty] public partial bool HasUserImage { get; private set; }
+    [ObservableProperty] public partial string Initial { get; private set; } = "?";
+
+    private void RefreshImage()
+    {
+        Image = _entity is null ? null : _images.Get(_entity, EntityImageProvider.LargeSize);
+        HasImage = Image is not null;
+        HasUserImage = _entity is not null && _images.Store.HasUserImage(_entity.Id);
+        Initial = _entity is { CanonicalName.Length: > 0 } e ? char.ToUpperInvariant(e.CanonicalName[0]).ToString() : "?";
+    }
+
+    /// <summary>Attach a picture from a file (PNG/JPEG/BMP/GIF/TIFF/WebP), stored locally for this entity only.</summary>
+    [RelayCommand]
+    private void AddImageFromFile()
+    {
+        if (EntityId is null) return;
+        var dlg = new Microsoft.Win32.OpenFileDialog
+        {
+            Filter = $"{Loc.Instance["Analysis.ImageFilter"]}|*.png;*.jpg;*.jpeg;*.bmp;*.gif;*.tif;*.tiff;*.webp",
+            CheckFileExists = true,
+        };
+        if (dlg.ShowDialog() != true) return;
+        try
+        {
+            var frame = System.Windows.Media.Imaging.BitmapFrame.Create(new Uri(dlg.FileName), System.Windows.Media.Imaging.BitmapCreateOptions.None,
+                System.Windows.Media.Imaging.BitmapCacheOption.OnLoad);
+            SaveImage(frame);
+        }
+        catch (Exception ex) when (ex is IOException or NotSupportedException or ArgumentException or System.Runtime.InteropServices.COMException)
+        {
+            _status.Error(Loc.Instance.Format("Image.Invalid", ex.Message));
+        }
+    }
+
+    /// <summary>Attach the picture currently in the clipboard (e.g. after Win+Shift+S on the monster).</summary>
+    [RelayCommand]
+    private void PasteImage()
+    {
+        if (EntityId is null) return;
+        try
+        {
+            if (!Clipboard.ContainsImage() || Clipboard.GetImage() is not { } img)
+            {
+                _status.Error(Loc.Instance["Analysis.NoClipboardImage"]);
+                return;
+            }
+
+            SaveImage(img);
+        }
+        catch (System.Runtime.InteropServices.COMException ex)
+        {
+            _status.Error(ex.Message);
+        }
+    }
+
+    [RelayCommand]
+    private void RemoveImage()
+    {
+        if (EntityId is null) return;
+        if (_images.Store.RemoveUserImage(EntityId)) _images.NotifyChanged(EntityId);
+    }
+
+    private void SaveImage(System.Windows.Media.Imaging.BitmapSource source)
+    {
+        // Normalise: at most 512 px on the longest side, saved as PNG.
+        var scale = Math.Min(1.0, 512.0 / Math.Max(source.PixelWidth, source.PixelHeight));
+        System.Windows.Media.Imaging.BitmapSource bmp = scale < 1.0
+            ? new System.Windows.Media.Imaging.TransformedBitmap(source, new System.Windows.Media.ScaleTransform(scale, scale))
+            : source;
+        var encoder = new System.Windows.Media.Imaging.PngBitmapEncoder();
+        encoder.Frames.Add(System.Windows.Media.Imaging.BitmapFrame.Create(bmp));
+        using var ms = new MemoryStream();
+        encoder.Save(ms);
+        _images.Store.SaveUserImage(EntityId!, ms.ToArray());
+        _images.NotifyChanged(EntityId!);
+        _status.Info(Loc.Instance.Format("Image.Saved", Name));
+    }
+
     public void Clear()
     {
+        _entity = null;
+        Image = null;
+        HasImage = false;
         EntityId = null;
         HasEntity = false;
         Mechanics.Clear();
@@ -89,6 +179,8 @@ public sealed partial class EntityDetailViewModel : ObservableObject
         if (guidance is null) { Clear(); return; }
 
         var e = guidance.Entity;
+        _entity = e;
+        RefreshImage();
         Name = e.CanonicalName;
         TypeLabel = GuidancePresenter.TypeLabel(e.Type);
         Locations = guidance.Locations.Count == 0 ? null : string.Join(", ", guidance.Locations.Select(l => l.CanonicalName));

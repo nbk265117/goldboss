@@ -17,6 +17,9 @@ Usage: dofusdb-import --accept-terms [options]
   --offline             Use only the cache, never the network
   --refresh             Re-download pages even if cached
   --lang <fr|en|...>    Language of canonical names (default: fr)
+  --images              Also download monster/boss pictures (personal use) into the app's images folder
+  --images-dir <dir>    Pictures folder (default: %LOCALAPPDATA%\DofusCompanion\images)
+  --image-url <tpl>     Picture URL template when a record has none (default: https://api.dofusdb.fr/img/monsters/{id}.png)
 
 Then import the file in Dofus Companion: Connaissances › Importer un paquet… (preview before applying).
 """;
@@ -62,7 +65,28 @@ try
         await client.GetAllAsync("subareas", cts.Token),
         await client.GetAllAsync("areas", cts.Token));
 
-    var result = DofusDbMapper.Map(snapshot, DateOnly.FromDateTime(DateTime.Today), lang);
+    Func<int, string?>? imageFor = null;
+    if (Flag("--images"))
+    {
+        var imagesDir = Path.GetFullPath(Opt("--images-dir") ?? Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DofusCompanion", "images"));
+        var template = Opt("--image-url") ?? "https://api.dofusdb.fr/img/monsters/{id}.png";
+        var available = new HashSet<int>();
+        var done = 0;
+        Console.WriteLine($"Downloading pictures into {imagesDir} (already downloaded ones are skipped)…");
+        foreach (var m in snapshot.Monsters)
+        {
+            if (DofusDbMapper.Int(m, "id") is not { } gameId || DofusDbMapper.ImageUrl(m, template) is not { } url) continue;
+            var target = Path.Combine(imagesDir, DofusDbMapper.ImageRelativePath(gameId).Replace('/', Path.DirectorySeparatorChar));
+            if (await client.DownloadImageAsync(url, target, cts.Token)) available.Add(gameId);
+            if (++done % 100 == 0) Console.WriteLine($"  pictures: {done}/{snapshot.Monsters.Count} checked, {available.Count} available");
+        }
+
+        Console.WriteLine($"  pictures available: {available.Count}");
+        imageFor = id => available.Contains(id) ? DofusDbMapper.ImageRelativePath(id) : null;
+    }
+
+    var result = DofusDbMapper.Map(snapshot, DateOnly.FromDateTime(DateTime.Today), lang, imageFor);
     var serializer = new KnowledgePackageSerializer();
     var json = serializer.Write(result.Package);
     await serializer.ReadAsync(json); // validate against the same schema the app uses before writing anything

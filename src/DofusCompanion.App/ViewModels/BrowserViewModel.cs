@@ -23,6 +23,10 @@ public sealed record ResultLine(SearchResult Result)
         ? Loc.Instance["Browser.NoMechanic"]
         : Loc.Instance.Format("Browser.MechanicCount", Result.MechanicCount, GuidancePresenter.VerificationLabel(Result.BestMechanicVerification));
     public Tone Tone => Result.MechanicCount == 0 ? Tone.Neutral : GuidancePresenter.VerificationTone(Result.BestMechanicVerification);
+    /// <summary>Small picture for result lists; null shows the initial-letter placeholder.</summary>
+    public System.Windows.Media.ImageSource? Thumbnail => EntityImageProvider.Current?.Get(Result.Entity, EntityImageProvider.ThumbnailSize);
+    public bool HasThumbnail => Thumbnail is not null;
+    public string Initial => Name.Length > 0 ? char.ToUpperInvariant(Name[0]).ToString() : "?";
 }
 
 /// <summary>Entity browser: debounced search with type/location/family/mechanic filters and a detail pane.</summary>

@@ -83,6 +83,16 @@
                                  AutomationProperties.Name="{l:T Browser.Results}">
                             <ListBox.ItemTemplate>
                                 <DataTemplate DataType="{x:Type vm:ResultLine}">
+                                    <DockPanel>
+                                    <Grid DockPanel.Dock="Left" Width="40" Height="40" Margin="0,0,10,0" VerticalAlignment="Center">
+                                        <Border CornerRadius="20" Background="{DynamicResource PanelAlt}" BorderBrush="{DynamicResource Border}" BorderThickness="1"
+                                                Visibility="{Binding HasThumbnail, Converter={StaticResource HiddenWhen}}">
+                                            <TextBlock Text="{Binding Initial}" FontWeight="Bold" FontSize="17" Foreground="{DynamicResource Muted}"
+                                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                        <Image Source="{Binding Thumbnail}" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality"
+                                               Visibility="{Binding HasThumbnail, Converter={StaticResource VisibleWhen}}"/>
+                                    </Grid>
                                     <StackPanel>
                                         <TextBlock Text="{Binding Name}" FontWeight="SemiBold" TextWrapping="Wrap"/>
                                         <TextBlock FontSize="11" Foreground="{DynamicResource Muted}" TextWrapping="Wrap">
@@ -92,6 +102,7 @@
                                         <TextBlock FontSize="11" Foreground="{DynamicResource Muted}" FontStyle="Italic" Text="{Binding MatchedText, StringFormat='≈ {0}'}"
                                                    Visibility="{Binding MatchedAlias, Converter={StaticResource VisibleWhen}}"/>
                                     </StackPanel>
+                                    </DockPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
@@ -422,6 +433,7 @@
                                 <ComboBox ItemsSource="{Binding Themes}" SelectedItem="{Binding Theme}" DisplayMemberPath="Label" HorizontalAlignment="Left" Width="220"/>
                                 <CheckBox Content="{l:T Settings.StartWithOverlay}" IsChecked="{Binding StartWithOverlay}"/>
                                 <CheckBox Content="{l:T Settings.StartMinimized}" IsChecked="{Binding StartMinimized}"/>
+                                <CheckBox Content="{l:T Settings.CloseToTray}" IsChecked="{Binding CloseToTray}"/>
                             </StackPanel>
                         </Border>
 

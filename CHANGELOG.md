@@ -1,5 +1,16 @@
 # Historique des versions
 
+## 0.3.0 — 17/10/2026
+
+- **Images des boss et monstres** : vignette dans les résultats de recherche (overlay et application), image en
+  tête de la fiche dans l'overlay, grande image dans l'application avec les boutons « Ajouter une image… »,
+  « Coller une image » et « Retirer l'image ». Sans image, une pastille avec l'initiale s'affiche.
+- **Importateur DofusDB `--images`** : télécharge les images de tous les monstres et boss dans ton dossier local
+  (usage personnel, jamais publiées). Un monstre DofusDB est fusionné avec le boss du même nom (ex. les cibles
+  d'avis de recherche), qui récupère ainsi son image.
+- **Prêt pour la signature** : l'application est publiée en un seul `DofusCompanion.exe` et utilise le SQLite
+  signé de Windows ; c'est le seul fichier à signer.
+
 ## 0.2.0 — 17/10/2026
 
 - **Nouveau style des étapes dans l'overlay** : étapes numérotées sur une frise, prérequis avec leur état

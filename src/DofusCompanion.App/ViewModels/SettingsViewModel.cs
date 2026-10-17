@@ -43,6 +43,7 @@ public sealed partial class SettingsViewModel : ObservableObject
     [ObservableProperty] public partial FilterOption<string>? Theme { get; set; }
     [ObservableProperty] public partial bool StartWithOverlay { get; set; }
     [ObservableProperty] public partial bool StartMinimized { get; set; }
+    [ObservableProperty] public partial bool CloseToTray { get; set; }
     [ObservableProperty] public partial double OverlayOpacity { get; set; }
     [ObservableProperty] public partial double OverlayWidth { get; set; }
     [ObservableProperty] public partial double OverlayHeight { get; set; }
@@ -79,6 +80,7 @@ public sealed partial class SettingsViewModel : ObservableObject
         Theme = Themes.FirstOrDefault(t => t.Value == s.Theme) ?? Themes[0];
         StartWithOverlay = s.StartWithOverlay;
         StartMinimized = s.StartMinimized;
+        CloseToTray = s.CloseToTray;
         OverlayOpacity = s.OverlayOpacity;
         OverlayWidth = s.Overlay.Width;
         OverlayHeight = s.Overlay.Height;
@@ -157,6 +159,7 @@ public sealed partial class SettingsViewModel : ObservableObject
         s.Theme = Theme?.Value ?? "Dark";
         s.StartWithOverlay = StartWithOverlay;
         s.StartMinimized = StartMinimized;
+        s.CloseToTray = CloseToTray;
         s.OverlayOpacity = OverlayOpacity;
         s.Overlay.Width = OverlayWidth;
         s.Overlay.Height = OverlayHeight;

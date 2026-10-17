@@ -11,6 +11,10 @@ public sealed class AppSettings
     public string Theme { get; set; } = "Dark";
     public bool StartWithOverlay { get; set; } = true;
     public bool StartMinimized { get; set; }
+    /// <summary>Closing the main window keeps the app running in the notification area (quit from the tray menu).</summary>
+    public bool CloseToTray { get; set; } = true;
+    /// <summary>Whether the "still running in the notification area" bubble was already shown once.</summary>
+    public bool TrayHintShown { get; set; }
     public WindowPlacement MainWindow { get; set; } = new() { Left = double.NaN, Top = double.NaN, Width = 1100, Height = 720 };
 
     // ---- overlay

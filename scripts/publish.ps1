@@ -12,6 +12,9 @@ $out = Join-Path $Root "artifacts\publish\DofusCompanion-$version-win-x64"
 if (Test-Path $out) { Remove-Item -Recurse -Force $out }
 Invoke-Checked $dotnet @('publish', (Join-Path $Root 'src\DofusCompanion.App\DofusCompanion.App.csproj'),
     '-c', 'Release', '-r', 'win-x64', '--self-contained', 'true',
+    # Single file: every managed assembly (ours and third-party) lives inside DofusCompanion.exe, so signing that
+    # one file covers them. Native runtime files stay beside it and are already signed by Microsoft.
+    '-p:PublishSingleFile=true', '-p:IncludeNativeLibrariesForSelfExtract=false',
     '-p:PublishReadyToRun=true', '-p:DebugType=none', '-p:GenerateDocumentationFile=false',
     '-o', $out)
 
