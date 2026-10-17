@@ -4,7 +4,8 @@
         xmlns:l="clr-namespace:DofusCompanion.App.Localization"
         xmlns:vm="clr-namespace:DofusCompanion.App.ViewModels"
         xmlns:c="clr-namespace:DofusCompanion.App.Controls"
-        Title="{l:T App.Name}" MinWidth="760" MinHeight="500"
+        xmlns:svc="clr-namespace:DofusCompanion.App.Services"
+        Title="{x:Static svc:AppInfo.Title}" MinWidth="760" MinHeight="500"
         Style="{StaticResource {x:Type Window}}">
     <DockPanel>
         <!-- Header -->
@@ -14,7 +15,9 @@
                     <Button Content="{l:T Main.ToggleOverlay}" Command="{Binding ToggleOverlayCommand}" ToolTip="{l:T Main.ToggleOverlayTip}"/>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock Text="{l:T App.Name}" FontSize="17" FontWeight="SemiBold"/>
+                    <TextBlock FontSize="17" FontWeight="SemiBold">
+                        <Run Text="{l:T App.Name}"/> <Run Text="{x:Static svc:AppInfo.Version}" FontSize="12" Foreground="{DynamicResource Muted}" FontWeight="Normal"/>
+                    </TextBlock>
                     <TextBlock Text="{l:T App.Disclaimer}" Style="{StaticResource MutedText}" FontSize="11"/>
                 </StackPanel>
             </DockPanel>

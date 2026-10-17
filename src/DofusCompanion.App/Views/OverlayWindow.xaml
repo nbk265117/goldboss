@@ -4,6 +4,7 @@
         xmlns:l="clr-namespace:DofusCompanion.App.Localization"
         xmlns:vm="clr-namespace:DofusCompanion.App.ViewModels"
         xmlns:c="clr-namespace:DofusCompanion.App.Controls"
+        xmlns:svc="clr-namespace:DofusCompanion.App.Services"
         Title="{l:T Overlay.Title}"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent"
         Topmost="True" ShowInTaskbar="False" ShowActivated="False"
@@ -75,7 +76,7 @@
                         <Button Style="{StaticResource IconButton}" Content="&#xE711;" ToolTip="{l:T Overlay.HideTip}" AutomationProperties.Name="{l:T Overlay.HideTip}"
                                 Command="{Binding HideCommand}"/>
                     </StackPanel>
-                    <TextBlock Text="{l:T App.Name}" FontWeight="SemiBold" VerticalAlignment="Center" Foreground="{DynamicResource Muted}" FontSize="12"/>
+                    <TextBlock Text="{x:Static svc:AppInfo.Title}" FontWeight="SemiBold" VerticalAlignment="Center" Foreground="{DynamicResource Muted}" FontSize="12"/>
                 </DockPanel>
             </Border>
 

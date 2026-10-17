@@ -389,3 +389,23 @@ public sealed class PerformanceCollection
 {
     public const string Name = "Performance";
 }
+
+public class AppPathsMigrationTests
+{
+    [Fact]
+    public void Legacy_data_folder_is_moved_to_the_new_name_once()
+    {
+        var baseDir = Path.Combine(Path.GetTempPath(), "dc-migrate-" + Guid.NewGuid().ToString("N"));
+        var legacy = Path.Combine(baseDir, AppPaths.LegacyFolderName);
+        Directory.CreateDirectory(legacy);
+        File.WriteAllText(Path.Combine(legacy, "settings.json"), "{}");
+
+        var root = AppPaths.DefaultRoot(baseDir);
+
+        Assert.Equal(Path.Combine(baseDir, AppPaths.FolderName), root);
+        Assert.True(File.Exists(Path.Combine(root, "settings.json")));   // data kept
+        Assert.False(Directory.Exists(legacy));                          // moved, not copied
+        Assert.Equal(root, AppPaths.DefaultRoot(baseDir));               // idempotent
+        Directory.Delete(baseDir, true);
+    }
+}

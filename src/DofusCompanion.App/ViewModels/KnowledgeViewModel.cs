@@ -162,7 +162,7 @@ public sealed partial class KnowledgeViewModel : ObservableObject
         var dlg = new SaveFileDialog
         {
             Filter = Loc.Instance["Knowledge.PackageFilter"] + "|*.json",
-            FileName = $"dofus-companion-{DateTime.Now:yyyyMMdd}.json",
+            FileName = $"dofus-gold-boss-{DateTime.Now:yyyyMMdd}.json",
             AddExtension = true,
             OverwritePrompt = true,
         };

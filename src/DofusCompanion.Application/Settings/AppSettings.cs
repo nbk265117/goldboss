@@ -44,7 +44,7 @@ public sealed class AppSettings
     /// <summary>Screen capture is opt-in. Off by default; image import always works.</summary>
     public bool ScreenCaptureEnabled { get; set; }
     /// <summary>
-    /// Hide the overlay from Dofus Companion's OWN captures (so its text is never OCR'd). It stays visible to
+    /// Hide the overlay from Dofus Gold Boss - DGB's OWN captures (so its text is never OCR'd). It stays visible to
     /// Discord, OBS and other screen sharing at all times.
     /// </summary>
     public bool ExcludeOverlayFromCapture { get; set; } = true;

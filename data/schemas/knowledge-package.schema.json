@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://dofus-companion.local/schemas/knowledge-package.v1.json",
-  "title": "Dofus Companion knowledge package (format version 1)",
-  "description": "Entities, mechanics and sources importable into Dofus Companion. Imported content is data only and is never executed.",
+  "title": "Dofus Gold Boss - DGB knowledge package (format version 1)",
+  "description": "Entities, mechanics and sources importable into Dofus Gold Boss - DGB. Imported content is data only and is never executed.",
   "type": "object",
   "additionalProperties": false,
   "required": ["formatVersion", "packageId", "name", "createdOn", "sources", "entities", "mechanics"],

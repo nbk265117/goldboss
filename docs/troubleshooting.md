@@ -14,4 +14,4 @@
 | "…ne peut pas être mise à jour" (migration) | The database comes from a newer version of the app: update the app or point Settings › Database to another file. |
 | Import refused | The error list shows the JSON path and rule; fix the package (see knowledge-import-export.md). Nothing was changed. |
 | Settings reset at start | `settings.json` was unreadable; the original is kept as `settings.json.bak`. |
-| Logs / report for a bug | Diagnostics › *Prepare a report…*, review, save, share. Logs: `%LOCALAPPDATA%\DofusCompanion\logs`. |
+| Logs / report for a bug | Diagnostics › *Prepare a report…*, review, save, share. Logs: `%LOCALAPPDATA%\DofusGoldBoss\logs`. |

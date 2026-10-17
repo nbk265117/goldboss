@@ -49,7 +49,7 @@ public sealed class FileLoggerProvider : ILoggerProvider
 
     public LogLevel MinimumLevel { get; set; }
 
-    public string CurrentFile => Path.Combine(_directory, $"dofus-companion-{DateTime.Now:yyyyMMdd}.log");
+    public string CurrentFile => Path.Combine(_directory, $"dofus-gold-boss-{DateTime.Now:yyyyMMdd}.log");
 
     public ILogger CreateLogger(string categoryName) => new FileLogger(this, categoryName);
 
@@ -89,7 +89,7 @@ public sealed class FileLoggerProvider : ILoggerProvider
     {
         try
         {
-            foreach (var f in Directory.GetFiles(_directory, "dofus-companion-*.log"))
+            foreach (var f in Directory.GetFiles(_directory, "dofus-gold-boss-*.log"))
                 if (File.GetLastWriteTime(f) < DateTime.Now.AddDays(-7)) File.Delete(f);
         }
         catch (IOException) { }

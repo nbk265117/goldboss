@@ -14,7 +14,7 @@ public static class ThemeManager
         if (app is null) return;
         var dictionaries = app.Resources.MergedDictionaries;
         var existing = dictionaries.FirstOrDefault(d => d.Source?.OriginalString.Contains("/Themes/Colors.", StringComparison.Ordinal) == true);
-        var next = new ResourceDictionary { Source = new Uri($"pack://application:,,,/DofusCompanion;component/Themes/Colors.{theme}.xaml", UriKind.Absolute) };
+        var next = new ResourceDictionary { Source = new Uri($"pack://application:,,,/DofusGoldBoss;component/Themes/Colors.{theme}.xaml", UriKind.Absolute) };
         if (existing is null) dictionaries.Insert(0, next);
         else dictionaries[dictionaries.IndexOf(existing)] = next;
         Current = theme;

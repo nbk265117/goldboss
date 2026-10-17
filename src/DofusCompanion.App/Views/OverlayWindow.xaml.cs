@@ -62,7 +62,7 @@ public partial class OverlayWindow : Window
     }
 
     /// <summary>
-    /// Excludes the overlay from screen captures until the returned scope is disposed, so Dofus Companion's own
+    /// Excludes the overlay from screen captures until the returned scope is disposed, so Dofus Gold Boss - DGB's own
     /// capture never contains (and OCRs) the overlay while Discord/OBS still see it the rest of the time.
     /// </summary>
     public async Task<IDisposable> ExcludeFromCaptureScopeAsync()

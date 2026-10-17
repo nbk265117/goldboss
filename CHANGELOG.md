@@ -1,5 +1,17 @@
 # Historique des versions
 
+## 0.4.0 — 17/10/2026
+
+- **Nouveau nom : Dofus Gold Boss - DGB.** Programme `DofusGoldBoss.exe`, zip `DofusGoldBoss-<version>-win-x64.zip`,
+  données dans `%LOCALAPPDATA%\DofusGoldBoss` (l'ancien dossier `DofusCompanion` est déplacé automatiquement au
+  premier lancement : rien n'est perdu).
+- Le numéro de version s'affiche dans les titres.
+
+## 0.3.2 — 17/10/2026
+
+- Le **numéro de version** s'affiche dans le titre de la fenêtre, l'en-tête, l'overlay et l'infobulle de l'icône de
+  notification.
+
 ## 0.3.1 — 17/10/2026
 
 - **Images des boss en une commande** : l'importateur DofusDB (`--images`) ne télécharge plus que les images des
@@ -15,7 +27,7 @@
 - **Importateur DofusDB `--images`** : télécharge les images de tous les monstres et boss dans ton dossier local
   (usage personnel, jamais publiées). Un monstre DofusDB est fusionné avec le boss du même nom (ex. les cibles
   d'avis de recherche), qui récupère ainsi son image.
-- **Prêt pour la signature** : l'application est publiée en un seul `DofusCompanion.exe` et utilise le SQLite
+- **Prêt pour la signature** : l'application est publiée en un seul `DofusGoldBoss.exe` et utilise le SQLite
   signé de Windows ; c'est le seul fichier à signer.
 
 ## 0.2.0 — 17/10/2026

@@ -40,7 +40,7 @@ public partial class App : System.Windows.Application, IDisposable
         base.OnStartup(e);
 
         // One instance only: two instances would fight over hotkeys and the database file.
-        _singleInstance = new Mutex(true, @"Local\DofusCompanion.SingleInstance" + (DataDirFromArgs(e.Args) is { } d ? "." + StableId(d) : ""), out var first);
+        _singleInstance = new Mutex(true, @"Local\DofusGoldBoss.SingleInstance" + (DataDirFromArgs(e.Args) is { } d ? "." + StableId(d) : ""), out var first);
         if (!first)
         {
             MessageBox.Show(Loc.Instance["Error.AlreadyRunning"], Loc.Instance["App.Name"], MessageBoxButton.OK, MessageBoxImage.Information);
@@ -48,7 +48,7 @@ public partial class App : System.Windows.Application, IDisposable
             return;
         }
 
-        // "--data-dir <folder>": portable mode / clean-install testing. Default: %LOCALAPPDATA%\DofusCompanion.
+        // "--data-dir <folder>": portable mode / clean-install testing. Default: %LOCALAPPDATA%\DofusGoldBoss.
         var dataDir = DataDirFromArgs(e.Args);
         var paths = new AppPaths(dataDir);
         var settings = new JsonSettingsStore(paths.Settings);
@@ -104,7 +104,7 @@ public partial class App : System.Windows.Application, IDisposable
         services.AddSingleton<OverlayWindow>();
         _services = services.BuildServiceProvider();
         _logger = Services.GetRequiredService<ILogger<App>>();
-        _logger.LogInformation("Dofus Companion {Version} starting", DiagnosticsViewModel.AppVersion);
+        _logger.LogInformation("Dofus Gold Boss - DGB {Version} starting", DiagnosticsViewModel.AppVersion);
 
         DispatcherUnhandledException += OnDispatcherUnhandledException;
         TaskScheduler.UnobservedTaskException += (_, args) =>

@@ -54,11 +54,11 @@ public sealed class TrayIconService : IDisposable
     public void Show() => _icon.Visible = true;
 
     /// <summary>Short notification bubble (e.g. "still running here" the first time the window is closed).</summary>
-    public void Notify(string text) => _icon.ShowBalloonTip(4000, Loc.Instance["App.Name"], text, Forms.ToolTipIcon.Info);
+    public void Notify(string text) => _icon.ShowBalloonTip(4000, AppInfo.Name, text, Forms.ToolTipIcon.Info);
 
     private void UpdateTexts()
     {
-        _icon.Text = Loc.Instance["App.Name"]; // tooltip, max 63 chars
+        _icon.Text = AppInfo.Title; // tooltip, max 63 chars
         _overlayItem.Text = Loc.Instance["Tray.Overlay"];
         _mainItem.Text = Loc.Instance["Tray.Main"];
         _clickThroughItem.Text = Loc.Instance["Tray.ClickThrough"];
@@ -67,7 +67,7 @@ public sealed class TrayIconService : IDisposable
 
     private static System.Drawing.Icon LoadIcon()
     {
-        var info = System.Windows.Application.GetResourceStream(new Uri("pack://application:,,,/DofusCompanion;component/Assets/app.ico"));
+        var info = System.Windows.Application.GetResourceStream(new Uri("pack://application:,,,/DofusGoldBoss;component/Assets/app.ico"));
         return info is null ? System.Drawing.SystemIcons.Application : new System.Drawing.Icon(info.Stream, Forms.SystemInformation.SmallIconSize);
     }
 

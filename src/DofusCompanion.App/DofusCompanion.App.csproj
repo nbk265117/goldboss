@@ -7,7 +7,7 @@
     <!-- Only for the notification-area icon (NotifyIcon); not imported globally to avoid WPF/WinForms name clashes. -->
     <UseWindowsForms>true</UseWindowsForms>
     <RootNamespace>DofusCompanion.App</RootNamespace>
-    <AssemblyName>DofusCompanion</AssemblyName>
+    <AssemblyName>DofusGoldBoss</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\app.ico</ApplicationIcon>
     <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>

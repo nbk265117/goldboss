@@ -1,12 +1,12 @@
 # Third-party notices
 
-Dependencies shipped with Dofus Companion (versions pinned in `Directory.Packages.props`, reviewed 2026-10-17;
+Dependencies shipped with Dofus Gold Boss - DGB (versions pinned in `Directory.Packages.props`, reviewed 2026-10-17;
 `dotnet list package --vulnerable --include-transitive` reported no known vulnerability).
 
 | Package | Version | License | Purpose |
 |---|---|---|---|
 | .NET runtime / WPF (self-contained) | 10.0 | MIT | Runtime and UI framework |
-| Microsoft.Data.Sqlite (+ SQLitePCLRaw bundle_e_sqlite3) | 10.0.13 / 2.1.13 | MIT (SQLite: public domain) | Local knowledge database |
+| Microsoft.Data.Sqlite.Core + SQLitePCLRaw.provider.winsqlite3 | 10.0.13 / 2.1.11 | MIT / Apache-2.0 (uses Windows' own signed winsqlite3.dll) | Local knowledge database |
 | Microsoft.Extensions.DependencyInjection / Logging | 10.0.13 | MIT | Composition and structured logging |
 | CommunityToolkit.Mvvm | 8.4.2 | MIT | MVVM source generators |
 | NJsonSchema (+ Newtonsoft.Json 13.0.3, Namotion.Reflection 3.5.0) | 11.6.1 | MIT | Knowledge package validation |

@@ -8,11 +8,11 @@ $dotnet = Get-Dotnet
 if (-not $SkipTests) { & (Join-Path $PSScriptRoot 'test.ps1') }
 
 $version = ([xml](Get-Content (Join-Path $Root 'Directory.Build.props'))).Project.PropertyGroup.Version
-$out = Join-Path $Root "artifacts\publish\DofusCompanion-$version-win-x64"
+$out = Join-Path $Root "artifacts\publish\DofusGoldBoss-$version-win-x64"
 if (Test-Path $out) { Remove-Item -Recurse -Force $out }
 Invoke-Checked $dotnet @('publish', (Join-Path $Root 'src\DofusCompanion.App\DofusCompanion.App.csproj'),
     '-c', 'Release', '-r', 'win-x64', '--self-contained', 'true',
-    # Single file: every managed assembly (ours and third-party) lives inside DofusCompanion.exe, so signing that
+    # Single file: every managed assembly (ours and third-party) lives inside DofusGoldBoss.exe, so signing that
     # one file covers them. Native runtime files stay beside it and are already signed by Microsoft.
     '-p:PublishSingleFile=true', '-p:IncludeNativeLibrariesForSelfExtract=false',
     '-p:PublishReadyToRun=true', '-p:DebugType=none', '-p:GenerateDocumentationFile=false',

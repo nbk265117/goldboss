@@ -15,8 +15,8 @@ Visual Studio is optional (open `DofusCompanion.slnx`, VS 2022 17.13+ or VS 2026
 .\scripts\publish.ps1 -SkipTests
 ```
 
-Output: `artifacts\publish\DofusCompanion-<version>-win-x64\` and the `.zip` next to it. The folder contains
-`DofusCompanion.exe`, the runtime, `data\schemas`, `data\seed` (readable copies; the app uses embedded
+Output: `artifacts\publish\DofusGoldBoss-<version>-win-x64\` and the `.zip` next to it. The folder contains
+`DofusGoldBoss.exe`, the runtime, `data\schemas`, `data\seed` (readable copies; the app uses embedded
 copies), `README.md` and `LICENSE-NOTICES.md`. No `.pdb`, no secrets, no user data.
 
 Version: `<Version>` in `Directory.Build.props`.
@@ -24,14 +24,14 @@ Version: `<Version>` in `Directory.Build.props`.
 ## Smoke test of a package
 
 1. Unzip into an empty folder.
-2. `DofusCompanion.exe --data-dir <empty temp folder>` (keeps your real data untouched) — no .NET needed.
+2. `DofusGoldBoss.exe --data-dir <empty temp folder>` (keeps your real data untouched) — no .NET needed.
 3. `.\scripts\ui-smoke.ps1` while it runs → expect "All UI checks passed".
 
 Done for 0.1.0 on 17/10/2026: 14/14 checks, warm start 1.6–2.2 s.
 
 ## Installer
 
-Not provided yet (a plain folder is enough and leaves no trace outside `%LOCALAPPDATA%\DofusCompanion`).
+Not provided yet (a plain folder is enough and leaves no trace outside `%LOCALAPPDATA%\DofusGoldBoss`).
 If one is added, use an established tool (WiX v5 or Inno Setup), per-user install without elevation, and
 verify install / launch / upgrade / uninstall.
 

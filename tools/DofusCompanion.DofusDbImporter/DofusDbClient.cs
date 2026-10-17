@@ -23,7 +23,7 @@ public sealed record ClientOptions
 /// </summary>
 public sealed class DofusDbClient(HttpClient http, ClientOptions options, TextWriter log)
 {
-    public const string UserAgent = "DofusCompanion-Importer/0.1 (user-run, low volume)";
+    public const string UserAgent = "DofusGoldBoss-Importer/0.4 (user-run, low volume)";
     private int _requests;
 
     public int NetworkRequests => _requests;

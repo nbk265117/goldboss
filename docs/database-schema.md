@@ -1,6 +1,6 @@
 # Database schema
 
-SQLite file (default `%LOCALAPPDATA%\DofusCompanion\knowledge.db`), WAL journal, foreign keys on.
+SQLite file (default `%LOCALAPPDATA%\DofusGoldBoss\knowledge.db`), WAL journal, foreign keys on.
 Schema version = `PRAGMA user_version`. Migrations are in
 `src/DofusCompanion.Infrastructure/Persistence/DatabaseMigrator.cs`; each runs in its own transaction and
 shipped migrations are never edited.

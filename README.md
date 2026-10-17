@@ -1,4 +1,4 @@
-# Dofus Companion
+# Dofus Gold Boss - DGB
 
 Un compagnon pour **Dofus 3 (Unity)** sous Windows : un petit panneau toujours visible par-dessus le jeu qui
 t'explique **comment battre chaque boss** — comment lever son invulnérabilité, dans quel ordre, quels pièges
@@ -19,9 +19,9 @@ possibles, résultat attendu et sa durée en vert, pièges mortels en rouge, et 
 ## Télécharger et lancer
 
 1. Va sur la page **[Releases](https://github.com/nbk265117/goldboss/releases/latest)** (dernière version).
-2. Dans **Assets**, télécharge le fichier **`DofusCompanion-<version>-win-x64.zip`** (≈ 80 Mo).
+2. Dans **Assets**, télécharge le fichier **`DofusGoldBoss-<version>-win-x64.zip`** (≈ 80 Mo).
 3. Fais un clic droit sur le zip → **Extraire tout…** (par exemple dans `Documents\DofusCompanion`).
-4. Ouvre le dossier extrait et double-clique sur **`DofusCompanion.exe`**.
+4. Ouvre le dossier extrait et double-clique sur **`DofusGoldBoss.exe`**.
 
 C'est tout : aucune installation, aucun droit administrateur, rien d'autre à télécharger (.NET est inclus).
 
@@ -39,16 +39,16 @@ solution.
 Windows marque les fichiers téléchargés comme « venant d'Internet ». En retirant cette marque avant
 d'extraire, le message SmartScreen n'apparaît généralement plus :
 
-1. Clic droit sur **`DofusCompanion-…-win-x64.zip`** → **Propriétés**.
+1. Clic droit sur **`DofusGoldBoss-…-win-x64.zip`** → **Propriétés**.
 2. Dans l'onglet **Général**, en bas, coche **Débloquer** → **OK**.
 3. Ensuite seulement : clic droit → **Extraire tout…**
 
 Ou dans PowerShell, depuis le dossier du téléchargement :
-`Unblock-File .\DofusCompanion-*-win-x64.zip`
+`Unblock-File .\DofusGoldBoss-*-win-x64.zip`
 
 #### Cas 1 — « Windows a protégé votre ordinateur » (SmartScreen)
 
-Fenêtre bleue au lancement de `DofusCompanion.exe` :
+Fenêtre bleue au lancement de `DofusGoldBoss.exe` :
 
 1. Clique sur **Informations complémentaires**.
 2. Clique sur **Exécuter quand même**.
@@ -66,7 +66,7 @@ d'autoriser une application en particulier**. La seule solution est de le désac
 2. Va dans **Contrôle des applications et du navigateur**.
 3. Clique sur **Paramètres du Contrôle intelligent des applications**.
 4. Choisis **Désactivé** et confirme.
-5. Relance `DofusCompanion.exe`.
+5. Relance `DofusGoldBoss.exe`.
 
 <p align="center">
   <img src="docs/images/smart-app-control.png" alt="Sécurité Windows › Contrôle intelligent des applications › Désactivé" width="520">
@@ -142,7 +142,7 @@ cd goldboss
 dotnet run --project tools\DofusCompanion.DofusDbImporter -c Release -- --accept-terms --images
 ```
 
-Puis **redémarre Dofus Companion** : les données et les images sont importées automatiquement.
+Puis **redémarre Dofus Gold Boss - DGB** : les données et les images sont importées automatiquement.
 L'outil fait une requête toutes les 1,5 s (quelques minutes pour les 224 boss ; `--all-images` pour tous les
 monstres, beaucoup plus long). Vérifie les conditions d'utilisation de DofusDB avant de l'utiliser (usage personnel).
 Sans image, une pastille avec l'initiale du boss s'affiche.
@@ -163,7 +163,7 @@ Tu peux ajouter tes propres mécaniques (onglet **Connaissances**) ou importer u
 - Aucune connexion internet, aucune télémétrie, aucun compte demandé. Seul un clic sur « Ouvrir la source »
   ouvre la page du guide dans ton navigateur.
 - Les captures sont analysées sur ton PC et ne sont pas conservées (sauf si tu l'actives).
-- Tes données sont dans `%LOCALAPPDATA%\DofusCompanion`.
+- Tes données sont dans `%LOCALAPPDATA%\DofusGoldBoss`.
 
 ## Nouveautés
 
@@ -173,7 +173,7 @@ mécaniques de ses boss, overlay visible dans les partages Discord/OBS.
 ## Mettre à jour / désinstaller
 
 - **Mettre à jour :** télécharge la nouvelle version et remplace le dossier. Tes données sont conservées.
-- **Désinstaller :** supprime le dossier de l'application, et `%LOCALAPPDATA%\DofusCompanion` pour effacer
+- **Désinstaller :** supprime le dossier de l'application, et `%LOCALAPPDATA%\DofusGoldBoss` pour effacer
   aussi tes données.
 
 ---

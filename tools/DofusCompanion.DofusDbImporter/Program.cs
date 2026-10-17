@@ -2,7 +2,7 @@ using System.Globalization;
 using DofusCompanion.DofusDbImporter;
 using DofusCompanion.Infrastructure.Knowledge;
 
-// dofusdb-import — builds a Dofus Companion knowledge package (monsters, bosses, dungeons, areas,
+// dofusdb-import — builds a Dofus Gold Boss - DGB knowledge package (monsters, bosses, dungeons, areas,
 // families) from the DofusDB public API. Run it YOURSELF; the application itself never goes online.
 
 const string Usage = """
@@ -19,10 +19,10 @@ Usage: dofusdb-import --accept-terms [options]
   --lang <fr|en|...>    Language of canonical names (default: fr)
   --images              Also download pictures (personal use) of the bosses the app knows, into its images folder
   --all-images          With --images: download the pictures of every monster (thousands; much longer)
-  --images-dir <dir>    Pictures folder (default: %LOCALAPPDATA%\DofusCompanion\images)
+  --images-dir <dir>    Pictures folder (default: %LOCALAPPDATA%\DofusGoldBoss\images)
   --image-url <tpl>     Picture URL template when a record has none (default: https://api.dofusdb.fr/img/monsters/{id}.png)
 
-Then import the file in Dofus Companion: Connaissances › Importer un paquet… (preview before applying).
+Then import the file in Dofus Gold Boss - DGB: Connaissances › Importer un paquet… (preview before applying).
 """;
 
 var a = args.ToList();
@@ -47,7 +47,7 @@ var options = new ClientOptions
     Offline = offline,
     Refresh = Flag("--refresh"),
 };
-var appData = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DofusCompanion");
+var appData = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DofusGoldBoss");
 var output = Path.GetFullPath(Opt("--out") ?? Path.Combine(appData, "imports", "dofusdb.dofus-knowledge.json"));
 var lang = Opt("--lang") ?? "fr";
 
@@ -99,7 +99,7 @@ try
     Console.WriteLine($"Entities: {result.Package.Entities.Count} ({string.Join(", ", result.Package.Entities.GroupBy(e => e.Entity.Type).Select(g => $"{g.Count()} {g.Key}"))})");
     foreach (var w in result.Warnings.Distinct().Take(20)) Console.WriteLine($"  warning: {w}");
     Console.WriteLine($"Written: {output}");
-    Console.WriteLine("Start (or restart) Dofus Companion: the package is imported automatically.");
+    Console.WriteLine("Start (or restart) Dofus Gold Boss - DGB: the package is imported automatically.");
     return 0;
 }
 catch (OperationCanceledException)

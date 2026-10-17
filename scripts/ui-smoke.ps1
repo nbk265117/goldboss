@@ -1,9 +1,9 @@
 <#
 .SYNOPSIS
-  UI smoke test of a running (or freshly started) Dofus Companion, through Windows UI Automation.
-  Drives only Dofus Companion's own windows. Exit code 0 = all checks passed.
+  UI smoke test of a running (or freshly started) Dofus Gold Boss - DGB, through Windows UI Automation.
+  Drives only Dofus Gold Boss - DGB's own windows. Exit code 0 = all checks passed.
 .PARAMETER Exe
-  Path to DofusCompanion.exe. If given and the app is not running, it is started.
+  Path to DofusGoldBoss.exe. If given and the app is not running, it is started.
 #>
 param([string]$Exe, [int]$ProcessId = 0)
 $ErrorActionPreference = 'Stop'
@@ -17,11 +17,11 @@ function Check([string]$name, [bool]$ok, [string]$detail = '') {
 }
 
 # -ProcessId targets one instance (several copies of the app may be running).
-$proc = if ($ProcessId) { Get-Process -Id $ProcessId -ErrorAction SilentlyContinue } else { Get-Process DofusCompanion -ErrorAction SilentlyContinue | Select-Object -First 1 }
+$proc = if ($ProcessId) { Get-Process -Id $ProcessId -ErrorAction SilentlyContinue } else { Get-Process DofusGoldBoss -ErrorAction SilentlyContinue | Select-Object -First 1 }
 if (-not $proc -and $Exe) {
     $proc = Start-Process $Exe -PassThru
 }
-if (-not $proc) { Write-Error 'Dofus Companion is not running.'; exit 2 }
+if (-not $proc) { Write-Error 'Dofus Gold Boss - DGB is not running.'; exit 2 }
 
 $root = [System.Windows.Automation.AutomationElement]::RootElement
 $pidCond = [System.Windows.Automation.PropertyCondition]::new([System.Windows.Automation.AutomationElement]::ProcessIdProperty, $proc.Id)
@@ -52,7 +52,7 @@ function Click($element) {
     $element.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern).Invoke()
 }
 
-$main = WaitFor { Windows | Where-Object { $_.Current.Name -eq 'Dofus Companion' } | Select-Object -First 1 } 60000
+$main = WaitFor { Windows | Where-Object { $_.Current.Name -like 'Dofus Gold Boss*' -and $_.Current.Name -notlike '*overlay*' } | Select-Object -First 1 } 60000
 Check 'main window shown' ($null -ne $main)
 if (-not $main) { $results; exit 1 }
 

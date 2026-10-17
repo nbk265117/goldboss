@@ -103,7 +103,7 @@ public sealed partial class DiagnosticsViewModel : ObservableObject
     {
         await RefreshAsync();
         var sb = new StringBuilder();
-        sb.AppendLine("Dofus Companion — diagnostic report");
+        sb.AppendLine("Dofus Gold Boss - DGB — diagnostic report");
         sb.AppendLine($"Generated: {DateTimeOffset.Now:O}");
         sb.AppendLine("Contains: versions, OCR/database status, recent warnings and errors. No screenshots, no OCR text, no account data.");
         sb.AppendLine();
@@ -121,7 +121,7 @@ public sealed partial class DiagnosticsViewModel : ObservableObject
     [RelayCommand]
     private void SaveExport()
     {
-        var dlg = new SaveFileDialog { Filter = "Text (*.txt)|*.txt", FileName = $"dofus-companion-diagnostic-{DateTime.Now:yyyyMMdd-HHmm}.txt" };
+        var dlg = new SaveFileDialog { Filter = "Text (*.txt)|*.txt", FileName = $"dofus-gold-boss-diagnostic-{DateTime.Now:yyyyMMdd-HHmm}.txt" };
         if (dlg.ShowDialog() != true) return;
         File.WriteAllText(dlg.FileName, ExportPreview, new UTF8Encoding(false));
         HasExportPreview = false;

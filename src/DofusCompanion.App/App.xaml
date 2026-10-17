@@ -6,8 +6,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!-- Replaced at runtime by ThemeManager (Colors.Dark / Colors.Light). -->
-                <ResourceDictionary Source="/DofusCompanion;component/Themes/Colors.Dark.xaml"/>
-                <ResourceDictionary Source="/DofusCompanion;component/Themes/Styles.xaml"/>
+                <ResourceDictionary Source="/DofusGoldBoss;component/Themes/Colors.Dark.xaml"/>
+                <ResourceDictionary Source="/DofusGoldBoss;component/Themes/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

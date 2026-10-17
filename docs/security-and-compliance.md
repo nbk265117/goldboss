@@ -19,7 +19,7 @@ or screen reading**. CGU 13.2/13.5 restrict copying/extracting game data without
 **Consequently this app is not "authorised" by Ankama, and says so in its UI.** Only Ankama's written consent
 would change that. Its behaviour is chosen to stay far from every explicit prohibition:
 
-| Prohibited / risky | Dofus Companion |
+| Prohibited / risky | Dofus Gold Boss - DGB |
 |---|---|
 | Client modification, injection, hooks, memory reading | None. The app never opens, enumerates or attaches to the game process. |
 | Automation, inputs to the game | None. No `SendInput`/`SendKeys`/`PostMessage` exists in the code. Global hotkeys only control the companion; plain keys are never registered. UI tests drive only the companion's own windows through UI Automation. |
@@ -31,7 +31,7 @@ would change that. Its behaviour is chosen to stay far from every explicit prohi
 
 ## Application security
 
-- **No elevation**: manifest `asInvoker`; data only under `%LOCALAPPDATA%\DofusCompanion` (or `--data-dir`).
+- **No elevation**: manifest `asInvoker`; data only under `%LOCALAPPDATA%\DofusGoldBoss` (or `--data-dir`).
 - **No telemetry**, no outbound connection. Source links: only absolute `http(s)` URLs are opened, on click.
 - **Imports** are data only: size limit, JSON Schema with `additionalProperties: false`, semantic checks, no
   file paths in the format, no code execution; applied in a transaction after preview.
