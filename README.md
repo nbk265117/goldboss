@@ -30,32 +30,75 @@ par Windows). Les suivants prennent environ 1 à 2 secondes.
 
 ### Si Windows bloque l'application
 
-L'application n'est pas signée numériquement (un certificat coûte de l'argent), Windows peut donc se méfier.
-Deux messages possibles :
+L'application n'est **pas encore signée numériquement**. Windows se méfie donc d'elle comme de tout programme
+récent téléchargé sur Internet. Selon ton PC, tu verras zéro, un ou deux des cas ci-dessous — chacun a sa
+solution.
 
-#### 1. « Windows a protégé votre ordinateur » (SmartScreen)
+#### Astuce : débloquer le zip avant de l'extraire (évite le cas 1)
 
-Clique sur **Informations complémentaires**, puis sur **Exécuter quand même**. Ce message n'apparaît qu'une fois.
+Windows marque les fichiers téléchargés comme « venant d'Internet ». En retirant cette marque avant
+d'extraire, le message SmartScreen n'apparaît généralement plus :
 
-#### 2. L'application ne s'ouvre pas, ou « Une stratégie de contrôle d'application a bloqué ce fichier »
+1. Clic droit sur **`DofusCompanion-…-win-x64.zip`** → **Propriétés**.
+2. Dans l'onglet **Général**, en bas, coche **Débloquer** → **OK**.
+3. Ensuite seulement : clic droit → **Extraire tout…**
 
-C'est **Smart App Control**, une protection de Windows 11 qui bloque tous les programmes non signés qu'elle ne
-connaît pas. Elle ne permet pas d'autoriser une application en particulier : la seule solution est de la
-désactiver.
+Ou dans PowerShell, depuis le dossier du téléchargement :
+`Unblock-File .\DofusCompanion-*-win-x64.zip`
 
-1. Appuie sur la touche **Windows**, tape **Sécurité Windows** et ouvre-la.
+#### Cas 1 — « Windows a protégé votre ordinateur » (SmartScreen)
+
+Fenêtre bleue au lancement de `DofusCompanion.exe` :
+
+1. Clique sur **Informations complémentaires**.
+2. Clique sur **Exécuter quand même**.
+
+Windows ne redemande plus pour cette version.
+
+#### Cas 2 — L'application ne s'ouvre pas du tout (Contrôle intelligent des applications)
+
+Rien ne se passe, ou Windows affiche *« Une stratégie de contrôle d'application a bloqué ce fichier »*. C'est le
+**Contrôle intelligent des applications** (*Smart App Control* en anglais), une protection de Windows 11 : il
+bloque tout programme non signé qu'il ne connaît pas, et Microsoft indique qu'**il n'existe aucun moyen
+d'autoriser une application en particulier**. La seule solution est de le désactiver :
+
+1. Appuie sur la touche **Windows**, tape **Sécurité Windows** et ouvre l'application.
 2. Va dans **Contrôle des applications et du navigateur**.
-3. Sous **Smart App Control**, clique sur **Paramètres de Smart App Control**.
+3. Clique sur **Paramètres du Contrôle intelligent des applications**.
 4. Choisis **Désactivé** et confirme.
-5. Redémarre le PC si Windows le demande, puis relance `DofusCompanion.exe`.
+5. Relance `DofusCompanion.exe`.
 
-> ⚠️ Selon ta version de Windows, Smart App Control peut **ne plus être réactivable** ensuite sans réinstaller
-> Windows. Ton antivirus (Microsoft Defender) continue de te protéger normalement ; seul ce filtre
-> supplémentaire est retiré. C'est ton choix.
+<p align="center">
+  <img src="docs/images/smart-app-control.png" alt="Sécurité Windows › Contrôle intelligent des applications › Désactivé" width="520">
+</p>
 
-Pour vérifier si Smart App Control est actif, dans PowerShell :
+> ⚠️ **Lis le texte sous « Désactivé » avant de confirmer.** Depuis la mise à jour d'avril 2026 de Windows 11
+> (versions 24H2 et 25H2), Microsoft permet de le réactiver plus tard sans réinstaller Windows. Mais sur
+> certains PC, Windows affiche encore *« il ne peut pas être activé sans réinstaller Windows »* (c'est le cas
+> sur la capture ci-dessus). Ton antivirus Microsoft Defender continue de te protéger dans tous les cas ;
+> seul ce filtre supplémentaire est retiré. C'est ton choix.
+
+Pour savoir si ce contrôle est actif, dans PowerShell :
 `Get-ItemPropertyValue 'HKLM:\SYSTEM\CurrentControlSet\Control\CI\Policy' VerifiedAndReputablePolicyState`
-(`0` = désactivé, `1` = activé, `2` = évaluation).
+→ `0` = désactivé, `1` = activé, `2` = évaluation.
+
+#### Pourquoi c'est bloqué, et ce qui le réglera pour tout le monde
+
+Windows fait confiance aux programmes **signés avec un certificat reconnu**. Le Contrôle intelligent des
+applications vérifie la signature de **chaque fichier** de l'application (le `.exe` et toutes les `.dll`) ; un
+certificat « fait maison » (auto-signé) ne sert à rien. Les pistes étudiées pour une prochaine version :
+
+| Solution | Coût | Condition |
+|---|---|---|
+| [SignPath Foundation](https://signpath.org/) | gratuit pour l'open source | licence open source reconnue (OSI), compilation automatisée sur GitHub Actions |
+| [Azure Artifact Signing](https://azure.microsoft.com/pricing/details/trusted-signing/) (ex-Trusted Signing) | 9,99 $/mois | pour un particulier : uniquement États-Unis et Canada |
+| Certificat de signature classique (OV/EV) | plusieurs centaines d'€/an | auprès d'une autorité reconnue |
+
+Une fois l'application signée, ces étapes ne seront plus nécessaires.
+
+Sources : [FAQ Microsoft sur le Contrôle intelligent des applications](https://support.microsoft.com/en-us/windows/security/threat-malware-protection/smart-app-control-frequently-asked-questions),
+[exigences de signature (blog d'un ingénieur sécurité de Microsoft)](https://textslashplain.com/2026/04/28/smart-app-control/),
+[réactivation sans réinstallation depuis avril 2026 (Neowin)](https://www.neowin.net/news/you-no-longer-need-clean-install-for-a-free-windows-11-exclusive-performance-boost-feature/).
 
 ### Configuration requise
 

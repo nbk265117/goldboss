@@ -34,13 +34,16 @@
 
 ## Distribution: unsigned binaries and Smart App Control
 
-The release is **not code-signed**. On the development PC, Windows 11 *Smart App Control* is on and, on one
-occasion, blocked freshly compiled unsigned DLLs ("Une stratégie de contrôle d'application a bloqué ce
-fichier", 0x800711C7) while the same code built earlier was allowed — the decision depends on each file's
-cloud reputation. The published 0.1.0 package launched normally afterwards, but a user with Smart App Control
-on may see the app blocked, and Smart App Control offers no per-app exception. The real fix is Authenticode
-signing with a trusted certificate (a decision and cost for the publisher); SmartScreen warnings for a new
-unsigned download are also expected.
+The release is **not code-signed**. With Windows 11 *Smart App Control* ("Contrôle intelligent des
+applications") on, every new unsigned build was eventually blocked on the development PC (0x800711C7, for the
+`.exe`, the `.dll`s and a single-file publish alike) until the user turned it off. Microsoft states there is no
+per-app exception, and SAC checks the signature of every module (exe and DLLs); self-signed certificates do not
+help. SmartScreen also warns on new unsigned downloads (users can "Unblock" the zip or choose "Run anyway").
+
+Fix for everyone: Authenticode-sign all binaries with a certificate chaining to Microsoft's Trusted Root
+Program — SignPath Foundation (free for OSI-licensed open source with an automated GitHub Actions build), Azure
+Artifact Signing ($9.99/month, individuals only in the USA/Canada), or a commercial OV/EV certificate.
+The README explains the user-side workarounds with a screenshot.
 
 ## Other
 
