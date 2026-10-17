@@ -17,8 +17,8 @@ Usage: dofusdb-import --accept-terms [options]
   --offline             Use only the cache, never the network
   --refresh             Re-download pages even if cached
   --lang <fr|en|...>    Language of canonical names (default: fr)
-  --images              Also download pictures (personal use) of the bosses the app knows, into its images folder
-  --all-images          With --images: download the pictures of every monster (thousands; much longer)
+  --images              Also download pictures (personal use) of every boss, into the app's images folder
+  --all-images          With --images: download the pictures of every monster too (~5,000; about 2 hours)
   --images-dir <dir>    Pictures folder (default: %LOCALAPPDATA%\DofusGoldBoss\images)
   --image-url <tpl>     Picture URL template when a record has none (default: https://api.dofusdb.fr/img/monsters/{id}.png)
 
@@ -43,7 +43,8 @@ var options = new ClientOptions
 {
     CacheDirectory = Opt("--cache") ?? "dofusdb-cache",
     Delay = TimeSpan.FromMilliseconds(Math.Max(1000, int.Parse(Opt("--delay-ms") ?? "1500", CultureInfo.InvariantCulture))),
-    MaxRequests = int.Parse(Opt("--max-requests") ?? "600", CultureInfo.InvariantCulture),
+    // Every monster picture is ~5,000 requests: --all-images raises the default cap accordingly.
+    MaxRequests = int.Parse(Opt("--max-requests") ?? (Flag("--all-images") ? "6500" : "600"), CultureInfo.InvariantCulture),
     Offline = offline,
     Refresh = Flag("--refresh"),
 };
@@ -73,13 +74,17 @@ try
         var imagesDir = Path.GetFullPath(Opt("--images-dir") ?? Path.Combine(appData, "images"));
         var wanted = Flag("--all-images") ? null : KnownNames.Bosses();
         var template = Opt("--image-url") ?? "https://api.dofusdb.fr/img/monsters/{id}.png";
+        var dungeonBosses = snapshot.Dungeons.SelectMany(d => d.TryGetProperty("bosses", out var b) && b.ValueKind == System.Text.Json.JsonValueKind.Array
+            ? b.EnumerateArray().Where(x => x.ValueKind == System.Text.Json.JsonValueKind.Number).Select(x => x.GetInt32()) : []).ToHashSet();
         var available = new HashSet<int>();
         var done = 0;
         Console.WriteLine($"Downloading pictures into {imagesDir} (already downloaded ones are skipped)…");
         foreach (var m in snapshot.Monsters)
         {
             if (DofusDbMapper.Int(m, "id") is not { } gameId || DofusDbMapper.ImageUrl(m, template) is not { } url) continue;
-            if (wanted is not null && !DofusDbMapper.Names(m).Values.Any(n => wanted.Contains(DofusCompanion.Application.Matching.TextNormalizer.Normalize(n)))) continue;
+            // Default: every boss (DofusDB bosses, plus the app's bosses and wanted-poster targets matched by name).
+            if (wanted is not null && !DofusDbMapper.IsBoss(m) && !dungeonBosses.Contains(gameId)
+                && !DofusDbMapper.Names(m).Values.Any(n => wanted.Contains(DofusCompanion.Application.Matching.TextNormalizer.Normalize(n)))) continue;
             var target = Path.Combine(imagesDir, DofusDbMapper.ImageRelativePath(gameId).Replace('/', Path.DirectorySeparatorChar));
             if (await client.DownloadImageAsync(url, target, cts.Token)) available.Add(gameId);
             if (++done % 25 == 0) Console.WriteLine($"  pictures: {done} checked, {available.Count} available");

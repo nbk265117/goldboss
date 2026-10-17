@@ -115,7 +115,7 @@ Sources : [FAQ Microsoft sur le Contrôle intelligent des applications](https://
 |---|---|
 | Afficher / masquer l'overlay | `Ctrl+Shift+F9`, le bouton dans la fenêtre principale, ou **clic sur l'icône** près de l'heure |
 | Icône de notification (à côté de l'heure / dans les icônes cachées `^`) | clic : overlay · double-clic : fenêtre · clic droit : menu et **Quitter** |
-| **Détecter le boss / donjon / monstre / la carte à l'écran** | Bouton vert **Détecter** de l'overlay : un clic et les étapes s'affichent |
+| **Détecter le boss / donjon / monstre / la carte à l'écran** | Bouton vert **Détecter**, à droite de la recherche dans l'overlay : un clic et les étapes s'affichent |
 | Chercher un boss ou un donjon | Tape son nom dans l'overlay, puis **Entrée** |
 | Indiquer le tour actuel | Champ **Tour** de l'overlay (pour les conditions « tour pair », « à partir du tour 7 »…) |
 | Lire une capture d'écran | Icône image de l'overlay, ou onglet **Analyse de capture** (fichier, ou `Win+Maj+S` puis **Coller**) |
@@ -125,8 +125,8 @@ Sources : [FAQ Microsoft sur le Contrôle intelligent des applications](https://
 Conseils :
 - Joue en mode **fenêtré** ou **plein écran fenêtré** pour que l'overlay reste au-dessus du jeu.
 - Pour montrer l'overlay sur **Discord**, partage ton **écran entier** (pas seulement la fenêtre Dofus).
-- La capture d'écran à la demande est **désactivée par défaut** : active-la dans *Paramètres › Capture et
-  confidentialité* pour utiliser le bouton **Détecter**.
+- La capture d'écran à la demande est **autorisée par défaut** : elle ne se fait que quand tu cliques (**Détecter**,
+  capture, raccourci), reste sur ton PC et peut être coupée dans *Paramètres › Capture et confidentialité*.
 - **Détecter** lit une fois l'écran de Dofus (sur ton PC, rien n'est envoyé au jeu ni à Internet) et choisit dans
   l'ordre : boss, donjon, monstre, zone. Pour aider : **survole le boss** (son nom s'affiche) ou garde le nom de la
   carte visible. Tu peux limiter la lecture à une zone de l'écran : onglet **Analyse**, capture, sélectionne la
@@ -149,9 +149,17 @@ dotnet run --project tools\DofusCompanion.DofusDbImporter -c Release -- --accept
 ```
 
 Puis **redémarre Dofus Gold Boss - DGB** : les données et les images sont importées automatiquement.
-L'outil fait une requête toutes les 1,5 s (quelques minutes pour les 224 boss ; `--all-images` pour tous les
-monstres, beaucoup plus long). Vérifie les conditions d'utilisation de DofusDB avant de l'utiliser (usage personnel).
-Sans image, une pastille avec l'initiale du boss s'affiche.
+L'outil fait une requête toutes les 1,5 s. Avec `--images`, il télécharge les images de **tous les boss** (boss
+de donjon, d'avis de recherche, de dimension : environ 300, une dizaine de minutes) ; un donjon affiche l'image de
+son boss. Pour avoir aussi **tous les monstres** (environ 5 000 images, compter 2 heures ; tu peux l'arrêter avec
+`Ctrl+C` et le relancer, il reprend où il s'était arrêté) :
+
+```powershell
+dotnet run --project tools\DofusCompanion.DofusDbImporter -c Release -- --accept-terms --images --all-images
+```
+
+Vérifie les conditions d'utilisation de DofusDB avant de l'utiliser (usage personnel).
+Sans image, une pastille avec l'initiale s'affiche (c'est le cas des zones, qui n'ont pas d'image).
 
 ## Ce que contient l'application
 

@@ -3,7 +3,8 @@ namespace DofusCompanion.Application.Settings;
 /// <summary>All persisted user preferences. Defaults are privacy-preserving (nothing kept, capture off).</summary>
 public sealed class AppSettings
 {
-    public int SettingsVersion { get; set; } = 1;
+    public int SettingsVersion { get; set; } = CurrentVersion;
+    public const int CurrentVersion = 2;
 
     // ---- interface
     public string Language { get; set; } = "fr";
@@ -41,8 +42,11 @@ public sealed class AppSettings
     public double MatchAutoAcceptScore { get; set; } = 0.92;
 
     // ---- capture & privacy
-    /// <summary>Screen capture is opt-in. Off by default; image import always works.</summary>
-    public bool ScreenCaptureEnabled { get; set; }
+    /// <summary>
+    /// On-demand screen capture (Detect / Capture buttons, capture hotkey). Allowed by default since 0.5.1: it only
+    /// runs when the player clicks, stays on this PC and can be turned off in Settings.
+    /// </summary>
+    public bool ScreenCaptureEnabled { get; set; } = true;
     /// <summary>
     /// Hide the overlay from Dofus Gold Boss - DGB's OWN captures (so its text is never OCR'd). It stays visible to
     /// Discord, OBS and other screen sharing at all times.

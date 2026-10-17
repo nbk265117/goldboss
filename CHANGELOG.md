@@ -1,5 +1,18 @@
 # Historique des versions
 
+## 0.5.1 — 17/10/2026
+
+- La **capture d'écran est autorisée par défaut** (y compris pour les installations existantes) : le bouton
+  **Détecter** marche tout de suite. Elle ne se fait toujours que quand tu cliques et peut être coupée dans les
+  Paramètres.
+- Le bouton **Détecter** a sa propre ligne, sous la barre de recherche de l'overlay.
+- **Nouvelle icône** : un œuf de dragon noir moucheté d'or (dessin original), pour l'application, la barre des
+  tâches et la zone de notification.
+- Images : l'importateur DofusDB télécharge maintenant les images de **tous les boss** (y compris ceux qui ne sont
+  connus que de DofusDB), un **donjon affiche l'image de son boss**, et `--all-images` (tous les monstres) relève
+  automatiquement la limite de requêtes.
+- Recherche : un donjon affiche le nombre de mécaniques de ses boss au lieu de « aucune mécanique documentée ».
+
 ## 0.5.0 — 17/10/2026
 
 - **Bouton « Détecter » dans l'overlay** : un clic lit l'écran de Dofus (localement) et affiche directement les

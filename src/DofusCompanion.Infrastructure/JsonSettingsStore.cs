@@ -34,6 +34,7 @@ public sealed class JsonSettingsStore : ISettingsStore
         try
         {
             var loaded = JsonSerializer.Deserialize<AppSettings>(File.ReadAllText(_path, Encoding.UTF8), Options) ?? new AppSettings();
+            Migrate(loaded);
             Sanitize(loaded);
             return loaded;
         }
@@ -44,6 +45,13 @@ public sealed class JsonSettingsStore : ISettingsStore
             problem = $"{ex.Message} (backup: {backup})";
             return new AppSettings();
         }
+    }
+
+    /// <summary>Upgrades settings written by older versions.</summary>
+    internal static void Migrate(AppSettings s)
+    {
+        if (s.SettingsVersion < 2) s.ScreenCaptureEnabled = true; // 0.5.1: on-demand capture allowed by default
+        s.SettingsVersion = Math.Max(s.SettingsVersion, AppSettings.CurrentVersion);
     }
 
     /// <summary>Clamps values a hand-edited file could make dangerous (invisible overlay, absurd sizes).</summary>

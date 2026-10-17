@@ -25,7 +25,7 @@ would change that. Its behaviour is chosen to stay far from every explicit prohi
 | Automation, inputs to the game | None. No `SendInput`/`SendKeys`/`PostMessage` exists in the code. Global hotkeys only control the companion; plain keys are never registered. UI tests drive only the companion's own windows through UI Automation. |
 | Network interception | None. The app makes no network request at all; only the user's browser opens a source link. |
 | Anti-cheat bypass | None. |
-| Screen reading | One-shot GDI capture (like Print Screen), **off by default**, user-triggered only, analysed in memory, not stored unless enabled. Image import is the primary workflow. |
+| Screen reading | One-shot GDI capture (like Print Screen), **allowed by default since 0.5.1 but user-triggered only** (Detect/Capture button or hotkey; can be turned off), analysed in memory, not stored unless enabled. Image import is the primary workflow. |
 | Game data / assets | No game asset is bundled. Mechanics are paraphrased from guides, attributed, with short quotes. The DofusDB importer is separate and run by the user, who decides whether it suits DofusDB's terms and the CGU. |
 | Promotion on Ankama channels (CGU 6.8) | Not done by the app; do not advertise it on Ankama services. |
 

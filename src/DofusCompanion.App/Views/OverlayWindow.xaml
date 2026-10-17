@@ -23,24 +23,6 @@
                     MouseLeftButtonDown="TitleBar_MouseLeftButtonDown" Cursor="SizeAll">
                 <DockPanel>
                     <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-                        <Button ToolTip="{l:T Overlay.DetectTip}" AutomationProperties.Name="{l:T Overlay.Detect}" Command="{Binding DetectCommand}"
-                                Padding="8,2" Margin="0,0,4,0" FontWeight="SemiBold" Background="{DynamicResource Accent}" Foreground="{DynamicResource AccentText}">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE707;" VerticalAlignment="Center" Margin="0,0,5,0"/>
-                                <TextBlock VerticalAlignment="Center">
-                                    <TextBlock.Style>
-                                        <Style TargetType="TextBlock">
-                                            <Setter Property="Text" Value="{l:T Overlay.Detect}"/>
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Detecting}" Value="True">
-                                                    <Setter Property="Text" Value="{l:T Overlay.Detecting}"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </TextBlock.Style>
-                                </TextBlock>
-                            </StackPanel>
-                        </Button>
                         <Button Style="{StaticResource IconButton}" Content="&#xE8B9;" ToolTip="{l:T Overlay.ImportTip}" AutomationProperties.Name="{l:T Overlay.ImportTip}"
                                 Command="{Binding Analysis.ImportFileCommand}"/>
                         <Button Style="{StaticResource IconButton}" Content="&#xE722;" ToolTip="{l:T Overlay.CaptureTip}" AutomationProperties.Name="{l:T Overlay.CaptureTip}"
@@ -128,6 +110,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
@@ -146,8 +129,28 @@
                 <TextBlock IsHitTestVisible="False" Text="{l:T Overlay.Search}" Foreground="{DynamicResource Muted}" Margin="8,0,0,0" VerticalAlignment="Center"
                            Visibility="{Binding Query, Converter={StaticResource HiddenWhen}}"/>
 
+                <!-- One-click detection, on its own line under the search -->
+                <Button ToolTip="{l:T Overlay.DetectTip}" AutomationProperties.Name="{l:T Overlay.Detect}" Command="{Binding DetectCommand}"
+                        Grid.Row="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Padding="8,4" Margin="0,6,0,0" FontWeight="SemiBold" Background="{DynamicResource Accent}" Foreground="{DynamicResource AccentText}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE707;" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                        <TextBlock VerticalAlignment="Center">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Text" Value="{l:T Overlay.Detect}"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Detecting}" Value="True">
+                                            <Setter Property="Text" Value="{l:T Overlay.Detecting}"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+
                 <!-- Search results -->
-                <Border Grid.Row="1" Margin="0,4,0,0" BorderBrush="{DynamicResource Border}" BorderThickness="1" Background="{DynamicResource Panel}"
+                <Border Grid.Row="2" Margin="0,4,0,0" BorderBrush="{DynamicResource Border}" BorderThickness="1" Background="{DynamicResource Panel}"
                         Visibility="{Binding ShowResults, Converter={StaticResource VisibleWhen}}">
                     <ScrollViewer MaxHeight="200">
                         <ItemsControl x:Name="ResultsList" ItemsSource="{Binding Results}" KeyboardNavigation.DirectionalNavigation="Cycle">
@@ -180,7 +183,7 @@
                         </ItemsControl>
                     </ScrollViewer>
                 </Border>
-                <TextBlock Grid.Row="1" Text="{l:T Overlay.NoResult}" Foreground="{DynamicResource Muted}" Margin="0,4,0,0">
+                <TextBlock Grid.Row="2" Text="{l:T Overlay.NoResult}" Foreground="{DynamicResource Muted}" Margin="0,4,0,0">
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
                             <Setter Property="Visibility" Value="Collapsed"/>
@@ -198,7 +201,7 @@
                 </TextBlock>
 
                 <!-- Recognition status and candidate selector -->
-                <Border Grid.Row="2" Margin="0,6,0,0" Padding="6,4" CornerRadius="4"
+                <Border Grid.Row="3" Margin="0,6,0,0" Padding="6,4" CornerRadius="4"
                         Background="{Binding Analysis.OutcomeTone, Converter={StaticResource ToneBrush}, ConverterParameter=bg}"
                         Visibility="{Binding Analysis.OutcomeText, Converter={StaticResource VisibleWhen}}">
                     <StackPanel>
@@ -227,7 +230,7 @@
                 </Border>
 
                 <!-- Mechanics panel -->
-                <ScrollViewer Grid.Row="3" Margin="0,6,0,0" VerticalScrollBarVisibility="Auto">
+                <ScrollViewer Grid.Row="4" Margin="0,6,0,0" VerticalScrollBarVisibility="Auto">
                     <Grid>
                         <!-- Compact: ordered instruction block per mechanic -->
                         <StackPanel Visibility="{Binding Compact, Converter={StaticResource VisibleWhen}}">

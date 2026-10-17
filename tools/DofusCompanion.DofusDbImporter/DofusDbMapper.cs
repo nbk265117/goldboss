@@ -139,7 +139,7 @@ public static class DofusDbMapper
         foreach (var m in s.Monsters.Where(m => Valid(m, "monster")))
         {
             var gameId = Int(m, "id")!.Value;
-            var isBoss = Bool(m, "isBoss") ?? false;
+            var isBoss = IsBoss(m);
             var id = isBoss ? $"boss.dofusdb-{gameId}" : $"monster.dofusdb-{gameId}";
             var levels = Levels(m);
             var levelText = levels.Count == 0 ? null : levels.Min() == levels.Max() ? $"{levels.Min()}" : $"{levels.Min()}-{levels.Max()}";
@@ -154,6 +154,15 @@ public static class DofusDbMapper
             var attributes = GameId(m);
             if (imageFor?.Invoke(gameId) is { } picture) attributes["image"] = picture;
             Add(Entity(id, isBoss ? EntityType.Boss : EntityType.Monster, m, levelText, attributes), relations);
+        }
+
+        // A dungeon has no picture of its own on DofusDB: show its (first) boss's one.
+        foreach (var d in s.Dungeons.Where(d => Int(d, "id") is not null))
+        {
+            if (!entities.TryGetValue(DungeonId(Int(d, "id")!.Value), out var pe) || pe.Entity.Attributes.ContainsKey("image")) continue;
+            var picture = IntArray(d, "bosses").Select(b => imageFor?.Invoke(b)).FirstOrDefault(p => p is not null);
+            if (picture is not null)
+                entities[pe.Entity.Id] = pe with { Entity = pe.Entity with { Attributes = new Dictionary<string, string>(pe.Entity.Attributes) { ["image"] = picture } } };
         }
 
         // Relations may point to entities added later in the loop order; drop any that still dangle.
@@ -209,6 +218,8 @@ public static class DofusDbMapper
 
     internal static int? Int(JsonElement r, string prop) =>
         r.ValueKind == JsonValueKind.Object && r.TryGetProperty(prop, out var v) && v.ValueKind == JsonValueKind.Number && v.TryGetInt32(out var i) ? i : null;
+
+    internal static bool IsBoss(JsonElement m) => Bool(m, "isBoss") ?? false;
 
     private static bool? Bool(JsonElement r, string prop) =>
         r.TryGetProperty(prop, out var v) && v.ValueKind is JsonValueKind.True or JsonValueKind.False ? v.GetBoolean() : null;

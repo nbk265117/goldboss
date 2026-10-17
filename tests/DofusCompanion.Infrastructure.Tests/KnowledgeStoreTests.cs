@@ -118,6 +118,10 @@ public class SeedAndImportTests
         Assert.Equal("Roi Imagami", boss.Entity.CanonicalName);
         Assert.NotEmpty(boss.Mechanics);
         Assert.False(g.NoMechanicDocumented);
+
+        // Search shows the bosses' mechanics count for the dungeon, not "no documented mechanic".
+        var hit = (await host.Knowledge.SearchAsync("memoire d'orukam")).First(r => r.Entity.Id == "dungeon.memoire-d-orukam");
+        Assert.True(hit.MechanicCount > 0);
     }
 
     [Fact]
@@ -353,8 +357,23 @@ public class SettingsTests
         Assert.Equal("en", reloaded.Current.Language);
         Assert.Equal(123, reloaded.Current.Overlay.Left);
         Assert.True(double.IsNaN(reloaded.Current.Overlay.Top)); // NaN survives as "not positioned yet"
-        Assert.False(reloaded.Current.ScreenCaptureEnabled); // privacy defaults
-        Assert.False(reloaded.Current.KeepScreenshots);
+        Assert.True(reloaded.Current.ScreenCaptureEnabled); // on-demand capture allowed
+        Assert.False(reloaded.Current.KeepScreenshots); // privacy default: captures are never kept
+        Directory.Delete(dir, true);
+    }
+
+    [Fact]
+    public void Old_settings_get_capture_allowed_but_a_later_choice_is_kept()
+    {
+        var dir = Path.Combine(Path.GetTempPath(), "dgb-settings-" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(dir);
+        var path = Path.Combine(dir, "settings.json");
+        File.WriteAllText(path, "{\"settingsVersion\":1,\"screenCaptureEnabled\":false}");
+        var store = new JsonSettingsStore(path);
+        Assert.True(store.Current.ScreenCaptureEnabled);
+        store.Current.ScreenCaptureEnabled = false; // the player turns it off afterwards
+        store.Save();
+        Assert.False(new JsonSettingsStore(path).Current.ScreenCaptureEnabled);
         Directory.Delete(dir, true);
     }
 

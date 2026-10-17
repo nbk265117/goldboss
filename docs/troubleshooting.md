@@ -5,7 +5,7 @@
 | "OCR impossible : … langue 'fr-FR' n'est pas installée" | Install the OCR feature of the language: *Settings › Time & language › Language & region › French › Language options › Optical character recognition*, or pick an installed language in Settings › Recognition. |
 | Recognition finds nothing | Crop to the monster name (drag on the preview); make sure the name is readable; keep "try several preprocessing steps" on. If the entity is not in the database, choose it manually or add it. |
 | Wrong boss proposed | Click *Reject*, pick the right one in *Manual selection*. Enable "learn from my confirmations" to remember the OCR spelling. |
-| Capture button greyed / "capture disabled" | Capture is off by default: Settings › Capture & privacy. |
+| Capture button greyed / "capture disabled" | Capture was turned off in Settings › Capture & privacy: turn it back on. |
 | Capture is black | The game is in exclusive fullscreen; switch it to windowed/borderless. |
 | Overlay invisible over the game | Same cause, or the overlay is hidden: Ctrl+Shift+F9 or the main window button. It does not appear in screenshots on purpose (option "exclude the overlay from captures"). |
 | Overlay does not react to the mouse | Click-through is on (banner shown): Ctrl+Shift+F10. |

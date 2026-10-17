@@ -151,6 +151,32 @@ public sealed class KnowledgeService(IKnowledgeRepository repository, MechanicsE
         return guidance with { ContainedBosses = bosses };
     }
 
+    /// <summary>
+    /// Mechanic count and best verification per entity. A dungeon with no mechanic of its own counts those of its
+    /// bosses, because its sheet shows them (otherwise search would say "no documented mechanic").
+    /// </summary>
+    private static Dictionary<string, (int Count, VerificationStatus Best)> MechanicSummaries(
+        IReadOnlyList<GameEntity> entities, IReadOnlyList<EntityRelation> relations, IReadOnlyList<Mechanic> mechanics)
+    {
+        var summary = mechanics.GroupBy(m => m.EntityId)
+            .ToDictionary(g => g.Key, g => (g.Count(), g.Max(m => m.Verification)), StringComparer.Ordinal);
+        var types = entities.ToDictionary(e => e.Id, e => e.Type, StringComparer.Ordinal);
+        foreach (var dungeon in relations
+                     .Where(r => r.Type == RelationType.LocatedIn
+                                 && types.GetValueOrDefault(r.FromId) == EntityType.Boss
+                                 && types.GetValueOrDefault(r.ToId) == EntityType.Dungeon
+                                 && !summary.ContainsKey(r.ToId))
+                     .GroupBy(r => r.ToId))
+        {
+            var bossSummaries = dungeon.Select(r => r.FromId).Distinct(StringComparer.Ordinal)
+                .Where(summary.ContainsKey).Select(id => summary[id]).ToList();
+            if (bossSummaries.Count > 0)
+                summary[dungeon.Key] = (bossSummaries.Sum(b => b.Item1), bossSummaries.Max(b => b.Item2));
+        }
+
+        return summary;
+    }
+
     /// <summary>Entities related to the given one (bosses of a dungeon, dungeons of an area, summons...).</summary>
     public async Task<IReadOnlyList<(EntityRelation Relation, GameEntity Other)>> GetRelatedAsync(string entityId, CancellationToken ct = default)
     {
@@ -237,7 +263,7 @@ public sealed class KnowledgeService(IKnowledgeRepository repository, MechanicsE
                 relations,
                 mechanics.ToLookup(m => m.EntityId, StringComparer.Ordinal),
                 mechText,
-                mechanics.GroupBy(m => m.EntityId).ToDictionary(g => g.Key, g => (g.Count(), g.Max(m => m.Verification)), StringComparer.Ordinal),
+                MechanicSummaries(entities, relations, mechanics),
                 sources.ToDictionary(x => x.Id, StringComparer.Ordinal),
                 // The most recent dated release is the staleness baseline.
                 versions.Where(v => v.ReleaseDate is not null).MaxBy(v => v.ReleaseDate),

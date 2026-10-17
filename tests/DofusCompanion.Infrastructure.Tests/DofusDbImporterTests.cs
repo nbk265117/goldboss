@@ -96,6 +96,15 @@ public class DofusDbImporterTests
     private static string TempCache() => Path.Combine(Path.GetTempPath(), "dc-dofusdb-" + Guid.NewGuid().ToString("N"));
 
     [Fact]
+    public void Dungeon_without_picture_shows_its_boss_picture()
+    {
+        var package = DofusDbMapper.Map(Snapshot(), new DateOnly(2026, 10, 17), imageFor: id => id == 7002 ? "dofusdb/7002.png" : null).Package;
+        var dungeon = package.Entities.Single(e => e.Entity.Id == DofusDbMapper.DungeonId(9001)).Entity;
+        Assert.Equal("dofusdb/7002.png", dungeon.Attributes["image"]);
+        Assert.False(package.Entities.Single(e => e.Entity.Id == "monster.dofusdb-7001").Entity.Attributes.ContainsKey("image"));
+    }
+
+    [Fact]
     public async Task Client_paginates_caches_and_does_not_refetch()
     {
         var cache = TempCache();
