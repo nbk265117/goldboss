@@ -20,8 +20,9 @@ public sealed partial class SettingsViewModel : ObservableObject
     private readonly SourceOpener _opener;
     private readonly AppPaths _paths;
 
-    public SettingsViewModel(ISettingsStore store, IOcrProvider ocr, IKnowledgeRepository repository, StatusService status, SourceOpener opener, AppPaths paths)
+    public SettingsViewModel(ISettingsStore store, IOcrProvider ocr, IKnowledgeRepository repository, StatusService status, SourceOpener opener, AppPaths paths, UpdateService updates)
     {
+        Updates = updates;
         _store = store;
         _ocr = ocr;
         _repository = repository;
@@ -30,6 +31,8 @@ public sealed partial class SettingsViewModel : ObservableObject
         _paths = paths;
         Load();
     }
+
+    public UpdateService Updates { get; }
 
     /// <summary>Raised after Save so the shell can re-apply theme, hotkeys, overlay and matching options.</summary>
     public event EventHandler? Applied;
@@ -42,6 +45,7 @@ public sealed partial class SettingsViewModel : ObservableObject
     [ObservableProperty] public partial FilterOption<string>? Language { get; set; }
     [ObservableProperty] public partial FilterOption<string>? Theme { get; set; }
     [ObservableProperty] public partial bool StartWithOverlay { get; set; }
+    [ObservableProperty] public partial bool CheckForUpdates { get; set; }
     [ObservableProperty] public partial bool StartMinimized { get; set; }
     [ObservableProperty] public partial bool CloseToTray { get; set; }
     [ObservableProperty] public partial double OverlayOpacity { get; set; }
@@ -81,6 +85,7 @@ public sealed partial class SettingsViewModel : ObservableObject
         Language = Languages.FirstOrDefault(l => l.Value == s.Language) ?? Languages[0];
         Theme = Themes.FirstOrDefault(t => t.Value == s.Theme) ?? Themes[0];
         StartWithOverlay = s.StartWithOverlay;
+        CheckForUpdates = s.CheckForUpdates;
         StartMinimized = s.StartMinimized;
         CloseToTray = s.CloseToTray;
         OverlayOpacity = s.OverlayOpacity;
@@ -162,6 +167,7 @@ public sealed partial class SettingsViewModel : ObservableObject
         s.Language = Language?.Value ?? "fr";
         s.Theme = Theme?.Value ?? "Dark";
         s.StartWithOverlay = StartWithOverlay;
+        s.CheckForUpdates = CheckForUpdates;
         s.StartMinimized = StartMinimized;
         s.CloseToTray = CloseToTray;
         s.OverlayOpacity = OverlayOpacity;

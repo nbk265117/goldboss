@@ -8,8 +8,9 @@ namespace DofusCompanion.App.ViewModels;
 public sealed partial class MainViewModel : ObservableObject
 {
     public MainViewModel(BrowserViewModel browser, AnalysisViewModel analysis, KnowledgeViewModel knowledge,
-        SettingsViewModel settings, DiagnosticsViewModel diagnostics, StatusService status, FightContext fight)
+        SettingsViewModel settings, DiagnosticsViewModel diagnostics, StatusService status, FightContext fight, UpdateService updates)
     {
+        Updates = updates;
         Browser = browser;
         Analysis = analysis;
         Knowledge = knowledge;
@@ -34,6 +35,7 @@ public sealed partial class MainViewModel : ObservableObject
     public DiagnosticsViewModel Diagnostics { get; }
     public StatusService Status { get; }
     public FightContext Fight { get; }
+    public UpdateService Updates { get; }
 
     /// <summary>0 browser, 1 analysis, 2 knowledge, 3 settings, 4 diagnostics.</summary>
     [ObservableProperty] public partial int SelectedTab { get; set; }

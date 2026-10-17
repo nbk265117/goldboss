@@ -23,6 +23,17 @@
             </DockPanel>
         </Border>
 
+        <!-- New version available on GitHub -->
+        <Border DockPanel.Dock="Top" Background="{DynamicResource Accent}" Padding="14,6"
+                Visibility="{Binding Updates.IsAvailable, Converter={StaticResource VisibleWhen}}">
+            <DockPanel>
+                <Button DockPanel.Dock="Right" Command="{Binding Updates.InstallCommand}" Content="{l:T Update.Install}"/>
+                <ProgressBar DockPanel.Dock="Right" Width="120" Height="8" Margin="0,0,10,0" Maximum="100" Value="{Binding Updates.Progress}"
+                             Visibility="{Binding Updates.IsDownloading, Converter={StaticResource VisibleWhen}}"/>
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontWeight="SemiBold" Text="{Binding Updates.Banner}"/>
+            </DockPanel>
+        </Border>
+
         <!-- Status bar: errors are always surfaced here -->
         <Border DockPanel.Dock="Bottom" Background="{DynamicResource Panel}" BorderBrush="{DynamicResource Border}" BorderThickness="0,1,0,0" Padding="12,4">
             <DockPanel>
@@ -438,6 +449,8 @@
                                 <CheckBox Content="{l:T Settings.StartWithOverlay}" IsChecked="{Binding StartWithOverlay}"/>
                                 <CheckBox Content="{l:T Settings.StartMinimized}" IsChecked="{Binding StartMinimized}"/>
                                 <CheckBox Content="{l:T Settings.CloseToTray}" IsChecked="{Binding CloseToTray}"/>
+                                <CheckBox Content="{l:T Settings.CheckForUpdates}" IsChecked="{Binding CheckForUpdates}"/>
+                                <Button Content="{l:T Settings.CheckUpdatesNow}" Command="{Binding Updates.CheckNowCommand}" HorizontalAlignment="Left" Margin="0,6,0,0"/>
                             </StackPanel>
                         </Border>
 

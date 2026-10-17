@@ -88,6 +88,7 @@ public partial class App : System.Windows.Application, IDisposable
         services.AddSingleton<SourceOpener>();
         services.AddSingleton<EntityImageStore>();
         services.AddSingleton<AutoDetectService>();
+        services.AddSingleton<UpdateService>();
         services.AddSingleton<EntityImageProvider>();
         services.AddSingleton<HotkeyService>();
         services.AddSingleton<FightContext>();
@@ -220,6 +221,11 @@ public partial class App : System.Windows.Application, IDisposable
         if (settings.Current.StartMinimized) _main.WindowState = WindowState.Minimized;
         _main.Show();
         if (settings.Current.StartWithOverlay && settings.Current.OverlayVisible) SetOverlayVisible(true);
+
+        // Asks GitHub for a newer version in the background (installed copies only, can be switched off).
+        var updates = Services.GetRequiredService<UpdateService>();
+        updates.Quit = QuitApplication;
+        _ = updates.CheckAtStartupAsync();
 
         await Dispatcher.InvokeAsync(() =>
         {

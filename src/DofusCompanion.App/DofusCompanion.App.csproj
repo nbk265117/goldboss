@@ -9,6 +9,8 @@
     <RootNamespace>DofusCompanion.App</RootNamespace>
     <AssemblyName>DofusGoldBoss</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!-- Program.Main runs the Velopack hooks before WPF starts. -->
+    <StartupObject>DofusCompanion.App.Program</StartupObject>
     <ApplicationIcon>Assets\app.ico</ApplicationIcon>
     <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
     <!-- Required by source-generated LibraryImport P/Invoke marshalling (Services/NativeMethods.cs). -->
@@ -22,6 +24,7 @@
     <ProjectReference Include="..\DofusCompanion.Infrastructure\DofusCompanion.Infrastructure.csproj" />
     <ProjectReference Include="..\DofusCompanion.Ocr.Windows\DofusCompanion.Ocr.Windows.csproj" />
     <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="Velopack" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
     <PackageReference Include="Microsoft.Extensions.Logging" />
   </ItemGroup>

@@ -11,6 +11,8 @@ public sealed class AppSettings
     /// <summary>"Dark" or "Light".</summary>
     public string Theme { get; set; } = "Dark";
     public bool StartWithOverlay { get; set; } = true;
+    /// <summary>Ask GitHub at startup whether a newer version exists (installed copies only).</summary>
+    public bool CheckForUpdates { get; set; } = true;
     public bool StartMinimized { get; set; }
     /// <summary>Closing the main window keeps the app running in the notification area (quit from the tray menu).</summary>
     public bool CloseToTray { get; set; } = true;

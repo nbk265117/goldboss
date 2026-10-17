@@ -19,11 +19,16 @@ possibles, résultat attendu et sa durée en vert, pièges mortels en rouge, et 
 ## Télécharger et lancer
 
 1. Va sur la page **[Releases](https://github.com/nbk265117/goldboss/releases/latest)** (dernière version).
-2. Dans **Assets**, télécharge le fichier **`DofusGoldBoss-<version>-win-x64.zip`** (≈ 80 Mo).
-3. Fais un clic droit sur le zip → **Extraire tout…** (par exemple dans `Documents\DofusCompanion`).
-4. Ouvre le dossier extrait et double-clique sur **`DofusGoldBoss.exe`**.
+2. Dans **Assets**, télécharge **`DofusGoldBoss-DGB-win-Setup.exe`** et lance-le.
+3. L'application s'installe (sans droit administrateur, .NET inclus), crée un raccourci et démarre.
 
-C'est tout : aucune installation, aucun droit administrateur, rien d'autre à télécharger (.NET est inclus).
+**Mises à jour automatiques :** à chaque démarrage, l'application regarde sur GitHub si une nouvelle version
+existe. Si oui, un bandeau « Nouvelle version disponible » apparaît : un clic sur **Installer et redémarrer**
+suffit (seules les parties modifiées sont téléchargées). Tes données sont conservées. Tu peux désactiver la
+vérification dans Paramètres › Interface.
+
+**Sans installation :** le fichier `DofusGoldBoss-<version>-win-x64.zip` existe toujours (clic droit →
+**Extraire tout…**, puis `DofusGoldBoss.exe`), mais cette copie ne se met pas à jour toute seule.
 
 **Premier lancement :** il peut prendre jusqu'à une minute (installation des données + analyse des fichiers
 par Windows). Les suivants prennent environ 1 à 2 secondes.
@@ -181,8 +186,9 @@ Tu peux ajouter tes propres mécaniques (onglet **Connaissances**) ou importer u
 
 ## Vie privée
 
-- Aucune connexion internet, aucune télémétrie, aucun compte demandé. Seul un clic sur « Ouvrir la source »
-  ouvre la page du guide dans ton navigateur.
+- Aucune télémétrie, aucun compte demandé. La seule connexion automatique est la vérification des mises à jour
+  sur GitHub au démarrage (désactivable dans les Paramètres). Un clic sur « Ouvrir la source » ouvre la page du
+  guide dans ton navigateur.
 - Les captures sont analysées sur ton PC et ne sont pas conservées (sauf si tu l'actives).
 - Tes données sont dans `%LOCALAPPDATA%\DofusGoldBoss`.
 
@@ -193,9 +199,10 @@ détection qui ignore le chat et lit les coordonnées de la carte, liste des mon
 
 ## Mettre à jour / désinstaller
 
-- **Mettre à jour :** télécharge la nouvelle version et remplace le dossier. Tes données sont conservées.
-- **Désinstaller :** supprime le dossier de l'application, et `%LOCALAPPDATA%\DofusGoldBoss` pour effacer
-  aussi tes données.
+- **Mettre à jour :** automatique avec la version installée (bandeau « Nouvelle version disponible »). Avec le
+  zip : télécharge la nouvelle version et remplace le dossier. Tes données sont conservées.
+- **Désinstaller :** Paramètres Windows › Applications › « Dofus Gold Boss - DGB » › Désinstaller (ou supprime
+  le dossier du zip). Supprime aussi `%LOCALAPPDATA%\DofusGoldBoss` pour effacer tes données.
 
 ---
 

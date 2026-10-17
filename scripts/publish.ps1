@@ -32,3 +32,26 @@ if (Test-Path $zip) { Remove-Item $zip }
 Compress-Archive -Path (Join-Path $out '*') -DestinationPath $zip
 $size = [math]::Round((Get-ChildItem $out -Recurse | Measure-Object Length -Sum).Sum / 1MB, 1)
 Write-Host "Published $out ($size MB) and $zip" -ForegroundColor Green
+
+# Installer + automatic-update packages (Velopack, local tool from dotnet-tools.json) in artifacts\releases.
+# The pack id differs from the data folder name: Velopack installs to %LOCALAPPDATA%\<packId> and removes that
+# folder on uninstall, while the user's data stays in %LOCALAPPDATA%\DofusGoldBoss.
+$releases = Join-Path $Root 'artifacts\releases'
+New-Item -ItemType Directory -Force $releases | Out-Null
+Push-Location $Root
+try {
+    Invoke-Checked $dotnet @('tool', 'restore')
+    # The previous release (if any) is needed to build the small delta package.
+    & $dotnet vpk download github --repoUrl 'https://github.com/nbk265117/goldboss' -o $releases
+    if ($LASTEXITCODE -ne 0) { Write-Host 'No previous Velopack release downloaded (full package only).' -ForegroundColor Yellow }
+    $notes = Join-Path $releases "notes-$version.md"
+    $changelog = Get-Content (Join-Path $Root 'CHANGELOG.md') -Raw -Encoding utf8
+    $section = [regex]::Match($changelog, "(?ms)^## $([regex]::Escape($version)) .*?(?=^## |\z)").Value
+    Set-Content -Path $notes -Value $section -Encoding utf8
+    Invoke-Checked $dotnet @('vpk', 'pack', '--packId', 'DofusGoldBoss-DGB', '--packVersion', $version,
+        '--packDir', $out, '--runtime', 'win-x64', '--mainExe', 'DofusGoldBoss.exe', '--packTitle', 'Dofus Gold Boss - DGB',
+        '--packAuthors', 'AYOUB YOUB JOE', '--icon', (Join-Path $Root 'src\DofusCompanion.App\Assets\app.ico'),
+        '--releaseNotes', $notes, '-o', $releases)
+}
+finally { Pop-Location }
+Write-Host "Velopack release in $releases" -ForegroundColor Green

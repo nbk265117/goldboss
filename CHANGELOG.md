@@ -1,5 +1,14 @@
 # Historique des versions
 
+## 0.7.0 — 18/10/2026
+
+- **Mises à jour automatiques** : installe une fois `DofusGoldBoss-DGB-win-Setup.exe`. Ensuite, au démarrage,
+  l'application regarde sur GitHub si une nouvelle version existe et affiche un bandeau « Nouvelle version
+  disponible » : un clic sur **Installer et redémarrer** télécharge seulement ce qui a changé, puis relance
+  l'application. Tes données sont conservées. Désactivable dans Paramètres › Interface (bouton « Vérifier
+  maintenant » aussi).
+- Le zip sans installation reste disponible, mais il ne se met pas à jour tout seul.
+
 ## 0.6.3 — 17/10/2026
 
 - **Images incluses** : les images des boss (environ 270) et les monstres et zones de DofusDB sont livrés avec
