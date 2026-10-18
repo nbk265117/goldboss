@@ -640,84 +640,6 @@
       ]
     },
     {
-      "id": "mech.kimbo.glyphes",
-      "entityId": "boss.kimbo",
-      "type": "Unlock",
-      "title": "Glyphes paires / impaires",
-      "summary": "Le Kimbo n'est pas invulnérable mais a 400 % de résistances partout. Le frapper dans un duo d'éléments fait poser des glyphes par son Disciple ; s'il commence son tour sur l'un d'eux, il perd 400 % de résistances dans ce duo pendant 1 tour.",
-      "verification": "VERIFIED",
-      "sequences": [
-        {
-          "label": "Duo Terre / Eau",
-          "steps": [
-            {
-              "order": 1,
-              "action": "Frapper le Kimbo en Terre ou en Eau : il passe dans l'état Glyphe impaire et le Disciple pose des glyphes sur toutes les cases à distance impaire de lui.",
-              "target": "Kimbo"
-            },
-            {
-              "order": 2,
-              "action": "Faire commencer son tour au Kimbo sur l'un de ces glyphes.",
-              "position": "Kimbo sur un glyphe impair"
-            },
-            {
-              "order": 3,
-              "action": "Frapper en Terre ou Eau pendant le tour où il a perdu ses résistances.",
-              "target": "Kimbo",
-              "rationale": "Il gagne en même temps 800 % de résistances Air/Feu."
-            }
-          ]
-        },
-        {
-          "label": "Duo Air / Feu",
-          "steps": [
-            {
-              "order": 1,
-              "action": "Frapper le Kimbo en Air ou en Feu : il passe dans l'état Glyphe paire et le Disciple pose des glyphes sur toutes les cases à distance paire de lui.",
-              "target": "Kimbo"
-            },
-            {
-              "order": 2,
-              "action": "Faire commencer son tour au Kimbo sur l'un de ces glyphes.",
-              "position": "Kimbo sur un glyphe pair"
-            },
-            {
-              "order": 3,
-              "action": "Frapper en Air ou Feu pendant le tour où il a perdu ses résistances.",
-              "target": "Kimbo",
-              "rationale": "Il gagne en même temps 800 % de résistances Eau/Terre."
-            }
-          ]
-        }
-      ],
-      "expectedStateChange": "Perte de 400 % de résistances dans le duo choisi",
-      "expectedResult": "Le Kimbo perd 400 % de résistances dans les deux éléments choisis pendant 1 tour.",
-      "vulnerabilityDuration": "1 tour",
-      "notes": [
-        {
-          "kind": "FailureCase",
-          "text": "Un personnage qui commence son tour sur un de ces glyphes est tué : prévoyez vos placements avant le tour du Disciple."
-        },
-        {
-          "kind": "Warning",
-          "text": "Une fois ses glyphes lancés, le Disciple tue aussi au corps à corps."
-        },
-        {
-          "kind": "CommonMistake",
-          "text": "Si vous ne le finissez pas en 1 tour, remettez-lui l'état pour que le Disciple relance les glyphes au tour suivant."
-        }
-      ],
-      "versionScope": "Dofus 3 (guide mis à jour le 2025-04-22)",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.canopee-du-kimbo",
-          "quote": "Le Kimbo n'a pas d'état invulnérable mais c'est un peu comme si c'était le cas car il a 400% de résistances dans chaque élément.",
-          "locator": "Rendre le Kimbo Vulnérable"
-        }
-      ]
-    },
-    {
       "id": "mech.merkator.mer-kantile",
       "entityId": "boss.merkator",
       "type": "SpecialRule",
@@ -1595,6 +1517,249 @@
           "sourceId": "src.dpln.trone-de-sang",
           "quote": "La difficulté du combat réside dans la capacité à tanker et à éviter les dégâts de ses armes.",
           "locator": "IV- Présentation du Boss — Principe du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.kimbo.glyphes",
+      "entityId": "boss.kimbo",
+      "type": "Unlock",
+      "title": "Glyphes pairs / impairs : où se placer",
+      "summary": "Le Kimbo n'est pas invulnérable mais a 400 % de résistances partout. Le frapper une fois en Terre ou Eau le met dans l'état Glyphe impaire ; en Air ou Feu, dans l'état Glyphe paire. Au tour suivant, son Disciple pose des glyphes sur toutes les cases à distance impaire (ou paire) de lui. Un personnage qui commence son tour sur un glyphe meurt ; si le Kimbo commence son tour dessus, il perd 400 % de résistances dans le duo choisi pendant 1 tour.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Duo Terre / Eau (glyphes impairs)",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Frapper le Kimbo une fois en Terre ou en Eau.",
+              "target": "Kimbo",
+              "rationale": "Il passe dans l'état Glyphe impaire, même si le coup ne lui fait presque rien."
+            },
+            {
+              "order": 2,
+              "action": "Avant de finir votre tour, placer tous vos personnages à une distance PAIRE du Disciple (2, 4, 6… cases).",
+              "position": "Distance paire du Disciple = cases de la même couleur que la case du Disciple sur le damier",
+              "rationale": "Le Disciple va poser les glyphes sur toutes les cases à distance impaire de lui : les cases paires restent sûres."
+            },
+            {
+              "order": 3,
+              "action": "Faire commencer son tour au Kimbo sur une case à distance impaire du Disciple (un glyphe).",
+              "position": "Kimbo sur un glyphe impair",
+              "rationale": "Il perd alors 400 % de résistances Terre et Eau pendant 1 tour (et gagne 800 % en Air et Feu)."
+            },
+            {
+              "order": 4,
+              "action": "Frapper le Kimbo en Terre ou en Eau pendant ce tour.",
+              "target": "Kimbo",
+              "rationale": "C'est le seul moment où ces éléments lui font de vrais dégâts."
+            }
+          ]
+        },
+        {
+          "label": "Duo Air / Feu (glyphes pairs)",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Frapper le Kimbo une fois en Air ou en Feu.",
+              "target": "Kimbo",
+              "rationale": "Il passe dans l'état Glyphe paire."
+            },
+            {
+              "order": 2,
+              "action": "Avant de finir votre tour, placer tous vos personnages à une distance IMPAIRE du Disciple (3, 5, 7… cases), jamais à son contact.",
+              "position": "Distance impaire du Disciple = cases de l'autre couleur que la case du Disciple sur le damier",
+              "rationale": "Les glyphes vont sur les cases à distance paire ; et une fois ses glyphes lancés, le Disciple tue aussi au corps à corps (distance 1)."
+            },
+            {
+              "order": 3,
+              "action": "Faire commencer son tour au Kimbo sur une case à distance paire du Disciple (un glyphe).",
+              "position": "Kimbo sur un glyphe pair",
+              "rationale": "Il perd alors 400 % de résistances Air et Feu pendant 1 tour (et gagne 800 % en Eau et Terre)."
+            },
+            {
+              "order": 4,
+              "action": "Frapper le Kimbo en Air ou en Feu pendant ce tour.",
+              "target": "Kimbo",
+              "rationale": "C'est le seul moment où ces éléments lui font de vrais dégâts."
+            }
+          ]
+        }
+      ],
+      "expectedStateChange": "Perte de 400 % de résistances dans le duo choisi",
+      "expectedResult": "Le Kimbo perd 400 % de résistances dans les deux éléments choisis pendant 1 tour.",
+      "vulnerabilityDuration": "1 tour",
+      "notes": [
+        {
+          "kind": "FailureCase",
+          "text": "Un personnage qui commence son tour sur un glyphe est tué : faites votre placement pendant le tour où vous mettez l'état au Kimbo, avant le tour du Disciple."
+        },
+        {
+          "kind": "Exception",
+          "text": "Repère (déduit, le guide parle seulement de distance paire/impaire) : la distance se compte en cases, en ligne droite ou en escalier. Les cases à distance paire du Disciple sont celles de la même couleur que sa case sur le damier, celles à distance impaire sont de l'autre couleur. Terre/Eau : restez sur la couleur du Disciple. Air/Feu : restez sur l'autre couleur, sans être collé à lui."
+        },
+        {
+          "kind": "Restriction",
+          "text": "Choisissez un seul duo : on ne peut retirer les résistances que dans Terre/Eau ou dans Air/Feu, et les deux états ne se cumulent pas (le nouveau remplace l'ancien). L'élément neutre ne fait rien."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2025-04-22)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.canopee-du-kimbo",
+          "quote": "Le Kimbo n'a pas d'état invulnérable mais c'est un peu comme si c'était le cas car il a 400% de résistances dans chaque élément.",
+          "locator": "Rendre le Kimbo Vulnérable"
+        },
+        {
+          "sourceId": "src.dpln.canopee-du-kimbo",
+          "quote": "Conseil : Si vous frappez Kimbo eau ou terre, placez-vous à une distance paire du disciple avant qu'il ne mette les glyphes.",
+          "locator": "Fonctionnement du glyphe déposé par le Disciple — État Impair"
+        },
+        {
+          "sourceId": "src.dpln.canopee-du-kimbo",
+          "quote": "Conseil : Si vous frappez le Kimbo feu ou air, placez vous à une distance impaire du disciple avant qu'il ne mette les glyphes, mais évitez son càc car une fois qu'il lance ses glyphe le disciple OS aussi au càc.",
+          "locator": "Fonctionnement du glyphe déposé par le Disciple — État Pair"
+        },
+        {
+          "sourceId": "src.dpln.canopee-du-kimbo",
+          "quote": "Glyphe Impair : Invoque des glyphes sur toutes les cases à une distance impaire du Disciple. Si le Kimbo commence son tour sur un des glyphes, il perd 400% de résistances eau/terre et gagne 800% de résistances air/feu pour 1 tour.",
+          "locator": "Le Disciple du Kimbo"
+        },
+        {
+          "sourceId": "src.dpln.canopee-du-kimbo",
+          "quote": "ATTENTION : Commencer son tour sur un de ses glyphes OS ! Il faut donc prévoir votre placement avant le tour du Disciple, donc durant le tour ou vous mettez l'état au Kimbo.",
+          "locator": "Fonctionnement du glyphe déposé par le Disciple"
+        }
+      ]
+    },
+    {
+      "id": "mech.kimbo.disciple-bouge",
+      "entityId": "boss.kimbo",
+      "type": "Positioning",
+      "title": "Le Disciple bouge : garder les glyphes au même endroit",
+      "summary": "Quand il pose ses glyphes, le Disciple gagne 1 PM et se déplace d'une case. Si vous relancez les glyphes au tour suivant, ils ne seront plus sur les mêmes cases : les cases sûres deviennent des glyphes. Deux façons de gérer ça.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Si vous ne tuez pas le Kimbo en 1 tour",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Remettre l'état au Kimbo en le frappant dans le même duo d'éléments.",
+              "rationale": "Le Disciple relancera les glyphes dès le tour suivant."
+            },
+            {
+              "order": 2,
+              "action": "Méthode simple : ne pas toucher au Disciple et finir le tour de chaque personnage sur une case qui a un glyphe actuellement.",
+              "rationale": "Le Disciple ayant bougé d'une case, les cases glyphées d'aujourd'hui seront les cases sûres au prochain lancer."
+            },
+            {
+              "order": 3,
+              "action": "Autre méthode : repousser le Disciple d'une case (ou d'un nombre impair de cases) pour annuler son déplacement.",
+              "rationale": "Les glyphes reviennent alors sur les mêmes cases et vos personnages restent en sécurité là où ils sont."
+            },
+            {
+              "order": 4,
+              "action": "Replacer le Kimbo sur un glyphe pour qu'il commence encore son tour dessus.",
+              "rationale": "Il reperd ses résistances pour un nouveau tour de frappe."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Restriction",
+          "text": "La méthode « finir sur une case glyphée » ne marche que si vous gardez le même duo d'éléments."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2025-04-22)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.canopee-du-kimbo",
+          "quote": "ATTENTION : Quand le disciple pose les glyphes, il gagne 1PM et bouge donc de 1PM, ce qui veut dire qu'au prochain tour si vous réactivez les glyphes (en frappant Kimbo dans un élément), le disciple ayant changé de place, les glyphes ne seront pas au même endroit :",
+          "locator": "Fonctionnement du glyphe déposé par le Disciple"
+        },
+        {
+          "sourceId": "src.dpln.canopee-du-kimbo",
+          "quote": "Ou à la fin de vos tours finissez votre tour sur une case glyphée (et ne bougez pas le disciple). Ceci s'applique uniquement si vous choisissez une nouvelle fois le même duo d'élément de frappe.",
+          "locator": "Fonctionnement du glyphe déposé par le Disciple"
+        },
+        {
+          "sourceId": "src.dpln.canopee-du-kimbo",
+          "quote": "vous pouvez replacer le Disciple du Kimbo en le poussant d'une case ou d'un nombre impair de cases.",
+          "locator": "Stratégie globale — Faire le Kimbo en bougeant le Disciple"
+        }
+      ]
+    },
+    {
+      "id": "mech.kimbo.plan-de-combat",
+      "entityId": "boss.kimbo",
+      "type": "Other",
+      "title": "Plan de combat : monstres d'abord, attention aux poussées",
+      "summary": "Le placement est tout dans ce combat : une erreur et un personnage commence son tour sur un glyphe. Pour un premier essai, tuez tous les monstres sans toucher au Kimbo, puis lancez les glyphes. Méfiez-vous des poussées qui peuvent vous mettre sur un glyphe.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Tuer tous les monstres sans frapper le Kimbo.",
+              "rationale": "Sans état, le Disciple ne pose pas de glyphes et ne tue personne au corps à corps."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas frapper le Kimbo dans le mauvais duo d'éléments, ni dans les deux.",
+              "rationale": "Chaque coup change son état et donc les cases où le Disciple posera les glyphes."
+            },
+            {
+              "order": 3,
+              "action": "Lancer la séquence des glyphes (voir « Glyphes pairs / impairs ») une fois les monstres morts.",
+              "rationale": "Vous n'aurez plus que le placement à gérer."
+            },
+            {
+              "order": 4,
+              "action": "Éviter de vous faire pousser par le Kimbo contre un obstacle.",
+              "rationale": "Sans obstacle, sa poussée vous laisse sur une case sûre ; contre un obstacle, vous pouvez finir sur un glyphe."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Si vous faites le Kimbo en même temps que les monstres : le Bitouf coopère et pousse de 3 cases, il peut vous mettre sur un glyphe."
+        },
+        {
+          "kind": "Warning",
+          "text": "Le Kimbo se téléporte jusqu'à 8 cases sans ligne de vue et sa Furie (au corps à corps) repousse de 2 cases."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2025-04-22)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.canopee-du-kimbo",
+          "quote": "Dans ce combat il faut faire très attention au placement, une simple erreur et c'est fatal. Si c'est votre première fois commencez par éliminer tous les monstres sans toucher au Kimbo.",
+          "locator": "Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.canopee-du-kimbo",
+          "quote": "Si le Kimbo vous pousse contre un obstacle vous risquez de finir sur un glyphe !",
+          "locator": "Stratégie globale — Risques de placement"
+        },
+        {
+          "sourceId": "src.dpln.canopee-du-kimbo",
+          "quote": "Le Bitouf pousse de 3 cases et coopère, vous risquez donc dans ces deux cas de finir sur un glyphe",
+          "locator": "Stratégie globale — Risques de placement"
+        },
+        {
+          "sourceId": "src.dpln.canopee-du-kimbo",
+          "quote": "Il peut lancer ces sorts uniquement après avoir fait entrer Kimbo dans un des états. Si tel est le cas, il peut tuer un de vos personnage s'il se trouve au càc du disciple.",
+          "locator": "Le Disciple du Kimbo"
         }
       ]
     }

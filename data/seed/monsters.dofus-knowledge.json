@@ -524,6 +524,387 @@
       ]
     },
     {
+      "id": "dungeon.brasserie-du-roi-dazak",
+      "type": "Dungeon",
+      "canonicalName": "Brasserie du roi Dazak",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.brasserie-du-roi-dazak",
+        "src.dpln.donjons"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.royaume-des-martegel"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.autel-de-la-dechireuse",
+      "type": "Dungeon",
+      "canonicalName": "Autel de la Déchireuse",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.autel-de-la-dechireuse",
+        "src.dpln.donjons"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.village-rhoarim"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.theatre-de-dramak",
+      "type": "Dungeon",
+      "canonicalName": "Théâtre de Dramak",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "100",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.theacuteacirctre-de-dramak",
+        "src.dpln.donjons"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.ile-de-kartonpath"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.bataille-de-l-aurore-pourpre",
+      "type": "Dungeon",
+      "canonicalName": "Bataille de l'Aurore Pourpre",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.bataille-de-l-aurore-pourpre",
+        "src.dpln.donjons"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.cauchemar-des-ravageurs"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.rituel-de-kabahal",
+      "type": "Dungeon",
+      "canonicalName": "Rituel de Kabahal",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.rituel-de-kabahal",
+        "src.dpln.donjons"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.pandamonium"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.sentence-de-la-balance",
+      "type": "Dungeon",
+      "canonicalName": "Sentence de la Balance",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.sentence-de-la-balance",
+        "src.dpln.donjons"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.desert-de-misere"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.boyau-du-pere-ver",
+      "type": "Dungeon",
+      "canonicalName": "Boyau du Père Ver",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "170",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.boyau-du-pere-ver",
+        "src.dpln.donjons"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.gorge-des-vents-hurlants"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.ventre-de-la-baleine",
+      "type": "Dungeon",
+      "canonicalName": "Ventre de la baleine",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.ventre-de-la-baleine",
+        "src.dpln.donjons"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.roc-des-salbatroces"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.souvenir-d-imagiro",
+      "type": "Dungeon",
+      "canonicalName": "Souvenir d'Imagiro",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.souvenir-d-imagiro",
+        "src.dpln.donjons"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.royaume-d-encre"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.trone-de-la-cour-sombre",
+      "type": "Dungeon",
+      "canonicalName": "Trône de la Cour Sombre",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.trone-de-la-cour-sombre",
+        "src.dpln.donjons",
+        "src.dpln.srambad"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.srambad"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.memoire-d-orukam",
+      "type": "Dungeon",
+      "canonicalName": "Mémoire d'Orukam",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.memoire-d-orukam",
+        "src.dpln.donjons"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.royaume-d-encre"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.fers-de-la-tyrannie",
+      "type": "Dungeon",
+      "canonicalName": "Fers de la Tyrannie",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.fers-de-la-tyrannie",
+        "src.dpln.donjons"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.galere-de-servitude"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.poste-de-controle-du-supervizoeuf",
+      "type": "Dungeon",
+      "canonicalName": "Poste de contrôle du Supervizœuf",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Poste de contrôle du Supervizoeuf",
+          "locale": "fr"
+        }
+      ],
+      "levelText": "170",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.poste-de-controle-du-supervizoeuf",
+        "src.dpln.donjons"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.toorbz-boorbz"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.transporteur-de-sylargh",
+      "type": "Dungeon",
+      "canonicalName": "Transporteur de Sylargh",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.transporteur-de-sylargh",
+        "src.dpln.donjons"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.remparts-a-vent"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.taniere-givrefoux",
+      "type": "Dungeon",
+      "canonicalName": "Tanière Givrefoux",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "170",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.taniegravere-givrefoux",
+        "src.dpln.donjons"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.crevasse-perge"
+        }
+      ],
+      "description": "L'entrée des Cavernes Givrefoux est en [-80,-75] ; il faut traverser les cavernes pour atteindre le donjon."
+    },
+    {
+      "id": "dungeon.breuil-du-venerable",
+      "type": "Dungeon",
+      "canonicalName": "Breuil du Vénérable",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.breuil-du-venerable",
+        "src.dpln.donjons"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.reserve-touffue"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.terrier-du-wa-wabbit",
+      "type": "Dungeon",
+      "canonicalName": "Terrier du Wa Wabbit",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "80",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.terrier-du-wa-wabbit",
+        "src.dpln.donjons"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.ilot-de-waldo"
+        }
+      ]
+    },
+    {
       "id": "monster.dofusdb-7206",
       "type": "Monster",
       "canonicalName": "Caméliache",
@@ -634,28 +1015,6 @@
         {
           "type": "LocatedIn",
           "to": "dungeon.chambre-des-malefices"
-        }
-      ]
-    },
-    {
-      "id": "dungeon.brasserie-du-roi-dazak",
-      "type": "Dungeon",
-      "canonicalName": "Brasserie du roi Dazak",
-      "locale": "fr",
-      "aliases": [],
-      "levelText": "200",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.brasserie-du-roi-dazak",
-        "src.dpln.donjons"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.royaume-des-martegel"
         }
       ]
     },
@@ -850,28 +1209,6 @@
       ]
     },
     {
-      "id": "dungeon.autel-de-la-dechireuse",
-      "type": "Dungeon",
-      "canonicalName": "Autel de la Déchireuse",
-      "locale": "fr",
-      "aliases": [],
-      "levelText": "200",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.autel-de-la-dechireuse",
-        "src.dpln.donjons"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.village-rhoarim"
-        }
-      ]
-    },
-    {
       "id": "monster.dofusdb-8040",
       "type": "Monster",
       "canonicalName": "Voracle",
@@ -974,28 +1311,6 @@
         {
           "type": "LocatedIn",
           "to": "dungeon.autel-de-la-dechireuse"
-        }
-      ]
-    },
-    {
-      "id": "dungeon.theatre-de-dramak",
-      "type": "Dungeon",
-      "canonicalName": "Théâtre de Dramak",
-      "locale": "fr",
-      "aliases": [],
-      "levelText": "100",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.theacuteacirctre-de-dramak",
-        "src.dpln.donjons"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.ile-de-kartonpath"
         }
       ]
     },
@@ -1136,28 +1451,6 @@
       ]
     },
     {
-      "id": "dungeon.bataille-de-l-aurore-pourpre",
-      "type": "Dungeon",
-      "canonicalName": "Bataille de l'Aurore Pourpre",
-      "locale": "fr",
-      "aliases": [],
-      "levelText": "200",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.bataille-de-l-aurore-pourpre",
-        "src.dpln.donjons"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.cauchemar-des-ravageurs"
-        }
-      ]
-    },
-    {
       "id": "monster.dofusdb-6790",
       "type": "Monster",
       "canonicalName": "Démoloch",
@@ -1278,28 +1571,6 @@
       ]
     },
     {
-      "id": "dungeon.rituel-de-kabahal",
-      "type": "Dungeon",
-      "canonicalName": "Rituel de Kabahal",
-      "locale": "fr",
-      "aliases": [],
-      "levelText": "200",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.rituel-de-kabahal",
-        "src.dpln.donjons"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.pandamonium"
-        }
-      ]
-    },
-    {
       "id": "monster.dofusdb-6656",
       "type": "Monster",
       "canonicalName": "Eninferno",
@@ -1382,28 +1653,6 @@
         {
           "type": "LocatedIn",
           "to": "dungeon.rituel-de-kabahal"
-        }
-      ]
-    },
-    {
-      "id": "dungeon.sentence-de-la-balance",
-      "type": "Dungeon",
-      "canonicalName": "Sentence de la Balance",
-      "locale": "fr",
-      "aliases": [],
-      "levelText": "200",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.sentence-de-la-balance",
-        "src.dpln.donjons"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.desert-de-misere"
         }
       ]
     },
@@ -1574,28 +1823,6 @@
       ]
     },
     {
-      "id": "dungeon.boyau-du-pere-ver",
-      "type": "Dungeon",
-      "canonicalName": "Boyau du Père Ver",
-      "locale": "fr",
-      "aliases": [],
-      "levelText": "170",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.boyau-du-pere-ver",
-        "src.dpln.donjons"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.gorge-des-vents-hurlants"
-        }
-      ]
-    },
-    {
       "id": "monster.dofusdb-4728",
       "type": "Monster",
       "canonicalName": "Trémorse",
@@ -1744,28 +1971,6 @@
         {
           "type": "LocatedIn",
           "to": "dungeon.boyau-du-pere-ver"
-        }
-      ]
-    },
-    {
-      "id": "dungeon.ventre-de-la-baleine",
-      "type": "Dungeon",
-      "canonicalName": "Ventre de la baleine",
-      "locale": "fr",
-      "aliases": [],
-      "levelText": "200",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.ventre-de-la-baleine",
-        "src.dpln.donjons"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.roc-des-salbatroces"
         }
       ]
     },
@@ -1956,28 +2161,6 @@
       ]
     },
     {
-      "id": "dungeon.souvenir-d-imagiro",
-      "type": "Dungeon",
-      "canonicalName": "Souvenir d'Imagiro",
-      "locale": "fr",
-      "aliases": [],
-      "levelText": "200",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.souvenir-d-imagiro",
-        "src.dpln.donjons"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.royaume-d-encre"
-        }
-      ]
-    },
-    {
       "id": "monster.dofusdb-6477",
       "type": "Monster",
       "canonicalName": "Fugokam",
@@ -2034,29 +2217,6 @@
         {
           "type": "LocatedIn",
           "to": "dungeon.souvenir-d-imagiro"
-        }
-      ]
-    },
-    {
-      "id": "dungeon.trone-de-la-cour-sombre",
-      "type": "Dungeon",
-      "canonicalName": "Trône de la Cour Sombre",
-      "locale": "fr",
-      "aliases": [],
-      "levelText": "200",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.trone-de-la-cour-sombre",
-        "src.dpln.donjons",
-        "src.dpln.srambad"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.srambad"
         }
       ]
     },
@@ -2251,28 +2411,6 @@
       ]
     },
     {
-      "id": "dungeon.memoire-d-orukam",
-      "type": "Dungeon",
-      "canonicalName": "Mémoire d'Orukam",
-      "locale": "fr",
-      "aliases": [],
-      "levelText": "200",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.memoire-d-orukam",
-        "src.dpln.donjons"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.royaume-d-encre"
-        }
-      ]
-    },
-    {
       "id": "monster.dofusdb-6471",
       "type": "Monster",
       "canonicalName": "Imafugo",
@@ -2349,28 +2487,6 @@
         {
           "type": "LocatedIn",
           "to": "dungeon.memoire-d-orukam"
-        }
-      ]
-    },
-    {
-      "id": "dungeon.fers-de-la-tyrannie",
-      "type": "Dungeon",
-      "canonicalName": "Fers de la Tyrannie",
-      "locale": "fr",
-      "aliases": [],
-      "levelText": "200",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.fers-de-la-tyrannie",
-        "src.dpln.donjons"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.galere-de-servitude"
         }
       ]
     },
@@ -2565,33 +2681,6 @@
       ]
     },
     {
-      "id": "dungeon.poste-de-controle-du-supervizoeuf",
-      "type": "Dungeon",
-      "canonicalName": "Poste de contrôle du Supervizœuf",
-      "locale": "fr",
-      "aliases": [
-        {
-          "text": "Poste de contrôle du Supervizoeuf",
-          "locale": "fr"
-        }
-      ],
-      "levelText": "170",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.poste-de-controle-du-supervizoeuf",
-        "src.dpln.donjons"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.toorbz-boorbz"
-        }
-      ]
-    },
-    {
       "id": "monster.dofusdb-8050",
       "type": "Monster",
       "canonicalName": "Kamikabz",
@@ -2714,28 +2803,6 @@
         {
           "type": "LocatedIn",
           "to": "dungeon.poste-de-controle-du-supervizoeuf"
-        }
-      ]
-    },
-    {
-      "id": "dungeon.transporteur-de-sylargh",
-      "type": "Dungeon",
-      "canonicalName": "Transporteur de Sylargh",
-      "locale": "fr",
-      "aliases": [],
-      "levelText": "200",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.transporteur-de-sylargh",
-        "src.dpln.donjons"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.remparts-a-vent"
         }
       ]
     },
@@ -2930,29 +2997,6 @@
       ]
     },
     {
-      "id": "dungeon.taniere-givrefoux",
-      "type": "Dungeon",
-      "canonicalName": "Tanière Givrefoux",
-      "locale": "fr",
-      "aliases": [],
-      "levelText": "170",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.taniegravere-givrefoux",
-        "src.dpln.donjons"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.crevasse-perge"
-        }
-      ],
-      "description": "L'entrée des Cavernes Givrefoux est en [-80,-75] ; il faut traverser les cavernes pour atteindre le donjon."
-    },
-    {
       "id": "monster.dofusdb-2891",
       "type": "Monster",
       "canonicalName": "Yomi Givrefoux",
@@ -3143,28 +3187,6 @@
       ]
     },
     {
-      "id": "dungeon.breuil-du-venerable",
-      "type": "Dungeon",
-      "canonicalName": "Breuil du Vénérable",
-      "locale": "fr",
-      "aliases": [],
-      "levelText": "200",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.breuil-du-venerable",
-        "src.dpln.donjons"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.reserve-touffue"
-        }
-      ]
-    },
-    {
       "id": "monster.dofusdb-8042",
       "type": "Monster",
       "canonicalName": "Gyrafor",
@@ -3237,28 +3259,6 @@
         {
           "type": "LocatedIn",
           "to": "dungeon.breuil-du-venerable"
-        }
-      ]
-    },
-    {
-      "id": "dungeon.terrier-du-wa-wabbit",
-      "type": "Dungeon",
-      "canonicalName": "Terrier du Wa Wabbit",
-      "locale": "fr",
-      "aliases": [],
-      "levelText": "80",
-      "attributes": {
-        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
-      },
-      "verification": "VERIFIED",
-      "sourceIds": [
-        "src.dpln.terrier-du-wa-wabbit",
-        "src.dpln.donjons"
-      ],
-      "relations": [
-        {
-          "type": "PartOf",
-          "to": "area.ilot-de-waldo"
         }
       ]
     },

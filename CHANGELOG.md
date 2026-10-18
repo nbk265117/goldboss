@@ -2,13 +2,15 @@
 
 ## 0.7.1 — 18/10/2026
 
-- **23 boss beaucoup mieux expliqués** : leurs fiches ont été réécrites à partir de leur guide Dofus pour les Noobs,
+- **24 boss beaucoup mieux expliqués** : leurs fiches ont été réécrites à partir de leur guide Dofus pour les Noobs,
   avec des étapes numérotées et la raison de chaque étape (comment retirer l'invulnérabilité, règles spéciales,
   sorts dangereux, plan de combat et composition conseillée). Chaque citation est vérifiée mot pour mot.
   - **Comte Harebourg** : invulnérabilité pas à pas (tour pair, où placer l'allié), **confusions** (comment viser
     quand vos sorts sont redirigés), glyphe Mi-temps, plan de combat.
   - **Guerre** (Trône de sang) : phase 1 (ordre des monstres), état Brave et Pacifiste, ses 4 armes géantes avec
     leurs seuils de PV, et les deux méthodes pour la tuer.
+  - **Kimbo** : où se placer selon l'élément (distance paire ou impaire du Disciple, c'est-à-dire la même
+    couleur de case que lui ou l'autre), et comment garder les glyphes au même endroit.
   - **Dazak Martegel**, Belladone, Déchireuse, Cire Momore, Vénérable Endormi, Kabahal, Roi Imagami, Reine
     Amirukam, L'Éternel Conflit, Protozorreur, Père Ver, Sylargh, Supervizœuf, Reine des Voleurs, Tengu Givrefoux,
     Misère, Servitude, Dramak, Maître des Pantins, Wa Wobot et Grasmera (qui n'avait aucune fiche).
