@@ -22,9 +22,10 @@ would change that. Its behaviour is chosen to stay far from every explicit prohi
 | Prohibited / risky | Dofus Gold Boss - DGB |
 |---|---|
 | Client modification, injection, hooks, memory reading | None. The app never opens, enumerates or attaches to the game process. |
-| Automation, inputs to the game | None. No `SendInput`/`SendKeys`/`PostMessage` exists in the code. Global hotkeys only control the companion; plain keys are never registered. UI tests drive only the companion's own windows through UI Automation. |
+| Automation, inputs to the game | None. No `SendInput`/`SendKeys`/`PostMessage` exists in the code. Global hotkeys only control the companion; plain keys are never registered, except TAB / Shift+TAB for the opt-in window switch (below). UI tests drive only the companion's own windows through UI Automation. |
 | Network interception | None. The app makes no network request at all; only the user's browser opens a source link. |
 | Anti-cheat bypass | None. |
+| Switching between Dofus windows (multi-account) | **Off by default**, overlay button. TAB / Shift+TAB are taken only while a Dofus window is in front and at least two are open, and are released as soon as another program is in front. One key press = one window brought to the front (`SetForegroundWindow`, like clicking it in the taskbar); nothing is sent to the game, no action is repeated or chained. Windows are found by process name only; the foreground change is watched with an out-of-context `SetWinEventHook` (no code in other processes). |
 | Screen reading | One-shot GDI capture (like Print Screen), **allowed by default since 0.5.1 but user-triggered only** (Detect/Capture button or hotkey; can be turned off), analysed in memory, not stored unless enabled. Image import is the primary workflow. |
 | Game data / assets | No game asset is bundled. Mechanics are paraphrased from guides, attributed, with short quotes. The DofusDB importer is separate and run by the user, who decides whether it suits DofusDB's terms and the CGU. |
 | Promotion on Ankama channels (CGU 6.8) | Not done by the app; do not advertise it on Ankama services. |

@@ -58,6 +58,18 @@
                                 </Style>
                             </Button.Style>
                         </Button>
+                        <Button ToolTip="{l:T Overlay.WindowSwitchTip}" AutomationProperties.Name="{l:T Overlay.WindowSwitchTip}" Command="{Binding ToggleWindowSwitchCommand}">
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource IconButton}">
+                                    <Setter Property="Content" Value="&#xE8AB;"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding WindowSwitch}" Value="True">
+                                            <Setter Property="Foreground" Value="{DynamicResource Accent}"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
                         <Button ToolTip="{l:T Overlay.LockTip}" AutomationProperties.Name="{l:T Overlay.LockTip}" Command="{Binding ToggleLockCommand}">
                             <Button.Style>
                                 <Style TargetType="Button" BasedOn="{StaticResource IconButton}">

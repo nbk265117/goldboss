@@ -1,5 +1,13 @@
 # Historique des versions
 
+## 0.7.2 — 18/10/2026
+
+- **Switch TAB entre vos persos (multi-compte)** : nouveau bouton dans l'overlay (icône à côté du cadenas). Une fois
+  activé, quand une fenêtre Dofus est devant, **TAB** passe à la fenêtre Dofus du perso suivant et **Maj+TAB** au
+  précédent (4 persos = 4 fenêtres, toujours dans le même ordre). Seules les fenêtres Dofus sont concernées : dans
+  les autres programmes TAB marche normalement. Désactivé par défaut ; rien n'est envoyé au jeu, la fenêtre est
+  juste mise au premier plan, comme un clic dans la barre des tâches.
+
 ## 0.7.1 — 18/10/2026
 
 - **Toutes les images** : les 204 boss et 4 921 des 4 925 monstres ont maintenant leur image (5 125 images

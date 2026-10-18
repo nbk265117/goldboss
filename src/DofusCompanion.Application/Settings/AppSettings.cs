@@ -28,6 +28,8 @@ public sealed class AppSettings
     public bool OverlayVisible { get; set; } = true;
     /// <summary>WS_EX_NOACTIVATE: clicking the overlay does not take focus from the game (search box then needs the main window).</summary>
     public bool OverlayNoActivate { get; set; }
+    /// <summary>TAB / Shift+TAB switch between the Dofus windows (multi-account), off by default.</summary>
+    public bool WindowSwitchEnabled { get; set; }
 
     // ---- shortcuts (global hotkeys, format "Ctrl+Shift+F9"). Function keys are used because global hotkeys
     // take the combination away from every other program (Ctrl+Shift+T/S/D are common browser/editor shortcuts).

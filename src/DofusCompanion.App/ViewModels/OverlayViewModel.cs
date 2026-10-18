@@ -16,12 +16,15 @@ public sealed partial class OverlayViewModel : ObservableObject
 {
     private readonly KnowledgeService _knowledge;
     private readonly ISettingsStore _settings;
+    private readonly WindowSwitchService _windowSwitch;
     private CancellationTokenSource? _searchCts;
 
-    public OverlayViewModel(KnowledgeService knowledge, EntityDetailViewModel detail, AnalysisViewModel analysis, ISettingsStore settings, StatusService status, FightContext fight)
+    public OverlayViewModel(KnowledgeService knowledge, EntityDetailViewModel detail, AnalysisViewModel analysis, ISettingsStore settings, StatusService status, FightContext fight,
+        WindowSwitchService windowSwitch)
     {
         _knowledge = knowledge;
         _settings = settings;
+        _windowSwitch = windowSwitch;
         Detail = detail;
         Analysis = analysis;
         Status = status;
@@ -29,6 +32,7 @@ public sealed partial class OverlayViewModel : ObservableObject
         Compact = settings.Current.OverlayCompact;
         Locked = settings.Current.OverlayLocked;
         Opacity = settings.Current.OverlayOpacity;
+        WindowSwitch = settings.Current.WindowSwitchEnabled;
         Detail.NavigateRequested += async (_, id) => await Detail.ShowAsync(id);
         Analysis.EntityConfirmed += async (_, e) => await ShowEntityAsync(e.Id);
     }
@@ -47,6 +51,8 @@ public sealed partial class OverlayViewModel : ObservableObject
     [ObservableProperty] public partial double Opacity { get; set; }
     [ObservableProperty] public partial bool ShowCandidates { get; set; }
     [ObservableProperty] public partial bool Detecting { get; set; }
+    /// <summary>TAB / Shift+TAB switch between the Dofus windows (multi-account).</summary>
+    [ObservableProperty] public partial bool WindowSwitch { get; set; }
 
     /// <summary>Set by the shell once the detection service exists.</summary>
     public AutoDetectService? AutoDetect { get; set; }
@@ -78,6 +84,13 @@ public sealed partial class OverlayViewModel : ObservableObject
     {
         _settings.Current.OverlayLocked = value;
         _settings.Save();
+    }
+
+    partial void OnWindowSwitchChanged(bool value)
+    {
+        _settings.Current.WindowSwitchEnabled = value;
+        _settings.Save();
+        _windowSwitch.SetEnabled(value);
     }
 
     private async Task SearchAsync(string q)
@@ -128,6 +141,16 @@ public sealed partial class OverlayViewModel : ObservableObject
 
     [RelayCommand]
     private void ToggleLock() => Locked = !Locked;
+
+    [RelayCommand]
+    private void ToggleWindowSwitch()
+    {
+        WindowSwitch = !WindowSwitch;
+        var windows = DofusWindows.All().Count;
+        if (!WindowSwitch) Status.Info(Loc.Instance["Overlay.WindowSwitchOff"]);
+        else if (windows < 2) Status.Error(Loc.Instance.Format("Overlay.WindowSwitchFew", windows));
+        else Status.Info(Loc.Instance.Format("Overlay.WindowSwitchOn", windows));
+    }
 
     [RelayCommand]
     private void Hide() => HideRequested?.Invoke(this, EventArgs.Empty);

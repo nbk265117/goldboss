@@ -91,6 +91,7 @@ public partial class App : System.Windows.Application, IDisposable
         services.AddSingleton<UpdateService>();
         services.AddSingleton<EntityImageProvider>();
         services.AddSingleton<HotkeyService>();
+        services.AddSingleton<WindowSwitchService>();
         services.AddSingleton<FightContext>();
         services.AddSingleton<StatusService>();
         services.AddSingleton<StartupMetrics>();

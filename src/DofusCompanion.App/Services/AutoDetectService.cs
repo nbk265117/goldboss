@@ -42,8 +42,8 @@ public sealed class AutoDetectService(ISettingsStore settings, RecognitionServic
         try
         {
             // Clicking "Détecter" puts the overlay in front: look for the Dofus window itself in that case.
-            var dofus = DofusForegroundWindow();
-            if (dofus == 0) dofus = DofusWindow();
+            var dofus = DofusWindows.Foreground();
+            if (dofus == 0) dofus = DofusWindows.FirstVisible();
             var region = settings.Current.AutoDetectRegion is { Width: > 8, Height: > 8 } zone ? zone : null;
             RasterImage image;
             using (BeforeCapture is null ? null : await BeforeCapture())
@@ -112,51 +112,5 @@ public sealed class AutoDetectService(ISettingsStore settings, RecognitionServic
         {
             IsBusy = false;
         }
-    }
-
-    /// <summary>
-    /// The main window of a running Dofus client (not minimised). Only process names and window handles are
-    /// read; the game process is never opened or inspected.
-    /// </summary>
-    private static nint DofusWindow()
-    {
-        foreach (var p in Process.GetProcesses())
-        {
-            using (p)
-            {
-                try
-                {
-                    if (p.Id == Environment.ProcessId
-                        || !p.ProcessName.StartsWith("Dofus", StringComparison.OrdinalIgnoreCase)
-                        || p.ProcessName.StartsWith("DofusGoldBoss", StringComparison.OrdinalIgnoreCase)) continue;
-                    var h = p.MainWindowHandle;
-                    if (h != 0 && !NativeMethods.IsIconic(h)) return h;
-                }
-                catch (InvalidOperationException) { }
-                catch (System.ComponentModel.Win32Exception) { }
-            }
-        }
-
-        return 0;
-    }
-
-    /// <summary>
-    /// The foreground window if it belongs to the Dofus client (process name starting with "Dofus", excluding
-    /// this app). Only the process NAME is read; the game process is never opened or inspected.
-    /// </summary>
-    private static nint DofusForegroundWindow()
-    {
-        var hwnd = NativeMethods.GetForegroundWindow();
-        if (hwnd == 0) return 0;
-        _ = NativeMethods.GetWindowThreadProcessId(hwnd, out var pid);
-        if (pid == 0 || pid == Environment.ProcessId) return 0;
-        try
-        {
-            using var p = Process.GetProcessById((int)pid);
-            return p.ProcessName.StartsWith("Dofus", StringComparison.OrdinalIgnoreCase)
-                   && !p.ProcessName.StartsWith("DofusGoldBoss", StringComparison.OrdinalIgnoreCase) ? hwnd : 0;
-        }
-        catch (ArgumentException) { return 0; }
-        catch (InvalidOperationException) { return 0; }
     }
 }

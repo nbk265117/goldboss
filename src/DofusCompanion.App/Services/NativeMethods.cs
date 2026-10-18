@@ -3,8 +3,9 @@ using System.Runtime.InteropServices;
 namespace DofusCompanion.App.Services;
 
 /// <summary>
-/// Win32 calls used by the companion. All of them act on the companion's OWN windows or read the screen
-/// (BitBlt); none touches the game process, its memory, input or network.
+/// Win32 calls used by the companion. They act on the companion's OWN windows, read the screen (BitBlt) or,
+/// for the opt-in TAB switch, bring a Dofus window to the front; none touches the game process, its memory,
+/// input or network.
 /// </summary>
 internal static partial class NativeMethods
 {
@@ -116,6 +117,30 @@ internal static partial class NativeMethods
 
     [LibraryImport("user32.dll")]
     public static partial uint GetWindowThreadProcessId(nint hWnd, out uint lpdwProcessId);
+
+    // ---- TAB switch between Dofus windows: window activation only, like clicking the window in the taskbar.
+    public const uint VK_TAB = 0x09;
+    public const int SW_RESTORE = 9;
+    public const uint EVENT_SYSTEM_FOREGROUND = 0x0003;
+    public const uint WINEVENT_OUTOFCONTEXT = 0x0000;
+
+    public delegate void WinEventProc(nint hWinEventHook, uint eventType, nint hwnd, int idObject, int idChild, uint idEventThread, uint dwmsEventTime);
+
+    /// <summary>Out-of-context notification that the foreground window changed (no code runs in other processes).</summary>
+    [LibraryImport("user32.dll")]
+    public static partial nint SetWinEventHook(uint eventMin, uint eventMax, nint hmodWinEventProc, nint pfnWinEventProc, uint idProcess, uint idThread, uint dwFlags);
+
+    [LibraryImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static partial bool UnhookWinEvent(nint hWinEventHook);
+
+    [LibraryImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static partial bool SetForegroundWindow(nint hWnd);
+
+    [LibraryImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static partial bool ShowWindow(nint hWnd, int nCmdShow);
 
     [LibraryImport("user32.dll", EntryPoint = "GetMonitorInfoW")]
     [return: MarshalAs(UnmanagedType.Bool)]
