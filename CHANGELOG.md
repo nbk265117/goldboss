@@ -2,7 +2,7 @@
 
 ## 0.7.1 — 18/10/2026
 
-- **24 boss beaucoup mieux expliqués** : leurs fiches ont été réécrites à partir de leur guide Dofus pour les Noobs,
+- **35 boss beaucoup mieux expliqués** : leurs fiches ont été réécrites à partir de leur guide Dofus pour les Noobs,
   avec des étapes numérotées et la raison de chaque étape (comment retirer l'invulnérabilité, règles spéciales,
   sorts dangereux, plan de combat et composition conseillée). Chaque citation est vérifiée mot pour mot.
   - **Comte Harebourg** : invulnérabilité pas à pas (tour pair, où placer l'allié), **confusions** (comment viser
@@ -14,7 +14,10 @@
   - **Dazak Martegel**, Belladone, Déchireuse, Cire Momore, Vénérable Endormi, Kabahal, Roi Imagami, Reine
     Amirukam, L'Éternel Conflit, Protozorreur, Père Ver, Sylargh, Supervizœuf, Reine des Voleurs, Tengu Givrefoux,
     Misère, Servitude, Dramak, Maître des Pantins, Wa Wobot et Grasmera (qui n'avait aucune fiche).
-- **Astuces pour les monstres** des donjons de ces boss (80 monstres) : quoi éviter, qui tuer en premier.
+  - **Dimensions divines** : Roi Nidas, Phossile, Malléfisk, Toxoliath (Enutrosor), Vortex, XLII, Fraktale
+    (Xélorium), Chaloeil (Ecaflipus), Pounicheur, Ush Galesh et Capitaine Ekarlatte (Srambad, page du guide
+    encore incomplète).
+- **Astuces pour les monstres** des donjons de ces boss (107 monstres) : quoi éviter, qui tuer en premier.
   Seuls les monstres que le guide nomme clairement ont une fiche.
 - Ce qui reste flou ou contradictoire dans un guide est signalé dans la fiche au lieu d'être deviné.
 - Tout est traduit en anglais et en darija.

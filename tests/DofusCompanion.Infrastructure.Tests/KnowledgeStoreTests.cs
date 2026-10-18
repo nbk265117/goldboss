@@ -159,7 +159,7 @@ public class SeedAndImportTests
         }
 
         // Only dungeons whose guide page documents no boss mechanic at all.
-        Assert.Equal(["Akadémie des Gobs", "Ring du Capitaine Ekarlatte"], withoutMechanics.Order().ToList());
+        Assert.Equal(["Akadémie des Gobs"], withoutMechanics.Order().ToList());
     }
 
     [Fact]

@@ -244,6 +244,114 @@
       "retrievedOn": "2026-10-17",
       "lastCheckedOn": "2026-10-17",
       "notes": "Aucune date de mise en ligne ni de mise à jour affichée."
+    },
+    {
+      "id": "src.dpln.defi-du-chaloeil",
+      "title": "Défi du Chaloeil",
+      "url": "https://www.dofuspourlesnoobs.com/defi-du-chaloeil.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2023-06-29",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 21/01/2016."
+    },
+    {
+      "id": "src.dpln.fabrique-mallefisk",
+      "title": "Fabrique Mallefisk",
+      "url": "https://www.dofuspourlesnoobs.com/fabrique-mallefisk.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": null,
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Aucune date affichée. La page porte un bandeau indiquant qu'elle nécessite une révision (informations possiblement erronées ou manquantes)."
+    },
+    {
+      "id": "src.dpln.galerie-du-phossile",
+      "title": "Galerie du Phossile",
+      "url": "https://www.dofuspourlesnoobs.com/galerie-du-phossile.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2026-06-21",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 19/04/2014."
+    },
+    {
+      "id": "src.dpln.miausoleacutee-du-pounicheur",
+      "title": "Miausolée du Pounicheur",
+      "url": "https://www.dofuspourlesnoobs.com/miausoleacutee-du-pounicheur.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": null,
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Aucune date affichée."
+    },
+    {
+      "id": "src.dpln.palais-du-roi-nidas",
+      "title": "Palais du roi Nidas",
+      "url": "https://www.dofuspourlesnoobs.com/palais-du-roi-nidas.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2026-06-21",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 10/08/2018."
+    },
+    {
+      "id": "src.dpln.cave-du-toxoliath",
+      "title": "Cave du Toxoliath",
+      "url": "https://www.dofuspourlesnoobs.com/cave-du-toxoliath.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2022-02-10",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 01/07/2014."
+    },
+    {
+      "id": "src.dpln.plateau-de-ush",
+      "title": "Plateau de Ush",
+      "url": "https://www.dofuspourlesnoobs.com/plateau-de-ush.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": null,
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Aucune date affichée."
+    },
+    {
+      "id": "src.dpln.oeil-de-vortex",
+      "title": "Œil de Vortex",
+      "url": "https://www.dofuspourlesnoobs.com/oeil-de-vortex.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2026-10-05",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 06/09/2014."
+    },
+    {
+      "id": "src.dpln.horologium-de-xlii",
+      "title": "Horologium de XLII",
+      "url": "https://www.dofuspourlesnoobs.com/horologium-de-xlii.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2022-10-01",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17",
+      "notes": "Mis en ligne le 28/09/2014."
     }
   ],
   "entities": [
@@ -1019,6 +1127,215 @@
       ]
     },
     {
+      "id": "dungeon.defi-du-chaloeil",
+      "type": "Dungeon",
+      "canonicalName": "Défi du Chaloeil",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.defi-du-chaloeil",
+        "src.dpln.donjons",
+        "src.dpln.ecaflipus"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.ecaflipus"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-4284",
+      "type": "Monster",
+      "canonicalName": "Cavalier Chanceux",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Lucky Knight",
+          "locale": "en"
+        },
+        {
+          "text": "Caballero afortunado",
+          "locale": "es"
+        },
+        {
+          "text": "Glücksreiter",
+          "locale": "de"
+        },
+        {
+          "text": "Cavaleiro Sortudo",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "200-212",
+      "attributes": {
+        "gameId": "4284"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.defi-du-chaloeil"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.defi-du-chaloeil"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-4286",
+      "type": "Monster",
+      "canonicalName": "Dame du Hasard",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Queen of Fate",
+          "locale": "en"
+        },
+        {
+          "text": "Reina del azar",
+          "locale": "es"
+        },
+        {
+          "text": "Glücksdame",
+          "locale": "de"
+        },
+        {
+          "text": "Dama do Azar",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "200-212",
+      "attributes": {
+        "gameId": "4286"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.defi-du-chaloeil"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.defi-du-chaloeil"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-4287",
+      "type": "Monster",
+      "canonicalName": "Roi Joueur",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "King Playa",
+          "locale": "en"
+        },
+        {
+          "text": "Rey jugador",
+          "locale": "es"
+        },
+        {
+          "text": "Spielerkönig",
+          "locale": "de"
+        },
+        {
+          "text": "Rei Jogador",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "200-212",
+      "attributes": {
+        "gameId": "4287"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.defi-du-chaloeil"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.defi-du-chaloeil"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-4283",
+      "type": "Monster",
+      "canonicalName": "Soldat de Fortune",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Soldier of Fortune",
+          "locale": "en"
+        },
+        {
+          "text": "Soldado de fortuna",
+          "locale": "es"
+        },
+        {
+          "text": "Glückssoldat",
+          "locale": "de"
+        }
+      ],
+      "levelText": "200-212",
+      "attributes": {
+        "gameId": "4283"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.defi-du-chaloeil"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.defi-du-chaloeil"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-4285",
+      "type": "Monster",
+      "canonicalName": "Valet Veinard",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Jammy Jack",
+          "locale": "en"
+        },
+        {
+          "text": "Sota afortunada",
+          "locale": "es"
+        },
+        {
+          "text": "Glücksbube",
+          "locale": "de"
+        },
+        {
+          "text": "Valete Venturoso",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "200-212",
+      "attributes": {
+        "gameId": "4285"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.defi-du-chaloeil"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.defi-du-chaloeil"
+        }
+      ]
+    },
+    {
       "id": "monster.dofusdb-5314",
       "type": "Monster",
       "canonicalName": "Tanklume",
@@ -1657,6 +1974,68 @@
       ]
     },
     {
+      "id": "dungeon.fabrique-de-mallefisk",
+      "type": "Dungeon",
+      "canonicalName": "Fabrique de Malléfisk",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Fabrique Mallefisk",
+          "locale": "fr"
+        }
+      ],
+      "levelText": "100",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.fabrique-mallefisk",
+        "src.dpln.donjons",
+        "src.dpln.enutrosor"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.enutrosor"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3666",
+      "type": "Monster",
+      "canonicalName": "Berserkoffre",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Hurtful Locker",
+          "locale": "en"
+        },
+        {
+          "text": "Berserkofre",
+          "locale": "es"
+        },
+        {
+          "text": "Berserkist",
+          "locale": "de"
+        }
+      ],
+      "levelText": "92-100",
+      "attributes": {
+        "gameId": "3666"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.fabrique-mallefisk"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.fabrique-de-mallefisk"
+        }
+      ]
+    },
+    {
       "id": "monster.dofusdb-5991",
       "type": "Monster",
       "canonicalName": "Ferrailleur",
@@ -1971,6 +2350,150 @@
         {
           "type": "LocatedIn",
           "to": "dungeon.boyau-du-pere-ver"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.galerie-du-phossile",
+      "type": "Dungeon",
+      "canonicalName": "Galerie du Phossile",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "150",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.galerie-du-phossile",
+        "src.dpln.donjons",
+        "src.dpln.enutrosor"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.enutrosor"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3660",
+      "type": "Monster",
+      "canonicalName": "Père Phorreur",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Powa Drhell",
+          "locale": "en"
+        },
+        {
+          "text": "Papatroz",
+          "locale": "es"
+        },
+        {
+          "text": "Griesgramratt",
+          "locale": "de"
+        }
+      ],
+      "levelText": "142-150",
+      "attributes": {
+        "gameId": "3660"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.galerie-du-phossile"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.galerie-du-phossile"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3658",
+      "type": "Monster",
+      "canonicalName": "Phorrêveur",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Drheamer",
+          "locale": "en"
+        },
+        {
+          "text": "Perfugaz",
+          "locale": "es"
+        },
+        {
+          "text": "Griesgrabbel",
+          "locale": "de"
+        }
+      ],
+      "levelText": "142-150",
+      "attributes": {
+        "gameId": "3658"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.galerie-du-phossile"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.galerie-du-phossile"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.miausolee-du-pounicheur",
+      "type": "Dungeon",
+      "canonicalName": "Miausolée du Pounicheur",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "110",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.miausoleacutee-du-pounicheur",
+        "src.dpln.donjons",
+        "src.dpln.ecaflipus"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.ecaflipus"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-4293",
+      "type": "Monster",
+      "canonicalName": "Pikbul",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Bytbul",
+          "locale": "en"
+        },
+        {
+          "text": "Pícbul",
+          "locale": "es"
+        }
+      ],
+      "levelText": "102-110",
+      "attributes": {
+        "gameId": "4293"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.miausoleacutee-du-pounicheur"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.miausolee-du-pounicheur"
         }
       ]
     },
@@ -2487,6 +3010,131 @@
         {
           "type": "LocatedIn",
           "to": "dungeon.memoire-d-orukam"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.palais-du-roi-nidas",
+      "type": "Dungeon",
+      "canonicalName": "Palais du roi Nidas",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.palais-du-roi-nidas",
+        "src.dpln.donjons",
+        "src.dpln.enutrosor"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.enutrosor"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3655",
+      "type": "Monster",
+      "canonicalName": "Lévitrof",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Levitrof",
+          "locale": "en"
+        }
+      ],
+      "levelText": "200-212",
+      "attributes": {
+        "gameId": "3655"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.palais-du-roi-nidas"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.palais-du-roi-nidas"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3656",
+      "type": "Monster",
+      "canonicalName": "Paspartou",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Pazpartu",
+          "locale": "en"
+        },
+        {
+          "text": "Llavoro",
+          "locale": "es"
+        },
+        {
+          "text": "Passpatu",
+          "locale": "de"
+        },
+        {
+          "text": "Xavero",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "200-212",
+      "attributes": {
+        "gameId": "3656"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.palais-du-roi-nidas"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.palais-du-roi-nidas"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3657",
+      "type": "Monster",
+      "canonicalName": "Piloztère",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Hairsh",
+          "locale": "en"
+        },
+        {
+          "text": "Melenutrof",
+          "locale": "es"
+        },
+        {
+          "text": "Haarraff",
+          "locale": "de"
+        },
+        {
+          "text": "Pelutrof",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "200-212",
+      "attributes": {
+        "gameId": "3657"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.palais-du-roi-nidas"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.palais-du-roi-nidas"
         }
       ]
     },
@@ -3187,6 +3835,348 @@
       ]
     },
     {
+      "id": "dungeon.cave-du-toxoliath",
+      "type": "Dungeon",
+      "canonicalName": "Cave du Toxoliath",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "180",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.cave-du-toxoliath",
+        "src.dpln.donjons",
+        "src.dpln.srambad"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.srambad"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3738",
+      "type": "Monster",
+      "canonicalName": "Éperfide",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Trechepeira",
+          "locale": "en"
+        },
+        {
+          "text": "Perfácnida",
+          "locale": "es"
+        },
+        {
+          "text": "Acheroperfidia",
+          "locale": "de"
+        },
+        {
+          "text": "Perfidaranha",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "172-180",
+      "attributes": {
+        "gameId": "3738"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.cave-du-toxoliath"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.cave-du-toxoliath"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3737",
+      "type": "Monster",
+      "canonicalName": "Lucrane",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Sculucanus",
+          "locale": "en"
+        },
+        {
+          "text": "Lucráneus",
+          "locale": "es"
+        },
+        {
+          "text": "Lucraniopter",
+          "locale": "de"
+        },
+        {
+          "text": "Lucranius",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "172-180",
+      "attributes": {
+        "gameId": "3737"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.cave-du-toxoliath"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.cave-du-toxoliath"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3739",
+      "type": "Monster",
+      "canonicalName": "Morfrelon",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Dethornit",
+          "locale": "en"
+        },
+        {
+          "text": "Maldabejorro",
+          "locale": "es"
+        },
+        {
+          "text": "Vespamorticabro",
+          "locale": "de"
+        },
+        {
+          "text": "Mortimbondo",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "172-180",
+      "attributes": {
+        "gameId": "3739"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.cave-du-toxoliath"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.cave-du-toxoliath"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3735",
+      "type": "Monster",
+      "canonicalName": "Scoliopode",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Escoliopendra",
+          "locale": "es"
+        },
+        {
+          "text": "Skoliopender",
+          "locale": "de"
+        }
+      ],
+      "levelText": "172-180",
+      "attributes": {
+        "gameId": "3735"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.cave-du-toxoliath"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.cave-du-toxoliath"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3736",
+      "type": "Monster",
+      "canonicalName": "Puceronde",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Amorphid",
+          "locale": "en"
+        },
+        {
+          "text": "Pulgondo",
+          "locale": "es"
+        },
+        {
+          "text": "Aphidoidralla",
+          "locale": "de"
+        },
+        {
+          "text": "Pulgorda",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "172-180",
+      "attributes": {
+        "gameId": "3736"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.cave-du-toxoliath"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.cave-du-toxoliath"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.plateau-de-ush",
+      "type": "Dungeon",
+      "canonicalName": "Plateau de Ush",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "160",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.plateau-de-ush",
+        "src.dpln.donjons",
+        "src.dpln.ecaflipus"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.ecaflipus"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-4297",
+      "type": "Monster",
+      "canonicalName": "Chacrebleu",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Pouncer",
+          "locale": "en"
+        },
+        {
+          "text": "Miauscuro",
+          "locale": "es"
+        },
+        {
+          "text": "Kazamba",
+          "locale": "de"
+        },
+        {
+          "text": "Miawnossa",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "152-160",
+      "attributes": {
+        "gameId": "4297"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.plateau-de-ush"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.plateau-de-ush"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-4299",
+      "type": "Monster",
+      "canonicalName": "Chargus",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Calleyat",
+          "locale": "en"
+        },
+        {
+          "text": "Miaugusto",
+          "locale": "es"
+        },
+        {
+          "text": "Sudnif",
+          "locale": "de"
+        },
+        {
+          "text": "Miawspia",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "152-160",
+      "attributes": {
+        "gameId": "4299"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.plateau-de-ush"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.plateau-de-ush"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-4296",
+      "type": "Monster",
+      "canonicalName": "Chasquatch",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Catsquatch",
+          "locale": "en"
+        },
+        {
+          "text": "Miauidizo",
+          "locale": "es"
+        },
+        {
+          "text": "Kazazel",
+          "locale": "de"
+        },
+        {
+          "text": "Miasquatch",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "152-160",
+      "attributes": {
+        "gameId": "4296"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.plateau-de-ush"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.plateau-de-ush"
+        }
+      ]
+    },
+    {
       "id": "monster.dofusdb-8042",
       "type": "Monster",
       "canonicalName": "Gyrafor",
@@ -3259,6 +4249,105 @@
         {
           "type": "LocatedIn",
           "to": "dungeon.breuil-du-venerable"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.oeil-de-vortex",
+      "type": "Dungeon",
+      "canonicalName": "Œil de Vortex",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "200",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.oeil-de-vortex",
+        "src.dpln.donjons",
+        "src.dpln.xeacutelorium"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.xelorium"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3836",
+      "type": "Monster",
+      "canonicalName": "Méjaire",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Hystairkal",
+          "locale": "en"
+        },
+        {
+          "text": "Arraca",
+          "locale": "es"
+        },
+        {
+          "text": "Eppithanx",
+          "locale": "de"
+        },
+        {
+          "text": "Dominastrix",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "200-212",
+      "attributes": {
+        "gameId": "3836"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.oeil-de-vortex"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.oeil-de-vortex"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3837",
+      "type": "Monster",
+      "canonicalName": "Harpille",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Krossflire",
+          "locale": "en"
+        },
+        {
+          "text": "Arpilla",
+          "locale": "es"
+        },
+        {
+          "text": "Harpy",
+          "locale": "de"
+        },
+        {
+          "text": "Harpilha",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "200-212",
+      "attributes": {
+        "gameId": "3837"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.oeil-de-vortex"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.oeil-de-vortex"
         }
       ]
     },
@@ -3391,6 +4480,215 @@
         {
           "type": "LocatedIn",
           "to": "dungeon.terrier-du-wa-wabbit"
+        }
+      ]
+    },
+    {
+      "id": "dungeon.horologium-de-xlii",
+      "type": "Dungeon",
+      "canonicalName": "Horologium de XLII",
+      "locale": "fr",
+      "aliases": [],
+      "levelText": "170",
+      "attributes": {
+        "levelTextSource": "Colonne 'Niveau du donjon' de la page Donjons (DPLN)"
+      },
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.horologium-de-xlii",
+        "src.dpln.donjons",
+        "src.dpln.xeacutelorium"
+      ],
+      "relations": [
+        {
+          "type": "PartOf",
+          "to": "area.xelorium"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3842",
+      "type": "Monster",
+      "canonicalName": "Trantroa",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Thirtree",
+          "locale": "en"
+        },
+        {
+          "text": "Trentytrés",
+          "locale": "es"
+        },
+        {
+          "text": "Dreindreinzick",
+          "locale": "de"
+        },
+        {
+          "text": "Trintetrex",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "162-170",
+      "attributes": {
+        "gameId": "3842"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.horologium-de-xlii"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.horologium-de-xlii"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3843",
+      "type": "Monster",
+      "canonicalName": "Seith",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Sethen",
+          "locale": "en"
+        },
+        {
+          "text": "Sieth",
+          "locale": "es"
+        },
+        {
+          "text": "Nebeis",
+          "locale": "de"
+        },
+        {
+          "text": "Sett",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "162-170",
+      "attributes": {
+        "gameId": "3843"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.horologium-de-xlii"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.horologium-de-xlii"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3844",
+      "type": "Monster",
+      "canonicalName": "Soissanth",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Siks-T",
+          "locale": "en"
+        },
+        {
+          "text": "Sesenth",
+          "locale": "es"
+        },
+        {
+          "text": "Gizesch",
+          "locale": "de"
+        },
+        {
+          "text": "Secentah",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "162-170",
+      "attributes": {
+        "gameId": "3844"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.horologium-de-xlii"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.horologium-de-xlii"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3840",
+      "type": "Monster",
+      "canonicalName": "Trezz",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Thriten",
+          "locale": "en"
+        },
+        {
+          "text": "Zendrai",
+          "locale": "de"
+        },
+        {
+          "text": "Trezzy",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "162-170",
+      "attributes": {
+        "gameId": "3840"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.horologium-de-xlii"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.horologium-de-xlii"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3841",
+      "type": "Monster",
+      "canonicalName": "Vindeux",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Twentoo",
+          "locale": "en"
+        },
+        {
+          "text": "Vintydós",
+          "locale": "es"
+        },
+        {
+          "text": "Zwounzigzwan",
+          "locale": "de"
+        },
+        {
+          "text": "Vintedoz",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "162-170",
+      "attributes": {
+        "gameId": "3841"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.horologium-de-xlii"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.horologium-de-xlii"
         }
       ]
     }
@@ -3892,6 +5190,226 @@
           "sourceId": "src.dpln.chambre-des-malefices",
           "quote": "Coquelicogne : 100 Dommages Critiques et 70% de Critiques pour 2 tours.",
           "locator": "II- Mécanique de la zone — État « Férocité des Protecteurs »"
+        }
+      ]
+    },
+    {
+      "id": "mech.cavalier-chanceux.astuces",
+      "entityId": "monster.dofusdb-4284",
+      "type": "SpellEffect",
+      "title": "Le plus dangereux : à tuer en premier",
+      "summary": "Les Cavaliers Chanceux sont les monstres les plus dangereux du donjon : avec le bonus de dommages de poussée de la Routourne, ils peuvent infliger 2000 à 3000 dégâts à un personnage. Ils peuvent s'attirer à vous jusqu'à 6 PO en ligne. Bonus de la Routourne (cycle de 3 tours) : 2 PM, puis 100 % critique, puis 1000 dommages de poussée.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Le tuer en premier à chaque vague.",
+              "target": "Cavalier Chanceux",
+              "rationale": "Ses dommages de poussée peuvent atteindre 2000 à 3000 sur un personnage."
+            },
+            {
+              "order": 2,
+              "action": "Lui retirer des PM en priorité ou l'éloigner avant qu'il joue.",
+              "rationale": "Il est extrêmement dangereux s'il arrive en mêlée avec vous."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas rester aligné avec lui à 6 PO ou moins.",
+              "rationale": "Il peut s'attirer à vous jusqu'à 6 PO en ligne."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "Les Cavaliers Chanceux sont les monstres les plus dangereux de ce donjon, et avec le bonus de dommages poussés qu’ils peuvent gagner, ils peuvent facilement infliger 2000 à 3000 dégâts à un personnage, il faut donc vite s'en débarrasser.",
+          "locator": "VI- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "Cavalier Chanceux Bonus 1 : 2PM. Bonus 2 : 100% Critique. Bonus 3 : 1000 Dommages de Poussée.",
+          "locator": "IV- Mécanique de la zone : la Routourne"
+        },
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "Il est également conseillé, à chaque nouvelle vague, de retirer des PM en priorité aux Cavalier Chanceux qui sont extrêmement dangereux s’ils arrivent en mêlée avec vous car ils font d’énormes dommages de poussée.",
+          "locator": "VII- Succès Spécial"
+        },
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "Rappel : Les Cavaliers Chanceux peuvent s’attirer à vous jusqu’à 6PO en ligne.",
+          "locator": "VII- Succès Spécial"
+        }
+      ]
+    },
+    {
+      "id": "mech.dame-du-hasard.astuces",
+      "entityId": "monster.dofusdb-4286",
+      "type": "SpellEffect",
+      "title": "Crève-cœur : pas de mêlée sur la cible marquée",
+      "summary": "Crève-cœur frappe 500 Terre en ligne (jusqu'à 4 PO) et marque la cible pour 1 tour : si un autre monstre attaque ce personnage en mêlée, la Dame est soignée de 100 % des dommages subis (200 % et une ligne Air supplémentaire d'environ 300 en coup critique). Bonus de la Routourne (cycle de 3 tours) : 4 PA, puis 100 % critique, puis 200 dommages.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Un personnage touché par Crève-cœur doit s'éloigner des autres monstres pour ne pas être attaqué en mêlée pendant 1 tour.",
+              "rationale": "Chaque coup de mêlée d'un autre monstre sur lui soigne la Dame de 100 % (ou 200 % en critique) des dommages."
+            },
+            {
+              "order": 2,
+              "action": "Rester hors de ses lignes à 4 PO ou moins.",
+              "target": "Dame du Hasard",
+              "rationale": "Crève-cœur se lance en ligne jusqu'à 4 PO, jusqu'à 3 fois par tour (1 fois par cible)."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "Crève-cœur : Frappe en ligne du 500 dans l'élément terre. Met l'effet Crève-coeur pour 1 tour qui a pour effet que si le personnage ayant l'effet se fait attaquer en mêlée par un autre monstre la Dame sera soignée de 100% des dommages subis. En cc, frappe une ligne supplémentaire d'environ 300 dans l'élément air et le soin de l'effet est de 200% des dommages subis. Se lance jusqu’à 4PO (lançable 3 fois par tour et 1 fois par cible).",
+          "locator": "V- Présentation des monstres"
+        },
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "Dame du Hasard Bonus 1 : 4PA. Bonus 2 : 100% Critique. Bonus 3 : 200 Dommages.",
+          "locator": "IV- Mécanique de la zone : la Routourne"
+        }
+      ]
+    },
+    {
+      "id": "mech.roi-joueur.astuces",
+      "entityId": "monster.dofusdb-4287",
+      "type": "SpellEffect",
+      "title": "Dégâts à retardement sur la durée",
+      "summary": "Sur le long terme, les Rois Joueurs infligent de bons dégâts à cause de leurs dégâts à retardement. Bonus de la Routourne (cycle de 3 tours) : 2000 PB, puis 400 puissance, puis 100 % critique.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne pas le laisser en vie trop longtemps, une fois les Cavaliers Chanceux morts.",
+              "target": "Roi Joueur",
+              "rationale": "Ses dégâts à retardement s'accumulent sur la durée du combat."
+            },
+            {
+              "order": 2,
+              "action": "Surveiller son bonus de Routourne en cours et désenvoûter s'il le faut.",
+              "rationale": "Selon le tour il a 2000 PB, 400 puissance ou 100 % critique ; seul le bonus en cours peut être désenvoûté."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "sur le long terme les Rois Joueurs peuvent infliger de bons dégâts à cause de leurs dégâts à retardement.",
+          "locator": "Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "Roi Joueur Bonus 1 : 2000 PB. Bonus 2 : 400 Puissance. Bonus 3 : 100% Critique.",
+          "locator": "IV- Mécanique de la zone : la Routourne"
+        },
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "Vous pouvez uniquement désenvoûter le bonus en cours mais pas ceux à venir tant qu'ils n'ont pas été déclenchés par le monstre.",
+          "locator": "IV- Mécanique de la zone : la Routourne"
+        }
+      ]
+    },
+    {
+      "id": "mech.soldat-de-fortune.astuces",
+      "entityId": "monster.dofusdb-4283",
+      "type": "SpellEffect",
+      "title": "Gênant car il tape à distance",
+      "summary": "Les Soldats de Fortune peuvent être très gênants car ils tapent à distance. Bonus de la Routourne (cycle de 3 tours) : 100 % critique, puis 100 fuite, puis 5 PO.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Le traiter juste après les Cavaliers Chanceux s'il vous gêne à distance.",
+              "target": "Soldat de Fortune",
+              "rationale": "Le guide le signale comme très gênant car il tape à distance."
+            },
+            {
+              "order": 2,
+              "action": "Le tour où il a le bonus de 5 PO, se méfier de sa portée accrue.",
+              "rationale": "La Routourne lui donne 5 PO sur le 3e tour du cycle."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "cependant les Soldats de Fortune peuvent être très gênant car ils tapent à distance",
+          "locator": "Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "Soldat de Fortune Bonus 1 : 100% Critique. Bonus 2 : 100 Fuite. Bonus 3 : 5PO.",
+          "locator": "IV- Mécanique de la zone : la Routourne"
+        }
+      ]
+    },
+    {
+      "id": "mech.valet-veinard.astuces",
+      "entityId": "monster.dofusdb-4285",
+      "type": "SpellEffect",
+      "title": "Bonus de la Routourne du Valet Veinard",
+      "summary": "Via la Routourne, le Valet Veinard reçoit un bonus différent à chaque tour sur un cycle de 3 tours : 100 esquive PM, puis dommages subis ×80 %, puis 100 % critique.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Le tour où il subit ×80 % de dommages, frapper plutôt un autre monstre si possible.",
+              "target": "Valet Veinard",
+              "rationale": "Ce tour-là, il ne prend que 80 % des dommages."
+            },
+            {
+              "order": 2,
+              "action": "Le tour où il a 100 esquive PM, ne pas compter sur le retrait PM contre lui.",
+              "rationale": "Bonus 1 de son cycle de Routourne."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "Ce sort permet de donner un bonus différents à chaque tour pendant 1 tour à chacun des monstres de manière cyclique. Le cycle est de 3 tours.",
+          "locator": "IV- Mécanique de la zone : la Routourne"
+        },
+        {
+          "sourceId": "src.dpln.defi-du-chaloeil",
+          "quote": "Valet Veinard Bonus 1 : 100 Esquive PM. Bonus 2 : Dommages subis x80%. Bonus 3 : 100% Critique.",
+          "locator": "IV- Mécanique de la zone : la Routourne"
         }
       ]
     },
@@ -4742,6 +6260,52 @@
       ]
     },
     {
+      "id": "mech.berserkoffre.astuces",
+      "entityId": "monster.dofusdb-3666",
+      "type": "Invulnerability",
+      "title": "Saut de Joie : invulnérable 1 tour, mais désenvoûtable",
+      "summary": "Le sort Saut de Joie rend le Berserkoffre invulnérable pendant 1 tour. Cet effet est désenvoûtable, et le sort ne revient que tous les 3 tours.",
+      "verification": "COMMUNITY_REPORTED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Si le Berserkoffre est invulnérable, le désenvoûter pour lui retirer l'état.",
+              "requiredState": "Invulnérable",
+              "rationale": "L'invulnérabilité donnée par Saut de Joie est désenvoûtable."
+            },
+            {
+              "order": 2,
+              "action": "Sans désenvoûtement, frapper une autre cible ce tour-ci et revenir sur lui ensuite.",
+              "rationale": "L'état ne dure qu'1 tour et le sort a 3 tours de relance."
+            }
+          ]
+        }
+      ],
+      "expectedStateChange": "Invulnérable → vulnérable",
+      "vulnerabilityDuration": "Invulnérable 1 tour, relance de 3 tours",
+      "unknownAspects": [
+        "La page porte un bandeau 'nécessite une révision' et n'est pas datée.",
+        "Le texte du guide ne précise pas quel monstre lance Saut de Joie (le nom du lanceur est une image)."
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.fabrique-mallefisk",
+          "quote": "Saut de Joie : Coopère l'un de vos alliés et rend le Berserkoffre invulnérable pour 1 tour (désenvoutable).",
+          "locator": "Présentation des monstres"
+        },
+        {
+          "sourceId": "src.dpln.fabrique-mallefisk",
+          "quote": "Ce sort se relance tous les 3 tours.",
+          "locator": "Présentation des monstres — Saut de Joie"
+        }
+      ]
+    },
+    {
       "id": "mech.ferrailleur.astuces",
       "entityId": "monster.dofusdb-5991",
       "type": "Other",
@@ -5113,6 +6677,136 @@
           "sourceId": "src.dpln.boyau-du-pere-ver",
           "quote": "Charge Croquante : Le Morsquale perd son état Inébranlable le temps du lancer du sort, il s’attire sur la cible de 4 cases, puis se téléporte symétriquement par rapport à elle, la frappe du 300 dans l'élément air en vol de vie et lui applique un poison de début de tour pour 1 tour qui frappe du 150 dans l'élément air. Se lance uniquement en ligne jusqu’à 5PO (lançable 1 fois par cible).",
           "locator": "III- Présentation des monstres"
+        }
+      ]
+    },
+    {
+      "id": "mech.pere-phorreur.astuces",
+      "entityId": "monster.dofusdb-3660",
+      "type": "SpellEffect",
+      "title": "Tunnellipse : l'empêcher d'échanger de place",
+      "summary": "Le sort Tunnellipse du Père Phorreur lui fait échanger sa position avec un de ses alliés jusqu'à 5 PO, puis inflige 200 feu en vol de vie aux ennemis dans une croix de taille 3 autour de sa case d'arrivée et les attire de 2 cases (une fois par tour).",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Mettre l'état Pesanteur au Père Phorreur ou au Phossile.",
+              "rationale": "Le guide indique que sous Pesanteur, l'échange de place de Tunnellipse n'est plus possible."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-06-21)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.galerie-du-phossile",
+          "quote": "NOTE : Attention au sort « Tunnellipse » du Père Phorreur qui lui permet d’échanger de place avec un allié jusqu’à 5PO. Vous pouvez appliquer l’état « Pesanteur » au Phossile ou au Père Phorreur afin qu’il ne puisse pas échanger de place.",
+          "locator": "V- Présentation du Boss — Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.galerie-du-phossile",
+          "quote": "Tunnellipse : Échange de position avec un de ses alliés puis inflige 200 de dégâts feu en vol de vie aux ennemis dans une zone croix de taille 3 autoru de sa case d'arrivée et les attire de 2 cases. Se lance jusqu’à 5PO (lançable 1 fois par tour).",
+          "locator": "IV- Présentation des monstres"
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Après l'échange, Tunnellipse frappe 200 feu en vol de vie les ennemis en croix de taille 3 autour de sa case d'arrivée et les attire de 2 cases : être attiré crée un glyphe rouge Glyphiphi sous vous."
+        }
+      ]
+    },
+    {
+      "id": "mech.phorreveur.astuces",
+      "entityId": "monster.dofusdb-3658",
+      "type": "SpellEffect",
+      "title": "Appel à l'aide : sortir les monstres de son glyphe",
+      "summary": "Le sort Appel à l'aide du Phorrêveur attire ses alliés dans un cercle de rayon 3 autour de lui et pose pendant 1 tour un glyphe en cercle de rayon 2 qui réduit de 50 % les dommages subis par tous les monstres dedans (relance de 3 tours).",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant de frapper le Phossile ou votre cible, vérifier qu'il n'est pas dans le glyphe du Phorrêveur.",
+              "rationale": "Dans ce glyphe, les monstres subissent 50 % de dommages en moins."
+            },
+            {
+              "order": 2,
+              "action": "S'il y est, le sortir du glyphe (en le poussant ou en l'attirant), puis frapper.",
+              "rationale": "C'est le conseil du guide ; attention, le déplacement d'un monstre autre que le Phossile crée un glyphe rouge Glyphiphi sous lui."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-06-21)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.galerie-du-phossile",
+          "quote": "NOTE 2 : Le glyphe du sort « Appel à l’aide » du Phorrêveur réduit les dommages subis de tous les ennemis présents dedans de 50%. Si le Phossile ou un monstre que vous souhaitez focus se trouve dedans, sortez-le du glyphe avant de le taper !",
+          "locator": "V- Présentation du Boss — Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.galerie-du-phossile",
+          "quote": "Appel à l’aide : Attire ses alliés dans une zone cercle de rayon 3 autour de lui et pose un glyphe cercle de rayon 2 pendant 1 tour autour de lui qui réduit de 50% les dommages subis de tous les monstres présents dedans. (Relance de 3 tours).",
+          "locator": "IV- Présentation des monstres"
+        }
+      ]
+    },
+    {
+      "id": "mech.pikbul.astuces",
+      "entityId": "monster.dofusdb-4293",
+      "type": "SpellEffect",
+      "title": "Ectoparasite : ne pas frapper le Pikbul au contact",
+      "summary": "Au corps à corps, Ectoparasite donne à la cible -200 fuite et les états Pesanteur et Indéplaçable. Ensuite, si le Pikbul est attaqué depuis une case adjacente, les dommages sont infligés au personnage sous Ectoparasite. Il frappe aussi en Terre (environ 200) avec Infestation, lancé en diagonale à grande portée, qui l'attire vers sa cible, et pose un poison (Déjection empoisonnée) : 10 PV Feu perdus par PA utilisé pendant 1 tour.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Quand un allié est sous Ectoparasite, frapper le Pikbul à distance plutôt que depuis une case adjacente.",
+              "target": "Pikbul",
+              "position": "À distance (pas sur une case adjacente)",
+              "rationale": "Les coups portés au contact du Pikbul sont subis par le personnage sous Ectoparasite."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas compter sur un déplacement pour sortir le personnage touché.",
+              "rationale": "Ectoparasite le met en Pesanteur et Indéplaçable et lui retire 200 fuite."
+            },
+            {
+              "order": 3,
+              "action": "Sous Déjection empoisonnée, limiter les PA utilisés pendant le tour si vos PV sont bas.",
+              "rationale": "Chaque PA utilisé fait perdre 10 PV Feu pendant 1 tour."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.miausoleacutee-du-pounicheur",
+          "quote": "Ectoparasite : Donne à la cible -200 fuite et les états Pesanteur et indéplaçable. Lancé uniquement au corps à corps. Si le pikbul est attaqué depuis une case au Corps à corps, les dommages sont infligés à la personne sous l’état Ectoparasite.",
+          "locator": "Présentation des monstres"
+        },
+        {
+          "sourceId": "src.dpln.miausoleacutee-du-pounicheur",
+          "quote": "Infestation : Dégâts terre d’environ 200, avec lancé en diagonale. Grande portée, le lanceur s’attire vers la cible avec ce sort",
+          "locator": "Présentation des monstres"
+        },
+        {
+          "sourceId": "src.dpln.miausoleacutee-du-pounicheur",
+          "quote": "Déjection empoisonnée : Provoque un poison qui fait perdre 10 PV (feu) par Pa utilisé pour 1 tour.",
+          "locator": "Présentation des monstres"
         }
       ]
     },
@@ -5952,6 +7646,179 @@
       ]
     },
     {
+      "id": "mech.levitrof.astuces",
+      "entityId": "monster.dofusdb-3655",
+      "type": "SpellEffect",
+      "title": "Reflets placides : le personnage vert doit frapper le Lévitrof",
+      "summary": "Reflets placides (1 à 10 PO, ligne de vue) rend un personnage vert : s'il n'a pas frappé le Lévitrof avant son prochain tour, il meurt au tour du Lévitrof. Après ce sort, le Lévitrof échange sa place avec le premier personnage qui lui inflige des dommages directs (les poisons ne comptent pas). Kama Haméa frappe 600 feu (3 à 8 PO) plus 50 % des PV érodés de la cible.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Retirer de la PO au Lévitrof, ou le tacler (environ 110 de tacle).",
+              "rationale": "Sans PO, il devient inoffensif ; ses sorts se lancent à distance."
+            },
+            {
+              "order": 2,
+              "action": "Si un de vos personnages devient vert (Reflets placides), le faire frapper le Lévitrof en PREMIER, avec des dommages directs, avant son prochain tour.",
+              "requiredState": "Reflets placides",
+              "rationale": "L'état ne disparaît que si c'est le personnage ciblé qui frappe le Lévitrof en premier ; il échange alors sa place avec lui."
+            },
+            {
+              "order": 3,
+              "action": "Sinon, tuer le Lévitrof avant son prochain tour.",
+              "rationale": "L'état disparaît aussi à la mort du monstre."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "CommonMistake",
+          "text": "Si un autre personnage frappe le Lévitrof avant le personnage vert, c'est lui qui échange de place et l'état reste : le personnage vert mourra quand même. Les poisons ne comptent pas comme dommages directs."
+        },
+        {
+          "kind": "Exception",
+          "text": "IA fuyarde : il recule après avoir frappé s'il ne peut plus atteindre d'autres cibles, et recule aussi si d'autres monstres lui bloquent le passage."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-06-21)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "Le personnage ciblé doit taper le Lévitrof avant son prochain tour de jeu, sinon le personnage meurt au tour du Lévitrof.",
+          "locator": "IV- Présentation des monstres — Lévitrof"
+        },
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "Attention, l’état ne disparait bien que dans le cas où le premier personne qui a tapé le Lévitrof est celui affecté par le sort.",
+          "locator": "IV- Présentation des monstres — Lévitrof"
+        },
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "Astuce : Retirer de la PO au monstre le rend inoffensif. Vous pouvez également le tacler si votre personnage a du tacle (comptez environ 110 de tacle).",
+          "locator": "IV- Présentation des monstres — Lévitrof / Astuce"
+        },
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "Après avoir lancé le sort, le Lévitrof effectuera un changement de place avec le prochain personnage qui lui infligera des dommages directs (les poisons ne comptent pas).",
+          "locator": "IV- Présentation des monstres — Lévitrof"
+        },
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "Kama Haméa : Frappe du 600 dans l’élément feu de base, une deuxième ligne de dommage sera infligée correspondant à 50% des points de vie érodés de la cible. Ce sort se lance de 3 à 8 PO maximum (portée modifiable) et nécessite une ligne de vue.",
+          "locator": "IV- Présentation des monstres — Lévitrof"
+        }
+      ]
+    },
+    {
+      "id": "mech.paspartou.astuces",
+      "entityId": "monster.dofusdb-3656",
+      "type": "SpellEffect",
+      "title": "Le bloquer au corps à corps ou le faire reculer",
+      "summary": "Le Paspartou frappe de 2 à 5 PO : Clémence (400 eau) rend invulnérables les ennemis collés à sa cible, La clef du succès (500 terre) donne 1 PM aux ennemis collés à sa cible. Guidéal donne 400 de puissance pour 1 tour en cercle de rayon 2 autour de lui (à partir de son 3e tour, puis tous les 2 tours). IA fuyarde.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avec un personnage qui a du tacle (environ 110), se coller au Paspartou.",
+              "rationale": "Ses sorts de frappe ne se lancent qu'à 2 PO minimum : bloqué au contact, il ne joue pas."
+            },
+            {
+              "order": 2,
+              "action": "Sinon, lui donner une cible (une Cawotte par exemple) à exactement 5 PO de lui.",
+              "rationale": "S'il ne peut toucher personne d'autre ensuite, son IA fuyarde le fait reculer, ce qui lui fait perdre des PM indirectement."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas coller vos personnages entre eux quand ils sont à portée du Paspartou.",
+              "rationale": "Clémence rend invulnérables les ennemis au corps à corps de la cible visée, et La clef du succès leur donne 1 PM."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-06-21)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "Si votre personnage a du tacle (comptez environ 110 de tacle), vous pouvez bloquer le Paspartou, comme ses sorts de frappe ne sont lançables qu’à 2 PO minimum, il ne jouera pas.",
+          "locator": "IV- Présentation des monstres — Paspartou / Astuce"
+        },
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "Astuce : Donnez des cibles (Cawotte par exemple) au monstre à pile 5 PO de lui. S’il ne peut taper personne d’autre ensuite durant son tour de jeu en cours, alors il reculera, ce qui lui fait ‘perdre’ des PM indirectement.",
+          "locator": "IV- Présentation des monstres — Paspartou / Astuce"
+        },
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "Clémence : Frappe du 400 dans l’élément eau. Si des cibles se trouvent au corps à corps de la cible visé, l’état invulnérable est appliqué aux cibles présentes (uniquement ennemies). Ce sort se lance de 2 à 5PO et nécessite une ligne de vue.",
+          "locator": "IV- Présentation des monstres — Paspartou"
+        },
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "La clef du succès : Frappe du 500 dans l’élément terre. Les cibles ennemies au corps à corps de l’allié ciblé gagneront 1 PM pour un tour. Ce sort se lance de 2 à 5 PO et nécessite une ligne de vue.",
+          "locator": "IV- Présentation des monstres — Paspartou"
+        }
+      ]
+    },
+    {
+      "id": "mech.piloztere.astuces",
+      "entityId": "monster.dofusdb-3657",
+      "type": "SpellEffect",
+      "title": "Austérité : le focus sans sorts de zone",
+      "summary": "Chaque fois qu'il est frappé, le Piloztère donne 1000 points de bouclier pour 1 tour à toutes les cibles entre 1 et 2 PO de lui, alliés comme ennemis. Claque (800 air, corps à corps) tue les invocations ; Sourire Ravageur (700 neutre, 1 à 4 PO) retire 3 PM esquivables. IA agressive.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Le focus jusqu'à sa mort avec des sorts à cible unique.",
+              "rationale": "Chaque coup reçu donne 1000 points de bouclier à ce qui l'entoure à 2 PO : des sorts de zone protégeraient les monstres voisins."
+            },
+            {
+              "order": 2,
+              "action": "Le coup qui l'achève peut être un sort de zone.",
+              "rationale": "Austérité ne donne plus de boucliers une fois le monstre mort."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas laisser d'invocation à son contact.",
+              "rationale": "Claque tue l'invocation ciblée."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-06-21)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "Austérité : Lorsqu'il est frappé, le Piloztère donnera 1000 points de boucliers aux cibles comprises entre 1 et 2 PO (alliées comme ennemies) pour 1 tour.",
+          "locator": "IV- Présentation des monstres — Piloztère"
+        },
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "Astuce : Évitez d'utiliser des sorts de zone, préférez effectuer un focus du Piloztère jusqu'à la mort de celui-ci. Vous pouvez achever la cible avec un sort de zone, cela ne procurera pas de PB après la mort du monstre.",
+          "locator": "IV- Présentation des monstres — Piloztère / Astuce"
+        },
+        {
+          "sourceId": "src.dpln.palais-du-roi-nidas",
+          "quote": "Claque : Frappe du 800 dans l’élément air. Si la cible est une invocation, tue la cible. Ce sort se lance uniquement au càc.",
+          "locator": "IV- Présentation des monstres — Piloztère"
+        }
+      ]
+    },
+    {
       "id": "mech.armecreante.astuces",
       "entityId": "monster.dofusdb-5979",
       "type": "Summon",
@@ -6780,6 +8647,401 @@
       ]
     },
     {
+      "id": "mech.eperfide.astuces",
+      "entityId": "monster.dofusdb-3738",
+      "type": "Other",
+      "title": "Le monstre le plus dangereux : à tuer en premier",
+      "summary": "Selon le guide, les Éperfides sont les monstres les plus dangereux de la Cave du Toxoliath : beaucoup de portée, des sorts sans ligne de vue, de gros dégâts et des retraits de PA/PM.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Focus les Éperfides en priorité dans chaque vague.",
+              "rationale": "Leur portée et leurs sorts sans ligne de vue font qu'on ne peut pas facilement se cacher d'elles."
+            }
+          ]
+        }
+      ],
+      "unknownAspects": [
+        "Les sorts des Éperfides ne sont pas associés à leur nom dans le texte du guide (noms en image)."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Sachant que les Éperfides sont les monstres les plus dangereux du combat, avec beaucoup de portée, avec des sorts sans ligne de vue et surtout des sorts qui font beaucoup des dégâts mais en plus qui retirent des PA/PM il est fortement conseillé de les tuer le plus rapidement possible.",
+          "locator": "V- Conseils tactiques — Éperfide"
+        },
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Privilégiez le focus sur les Éperfide qui sont les plus dangereuses.",
+          "locator": "V- Stratégie globale"
+        }
+      ]
+    },
+    {
+      "id": "mech.lucrane.astuces",
+      "entityId": "monster.dofusdb-3737",
+      "type": "SpellEffect",
+      "title": "Carapace Gardée : la pousser avant de la frapper",
+      "summary": "Sous Carapace Gardée, la Lucrane renvoie 50 % des dommages qu'elle subit et met à l'attaquant un poison neutre de 120 dégâts au début de son prochain tour par ligne de dégâts. Lui infliger des dommages de poussée retire l'effet pour 1 tour, mais elle devient indéplaçable pendant ce temps.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Lui infliger des dommages de poussée avant de la frapper.",
+              "rationale": "Cela retire Carapace Gardée pour 1 tour : plus de renvoi de dégâts ni de poison."
+            },
+            {
+              "order": 2,
+              "action": "La frapper ensuite pendant ce tour.",
+              "rationale": "Elle est indéplaçable pendant ce tour, puis récupère Carapace Gardée."
+            },
+            {
+              "order": 3,
+              "action": "Si vous n'avez pas de poussée, l'ignorer et frapper d'autres monstres.",
+              "rationale": "Le guide indique que les Lucranes peuvent être « ignorées »."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Pinsecte (en ligne jusqu'à 2 PO) retire 50 % des PV actuels de la cible pour 1 tour ; Offensivière la fait foncer sur sa cible (en ligne de 2 à 6 PO)."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Carapace Gardée : Quand elle subit des dommages, elle renvoie 50% de ce qu’elle subit et applique un poison neutre qui inflige 120 de dégâts neutre au début du prochain tour du personnage pour chaque ligne de dégâts qu’elle subit. Cet effet peut être retiré pour 1 tour en infligeant des dégâts de poussée à la Lucrane mais la Lucrane gagne l’état « Indéplaçable » pendant la durée de l’effet.",
+          "locator": "IV- Présentation des monstres — Lucrane"
+        },
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Les Lucrane peuvent être « ignorées » mais pensez bien à leur infliger des dommages de poussés avant de commencer à les taper.",
+          "locator": "V- Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Offensivière : La Lucrane rush jusqu’à sa cible et lui inflige 250 de dégâts air. Se lance uniquement en ligne de 2 à 6PO (lançable 2 fois par tour).",
+          "locator": "IV- Présentation des monstres — Lucrane"
+        },
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Pinsecte : Retire 50% des PV actuels de la cible pour 1 tour. Se lance uniquement en ligne jusqu’à 2PO (lançable 2 fois par tour).",
+          "locator": "IV- Présentation des monstres — Lucrane"
+        }
+      ]
+    },
+    {
+      "id": "mech.morfrelon.astuces",
+      "entityId": "monster.dofusdb-3739",
+      "type": "Positioning",
+      "title": "Rester loin et lui retirer de la PO",
+      "summary": "Le Morfrelon a une IA craintive et peut se booster en PO sur Plongeon Quille (350 neutre, vole 3 PO pendant 2 tours, de 3 à 7 PO sans ligne de vue). Sous Puissance Cible, il gagne 100 de puissance par ligne de dégâts subie pendant 2 tours.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Lui retirer un maximum de PO et rester loin de lui.",
+              "rationale": "Avec beaucoup de PO, il vous touche de très loin et fuit votre équipe à chaque tour ; sans PO, il avance vers vous pour essayer de vous atteindre."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Étant donné que le Morfrelon a une IA craintive et qu'il peut se boost en PO sur son sort à distance « Plongeon Quille » il est recommandé de lui retirer un maximum de PO et de rester loin de lui afin d'éviter qu'il ait une grosse PO sur son sort et qu'il fuit à chaque fois loin de votre team lorsqu'il joue son tour.",
+          "locator": "V- Conseils tactiques — Morfrelon"
+        },
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Puissance Cible : Pendant 2 tours, lorsque le Morfrelon subi des dommages, il gagne 100 de puissance pour chaque ligne de dégâts. (Relance de 3 tours).",
+          "locator": "IV- Présentation des monstres — Morfrelon"
+        },
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Plongeon Quille : Inflige 350 de dégâts neutre et vole 3PO à la cible pour 2 tours. Se lance de 3 à 7PO sans ligne de vue (lançable 2 fois par tour).",
+          "locator": "IV- Présentation des monstres — Morfrelon"
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Puissance Cible : pendant 2 tours, chaque ligne de dégâts qu'il subit lui donne 100 de puissance (relance de 3 tours)."
+        }
+      ]
+    },
+    {
+      "id": "mech.scoliopode.astuces",
+      "entityId": "monster.dofusdb-3735",
+      "type": "SpellEffect",
+      "title": "Poison Incurable : attendre la fin de l'effet",
+      "summary": "Pendant 2 tours (relance de 3 tours), chaque ligne de dégâts subie par le Scoliopode met l'attaquant dans l'état Insoignable et lui vole 2 PM esquivables pendant 1 tour. Son Coup Percutant (corps à corps) tue automatiquement les invocations.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Si vous ne pouvez pas le tuer en un tour, attendre la fin de Poison Incurable avant de le focus.",
+              "rationale": "Pendant l'effet, chaque ligne de dégâts vous rend insoignable et vous vole 2 PM."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas laisser d'invocation à son contact.",
+              "rationale": "Coup Percutant tue automatiquement les invocations."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Les Scoliopode peuvent vous voler vos PM et vous appliquer l’état Insoignable, il est préférable d’attendre la fin de leur sort « Poison Incurable » pour les focus si vous ne pouvez pas les tuer en un tour.",
+          "locator": "V- Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Poison Incurable : Pendant 2 tours, pour chaque ligne de dégâts qu’il subit, le Scoliopode applique l’état Insoignable à la cible et lui vole 2PM esquivables pendant 1 tour. (Relance de 3 tours).",
+          "locator": "IV- Présentation des monstres — Scoliopode"
+        },
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Ce sort tue automatiquement les invocations. Se lance uniquement en mêlée (lançable 2 fois par tour).",
+          "locator": "IV- Présentation des monstres — Scoliopode (Coup Percutant)"
+        }
+      ]
+    },
+    {
+      "id": "mech.puceronde.astuces",
+      "entityId": "monster.dofusdb-3736",
+      "type": "SpellEffect",
+      "title": "Brazéro : plus dangereuse quand elle a peu de PV",
+      "summary": "Brazéro (corps à corps) inflige des dégâts feu égaux à 30 % (36 % en critique) des PV manquants de la Puceronde : plus elle est blessée, plus elle frappe fort. Langagement (à partir du tour 3) la téléporte, attire de 2 cases les personnages en cercle de taille 3 et leur met Pesanteur pour 1 tour.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Éviter de rester au corps à corps d'une Puceronde qui a peu de PV.",
+              "rationale": "Brazéro frappe selon ses PV manquants, et peut faire extrêmement mal en mêlée quand elle a peu de PV."
+            },
+            {
+              "order": 2,
+              "action": "Faire encore plus attention avec un personnage qui a subi beaucoup d'érosion.",
+              "rationale": "Largage Personnel ajoute 50 % des PV érodés de la cible en dégâts terre."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Les Puceronde, bien que moins dangereuses, peuvent faire extrêmement mal en mêlée si elles ont peu de PV ou si le personnage qui est la cible de cette dernière a subi beaucoup d’érosion.",
+          "locator": "V- Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Brazéro : Inflige des dégâts feu à la cible équivalent à 30% (36 en critique) des PV manquants de la Puceronde. Se lance uniquement en mêlée (lançable 2 fois par tour).",
+          "locator": "IV- Présentation des monstres — Puceronde"
+        },
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Langagement : La Puceronde se téléporte sur la case ciblée, attire tous les personnages en zone cercle de taille 3 de 2 cases et leur applique l’état Pesanteur pour 1 tour.",
+          "locator": "IV- Présentation des monstres — Puceronde"
+        },
+        {
+          "sourceId": "src.dpln.cave-du-toxoliath",
+          "quote": "Largage Personnel : Inflige 250 de dégâts terre et 50% des PV érodés de la cible sous forme de dégâts terre dans une zone cercle de taille 2 autour de lui.",
+          "locator": "IV- Présentation des monstres — Puceronde"
+        }
+      ]
+    },
+    {
+      "id": "mech.chacrebleu.astuces",
+      "entityId": "monster.dofusdb-4297",
+      "type": "SpellEffect",
+      "title": "Retour de Chachaton : ne pas frapper la cible au contact",
+      "summary": "Fortifichation frappe 230 Feu toutes les cases adjacentes et lui donne un bouclier de 380 PB pour 1 tour (en Matoumorphose, vole aussi 2 PM pour 1 tour). Retour de Chachaton frappe 300 Feu et met la cible dans l'état « C'est toi le Chacha ! » pendant 1 tour : elle renvoie alors tous les dommages subis au contact. Chamboulement (en ligne, 3 PO max) le fait avancer jusqu'à vous, frappe 200 Terre et retire 20 fuite pour 1 tour.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne pas finir son tour sur une case adjacente au Chacrebleu.",
+              "target": "Chacrebleu",
+              "rationale": "Fortifichation frappe toutes les cases adjacentes (230 Feu)."
+            },
+            {
+              "order": 2,
+              "action": "Rester hors de ses lignes à 3 PO ou moins.",
+              "rationale": "Chamboulement se lance en ligne jusqu'à 3 PO et l'amène jusqu'à vous en réduisant votre fuite de 20."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas attaquer au contact une cible sous « C'est toi le Chacha ! ».",
+              "rationale": "Elle renvoie tous les dommages subis au corps à corps pendant 1 tour."
+            }
+          ]
+        }
+      ],
+      "unknownAspects": [
+        "La page ne précise pas qui peut être la cible de Retour de Chachaton (personnage ou monstre)."
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.plateau-de-ush",
+          "quote": "Fortifichation : Frappe du 230 dans l'élément feu au CàC de chaque cases adjacentes et se met un bouclier de 380PB pour 1 tour. En état Matoumorphose le monstre peut en plus vous voler 2PM pour 1 tour.",
+          "locator": "Présentation des monstres"
+        },
+        {
+          "sourceId": "src.dpln.plateau-de-ush",
+          "quote": "Retour de Chachaton : Frappe du 300 dans l'élément feu et fait entrer la cible dans l'état C'est toi le Chacha ! pour 1 tour qui a pour effet de renvoyer tous les dommages subis au CàC (case adjacente).",
+          "locator": "Présentation des monstres"
+        },
+        {
+          "sourceId": "src.dpln.plateau-de-ush",
+          "quote": "Chamboulement : Ce sort se lance en ligne à une distance maximale de 3PO et fait avancer Chacrebleu jusqu’à votre personnage pour ensuite le détour, tout en mettant un malus de 20 en fuite pour 1 tour et en frappant du 200 dans l'élément terre",
+          "locator": "Présentation des monstres"
+        }
+      ]
+    },
+    {
+      "id": "mech.chargus.astuces",
+      "entityId": "monster.dofusdb-4299",
+      "type": "SpellEffect",
+      "title": "Doubles, diagonales et Queue de Poing",
+      "summary": "Duplichation invoque à 2 PO max un double qui utilise les mêmes sorts que Chargus ; il meurt seul au bout de 2 tours (relance de 4 tours). Vieillissement Prématuré frappe 320 Air uniquement en diagonale à 3 PO max et vole 200 puissance pour 1 tour ; en Matoumorphose, il donne 400 puissance au monstre et met la cible en Pacifiste pendant 1 tour. Queue de Poing frappe environ 500 Eau et pousse de 3 cases.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne pas se placer en diagonale du Chargus (ou de son double) à 3 PO ou moins, surtout quand il est en Matoumorphose.",
+              "target": "Chargus",
+              "rationale": "Vieillissement Prématuré ne se lance qu'en diagonale ; en Matoumorphose il vous met Pacifiste pendant 1 tour."
+            },
+            {
+              "order": 2,
+              "action": "Tenir compte de son double comme d'un second Chargus : il a les mêmes sorts.",
+              "rationale": "Le double est invoqué à 2 PO max et meurt automatiquement au bout de 2 tours de jeu ; Duplichation a 4 tours de relance."
+            },
+            {
+              "order": 3,
+              "action": "Prévoir d'être repoussé de 3 cases quand il vous frappe avec Queue de Poing.",
+              "rationale": "Queue de Poing frappe environ 500 Eau et pousse la cible de 3 cases."
+            }
+          ]
+        }
+      ],
+      "unknownAspects": [
+        "La page note « l'élément agilité » pour Vieillissement Prématuré (interprété comme Air) ; la portée de Queue de Poing n'est pas indiquée."
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.plateau-de-ush",
+          "quote": "Duplichation : Invoque un double à 2PO max. pouvant utiliser les mêmes sorts que Chargus. L'invocation meurt automatiquement au bout de 2 tours de jeu. Le temps de relance est de 4 tours.",
+          "locator": "Présentation des monstres"
+        },
+        {
+          "sourceId": "src.dpln.plateau-de-ush",
+          "quote": "Vieillissement Prématuré : Frappe du 320 dans l'élément agilité uniquement en diagonale à 3PO maximum et vol 200 puissance pour 1 tour. En état Matoumorphose, le sort boost le monstre de 400 de puissance et met l'état pacifiste à la cible pour 1 tour.",
+          "locator": "Présentation des monstres"
+        },
+        {
+          "sourceId": "src.dpln.plateau-de-ush",
+          "quote": "Queue de Poing : Frappe environ du 500 dans l'élément eau tout en poussant la cible de 3 cases.",
+          "locator": "Présentation des monstres"
+        }
+      ]
+    },
+    {
+      "id": "mech.chasquatch.astuces",
+      "entityId": "monster.dofusdb-4296",
+      "type": "SpellEffect",
+      "title": "Ailurophilie, Câlin Félin et Léchouille",
+      "summary": "Ailurophilie (boost infini) soigne d'environ 400 les personnages à 5 PO max du Chasquatch quand il est frappé (seulement le premier coup de chaque personnage). Câlin Félin frappe 350 Eau en zone croix de 2 PO, en ligne uniquement, entre 4 et 10 PO. Léchouille frappe 280 Feu jusqu'à 6 PO et soigne de 400 PV lors de la prochaine première attaque contre le monstre.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne pas rester aligné avec le Chasquatch entre 4 et 10 PO.",
+              "target": "Chasquatch",
+              "rationale": "Câlin Félin (350 Eau en zone croix de 2 PO) se lance uniquement en ligne, entre 4 et 10 PO."
+            },
+            {
+              "order": 2,
+              "action": "Rester à plus de 6 PO de lui quand c'est possible.",
+              "rationale": "Léchouille frappe 280 Feu jusqu'à 6 PO."
+            },
+            {
+              "order": 3,
+              "action": "Savoir que le premier coup de chaque personnage sur lui déclenche Ailurophilie.",
+              "rationale": "Ce boost infini soigne d'environ 400 les personnages à 5 PO max de lui (premier coup de chaque personnage seulement)."
+            }
+          ]
+        }
+      ],
+      "unknownAspects": [
+        "La page ne précise pas si « les personnages » soignés par Ailurophilie sont ses alliés monstres, les joueurs, ou les deux.",
+        "Pour Léchouille, la page ne précise pas clairement qui est soigné de 400 PV."
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.plateau-de-ush",
+          "quote": "Ailurophilie : Sort de boost infini qui soigne les personnages à une distance maximal de 5PO de Chasquatch lorsqu'il est frappé d'environ 400 (premier coup de chaque personnage seulement).",
+          "locator": "Présentation des monstres"
+        },
+        {
+          "sourceId": "src.dpln.plateau-de-ush",
+          "quote": "Câlin Félin : Frappe du 350 dans l'élément eau en zone croix de 2PO à une distance maximale de 10PO et minimale de 4PO et en ligne uniquement.",
+          "locator": "Présentation des monstres"
+        },
+        {
+          "sourceId": "src.dpln.plateau-de-ush",
+          "quote": "Léchouille : Frappe du 280 dans l'élément feu à une distance de 6PO maximum et vous permet de vous soigner de 400 PV lors de la prochaine première attaque contre le monstre.",
+          "locator": "Présentation des monstres"
+        }
+      ]
+    },
+    {
       "id": "mech.gyrafor.astuces",
       "entityId": "monster.dofusdb-8042",
       "type": "SpellEffect",
@@ -6879,6 +9141,89 @@
           "sourceId": "src.dpln.breuil-du-venerable",
           "quote": "ATTENTION : Le Gropotam et le Gyrafor ne peuvent pas être portés par un Pandawa.",
           "locator": "Stratégie globale"
+        }
+      ]
+    },
+    {
+      "id": "mech.mejaire.astuces",
+      "entityId": "monster.dofusdb-3836",
+      "type": "Other",
+      "title": "Méjaire (Œil de Vortex) : garder ses distances",
+      "summary": "Dans l'Œil de Vortex, les Méjaires sont gênantes à cause de l'état Pacifiste, surtout celles de la vague 3. Leur glyphe soigne d'environ 400 le personnage qui marche dedans et la Méjaire.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Se tenir loin des Méjaires et leur retirer des PM.",
+              "rationale": "Elles mettent l'état Pacifiste, qui empêche de frapper."
+            },
+            {
+              "order": 2,
+              "action": "Ne marcher dans le glyphe d'une Méjaire que si le soin vous est utile.",
+              "rationale": "Le soin d'environ 400 s'applique aussi à la Méjaire, et l'Auroraire avance d'une heure."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-10-05)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.oeil-de-vortex",
+          "quote": "Les Méjaires, notamment celles de la vague 3 sont très ennuyantes à cause de l’état Pacifiste, essayez de vous mettre loin des monstres et enlevez leurs des PM.",
+          "locator": "Conseils tactiques — Attention aux Méjaires"
+        },
+        {
+          "sourceId": "src.dpln.oeil-de-vortex",
+          "quote": "Méjaire : Soins de 400 environ pour les deux.",
+          "locator": "V- Présentation du Boss — Principe du combat (glyphes)"
+        }
+      ]
+    },
+    {
+      "id": "mech.harpille.astuces",
+      "entityId": "monster.dofusdb-3837",
+      "type": "Other",
+      "title": "Harpille (Œil de Vortex) : contrer son poison",
+      "summary": "Dans l'Œil de Vortex, la Harpille empoisonne vos personnages (sort « Petit poison »). Sans soigneur, le guide conseille le sort Cawotte : restez sur son glyphe. Son glyphe au sol donne +200 puissance pendant 1 tour au personnage qui marche dedans et à la Harpille.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Sans soigneur, poser une Cawotte et placer vos personnages sur son glyphe, hors des lignes possibles de l'Auroraire.",
+              "rationale": "Cela retire le poison de la Harpille."
+            },
+            {
+              "order": 2,
+              "action": "Éviter son glyphe au sol, sauf pour profiter du bonus.",
+              "rationale": "Il donne +200 puissance pour 1 tour à vous ET à la Harpille, et fait avancer l'Auroraire d'une heure."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-10-05)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.oeil-de-vortex",
+          "quote": "Si vous n'avez pas de soins, prévoyez le sort Cawotte pour retirer le poison de la Harpille en restant sur le glyphe de la Cawotte.",
+          "locator": "Conseils tactiques — Contrez le poison des Harpilles"
+        },
+        {
+          "sourceId": "src.dpln.oeil-de-vortex",
+          "quote": "Placement et glyphes de la Cawotte sur lesquels vous placer pour éviter le sort \"Petit poison\"",
+          "locator": "Conseils tactiques — Contrez le poison des Harpilles"
+        },
+        {
+          "sourceId": "src.dpln.oeil-de-vortex",
+          "quote": "Harpille : +200 puissance pour les deux (1 tour).",
+          "locator": "V- Présentation du Boss — Principe du combat (glyphes)"
         }
       ]
     },
@@ -7042,6 +9387,269 @@
           "quote": "Se lance autour de lui (lançable 1 fois par tour).",
           "locator": "II- Présentation des monstres — Glissement de tewwain"
         }
+      ]
+    },
+    {
+      "id": "mech.trantroa.astuces",
+      "entityId": "monster.dofusdb-3842",
+      "type": "Other",
+      "title": "Trantroa (Horologium de XLII) : une seule grosse ligne sous 50 %",
+      "summary": "Le monstre le plus difficile du donjon. Ses deux sorts frappent 250 en croix de taille 1 jusqu'à 3 PO (Neutre en ligne, Feu en diagonale) plus une seconde ligne égale à 33 % de ses PV manquants. Rage Mahal : au-dessus de 50 % il gagne 1 PM et 10 Tacle par ligne subie ; à 50 % ou moins, +10 % de vitalité par ligne (2 tours).",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Le tuer en premier, dès la 6e heure.",
+              "rationale": "C'est le pire monstre du combat selon le guide."
+            },
+            {
+              "order": 2,
+              "action": "Le frapper librement jusqu'à 50 % de PV.",
+              "rationale": "Au-dessus de 50 % il ne gagne que des PM et du Tacle."
+            },
+            {
+              "order": 3,
+              "action": "Sous 50 %, n'utiliser que des attaques à une seule ligne et à gros dégâts, de préférence Terre.",
+              "rationale": "Chaque ligne lui donne +10 % de vitalité, et plus il lui manque de PV, plus ses sorts frappent fort. Terre est l'élément de sa faiblesse selon le guide."
+            },
+            {
+              "order": 4,
+              "action": "S'il ne reste en vie que grâce à son bonus de PV, le débuffer.",
+              "rationale": "Le bonus PV est débuffable : en le retirant, il meurt automatiquement."
+            },
+            {
+              "order": 5,
+              "action": "Ne pas rester en ligne ou en diagonale à 3 PO ou moins de lui.",
+              "rationale": "Ses sorts se lancent uniquement en ligne ou en diagonale jusqu'à 3 PO."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Pour les Trantroa, vous pouvez les taper comme vous voulez jusqu’à ce qu’ils atteignent 50% PV, mais en dessous de 50%, il faudra privilégier des attaques avec une seule ligne et qui inflige beaucoup de dégâts (de préférence terre, élément de leur faiblesse).",
+          "locator": "Stratégie globale du donjon — Notes"
+        },
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Le bonus PV est cependant débuffable et il est conseillé de le débuff si le Trantroa est vivant uniquement grâce à ce boost PV (en le debuffant il mourra alors automatiquement).",
+          "locator": "Stratégie globale du donjon — Notes"
+        },
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Si sa vitalité est supérieure à 50% il se boost de 1PM et 10 Tacle par ligne de dommages reçue, à l'inverse si sa vitalité est inférieure à 50% il se boost de 10% de Vitalité par ligne de dommages reçue.",
+          "locator": "V- Présentation des monstres — Trantroa"
+        },
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Le Trantroa est certainement le monstre le plus difficile du donjon.",
+          "locator": "V- Présentation des monstres — Trantroa"
+        },
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Brute Haleine : Frappe du 250 dans l'élément neutre en zone croix de taille 1 et frappe une seconde ligne en fonction de ses PV manquants dans l'élément neutre (33% des PV manquants de Trantroa). Se lance uniquement en ligne jusqu'à 3PO (lançable 1 fois par tour).",
+          "locator": "V- Présentation des monstres — Trantroa"
+        }
+      ]
+    },
+    {
+      "id": "mech.seith.astuces",
+      "entityId": "monster.dofusdb-3843",
+      "type": "Other",
+      "title": "Seith (Horologium de XLII) : attention aux critiques sous 50 %",
+      "summary": "Le Seith frappe Air et Eau jusqu'à 3 PO (Tourbête) et Terre, Feu et Neutre en mêlée (Massue). Rage Mahal : au-dessus de 50 % il attire de 1 case le personnage qui l'attaque ; à 50 % ou moins il gagne 50 dommages critiques par ligne subie (1 tour), dangereux car ses sorts frappent sur plusieurs lignes.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au-dessus de 50 %, l'attaquer de loin en anticipant l'attraction d'une case.",
+              "rationale": "Chaque ligne de dégâts vous rapproche de lui d'une case."
+            },
+            {
+              "order": 2,
+              "action": "Sous 50 %, l'achever avec peu de lignes de dégâts et rester à plus de 3 PO.",
+              "rationale": "Chaque ligne lui donne +50 dommages critiques, et ses sorts multi-lignes deviennent très dangereux."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Si sa vitalité est supérieure à 50% il attire son attaquant de 1 case, à l'inverse si sa vitalité est inférieure à 50% il se boost de 50 dommages critiques par ligne de dommages reçue.",
+          "locator": "V- Présentation des monstres — Seith"
+        },
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Attention, il peut faire très mal s’il est boost en dommages critiques étant donné que ses sorts tapent sur plusieurs lignes.",
+          "locator": "V- Présentation des monstres — Seith"
+        },
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Seith frappe dans les éléments air et eau à faible distance. Il frappe aussi dans les éléments terre, feu et neutre uniquement en mêlée.",
+          "locator": "V- Présentation des monstres — Seith"
+        }
+      ]
+    },
+    {
+      "id": "mech.soissanth.astuces",
+      "entityId": "monster.dofusdb-3844",
+      "type": "Other",
+      "title": "Soissanth (Horologium de XLII) : empoisonneur à distance",
+      "summary": "Le Soissanth met des poisons à grande distance : Poinzon (Neutre, de 5 à 10 PO, cumulable 2 fois) et Taplaudissement (Air selon les PA utilisés, en ligne de 5 à 10 PO). Rage Mahal : au-dessus de 50 % il retire 2 PO à son attaquant ; à 50 % ou moins il gagne 1 PM et 10 Fuite par ligne subie.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au-dessus de 50 %, prévoir que chaque ligne de dégâts que vous lui infligez vous retire 2 PO.",
+              "rationale": "Vous risquez de ne plus être à portée pour vos sorts suivants."
+            },
+            {
+              "order": 2,
+              "action": "Sous 50 %, le finir avec peu de lignes de dégâts.",
+              "rationale": "Chaque ligne lui donne 1 PM et 10 Fuite (1 tour)."
+            },
+            {
+              "order": 3,
+              "action": "Sous son poison Taplaudissement, limiter les PA dépensés.",
+              "rationale": "Ce poison fait perdre des PV Air pour chaque PA utilisé pendant 2 tours."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Si sa vitalité est supérieure à 50% il retire 2PO à son attaquant, à l'inverse si sa vitalité est inférieure à 50% il se boost de 1PM et 10 Fuite par ligne de dommages reçue.",
+          "locator": "V- Présentation des monstres — Soissanth"
+        },
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Ainsi il met un poison dans l'élément neutre à grande distance et il met aussi un poison dans l'élément air en fonction des PA utilisés qu'il peut lancer uniquement en ligne à grande distance aussi.",
+          "locator": "V- Présentation des monstres — Soissanth"
+        },
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Taplaudissement : Met un poison de 1PA font perdre 5PV air pour 2 tours (non cumulable). Se lance uniquement en ligne de 5 à 10PO (lançable 2 fois par tour et 1 fois par cible).",
+          "locator": "V- Présentation des monstres — Soissanth"
+        }
+      ]
+    },
+    {
+      "id": "mech.trezz.astuces",
+      "entityId": "monster.dofusdb-3840",
+      "type": "Other",
+      "title": "Trezz (Horologium de XLII) : bonus de Puissance infini",
+      "summary": "Le Trezz vole 4 PM en ligne jusqu'à 5 PO (Feu) et frappe Terre en vol de vie avec l'état Insoignable en mêlée. Rage Mahal : au-dessus de 50 % il gagne 3 % de résistance par ligne subie (2 tours) ; à 50 % ou moins il gagne 50 Puissance par ligne, sans limite de durée.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne pas le laisser longtemps sous 50 % : le finir rapidement, avec peu de lignes de dégâts.",
+              "rationale": "Chaque ligne subie sous 50 % lui donne +50 Puissance de façon infinie."
+            },
+            {
+              "order": 2,
+              "action": "Rester hors de ses lignes jusqu'à 5 PO et hors de sa mêlée.",
+              "rationale": "En ligne (jusqu'à 5 PO, même sans ligne de vue) il vole 4 PM ; en mêlée il frappe en vol de vie et rend insoignable."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Si sa vitalité est supérieure à 50% il se boost de 3% de Résistance par ligne de dommages subie, à l'inverse si sa vitalité est inférieure à 50% il se boost de 50 Puissance par ligne de dommages reçue.",
+          "locator": "V- Présentation des monstres — Trezz"
+        },
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Le Trezz frappe dans l'élément feu et vole des PM uniquement en ligne à moyenne distance. En mêlée, il frappe dans l'élément terre en vole de vie et met l'état Insoignable.",
+          "locator": "V- Présentation des monstres — Trezz"
+        },
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Rayons entravants : Frappe du 350 dans l'élément feu et vole 4PM pour 1 tour. Se lance uniquement en ligne jusqu'à 5PO sans ligne de vue (lançable 1 fois par tour).",
+          "locator": "V- Présentation des monstres — Trezz"
+        }
+      ]
+    },
+    {
+      "id": "mech.vindeux.astuces",
+      "entityId": "monster.dofusdb-3841",
+      "type": "Other",
+      "title": "Vindeux (Horologium de XLII) : soins et dégâts répartis en zone",
+      "summary": "Le Vindeux frappe en ligne à moyenne distance : Air avec l'état Pesanteur (jusqu'à 6 PO) et Eau avec retrait de 3 PA (de 2 à 5 PO). Rage Mahal : au-dessus de 50 %, chaque ligne subie soigne ses alliés dans un rayon de 2 de 10 % de ses PV maximum ; à 50 % ou moins, l'attaquant répartit 50 % des dégâts infligés sur tout ce qui est à 2 cases de lui, alliés comme ennemis.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au-dessus de 50 %, l'éloigner des autres monstres avant de le frapper.",
+              "rationale": "Chaque ligne de dégâts soigne les monstres à 2 cases de lui."
+            },
+            {
+              "order": 2,
+              "action": "Sous 50 %, l'achever quand aucun de vos personnages n'est à 2 cases ou moins de lui.",
+              "rationale": "50 % des dégâts sont répartis sur tout ce qui l'entoure dans un rayon de 2, vos alliés compris."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Si sa vitalité est supérieure à 50% il soigne ses alliés autour de lui pour chaque ligne de dommages reçue, à l'inverse si sa vitalité est inférieure à 50% l'attaquant repartit 50% des dommages qu'il lui inflige autour de lui (ennemis comme alliés).",
+          "locator": "V- Présentation des monstres — Vindeux"
+        },
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Soigne tous ses alliés dans un rayon de 2 autour de lui de 10% de ses PV maximum.",
+          "locator": "IV- Effet spécial « Rage Mahal » — Vindeux"
+        },
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Vindeux frappe dans l'élément air et met l'état Pensanteur uniquement en ligne mais à distance moyenne.",
+          "locator": "V- Présentation des monstres — Vindeux"
+        },
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Massurance : Frappe du 300 dans l'élément air et met l'état Pesanteur pour 1 tour. Se lance uniquement en ligne jusqu'à 6PO (lançable 2 fois par tour et 1 fois par cible).",
+          "locator": "V- Présentation des monstres — Vindeux"
+        },
+        {
+          "sourceId": "src.dpln.horologium-de-xlii",
+          "quote": "Mécontentement : Frappe du 300 dans l'élément eau et retire 3PA pour 1 tour (non cumulable). Se lance uniquement en ligne de 2 à 5PO (lançable 2 fois par tour et 1 fois par cible).",
+          "locator": "V- Présentation des monstres — Vindeux"
+        }
+      ],
+      "unknownAspects": [
+        "Sous 50 %, le guide dit que les dégâts sont répartis « autour de lui » ; son tableau précise « dans un rayon de 2 autour de lui » (autour du Vindeux), sans dire si l'attaquant est lui-même touché."
       ]
     }
   ]
