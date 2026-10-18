@@ -40,11 +40,13 @@ public sealed class KnowledgeImportService(
     {
         var asm = typeof(KnowledgePackageSerializer).Assembly;
         var applied = 0;
+        var seedMechanics = new HashSet<string>(StringComparer.Ordinal);
         foreach (var name in asm.GetManifestResourceNames().Where(n => n.StartsWith("seed/", StringComparison.Ordinal)).Order(StringComparer.Ordinal))
         {
             var json = ReadResource(asm, name);
             var hash = Hash(Encoding.UTF8.GetBytes(json));
             var package = await serializer.ReadAsync(json, ct).ConfigureAwait(false);
+            seedMechanics.UnionWith(package.Mechanics.Select(m => m.Id));
             if (await repository.WasImportedAsync(package.PackageId, hash, ct).ConfigureAwait(false))
                 continue;
 
@@ -59,6 +61,20 @@ public sealed class KnowledgeImportService(
             await ApplyAsync(plan, ct).ConfigureAwait(false);
             logger.LogInformation("Seed package {Package} applied ({Hash})", package.PackageId, hash[..12]);
             applied++;
+        }
+
+        if (applied > 0)
+        {
+            // A mechanic merged into another or renamed in a newer seed would otherwise stay as an outdated duplicate.
+            // Only seed records are removed; mechanics the user created or edited are kept.
+            var stale = (await repository.GetAllMechanicsAsync(ct).ConfigureAwait(false))
+                .Where(m => m.Origin == RecordOrigin.Seed && !seedMechanics.Contains(m.Id)).Select(m => m.Id).ToList();
+            if (stale.Count > 0)
+            {
+                await repository.DeleteMechanicsAsync(stale, ct).ConfigureAwait(false);
+                knowledge.Invalidate();
+                logger.LogInformation("{Count} outdated seed mechanic(s) removed: {Ids}", stale.Count, string.Join(", ", stale));
+            }
         }
 
         return applied;

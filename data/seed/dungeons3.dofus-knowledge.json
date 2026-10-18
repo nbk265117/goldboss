@@ -4040,156 +4040,6 @@
       ]
     },
     {
-      "id": "mech.maitre-des-pantins.invulnerabilite-marionnettes",
-      "entityId": "boss.maitre-des-pantins",
-      "type": "Invulnerability",
-      "title": "Invulnérable : tuer les 5 Marionnettes pour 2 tours de vulnérabilité",
-      "summary": "Le Maître des Pantins est invulnérable tout le combat et ne bouge jamais. Au tour 1 il invoque 5 Marionnettes de couleurs différentes ; quand elles sont toutes éliminées et qu'il est seul, il devient vulnérable au début de son tour pour 2 tours. Il peut réinvoquer les Marionnettes manquantes à partir du tour 5 puis tous les 4 tours.",
-      "verification": "VERIFIED",
-      "prerequisites": [
-        {
-          "kind": "Manual",
-          "description": "Aucune Marionnette n'est en vie sur le terrain."
-        }
-      ],
-      "sequences": [
-        {
-          "label": "Stratégie du guide",
-          "steps": [
-            {
-              "order": 1,
-              "action": "En préparation, se placer sur les cases hors de portée des Marionnettes au tour 1."
-            },
-            {
-              "order": 2,
-              "action": "Entamer toutes les Marionnettes, puis les achever toutes le même tour (avant le tour 5)."
-            },
-            {
-              "order": 3,
-              "action": "Se booster et préparer les dégâts (poisons, invocations) le tour de la dernière élimination."
-            },
-            {
-              "order": 4,
-              "action": "Tuer le Maître des Pantins pendant ses 2 tours de vulnérabilité."
-            }
-          ]
-        }
-      ],
-      "expectedStateChange": "Invulnérable → vulnérable",
-      "vulnerabilityDuration": "2 tours",
-      "turnConditions": "Réinvocation possible à partir du tour 5 puis tous les 4 tours.",
-      "notes": [
-        {
-          "kind": "Warning",
-          "text": "Chaque Marionnette a 200 % de résistance dans l'élément de sa couleur (Blanche air, Bleue eau, Grise neutre, Rouge feu, Verte terre) : prévoir au moins un personnage d'un autre élément."
-        },
-        {
-          "kind": "FailureCase",
-          "text": "S'il manque des Marionnettes au moment où il peut réinvoquer, il réinvoque celles qui manquent : il faut recommencer."
-        },
-        {
-          "kind": "Exception",
-          "text": "Les effets de début de tour (poison, glyphe) le touchent encore le tour où il redevient invulnérable."
-        }
-      ],
-      "versionScope": "Date du guide non indiquée — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
-          "quote": "Pour retirer son invulnérabilité, il faut éliminer les 5 Marionnettes qu'il va invoquer au tour 1.",
-          "locator": "V- Présentation du Boss — Principe du combat"
-        },
-        {
-          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
-          "quote": "Une fois que les 5 Marionnettes ont été éliminées et qu'il est seul sur le terrain, le Maître des Pantins deviendra vulnérable pour 2 tours.",
-          "locator": "V- Présentation du Boss — Principe du combat"
-        },
-        {
-          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
-          "quote": "Le Maître des Pantins peut réinvoquer les Marionnettes à partir du tour 5 puis tous les 4 tours.",
-          "locator": "V- Présentation du Boss — Principe du combat"
-        }
-      ]
-    },
-    {
-      "id": "mech.maitre-des-pantins.bunraku",
-      "entityId": "boss.maitre-des-pantins",
-      "type": "SpecialRule",
-      "title": "Bunraku : retirer l'état en frappant l'allié ciblé",
-      "summary": "Tous les 3 tours, le Maître des Pantins applique l'état Bunraku à un personnage ; au début de son tour suivant, une Petite Marionnette (alliée de votre équipe mais hostile, avec vos statistiques) apparaît au contact de ce personnage. Il suffit que ce personnage subisse des dégâts d'un allié pour retirer l'état.",
-      "verification": "VERIFIED",
-      "notes": [
-        {
-          "kind": "Warning",
-          "text": "La Petite Marionnette frappe selon vos caractéristiques et explose à sa mort (50 % de ses PV en dégâts) : ne pas finir son tour à son contact."
-        }
-      ],
-      "versionScope": "Date du guide non indiquée — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
-          "quote": "Pour retirer l’état « Bunraku » et que la Petite Marionnette ne soit pas invoquée, c’est très simple : il suffit que le personnage ciblé par le sort subisse des dégâts d’un allié.",
-          "locator": "V- Présentation du Boss — Principe du combat"
-        }
-      ]
-    },
-    {
-      "id": "mech.dramak.invulnerabilite-pantin",
-      "entityId": "boss.dramak",
-      "type": "Invulnerability",
-      "title": "Invulnérable : contrôler le Pantin et lancer « Dénouement » sur le Dramak",
-      "summary": "Le Dramak est invulnérable tout le combat. Il invoque un Pantin au tour 1 puis tous les 3 tours. En frappant le Pantin jusqu'à son seuil de 10 % de PV, le personnage le plus proche en prend le contrôle (le Pantin est alors invulnérable 2 tours) ; ce personnage lance le sort « Dénouement » du Pantin (jusqu'à 2 PO) sur le Dramak, qui perd son invulnérabilité pour 2 tours.",
-      "verification": "VERIFIED",
-      "sequences": [
-        {
-          "label": "Méthode décrite par le guide",
-          "steps": [
-            {
-              "order": 1,
-              "action": "Frapper le Pantin jusqu'à 10 % de ses PV."
-            },
-            {
-              "order": 2,
-              "action": "Le personnage le plus proche du Pantin en prend le contrôle."
-            },
-            {
-              "order": 3,
-              "action": "Avec le Pantin, lancer « Dénouement » sur le Dramak (2 PO max ; le Pantin meurt)."
-            },
-            {
-              "order": 4,
-              "action": "Frapper le Dramak pendant ses 2 tours de vulnérabilité."
-            }
-          ]
-        }
-      ],
-      "expectedStateChange": "Invulnérable → vulnérable",
-      "vulnerabilityDuration": "2 tours",
-      "turnConditions": "Pantin invoqué au tour 1 puis tous les 3 tours.",
-      "notes": [
-        {
-          "kind": "Restriction",
-          "text": "Le Dramak ne peut être ni porté, ni poussé, ni attiré, et ne tacle pas."
-        }
-      ],
-      "versionScope": "Date du guide non indiquée — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
-          "quote": "Le Dramak est accompagné de monstres du donjon et il est invulnérable pour toute la durée du combat.",
-          "locator": "IV- Le Dramak"
-        },
-        {
-          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
-          "quote": "Le Dramak invoque un Pantin au tour 1 puis tous les 3 tours. Ce pantin a un seuil de PV à 10% de sa vie. Il faut dans un premier temps taper le Pantin jusqu’à atteindre son seuil de PV. Une fois que son seuil de PV est atteint, le personnage le plus proche du Pantin prend son contrôle.",
-          "locator": "IV- Le Dramak"
-        }
-      ]
-    },
-    {
       "id": "mech.kharnozor.boost-mort-monstres",
       "entityId": "boss.kharnozor",
       "type": "SpecialRule",
@@ -4701,89 +4551,6 @@
           "sourceId": "src.dpln.chapiteau-des-magik-riktus",
           "quote": "En effet, le personnage ciblé échangera de place avec le personnage ou l’invocation allié le plus proche et ce qu’importe la distance qui les séparent.",
           "locator": "IV- Présentation du Boss — Principe du combat"
-        }
-      ]
-    },
-    {
-      "id": "mech.wa-wobot.mekawapace",
-      "entityId": "boss.wa-wobot",
-      "type": "Resistance",
-      "title": "« Mékawapace » : +30 % de résistances 2 tours (tour 3 puis tous les 5 tours)",
-      "summary": "À partir du tour 3, puis tous les 5 tours, le Wa Wobot gagne 30 % de résistances dans tous les éléments pendant 2 tours ; ce bonus n'est pas désenvoûtable. Il peut être poussé ou attiré, mais ni porté ni téléporté.",
-      "verification": "VERIFIED",
-      "vulnerabilityDuration": "2 tours.",
-      "versionScope": "Date du guide non indiquée — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.terrier-du-wa-wabbit",
-          "quote": "Mékawapace : Le Wa Wobot gagne 30% de résistance dans tous les éléments pendant 2 tours (non débuffable). Se lance sur lui-même (relance de 5 tours, se lance uniquement à partir du tour 3).",
-          "locator": "IV- Présentation du Boss — Sorts du Boss / Principe du combat"
-        },
-        {
-          "sourceId": "src.dpln.terrier-du-wa-wabbit",
-          "quote": "Le Wa Wobot ne peut ni être porté, ni être téléporté. Il peut toutefois être poussé ou attiré.",
-          "locator": "IV- Présentation du Boss — Sorts du Boss / Principe du combat"
-        }
-      ]
-    },
-    {
-      "id": "mech.wa-wobot.wobots-tamponneurs",
-      "entityId": "boss.wa-wobot",
-      "type": "SpecialRule",
-      "title": "Wobots Tamponneurs : faire rebondir le boss entre deux tamponneurs pour l'OS",
-      "summary": "Le Wa Wobot invoque des Wobots Tamponneurs (statiques, 150 % de résistances) en attirant une cible (Mékattwaction) ou en transformant les Cawottes des Black Wo Wabbit. Quand un tamponneur subit des dommages de poussée indirecte, il repousse de 6 cases tout ce qui le touche et le pousseur est téléporté symétriquement. Deux tamponneurs en ligne à 6 cases ou moins font rebondir indéfiniment l'entité poussée ; le Wa Wobot perd en plus 500 résistances poussée à chaque renvoi, ce qui permet de le tuer en un tour.",
-      "verification": "VERIFIED",
-      "sequences": [
-        {
-          "label": "Stratégie globale du guide",
-          "steps": [
-            {
-              "order": 1,
-              "action": "Éliminer d'abord les monstres (Black Wo Wabbit puis Tiwobot) pendant que le boss invoque des tamponneurs."
-            },
-            {
-              "order": 2,
-              "action": "Placer deux Wobots Tamponneurs en ligne à 5 cases ou moins l'un de l'autre, uniquement avec des sorts de poussée/attirance."
-            },
-            {
-              "order": 3,
-              "action": "Placer le Wa Wobot entre eux puis le pousser contre l'un des deux : il rebondit jusqu'à mourir."
-            }
-          ]
-        }
-      ],
-      "notes": [
-        {
-          "kind": "Restriction",
-          "text": "Le personnage qui pousse ne doit pas être dans l'état Pesanteur (appliqué par le Black Wo Wabbit) pour être téléporté symétriquement."
-        },
-        {
-          "kind": "Warning",
-          "text": "Si la téléportation symétrique est impossible à cause d'un obstacle, tous les Wobots Tamponneurs en ligne avec ce personnage sont OS (effet « Entewwement »)."
-        },
-        {
-          "kind": "Warning",
-          "text": "Le guide conseille le sort commun Libération aux classes sans poussée."
-        }
-      ],
-      "versionScope": "Date du guide non indiquée — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.terrier-du-wa-wabbit",
-          "quote": "Le principe est assez simple, quand un Wobot Tamponneur subit des dommages de poussée indirecte, il repousse toutes les entités à son contact de 6 cases.",
-          "locator": "IV- Présentation du Boss — Principe du combat / Stratégie globale"
-        },
-        {
-          "sourceId": "src.dpln.terrier-du-wa-wabbit",
-          "quote": "NOTE : Si le Wa Wobot est repoussé par un Wobot Tamponneur, il perd 500 de résistance poussée pour un tour. De plus, le Wa Wobot ne peut pas être téléporté symétriquement s’il est à l’origine des dégâts de poussée.",
-          "locator": "IV- Présentation du Boss — Principe du combat / Stratégie globale"
-        },
-        {
-          "sourceId": "src.dpln.terrier-du-wa-wabbit",
-          "quote": "IMPORTANT : Chaque Tamponneur ne peut être utilisé qu'une fois pour cette mécanique. En effet, une fois qu'un tamponneur a déclenché son effet Bump Incontwôlable, il ne peut plus repousser les entités.",
-          "locator": "IV- Présentation du Boss — Principe du combat / Stratégie globale"
         }
       ]
     },
@@ -7510,6 +7277,1335 @@
         {
           "sourceId": "src.dpln.grozilla-et-grasmera",
           "quote": "Si Grozilla ou Grasmera vous inflige des dégâts et que l’autre utilise son sort de placement (attirance pour Grozilla et rush pour Grasmera) sur vous, vous passerez votre prochain tour.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.dramak.invulnerabilite-pantin",
+      "entityId": "boss.dramak",
+      "type": "Invulnerability",
+      "title": "Invulnérable : prendre le contrôle du Pantin et lancer « Dénouement » sur le Dramak",
+      "summary": "Le Dramak (mini-boss de la salle 4, avant le Maître des Pantins) est accompagné de monstres du donjon et reste invulnérable pendant tout le combat. Il invoque un Pantin au tour 1 puis tous les 3 tours. Quand on fait descendre le Pantin à son seuil de 10 % de PV, le personnage le plus proche du Pantin en prend le contrôle (le Pantin devient alors invulnérable 2 tours). Ce personnage lance le sort « Dénouement » du Pantin sur le Dramak (2 PO maximum) : le Dramak perd son invulnérabilité pour 2 tours et le Pantin meurt.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "EntityPresent",
+          "description": "Un Pantin invoqué par le Dramak est sur le terrain (tour 1 puis tous les 3 tours)."
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne pas gaspiller de dégâts sur le Dramak tant qu'il est invulnérable : attendre le Pantin qu'il invoque au tour 1.",
+              "rationale": "Le Dramak est invulnérable pour toute la durée du combat ; seul le sort « Dénouement » du Pantin lui retire cet état."
+            },
+            {
+              "order": 2,
+              "action": "Frapper le Pantin jusqu'à son seuil de 10 % de PV.",
+              "target": "Pantin",
+              "rationale": "Le Pantin a un seuil de PV à 10 % de sa vie : c'est en atteignant ce seuil qu'un de vos personnages peut le contrôler."
+            },
+            {
+              "order": 3,
+              "action": "Au moment de déclencher le seuil, faire en sorte que le personnage qui doit contrôler le Pantin soit le plus proche de lui.",
+              "rationale": "C'est le personnage le plus proche du Pantin qui en prend le contrôle quand le seuil est atteint."
+            },
+            {
+              "order": 4,
+              "action": "Avec le Pantin contrôlé, lancer « Dénouement » sur le Dramak, à 2 PO maximum.",
+              "target": "Dramak",
+              "requiredState": "Pantin contrôlé par un personnage",
+              "rationale": "Ce sort retire l'invulnérabilité du Dramak pour 2 tours ; il se lance jusqu'à 2 PO et tue (OS) le Pantin qui l'utilise."
+            },
+            {
+              "order": 5,
+              "action": "Frapper le Dramak au maximum pendant ses 2 tours de vulnérabilité.",
+              "target": "Dramak",
+              "rationale": "Il ne perd son invulnérabilité que pour 2 tours."
+            },
+            {
+              "order": 6,
+              "action": "S'il n'est pas mort, recommencer avec le Pantin suivant (invoqué tous les 3 tours).",
+              "when": {
+                "kind": "EntityPresent",
+                "description": "Un nouveau Pantin a été invoqué."
+              },
+              "rationale": "Le Dramak réinvoque un Pantin tous les 3 tours."
+            }
+          ]
+        }
+      ],
+      "expectedStateChange": "Invulnérable → vulnérable",
+      "expectedResult": "Le Dramak devient vulnérable pour 2 tours après le « Dénouement » du Pantin.",
+      "vulnerabilityDuration": "2 tours",
+      "turnConditions": "Pantin invoqué au tour 1 puis tous les 3 tours (sort Invocation de Pantin, relance de 3 tours).",
+      "notes": [
+        {
+          "kind": "Restriction",
+          "text": "Le Dramak ne peut pas être porté (état lourd), ni poussé ou attiré (état inébranlable), et il ne tacle pas (état intacleur)."
+        },
+        {
+          "kind": "Exception",
+          "text": "Une fois contrôlé, le Pantin est invulnérable pendant 2 tours."
+        },
+        {
+          "kind": "Warning",
+          "text": "Tant qu'il n'est pas contrôlé, le Pantin frappe terre au corps à corps et repousse de 2 cases."
+        }
+      ],
+      "unknownAspects": [
+        "Le guide ne précise pas les PV du Dramak ni du Pantin.",
+        "Le guide ne dit pas si le Pantin contrôlé peut se déplacer pour se rapprocher du Dramak, ni ce qui se passe si le Pantin est tué avant d'être contrôlé."
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Le Dramak est accompagné de monstres du donjon et il est invulnérable pour toute la durée du combat.",
+          "locator": "IV- Le Dramak"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Le Dramak invoque un Pantin au tour 1 puis tous les 3 tours. Ce pantin a un seuil de PV à 10% de sa vie. Il faut dans un premier temps taper le Pantin jusqu’à atteindre son seuil de PV. Une fois que son seuil de PV est atteint, le personnage le plus proche du Pantin prend son contrôle.",
+          "locator": "IV- Le Dramak — Comment retirer l’état invulnérable du Dramak"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Quand il est contrôlé, le Pantin est invulnérable pendant 2 tours.",
+          "locator": "IV- Le Dramak — Comment retirer l’état invulnérable du Dramak"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Le personnage qui a le contrôle du Pantin devra alors utiliser le sort « Dénouement » du Pantin sur le Dramak afin de lui retirer son état invulnérable pour 2 tours (ce sort peut se lancer jusqu’à 2PO et OS le Pantin quand il l’utilise).",
+          "locator": "IV- Le Dramak — Comment retirer l’état invulnérable du Dramak"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Le Dramak ne peut pas être porté (état lourd) ni pousser ou attirer (état inébranlable) et il ne peut pas tacler (état intacleur).",
+          "locator": "IV- Le Dramak"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Invocation de Pantin : Invoque un Pantin qui tape terre en mêlée et repousse de 2 cases.",
+          "locator": "IV- Le Dramak — Sorts du Dramak"
+        }
+      ]
+    },
+    {
+      "id": "mech.dramak.sorts-dangereux",
+      "entityId": "boss.dramak",
+      "type": "SpellEffect",
+      "title": "Sorts du Dramak : Marionnette, Entracte et Manipulation",
+      "summary": "Le sort le plus dangereux est « Marionnette » (12 PO, relance de 3 tours) : la cible est transformée en Marionnette pour un tour et perd 100 PA et 100 PM. Quand ce personnage commence son tour, lui et ses alliés (personnages et invocations) dans un cercle de taille 2 subissent 200 de dégâts eau et perdent 20 résistances de poussée pour un tour, tandis que les monstres dans la zone sont soignés de 200 PV. Tout le sort est débuffable. « Entracte » inflige 120 feu et repousse de 4 cases dans un carré de taille 1 autour du Dramak ; « Manipulation » inflige 180 air jusqu'à 12 PO.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Dès qu'un personnage est transformé en Marionnette, le désenvoûter avant le début de son tour.",
+              "rationale": "L'intégralité du sort Marionnette est débuffable ; sinon il perd 100 PA et 100 PM et explose au début de son tour."
+            },
+            {
+              "order": 2,
+              "action": "Si l'effet n'a pas pu être retiré, éloigner les autres personnages et invocations à plus de 2 cases du personnage transformé.",
+              "rationale": "Au début de son tour, la zone cercle de taille 2 inflige 200 de dégâts eau à lui et à ses alliés et leur retire 20 résistances de poussée pour un tour."
+            },
+            {
+              "order": 3,
+              "action": "Éviter que des monstres se trouvent à 2 cases ou moins du personnage transformé.",
+              "rationale": "Les monstres dans la zone sont soignés de 200 PV."
+            },
+            {
+              "order": 4,
+              "action": "Ne pas rester au contact du Dramak.",
+              "rationale": "Entracte inflige 120 de dégâts feu et repousse de 4 cases dans un carré de taille 1 autour de lui (une fois par tour)."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Manipulation : 180 de dégâts air sur une cible, jusqu'à 12 PO (portée modifiable), une fois par cible."
+        },
+        {
+          "kind": "Exception",
+          "text": "Le Dramak ne tacle pas : on peut se dégager de son corps à corps sans perte."
+        }
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Marionnette : Transforme la cible en Marionnette, lui applique l’état Marionnette pour un tour et lui retire 100PA et 100PM pour un tour. Quand le personnage transformé en Marionnette commence son tour, lui et les personnages et invocations alliés dans une zone cercle de taille 2 subissent 200 de dégâts eau et perdent 20 résistances de poussée pour un tour.",
+          "locator": "IV- Le Dramak — Sorts du Dramak — Marionnette"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Les monstres dans la zone sont soignés de 200PV. L’intégralité de ce sort est débuffable. Se lance jusqu’à 12PO (modifiable) (relance de 3 tours).",
+          "locator": "IV- Le Dramak — Sorts du Dramak — Marionnette"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Entracte : Inflige 120 de dégâts feu et repousse les cibles de 4 cases dans une zone carré de taille 1 autour du Dramak (lançable 1 fois par tour)",
+          "locator": "IV- Le Dramak — Sorts du Dramak — Entracte"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Manipulation : Inflige 180 de dégâts air à la cible. Se lance jusqu’à 12PO (modifiable) (lançable 1 fois par cible).",
+          "locator": "IV- Le Dramak — Sorts du Dramak — Manipulation"
+        }
+      ]
+    },
+    {
+      "id": "mech.grasmera.combos-meteore-magnetisme",
+      "entityId": "boss.grasmera",
+      "type": "SpellEffect",
+      "title": "Météore et Magnétisme : 50 % de vos PV ou un tour annulé",
+      "summary": "Toutes versions : Météore (jusqu'à 4 PO, 2 fois par tour) inflige 100/200/350/500 de dégâts feu selon la version (Somnambule / Épuisé / Fatigué / niveau 190) et applique l'état « Météoroïde ». Si la cible est déjà « Tyrannisée » par Grozilla, elle subit en plus des dégâts feu égaux à 50 % de ses PV actuels. Magnétisme : Grasmera s'attire de 4 cases sur la cible (en ligne, de 2 à 5 PO) ; si la cible est « Tyrannisée », son prochain tour est annulé. Les deux boss se combinent : être frappé par l'un et l'autre coûte 50 % des PV actuels, et subir les dégâts de l'un puis le placement de l'autre fait passer son tour.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Jouer à distance de Grasmera et de Grozilla, ou les tacler / bloquer.",
+              "rationale": "Ils sont inoffensifs à distance, et leurs sorts de rush (Grasmera) et d'attirance (Grozilla) ont une PO minimale de 2 : taclés, ils ne peuvent pas les lancer."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas rester en ligne avec Grasmera entre 2 et 5 PO quand vous êtes dans l'état « Tyrannisé ».",
+              "requiredState": "Tyrannisé",
+              "rationale": "Magnétisme sur une cible Tyrannisée annule son prochain tour."
+            },
+            {
+              "order": 3,
+              "action": "Éviter de se faire frapper par les deux boss au même tour ; soigner ou encaisser si c'est le cas.",
+              "rationale": "Le combo inflige 50 % des PV actuels : moins vous avez de vie, moins il fait mal, et leurs dégâts de base sont assez bas."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Grozilla fait l'inverse : Tyrannisation (1 PO) applique « Tyrannisé » et retire 50 % des PV actuels d'une cible « Météoroïde » ; Gravité (attirance de 4 cases) annule le prochain tour d'une cible « Météoroïde »."
+        },
+        {
+          "kind": "Exception",
+          "text": "Sur une cible non Tyrannisée, Magnétisme minimise seulement ses effets aléatoires pendant 1 tour."
+        },
+        {
+          "kind": "Restriction",
+          "text": "Grasmera et Grozilla ne peuvent pas être portés par un Pandawa ni affectés par un échange de place, mais peuvent être poussés ou attirés."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Météore : Inflige 100/200/350/500 de dégâts feu et applique l’état « Météoroïde » à la cible.",
+          "locator": "IV- Présentation du Boss — Sorts de Grasmera — Météore"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Si la cible est dans l’état « Tyrannisé » (état donné par un sort de Grozilla), elle subit également des dégâts feu équivalent à 50% de ses PV actuels et perd l’état.",
+          "locator": "IV- Présentation du Boss — Sorts de Grasmera — Météore"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Si la cible est un ennemi dans l’état « Tyrannisé », annule son prochain tour.",
+          "locator": "IV- Présentation du Boss — Sorts de Grasmera — Magnétisme"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Si Grozilla ou Grasmera vous inflige des dégâts et que l’autre utilise son sort de placement (attirance pour Grozilla et rush pour Grasmera) sur vous, vous passerez votre prochain tour.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Si Grasmera et Grozilla vous tapent simultanément, vous subirez des dégâts équivalent à 50% de vos PV actuels. Même si ces dégâts peuvent sembler effrayant, moins vous aurez de vie, moins ils taperont fort.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Grozilla et Grasmera ont une PO minimale de 2 sur leur sort de rush et d’attirance, s’ils sont taclés, ils ne pourront pas les utiliser et ils ne pourront pas annuler vos tours avec les combos Tyrannisation + Magnétisme et Météore + Gravité.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Bien que Grozilla et Grasmera ne soient pas dans l’état Lourd, ils ne peuvent pas être portés par un Pandawa et ils ne peuvent pas non plus être affectés par un sort d’échange de place.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.grasmera.version-190",
+      "entityId": "boss.grasmera",
+      "type": "SpecialRule",
+      "title": "Version 190 : Apocalypse et Fission (tuer les deux le même tour)",
+      "summary": "Ces effets ne sont actifs que sur la version de niveau 190. Grozilla lance Atomes Crochus au tour 5 puis tous les 5 tours : si, au début de son tour suivant (tours 6, 11, 16…), il n'est pas à 2 PO ou moins de Grasmera, Grasmera passe dans l'état « Apocalypse » et son sort Apocalypse tue tous les personnages (défaite). De plus, si l'un des deux boss meurt, le survivant reçoit l'état Rupture et tue (OS) un personnage aléatoire à chaque début de tour avec Fission, sans parade possible.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Garder Grasmera proche de Grozilla pendant tout le combat.",
+              "rationale": "Ils seront ainsi faciles à rapprocher au tour 5."
+            },
+            {
+              "order": 2,
+              "action": "Au tour 5 (puis tous les 5 tours), placer Grasmera à 2 PO ou moins de Grozilla avant que Grozilla commence son tour suivant.",
+              "when": {
+                "kind": "Manual",
+                "description": "Tours 5, 10, 15… pour le début des tours 6, 11, 16…"
+              },
+              "rationale": "Sinon Grasmera obtient l'état Apocalypse et peut tuer tous les personnages."
+            },
+            {
+              "order": 3,
+              "action": "Répartir les dégâts entre les deux boss et les achever dans le même tour global.",
+              "rationale": "C'est le seul moyen d'éviter Fission : le survivant OS un personnage aléatoire à chaque tour."
+            }
+          ]
+        }
+      ],
+      "turnConditions": "Atomes Crochus au tour 5 puis tous les 5 tours ; vérification au début des tours 6, 11, 16…",
+      "notes": [
+        {
+          "kind": "FailureCase",
+          "text": "Apocalypse tue tous les personnages du combat : c'est une défaite."
+        },
+        {
+          "kind": "Exception",
+          "text": "Avec beaucoup de personnages, vous avez assez de temps pour tuer le boss restant avant qu'il élimine toute l'équipe."
+        },
+        {
+          "kind": "Exception",
+          "text": "Les versions Somnambule, Épuisé et Fatigué n'ont pas ces effets : il n'est pas nécessaire d'y rapprocher les deux boss."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Grozilla peut lancer le sort Atomes Crochus au début de son tour 5 puis tous les 5 tours. Si, au début du prochain tour, Grozilla ne se trouve pas à 2PO ou moins de Grasmera, Grasmera entre dans l’état « Apocalypse » qui lui permet d’utiliser le sort du même nom.",
+          "locator": "IV- Présentation du Boss — Principe du combat — Atomes Crochus et Apocalypse"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Le sort Apocalypse OS tous les personnages du combat, ce qui résulte en une défaite.",
+          "locator": "IV- Présentation du Boss — Principe du combat — Atomes Crochus et Apocalypse"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Le personnage OS est choisi aléatoirement et il n’y aucune façon de contrer cet effet. Le seul moyen de l’éviter est d'éliminer les deux lors du même tour global.",
+          "locator": "IV- Présentation du Boss — Principe du combat — Lien Fusionnel et Fission"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Lien Fusionnel : Si Grasmera meurt, il met l'état Rupture (infini) à son allié Grozilla.",
+          "locator": "IV- Présentation du Boss — Sorts de Grasmera — Lien Fusionnel"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "NOTE : Si vous faites ce combat avec beaucoup de personnages, vous aurez un laps de temps suffisant avant qu’il n'élimine tous vos personnages vous permettant alors d'éliminer le boss restant avant qu’il n'élimine toute votre team !",
+          "locator": "IV- Présentation du Boss — Principe du combat — Lien Fusionnel et Fission"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "L’idéal étant qu’ils soient proches l’un de l’autre tout le combat (sans nécessairement être à 2PO) pour qu’ils soient déplaçables facilement au tour 5.",
+          "locator": "IV- Présentation du Boss — Stratégie globale — Stratégie n°1"
+        }
+      ]
+    },
+    {
+      "id": "mech.grasmera.invocations-krokilles",
+      "entityId": "boss.grasmera",
+      "type": "Summon",
+      "title": "Immaturation : les Krokilles invoquées par Grasmera",
+      "summary": "Grasmera est le seul des deux à invoquer : Immaturation (1 PO, une fois par tour) invoque une Krokille Juvénile aléatoire (20 % de chance pour chaque type : Sèche, Incandescente, Insipide, Humide, Boueuse), ou une Krokille Novice en coup critique. Ces invocations ont peu de PV, mais Grasmera peut s'attirer sur elles et s'éloigner ainsi de Grozilla.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Éliminer rapidement les Krokilles invoquées (un sort suffit), sauf si vous faites le succès spécial.",
+              "rationale": "Elles ont peu de PV et peuvent servir à Grasmera pour s'avancer."
+            },
+            {
+              "order": 2,
+              "action": "Si vous les gardez, les garder près des deux boss et retirer des PM à Grasmera.",
+              "rationale": "Grasmera peut s'attirer sur ses Krokilles : si elles sont loin de Grozilla, il risque de s'éloigner de lui."
+            },
+            {
+              "order": 3,
+              "action": "Pour l'empêcher d'invoquer, occuper toutes les cases à son contact (stratégie de blocage).",
+              "rationale": "S'il n'a aucune cellule libre à son contact, il ne peut pas invoquer."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Immaturation : Invoque une Krokille Juvénile aléatoirement (20% de chance pour chaque Krokille : Sèche / Incandescente / Insipide / Humide / Boueuse). En critique : Invoque une Krokille Novice aléatoire. Se lance uniquement à 1PO (lançable 1 fois par tour).",
+          "locator": "IV- Présentation du Boss — Sorts de Grasmera — Immaturation"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Même si le succès spécial est relativement facile, les invocations ennemies ont peu de PV et peuvent permettre à Grasmera de s’avancer dessus. Il est préférable d’utiliser un sort dessus pour s’en débarrasser rapidement.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Attention, Grasmera peut s'attirer sur les Krokilles qu'il invoque. De ce fait, si les Krokilles sont trop éloignées de Grozilla, Grasmera risque également de s'éloigner de ce dernier.",
+          "locator": "V- Tactique pour le succès Spécial : Sauvegarde des krokilles"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Vous pouvez également utiliser la stratégie de blocage, non seulement pour que Grasmera ne s'attire pas sur ses Krokilles, mais aussi pour empêcher d'invoquer car s'il n'a aucune cellule de libre à son contact, il ne pourra pas invoquer.",
+          "locator": "V- Tactique pour le succès Spécial : Sauvegarde des krokilles"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Grasmera est le seul à pouvoir invoquer et le succès se valide à sa mort.",
+          "locator": "V- Tactique pour le succès Spécial : Sauvegarde des krokilles"
+        }
+      ]
+    },
+    {
+      "id": "mech.grasmera.plan-de-combat",
+      "entityId": "boss.grasmera",
+      "type": "Other",
+      "title": "Plan de combat : à distance ou en bloquant les deux boss",
+      "summary": "G.O Malikila propose 4 versions (Somnambules 1-50, Épuisés 51-100, Fatigués 101-150, normale 151-190), toutes avec les mêmes sorts ; seule la version 190 a les effets Apocalypse et Fission. Grozilla et Grasmera ont beaucoup de PV et des résistances élevées. Le guide propose deux stratégies : jouer à distance en les repoussant (6 PM seulement, retrait PM conseillé) ou les tacler/bloquer côte à côte (environ 180 de tacle).",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Stratégie n°1 : à distance",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Repousser Grozilla et Grasmera et, si possible, leur retirer des PM pour les garder à distance.",
+              "rationale": "Ils n'ont que 6 PM et sont inoffensifs à distance ; le retrait PM n'est pas obligatoire."
+            },
+            {
+              "order": 2,
+              "action": "Se cacher derrière les obstacles de la map.",
+              "rationale": "L'IA de Grasmera le pousse souvent à s'attirer sur Grozilla s'il ne peut pas le faire sur un ennemi, ce qui les rapproche."
+            },
+            {
+              "order": 3,
+              "action": "Si Grasmera est loin de Grozilla, placer Grozilla pour que Grasmera puisse utiliser son rush sur lui.",
+              "rationale": "Grasmera se rapproche alors de lui sans que vous ayez à le placer."
+            },
+            {
+              "order": 4,
+              "action": "Version 190 : au tour 5 puis tous les 5 tours, les placer à 2 PO l'un de l'autre.",
+              "rationale": "Sinon Grasmera peut lancer Apocalypse."
+            },
+            {
+              "order": 5,
+              "action": "Les frapper et les repousser jusqu'à leur mort, en les achevant dans le même tour global.",
+              "rationale": "Évite de perdre des personnages à cause de Fission."
+            }
+          ]
+        },
+        {
+          "label": "Stratégie n°2 : bloquer ou tacler",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Prévoir un ou deux personnages capables de tacler : un tank avec du tacle classique, ou un personnage full agilité avec des résistances correctes.",
+              "rationale": "Environ 180 de tacle suffisent pour les empêcher de bouger."
+            },
+            {
+              "order": 2,
+              "action": "Les tacler et les bloquer de façon à ce qu'ils restent à 2 PO ou moins l'un de l'autre.",
+              "rationale": "Taclés, ils ne peuvent pas lancer leurs sorts de rush et d'attirance, et la condition d'Atomes Crochus reste remplie."
+            },
+            {
+              "order": 3,
+              "action": "Protéger et soigner les tacleurs avec les autres personnages, et frapper les deux boss jusqu'à leur mort.",
+              "rationale": "Les tacleurs encaissent leurs attaques pendant que le reste de l'équipe fait les dégâts."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Exception",
+          "text": "Le guide indique que le combat se fait aussi en « freestyle », en frappant le plus fort possible, surtout sur les versions affaiblies ; attention quand même à l'attirance et au rush qui peuvent vous faire passer votre tour."
+        },
+        {
+          "kind": "Warning",
+          "text": "Grozilla a toujours plus d'initiative que Grasmera, quelle que soit la version."
+        },
+        {
+          "kind": "Exception",
+          "text": "La ceinture de Dame Jhessica (objet légendaire de niveau 200, retire 100 de fuite aux ennemis au contact) permet de les tacler même avec peu de tacle."
+        }
+      ],
+      "unknownAspects": [
+        "Les placements de blocage recommandés ne sont montrés que sur des images du guide."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Du retrait PM est conseillé pour cette stratégie même si ce n’est clairement pas obligatoire. Grozilla et Grasmera n’ayant que 6PM, il est possible de les garder à distance juste en les repoussant.",
+          "locator": "IV- Présentation du Boss — Stratégie globale — Stratégie n°1 : À distance"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "L’IA de Grasmera fait qu’il va souvent s’attirer sur Grozilla si il ne peut pas le faire sur des ennemis, c’est pourquoi il est plus facile de réussir ce combat en se cachant derrière les différents obstacles présents sur la map.",
+          "locator": "IV- Présentation du Boss — Stratégie globale — Stratégie n°1 : À distance"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Si Grasmera est loin de Grozilla, essayez de placer Grozilla de sorte à ce que Grasmera puisse utiliser son sort de rush sur lui. Il se rapprochera alors naturellement de lui sans que vous ayez besoin de le placer vous-même.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Pour cette stratégie, il vous faudra un ou deux personnages qui peuvent tacler Grozilla et Grasmera. Soit un personnage tank + tacle classique, soit un personnage full agilité avec des résistances correctes.",
+          "locator": "IV- Présentation du Boss — Stratégie globale — Stratégie n°2"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Avec du tacle, vous pouvez les bloquer n’importe où sur la map. Environ 180 de tacle seront suffisant pour les empêcher de bouger. Si vous avez une ceinture de Dame Jhessica, vous les taclerez sans problème même avec peu de tacle.",
+          "locator": "IV- Présentation du Boss — Stratégie globale — Stratégie n°2"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "L’idéal étant de les tacler et de les bloquer de sorte à ce qu’ils soient à 2PO ou moins l’un de l’autre.",
+          "locator": "IV- Présentation du Boss — Stratégie globale — Stratégie n°2"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Grozilla et Grasmera sont des sacs à PV pour des boss de ce niveau. De plus, leurs résistances sont également assez élevées.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Grozilla a plus d’initiative que Grasmera peu importe la version.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Rappel : La ceinture de Dame Jhessica est un item légendaire de niveau 200 qui retire 100 de fuite aux ennemis au contact.",
+          "locator": "IV- Présentation du Boss — Stratégie globale — Stratégie n°2"
+        },
+        {
+          "sourceId": "src.dpln.grozilla-et-grasmera",
+          "quote": "Grozilla et Grasmera Somnambules : Niveau 1 à 50 (niveau conseillé : 40).",
+          "locator": "III- Les salles"
+        }
+      ]
+    },
+    {
+      "id": "mech.maitre-des-pantins.invulnerabilite-marionnettes",
+      "entityId": "boss.maitre-des-pantins",
+      "type": "Invulnerability",
+      "title": "Invulnérable : tuer les 5 Marionnettes pour 2 tours de vulnérabilité",
+      "summary": "Le Maître des Pantins est seul (aucun monstre ne l'accompagne) et invulnérable pendant tout le combat. Au tour 1, son passif « Mise en scène » invoque 5 Marionnettes de couleurs différentes. Quand les 5 sont éliminées et qu'il est seul sur le terrain, il devient vulnérable au début de son tour, pour 2 tours. Avec « Ensecret », il peut réinvoquer les Marionnettes manquantes à partir du tour 5 puis tous les 4 tours (seulement quand il est invulnérable) : il faut donc tout tuer avant le tour 5, puis le tuer en 2 tours.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "EntityAbsent",
+          "description": "Aucune des 5 Marionnettes n'est en vie sur le terrain."
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne pas frapper le Maître des Pantins : s'occuper uniquement des 5 Marionnettes.",
+              "rationale": "Il est invulnérable tant qu'il reste des Marionnettes ; lui-même n'est pas très dangereux, la difficulté vient des Marionnettes."
+            },
+            {
+              "order": 2,
+              "action": "Entamer toutes les Marionnettes pour qu'elles n'aient plus que peu de PV.",
+              "rationale": "Il ne réinvoque que s'il manque au moins une Marionnette : si vous ne pouvez pas toutes les tuer avant le tour 5, mieux vaut n'en tuer aucune."
+            },
+            {
+              "order": 3,
+              "action": "Éliminer les 5 Marionnettes, idéalement toutes le même tour et avant le début du tour 5.",
+              "when": {
+                "kind": "TurnAtMost",
+                "description": "Avant le début du tour 5 (puis avant chaque nouvelle réinvocation, tous les 4 tours)."
+              },
+              "rationale": "Au tour 5, il réinvoque toutes les couleurs manquantes : il faudrait recommencer."
+            },
+            {
+              "order": 4,
+              "action": "Achever la dernière Marionnette le plus tôt possible dans le tour, puis se booster au maximum : sorts à charges, invocations, poisons posés sur le Maître des Pantins.",
+              "rationale": "Il devient vulnérable au début de son tour suivant : tout ce qui est préparé augmente vos dégâts sur ses 2 tours de vulnérabilité."
+            },
+            {
+              "order": 5,
+              "action": "Lui infliger un maximum de dégâts pendant ses 2 tours de vulnérabilité pour le tuer avant qu'il redevienne invulnérable.",
+              "requiredState": "Maître des Pantins vulnérable",
+              "rationale": "Il n'a aucune résistance et entre 6 000 PV (butin 4) et 10 000 PV (butin 8)."
+            },
+            {
+              "order": 6,
+              "action": "S'il survit, se replacer hors de portée des Marionnettes réinvoquées et recommencer depuis l'étape 2.",
+              "rationale": "Il réinvoque ses Marionnettes : il faut à nouveau toutes les éliminer pour le rendre vulnérable."
+            }
+          ]
+        }
+      ],
+      "expectedStateChange": "Invulnérable → vulnérable",
+      "expectedResult": "Le Maître des Pantins devient vulnérable au début de son tour pour 2 tours.",
+      "vulnerabilityDuration": "2 tours",
+      "turnConditions": "Réinvocation (Ensecret) possible à partir du tour 5 puis tous les 4 tours, uniquement quand il est invulnérable.",
+      "notes": [
+        {
+          "kind": "FailureCase",
+          "text": "S'il manque des Marionnettes au moment où il peut réinvoquer, il réinvoque celles qui manquent (une seule de chaque couleur sur le terrain) : exemple du guide, si la Blanche, la Verte et la Grise sont mortes, il réinvoque ces trois-là au tour 5."
+        },
+        {
+          "kind": "Exception",
+          "text": "Les effets de début de tour (poisons, glyphes) le touchent encore le tour où il redevient invulnérable : exemple du guide, vulnérable au tour 3, il redevient invulnérable au tour 5 mais subit d'abord le poison posé sur lui."
+        },
+        {
+          "kind": "Restriction",
+          "text": "Il ne peut pas être déplacé (état indéplaçable), ne tacle pas, n'a aucun PM et reste sur la même case tout le combat."
+        }
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Pour retirer son invulnérabilité, il faut éliminer les 5 Marionnettes qu'il va invoquer au tour 1.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Une fois que les 5 Marionnettes ont été éliminées et qu'il est seul sur le terrain, le Maître des Pantins deviendra vulnérable pour 2 tours.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Le Maître des Pantins peut réinvoquer les Marionnettes à partir du tour 5 puis tous les 4 tours.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Si vous ne pouvez pas éliminer toutes les marionnettes avant le tour 5, il est conseillé de n’en éliminer aucune et juste de toutes les entamer afin qu’elle n’ait que peu de PV. Une fois que vous pourrez éliminer toutes les marionnettes facilement, éliminez-les toutes le même tour pour que le Maître des Pantins devienne vulnérable pendant 2 tours avant de réinvoquer les marionnettes.",
+          "locator": "V- Présentation du Boss — Conseils tactiques — Synchroniser l’élimination des Marionnettes"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Quand vous achevez la dernière marionnette, boostez-vous au maximum, préparez des invocations, appliquez des poisons sur le Maître des Pantins (si vous en avez) et faites tout ce qui pourrait vous aider à l’éliminer en 2 tours.",
+          "locator": "V- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Il n’a aucune résistance et a entre 6000 PV (butin 4) et 10 000 PV (butin 8).",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Le tour où il récupère son invulnérabilité, le Maître des Pantins subit tout de même les dégâts liés aux effets de début de tour (poison, glyphe, etc ...).",
+          "locator": "V- Présentation du Boss — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.maitre-des-pantins.placement-tour-1",
+      "entityId": "boss.maitre-des-pantins",
+      "type": "Positioning",
+      "title": "Placement de départ : les 5 cases où les Marionnettes ne vous touchent pas au tour 1",
+      "summary": "Le Maître des Pantins a plus de 10 000 d'initiative et joue toujours en premier ; ses Marionnettes, invoquées toujours au même endroit (à 3 PO de lui, selon la priorité horaire), jouent juste après lui, avant vous. En phase de préparation, 5 cases permettent de ne pas être touché au tour 1 : c'est le conseil le plus important du guide.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Pendant la phase de préparation, placer vos personnages uniquement sur les 5 cases sûres (marquées d'une croix rouge sur l'image du guide).",
+              "rationale": "Ces cases empêchent les Marionnettes de vous toucher au tour 1 ; la map est très petite et sinon 5 Marionnettes vous frappent dès le tour 1."
+            },
+            {
+              "order": 2,
+              "action": "Au premier tour de jeu, repousser les Marionnettes et leur retirer des PM si possible.",
+              "rationale": "Leur sort Castelet échange de place avec vous de 2 à 5 PO sans ligne de vue : les éloigner les empêche de vous atteindre au tour suivant."
+            },
+            {
+              "order": 3,
+              "action": "Si vous ne pouvez ni repousser ni retirer de PM, commencer simplement à focus les Marionnettes.",
+              "rationale": "Le placement vous a déjà fait gagner un tour."
+            },
+            {
+              "order": 4,
+              "action": "Après chaque réinvocation, se replacer hors de portée des Marionnettes.",
+              "rationale": "Le guide conseille d'éviter ainsi les dégâts dès leur premier tour de jeu."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "CommonMistake",
+          "text": "La case du Sadida sur l'image du guide n'est pas une case sûre : seules les cases avec une croix rouge le sont."
+        },
+        {
+          "kind": "Exception",
+          "text": "Les Marionnettes ne peuvent pas échanger de place avec une invocation."
+        }
+      ],
+      "unknownAspects": [
+        "Les 5 cases sûres ne sont indiquées que sur une image du guide : leur position exacte n'est pas décrite dans le texte."
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "IMPORTANT : Pendant la phase de préparation, il y a 5 cases qui vous permettent de ne pas vous faire toucher au tour 1 et cela vous aidera énormément à réussir ce donjon.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "NOTE : Le Sadida ne représente pas une case safe, il faut uniquement vous placer sur les cases avec une croix rouge.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Les marionnettes échangent de place jusqu’à 5PO sans ligne de vue. Elles ne pourront pas vous taper au tour 1 si vous vous êtes bien placé.",
+          "locator": "V- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Il faudra alors les repousser et leur retirer des PM si possible afin qu’elle ne puisse pas échanger de place avec vous au tour suivant.",
+          "locator": "V- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Il les invoquera tout le temps au même endroit (à 3PO de lui en respectant la règle de la priorité horaire).",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Il a plus de 10 000 d’initiative et commencera forcément en premier.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.maitre-des-pantins.marionnettes",
+      "entityId": "boss.maitre-des-pantins",
+      "type": "Summon",
+      "title": "Les 5 Marionnettes : éléments, sorts et ordre de focus",
+      "summary": "Chaque Marionnette a 200 % de résistance dans l'élément de sa couleur et frappe uniquement dans cet élément : Blanche air, Bleue eau, Grise neutre, Rouge feu, Verte terre. Elles ont 1 000 PV en butin 4 (+100 PV par personnage supplémentaire), 3 PM, ne peuvent pas être portées par un Pandawa et, à leur invocation, gagnent 20 % de résistance et perdent 100 de puissance pour un tour. Sorts communs : Balançoire (150 au corps à corps) et Castelet (120 et échange de place, de 2 à 5 PO sans ligne de vue, pas sur une invocation). Le guide conseille de tuer la Grise et la Verte en premier.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Ordre de focus et sorts spécifiques",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Tuer en priorité la Marionnette Grise.",
+              "target": "Marionnette Grise",
+              "rationale": "Marivaudage retire 30 % de résistance dans tous les éléments (35 % en coup critique) pour 1 tour, en croix de taille 1, jusqu'à 6 PO."
+            },
+            {
+              "order": 2,
+              "action": "Tuer ensuite la Marionnette Verte.",
+              "target": "Marionnette Verte",
+              "rationale": "Fantoche réduit de 75 % les soins reçus pendant 1 tour et applique l'état affaibli en croix de taille 1 (non désenvoûtable) ; les monstres dans la zone deviennent indéplaçables."
+            },
+            {
+              "order": 3,
+              "action": "Se méfier de la Marionnette Blanche : ne pas se regrouper dans sa zone.",
+              "target": "Marionnette Blanche",
+              "rationale": "Croix d'attelle attire de 5 cases dans une zone étoile de taille 5 et retire 20 fuite et 1 PM par dommage reçu pendant 1 tour (cumulable 3 fois)."
+            },
+            {
+              "order": 4,
+              "action": "Ne pas commencer son tour dans le glyphe de la Marionnette Rouge.",
+              "target": "Marionnette Rouge",
+              "rationale": "Scène en flammes inflige 120 feu en cercle de taille 2 autour d'elle et laisse 2 tours un glyphe qui inflige 120 feu à ceux qui y commencent leur tour."
+            },
+            {
+              "order": 5,
+              "action": "Ne pas se regrouper à portée de la Marionnette Bleue.",
+              "target": "Marionnette Bleue",
+              "rationale": "Catharsis retire 100 de puissance (150 en coup critique) pour 2 tours dans un cercle de taille 2, jusqu'à 8 PO (cumulable 2 fois)."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Jouez avec au moins un personnage d'un élément différent des autres : sinon la Marionnette résistante à votre élément (200 %) sera très difficile à tuer."
+        },
+        {
+          "kind": "Exception",
+          "text": "Les Marionnettes sont des invocations : elles jouent juste après le Maître des Pantins, avant vous."
+        },
+        {
+          "kind": "Restriction",
+          "text": "Il ne peut y avoir qu'une seule Marionnette de chaque couleur sur le terrain."
+        }
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Chaque Marionnette a un élément de prédilection qui correspond à sa couleur dans lequel elle a 200% de résistance et tous les dégâts qu’elle inflige seront dans cet élément.",
+          "locator": "V- Présentation du Boss — Sorts des Marionnettes"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Elles ont 1 000 PV en butin 4 et gagnent 100 PV par personnage supplémentaire dans le combat (1 100 PV à 5, 1 200 PV à 6 etc …)",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Elles ont également 3PM et ne peuvent pas être portées par un Pandawa.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Même si l’ordre de focus n’a pas beaucoup d’importance et il est préférable d’éliminer les Marionnettes Grise et Verte en premier car la première vous retire jusqu’à 35% de résistance dans tous les éléments et la deuxième réduit les soins que vous recevez de 75%.",
+          "locator": "V- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Marivaudage : Retire 30% de résistance dans tous les éléments (35% en cc) pour 1 tour dans une zone croix de taille 1 (débuffable). Se lance jusqu’à 6PO (modifiable) (lançable 1 fois par tour)",
+          "locator": "V- Présentation du Boss — Sorts des Marionnettes — Marionnette Grise"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Fantoche : Applique l’état affaibli pour un tour dans une zone croix de taille 1 et réduit les soins reçus des personnages et invocations dans la zone de 75% pendant 1 tour. Les monstres alliés dans la zone gagnent l’état indéplaçable pour un tour.",
+          "locator": "V- Présentation du Boss — Sorts des Marionnettes — Marionnette Verte"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Croix d’attelle : Attire les personnages et les invocations de 5 cases dans une zone étoile de taille 5. Leur retire également 20 fuite pour un tour et 1PM pour un tour à chaque fois qu’ils reçoivent des dommages (l’effet dure 1 tour, débuffable et cumulable 3 fois).",
+          "locator": "V- Présentation du Boss — Sorts des Marionnettes — Marionnette Blanche"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Scène en flammes : Inflige 120 de dégâts feu dans une zone cercle de taille 2 autour de la Marionnette Rouge et pose un glyphe sur la même zone qui dure 2 tours et qui inflige 120 de dégâts feu aux personnages qui commencent leur tour dedans.",
+          "locator": "V- Présentation du Boss — Sorts des Marionnettes — Marionnette Rouge"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Catharsis : Retire 100 de puissance (150 en cc) pour 2 tours dans une zone cercle de taille 2 (débuffable et cumulable 2 fois). Se lance jusqu’à 8PO (modifiable) (lançable 1 fois par tour)",
+          "locator": "V- Présentation du Boss — Sorts des Marionnettes — Marionnette Bleue"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Castelet : Inflige 120 de dégâts dans son élément et échange de place avec la cible. Se lance de 2 à 5PO sans ligne de vue (lançable 1 fois par tour).NOTE : Ce sort ne peut pas être lancé sur une invocation.",
+          "locator": "V- Présentation du Boss — Sorts des Marionnettes — sorts communs"
+        }
+      ]
+    },
+    {
+      "id": "mech.maitre-des-pantins.bunraku",
+      "entityId": "boss.maitre-des-pantins",
+      "type": "SpecialRule",
+      "title": "Bunraku : frapper l'allié ciblé pour empêcher la Petite Marionnette",
+      "summary": "Au tour 1 (s'il a la portée) puis tous les 3 tours, le Maître des Pantins lance Bunraku (10 PO, sans ligne de vue) sur un personnage. Si ce personnage a toujours l'état au début du prochain tour du boss, une Petite Marionnette est invoquée à son contact. Elle compte comme votre invocation mais joue contre vous, avec vos PV et vos caractéristiques, la moitié de vos résistances et 2 PA / 1 PM plus la moitié des vôtres. Il suffit qu'un allié inflige des dégâts au personnage ciblé pour retirer l'état.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au tour 1 puis tous les 3 tours, repérer quel personnage a reçu l'état Bunraku.",
+              "rationale": "Le sort a une relance de 3 tours et se lance jusqu'à 10 PO sans ligne de vue."
+            },
+            {
+              "order": 2,
+              "action": "Avant que le Maître des Pantins rejoue, faire infliger des dégâts à ce personnage par un allié (n'importe quel sort suffit).",
+              "rationale": "Subir des dégâts d'un allié retire l'état Bunraku : la Petite Marionnette n'est alors pas invoquée."
+            },
+            {
+              "order": 3,
+              "action": "Si une Petite Marionnette est invoquée, ne jamais finir son tour à son contact.",
+              "rationale": "Au début de son tour, elle frappe terre en croix de taille 1 autour d'elle et repousse de 2 cases ; elle frappe avec vos propres statistiques."
+            },
+            {
+              "order": 4,
+              "action": "Avant de la tuer, s'écarter de ses cases adjacentes.",
+              "rationale": "À sa mort, elle inflige 50 % de ses PV en dégâts (élément aléatoire) en croix de taille 1 autour d'elle."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Son sort Ainsi font frappe dans un élément aléatoire en croix de taille 1, de 2 à 8 PO : avec vos caractéristiques, elle peut être très dangereuse si elle tombe sur votre bon élément."
+        },
+        {
+          "kind": "Exception",
+          "text": "Un même personnage peut invoquer plusieurs Petites Marionnettes."
+        }
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Au début du prochain tour du Maître des Pantins, si le personnage ciblé a toujours l’état « Bunraku », une Petite Marionnette est invoquée au contact de ce personnage.",
+          "locator": "V- Présentation du Boss — Principe du combat — Bunraku et Petite Marionnette"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Pour retirer l’état « Bunraku » et que la Petite Marionnette ne soit pas invoquée, c’est très simple : il suffit que le personnage ciblé par le sort subisse des dégâts d’un allié.",
+          "locator": "V- Présentation du Boss — Principe du combat — Bunraku et Petite Marionnette"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Pour rappel, le Maître des Pantins lance ce sort au tour 1 (s’il a la PO) puis tous les 3 tours.",
+          "locator": "V- Présentation du Boss — Conseils tactiques — Retirez l’état Bunraku en tapant vos alliés"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "NOTE : La Petite Marionnette a 2PA et 1PM de base auquel s’ajoute la moitié des votres.",
+          "locator": "V- Présentation du Boss — Principe du combat — Bunraku et Petite Marionnette"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "De plus, quand la Petite Marionnette meurt, elle inflige 50% de ses PV sous forme de dégâts dans un élément aléatoire dans une zone croix de taille 1 autour d’elle.",
+          "locator": "V- Présentation du Boss — Principe du combat — Petite Marionnette"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Étant donné qu’elle tape en fonction de vos statistiques, elle peut être très dangereuse si elle tape dans le bon élément. De plus, il ne faut jamais terminer son tour en contact avec elle.",
+          "locator": "V- Présentation du Boss — Principe du combat — Petite Marionnette"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Représentation (passif) : Quand elle commence son tour, elle inflige des dégâts terre (qui dépendent des statistiques en force du personnage) dans une zone croix de taille 1 autour d’elle et repousse les personnages de 2 cases dans la même zone.",
+          "locator": "V- Présentation du Boss — Principe du combat — Petite Marionnette"
+        }
+      ]
+    },
+    {
+      "id": "mech.maitre-des-pantins.plan-de-combat",
+      "entityId": "boss.maitre-des-pantins",
+      "type": "Other",
+      "title": "Plan de combat et composition conseillée",
+      "summary": "Le guide présente ce donjon comme l'un des pires de sa tranche de niveau, compliqué pour des personnages de niveau 100. Il conseille au moins 1 500 PV par personnage, au moins un personnage d'un élément différent, et indique que le combat est plus facile en butin 5 et plus (compagnons possibles), car il n'y a toujours que 5 Marionnettes. Vous avez 4 tours entiers (jusqu'au début du tour 5) pour éliminer les Marionnettes, puis 2 tours pour tuer le boss.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Plan de combat",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Composer l'équipe : au moins 1 500 PV par personnage, au moins un personnage d'un élément différent des autres ; à 4, ajouter des compagnons si le combat est trop dur.",
+              "rationale": "Il est très difficile de ne pas prendre de dégâts sur cette petite map, et chaque Marionnette résiste à 200 % dans un élément."
+            },
+            {
+              "order": 2,
+              "action": "En préparation, se placer sur les 5 cases sûres du tour 1.",
+              "rationale": "Aucune Marionnette ne peut alors vous toucher au premier tour."
+            },
+            {
+              "order": 3,
+              "action": "Repousser les Marionnettes, leur retirer des PM, et retirer l'état Bunraku en frappant l'allié ciblé.",
+              "rationale": "Évite les échanges de place (Castelet) et l'invocation de la Petite Marionnette."
+            },
+            {
+              "order": 4,
+              "action": "Tuer les Marionnettes (Grise et Verte en priorité) pendant les tours 1 à 4, en achevant la dernière au début d'un tour.",
+              "when": {
+                "kind": "TurnAtMost",
+                "description": "Jusqu'au début du tour 5."
+              },
+              "rationale": "Il faut avoir le temps de se préparer à frapper le Maître des Pantins."
+            },
+            {
+              "order": 5,
+              "action": "Se booster et poser poisons et invocations, puis frapper le Maître des Pantins pendant ses 2 tours de vulnérabilité, sans vous regrouper en croix autour d'un même personnage.",
+              "requiredState": "Maître des Pantins vulnérable",
+              "rationale": "Vulnérable, il lance Tirer les ficelles (PO infinie, sans ligne de vue, une fois par tour) qui retire 2 tours d'envoûtements en croix de taille 1."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Tirer les ficelles vole aussi 100 de caractéristique dans un élément aléatoire (150 en coup critique) et/ou inflige 160 de dégâts dans ce même élément ; en coup critique, il ne retire pas d'envoûtements. Il ne peut le lancer que vulnérable."
+        },
+        {
+          "kind": "Restriction",
+          "text": "Aucun monstre n'accompagne le Maître des Pantins dans ce combat."
+        }
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "C’est pourquoi il est conseillé d’avoir au grand minimum 1 500PV pour réussir ce donjon.",
+          "locator": "V- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Ce donjon est plus facile en butin 5 et plus (vous pouvez même équiper des compagnons).",
+          "locator": "V- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "C’est pourquoi il est conseillé de jouer avec au minimum un personnage de votre équipe qui a un élément différent des autres.",
+          "locator": "V- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Vous avez 4 tours entiers pour éliminer les 5 marionnettes (jusqu’au début du tour 5).",
+          "locator": "V- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "L’idéal étant d’éliminer la dernière marionnette au début d’un tour pour avoir le temps de se préparer pour taper le Maître des Pantins.",
+          "locator": "V- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Dans l’état vulnérable, le Maître des Pantins peut retirer 2 tours d'envoûtements dans une zone croix de taille 1. Il ne peut le faire qu’une fois par tour. Évitez donc de vous placer en zone pour qu’il ne débuff pas plusieurs personnages.",
+          "locator": "V- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Tirer les ficelles : Retire 2 tours d’envoûtements, vole 100 de statistiques dans un élément aléatoire (150 en cc) et/ou inflige 160 de dégâts dans le même élément dans une zone croix de taille 1.",
+          "locator": "V- Présentation du Boss — Sorts du Boss — Tirer les ficelles"
+        },
+        {
+          "sourceId": "src.dpln.theacuteacirctre-de-dramak",
+          "quote": "Ce donjon est l’un des pires de sa tranche de niveau et ce serait le pire si le Meulou n’existait pas.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.wa-wobot.wobots-tamponneurs",
+      "entityId": "boss.wa-wobot",
+      "type": "SpecialRule",
+      "title": "Wobots Tamponneurs : faire rebondir le boss entre deux tamponneurs pour l'OS",
+      "summary": "Le Wa Wobot invoque des Wobots Tamponneurs de 2 façons : avec Mékattwaction (il attire une cible et pose un tamponneur à sa position de départ, 2 maximum par tour) ou en transformant les Cawottes Woyale des Black Wo Wabbit avec Twansmutation (1 maximum par tour par Black Wo Wabbit). Quand un tamponneur subit des dommages de poussée indirecte, il repousse de 6 cases toutes les entités à son contact, et celui qui a poussé est téléporté symétriquement par rapport à lui. Entre deux tamponneurs en ligne, l'entité poussée rebondit à l'infini et subit des dommages de poussée jusqu'à mourir ; le Wa Wobot perd en plus 500 résistances poussée à chaque renvoi et ses 3 500 PV partent en un seul tour.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Laisser le Wa Wobot invoquer plusieurs Wobots Tamponneurs pendant que vous tuez les monstres.",
+              "rationale": "Il lui faut souvent plusieurs tours pour en invoquer assez pour qu'ils soient exploitables."
+            },
+            {
+              "order": 2,
+              "action": "Placer deux Wobots Tamponneurs en ligne, à 5 cases ou moins l'un de l'autre, uniquement avec des sorts de poussée et d'attirance.",
+              "rationale": "Les tamponneurs ne peuvent être ni portés ni téléportés, mais peuvent être poussés ou attirés ; ils repoussent de 6 cases, donc il faut au maximum 6 cases entre eux."
+            },
+            {
+              "order": 3,
+              "action": "Amener le Wa Wobot entre les deux tamponneurs, lui aussi uniquement par poussée ou attirance.",
+              "target": "Wa Wobot",
+              "rationale": "Le Wa Wobot ne peut être ni porté ni téléporté, mais il peut être poussé ou attiré."
+            },
+            {
+              "order": 4,
+              "action": "Avec un personnage qui n'est pas en état Pesanteur, pousser le Wa Wobot contre l'un des deux tamponneurs.",
+              "requiredState": "Pousseur sans état Pesanteur",
+              "rationale": "Il rebondit d'un tamponneur à l'autre en perdant 500 résistances poussée à chaque renvoi, jusqu'à mourir, quels que soient ses PV restants."
+            }
+          ]
+        }
+      ],
+      "expectedResult": "Le Wa Wobot meurt en un seul tour en rebondissant entre les deux tamponneurs.",
+      "notes": [
+        {
+          "kind": "Restriction",
+          "text": "Chaque tamponneur ne sert qu'une fois : après avoir déclenché son effet Bump Incontwôlable, il ne repousse plus les entités."
+        },
+        {
+          "kind": "Warning",
+          "text": "Entewwement : si le personnage qui pousse ne peut pas être téléporté symétriquement (case d'arrivée bloquée par un obstacle), tous les tamponneurs en ligne avec lui meurent. Exception : en état Pesanteur, il n'est pas téléporté mais les tamponneurs ne meurent pas."
+        },
+        {
+          "kind": "Exception",
+          "text": "Si vous êtes en Pesanteur (appliquée par le Black Wo Wabbit), le guide propose une autre disposition des personnages et des tamponneurs (montrée sur une image) ; il mentionne aussi l'usage d'un sort de poussée qui ne se lance pas uniquement en ligne."
+        },
+        {
+          "kind": "Warning",
+          "text": "Les tamponneurs sont statiques, ne taclent pas et ont 150 % de résistance dans tous les éléments : évitez quand même de finir votre tour à leur contact (dégâts collatéraux)."
+        },
+        {
+          "kind": "Restriction",
+          "text": "Le Wa Wobot ne peut pas être téléporté symétriquement s'il est lui-même à l'origine des dégâts de poussée."
+        }
+      ],
+      "unknownAspects": [
+        "Le placement exact de la variante « en état Pesanteur » n'est montré que sur une image du guide."
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "Le principe est assez simple, quand un Wobot Tamponneur subit des dommages de poussée indirecte, il repousse toutes les entités à son contact de 6 cases.",
+          "locator": "IV- Présentation du Boss — Fonctionnement des Wobots Tamponneurs"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "L’entité à l’origine des dégâts de poussée subis par le Wobot Tamponneur (celui qui a poussé) se téléporte symétriquement par rapport à lui.",
+          "locator": "IV- Présentation du Boss — Fonctionnement des Wobots Tamponneurs"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "NOTE : Si le Wa Wobot est repoussé par un Wobot Tamponneur, il perd 500 de résistance poussée pour un tour. De plus, le Wa Wobot ne peut pas être téléporté symétriquement s’il est à l’origine des dégâts de poussée.",
+          "locator": "IV- Présentation du Boss — Fonctionnement des Wobots Tamponneurs"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "IMPORTANT : Chaque Tamponneur ne peut être utilisé qu'une fois pour cette mécanique. En effet, une fois qu'un tamponneur a déclenché son effet Bump Incontwôlable, il ne peut plus repousser les entités.",
+          "locator": "IV- Présentation du Boss — Fonctionnement des Wobots Tamponneurs"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "Imaginez maintenant que vous poussez le Wa Wobot qui en plus perd 500 résistances de poussée quand il est repoussé par un Wobot Tamponneur. Le Wa Wobot perd ses 3500PV en un seul tour au bout de quelques allers retours.",
+          "locator": "IV- Présentation du Boss — Fonctionnement des Wobots Tamponneurs — Exemple n°2"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "Attention : Pour faire cette stratégie, le personnage qui pousse le monstre ne doit pas être dans l’état pesanteur afin de pouvoir être téléporté symétriquement.",
+          "locator": "IV- Présentation du Boss — Fonctionnement des Wobots Tamponneurs"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "NOTE : Étant donné que les Wobot Tamponneur poussent de 6 cases, il doit y avoir un maximum de 6 cases entre les deux Wobot Tamponneur pour que ça fonctionne.",
+          "locator": "IV- Présentation du Boss — Fonctionnement des Wobots Tamponneurs — Exemple n°3"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "Si un personnage pousse une entité sur un Wobot Tamponneur et qu’il ne peut pas être téléporté symétriquement car la case d’arrivée n’est pas disponible à cause d’un obstacle alors tous les Wobot Tamponneur en ligne avec ce personnage sont OS.",
+          "locator": "IV- Présentation du Boss — Effet « Entewwement »"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "NOTE : Si le personnage est en état pesanteur il ne sera pas téléporté symétriquement mais les Wobots en ligne avec lui ne seront pas OS.",
+          "locator": "IV- Présentation du Boss — Effet « Entewwement »"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "Les Wobots Tamponneurs sont des invocations statiques qui ne peuvent ni être portées, ni être téléportées et ils ne peuvent pas non plus emprunter des portails. Ils ne taclent pas et ont 150% de résistance dans tous les éléments.",
+          "locator": "IV- Présentation du Boss — Invocation et caractéristiques des Wobot Tamponneur"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "En transformant les Cawottes Woyale invoquées par les Black Wo Wabbit avec son sort « Twansmutation » (1 maximum par tour par Black Wo Wabbit).",
+          "locator": "IV- Présentation du Boss — Invocation et caractéristiques des Wobot Tamponneur"
+        }
+      ]
+    },
+    {
+      "id": "mech.wa-wobot.sorts",
+      "entityId": "boss.wa-wobot",
+      "type": "SpellEffect",
+      "title": "Sorts du Wa Wobot : attirance, poussée et résistances",
+      "summary": "Le Wa Wobot frappe peu ; son jeu tourne autour des tamponneurs. Mékattwaction attire la cible de 12 cases (en ligne, de 4 à 12 PO, 2 fois par tour, 1 fois par cible), inflige 80 neutre et pose un Wobot Tamponneur à sa position de départ. Wouste inflige 90 feu et repousse de 3 cases (en ligne, jusqu'à 2 PO, sans ligne de vue, 2 fois par tour). Substitution lui fait échanger sa place avec un tamponneur (3 PO, sans ligne de vue). Mékawapace : +30 % de résistance dans tous les éléments pendant 2 tours, non débuffable, à partir du tour 3 puis tous les 5 tours.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Éviter d'être en ligne avec lui entre 4 et 12 PO, sauf si vous voulez qu'il pose un tamponneur à votre place.",
+              "rationale": "Mékattwaction vous attire de 12 cases et invoque un Wobot Tamponneur à votre position initiale."
+            },
+            {
+              "order": 2,
+              "action": "S'il peut venir près de vous, rester à plus de 3 cases d'un obstacle.",
+              "rationale": "Wouste est son seul sort de poussée : 3 cases, jusqu'à 2 fois par cible, en ligne à 2 PO sans ligne de vue."
+            },
+            {
+              "order": 3,
+              "action": "Lui retirer des PM et rester à distance.",
+              "rationale": "Il a 6 PM et seulement 10 d'esquive : il est facile de lui en retirer."
+            },
+            {
+              "order": 4,
+              "action": "Si vous le tuez à coups de sorts, concentrer les gros dégâts en dehors des tours de Mékawapace.",
+              "when": {
+                "kind": "TurnAtLeast",
+                "description": "À partir du tour 3, puis tous les 5 tours, pendant 2 tours."
+              },
+              "rationale": "Mékawapace lui donne 30 % de résistance dans tous les éléments pendant 2 tours, non débuffable."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Restriction",
+          "text": "Le Wa Wobot ne peut être ni porté ni téléporté, mais il peut être poussé ou attiré."
+        },
+        {
+          "kind": "Warning",
+          "text": "Substitution lui permet d'échanger sa place avec un Wobot Tamponneur jusqu'à 3 PO, sans ligne de vue, une fois par tour."
+        }
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "Mékattwaction : Attire la cible de 12 cases, lui inflige 80 de dégâts neutre et invoque un Wobot Tamponneur à la position initiale de la cible. Se lance uniquement en ligne de 4 à 12PO (modifiable) (lançable 2 fois par tour, 1 fois par cible).",
+          "locator": "IV- Présentation du Boss — Sorts du Wa Wobot — Mékattwaction"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "Mékawapace : Le Wa Wobot gagne 30% de résistance dans tous les éléments pendant 2 tours (non débuffable). Se lance sur lui-même (relance de 5 tours, se lance uniquement à partir du tour 3).",
+          "locator": "IV- Présentation du Boss — Sorts du Wa Wobot — Mékawapace"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "Wouste : Inflige 90 de dégâts feu et repousse la cible de 3 cases. Se lance uniquement en ligne jusqu’à 2PO sans ligne de vue (lançable 2 fois par tour).",
+          "locator": "IV- Présentation du Boss — Sorts du Wa Wobot — Wouste"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "Substitution : Le Wa Wobot échange de position avec le Wobot Tamponneur ciblé. Se lance jusqu’à 3PO (modifiable) sans ligne de vue (lançable 1 fois par tour).",
+          "locator": "IV- Présentation du Boss — Sorts du Wa Wobot — Substitution"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "C’est son seul sort de poussée, essayez donc d’être toujours à plus de 3 cases d’un obstacle s’il peut venir proche de vous.",
+          "locator": "V- Tactique pour le succès Spécial : A fond les boulons"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "Il n’a que 10 d’esquive, il est donc assez facile de lui en retirer.",
+          "locator": "V- Tactique pour le succès Spécial : A fond les boulons"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "Le Wa Wobot ne peut ni être porté, ni être téléporté. Il peut toutefois être poussé ou attiré.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.wa-wobot.plan-de-combat",
+      "entityId": "boss.wa-wobot",
+      "type": "Other",
+      "title": "Plan de combat : monstres d'abord, puis deux façons de finir le boss",
+      "summary": "Le guide conseille de tuer les monstres en premier, en les frappant directement : d'abord le Black Wo Wabbit (il applique Pesanteur), puis le Tiwobot (nombreux sorts de poussée). Une fois le Wa Wobot seul, deux choix : le tuer de façon classique (viable mais long : beaucoup de PV et Mékawapace), ou l'OS avec deux Wobots Tamponneurs. Connaître la mécanique des tamponneurs n'est pas obligatoire mais aide beaucoup.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Plan de combat",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Composition : si une de vos classes n'a pas ou peu de sorts de poussée (le Sadida par exemple), lui faire prendre le sort commun Libération.",
+              "rationale": "Les sorts de poussée sont très importants pour utiliser la mécanique du donjon."
+            },
+            {
+              "order": 2,
+              "action": "Tuer le Black Wo Wabbit en premier.",
+              "target": "Black Wo Wabbit",
+              "rationale": "Il applique l'état Pesanteur, qui empêche la téléportation symétrique nécessaire à la mécanique des tamponneurs."
+            },
+            {
+              "order": 3,
+              "action": "Tuer ensuite le Tiwobot.",
+              "target": "Tiwobot",
+              "rationale": "Il a de nombreux sorts de poussée."
+            },
+            {
+              "order": 4,
+              "action": "Une fois le Wa Wobot seul, soit le frapper normalement, soit ne plus le frapper et préparer deux tamponneurs en ligne à 5 cases ou moins pour le faire rebondir.",
+              "target": "Wa Wobot",
+              "rationale": "La méthode classique est longue (il gagne 30 % de résistances au tour 3 puis tous les 5 tours) ; la méthode des tamponneurs l'élimine en un tour."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Exception",
+          "text": "Si l'occasion se présente d'OS le Wa Wobot entre deux tamponneurs dès le début du combat, le guide conseille de ne pas hésiter."
+        },
+        {
+          "kind": "Warning",
+          "text": "Évitez de finir votre tour au contact d'un Wobot Tamponneur."
+        }
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "En général, on a plutôt tendance à s’occuper des monstres en les tapant directement car il faut souvent plusieurs tours au Wa Wobot pour invoquer suffisamment de Wobot Tamponneur pour qu’ils soient exploitables.",
+          "locator": "IV- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "Pour l’ordre, il est préférable de s’occuper du Black Wo Wabbit en premier car il applique l’état pesanteur. Le suivant sera le Tiwobot à cause de ses nombreux sorts de poussée.",
+          "locator": "IV- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "Il a cependant beaucoup de PV et au tour 3 puis tous les 5 tours, il gagne 30% de résistances pour 2 tours. Cette méthode est tout à fait viable mais assez longue et fastidieuse.",
+          "locator": "IV- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "Dans ce cas, pas la peine de le taper, concentrez vous sur le fait de placer 2 Wobot Tamponneur en ligne à 5 cases ou moins l’un de l’autre.",
+          "locator": "IV- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "Si vous jouez une classe qui n’en a pas ou peu (Sadida par exemple), prenez le sort Libération afin de pouvoir utiliser la mécanique du donjon.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "Les Wobot Tamponneur sont rarement un risque pour vos personnages mais il vaut tout de même mieux ne pas finir son tour à côté d’eux au risque de se prendre un dégâts collatéral.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.terrier-du-wa-wabbit",
+          "quote": "NOTE : Il n’est pas nécessaire de connaître cette mécanique pour réussir le donjon, cependant elle peut vous aider à le réussir et à faire les succès.",
           "locator": "IV- Présentation du Boss — Principe du combat"
         }
       ]

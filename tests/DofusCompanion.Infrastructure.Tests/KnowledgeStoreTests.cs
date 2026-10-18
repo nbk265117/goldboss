@@ -78,6 +78,21 @@ public class SeedAndImportTests
     }
 
     [Fact]
+    public async Task Seed_mechanics_no_longer_shipped_are_removed_but_user_ones_are_kept()
+    {
+        // A database from an older version: one seed mechanic that a newer seed merged away, and one the user wrote.
+        using var host = new TestHost();
+        await host.Repository.UpsertEntityAsync(new GameEntity { Id = "boss.old", Type = EntityType.Boss, CanonicalName = "Old Boss" }, []);
+        await host.Repository.UpsertMechanicAsync(new Mechanic { Id = "mech.old.merged-away", EntityId = "boss.old", Title = "old", Origin = RecordOrigin.Seed });
+        await host.Repository.UpsertMechanicAsync(new Mechanic { Id = "mech.old.mine", EntityId = "boss.old", Title = "mine", Origin = RecordOrigin.User });
+
+        Assert.True(await host.Import.EnsureSeedAsync() > 0);
+
+        var left = (await host.Repository.GetMechanicsForEntityAsync("boss.old")).Select(m => m.Id).ToList();
+        Assert.Equal(["mech.old.mine"], left);
+    }
+
+    [Fact]
     public async Task Every_seed_mechanic_cites_an_existing_source_and_is_verified_or_flagged()
     {
         using var host = new TestHost();

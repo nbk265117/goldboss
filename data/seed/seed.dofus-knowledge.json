@@ -500,69 +500,6 @@
       ]
     },
     {
-      "id": "mech.guerre.arsenal",
-      "entityId": "boss.guerre",
-      "type": "Invulnerability",
-      "title": "Tuer tous les monstres accompagnateurs",
-      "summary": "Le sort Arsenal donne l'état « Compagnon de combat » aux monstres : tant qu'il en reste un, Guerre est invulnérable. Elle devient vulnérable le tour suivant la mort du dernier monstre.",
-      "verification": "VERIFIED",
-      "prerequisites": [
-        {
-          "kind": "EntityAbsent",
-          "description": "Tous les monstres qui accompagnent Guerre sont morts."
-        }
-      ],
-      "sequences": [
-        {
-          "steps": [
-            {
-              "order": 1,
-              "action": "Tuer tous les monstres qui accompagnent Guerre.",
-              "target": "Monstres ayant l'état « Compagnon de combat »"
-            },
-            {
-              "order": 2,
-              "action": "Le tour suivant, Guerre monte sur sa monture et devient vulnérable ; elle place l'un de vos personnages (ou invocation) dans l'état « Brave » et le cible pendant 2 tours.",
-              "target": "Guerre"
-            }
-          ]
-        }
-      ],
-      "expectedStateChange": "Invulnérable → vulnérable",
-      "expectedResult": "Guerre devient vulnérable (et nettement plus dangereuse).",
-      "turnConditions": "Vulnérable le tour suivant la mort du dernier monstre.",
-      "notes": [
-        {
-          "kind": "Restriction",
-          "text": "Guerre est indéplaçable pendant tout le combat."
-        },
-        {
-          "kind": "Warning",
-          "text": "Vulnérable, elle invoque une arme à chaque seuil de PV (80, 60, 40 et 20 %)."
-        },
-        {
-          "kind": "CommonMistake",
-          "text": "Tuer une arme après que Guerre a rejoué la soigne et lui donne résistances et PM (cumulable) : tuez l'arme avant son tour, ou ne la tuez pas."
-        },
-        {
-          "kind": "Warning",
-          "text": "Les armes sont invulnérables pendant un tour après leur invocation."
-        }
-      ],
-      "unknownAspects": [
-        "Durée de la vulnérabilité non précisée (la source n'indique pas de retour à l'invulnérabilité)."
-      ],
-      "versionScope": "Dofus 3 (guide mis à jour le 2026-01-21)",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.trone-de-sang",
-          "quote": "Met l’état Compagnon de combat (infini) à tous les monstres qui l’accompagne ce qui fait que tant qu’il reste des monstres, Guerre reste invulnérable.",
-          "locator": "Sorts de Guerre — Arsenal"
-        }
-      ]
-    },
-    {
       "id": "mech.kralamoure-geant.tentacules",
       "entityId": "boss.kralamoure-geant",
       "type": "Unlock",
@@ -1316,6 +1253,348 @@
           "sourceId": "src.dpln.donjon-du-comte-harebourg",
           "quote": "Si c’est votre premier Comte Harebourg, je conseille le Pandawa, le Zobal, le Iop et l’Eniripsa.",
           "locator": "Stratégie globale du donjon"
+        }
+      ]
+    },
+    {
+      "id": "mech.guerre.arsenal",
+      "entityId": "boss.guerre",
+      "type": "Invulnerability",
+      "title": "Phase 1 : tuer tous ses monstres pour la rendre vulnérable",
+      "summary": "Dès le début, le sort Arsenal rend Guerre indéplaçable et donne l'état « Compagnon de combat » à tous ses monstres : tant qu'il en reste un, elle est invulnérable. Dans cette phase elle est peu dangereuse (une zone de 2 cases et un coup au corps à corps). Le tour suivant la mort du dernier monstre, elle monte sur sa monture et devient vulnérable.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "EntityAbsent",
+          "description": "Tous les monstres qui accompagnent Guerre sont morts."
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne pas frapper Guerre : elle est invulnérable tant qu'un monstre est en vie. Rester hors de son corps à corps.",
+              "rationale": "Elle est indéplaçable : si elle arrive à votre contact, elle réduit beaucoup votre mobilité."
+            },
+            {
+              "order": 2,
+              "action": "Tuer d'abord le Trancharnier.",
+              "rationale": "Il se téléporte sur vos personnages."
+            },
+            {
+              "order": 3,
+              "action": "Puis l'Olgoth : lui retirer d'abord la moitié de ses PV (2750) à distance, puis le reste au corps à corps.",
+              "rationale": "Il est invulnérable au corps à corps tant qu'il a plus de la moitié de ses PV, puis invulnérable à distance."
+            },
+            {
+              "order": 4,
+              "action": "Finir par le Ravalame."
+            },
+            {
+              "order": 5,
+              "action": "Avant de tuer le dernier monstre, préparer la phase 2 : soins et dégâts prêts, personnages placés. Si possible, être à plus de 3 PO de Guerre ou lui retirer des PM.",
+              "rationale": "Le tour suivant, elle devient vulnérable et lance Bravoure (3 PO maximum) ; si elle ne peut toucher personne, vous gagnez un tour de dégâts."
+            }
+          ]
+        }
+      ],
+      "expectedStateChange": "Invulnérable → vulnérable",
+      "expectedResult": "Guerre monte sur sa monture et devient vulnérable (et nettement plus dangereuse).",
+      "turnConditions": "Vulnérable le tour suivant la mort du dernier monstre.",
+      "notes": [
+        {
+          "kind": "Restriction",
+          "text": "Guerre est indéplaçable pendant tout le combat."
+        },
+        {
+          "kind": "Warning",
+          "text": "Si Guerre commence son tour sur un glyphe de cawotte, elle frappe le détenteur du glyphe de 1000 neutre."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-01-21)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "Met l’état Compagnon de combat (infini) à tous les monstres qui l’accompagne ce qui fait que tant qu’il reste des monstres, Guerre reste invulnérable.",
+          "locator": "IV- Présentation du Boss — Sorts du Boss — Arsenal"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "Elle devient vulnérable et monte sur sa monture le tour suivant la mort du dernier monstre.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "Tuez les tranquillement en commençant par le Trancharnier qui va se téléporter sur vous puis le Olgoth qu’il faut d’abord baisser à 2750 PV à distance puis lui retirer l’autre moitié de ses PV au corps à corps. Enfin, finissez par le Ravalame.",
+          "locator": "Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "Si vous en avez la possibilité, avant d’éliminer le dernier monstre, assurez-vous que Guerre ne puisse pas vous toucher avec son sort Bravoure pour avoir un tour en plus afin de lui infliger le maximum de dégâts possible.",
+          "locator": "V- Succès Spécial : Arsenal total"
+        }
+      ]
+    },
+    {
+      "id": "mech.guerre.bravoure",
+      "entityId": "boss.guerre",
+      "type": "SpecialRule",
+      "title": "État Brave : un seul personnage peut la frapper librement",
+      "summary": "Quand elle devient vulnérable, Guerre lance Bravoure sur elle et sur un de vos personnages (ou invocation) : état Brave pendant 2 tours, relancé tous les 3 tours. Pendant ces 2 tours, elle ne frappe que ce personnage (il est aussi insoignable et en pesanteur). Seul le personnage Brave peut la frapper plusieurs fois : les autres deviennent Pacifistes après leur premier coup, jusqu'à leur prochain tour.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Faire frapper Guerre au maximum par le personnage en état Brave.",
+              "rationale": "C'est le seul qui peut la frapper plusieurs fois par tour ; optimisez ses tours."
+            },
+            {
+              "order": 2,
+              "action": "Avec les autres personnages, la frapper une seule fois par tour, avec un sort à une seule grosse ligne de dégâts.",
+              "rationale": "Après un coup, ils deviennent Pacifistes jusqu'à leur prochain tour."
+            },
+            {
+              "order": 3,
+              "action": "Désenvoûter l'insoignable (et la pesanteur) du personnage Brave, puis le soigner.",
+              "rationale": "Guerre ne frappe que lui pendant 2 tours : sans soins il risque de mourir."
+            },
+            {
+              "order": 4,
+              "action": "Avec un Pandawa : porter un personnage qui n'est pas Brave.",
+              "rationale": "Porté, il peut frapper Guerre sans devenir Pacifiste."
+            },
+            {
+              "order": 5,
+              "action": "Retirer des PM à Guerre et désenvoûter l'érosion.",
+              "rationale": "Elle a peu d'esquive PM et met beaucoup d'érosion (débuffable)."
+            },
+            {
+              "order": 6,
+              "action": "Le 3e tour, quand elle n'est plus Brave, s'éloigner d'elle et de ses armes et se disperser.",
+              "rationale": "C'est le seul tour sur 3 où elle peut lancer Célérité : échanger de place avec une arme (qui frappe alors) et avec un personnage."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Célérité : quand Guerre échange de place avec un personnage, elle pose autour de lui un glyphe rouge en croix de taille 1 qui inflige 1 000 feu quand on passe dedans."
+        },
+        {
+          "kind": "Warning",
+          "text": "En sortant de l'état Brave, elle gagne 2 PM et 100 de fuite pour 1 tour."
+        },
+        {
+          "kind": "Exception",
+          "text": "Les invocations et les explosions de bombes peuvent encore frapper quand vous êtes Pacifiste (une attaque par tour pour les invocations)."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-01-21)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "Quand Guerre est dans l’état \"Brave\", si un de vos personnages autre que celui qui a l’état \"Brave\" tape Guerre, il entrera dans l’état Pacifiste après son coup jusqu’au début de son prochain tour.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "Si vous portez un personnage avec votre Pandawa et que ce personnage n’est pas en état brave, il peut taper tout de même guerre sans passer dans l’état pacifiste.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "L’état Brave durant 2 tours et ayant une relance de 3 tours, il peut donc utiliser le sort Célérité un seul tour sur 3.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "Quand Guerre échange de place avec une arme, l’arme déclenche son sort d’attaque et quand Guerre échange de place avec un personnage, Guerre pose un glyphe rouge en zone croix de taille 1 autour du personnage.",
+          "locator": "IV- Présentation du Boss — Sorts du Boss — Célérité"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "L’insoignable dure 2 tours pendant lesquelles Guerre va vous taper dessus, cet état et désenvoutable et vous permettra de soigner votre personnage afin que Guerre ne puisse pas le tuer.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.guerre.armes",
+      "entityId": "boss.guerre",
+      "type": "Summon",
+      "title": "Ses 4 armes géantes (tous les 20 % de PV)",
+      "summary": "Vulnérable, Guerre invoque une arme à chaque seuil de 20 % de sa vitalité de base, à 2 PO au-dessus d'elle (à 12 h). À 4 joueurs (22 000 PV) : Épée Géante à 17 600 PV, Marteau Géant à 13 200, Hache Géante à 8 800, Morgenstern Géant à 4 400 ; chaque arme a 5 500 PV et frappe 1 400 dans sa zone. Le coup qui fait passer un seuil est bloqué au seuil.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Zones des armes",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Épée Géante (seuil 80 %) : zone étoile de taille 5, 1 400 feu.",
+              "rationale": "Si elle est en vie au début du tour de Guerre : Guerre gagne 2 PM et 100 de fuite."
+            },
+            {
+              "order": 2,
+              "action": "Marteau Géant (seuil 60 %) : cercle de rayon 3, 1 400 terre.",
+              "rationale": "Si en vie : Guerre gagne 10 % de dommages finaux et 100 de tacle."
+            },
+            {
+              "order": 3,
+              "action": "Hache Géante (seuil 40 %) : 4 triangles de hauteur 4 partant de ses cases de corps à corps, 1 400 air.",
+              "rationale": "Si en vie : Guerre gagne 10 % de résistances et 1 000 points de bouclier."
+            },
+            {
+              "order": 4,
+              "action": "Morgenstern Géant (seuil 20 %) : zone grille de taille 5, 1 400 eau.",
+              "rationale": "Si en vie : Guerre gagne 3 PA et se soigne de 5 % de ses PV."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "CommonMistake",
+          "text": "Tuer une arme après que Guerre a rejoué la soigne (environ 1 000 à 1 500 PV) et lui donne des résistances et des PM pour le reste du combat, cumulables : tuez l'arme avant son tour, ou ne la tuez pas."
+        },
+        {
+          "kind": "Warning",
+          "text": "Les armes frappent en apparaissant et à leur tour : placez vos personnages hors de leur zone avant de faire passer un seuil."
+        },
+        {
+          "kind": "Exception",
+          "text": "Les seuils dépendent de la taille de l'équipe : ce sont toujours 80, 60, 40 et 20 % de sa vitalité de base (exemple donné pour 4 joueurs)."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-01-21)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "Ainsi Guerre invoque à chaque seuil de 20% de PV par rapport à sa vitalité de base (par exemple si vous êtes 4 elle a 22000PV de base donc tous les seuils de 4400PV elle va invoquer).",
+          "locator": "IV- Présentation du Boss — Invocation de l'Arsenal de Guerre"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "Au moment où elle invoque son arme, sa vie se bloque au seuil de PV nécessaire pour l’invoquer pour l’attaque en cours.",
+          "locator": "IV- Présentation du Boss — Invocation de l'Arsenal de Guerre"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "Les armes sont invoquées à 2PO à 12h puis dans le sens des aiguilles d’une montre si la cellule est déjà occupée.",
+          "locator": "IV- Présentation du Boss — Invocation de l'Arsenal de Guerre"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "Si Guerre joue son tour avant que vous n’ayez eu le temps de tuer l’arme, quand vous allez la tuer, guerre va gagner des résistances, des PM et va se soigner d’environ 1000 / 1500 PV.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.guerre.strategie",
+      "entityId": "boss.guerre",
+      "type": "Other",
+      "title": "Phase 2 : deux méthodes pour la tuer",
+      "summary": "Une fois Guerre seule et vulnérable, deux méthodes : tuer chaque arme juste après son apparition, avant que Guerre ne rejoue (plus long mais plus sûr), ou ne jamais tuer les armes et les repousser loin en profitant des 2 tours sur 3 où Guerre, en état Brave, ne peut pas échanger de place. La difficulté du combat est d'encaisser et d'éviter les dégâts des armes.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Méthode 1 : tuer les armes (exemple à 4 joueurs)",
+          "steps": [
+            {
+              "order": 1,
+              "action": "La frapper jusqu'à 18 000 ou 19 000 PV."
+            },
+            {
+              "order": 2,
+              "action": "Placer vos personnages hors de la zone de l'Épée Géante (2 PO au-dessus de Guerre), puis la descendre à 17 600 PV.",
+              "rationale": "L'épée apparaît : tuez-la avant le tour de Guerre."
+            },
+            {
+              "order": 3,
+              "action": "Vers 14 000 PV, se placer hors de la zone du Marteau Géant, la descendre à 13 200 PV et tuer le Marteau avant son tour."
+            },
+            {
+              "order": 4,
+              "action": "Vers 9 500 PV, se placer hors de la zone de la Hache Géante, la descendre à 8 800 PV et tuer la Hache avant son tour."
+            },
+            {
+              "order": 5,
+              "action": "Vers 5 000 PV, se placer hors de la zone du Morgenstern Géant et la descendre à 4 400 PV."
+            },
+            {
+              "order": 6,
+              "action": "Ne pas tuer le Morgenstern : finir Guerre le plus vite possible.",
+              "rationale": "C'est la dernière arme ; la tuer ne sert plus à rien."
+            }
+          ]
+        },
+        {
+          "label": "Méthode 2 : ne pas tuer les armes",
+          "steps": [
+            {
+              "order": 1,
+              "action": "À chaque arme invoquée, la repousser assez loin pour qu'elle ne puisse pas vous frapper."
+            },
+            {
+              "order": 2,
+              "action": "Quand Guerre sort de l'état Brave, vous éloigner au maximum d'elle et de ses armes.",
+              "rationale": "Ce tour-là, elle échange de place avec un ou deux de vos personnages et une arme."
+            },
+            {
+              "order": 3,
+              "action": "Le tour suivant, revenir près d'elle en éloignant les armes proches de vous.",
+              "rationale": "Au début de son tour, elle remet un personnage en état Brave et redevient peu dangereuse pendant 2 tours."
+            },
+            {
+              "order": 4,
+              "action": "Répéter jusqu'à sa mort.",
+              "rationale": "Le seul vrai danger : les tours où elle n'est pas Brave et peut amener ses armes sur votre équipe."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "CommonMistake",
+          "text": "Si vous n'avez pas tué une arme avant que Guerre rejoue, ne la tuez plus : elle se soignerait et gagnerait résistances et PM."
+        },
+        {
+          "kind": "Exception",
+          "text": "Avec des classes à retrait de PM, on peut gérer Guerre à distance : elle a peu d'esquive PM."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-01-21)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "Commencez à la taper jusqu’à ce qu’elle ait 18 000 ou 19 000 PV, à ce moment là, placez vos personnages de sorte à ce qu’ils ne soient pas tapés par l’Epée Géante qui va être invoquée à 2PO au dessus de Guerre et descendez-la à 17 600 PV",
+          "locator": "Stratégie globale du donjon — Méthode 1"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "Une fois qu’elle a invoqué son Morgenstern Géant, il est inutile de tuer ce dernier, portez plutôt votre attention sur Guerre afin de la tuer le plus vite possible et gagner ce combat.",
+          "locator": "Stratégie globale du donjon — Méthode 1"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "À chaque fois qu’elle fait apparaître une arme, poussez l’arme assez loin pour qu’elle ne puisse pas vous taper.",
+          "locator": "Stratégie globale du donjon — Méthode 2"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-sang",
+          "quote": "La difficulté du combat réside dans la capacité à tanker et à éviter les dégâts de ses armes.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
         }
       ]
     }

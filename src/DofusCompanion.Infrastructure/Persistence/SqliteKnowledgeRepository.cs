@@ -381,6 +381,24 @@ public sealed class SqliteKnowledgeRepository : IKnowledgeRepository
         return cmd.ExecuteNonQuery();
     }, ct);
 
+    public Task<int> DeleteMechanicsAsync(IReadOnlyCollection<string> ids, CancellationToken ct = default) => Run(c =>
+    {
+        // Steps, prerequisites, notes, unknowns and sources go with it (ON DELETE CASCADE).
+        using var tx = c.BeginTransaction();
+        var deleted = 0;
+        foreach (var id in ids)
+        {
+            using var cmd = c.CreateCommand();
+            cmd.Transaction = tx;
+            cmd.CommandText = "DELETE FROM mechanics WHERE id = $id";
+            cmd.Parameters.AddWithValue("$id", id);
+            deleted += cmd.ExecuteNonQuery();
+        }
+
+        tx.Commit();
+        return deleted;
+    }, ct);
+
     private static void UpsertVersion(SqliteConnection c, SqliteTransaction tx, GameVersion v) => Exec(c, tx,
         "INSERT INTO game_versions(id, version, release_date, source_id, verified_on, notes) VALUES ($id, $v, $r, $s, $vo, $n) " +
         "ON CONFLICT(id) DO UPDATE SET version=excluded.version, release_date=excluded.release_date, source_id=excluded.source_id, " +

@@ -3382,112 +3382,6 @@
       ]
     },
     {
-      "id": "mech.tengu-givrefoux.invulnerabilite",
-      "entityId": "boss.tengu-givrefoux",
-      "type": "Invulnerability",
-      "title": "Invulnérabilité retirée par les états Fulguration + Floutage (Yomi et Yokaï)",
-      "summary": "Le Tengu commence invulnérable (et Lourd tout le combat). Dans un même tour, il faut : placer le Yomi Givrefoux en ligne avec le Tengu et frapper le Yomi avec une arme (état Fulguration), et pousser ou attirer le Yokaï Givrefoux dans la diagonale du Tengu (état Floutage). La distance n'importe pas. Au début de son tour suivant, le Tengu lance « Toison givrée » et devient vulnérable pour 4 tours.",
-      "verification": "VERIFIED",
-      "prerequisites": [
-        {
-          "kind": "Manual",
-          "description": "Un Yomi et un Yokaï Givrefoux vivants sur le terrain."
-        }
-      ],
-      "sequences": [
-        {
-          "label": "Retrait de l'invulnérabilité",
-          "steps": [
-            {
-              "order": 1,
-              "action": "Placer le Yomi en ligne avec le Tengu et le frapper avec une arme.",
-              "rationale": "Le Yomi et ses alliés en ligne gagnent Fulguration (2 tours)."
-            },
-            {
-              "order": 2,
-              "action": "Pousser ou attirer le Yokaï dans la diagonale du Tengu, dans le même tour.",
-              "rationale": "Le Yokaï et ses alliés en diagonale gagnent Floutage (2 tours)."
-            },
-            {
-              "order": 3,
-              "action": "Frapper le Tengu pendant ses 4 tours de vulnérabilité ; sinon recommencer."
-            }
-          ]
-        }
-      ],
-      "expectedStateChange": "Avec Fulguration et Floutage au début de son tour, le Tengu lance « Toison givrée » et perd l'invulnérabilité.",
-      "vulnerabilityDuration": "4 tours",
-      "notes": [
-        {
-          "kind": "Warning",
-          "text": "Garder Yomi et Yokaï en vie tant que le Tengu est invulnérable ; il en réinvoque au tour 2 puis tous les 3 tours (2 invocations max)."
-        },
-        {
-          "kind": "Warning",
-          "text": "Pousser le Yokaï rend Affaibli (pas d'arme) les personnages dans sa diagonale ; frapper le Yomi à l'arme érode de 20 % les personnages en ligne."
-        }
-      ],
-      "versionScope": "Date du guide non indiquée — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.taniegravere-givrefoux",
-          "quote": "Placer le Yomi Givrefoux en ligne avec le Tengu Givrefoux puis lui infliger des dommages d’arme.",
-          "locator": "IV- Présentation du Boss — Principe du combat"
-        },
-        {
-          "sourceId": "src.dpln.taniegravere-givrefoux",
-          "quote": "Pousser ou attirer le Yokaï Givrefoux dans la diagonale du Tengu Givrefoux.",
-          "locator": "IV- Présentation du Boss — Principe du combat"
-        },
-        {
-          "sourceId": "src.dpln.taniegravere-givrefoux",
-          "quote": "Au début de son prochain tour, il perdra alors son invulnérabilité pour 4 tours.",
-          "locator": "IV- Présentation du Boss — Principe du combat"
-        }
-      ]
-    },
-    {
-      "id": "mech.tengu-givrefoux.etat-unique",
-      "entityId": "boss.tengu-givrefoux",
-      "type": "SpecialRule",
-      "title": "Un seul des deux états = sort spécial dangereux",
-      "summary": "Si le Tengu n'a qu'un des deux états : avec Fulguration seule il peut lancer « Mornifle » (OS en mêlée) ; avec Floutage seul, « Torgnole givrée » (30 % d'érosion 1 tour sur tous les personnages et invocations). D'où la nécessité de poser les deux états le même tour.",
-      "verification": "VERIFIED",
-      "notes": [
-        {
-          "kind": "FailureCase",
-          "text": "Fulguration seule + personnage au contact = OS (Mornifle)."
-        }
-      ],
-      "versionScope": "Date du guide non indiquée — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.taniegravere-givrefoux",
-          "quote": "S’il est uniquement dans l’état « Fulguration » (via le Yomi), il peut utiliser son sort Mornifle qui OS en mêlée.",
-          "locator": "IV- Présentation du Boss — Principe du combat"
-        }
-      ]
-    },
-    {
-      "id": "mech.tengu-givrefoux.attirance",
-      "entityId": "boss.tengu-givrefoux",
-      "type": "SpellEffect",
-      "title": "« Câlin frigorifique » : attire de 3 cases en ligne",
-      "summary": "Le Tengu ne frappe qu'en mêlée mais attire de 3 cases en ligne, de 2 à 8 PO, sans ligne de vue. Éviter d'être en ligne avec lui ou se cacher derrière un obstacle ou une invocation statique.",
-      "verification": "VERIFIED",
-      "versionScope": "Date du guide non indiquée — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.taniegravere-givrefoux",
-          "quote": "Câlin frigorifique : Attire la cible de 3 cases. Se lance uniquement en ligne de 2 à 8PO sans ligne de vue.",
-          "locator": "IV- Présentation du Boss — Sorts de Tengu Givrefoux"
-        }
-      ]
-    },
-    {
       "id": "mech.fuji-givrefoux-taniere.pas-d-invulnerabilite",
       "entityId": "boss.fuji-givrefoux-taniere",
       "type": "Invulnerability",
@@ -3604,243 +3498,6 @@
           "sourceId": "src.dpln.taniegravere-givrefoux",
           "quote": "Progéniture : OS la cible et la remplace aléatoirement par un des monstres de la zone. Se lance uniquement en mêlée (lançable 1 fois par tour).",
           "locator": "IV- Présentation du Boss — Sorts de Fuji Givrefoux"
-        }
-      ]
-    },
-    {
-      "id": "mech.pere-ver.invulnerable-distance",
-      "entityId": "boss.pere-ver",
-      "type": "Invulnerability",
-      "title": "Invulnérable à distance : ne se frappe qu'en mêlée",
-      "summary": "Le Père Ver est invulnérable à distance tout le combat (passif « Digestion Lente ») : seuls les dégâts en mêlée l'entament. Il n'a aucun PM, est indéplaçable et se téléporte en début de combat sur une case fixe en haut à droite de la carte. Chaque monstre tué lui retire 10 % de résistances (infini) mais le soigne de 20 % de ses PV max.",
-      "verification": "VERIFIED",
-      "sequences": [
-        {
-          "label": "Stratégie globale du guide",
-          "steps": [
-            {
-              "order": 1,
-              "action": "Éliminer d'abord tous les monstres (chacun retire 10 % de résistances au boss)."
-            },
-            {
-              "order": 2,
-              "action": "Se mettre au contact du Père Ver et le frapper jusqu'à sa mort.",
-              "position": "En mêlée du Père Ver"
-            }
-          ]
-        }
-      ],
-      "notes": [
-        {
-          "kind": "Warning",
-          "text": "Il frappe 450 terre tous les personnages à son contact au début de chacun de ses tours : se détacler si on est bas en PV."
-        },
-        {
-          "kind": "Restriction",
-          "text": "50 % de résistance air selon la section des succès."
-        }
-      ],
-      "versionScope": "Antérieur à Dofus 3 — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.boyau-du-pere-ver",
-          "quote": "Il est également dans l'état Invulnérable à distance pour toute la durée du combat. Le seul moyen d'entamer ses PV est donc de lui faire subir des dégâts en mêlée.",
-          "locator": "V- Présentation du Boss — Principe du combat"
-        },
-        {
-          "sourceId": "src.dpln.boyau-du-pere-ver",
-          "quote": "Si un monstre meurt, le Père Ver perd 10% de Résistances (infini) mais se soigne de 20% de ses PV max.",
-          "locator": "V- Présentation du Boss — Principe du combat"
-        }
-      ]
-    },
-    {
-      "id": "mech.pere-ver.passifs",
-      "entityId": "boss.pere-ver",
-      "type": "SpecialRule",
-      "title": "Passifs tant qu'il vit (érosion, attirance, glyphe de soin) et poison après sa mort",
-      "summary": "Tant qu'il est en vie : 10 % d'érosion infinie sur les personnages, dégâts eau à chaque déplacement forcé, attirance de 4 cases des personnages dans sa ligne de vue et révélation des invisibles, et chaque personnage pose en début de tour un glyphe marron qui le soigne de 15 % de ses PV max s'il y termine son tour. Une fois le Père Ver mort, ces effets cèdent la place à un poison eau de fin de tour.",
-      "verification": "VERIFIED",
-      "unknownAspects": [
-        "Moment de l'attirance contradictoire sur la page : « à chacun de ses débuts de tour » (sorts) vs « À la fin de chacun de ses tours » (principe)."
-      ],
-      "versionScope": "Antérieur à Dofus 3 — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.boyau-du-pere-ver",
-          "quote": "Quand un personnage débute son tour, il invoque un glyphe marron sur sa case. Ce glyphe soigne le personnage de 15% de ses PV max s’il finit son tour dedans (fonctionne uniquement en terminant son tour dans son propre glyphe).",
-          "locator": "V- Présentation du Boss — Principe du combat"
-        },
-        {
-          "sourceId": "src.dpln.boyau-du-pere-ver",
-          "quote": "Tous vos personnages ont un poison de fin de tour qui inflige des dégâts eau (environ 200).",
-          "locator": "V- Présentation du Boss — Principe du combat"
-        }
-      ]
-    },
-    {
-      "id": "mech.pere-ver.deces-traumatisant",
-      "entityId": "boss.pere-ver",
-      "type": "SpecialRule",
-      "title": "« Décès Traumatisant » : un monstre tué frappe sa ligne de vue",
-      "summary": "Les monstres sont intaclables. Quand l'un d'eux meurt, il inflige 500 de dégâts feu à tous les personnages dans sa ligne de vue : bloquer les lignes de vue (obstacles, invocations) avant de l'achever.",
-      "verification": "VERIFIED",
-      "versionScope": "Antérieur à Dofus 3 — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.boyau-du-pere-ver",
-          "quote": "Si un monstre meurt, il inflige 500 de dégâts feu à tous les personnages dans sa ligne de vue.",
-          "locator": "V- Présentation du Boss — Principe du combat"
-        }
-      ]
-    },
-    {
-      "id": "mech.pere-ver.paternalisme",
-      "entityId": "boss.pere-ver",
-      "type": "SpellEffect",
-      "title": "« Paternalisme » : partage de dommages avec un monstre (dès le tour 2)",
-      "summary": "À partir du tour 2, il partage chaque tour ses dommages avec un monstre (non désenvoûtable) et le soigne de 10 % au tour suivant. Comme le Père Ver est invulnérable à distance, frapper ce monstre ne lui inflige que la moitié des dégâts : changer de cible sauf si le monstre est presque mort. Au tour 1, on peut focus librement (le guide conseille le Trémorse).",
-      "verification": "VERIFIED",
-      "turnConditions": "À partir du tour 2, chaque tour.",
-      "notes": [
-        {
-          "kind": "Warning",
-          "text": "« Coup d'Oeil » (tours 1, 3, 5…) applique un poison par PM utilisé : limiter ses déplacements ce tour-là."
-        }
-      ],
-      "versionScope": "Antérieur à Dofus 3 — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.boyau-du-pere-ver",
-          "quote": "Si il active le partage de dommages, les dégâts que vous effectuerez sur le monstre concerné seront réduits de moitié (le Père Ver ne subira rien de l'autre moitié étant donné qu'il est Invulnérable à distance).",
-          "locator": "V- Présentation du Boss — Principe du combat"
-        }
-      ]
-    },
-    {
-      "id": "mech.supervizoeuf.zoeufd",
-      "entityId": "boss.supervizoeuf",
-      "type": "Invulnerability",
-      "title": "Invulnérable jusqu'à 4 explosions de Zoeufs (état « Zoeuf'd »)",
-      "summary": "Le Supervizœuf est invulnérable. Quand un Zoeuf invoqué par un monstre est éliminé, il explose dans une zone qui dépend de son invocateur (Kamikabz : carré 1 ; Quadrabz : anneau 2 ; Toubibz : cercle 2 ; Balebz : échange avec l'entité la plus proche). Chaque explosion touchant le boss lui donne un état « Zoeuf'd » ; au 4e, il devient vulnérable pour le reste du combat et passe en phase 2.",
-      "verification": "VERIFIED",
-      "prerequisites": [
-        {
-          "kind": "Manual",
-          "description": "Des Kabombz vivants pour invoquer des Zoeufs (ils n'invoquent que s'ils peuvent utiliser leur sort de dégâts)."
-        }
-      ],
-      "sequences": [
-        {
-          "label": "Retrait de l'invulnérabilité",
-          "steps": [
-            {
-              "order": 1,
-              "action": "Laisser des Kabombz en vie (idéalement le Kamikabz, qui peut réinvoquer chaque tour) et placer des invocations près d'eux pour qu'ils invoquent."
-            },
-            {
-              "order": 2,
-              "action": "Placer chaque Zoeuf près du Supervizœuf puis l'éliminer pour que l'explosion le touche."
-            },
-            {
-              "order": 3,
-              "action": "Répéter jusqu'à 4 états « Zoeuf'd »."
-            }
-          ]
-        }
-      ],
-      "notes": [
-        {
-          "kind": "Warning",
-          "text": "Zoeuf de Balebz : le Supervizœuf doit être l'entité la plus proche au moment où on l'achève."
-        },
-        {
-          "kind": "Restriction",
-          "text": "Chaque Kabombz n'a qu'un Zoeuf à la fois."
-        }
-      ],
-      "versionScope": "Dofus 3 (guide mis à jour le 21/07/2025)",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
-          "quote": "Si le Supervizoeuf est dans la zone de l'explosion d'un Zoeuf, il gagne un état de « Zoeuf'd». Au bout de 4 états, il devient immédiatement vulnérable pour le reste du combat.",
-          "locator": "IV- Présentation du Boss — Principe du combat"
-        }
-      ]
-    },
-    {
-      "id": "mech.supervizoeuf.phase-2",
-      "entityId": "boss.supervizoeuf",
-      "type": "Phase",
-      "title": "Phase 2 : clone explosif et téléportation sur le personnage le plus proche",
-      "summary": "En phase 2, il gagne 20 % de critique et 10 % de dommages finaux, ne peut plus être mis en Pesanteur, invoque un clone (moitié de ses PV, 4 PM, 1 000 tacle) qui explose au bout de 2 tours (500 feu à 3 PO), et se téléporte au début de chaque tour sur le personnage le plus proche (priorité horaire). Tuer le clone évite l'explosion et fait subir au boss 20 % de dégâts en plus pendant 1 tour.",
-      "verification": "VERIFIED",
-      "notes": [
-        {
-          "kind": "Warning",
-          "text": "Le guide conseille de le focus dès qu'il est vulnérable."
-        }
-      ],
-      "versionScope": "Dofus 3 (guide mis à jour le 21/07/2025)",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
-          "quote": "De plus, à chaque début de tour, il se téléporte sur le personnage le plus proche de lui. La case sur laquelle il se téléporte respecte la règle de priorité horaire.",
-          "locator": "IV- Présentation du Boss — Principe du combat"
-        }
-      ]
-    },
-    {
-      "id": "mech.supervizoeuf.mort-explosion",
-      "entityId": "boss.supervizoeuf",
-      "type": "SpecialRule",
-      "title": "Explosion à sa mort, puis 5 vagues de monstres",
-      "summary": "À sa mort, il inflige 250 dégâts dans chaque élément (1 000 au total) dans un cercle de taille 3 : s'éloigner avant de l'achever. Le combat continue ensuite avec 5 vagues de monstres ; dans ce donjon chaque entité tuée explose en zone (sauf Toubibz et son Zoeuf qui soignent).",
-      "verification": "VERIFIED",
-      "notes": [
-        {
-          "kind": "FailureCase",
-          "text": "Rester dans le cercle de taille 3 lors du coup fatal = 1 000 dégâts."
-        }
-      ],
-      "unknownAspects": [
-        "Composition et déclenchement exacts des 5 vagues non détaillés dans la partie boss."
-      ],
-      "versionScope": "Dofus 3 (guide mis à jour le 21/07/2025)",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
-          "quote": "Quand le Supervizoeuf est éliminé, il inflige 250 de dégâts dans tous les éléments (terre, feu, eau, air) à toutes les entités dans une zone cercle de taille 3 autour de lui.",
-          "locator": "IV- Présentation du Boss — Principe du combat / Stratégie globale"
-        },
-        {
-          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
-          "quote": "Une fois que le Supervizoeuf a été éliminé, il ne vous reste plus qu'à gérer les 5 vagues de monstres.",
-          "locator": "IV- Présentation du Boss — Principe du combat / Stratégie globale"
-        }
-      ]
-    },
-    {
-      "id": "mech.supervizoeuf.saisons",
-      "entityId": "boss.supervizoeuf",
-      "type": "SpecialRule",
-      "title": "Modificateurs de saisons d'Osavora",
-      "summary": "Osavora n'a pas de modificateur de dimension classique mais des modificateurs de saison (naissance, chasse, repos), qui modifient aussi les zones d'explosion et la vitesse d'éclosion des Zoeufs.",
-      "verification": "VERIFIED",
-      "versionScope": "Dofus 3 (guide mis à jour le 21/07/2025)",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
-          "quote": "Dans la dimension Osavora, il n'y a pas de modificateur classique de dimension. Ces modificateurs sont remplacés par des modificateurs de saisons. Chaque saison a un modificateur unique.",
-          "locator": "II- Modificateur des saisons"
         }
       ]
     },
@@ -6307,6 +5964,1311 @@
           "sourceId": "src.dpln.tofulailler-royal",
           "quote": "Il est préférable de tuer un ou plusieurs monstres avant le tour 2 car tous les ennemis gagnent 50% de dommages supplémentaires pendant ce tour.",
           "locator": "II- Expédition de guilde — Fonctionnement de l'expédition"
+        }
+      ]
+    },
+    {
+      "id": "mech.pere-ver.invulnerable-distance",
+      "entityId": "boss.pere-ver",
+      "type": "Invulnerability",
+      "title": "Invulnérable à distance : ne se frappe qu'en mêlée",
+      "summary": "Grâce à son passif « Digestion Lente », le Père Ver est invulnérable à distance pendant tout le combat : seuls les dégâts en mêlée entament ses PV. Il n'a aucun PM et est indéplaçable (ni poussé, ni attiré, ni échangé). Même s'il semble se placer sur une case bleue en préparation, il se téléporte dès le début du combat sur une case fixe en haut à droite de la carte et y reste. Au début de chacun de ses tours, il frappe 450 terre tous les personnages à son contact.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Le frapper",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne pas gaspiller de dégâts à distance sur lui.",
+              "rationale": "Il est invulnérable à distance pour tout le combat."
+            },
+            {
+              "order": 2,
+              "action": "Une fois les monstres morts, aller à son contact (case fixe en haut à droite) et le frapper jusqu'à sa mort.",
+              "position": "En mêlée du Père Ver",
+              "rationale": "Seuls les dégâts en mêlée l'entament ; il ne peut pas bouger."
+            },
+            {
+              "order": 3,
+              "action": "Si un personnage est très bas en PV, le détacler et quitter sa mêlée avant la fin du tour.",
+              "rationale": "Il frappe 450 terre tous les personnages à son contact au début de chacun de ses tours."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Restriction",
+          "text": "Il a 50 % de résistance air (indiqué dans la partie succès) : éviter de jouer air contre lui."
+        },
+        {
+          "kind": "Warning",
+          "text": "Prévoir un bouclier qui augmente les dégâts en mêlée ou de sorts (ex. Bouclier Taverne) plutôt qu'à distance."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Il est également dans l'état Invulnérable à distance pour toute la durée du combat. Le seul moyen d'entamer ses PV est donc de lui faire subir des dégâts en mêlée.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Le Père Ver n’a aucun PM et est dans l'état Indéplaçable pour tout le combat (même si l'état n'est pas visible en combat), il ne peut donc pas se déplacer ni être déplacé (poussé, attiré, échangé de place, etc...).",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Dès le lancement du combat il se téléporte sur une case bien précise qui se trouve en haut à droite de la map et il y restera pour tout le combat.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "À chacun de ses débuts de tours, le Père Ver frappe du 450 dans l'élément terre tous les personnages présents à sa mêlée.",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Si vous avez des personnages très bas en vie, il est conseillé de détacler le Père Ver et de ne pas rester en mêlée pour ne pas subir les dégâts terre qu’il inflige aux personnages à son contact au début de chaque tour via son passif.",
+          "locator": "V- Présentation du Boss — Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Ne pas jouer dans l'élément air car le Père Ver a 50% de résistances dans cet élément",
+          "locator": "VI- Tactiques pour les succès — Premier"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Il est préférable d’utiliser un bouclier qui augmente les dégâts de mêlée ou de sorts tel que le Bouclier Taverne.",
+          "locator": "V- Présentation du Boss — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.pere-ver.passifs",
+      "entityId": "boss.pere-ver",
+      "type": "SpecialRule",
+      "title": "Ses passifs tant qu'il vit (érosion, attirance, glyphe de soin) et le poison après sa mort",
+      "summary": "Tant que le Père Ver est en vie : tous vos personnages ont 10 % d'érosion (infini) ; un personnage déplacé, attiré ou échangé de place subit des dégâts eau (environ 200) ; il attire de 4 cases tous les personnages dans sa ligne de vue et révèle les invisibles ; au début de son tour, chaque personnage pose sur sa case un glyphe marron qui le soigne de 15 % de ses PV max s'il termine son tour dedans (son propre glyphe uniquement). Une fois le Père Ver mort, ces effets disparaissent mais vos personnages reçoivent un poison eau de fin de tour (environ 200, infini) et les glyphes marrons ne sont plus posés.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Terminer chaque tour sur le glyphe marron posé sous vous au début du tour quand vous avez besoin de soins.",
+              "rationale": "Il rend 15 % des PV max, une aide précieuse dans un donjon où l'on prend beaucoup de dégâts."
+            },
+            {
+              "order": 2,
+              "action": "Éviter de faire déplacer vos propres personnages (poussées, échanges de place) sans nécessité.",
+              "rationale": "Chaque déplacement subi inflige environ 200 eau."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas compter sur l'invisibilité, et rester hors de sa ligne de vue si vous ne voulez pas être rapproché de lui.",
+              "rationale": "Il révèle les invisibles et attire de 4 cases les personnages dans sa ligne de vue."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Après sa mort, plus de glyphe de soin et un poison eau à chaque fin de tour : ne pas traîner si des monstres restent en vie."
+        }
+      ],
+      "unknownAspects": [
+        "Moment de l'attirance contradictoire sur la page : « à chacun de ses débuts de tour » (Sorts du Boss) vs « À la fin de chacun de ses tours » (Principe du combat)."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Dès le lancement du combat, le Père Ver met un malus du 10% d'érosion à tous vos personnages, un effet qui frappe vos personnages dans l'élément eau si ils sont déplacés et à chacun de ses débuts de tour il attire tous vos personnages dans sa ligne de vue de 4 cases et révèle les entités invisibles.",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "À la fin de chacun de ses tours, il attire tous les personnages dans sa ligne de vue de 4 cases.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Quand un personnage débute son tour, il invoque un glyphe marron sur sa case. Ce glyphe soigne le personnage de 15% de ses PV max s’il finit son tour dedans (fonctionne uniquement en terminant son tour dans son propre glyphe).",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Lorsqu'un personnage est déplacé, attiré ou échangé de place, il subit des dégâts eau (environ 200).",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Tous vos personnages ont un poison de fin de tour qui inflige des dégâts eau (environ 200).",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "De plus, les glyphes marrons qui vous rendent 15% de vos PV max n’apparaissent plus une fois que le Père Ver est mort.",
+          "locator": "VI- Tactiques pour les succès — Premier"
+        }
+      ]
+    },
+    {
+      "id": "mech.pere-ver.deces-traumatisant",
+      "entityId": "boss.pere-ver",
+      "type": "SpecialRule",
+      "title": "« Décès Traumatisant » : un monstre tué frappe toute sa ligne de vue",
+      "summary": "Les monstres sont tous Intaclables (infini). Quand l'un d'eux meurt, il inflige 500 feu à tous les personnages dans sa ligne de vue. Chaque monstre tué retire aussi 10 % de résistances au Père Ver (infini) mais le soigne de 20 % de ses PV max (soin jugé anecdotique par le guide). Cet effet reste actif même après la mort du Père Ver.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Avant d'achever un monstre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Placer le maximum de vos personnages hors de la ligne de vue du monstre que vous allez achever.",
+              "rationale": "Sa mort frappe 500 feu chaque personnage qui le voit."
+            },
+            {
+              "order": 2,
+              "action": "Bloquer les lignes de vue restantes avec une invocation ou les obstacles de la carte.",
+              "rationale": "Le guide propose ces deux moyens pour limiter les dégâts reçus."
+            },
+            {
+              "order": 3,
+              "action": "Achever le monstre.",
+              "rationale": "Chaque monstre tué retire 10 % de résistances au Père Ver jusqu'à la fin du combat."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Restriction",
+          "text": "Les monstres sont Intaclables : on ne peut pas les bloquer au tacle."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Si un monstre meurt, il inflige 500 de dégâts feu à tous les personnages dans sa ligne de vue.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Si un monstre meurt, le Père Ver perd 10% de Résistances (infini) mais se soigne de 20% de ses PV max.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Pour cela, vous pouvez placer des invocations ou utiliser les obstacles de la map pour bloquer les lignes de vues avant de vous débarrasser d'un monstre.",
+          "locator": "V- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Même si le Père Ver est mort, l’effet « Décès Traumatisant » reste actif, et les monstres infligent toujours des dégâts feu à leur mort.",
+          "locator": "VI- Tactiques pour les succès — Premier"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Les monstres sont tous dans l'état Intaclable (infini).",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.pere-ver.paternalisme",
+      "entityId": "boss.pere-ver",
+      "type": "SpellEffect",
+      "title": "« Paternalisme » : partage de dommages avec un monstre (dès le tour 2)",
+      "summary": "À partir du tour 2, chaque tour, le Père Ver frappe 400 air en vol de vie en carré de taille 1 autour d'un monstre (portée infinie, sans ligne de vue) et partage ses dommages avec ce monstre pendant 1 tour (non désenvoûtable) ; le monstre est soigné de 10 % de ses PV max (15 % en critique) au début de son prochain tour. Il ne le lance que sur un monstre qui a perdu des PV ou s'il peut frapper autour de lui. Comme le Père Ver est invulnérable à distance, frapper le monstre ciblé ne lui inflige que la moitié de vos dégâts, et l'autre moitié est perdue.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au tour 1, frapper librement le monstre de votre choix (le guide conseille le Trémorse).",
+              "rationale": "Paternalisme ne peut pas être lancé au tour 1."
+            },
+            {
+              "order": 2,
+              "action": "Si le Trémorse ne sera pas mort avant le tour 2, entamer légèrement les autres monstres.",
+              "rationale": "Le Père Ver ne cible qu'un monstre blessé (ou autour duquel il peut frapper) : vous avez alors 2 chances sur 3 (en butin 4) qu'il partage avec un autre que le Trémorse."
+            },
+            {
+              "order": 3,
+              "action": "À partir du tour 2, changer de cible si votre cible porte le partage de dommages, sauf si elle est déjà très basse en PV.",
+              "rationale": "Elle ne subit que 50 % de vos dégâts."
+            },
+            {
+              "order": 4,
+              "action": "Pour le dernier monstre, continuer à le frapper malgré le partage permanent.",
+              "rationale": "Le partage est alors appliqué chaque tour : il prend 50 % des dégâts et se soigne de 10 % au début de chaque tour, mais cela reste faisable."
+            }
+          ]
+        }
+      ],
+      "turnConditions": "À partir du tour 2, chaque tour.",
+      "notes": [
+        {
+          "kind": "Restriction",
+          "text": "Le partage de dommages ne peut pas être désenvoûté."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Paternalisme : Cible un monstre et frappe du 400 dans l'élément air en vol de vie en zone carré de taille 1 (carré 3x3) autour de lui. Partage les dommages avec le monstre ciblé pour 1 tour. Le monstre ciblé sera soigné de 10% de ses PV max (15% en cc) au début de son prochain tour.",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Le sort de partage de dommages est de loin le plus contraignant car il ralentit fortement votre focus sachant que ce partage de dommages ne peut pas être désenvouté.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Si il active le partage de dommages, les dégâts que vous effectuerez sur le monstre concerné seront réduits de moitié (le Père Ver ne subira rien de l'autre moitié étant donné qu'il est Invulnérable à distance).",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Il sera donc beaucoup plus facile d'éliminer un monstre qui n’a pas le partage et il est préférable de changer son focus si ce dernier est ciblé par le partage sauf si le monstre en question est déjà très bas en PV.",
+          "locator": "V- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "NOTE : Si vous ne parvenez pas à éliminer le Trémorse avant le tour 2, il est conseillé d'entamer légèrement les autres monstres afin que le Père Ver puisse appliquer son sort de partage de dommage sur l'un d'eux plutôt que sur le Trémorse que vous cherchez à éliminer (car il lance le sort uniquement sur un monstre qui a perdu de la vie ou s'il peut taper autour de celui-ci).",
+          "locator": "V- Présentation du Boss — Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Lorsqu'il ne restera qu’un seul monstre, le Père Ver lui appliquera le partage de dommages à tous les tours. Ce n’est pas un problème mais cela fonctionne comme si le monstre subissait des dégâts réduits de 50%. De plus, il est soigné de 10% de ses PV max au début de chaque tour.",
+          "locator": "V- Présentation du Boss — Stratégie globale du donjon"
+        }
+      ]
+    },
+    {
+      "id": "mech.pere-ver.sorts",
+      "entityId": "boss.pere-ver",
+      "type": "SpellEffect",
+      "title": "« Coup d'Oeil » (poison par PM) et « Bien vu l'Aveugle » (boost des monstres)",
+      "summary": "Coup d'Oeil (relance de 2 tours : tours 1, 3, 5, 7…) : frappe 350 neutre tous ses ennemis et leur applique pour 1 tour un poison de 47 neutre (70 en critique) par PM utilisé ; si le sort est disponible, il le lance toujours en premier. Bien vu l'Aveugle (portée infinie, sans ligne de vue, 1 fois par cible) : donne 2 PM et 200 puissance (3 PM et 300 en critique) pour 1 tour à un monstre ; il peut booster jusqu'à deux monstres par tour.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Les tours où Coup d'Oeil vient d'être lancé (tours 1, 3, 5…), utiliser le moins de PM possible.",
+              "when": {
+                "kind": "TurnOdd",
+                "description": "Tours où Coup d'Oeil est lancé (1, 3, 5, 7…)."
+              },
+              "rationale": "Le poison inflige des dégâts pour chaque PM utilisé."
+            },
+            {
+              "order": 2,
+              "action": "Garder de la marge de distance avec les monstres : un monstre boosté gagne 2 PM et 200 puissance.",
+              "rationale": "Bien vu l'Aveugle allonge la portée de déplacement des monstres et augmente leurs dégâts."
+            }
+          ]
+        }
+      ],
+      "turnConditions": "Coup d'Oeil : tours 1, 3, 5, 7…",
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Coup d’Oeil : Frappe tous ses ennemis du 350 dans l'élément neutre et applique un poison qui inflige 47 de dégâts (70 en critique) neutre par PM utilisé pour 1 tour également à tous les ennemis. Se lance autour de lui (relance de 2 tours). Si la relance est disponible, ce sort est forcément lancé en premier par le Père Ver.",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Sort qui se lance tous les deux tours (tours 1, 3, 5, 7, etc...).",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Bien vu l’Aveugle : Donne 2PM et 200 Puissance (3PM et 300 Puissance en critique) pour 1 tour au monstre ciblé. Se lance à une PO infinie et sans ligne de vue (lançable 1 fois par cible).",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Il peut boost jusqu'à deux monstres par tour de 2PM et 200 Puissance.",
+          "locator": "V- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Quand le Père Ver l’utilise, il est préférable de limiter le nombre de PM utilisé pour ne pas prendre trop de dégâts.",
+          "locator": "V- Présentation du Boss — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.pere-ver.plan",
+      "entityId": "boss.pere-ver",
+      "type": "Other",
+      "title": "Plan de combat : Trémorse d'abord, tous les monstres, puis le Père Ver en mêlée",
+      "summary": "Le Père Ver seul n'est pas dangereux : la difficulté est d'encaisser et de tuer les monstres assez vite. La plupart d'entre eux sont Lourds et/ou Inébranlables (ni poussés, ni attirés), donc le jeu à distance est difficile à tenir. Prévoir un équipement résistant (bonnes résistances, vitalité, Dofus comme l'Émeraude ou le Dorigami) et un bouclier qui augmente les dégâts en mêlée ou de sorts.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Plan de combat",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Tour 1 : rester à distance, hors de portée des monstres ; se booster/protéger ou commencer les monstres à distance.",
+              "rationale": "Éviter des dégâts inutiles."
+            },
+            {
+              "order": 2,
+              "action": "Focus le Trémorse dès qu'il a joué et s'est approché, pour le tuer avant le tour 2.",
+              "rationale": "C'est le monstre le plus dangereux, il a beaucoup d'initiative, et au tour 1 il n'y a pas encore de partage de dommages."
+            },
+            {
+              "order": 3,
+              "action": "Avant chaque mort de monstre, sortir de sa ligne de vue ou la bloquer.",
+              "rationale": "Décès Traumatisant : 500 feu à tous les personnages dans sa ligne de vue."
+            },
+            {
+              "order": 4,
+              "action": "Passer ensuite aux autres monstres, en visant toujours un monstre sans partage de dommages ; se soigner en finissant son tour dans son glyphe marron.",
+              "rationale": "Le monstre ciblé par Paternalisme ne prend que 50 % des dégâts."
+            },
+            {
+              "order": 5,
+              "action": "Une fois tous les monstres morts, aller en mêlée du Père Ver et le frapper jusqu'à sa mort.",
+              "rationale": "Il est invulnérable à distance ; chaque monstre tué lui a retiré 10 % de résistances."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "La stratégie pour réussir ce donjon est assez basique, il faut dans un premier temps commencer par éliminer tous les monstres accompagnant le Père Ver avant de s’y attaquer.",
+          "locator": "V- Présentation du Boss — Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Le Père Ver tout seul n’est vraiment pas dangereux, la difficulté du combat réside dans votre faculté à tanker et à vous débarrasser des monstres suffisamment rapidement avant de prendre trop de dégâts.",
+          "locator": "V- Présentation du Boss — Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Le premier tour, restez à distance hors de portée des monstres pour éviter de prendre des dégâts inutiles. Vous pouvez soit vous boost et vous protéger soit commencer les monstres à distance.",
+          "locator": "V- Présentation du Boss — Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Le Trémorse a beaucoup d’initiative, il peut être intéressant de se dépêcher de le focus et de l'éliminer avant le tour 2 en le tapant au maximum une fois qu’il a joué et qu’il s’est approché de vous.",
+          "locator": "V- Présentation du Boss — Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "Une fois tous les monstres morts, il ne vous reste plus qu’à vous occuper du Père Ver. Étant donné qu’il est invulnérable à distance, il faut se mettre en mêlée avec lui afin de pouvoir le taper jusqu’à sa mort.",
+          "locator": "V- Présentation du Boss — Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "C’est pourquoi un stuff avec des résistances correct, une bonne vitalité et des Dofus qui peuvent vous aider à tank tel que l’Emeraude ou le Dorigami sont conseillés.",
+          "locator": "V- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.boyau-du-pere-ver",
+          "quote": "La majorité des monstres du donjon ont des états Lourds, Inébranlables. Il est donc compliqué de jouer à distance sur du long terme et il est très difficile d’optimiser le placement des ennemis.",
+          "locator": "V- Présentation du Boss — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.supervizoeuf.zoeufd",
+      "entityId": "boss.supervizoeuf",
+      "type": "Invulnerability",
+      "title": "Invulnérable jusqu'à 4 explosions de Zoeufs sur lui (état « Zoeuf'd »)",
+      "summary": "En phase 1, le Supervizœuf est invulnérable (sort Vibzilance). Les monstres (Kabombz) invoquent des Zoeufs ; un Zoeuf éliminé avant d'éclore explose dans une zone qui dépend de son invocateur : Kamikabz carré de taille 1, Quadrabz anneau de taille 2, Toubibz cercle de taille 2, Balebz échange de place avec l'entité la plus proche (jusqu'à 3/4/5 PO selon la saison) et lui inflige des dégâts. Chaque explosion qui touche le boss lui donne un état « Zoeuf'd » ; au 4e, il devient immédiatement vulnérable pour le reste du combat et passe en phase 2.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "EntityPresent",
+          "description": "Des Kabombz en vie pour invoquer des Zoeufs (idéalement le Kamikabz)."
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Retirer l'invulnérabilité",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Laisser plusieurs Kabombz en vie, surtout le Kamikabz.",
+              "rationale": "Le Kamikabz peut réinvoquer un Zoeuf chaque tour si le précédent est mort ; les autres ont au moins 2 tours de relance."
+            },
+            {
+              "order": 2,
+              "action": "Placer des personnages ou des invocations à portée de leur sort de dégâts principal.",
+              "rationale": "Un Kabombz n'invoque un Zoeuf que s'il peut utiliser ce sort (portées : Kamikabz 4 PO, Quadrabz 6 PO, Toubibz 8 PO, Balebz 6 PO sans ligne de vue)."
+            },
+            {
+              "order": 3,
+              "action": "Rapprocher le Zoeuf du Supervizœuf (ou l'inverse) pour que le boss soit dans sa zone d'explosion.",
+              "position": "Supervizœuf dans la zone d'explosion du Zoeuf",
+              "rationale": "Seule une explosion qui le touche ajoute un état « Zoeuf'd ». Les classes de placement aident beaucoup."
+            },
+            {
+              "order": 4,
+              "action": "Pour un Zoeuf de Balebz, vérifier que le Supervizœuf est l'entité la plus proche du Zoeuf avant de l'achever.",
+              "rationale": "Ce Zoeuf échange de place avec l'entité la plus proche, qui subit seule l'effet."
+            },
+            {
+              "order": 5,
+              "action": "Achever le Zoeuf en restant hors de sa zone, puis recommencer jusqu'au 4e état « Zoeuf'd ».",
+              "rationale": "Les explosions touchent alliés comme ennemis."
+            }
+          ]
+        }
+      ],
+      "expectedStateChange": "Invulnérable → vulnérable (définitivement), passage en phase 2",
+      "expectedResult": "Au 4e état « Zoeuf'd », le Supervizœuf devient vulnérable pour le reste du combat.",
+      "notes": [
+        {
+          "kind": "Restriction",
+          "text": "Chaque Kabombz n'a qu'un Zoeuf à la fois : il faut tuer le précédent (ou attendre son éclosion) pour qu'il en réinvoque un."
+        },
+        {
+          "kind": "Warning",
+          "text": "Un Zoeuf non tué éclot au bout de 3 tours (Naissance), 2 tours (Chasse) ou 4 tours (Repos) en un monstre « Bébé » ; 1 tour avant, il passe en état « Prêt à éclore »."
+        },
+        {
+          "kind": "Warning",
+          "text": "Phase 1 : le boss frappe peu, mais Invokabombz invoque un Kabombz au tour 2 puis tous les 4 tours, et Bzovolution fait éclore un Zoeuf (dès le tour 2, relance de 3 tours) ; il se téléporte jusqu'à 5 PO sans ligne de vue tous les 2 tours avec Bzélan (impossible s'il est en Pesanteur)."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2025-07-21)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Si le Supervizoeuf est dans la zone de l'explosion d'un Zoeuf, il gagne un état de « Zoeuf'd». Au bout de 4 états, il devient immédiatement vulnérable pour le reste du combat.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "ATTENTION : Pour incrémenter l'état de « Zoeuf'd » du Supervizoeuf avec le Zoeuf de Balebz, il faut que le Supervizoeuf soit l'entité la plus proche de ce dernier quand vous achevez le Zoeuf.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "C'est pourquoi, il est préférable de laisser plusieurs Kabombz en vie pour faciliter son délock. L'idéal étant de se servir du Kamikabz car il peut invoquer un Zoeuf tous les tours si le précédent a été éliminé. Les autres Kabombz ont au moins une relance de 2 tours sur leur sort qui invoque.",
+          "locator": "IV- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Pour qu'un Kabombz invoque un Zoeuf, il faut qu'il puisse utiliser son sort principal de dégâts. Si vous restez à distance pour éviter de prendre des dégâts, utilisez des invocations proches des Kabombz pour qu'ils puissent invoquer.",
+          "locator": "IV- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Balebz : Échange de place avec l'entité la plus proche de lui (à un maximum de 3/4/5PO en fonction de la saison) et lui inflige des dégâts.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Rappel : Chaque Kabombz ne peut invoquer qu'un seul Zoeuf simultanément. Il faut donc éliminer le Zoeuf précédent (ou attendre son éclosion) pour qu'il puisse réinvoquer.",
+          "locator": "IV- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Via son sort d'invocation de Kabombz (Invokabombz) au tour 2 puis tous les 4 tours.",
+          "locator": "IV- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "NOTE : Le Supervizoeuf se téléporte jusqu'à 5PO sans ligne de vue tous les 2 tours via son sort « Bzélan ».",
+          "locator": "IV- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Le temps d'éclosion du Zoeuf dépend de la saison en cours :",
+          "locator": "III- Mécanique de la zone : Kabombz et Ovobz — Ovobz"
+        }
+      ]
+    },
+    {
+      "id": "mech.supervizoeuf.phase-2",
+      "entityId": "boss.supervizoeuf",
+      "type": "Phase",
+      "title": "Phase 2 : clone explosif et téléportation sur le personnage le plus proche",
+      "summary": "Dès qu'il perd l'invulnérabilité, il gagne 20 % de critique et 10 % de dommages finaux pour le reste du combat et ne peut plus être mis en Pesanteur (il retire l'état aussitôt). Il invoque un clone (Clonabz, relance de 5 tours) qui a la moitié de ses PV, +4 PM et 1 000 tacle (9 PM au total selon le guide) ; au bout de 2 tours, ce clone explose : 500 feu à toutes les entités à 3 PO ou moins. Si le clone est tué, il n'explose pas et le Supervizœuf subit 20 % de dégâts en plus pendant 1 tour. Au début de chaque tour, le boss se téléporte sur le personnage le plus proche (priorité horaire). Bzélan attire alors de 2 cases en étoile de taille 2 puis frappe 450 terre en cercle de taille 2 ; Abzlation (250 air, recul de 2 cases) retire aussi 1 PO ; Carapabz lui donne 400 % de son niveau en bouclier et ramène les monstres « Bébé » contre lui.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Focus le Supervizœuf dès qu'il devient vulnérable.",
+              "rationale": "Il se téléporte chaque tour sur le personnage le plus proche : mieux vaut l'éliminer le plus vite possible."
+            },
+            {
+              "order": 2,
+              "action": "Tuer le clone avant son explosion si possible, puis frapper le boss pendant le tour qui suit.",
+              "rationale": "Le clone tué n'explose pas et le boss subit 20 % de dégâts en plus pendant 1 tour."
+            },
+            {
+              "order": 3,
+              "action": "Sinon, être à plus de 3 PO du clone quand ses 2 tours sont écoulés.",
+              "rationale": "Il explose pour 500 feu sur toutes les entités à 3 PO ou moins."
+            },
+            {
+              "order": 4,
+              "action": "Ne pas essayer de le bloquer avec la Pesanteur.",
+              "rationale": "En phase 2, il retire immédiatement l'état et peut toujours lancer Bzélan."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Le clone a beaucoup de PM et plus de 1 000 tacle : ne pas se laisser coller par lui."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2025-07-21)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Quand le Supervizoeuf perd son état Invulnérable, il passe dans sa phase 2 et il gagne 20% de critique et 10% de dommages finaux pour le reste du combat.",
+          "locator": "IV- Présentation du Boss — Principe du combat — Phase 2"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Il invoque un clone de lui qui a la moitié des PV du Supervizoeuf. Ce clone gagne 4PM et 1 000 de tacle. Au bout de 2 tours, il explose et inflige 500 de dégâts feu à toutes les entités à 3PO ou moins de lui. Si le double est éliminé, il n'explose pas, le Supervizoeuf subit 20% de dégâts supplémentaires pendant 1 tour.",
+          "locator": "IV- Présentation du Boss — Principe du combat — Phase 2"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "De plus, à chaque début de tour, il se téléporte sur le personnage le plus proche de lui. La case sur laquelle il se téléporte respecte la règle de priorité horaire.",
+          "locator": "IV- Présentation du Boss — Principe du combat — Phase 2"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Il n'est plus possible de le mettre en état Pesanteur car il enlève l'état immédiatement.",
+          "locator": "IV- Présentation du Boss — Principe du combat — Phase 2"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Ce double a 9 PM et plus de 1 000 tacle. De plus, au bout de 2 tours, il explose et inflige 500 de dégâts feu en zone cercle de taille 3 autour de lui. Ne restez pas dans la zone.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Bzélan : Le Supervizoeuf se téléporte sur la case ciblée, attire les entités de 2 cases dans une zone étoile de taille 2 autour de sa case d'arrivée puis inflige 450 de dégâts terre en zone cercle de taille 2.",
+          "locator": "IV- Présentation du Boss — Sorts du Boss — Phase 2"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Applique également 400% de niveau en bouclier sur lui-même. De plus, tous les monstres alliés dans l'état « Bébé » (qui sont invoqués via l'éclosion des Zoeufs) se déplace pour se coller au Supervizoeuf via un déplacement forcé.",
+          "locator": "IV- Présentation du Boss — Sorts du Boss — Phase 2 — Carapabz"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "C'est pourquoi, une fois qu'il a perdu son état invulnérable, il est préférable de le focus directement pour l'éliminer le plus vite possible.",
+          "locator": "IV- Présentation du Boss — Stratégie globale"
+        }
+      ]
+    },
+    {
+      "id": "mech.supervizoeuf.mort-explosion",
+      "entityId": "boss.supervizoeuf",
+      "type": "SpecialRule",
+      "title": "Explosion à sa mort, puis 5 vagues de monstres explosifs",
+      "summary": "À sa mort, le Supervizœuf inflige 250 dégâts dans chaque élément (terre, feu, eau, air), soit 1 000 au total, à toutes les entités en cercle de taille 3 autour de lui. Le combat est un donjon de dimension à 5 vagues : une vague arrive aux tours 1, 6, 11, 16 et 21, ou tout de suite si la précédente est entièrement éliminée. Chaque nouveau monstre est invulnérable jusqu'à la fin de son premier tour, mais à partir de la vague 2 les monstres ont 25 % de PV en moins. Dans ce donjon, chaque monstre éliminé explose et inflige des dégâts autour de lui (Kamikabz carré 1, Quadrabz anneau 2, Balebz échange avec l'entité la plus proche), sauf le Toubibz et son Zoeuf qui soignent en cercle de taille 2.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant le coup fatal, éloigner tous vos personnages à plus de 3 cases du Supervizœuf.",
+              "rationale": "Son explosion inflige 1 000 dégâts au total dans un cercle de taille 3."
+            },
+            {
+              "order": 2,
+              "action": "Rester à distance et hors des zones d'explosion quand vous achevez un monstre ou un Zoeuf.",
+              "rationale": "Les explosions touchent toutes les entités dans la zone."
+            },
+            {
+              "order": 3,
+              "action": "Achever les monstres à côté de leurs alliés pour créer des réactions en chaîne.",
+              "rationale": "Les explosions blessent aussi les monstres du donjon."
+            },
+            {
+              "order": 4,
+              "action": "Achever le Toubibz et son Zoeuf loin des monstres, et plutôt près de vous.",
+              "rationale": "Leur explosion soigne en cercle de taille 2."
+            },
+            {
+              "order": 5,
+              "action": "Garder assez de dégâts pour ne pas prendre de retard sur les vagues.",
+              "rationale": "Les monstres frappent fort pour leur niveau ; le combat n'est pas gagné à la mort du boss."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "FailureCase",
+          "text": "Rester dans le cercle de taille 3 lors du coup fatal = 1 000 dégâts."
+        },
+        {
+          "kind": "Warning",
+          "text": "Chaque monstre d'une nouvelle vague est invulnérable jusqu'à la fin de son premier tour."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2025-07-21)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Quand le Supervizoeuf est éliminé, il inflige 250 de dégâts dans tous les éléments (terre, feu, eau, air) soit 1 000 de dégâts au total dans une zone cercle de taille 3 autour de lui. Évitez donc de rester dans cette zone quand il subit le coup fatal.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Vous devez affronter un total 5 vagues de monstres, chaque vague apparaît au bout de 5 tours (tour 1, 6, 11, 16 et 21) cependant si vous éliminez tous les monstres d'une vague avant le nombre de tours impartis, alors la prochaine vague apparaît directement.",
+          "locator": "I- Introduction — Mécanique des donjons de dimension"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "ATTENTION : Lors de l'arrivée d'une nouvelle vague, chaque monstre est invulnérable durant 1 tour jusqu’à la fin de son premier tour. En contrepartie, tous les monstres qui apparaissent à partir de la vague 2 ont 25% de PV en moins.",
+          "locator": "I- Introduction — Mécanique des donjons de dimension"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Une fois que le Supervizoeuf a été éliminé, il ne vous reste plus qu'à gérer les 5 vagues de monstres.",
+          "locator": "IV- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Restez bien à distance et évitez de vous retrouver dans les zones d'explosion des Zoeufs et des Kabombz quand vous les achever. Essayez également de placer les monstres en zone quand vous les achevez pour créer des réactions en chaîne et infliger plus de dégâts.",
+          "locator": "IV- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "NOTE : À contrario, l'explosion du Toubibz ou de son Zoeuf soigne en zone cercle de taille 2, profitez en pour l'éliminer proche de vous et ainsi recevoir des soins.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "ATTENTION : Les monstres de ce donjon infligent beaucoup de dégâts pour ce niveau. Le combat n'est pas gagné pour autant surtout si vous avez du retard sur les vagues.",
+          "locator": "IV- Présentation du Boss — Stratégie globale"
+        }
+      ]
+    },
+    {
+      "id": "mech.supervizoeuf.saisons",
+      "entityId": "boss.supervizoeuf",
+      "type": "SpecialRule",
+      "title": "Modificateurs de saisons d'Osavora",
+      "summary": "Osavora n'a pas de modificateur de dimension classique mais un modificateur par saison. Naissance : un allié qui finit son tour sur sa case de début de tour gagne 100 % de son niveau en bouclier pour 1 tour, et est soigné de 5 % de sa vie s'il n'a pas attaqué. Chasse : un allié qui achève un ennemi gagne, avec ses invocations, 1 PA et 3 % de dommages finaux (2 tours, cumulable 3 fois). Repos : une entité qui invoque gagne, avec son invocation, 1 PM (2 tours, cumulable 2 fois), et en fin de tour de l'invocation ses alliés en cercle de taille 2 gagnent 15 tacle et fuite. La saison change aussi le temps d'éclosion des Zoeufs (Naissance 3 tours, Chasse 2, Repos 4) et la taille et les dégâts des explosions.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Repérer la saison en cours avant le combat (l'apparence des monstres change selon la saison).",
+              "rationale": "Elle change le bonus disponible, la vitesse d'éclosion des Zoeufs et la portée de l'échange du Balebz."
+            },
+            {
+              "order": 2,
+              "action": "En Chasse, tuer les Zoeufs sans attendre.",
+              "rationale": "Ils éclosent en 2 tours seulement."
+            },
+            {
+              "order": 3,
+              "action": "Adapter la distance de sécurité au Balebz et à son Zoeuf : 4 PO en Naissance, 5 en Chasse, 3 en Repos.",
+              "rationale": "C'est la portée maximale de leur échange de place à leur mort."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2025-07-21)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Dans la dimension Osavora, il n'y a pas de modificateur classique de dimension. Ces modificateurs sont remplacés par des modificateurs de saisons. Chaque saison a un modificateur unique.",
+          "locator": "II- Modificateur des saisons"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Saison de la naissance : Lorsqu'un allié termine son tour sur sa case de début de tour, il gagne 100% de son niveau en bouclier pour 1 tour. Il est également soignée de 5% de sa vie s'il n'a pas attaqué durant son tour de jeu.",
+          "locator": "II- Modificateur des saisons"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Saison de la chasse : Lorsqu'un allié achève un ennemi, lui et ses invocations gagnent 1PA et 3% de dommages finaux (2 tours, cumulable 3 fois).",
+          "locator": "II- Modificateur des saisons"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Saison du repos : Lorsqu'une entité invoque, elle et son invocation gagnent 1PM (2 tours, cumulable 2 fois). À la fin du tour de l'invocation, ses alliés dans un cercle de taille 2 autour d'elle gagnent 15 de Tacle et de Fuite.",
+          "locator": "II- Modificateur des saisons"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Saison de la Chasse : 2 tours.",
+          "locator": "III- Mécanique de la zone : Kabombz et Ovobz — Ovobz"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Il faut faire attention au Balebz et à son Zoeuf quand ils sont éliminés car ils échangent de place avec l'entité la plus proche dans une zone qui dépend de la saison actuelle :",
+          "locator": "V- Tactiques pour les succès — Collant"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "NOTE : L'apparence des monstres de la zone et du donjon changent en fonction de la saison.",
+          "locator": "II- Modificateur des saisons"
+        }
+      ]
+    },
+    {
+      "id": "mech.supervizoeuf.plan",
+      "entityId": "boss.supervizoeuf",
+      "type": "Other",
+      "title": "Plan de combat : garder les Kabombz, délocker le boss, le focus, puis les vagues",
+      "summary": "Les classes de placement sont très utiles (et fortement conseillées en duo). Laisser des Kabombz en vie pour avoir des Zoeufs, en placer 4 près du Supervizœuf et les éliminer, le focus dès qu'il est vulnérable, s'éloigner avant le coup fatal, puis gérer les 5 vagues à distance en se servant des explosions.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Plan de combat",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Rester à distance des monstres et se cacher derrière les obstacles face au Kamikabz.",
+              "rationale": "Le Kamikabz, le plus dangereux, a 8 PM et un rush en ligne jusqu'à 8 PO."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas tuer les Kabombz trop tôt et placer des invocations près d'eux pour qu'ils invoquent des Zoeufs.",
+              "rationale": "Les Zoeufs sont le seul moyen de retirer l'invulnérabilité du boss."
+            },
+            {
+              "order": 3,
+              "action": "Placer chaque Zoeuf près du Supervizœuf et l'éliminer, jusqu'à 4 états « Zoeuf'd ».",
+              "rationale": "Au 4e, il devient vulnérable pour le reste du combat."
+            },
+            {
+              "order": 4,
+              "action": "Éliminer les autres Zoeufs (ou leur invocateur) avant leur éclosion.",
+              "rationale": "Chaque Zoeuf éclos ajoute un monstre à gérer."
+            },
+            {
+              "order": 5,
+              "action": "Désenvoûter l'état Insoignable posé par le Toubibz pour pouvoir se soigner.",
+              "rationale": "Il dure 1 tour, revient tous les 2 tours et est désenvoûtable."
+            },
+            {
+              "order": 6,
+              "action": "En phase 2, focus le Supervizœuf, s'éloigner à plus de 3 cases avant de l'achever, puis enchaîner les vagues.",
+              "rationale": "Il explose pour 1 000 dégâts en cercle de taille 3 à sa mort."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2025-07-21)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Pour retirer l'invulnérabilité du Supervizoeuf, il faut éliminer 4 Zoeufs en les plaçant au préalable proche de lui. Des classes de placement vous permettront de placer plus facilement les Zoeufs.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Avec ses 8PM et son rush en ligne jusqu'à 8PO. Le Kamikabz peut se retrouver en mêlée avec vous même s'il est très loin de vous. Essayez de le focus rapidement et de vous cacher derrière des obstacles pour qu'il ne puisse pas rush en ligne.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Quand un Zoeuf est invoqué, placez ce dernier proche du Supervizoeuf et éliminez-le pour faire incrémenter son état « Zoeuf'd ».",
+          "locator": "IV- Présentation du Boss — Stratégie globale"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Si un Zoeuf arrive à éclore, cela fera un monstre de plus à gérer sur le terrain. C'est pourquoi, il peut être intéressant de ne pas laisser les Zoeuf en vie.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Le Toubibz peut vous rendre insoignable pendant 1 tour tous les 2 tours. Cependant, vous pouvez débuff l'état insoignable pour vous soigner.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Tant que le Supervizoeuf est invulnérable, il n'inflige que très peu de dégâts. Le seul danger vient de son sort d'invocation de Kabombz qu'il peut relancer tous les 4 tours.",
+          "locator": "IV- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.poste-de-controle-du-supervizoeuf",
+          "quote": "Une classe de placement est fortement conseillée pour le duo afin de pouvoir délock rapidement le Supervizoeuf.",
+          "locator": "V- Tactiques pour les succès — Duo"
+        }
+      ]
+    },
+    {
+      "id": "mech.tengu-givrefoux.invulnerabilite",
+      "entityId": "boss.tengu-givrefoux",
+      "type": "Invulnerability",
+      "title": "Invulnérabilité retirée par les états Fulguration + Floutage (Yomi et Yokaï)",
+      "summary": "Le Tengu commence invulnérable (et reste Lourd tout le combat). Dans un même tour, il faut : placer le Yomi Givrefoux en ligne avec le Tengu et le frapper avec une arme (le Yomi et ses alliés en ligne gagnent Fulguration pour 2 tours), et pousser ou attirer le Yokaï Givrefoux dans la diagonale du Tengu (le Yokaï et ses alliés en diagonale gagnent Floutage pour 2 tours). La distance n'a aucune importance. Si le Tengu a les deux états au début de son tour, il lance « Toison givrée » et devient vulnérable pour 4 tours.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "EntityPresent",
+          "description": "Un Yomi Givrefoux et un Yokaï Givrefoux vivants sur le terrain."
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Retrait de l'invulnérabilité (même tour)",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Tuer d'abord les autres monstres en gardant le Yomi et le Yokaï en vie.",
+              "rationale": "Ils sont indispensables pour retirer l'invulnérabilité."
+            },
+            {
+              "order": 2,
+              "action": "Pousser ou attirer le Yokaï pour le placer dans la diagonale du Tengu.",
+              "rationale": "Le Yokaï et ses alliés en diagonale (donc le Tengu) entrent en Floutage pour 2 tours."
+            },
+            {
+              "order": 3,
+              "action": "Dans le même tour, placer le Yomi en ligne avec le Tengu et le frapper avec une arme (de préférence une arme à distance : arc ou baguette).",
+              "requiredState": "Le personnage qui frappe le Yomi ne doit pas être Affaibli.",
+              "rationale": "Le Yomi et ses alliés en ligne (donc le Tengu) entrent en Fulguration pour 2 tours. Une arme à distance permet de rester loin du Yomi."
+            },
+            {
+              "order": 4,
+              "action": "Au début de son tour suivant, le Tengu devient vulnérable : le frapper pendant ces 4 tours, puis tuer le Yomi et le Yokaï.",
+              "rationale": "Ils ne sont plus nécessaires une fois l'invulnérabilité retirée."
+            },
+            {
+              "order": 5,
+              "action": "Si vous n'êtes pas sûr de le tuer en 4 tours, garder le Yomi et le Yokaï en vie et recommencer les étapes 2 et 3.",
+              "rationale": "Après 4 tours, il redevient invulnérable."
+            }
+          ]
+        }
+      ],
+      "expectedStateChange": "Avec Fulguration et Floutage au début de son tour, le Tengu lance « Toison givrée » et perd l'invulnérabilité.",
+      "vulnerabilityDuration": "4 tours",
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Pousser le Yokaï rend Affaiblis (arme inutilisable) pour 1 tour les personnages dans sa diagonale : le personnage qui doit frapper le Yomi à l'arme ne doit pas s'y trouver."
+        },
+        {
+          "kind": "Warning",
+          "text": "Frapper le Yomi à l'arme applique 20 % d'érosion à tous les personnages en ligne avec lui."
+        }
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Placer le Yomi Givrefoux en ligne avec le Tengu Givrefoux puis lui infliger des dommages d’arme.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Pousser ou attirer le Yokaï Givrefoux dans la diagonale du Tengu Givrefoux.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "NOTE : La distance entre le Yomi et le Tengu ou le Yokaï et le Tengu n'a aucune importance.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Si, au début de son tour, le Tengu Givrefoux possède les états Fulguration et Floutage alors il peut lancer son sort « Toison givrée » qui le rend vulnérable pendant 4 tours.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Quand vous poussez le Yokaï, il applique également l’état Affaibli pour 1 tour à tous les personnages dans sa diagonale. L’état affaibli empêche d’utiliser son arme et il faut faire attention à ce que le personnage qui tape le Yomi ne soit pas dans cet état.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Si vous n’arrivez pas à l’éliminer en 4 tours, il faudra de nouveau répéter les actions précédentes. C’est pourquoi, je vous conseille de garder le Yokaï et le Yomi en vie si vous n’êtes pas sûr de pouvoir l’achever en 4 tours.",
+          "locator": "Stratégie globale — Tengu Givrefoux seul"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Équipez au moins un de vos personnages avec une arme à distance. En équipant un arc ou une baguette, il sera plus simple de taper le Yomi tout en restant à distance.",
+          "locator": "Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.tengu-givrefoux.etat-unique",
+      "entityId": "boss.tengu-givrefoux",
+      "type": "SpecialRule",
+      "title": "Un seul des deux états : Mornifle (OS) ou Torgnole givrée",
+      "summary": "Si le Tengu n'a qu'un des deux états, il débloque un sort spécial. Seulement Fulguration (via le Yomi) : Mornifle, qui tue d'un coup en mêlée (relance de 3 tours). Seulement Floutage (via le Yokaï) : Torgnole givrée, 30 % d'érosion pour 1 tour sur tous vos personnages et invocations (débuffable).",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Toujours appliquer Fulguration et Floutage au Tengu dans le même tour.",
+              "rationale": "Il ne peut alors utiliser aucun de ses 2 sorts spéciaux."
+            },
+            {
+              "order": 2,
+              "action": "S'il n'a que Fulguration, rester loin de sa mêlée.",
+              "when": {
+                "kind": "StateActive",
+                "description": "Le Tengu a Fulguration sans Floutage."
+              },
+              "rationale": "Mornifle tue d'un coup en mêlée ; si vous êtes assez loin, laisser seulement Fulguration est acceptable."
+            },
+            {
+              "order": 3,
+              "action": "S'il n'a que Floutage, prévoir de désenvoûter l'érosion de Torgnole givrée.",
+              "when": {
+                "kind": "StateActive",
+                "description": "Le Tengu a Floutage sans Fulguration."
+              },
+              "rationale": "Elle applique 30 % d'érosion à toute l'équipe, débuffable."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "S’il est uniquement dans l’état « Fulguration » (via le Yomi), il peut utiliser son sort Mornifle qui OS en mêlée.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "S’il est uniquement dans l’état « Floutage » (via le Yokaï), il peut utiliser son sort Torgnole givré qui applique 30% d’érosion pour 1 tour sur tous vos personnages (débuffable).",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Il faut donc faire attention à bien mettre les deux états sur le Tengu lors du même tour. Cependant si vous êtes suffisamment éloigné pour éviter son sort d’OS, vous pouvez vous permettre de lui laisser seulement l’état Fulguration.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Mornifle : OS la cible. Se lance uniquement en mêlée (relance de 3 tours). Le Tengu doit être dans l’état Fulguration et ne pas être dans l’état Floutage pour lancer ce sort.",
+          "locator": "IV- Présentation du Boss — Sorts"
+        }
+      ]
+    },
+    {
+      "id": "mech.tengu-givrefoux.attirance",
+      "entityId": "boss.tengu-givrefoux",
+      "type": "SpellEffect",
+      "title": "Ne frappe qu'en mêlée, mais attire de 3 cases en ligne",
+      "summary": "Le Tengu ne frappe qu'en mêlée : Malice glacée (800 eau en vol de vie et 10 % d'érosion) quand il est invulnérable, Farce (600 terre plus des dégâts air selon ses PV manquants) quand il est vulnérable. Câlin frigorifique l'aide à vous atteindre : il attire la cible de 3 cases, en ligne de 2 à 8 PO, sans ligne de vue.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Éviter d'être en ligne avec le Tengu jusqu'à 8 PO.",
+              "rationale": "Câlin frigorifique attire de 3 cases même sans ligne de vue, ce qui peut vous amener à sa mêlée."
+            },
+            {
+              "order": 2,
+              "action": "Sinon, se placer derrière un obstacle ou une invocation statique.",
+              "rationale": "Il ne peut alors pas vous attirer."
+            },
+            {
+              "order": 3,
+              "action": "Rester hors de sa mêlée.",
+              "rationale": "Tous ses sorts de dégâts se lancent uniquement en mêlée."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Câlin frigorifique : Attire la cible de 3 cases. Se lance uniquement en ligne de 2 à 8PO sans ligne de vue.",
+          "locator": "IV- Présentation du Boss — Sorts"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Évitez d’être en ligne avec le Tengu Givrefoux Il peut attirer de 3 cases jusqu’à 8PO en ligne et sans ligne de vue. C’est pourquoi il est préférable de ne pas être en ligne avec. Vous pouvez également vous placer derrière un obstacle ou une invocation statique pour qu’il ne puisse pas vous attirer.",
+          "locator": "Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Malice glacée : Applique 10% d’érosion à la cible (15% en cc) pour 1 tour (débuffable) et lui inflige 800 de dégâts eau en vol de vie. Se lance uniquement en mêlée (lançable 2 fois par tour, 1 fois par cible). Le Tengu Givrefoux lance ce sort uniquement s’il est dans l’état Invulnérable.",
+          "locator": "IV- Présentation du Boss — Sorts"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Tengu Givrefoux ne tape qu’en mêlée mais il peut vous attirer de 3 cases uniquement en ligne.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.tengu-givrefoux.invocations",
+      "entityId": "boss.tengu-givrefoux",
+      "type": "Summon",
+      "title": "Foux d'amour : réinvocation de Yomi et Yokaï",
+      "summary": "À partir du tour 2 puis tous les 3 tours (tours 5, 8, etc.), le Tengu invoque un Yomi ou un Yokaï Givrefoux (jusqu'à 4 PO). S'il a déjà invoqué l'un, il invoque forcément l'autre. Il ne peut invoquer qu'un Yomi et un Yokaï et est limité à 2 invocations. Si vous tuez le Yomi ou le Yokaï trop tôt, il pourra donc les réinvoquer.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Quand le Tengu invoque, éliminer un des monstres en double (Yomi ou Yokaï).",
+              "when": {
+                "kind": "TurnAtLeast",
+                "description": "Tour 2, puis tous les 3 tours."
+              },
+              "rationale": "Il suffit d'un Yokaï et d'un Yomi pour retirer l'invulnérabilité ; tuer les doublons évite d'être submergé."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Foux d’amour : Invoque aléatoirement un Yomi Givrefoux ou un Yokaï Givrefoux. Si le Tengu a déjà invoqué un Yomi ou un Yokaï, il invoquera forcément l’autre.",
+          "locator": "IV- Présentation du Boss — Sorts"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Cependant, si vous les éliminez avant, le Tengu pourra alors les invoquer. En sachant qu’il ne peut invoquer qu’un Yomi et un Yokaï et qu’il est limité à 2 invocations.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "NOTE : Tengu Givrefoux invoque au tour 2 puis tous les 3 tours (tour 5, tour 8, etc …)",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Quand Tengu invoque, vous pouvez éliminer un des monstres en double. Vous avez besoin d’un Yokaï et d’un Yomi en vie pour retirer l’invulnérabilité du Tengu.",
+          "locator": "Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.tengu-givrefoux.fuji",
+      "entityId": "boss.tengu-givrefoux",
+      "type": "Phase",
+      "title": "Variante Tengu + Fuji Givrefoux : petite carte et « Instinct maternel »",
+      "summary": "Après la salle 4, une salle de transition permet de choisir d'affronter le Tengu seul ou le Tengu avec Fuji Givrefoux ; ce choix est définitif. Avec Fuji, la carte est beaucoup plus petite et Fuji remplace la Kami Givrefoux. Fuji n'est pas invulnérable, ne frappe qu'en diagonale, tue d'un coup en mêlée (Progéniture, la cible étant remplacée par un monstre aléatoire) et soigne ses alliés en zone tous les 3 tours. Son passif Instinct maternel : à chaque monstre éliminé, tous les monstres gagnent 1 PM pour 1 tour, et Fuji et le Tengu gagnent 1 000 dommages pour 1 tour (cumulable, non débuffable).",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Combat Tengu + Fuji",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Rester en ligne avec Fuji, jamais dans ses diagonales.",
+              "rationale": "Son sort de dégâts tape uniquement en diagonale."
+            },
+            {
+              "order": 2,
+              "action": "Avant de tuer un monstre, vérifier que ni Fuji ni le Tengu ne pourront vous toucher.",
+              "rationale": "Chaque mort de monstre donne +1 PM à tous et +1 000 dommages à Fuji et au Tengu (cumulable)."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas laisser d'invocation près de Fuji.",
+              "rationale": "En mêlée, elle les tue d'un coup et les remplace par un Givrefoux aléatoire."
+            },
+            {
+              "order": 4,
+              "action": "Focus Fuji en premier ; si vous retirez l'invulnérabilité du Tengu au deuxième tour, il peut être intéressant de tuer le Tengu d'abord.",
+              "rationale": "Fuji n'a pas d'état invulnérable."
+            },
+            {
+              "order": 5,
+              "action": "Utiliser les obstacles de la carte pour se cacher de l'attirance du Tengu ; une classe qui repousse ou retire des PM aide.",
+              "rationale": "La carte étant petite, il est plus difficile d'éviter les dégâts."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Exception",
+          "text": "Les invocations du Tengu ne déclenchent pas Instinct maternel quand elles meurent, mais elles reçoivent bien les bonus quand un monstre allié meurt."
+        },
+        {
+          "kind": "Restriction",
+          "text": "Une fois le choix fait dans la salle de transition, impossible de revenir en arrière."
+        }
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Une fois que vous avez terminé la salle 4, vous arrivez dans une salle de transition où vous pouvez choisir entre affronter Tengu Givrefoux seul ou Tengu et Fuji Givrefoux ensemble.",
+          "locator": "III- Les Salles"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Instinct maternel (passif) : Quand un monstre du combat est éliminé, tous les monstres gagnent 1PM pour 1 tour. Fuji Givrefoux et Tengu Givrefoux gagnent également 1 000 dommages pour 1 tour. Les effets de ce sort ne sont pas débuffables.",
+          "locator": "IV- Présentation du Boss — Sorts de Fuji Givrefoux"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "La map de Tengu et Fuji Givrefoux est beaucoup plus petite que celle du Tengu solo, c’est pourquoi le combat est plus compliqué. Fuji remplace la Kami Givrefoux dans le combat.",
+          "locator": "IV- Présentation du Boss — Tengu et Fuji Givrefoux"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Il faut donc faire très attention que ni Fuji ni Tengu ne puissent vous toucher quand vous éliminez un monstre.",
+          "locator": "IV- Présentation du Boss — Tengu et Fuji Givrefoux"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Restez en ligne avec Fuji pour qu’elle ne puisse pas vous toucher.Son sort de dégât tape uniquement en diagonale, si vous restez en face d’elle, elle ne pourra jamais vous toucher.",
+          "locator": "Conseils tactiques — Fuji Givrefoux"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Il est plutôt conseillé de focus Fuji en premier car elle n’a pas d’état invulnérable mais si vous arrivez à retirer l’invulnérabilité du Tengu au deuxième tour il peut être intéressant de l’éliminer en premier.",
+          "locator": "Stratégie globale — Tengu et Fuji Givrefoux"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Si elle peut les atteindre en mêlée, elle pourra alors les OS et les remplacer par un Givrefoux aléatoire.",
+          "locator": "Conseils tactiques — Fuji Givrefoux"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "NOTE : Les invocations du Tengu ne donnent pas de boost quand elles sont éliminées mais elles les reçoivent bien quand un monstre allié est éliminé.",
+          "locator": "IV- Présentation du Boss — Tengu et Fuji Givrefoux"
+        }
+      ]
+    },
+    {
+      "id": "mech.tengu-givrefoux.plan-de-combat",
+      "entityId": "boss.tengu-givrefoux",
+      "type": "Other",
+      "title": "Plan de combat (Tengu seul) : monstres à distance, puis double état",
+      "summary": "La carte du Tengu seul est gigantesque, ce qui rend le combat assez simple. La plupart des monstres frappent en mêlée ou à courte portée : restez à distance, tuez les monstres qui accompagnent le Tengu sauf le Yomi et le Yokaï, puis retirez son invulnérabilité et tuez-le en 4 tours.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Ordre du combat",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Équiper au moins un personnage d'une arme à distance (arc ou baguette).",
+              "rationale": "Il pourra frapper le Yomi à l'arme sans s'en approcher."
+            },
+            {
+              "order": 2,
+              "action": "Tuer les monstres qui accompagnent le Tengu en restant à distance, sans tuer le Yomi ni le Yokaï.",
+              "rationale": "La plupart des monstres tapent en mêlée ou à courte portée."
+            },
+            {
+              "order": 3,
+              "action": "Rester loin du Yomi et du Maho, et hors des diagonales de la Kami.",
+              "rationale": "Le Yomi retire 10 PM, le Maho frappe très fort en mêlée, la Kami ne frappe qu'en diagonale."
+            },
+            {
+              "order": 4,
+              "action": "Une fois les autres monstres morts : dans le même tour, mettre le Yokaï dans la diagonale du Tengu et frapper à l'arme le Yomi en ligne avec lui.",
+              "rationale": "Au début de son tour suivant, il perd son invulnérabilité pour 4 tours."
+            },
+            {
+              "order": 5,
+              "action": "Frapper le Tengu pendant ces 4 tours ; sinon, recommencer.",
+              "rationale": "Il redevient invulnérable ensuite."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Exception",
+          "text": "Le boss peut être capturé avec une pierre d'âme de puissance 190 minimum."
+        }
+      ],
+      "unknownAspects": [
+        "Le guide n'indique ni date de publication ni date de mise à jour."
+      ],
+      "versionScope": "Date du guide non indiquée — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Commencez par éliminer les monstres accompagnant le Tengu tout en laissant le Yokaï et le Yomi en vie pour pouvoir retirer l’invulnérabilité du Tengu.",
+          "locator": "Stratégie globale — Tengu Givrefoux seul"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "La plupart des monstres du donjon tapent en mêlée ou à courte portée. Restez à distance.",
+          "locator": "Stratégie globale — Tengu Givrefoux seul"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Une fois que vous aurez fait cela, au début de son prochain tour, le Tengu perdra son état invulnérable pour 4 tours et il ne vous restera plus qu’à le taper.",
+          "locator": "Stratégie globale — Tengu Givrefoux seul"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Restez à distance du Yomi et du Maho Givrefoux.Le Yomi retire 10PM et le Maho tape très fort en mêlée, gardez les à distance.",
+          "locator": "Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.taniegravere-givrefoux",
+          "quote": "Pour capturer le Boss, prévoyez une pierre d'âme de puissance 190 minimum.",
+          "locator": "I- Introduction"
         }
       ]
     }

@@ -31,6 +31,8 @@ public interface IKnowledgeRepository
 
     Task RecordObservationAsync(RecognitionObservation observation, CancellationToken ct = default);
     Task<int> DeleteObservationsAsync(CancellationToken ct = default);
+    /// <summary>Deletes these mechanics (with their steps, notes, sources…). Returns how many were deleted.</summary>
+    Task<int> DeleteMechanicsAsync(IReadOnlyCollection<string> ids, CancellationToken ct = default);
 
     Task<DatabaseStatus> GetStatusAsync(CancellationToken ct = default);
 }

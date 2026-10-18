@@ -1165,157 +1165,6 @@
       ]
     },
     {
-      "id": "mech.reine-des-voleurs.bombes-reduction",
-      "entityId": "boss.reine-des-voleurs",
-      "type": "Resistance",
-      "title": "Réduction de 10 % des dégâts subis par Bonbombe présente ; immunité aux bombes",
-      "summary": "La Reine des Voleurs subit 10 % de dégâts en moins pour chaque Bonbombe présente sur le terrain, et elle est immunisée aux dégâts d'explosion des bombes.",
-      "verification": "VERIFIED",
-      "sequences": [
-        {
-          "label": "Conseil du guide",
-          "steps": [
-            {
-              "order": 1,
-              "action": "Concentrer les dégâts sur la Reine aux moments où peu de Bonbombes sont sur le terrain.",
-              "rationale": "Sa réduction de dégâts dépend du nombre de bombes."
-            }
-          ]
-        }
-      ],
-      "versionScope": "Antérieur à Dofus 3 — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.trone-de-la-cour-sombre",
-          "quote": "Pour chaque Bombe présente sur le terrain, la Reine des Voleurs subit 10% de dégâts en moins.",
-          "locator": "V- Présentation du Boss"
-        },
-        {
-          "sourceId": "src.dpln.trone-de-la-cour-sombre",
-          "quote": "Il faut noter que la Reine des Voleurs est immunisée aux dégâts des bombes, elle ne peut donc pas perdre de PV lors de l’explosion de bombes.",
-          "locator": "V- Présentation du Boss"
-        }
-      ]
-    },
-    {
-      "id": "mech.reine-des-voleurs.bonbombes",
-      "entityId": "boss.reine-des-voleurs",
-      "type": "SpecialRule",
-      "title": "Bonbombes invoquées par les joueurs : rouges mortelles, bleues soignantes",
-      "summary": "Chaque tour, chaque personnage invoque une Bonbombe à 2 PO devant lui (puis dans le sens horaire si la case est occupée). Quand un personnage a 2 Bonbombes, la plus ancienne explose à son tour et déclenche en chaîne celles en ligne. Une bombe rouge tue tous les personnages en ligne jusqu'à 10 PO ; les bombes en diagonale d'une explosion deviennent bleues et soignent alors intégralement les personnages en ligne. Les deux couleurs infligent environ 1200 dégâts feu aux monstres. Les Bonbombes sont invulnérables, poussables mais pas portables.",
-      "verification": "VERIFIED",
-      "notes": [
-        {
-          "kind": "Warning",
-          "text": "Une bombe bleue ne protège pas d'une bombe rouge située dans la même ligne : le personnage meurt quand même."
-        },
-        {
-          "kind": "Restriction",
-          "text": "Les Bonbombes sont invulnérables : elles ne peuvent pas être tuées, seulement déplacées par poussée (pas par porter/jeter)."
-        }
-      ],
-      "unknownAspects": [
-        "Le placement 'autowin' du guide repose sur des schémas (images) non lisibles dans le texte extrait."
-      ],
-      "versionScope": "Antérieur à Dofus 3 — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.trone-de-la-cour-sombre",
-          "quote": "Si ces Bonbombes sont rouges, elles OS tous les personnages (invocations comprises) en ligne à 10PO lorsqu’elles explosent et frappent environ du 1200 feu vos ennemis dans cette même zone.",
-          "locator": "V- Présentation du Boss — Fonctionnement des Bombes"
-        },
-        {
-          "sourceId": "src.dpln.trone-de-la-cour-sombre",
-          "quote": "Lorsqu'une Bonbombe explose, toutes les Bonbombes en diagonale de celle qui explose deviennent bleues",
-          "locator": "V- Présentation du Boss — Fonctionnement des Bombes"
-        }
-      ]
-    },
-    {
-      "id": "mech.reine-des-voleurs.mort-en-sursis",
-      "entityId": "boss.reine-des-voleurs",
-      "type": "SpellEffect",
-      "title": "« Mort en Sursis » : mort après 6 tours sans soin de Bonbombe",
-      "summary": "Le sort « Mort en Sursis » (en ligne, jusqu'à 5 PO) attire la Reine vers la cible et échange leurs positions. Un ennemi touché reçoit l'état « Mort en sursis » : il meurt au bout de 6 tours, sauf s'il a été soigné par une Bonbombe (bleue) ou si la Reine est tuée avant.",
-      "verification": "VERIFIED",
-      "sequences": [
-        {
-          "label": "Contre-mesures citées par le guide",
-          "steps": [
-            {
-              "order": 1,
-              "action": "Garder la Reine et les monstres à distance.",
-              "rationale": "Éviter Mort en sursis et les échanges de position."
-            },
-            {
-              "order": 2,
-              "action": "Si un personnage est sous Mort en sursis, le faire soigner par une Bonbombe bleue ou tuer la Reine dans les 6 tours."
-            }
-          ]
-        }
-      ],
-      "versionScope": "Antérieur à Dofus 3 — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.trone-de-la-cour-sombre",
-          "quote": "qui vous tuera dans 6 tours si vous n'avez pas été soigné par une Bonbombe ou si vous n’avez pas tué la Reine d’ici là",
-          "locator": "V- Présentation du Boss — Sorts du Boss"
-        }
-      ]
-    },
-    {
-      "id": "mech.reine-des-voleurs.peche-mignon",
-      "entityId": "boss.reine-des-voleurs",
-      "type": "SpecialRule",
-      "title": "« Péché Mignon » : +50 % de dommages subis après la mort de la Reine",
-      "summary": "Lorsque la Reine des Voleurs meurt, vos personnages subissent 50 % de dommages en plus pour le reste du combat.",
-      "verification": "VERIFIED",
-      "versionScope": "Antérieur à Dofus 3 — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.trone-de-la-cour-sombre",
-          "quote": "Péché Mignon : Lorsque la reine meurt, vous subissez 50% de dommages en plus pour le reste du combat.",
-          "locator": "V- Présentation du Boss — Sorts du Boss"
-        }
-      ]
-    },
-    {
-      "id": "mech.reine-des-voleurs.brume",
-      "entityId": "boss.reine-des-voleurs",
-      "type": "SpellEffect",
-      "title": "« Brume » : invisibilité dans un glyphe, 3 cases possibles",
-      "summary": "À la fin de son tour, la Reine pose un glyphe noir de rayon 3 qui la rend invisible (ainsi que les monstres présents dedans). Elle se trouve obligatoirement sur l'une des 3 cellules du rayon supérieur du glyphe. Pas avant le tour 4, relance de 3 tours.",
-      "verification": "VERIFIED",
-      "prerequisites": [
-        {
-          "kind": "TurnAtLeast",
-          "description": "Pas avant le tour 4 ; relance de 3 tours.",
-          "number": 4
-        }
-      ],
-      "unknownAspects": [
-        "Le schéma des 3 cases possibles est une image non lisible dans le texte extrait."
-      ],
-      "versionScope": "Antérieur à Dofus 3 — à revérifier",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.trone-de-la-cour-sombre",
-          "quote": "(Ne peut pas être lancé avant le tour 4, relance de 3 tours)",
-          "locator": "V- Présentation du Boss — Sorts du Boss / Retrouver la Reine des Voleurs dans sa brume"
-        },
-        {
-          "sourceId": "src.dpln.trone-de-la-cour-sombre",
-          "quote": "la Reine se trouve obligatoirement sur une des 3 cellules du rayon supérieur du glyphe",
-          "locator": "V- Présentation du Boss — Sorts du Boss / Retrouver la Reine des Voleurs dans sa brume"
-        }
-      ]
-    },
-    {
       "id": "mech.fraktale.auroraire",
       "entityId": "boss.fraktale",
       "type": "SpecialRule",
@@ -1965,6 +1814,462 @@
           "sourceId": "src.dpln.defi-du-chaloeil",
           "quote": "Se lance uniquement à partir du tour 3 puis tous les 3 tours. (3, 6, 9, 12, etc …)",
           "locator": "VI- Présentation du Boss — Sorts du Boss"
+        }
+      ]
+    },
+    {
+      "id": "mech.reine-des-voleurs.bonbombes",
+      "entityId": "boss.reine-des-voleurs",
+      "type": "SpecialRule",
+      "title": "Bonbombes : chaque personnage invoque une bombe par tour",
+      "summary": "Pendant tout le combat, chacun de vos personnages invoque au début de son tour une Bonbombe à 2 PO devant lui. Quand un personnage a 2 Bonbombes sur le terrain, la première explose à son tour et fait exploser en chaîne celles qui sont en ligne avec elle (la plus proche d'abord). Une Bonbombe rouge (couleur de base) tue tous vos personnages et invocations en ligne jusqu'à 10 PO ; une Bonbombe devient bleue quand une autre explose dans sa diagonale, et une bleue soigne entièrement vos personnages en ligne. Rouges ou bleues, elles infligent environ 1200 feu aux monstres dans leurs lignes. Elles sont invulnérables, se poussent mais ne se portent pas (état Lourd).",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Gérer les Bonbombes",
+          "steps": [
+            {
+              "order": 1,
+              "action": "À chaque tour, repérer les Bonbombes sur le point d'exploser : elles portent une icône bleue avec un triangle blanc.",
+              "rationale": "Une bombe explose au tour de son invocateur dès qu'il en a 2 sur le terrain, et déclenche celles qui sont en ligne avec elle."
+            },
+            {
+              "order": 2,
+              "action": "Ne jamais finir son tour en ligne (jusqu'à 10 PO) avec une Bonbombe rouge qui va exploser ; se placer dans les lignes sans bombe.",
+              "rationale": "Une Bonbombe rouge tue d'un coup les personnages et invocations dans ses lignes."
+            },
+            {
+              "order": 3,
+              "action": "Ne compter sur une Bonbombe bleue pour vous soigner que si aucune bombe rouge n'explose aussi dans votre ligne.",
+              "rationale": "La bleue soigne intégralement, mais une rouge dans la même ligne vous tue quand même."
+            },
+            {
+              "order": 4,
+              "action": "Pousser ou attirer les Bonbombes pour les aligner entre elles, sortir un allié de leur ligne ou viser les monstres.",
+              "rationale": "Elles sont invulnérables et ne peuvent pas être portées (état Lourd), mais elles peuvent être déplacées par poussée."
+            },
+            {
+              "order": 5,
+              "action": "Attirer un maximum de monstres dans les lignes où les bombes vont exploser.",
+              "rationale": "Chaque bombe inflige environ 1200 feu aux monstres ; avec une ligne complète, ils peuvent prendre 4000 dégâts ou plus."
+            },
+            {
+              "order": 6,
+              "action": "Si vous n'utilisez pas le placement « auto-win », garder les Bonbombes plutôt en haut de la carte (vers le premier obstacle carré de 4 blocs) et les aligner pour qu'elles explosent ensemble.",
+              "rationale": "C'est le conseil du guide pour limiter les lignes dangereuses."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Placement de la bombe : à 2 PO en ligne devant le personnage ; si la case est occupée, dans la diagonale à droite, puis en ligne à droite, et ainsi de suite dans le sens des aiguilles d'une montre (à 1 PO si les 8 cases sont occupées)."
+        },
+        {
+          "kind": "Restriction",
+          "text": "La Reine des Voleurs est immunisée aux explosions : les bombes ne lui font perdre aucun PV."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Chaque tour, votre personnage invoque un Bonbombe à 2PO devant lui, quand un personnage a 2 Bonbombes invoquées sur le terrain, la première invoquée explose à son tour faisant également exploser celles en ligne avec elle et ainsi de suite.",
+          "locator": "V- Présentation du Boss — Fonctionnement des Bombes"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Si ces Bonbombes sont rouges, elles OS tous les personnages (invocations comprises) en ligne à 10PO lorsqu’elles explosent et frappent environ du 1200 feu vos ennemis dans cette même zone.",
+          "locator": "V- Présentation du Boss — Fonctionnement des Bombes"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Une fois qu’une Bonbombe est bleue, comme dit précédemment, celle-ci soigne intégralement tous les personnages en ligne avec elle lorsqu'elle explose, attention cependant à ne pas avoir de bombe rouge dans votre ligne sinon vous mourrez quand même !",
+          "locator": "V- Présentation du Boss — Fonctionnement des Bombes"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Toutes les Bonbombes sont invulnérables et ne peuvent donc pas être tuées. Il est cependant possible de les déplacer via une poussée mais pas via un porter/jeter (état Lourd).",
+          "locator": "V- Présentation du Boss — Fonctionnement des Bombes"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Les Bonbombes seront toujours invoqués à 2PO de votre personnage, en ligne devant lui à 2PO, si il n'y a pas de place devant vous à 2PO, elle sera invoqué dans votre diagonale à droite, si de nouveau la cellule est occupé elle sera invoqué en ligne à 2PO à droite et ainsi de suite dans le sens des aiguilles d'une montre.",
+          "locator": "V- Présentation du Boss — Placement des bombes"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Vous pouvez pousser/attirer les Bonbombes pour les mettre ligne, sauver vos personnages ou taper les monstres en face.",
+          "locator": "V- Présentation du Boss — Placement des bombes"
+        }
+      ]
+    },
+    {
+      "id": "mech.reine-des-voleurs.placement-autowin",
+      "entityId": "boss.reine-des-voleurs",
+      "type": "Positioning",
+      "title": "Placement « auto-win » : ne jamais mourir des Bonbombes",
+      "summary": "Le guide propose un placement où vos personnages ne meurent jamais des Bonbombes : les personnages alignés, espacés de 2 cases, le plus rapide en initiative tout en haut. Chacun invoque alors sa bombe dans sa diagonale (la case devant lui est occupée par un allié), ce qui crée des lignes de bombes qui explosent à côté de vous et jamais sur vous. Les monstres attirés dans la ligne à droite de vos personnages prennent toutes les explosions.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Mise en place (phase de préparation et premiers tours)",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Placer le personnage qui a le plus d'initiative tout en haut ; il ne bouge plus de cette case de tout le combat.",
+              "rationale": "Il invoque la Bonbombe 1 au tour 1 puis la Bonbombe 6 au tour 2, qui deviendra bleue et le soignera."
+            },
+            {
+              "order": 2,
+              "action": "Aligner les autres personnages derrière lui, chacun à 2 cases du précédent (de préférence dans l'ordre d'initiative).",
+              "rationale": "La case à 2 PO devant chacun étant occupée par un allié, sa bombe est invoquée dans sa diagonale : les bombes forment une ligne propre à côté de l'équipe."
+            },
+            {
+              "order": 3,
+              "action": "À 4 personnages : mettre le plus rapide sur la cellule 1, un deuxième sur la cellule 2, les deux derniers sur les cellules 3 et 4, puis au tour 1 déplacer ces deux derniers à 2 PO l'un derrière l'autre, derrière le personnage de la cellule 2.",
+              "rationale": "Sur les cellules 3 et 4, ils invoquent leur première bombe dans une ligne vide d'alliés, puis rejoignent le schéma « auto-win »."
+            },
+            {
+              "order": 4,
+              "action": "À 5 personnages : mettre le Pandawa sur la cellule 1 ; au premier tour il fait une Épouvante sur le personnage de la cellule 3, puis porte et jette celui de la cellule 2 à 2 PO derrière lui. Les personnages 4 et 5 se placent en ligne derrière le 3. Sans Pandawa, placer le 3 à droite du 1 et le 2 sur la case à gauche de sa cellule, puis les faire rejoindre leur place avec leurs PM.",
+              "rationale": "Le but est qu'aucune Bonbombe du premier tour ne tombe dans les lignes où l'équipe doit se placer."
+            },
+            {
+              "order": 5,
+              "action": "Au tour 2, laisser la chaîne se déclencher : la Bonbombe 1 explose, la 6 devient bleue, les 2 à 5 explosent en chaîne ; la 6 explosera au tour suivant en soignant le personnage du haut.",
+              "rationale": "Les bombes placées en ligne avec vos personnages commencent rouges mais finissent toujours par devenir bleues : elles ne vous tuent jamais."
+            },
+            {
+              "order": 6,
+              "action": "Ensuite, attirer un maximum de monstres dans la ligne à droite de vos personnages.",
+              "rationale": "Ils prennent les dégâts de toutes les bombes de la ligne (facilement 4000 ou plus)."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Restriction",
+          "text": "Ce placement bloque parfois vos déplacements vers la droite."
+        },
+        {
+          "kind": "Warning",
+          "text": "La Reine peut « casser » la ligne en échangeant de place avec un de vos personnages (Mort en Sursis) : gardez-la à distance."
+        }
+      ],
+      "unknownAspects": [
+        "Les cellules exactes (1 à 5) et le schéma du placement ne sont donnés que par des images, absentes du texte du guide."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Il existe un placement où vos personnages ne meurent jamais des Bonbombes. Si vous avez dû mal à gérer les Bonbombes il est recommandé d’utiliser ce placement qui vous permettra de ne jamais à avoir à vous préoccuper des bombes.",
+          "locator": "V- Présentation du Boss — Placement \"Autowin\""
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Placez votre personnage qui a l’initiative tout en haut, il va invoquer la Bonbombe 1 au tour 1, puis chacun de vos personnages vont invoquer une bombe dans leur diagonale (car un de vos alliés se trouve déjà sur la cellule ou la Bonbombe devrait être invoquée), et enfin votre personnage avec l’initiative va invoquer la bombe 6 à son tour 2.",
+          "locator": "V- Présentation du Boss — Placement \"Autowin\""
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Les deux derniers personnages se placeront sur les cellules 3 et 4 ainsi ils vont invoquer leur bombe à 2 PO devant eux dans une ligne ou il n’y aura pas d’alliés, il faudra alors les placer chacun à 2 PO derrière le personnage sur la cellule 2 afin de reproduire le schéma de la tactique « autowin ».",
+          "locator": "V- Présentation du Boss — Placement en phase de préparation (à 4)"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Si vous faites le donjon à 5, placez votre Pandawa sur la cellule 1, il va devoir faire une épouvante dès son premier tour sur le personnage de la cellule 3 pour le placer au bon endroit puis porter/jeter le personnage de la cellule 2 à 2 PO derrière lui (entre le 1 et le 3 donc).",
+          "locator": "V- Présentation du Boss — Placement en phase de préparation (à 5)"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Si vous reproduisez la tactique auto-win, vous pouvez placer un maximum de monstres dans la ligne à droite de vos personnages afin qu’ils prennent les dégâts de toutes les bombes quand celles-ci vont exploser",
+          "locator": "V- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "NOTE : Le seul problème avec ce placement est qu’il risque de vous bloquer votre déplacement sur la droite de temps en temps.",
+          "locator": "V- Présentation du Boss — Placement \"Autowin\""
+        }
+      ]
+    },
+    {
+      "id": "mech.reine-des-voleurs.bombes-reduction",
+      "entityId": "boss.reine-des-voleurs",
+      "type": "Resistance",
+      "title": "Réduction de 10 % des dégâts subis par Bonbombe présente ; immunité aux bombes",
+      "summary": "La Reine des Voleurs subit 10 % de dégâts en moins pour chaque Bonbombe présente sur le terrain, et elle est immunisée aux dégâts d'explosion des bombes : il faut la tuer avec vos propres sorts.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Concentrer les gros tours de dégâts sur la Reine aux moments où il y a peu de Bonbombes sur le terrain.",
+              "rationale": "Chaque Bonbombe présente réduit ses dégâts subis de 10 %."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas compter sur les explosions de Bonbombes pour lui retirer des PV ; les utiliser contre les autres monstres.",
+              "rationale": "Elle ne perd aucun PV lors des explosions."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Pour chaque Bombe présente sur le terrain, la Reine des Voleurs subit 10% de dégâts en moins.",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Il faut noter que la Reine des Voleurs est immunisée aux dégâts des bombes, elle ne peut donc pas perdre de PV lors de l’explosion de bombes.",
+          "locator": "V- Présentation du Boss — Fonctionnement des Bombes"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Tuez la Reine des Voleurs dès que possible et profitez des moments où vous avez peu de Bonbombes sur le terrain (la Reine réduit ses dommages subis de 10% par bombe présente) pour lui infliger un maximum de dégâts.",
+          "locator": "V- Présentation du Boss — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.reine-des-voleurs.mort-en-sursis",
+      "entityId": "boss.reine-des-voleurs",
+      "type": "SpellEffect",
+      "title": "« Mort en Sursis » et « Coup Critique » : la garder à distance",
+      "summary": "Mort en Sursis (en ligne jusqu'à 5 PO, 2 fois par tour) : la Reine s'attire sur la cible, allié ou ennemi, puis échange de place avec elle. Un personnage touché reçoit l'état « Mort en sursis » (tête de mort au-dessus de lui) : il meurt au bout de 6 tours s'il n'a pas été soigné par une Bonbombe ou si la Reine n'est pas morte d'ici là. Au corps à corps, Coup Critique (2 fois par tour, 50 % de chance de coup critique) inflige environ 900 eau et un poison de 20 PV par PM utilisé ; en coup critique, environ 1500 dans tous les éléments et réduction de 4 tours des effets de la cible.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Garder la Reine et les monstres à distance, hors de ses lignes jusqu'à 5 PO (un Crâ et un Enutrof aident beaucoup).",
+              "rationale": "Cela évite l'état « Mort en sursis » et les échanges de place qui cassent votre ligne « auto-win »."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas laisser un monstre près de vous quand la Reine est loin.",
+              "rationale": "Elle peut s'attirer en ligne sur ses propres monstres et arriver très vite au corps à corps d'un allié."
+            },
+            {
+              "order": 3,
+              "action": "Ne pas finir au corps à corps de la Reine.",
+              "rationale": "Coup Critique frappe environ 900 (1500 en coup critique) et fait perdre des PV à chaque PM utilisé."
+            },
+            {
+              "order": 4,
+              "action": "Si un personnage est sous « Mort en sursis », le faire soigner par une Bonbombe bleue ou tuer la Reine dans les 6 tours.",
+              "when": {
+                "kind": "StateActive",
+                "description": "Un personnage a l'état « Mort en sursis » (icône tête de mort)."
+              },
+              "rationale": "Sinon, il meurt au bout de 6 tours."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Mort en Sursis inflige aussi des dégâts air égaux à 20 % des PV érodés de la Reine."
+        }
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Mort en Sursis : La Reine s’attire sur la cible (allié ou ennemi) puis échange de position avec. Applique également l'état « Mort en sursis » à la cible (ennemi) qui vous tuera dans 6 tours si vous n'avez pas été soigné par une Bonbombe ou si vous n’avez pas tué la Reine d’ici là (icône tête de mort au-dessus de votre personnage).",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Inflige également des dégâts équivalents à 20% des PV érodés de la Reine en dommages air. Se lance uniquement en ligne jusqu’à 5PO (lançable 2 fois par tour).",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Coup Critique : Ce sort à 50% de chance de faire un cc. En coup normal, inflige environ 900 de dégâts eau et chaque PM utilisé par la cible lui fera perdre 20 PV pendant 1 tour (environ 200 de dégâts eau par PM utilisé).",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Il est important de garder les monstres et la Reine à distance pour ne pas avoir l’état « Mort en sursis » et pour éviter que la Reine « casse » votre ligne (en tactique autowin) en échangeant de place avec vous.",
+          "locator": "V- Présentation du Boss — Conseils tactiques"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "De plus la Reine peut s’attirer en ligne sur les monstres avec ce même sort donc si vous avez un monstre trop proche de vous alors que la Reine est très loin elle peut venir au càc d’un de vos alliés très rapidement en s’attirant sur ce monstre.",
+          "locator": "V- Présentation du Boss — Conseils tactiques"
+        }
+      ]
+    },
+    {
+      "id": "mech.reine-des-voleurs.brume",
+      "entityId": "boss.reine-des-voleurs",
+      "type": "SpellEffect",
+      "title": "« Brume » : la Reine invisible, sur l'une de 3 cases",
+      "summary": "À partir du tour 4, tous les 3 tours, la Reine pose à la fin de son tour un glyphe noir de rayon 3 autour d'elle : elle est invisible tant qu'elle est dedans, ainsi que les monstres présents dans le glyphe. Bien que le glyphe fasse 25 cases, elle se trouve obligatoirement sur l'une des 3 cellules du rayon supérieur du glyphe (une chance sur trois chacune).",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Quand la Brume apparaît, chercher la Reine sur les 3 cases possibles du rayon supérieur du glyphe.",
+              "when": {
+                "kind": "TurnAtLeast",
+                "description": "Tour 4 ou plus (Brume ne peut pas être lancée avant le tour 4, relance de 3 tours)."
+              },
+              "rationale": "Elle ne peut se trouver que sur ces 3 cases."
+            },
+            {
+              "order": 2,
+              "action": "Une fois trouvée, la ralentir ou la repousser.",
+              "rationale": "Il faut continuer à la garder à distance même invisible."
+            }
+          ]
+        }
+      ],
+      "unknownAspects": [
+        "La position exacte des 3 cases n'est donnée que sur un schéma (image) ; le texte dit seulement « rayon supérieur du glyphe »."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Brume : À la fin de son tour, pose un glyphe noir de rayon 3 autour d'elle et la rend invisible tant qu’elle est dans ce glyphe. Bien que le glyphe comporte 25 cases, la Reine se trouve obligatoirement sur une des 3 cellules du rayon supérieur du glyphe (explications plus bas).",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Tous monstres présents dans le glyphe sera également invisible. (Ne peut pas être lancé avant le tour 4, relance de 3 tours)",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "En rouge, les 3 cases possibles où la Reine des Voleurs peut se trouver (33,3% de chance pour chaque).",
+          "locator": "V- Présentation du Boss — Retrouver la Reine des Voleurs dans sa brume"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Lorsqu'elle lance son sort « Brume », il faut absolument la trouver pour au moins la ralentir ou la repousser",
+          "locator": "VI- Tactique pour le succès Score 200"
+        }
+      ]
+    },
+    {
+      "id": "mech.reine-des-voleurs.plan-de-combat",
+      "entityId": "boss.reine-des-voleurs",
+      "type": "Other",
+      "title": "Plan de combat : 5 vagues, la Reine tuée pendant la vague 2 ou 3",
+      "summary": "Donjon de dimension en une seule salle : la Reine est présente dès le début avec 3 monstres à 4 personnages (1 de plus par personnage supplémentaire), puis 5 vagues de monstres arrivent. Une vague arrive après un certain nombre de tours (affiché dans la timeline), ou tout de suite si la précédente est entièrement tuée ; une vague qui arrive est invulnérable pendant 1 tour. Il faut tuer en priorité les Terristocrates, retirer la PO des Magouilles et taper la Reine petit à petit.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Ordre des vagues",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Se mettre en placement « auto-win » et garder tous les monstres à distance (Crâ et Enutrof recommandés, mais toute composition est possible).",
+              "rationale": "Les Bonbombes sont le principal danger quand on découvre le combat."
+            },
+            {
+              "order": 2,
+              "action": "Vague 1 : tuer rapidement les monstres, notamment le Terristocrate, puis commencer à taper la Reine.",
+              "rationale": "Le Terristocrate pose une Bombe Illicale mortelle à votre corps à corps."
+            },
+            {
+              "order": 3,
+              "action": "Vague 2 : retirer la PO de la Magouille et tuer la vague tranquillement (les 2 Doublures sont très simples). Continuer à taper la Reine petit à petit.",
+              "rationale": "Elle devrait mourir pendant la vague 2 ; sinon, ce n'est pas grave, vous la tuerez en vague 3."
+            },
+            {
+              "order": 4,
+              "action": "Vague 3 (2 Terristocrates et 1 Magouille) : retirer la PO de la Magouille, ralentir les Terristocrates, tuer vite l'un d'eux puis le second en surveillant sa Bombe Illicale."
+            },
+            {
+              "order": 5,
+              "action": "Vague 4 (2 Magouilles, ou 3 à partir de 6 personnages, et 1 Terristocrate) : retirer si possible la PO des 2 Magouilles, tuer d'abord le Terristocrate puis les Magouilles.",
+              "rationale": "C'est la dernière vague compliquée ; attention aux monstres qui ont le sort « Crâmes » de la Magouille."
+            },
+            {
+              "order": 6,
+              "action": "Vague 5 (1 Magouille, plus 1 Terristocrate à 5 personnages) : retirer sa PO puis finir la vague.",
+              "rationale": "La fin de cette vague termine le combat."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Péché Mignon : quand la Reine meurt, vous subissez 50 % de dommages en plus pour le reste du combat."
+        },
+        {
+          "kind": "Warning",
+          "text": "Une vague qui vient d'arriver est invulnérable pendant 1 tour (par exemple si elle apparaît sur un mur de bombes)."
+        },
+        {
+          "kind": "Exception",
+          "text": "Ce boss ne peut pas être capturé."
+        }
+      ],
+      "unknownAspects": [
+        "Le nombre de tours avant l'arrivée de chaque vague n'est pas indiqué dans le texte du guide (visible dans la timeline en jeu).",
+        "Le guide n'a pas de date de mise à jour (mis en ligne le 11/11/2019)."
+      ],
+      "versionScope": "Antérieur à Dofus 3 — à revérifier",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Ce donjon possède des systèmes de vagues. C'est à dire qu'en lançant le combat vous aurez le boss dès le début + 3 autres monstres si vous êtes 4 et 1 monstre de plus par personnage en plus dans le combat (donjon modulaire).",
+          "locator": "II- Rappel : particularités des donjons de dimensions"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Attention, lors de l'arrivée d'une vague celle-ci est invulnérable durant 1 tour (dans le but d'éviter que celle-ci repop sur un mur de bombes par exemple).",
+          "locator": "II- Rappel : particularités des donjons de dimensions"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Tuez rapidement les monstres de la vague 1 (notamment le Terristocrate) et commencez à taper la Reine des Voleurs.",
+          "locator": "Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Continuez à taper la Reine des Voleurs petit à petit, elle devrait mourir dans le courant de la vague 2, si elle n’est pas morte ce n’est pas très grave vous la tuerez vague 3.",
+          "locator": "Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "La vague 4 est la dernière vague compliquée ! Cette fois ci vous aurez deux Magouilles (3 si vous êtes 6 ou plus) et 1 Terristocrate, si possible enlevez la PO des 2 magouilles sinon faites attention aux monstres qui ont le sort « Crâmes » de la Magouille.",
+          "locator": "Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Pour la dernière vague, la vague 5 il n’y aura qu'une seule Magouille (1 Terristocrate en plus si vous êtes 5), retirez lui sa PO puis tuez la tranquillement ainsi que le reste de la vague et vous avez gagné !",
+          "locator": "Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.trone-de-la-cour-sombre",
+          "quote": "Péché Mignon : Lorsque la reine meurt, vous subissez 50% de dommages en plus pour le reste du combat.",
+          "locator": "V- Présentation du Boss — Sorts du Boss"
         }
       ]
     }
