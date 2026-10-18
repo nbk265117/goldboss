@@ -372,77 +372,6 @@
   ],
   "mechanics": [
     {
-      "id": "mech.comte-harebourg.invulnerabilite",
-      "entityId": "boss.comte-harebourg",
-      "type": "Invulnerability",
-      "title": "Retirer l'invulnérabilité (tours pairs uniquement)",
-      "summary": "Le Comte reste invulnérable tout le combat ; l'état ne peut sauter que lors des tours pairs. Quand on le frappe un tour pair, c'est lui qui se téléporte symétriquement (180°) par rapport à l'attaquant : il faut que ce déplacement provoque un échange de place avec une entité.",
-      "verification": "VERIFIED",
-      "prerequisites": [
-        {
-          "kind": "TurnEven",
-          "description": "Être sur un tour pair (2, 4, 6…)."
-        }
-      ],
-      "sequences": [
-        {
-          "steps": [
-            {
-              "order": 1,
-              "action": "Frapper le Comte pendant un tour pair : il se téléporte alors symétriquement par rapport au personnage qui frappe.",
-              "target": "Comte Harebourg",
-              "when": {
-                "kind": "TurnEven",
-                "description": "Tour pair"
-              }
-            },
-            {
-              "order": 2,
-              "action": "S'arranger pour que ce changement de position du Comte génère un échange de place avec une entité (alliée ou ennemie).",
-              "rationale": "C'est cet échange de place qui désactive l'état invulnérable selon le guide."
-            }
-          ]
-        }
-      ],
-      "expectedStateChange": "Invulnérable → vulnérable",
-      "expectedResult": "Le Comte Harebourg perd son état invulnérable.",
-      "turnConditions": "Les tours impairs, frapper le Comte téléporte au contraire l'attaquant symétriquement par rapport à lui.",
-      "notes": [
-        {
-          "kind": "FailureCase",
-          "text": "Si la rotation après un coup est impossible (case d'arrivée indisponible), le combat se termine et tous vos personnages meurent."
-        },
-        {
-          "kind": "Warning",
-          "text": "À chaque début de son tour, le Comte pose un glyphe en croix (taille 3, centre compris depuis la 3.5) : un allié qui commence son tour dedans est tué."
-        },
-        {
-          "kind": "Warning",
-          "text": "Le tour après la perte de l'invulnérabilité, son sort Contretemps renvoie la cible à sa case de début de tour : attention à ne pas finir dans son glyphe."
-        },
-        {
-          "kind": "Exception",
-          "text": "Depuis la 3.6, un état affiché au-dessus du Comte indique qui sera téléporté (vous ou lui) quand vous le frappez."
-        },
-        {
-          "kind": "CommonMistake",
-          "text": "Un allié qui échange sa place avec le Comte (tour pair) gagne 100 dommages pendant un tour : à exploiter."
-        }
-      ],
-      "unknownAspects": [
-        "Durée de la vulnérabilité non précisée par la source."
-      ],
-      "versionScope": "Dofus 3 (guide mis à jour le 2026-03-02)",
-      "lastVerifiedOn": "2026-10-17",
-      "sources": [
-        {
-          "sourceId": "src.dpln.donjon-du-comte-harebourg",
-          "quote": "Pour rendre le Comte Harebourg vulnérable, il vous suffira de générer un changement de place avec une entité (alliée ou ennemie) lors du changement de position du Comte.",
-          "locator": "Rendre le Comte Harebourg vulnérable"
-        }
-      ]
-    },
-    {
       "id": "mech.tal-kasha.glyphes",
       "entityId": "boss.tal-kasha",
       "type": "Unlock",
@@ -1024,6 +953,369 @@
               "rationale": "Une des trois attaques sert déjà à retirer la réduction de 50 % ; un sort à 4 lignes fait échouer le succès."
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "mech.comte-harebourg.invulnerabilite",
+      "entityId": "boss.comte-harebourg",
+      "type": "Invulnerability",
+      "title": "Retirer l'invulnérabilité (tours pairs uniquement)",
+      "summary": "Le Comte est invulnérable tout le combat et l'état ne peut sauter que les tours pairs (2, 4, 6…). Un tour pair, quand vous le frappez, c'est lui qui se téléporte à 180° par rapport à vous : si ce déplacement le fait changer de place avec une entité (alliée ou ennemie), il perd son invulnérabilité. Un tour impair, c'est au contraire vous qui êtes téléporté à 180° autour de lui à chaque coup.",
+      "verification": "VERIFIED",
+      "prerequisites": [
+        {
+          "kind": "TurnEven",
+          "description": "Être sur un tour pair (2, 4, 6…)."
+        }
+      ],
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Attendre un tour pair (2, 4, 6…) et regarder l'état affiché au-dessus du Comte (depuis la 3.6).",
+              "rationale": "Il indique qui sera téléporté quand vous le frappez : vous (tour impair) ou lui (tour pair)."
+            },
+            {
+              "order": 2,
+              "action": "Placer une entité (un allié de préférence) sur la case symétrique du Comte par rapport à votre personnage : en ligne droite, de l'autre côté de vous, à la même distance que le Comte.",
+              "rationale": "En tour pair, le Comte tourne de 180° autour de celui qui le frappe et atterrit de l'autre côté de lui : il doit arriver sur cette entité pour échanger de place avec elle.",
+              "when": {
+                "kind": "TurnEven",
+                "description": "Tour pair"
+              }
+            },
+            {
+              "order": 3,
+              "action": "Vérifier que cette case existe et n'est ni un obstacle ni hors de la carte.",
+              "rationale": "Si la rotation est impossible, le combat se termine et tous vos personnages meurent."
+            },
+            {
+              "order": 4,
+              "action": "Ne pas utiliser une invocation alliée pour l'échange.",
+              "rationale": "Dans ce cas, tous les alliés à 3 cases ou moins de la position de départ du Comte sont tués."
+            },
+            {
+              "order": 5,
+              "action": "Frapper le Comte : il change de place avec l'entité et perd son invulnérabilité.",
+              "rationale": "L'allié qui a échangé sa place avec lui gagne 100 dommages pendant un tour : faites-le frapper juste après.",
+              "when": {
+                "kind": "TurnEven",
+                "description": "Tour pair"
+              }
+            },
+            {
+              "order": 6,
+              "action": "Pour le frapper ensuite sans qu'il se téléporte à chaque coup, utiliser la Stabilisation ou un autre sort de pesanteur sur lui.",
+              "rationale": "Vous savez alors toujours où il se trouve pour viser vos sorts malgré la confusion."
+            },
+            {
+              "order": 7,
+              "action": "Si vous ne le tuez pas ce tour-ci, choisir où vous le laissez en fin de tour.",
+              "rationale": "Il commence son tour sur cette case et y pose le glyphe Mi-temps (croix de 3, centre compris) : aucun allié ne doit commencer son tour dedans, et Contretemps renvoie la cible à sa case de début de tour."
+            }
+          ]
+        }
+      ],
+      "expectedStateChange": "Invulnérable → vulnérable",
+      "expectedResult": "Le Comte Harebourg perd son état invulnérable.",
+      "turnConditions": "Tours pairs uniquement. Les tours impairs, chaque coup porté au Comte téléporte l'attaquant à 180° autour de lui.",
+      "notes": [
+        {
+          "kind": "FailureCase",
+          "text": "Si la case d'arrivée d'une rotation (la vôtre en tour impair, celle du Comte en tour pair) est inaccessible, le combat se termine et tous vos personnages sont tués."
+        },
+        {
+          "kind": "FailureCase",
+          "text": "Échange avec une invocation alliée : tous les alliés dans une zone de 3 cases autour de la position de départ du Comte meurent."
+        },
+        {
+          "kind": "CommonMistake",
+          "text": "L'allié qui échange sa place avec le Comte (tour pair) gagne 100 dommages pendant un tour : prévoyez qu'il frappe juste après."
+        },
+        {
+          "kind": "Warning",
+          "text": "Le tour après la perte de l'invulnérabilité, Contretemps téléporte la cible à sa case de début de tour : attention à ne pas finir dans son glyphe."
+        }
+      ],
+      "unknownAspects": [
+        "Durée de la vulnérabilité non précisée par la source."
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-03-02)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Pour rendre le Comte Harebourg vulnérable, il vous suffira de générer un changement de place avec une entité (alliée ou ennemie) lors du changement de position du Comte.",
+          "locator": "IV- Présentation du Boss — Principe du combat / Rendre le Comte Harebourg vulnérable"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Le Comte Harebourg dispose d’un état invulnérable pour toute la durée du combat. Cet état se désactive uniquement les tours pairs (2, 4,6,…).",
+          "locator": "IV- Présentation du Boss — Principe du combat / Rendre le Comte Harebourg vulnérable"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Le Comte qui effectuera un changement de place de 180° par rapport au personnage attaquant.",
+          "locator": "IV- Présentation du Boss — Principe du combat / Tour pair"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Attention cependant, dans le cas où la cible est une invocation alliée, tous les alliés compris dans une zone de 3 cases par rapport à la position initiale (avant l'échange de place) du Comte seront tués.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "vous pouvez par exemple utiliser la stabilisation ou tout autre sort pesanteur pour éviter justement cela.",
+          "locator": "IV- Présentation du Boss — Principe du combat / Derniers conseils"
+        }
+      ]
+    },
+    {
+      "id": "mech.comte-harebourg.confusions",
+      "entityId": "boss.comte-harebourg",
+      "type": "SpecialRule",
+      "title": "Confusions : vos sorts sont redirigés",
+      "summary": "Pendant tout le combat, chaque personnage reçoit une confusion à chaque début de tour : ses sorts sont redirigés à 90° (horaire), à 180° ou à -90° (anti-horaire). Vous ne pouvez donc pas viser directement votre cible. La confusion dépend de votre pourcentage de vitalité en début de tour ; elle est aussi indiquée dans vos envoûtements et dans le canal combat.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Au début de votre tour, lire votre confusion dans vos envoûtements ou dans le canal combat (ou d'après votre % de vitalité : cliquez sur votre cœur de vie pour l'afficher).",
+              "rationale": "Elle change à chaque tour ; vous n'avez que 30 secondes pour jouer."
+            },
+            {
+              "order": 2,
+              "action": "Se placer en ligne ou en diagonale de la cible avant de lancer un sort.",
+              "rationale": "C'est la façon la plus simple et la plus rapide de savoir quelle case viser."
+            },
+            {
+              "order": 3,
+              "action": "Viser la case qui, tournée de l'angle de votre confusion, tombe sur la cible (180° : la case à l'opposé de la cible).",
+              "rationale": "Le sort part dans la direction tournée, pas là où vous cliquez."
+            },
+            {
+              "order": 4,
+              "action": "Si vous frappez un monstre au corps à corps, décaler votre visée de 90° dans le sens inverse des aiguilles d'une montre pour chaque ligne de dommage déjà infligée.",
+              "rationale": "Chaque ligne de dommage au corps à corps change votre confusion de 90° anti-horaire (plusieurs fois pour un sort à plusieurs lignes). Au-delà de 10 coups reçus, le monstre ne change plus la confusion."
+            },
+            {
+              "order": 5,
+              "action": "Ne jamais lancer un sort redirigé vers une case inexistante ou sans ligne de vue.",
+              "rationale": "C'est un échec critique ; avec votre arme au corps à corps, vous passez votre tour."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Exception",
+          "text": "Les invocations que vous contrôlez (Osamodas, Sadida, Roublard…) n'ont pas de confusion."
+        },
+        {
+          "kind": "FailureCase",
+          "text": "Sort redirigé vers une case inexistante ou inaccessible (sans ligne de vue) : échec critique."
+        },
+        {
+          "kind": "CommonMistake",
+          "text": "Pour un premier Comte, tuez-le en dernier : vous serez à l'aise avec les confusions quand il faudra le frapper."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-03-02)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "lorsque vous lancerez un sort, celui-ci sera redirigé ailleurs. Vous ne pourrez donc pas cibler directement vos sorts sur les cibles que vous voulez viser.",
+          "locator": "IV- Présentation du Boss — Principe du combat / Confusions et trigonométrie"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "La confusion changera de 90° dans le sens inverse des aiguilles d'une montre pour chaque ligne de dommage effectuée au corps à corps d’un monstre (donc plusieurs fois si vous tapez sur plusieurs lignes en un coup !).",
+          "locator": "IV- Présentation du Boss — Principe du combat / Changement de confusion depuis une case au càc"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "ATTENTION, dans le cas où vous lancez un sort qui est redirigé vers une cellule inexistante ou inaccessible (si vous n’avez pas la ligne de vue par exemple), cela provoquera un échec critique.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Le plus simple pour ne pas être trop embêté avec les confusions est de jouer en utilisant ses sorts en ligne ou en diagonale.",
+          "locator": "Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Note : les invocations que vous contrôlez n’auront pas de confusion (Osa, Sadi ou Roublard par exemple)",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.comte-harebourg.sorts",
+      "entityId": "boss.comte-harebourg",
+      "type": "SpellEffect",
+      "title": "Glyphe Mi-temps et sorts du Comte",
+      "summary": "À chaque début de son tour, le Comte pose autour de lui un glyphe en croix de taille 3, centre compris (Mi-temps) : un allié qui commence son tour dedans est tué ; le glyphe dure 1 tour. Contretemps frappe 700 terre plus une ligne eau (7 % des PV manquants de la cible), jusqu'à 14 PO en ligne sans ligne de vue ; quand le Comte est vulnérable, il renvoie aussi la cible à sa case de début de tour.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment jouer face à ses sorts",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ne jamais finir votre tour à 3 cases ou moins du Comte, en croix autour de lui (ni sur sa case).",
+              "rationale": "Il pose son glyphe Mi-temps au début de son tour : un allié qui commence son tour dedans meurt."
+            },
+            {
+              "order": 2,
+              "action": "Rester hors de ses lignes autant que possible.",
+              "rationale": "Il n'a que 5 PM et frappe surtout en ligne (Contretemps jusqu'à 14 PO, Jaquemart à 4 PO)."
+            },
+            {
+              "order": 3,
+              "action": "Tant qu'il est invulnérable, se méfier de Jaquemart : 700 eau en vol de vie et -3 PA esquivables, jusqu'à 4 PO sans ligne de vue.",
+              "rationale": "Ce sort ne sert plus dès qu'il perd son invulnérabilité."
+            },
+            {
+              "order": 4,
+              "action": "Le tour après lui avoir retiré l'invulnérabilité, anticiper Multicomte et Contretemps.",
+              "rationale": "Multicomte frappe 500 feu en cercle de rayon 3 à 5 et crée des illusions ; Contretemps renvoie la cible à sa case de début de tour, peut-être dans son glyphe."
+            },
+            {
+              "order": 5,
+              "action": "Pour l'éloigner ou le diriger, lui donner une invocation à frapper à 5 PO.",
+              "rationale": "S'il n'a de ligne de vue que sur elle, il utilise tous ses PM pour la tuer ; le tour suivant, une autre invocation 5 PO plus loin le ramène ailleurs."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Depuis la 3.5, la case centrale du glyphe Mi-temps est aussi glyphée : porter le Comte avec un Pandawa ne fonctionne plus."
+        },
+        {
+          "kind": "Restriction",
+          "text": "Jaquemart n'est lancé que lorsque le Comte est invulnérable ; Multicomte seulement le tour après la désactivation de son invulnérabilité."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-03-02)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Mi-temps : Sort lancé à chaque début de tour du Comte Harebourg, place un glyphe autour de lui en zone croix de taille de 3. Si un allié commence son tour dans le glyphe, il est tué. Le centre du glyphe est également glyphé. Le glyphe dure 1 tour.",
+          "locator": "IV- Présentation du Boss — Sorts du Boss"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Si le Comte est dans l’état vulnérable (donc le tour après que vous l’ayez désactivé), téléporte la cible à sa case de début de tour. Ce sort se lance jusqu’à 14 PO, uniquement en ligne et ne nécessite pas de ligne de vue.",
+          "locator": "IV- Présentation du Boss — Sorts du Boss / Contretemps"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Jaquemart : Frappe du 700 dans l’élément eau en vol de vie et retire 3 PA esquivables (4 en cc) pour 1 tour. Ce sort se lance jusqu’à 4PO et ne nécessite pas de ligne de vue.",
+          "locator": "IV- Présentation du Boss — Sorts du Boss"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Multicomte : Sort débloqué uniquement le tour après désactivation de son état invulnérable, frappe du 500 dans l’élément feu en zone cercle de rayon 3 à 5.",
+          "locator": "IV- Présentation du Boss — Sorts du Boss"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Le Comte dispose d’uniquement 5PM et tape surtout en ligne (son autre sort étant à 4PO).",
+          "locator": "IV- Présentation du Boss — Astuce"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Cela ne change pas grand chose au combat, cependant la stratégie qui consistait à porter le Comte avec un Pandawa Tank ne fonctionne plus.",
+          "locator": "IV- Présentation du Boss — Principe du combat"
+        }
+      ]
+    },
+    {
+      "id": "mech.comte-harebourg.strategie",
+      "entityId": "boss.comte-harebourg",
+      "type": "Other",
+      "title": "Plan de combat du donjon",
+      "summary": "La vraie difficulté du donjon est de jongler avec les confusions. Tuez d'abord les monstres les plus gênants (le Cycloïde, ou le Sinistrofu en équipe de 6 ou plus) et, pour un premier essai, gardez le Comte pour la fin : vous serez à l'aise avec les confusions quand il faudra lui retirer son invulnérabilité (tour pair).",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Étapes à suivre",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avant d'entrer : pour un premier Comte, une équipe Pandawa, Zobal, Iop et Eniripsa est conseillée.",
+              "rationale": "Pandawa pour le placement, boucliers et soins pour avoir droit à l'erreur, Iop pour tuer vite les monstres."
+            },
+            {
+              "order": 2,
+              "action": "Lire les astuces des monstres du donjon (Cycloïde, Granduk, Nocturlabe, Sinistrofu, Strigide).",
+              "rationale": "Plusieurs d'entre eux punissent les coups au corps à corps ou à distance."
+            },
+            {
+              "order": 3,
+              "action": "Tuer le Cycloïde en premier (le Sinistrofu en premier si vous êtes 6 ou plus).",
+              "rationale": "Ce sont les plus gênants : retrait de PM, tacle, attirance. L'ordre des autres compte peu ; le Granduk arrive au contact plus vite que le Nocturlabe."
+            },
+            {
+              "order": 4,
+              "action": "Jouer vos sorts en ligne ou en diagonale de la cible, en lisant votre confusion à chaque début de tour.",
+              "rationale": "Voir la mécanique « Confusions »."
+            },
+            {
+              "order": 5,
+              "action": "Garder le Comte pour la fin et le tenir à distance pendant ce temps.",
+              "rationale": "Il n'a que 5 PM ; une invocation placée à 5 PO l'attire où vous voulez."
+            },
+            {
+              "order": 6,
+              "action": "Quand il reste seul, lui retirer l'invulnérabilité un tour pair et le frapper fort avec l'allié qui a échangé sa place avec lui (+100 dommages).",
+              "rationale": "Voir la mécanique « Retirer l'invulnérabilité ».",
+              "when": {
+                "kind": "TurnEven",
+                "description": "Tour pair"
+              }
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "CommonMistake",
+          "text": "Vous n'avez que 30 secondes par tour : entraînez-vous aux confusions plutôt que de chercher un schéma pendant le combat."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-03-02)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "La plus grosse difficulté dans le donjon sera de jongler avec les confusions.",
+          "locator": "Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Plus concrètement, je vous conseille de tuer le Cycloïde en premier (ou le Sinistrofu si vous êtes en équipe de 6 ou plus), ce sont les monstres les plus embêtants.",
+          "locator": "Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Si c’est la première fois que vous réalisez le donjon, je vous conseille vivement de tuer le Comte Harebourg en dernier afin d’être à l’aise avec vos confusions quand vous lui aurez retiré son état invulnérable.",
+          "locator": "Stratégie globale du donjon"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Si c’est votre premier Comte Harebourg, je conseille le Pandawa, le Zobal, le Iop et l’Eniripsa.",
+          "locator": "Stratégie globale du donjon"
         }
       ]
     }

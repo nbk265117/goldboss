@@ -1,0 +1,466 @@
+{
+  "$schema": "../schemas/knowledge-package.schema.json",
+  "formatVersion": 1,
+  "packageId": "monsters-dpln",
+  "name": "Monstres de donjon — astuces (Dofus pour les Noobs)",
+  "description": "Astuces vérifiées pour les monstres des donjons, reformulées à partir des guides Dofus pour les Noobs ; chaque citation est retrouvée mot pour mot dans la page.",
+  "author": "Dofus Gold Boss - DGB contributors",
+  "createdOn": "2026-10-18",
+  "sources": [
+    {
+      "id": "src.dpln.donjon-du-comte-harebourg",
+      "title": "Donjon du comte Harebourg",
+      "url": "https://www.dofuspourlesnoobs.com/donjon-du-comte-harebourg.html",
+      "publisher": "Dofus pour les Noobs",
+      "category": "Guide",
+      "reliability": "ReputableGuide",
+      "contentUpdatedOn": "2026-03-02",
+      "retrievedOn": "2026-10-17",
+      "lastCheckedOn": "2026-10-17"
+    }
+  ],
+  "entities": [
+    {
+      "id": "dungeon.donjon-du-comte-harebourg",
+      "type": "Dungeon",
+      "canonicalName": "Donjon du comte Harebourg",
+      "verification": "VERIFIED",
+      "sourceIds": [
+        "src.dpln.donjon-du-comte-harebourg"
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3412",
+      "type": "Monster",
+      "canonicalName": "Cycloïde",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Cycloid",
+          "locale": "en"
+        },
+        {
+          "text": "Kukoloide",
+          "locale": "es"
+        },
+        {
+          "text": "Zykloid",
+          "locale": "de"
+        },
+        {
+          "text": "Cicloide",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "200-212",
+      "attributes": {
+        "gameId": "3412"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.donjon-du-comte-harebourg"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.donjon-du-comte-harebourg"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3410",
+      "type": "Monster",
+      "canonicalName": "Granduk",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Bubotron",
+          "locale": "en"
+        },
+        {
+          "text": "Bubobubo",
+          "locale": "es"
+        },
+        {
+          "text": "Obu-Bobub",
+          "locale": "de"
+        },
+        {
+          "text": "Bububo",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "200-212",
+      "attributes": {
+        "gameId": "3410"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.donjon-du-comte-harebourg"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.donjon-du-comte-harebourg"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3415",
+      "type": "Monster",
+      "canonicalName": "Nocturlabe",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Nocturnowl",
+          "locale": "en"
+        },
+        {
+          "text": "Nocturlabiúho",
+          "locale": "es"
+        },
+        {
+          "text": "Nokturnal",
+          "locale": "de"
+        },
+        {
+          "text": "Nocturlábio",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "200-212",
+      "attributes": {
+        "gameId": "3415"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.donjon-du-comte-harebourg"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.donjon-du-comte-harebourg"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3414",
+      "type": "Monster",
+      "canonicalName": "Sinistrofu",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Buhotofu",
+          "locale": "es"
+        }
+      ],
+      "levelText": "200-212",
+      "attributes": {
+        "gameId": "3414"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.donjon-du-comte-harebourg"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.donjon-du-comte-harebourg"
+        }
+      ]
+    },
+    {
+      "id": "monster.dofusdb-3411",
+      "type": "Monster",
+      "canonicalName": "Strigide",
+      "locale": "fr",
+      "aliases": [
+        {
+          "text": "Treadfast",
+          "locale": "en"
+        },
+        {
+          "text": "Estrígido",
+          "locale": "es"
+        },
+        {
+          "text": "Stringid",
+          "locale": "de"
+        },
+        {
+          "text": "Strígido",
+          "locale": "pt"
+        }
+      ],
+      "levelText": "200-212",
+      "attributes": {
+        "gameId": "3411"
+      },
+      "verification": "COMMUNITY_REPORTED",
+      "sourceIds": [
+        "src.dpln.donjon-du-comte-harebourg"
+      ],
+      "relations": [
+        {
+          "type": "LocatedIn",
+          "to": "dungeon.donjon-du-comte-harebourg"
+        }
+      ]
+    }
+  ],
+  "mechanics": [
+    {
+      "id": "mech.cycloide.astuces",
+      "entityId": "monster.dofusdb-3412",
+      "type": "SpellEffect",
+      "title": "Cyclaustrophobe et attirance : à tuer en premier",
+      "summary": "Cyclore frappe 600 neutre, retire 4 PM esquivables et attire la cible de 6 cases (jusqu'à 7 PO en ligne). Au tour 1 puis tous les 3 tours, Cyclaustrophobe touche tout le monde dans un cercle de taille 6 : pendant un tour, chaque coup reçu au corps à corps renvoie la cible à sa case de début de tour et lui donne +100 dommages pour un tour (cumulable 3 fois).",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Le tuer en premier (sauf en équipe de 6 ou plus, où le Sinistrofu passe avant).",
+              "rationale": "Retrait de PM, gros tacle, attirance et état indéplaçable fréquent : c'est le monstre le plus gênant du donjon."
+            },
+            {
+              "order": 2,
+              "action": "Rester hors de ses lignes jusqu'à 7 PO.",
+              "rationale": "Cyclore attire de 6 cases, donc à son corps à corps."
+            },
+            {
+              "order": 3,
+              "action": "Sous Cyclaustrophobe, frapper au corps à corps votre plus gros tapeur touché par le sort.",
+              "rationale": "Il est renvoyé à sa case de début de tour mais gagne +100 dommages pour un tour par ligne de dommage reçue, cumulable : très utile sur un Roublard."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Cyclochette (corps à corps) échange sa place avec la cible et le rend indéplaçable pendant 1 tour."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-03-02)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Cyclore : Frappe du 600 dans l’élément neutre en retirant 4PM esquivables (6 en CC) et attire la cible de 6 cases (donc à son corps à corps si cela est possible).",
+          "locator": "II- Présentation des monstres — Cycloïde"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Lorsqu’une cible est téléportée à sa case de début de tour, elle gagne 100 dommages pour un tour, cumulables 3 fois (même si elle n’est pas téléportée car indéplaçable).",
+          "locator": "II- Présentation des monstres — Cycloïde"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Même si cela peut paraître étrange, je vous conseille de frapper un de vos gros tapeurs qui aurait été compris dans la zone d’effet de Cyclaustrophobe.",
+          "locator": "II- Présentation des monstres — Cycloïde / Astuce"
+        }
+      ]
+    },
+    {
+      "id": "mech.granduk.astuces",
+      "entityId": "monster.dofusdb-3410",
+      "type": "SpellEffect",
+      "title": "Hiboum : ne pas le frapper à distance",
+      "summary": "Au premier tour puis tous les 3 tours, Hiboumerang lui donne l'état Hiboum (ainsi qu'aux alliés à son contact) pour 2 tours : chaque coup reçu à distance le fait échanger de place avec l'attaquant et frappe les entités autour de la case d'arrivée de votre personnage. Hibougie frappe à hauteur de 30 % de ses points de vie manquants.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Pendant Hiboum (2 tours), ne pas le frapper à distance.",
+              "rationale": "Il échange sa place avec vous et frappe les cases autour de votre arrivée, de 100 % des dommages que vous lui auriez faits sans résistance."
+            },
+            {
+              "order": 2,
+              "action": "Ne l'entamer que si vous êtes sûr de l'achever vite.",
+              "rationale": "Hibougie (3 à 10 PO) frappe d'autant plus fort qu'il a perdu de points de vie ; l'érosion réduit ce danger."
+            },
+            {
+              "order": 3,
+              "action": "Éviter de lui laisser des zones gratuites au corps à corps.",
+              "rationale": "Hibouffonnerie vole 200 d'intelligence à chaque coup et devient de plus en plus fort."
+            },
+            {
+              "order": 4,
+              "action": "Astuce : lui infliger un tout petit peu de dommages pour qu'il reste à distance.",
+              "rationale": "Son sort à distance fait alors des dommages : il tape puis fuit au lieu de venir vous frapper au corps à corps."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-03-02)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Pour chaque coup reçu à distance, le Granduk échangera de place avec son attaquant (une fois pour chaque ligne de dommage reçue) en frappant les cibles (alliées comme ennemis) sur les cellules adjacentes de la case d’arrivée de votre personnage de 100% des dommages que vous auriez effectués sur le Granduk s'il avait 0% de résistance.",
+          "locator": "II- Présentation des monstres — Granduk"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Comme son sort à distance est fonction de ses points de vies manquants, préférez le frapper uniquement si vous êtes sur de l’achever rapidement.",
+          "locator": "II- Présentation des monstres — Granduk / Astuce"
+        }
+      ]
+    },
+    {
+      "id": "mech.nocturlabe.astuces",
+      "entityId": "monster.dofusdb-3415",
+      "type": "SpellEffect",
+      "title": "Éclaconique : ne pas le frapper au corps à corps",
+      "summary": "Dès le début du combat, Tactique du Tic Tac lui donne l'état Éclaconique : chaque coup reçu au corps à corps est renvoyé (100 % des dommages reçus) dans une zone de 6 cases autour de lui, alliés comme ennemis (les ennemis ne reçoivent que 50 %).",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Le frapper à distance, jamais au corps à corps.",
+              "rationale": "Les coups au corps à corps sont renvoyés à tout le monde autour de lui."
+            },
+            {
+              "order": 2,
+              "action": "Ne pas le laisser atteindre vos personnages.",
+              "rationale": "Il a peu de PM mais beaucoup de tacle : une fois au contact, il devient vite gênant."
+            },
+            {
+              "order": 3,
+              "action": "Le bloquer avec une entité à 0 de tacle (chafer, tonneau Pandawa).",
+              "rationale": "Il se fait facilement tacler."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "Warning",
+          "text": "Tonnerre mécanique (jusqu'à 5 PO en ligne) l'attire de 4 cases vers sa cible et rend insoignable pour 1 tour."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-03-02)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Pour chaque coup reçu au corps à corps, le monstre renvoie les dommages (à hauteur de 100% des dommages reçus) dans une zone de 6 cases autour de lui, frappe alliés comme ennemis compris dans la zone d’effet (les ennemis ne reçoivent que 50% des dommages).",
+          "locator": "II- Présentation des monstres — Nocturlabe"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Le monstre a une fuite négative (pas sûr mais il est facilement taclable) et peut être bloqué par une entité à 0 de tacle (chafer, tonneau pandawa).",
+          "locator": "II- Présentation des monstres — Nocturlabe / Astuce"
+        }
+      ]
+    },
+    {
+      "id": "mech.sinistrofu.astuces",
+      "entityId": "monster.dofusdb-3414",
+      "type": "SpellEffect",
+      "title": "Brouillardent : le tuer juste après Brumidité",
+      "summary": "Brumidité lui donne l'état Brouillardent pour 1 tour : à chaque coup reçu, il rend invisibles toutes les entités à 3 PO autour de lui et leur inflige une seconde fois les dommages qu'il a reçus, à lui y compris. Diligence frappe 500 air et vole 4 PM esquivables jusqu'à 6 PO sans ligne de vue.",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Le tuer dès qu'il a lancé Brumidité.",
+              "rationale": "Brouillardent lui inflige une seconde fois vos dommages : il meurt très vite."
+            },
+            {
+              "order": 2,
+              "action": "Profiter de l'effet pour toucher les autres monstres à 3 PO de lui.",
+              "rationale": "Les dommages sont doublés sur toutes les cibles de la zone."
+            },
+            {
+              "order": 3,
+              "action": "Éloigner vos alliés de lui quand vous le frappez sous Brouillardent.",
+              "rationale": "Ils subissent aussi les dommages répétés et deviennent invisibles."
+            },
+            {
+              "order": 4,
+              "action": "Si vous ne pouvez pas le tuer vite, prévoir de l'esquive PM.",
+              "rationale": "Diligence vole des PM chaque tour."
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "kind": "CommonMistake",
+          "text": "En équipe de 6 ou plus, c'est lui qu'il faut tuer en premier (avant le Cycloïde)."
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-03-02)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "À chaque fois que le monstre sera tapé, il rendra invisible toutes les cibles (alliées comme ennemies, y compris le Sinistrofu attaqué) dans une zone de 3PO autour de lui, en appliquant une seconde fois les dommages qu’il aura reçu à toutes les cibles présentes dans la zone d’effet.",
+          "locator": "II- Présentation des monstres — Sinistrofu"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Astuce : Essayez de le tuer dès qu’il a lancé son sort Brumidité.",
+          "locator": "II- Présentation des monstres — Sinistrofu / Astuce"
+        }
+      ]
+    },
+    {
+      "id": "mech.strigide.astuces",
+      "entityId": "monster.dofusdb-3411",
+      "type": "SpellEffect",
+      "title": "Strident : ne pas le frapper à distance",
+      "summary": "Stridicule (tours 1 à 3, puis relancé au tour 4) lui donne +6 PO et l'état Strident pour 2 tours : à chaque coup reçu à distance, il retire des points de vie aux cibles à plus de 4 PO autour de la cible, à hauteur de 50 % pour vos alliés et 20 % pour ses alliés. Strictus échange sa place avec la cible (jusqu'à 8 PO avec son bonus).",
+      "verification": "VERIFIED",
+      "sequences": [
+        {
+          "label": "Comment le jouer",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Pendant Strident, ne pas le frapper à distance (le corps à corps ne déclenche rien).",
+              "rationale": "Chaque coup à distance retire 50 % de PV à vos alliés éloignés ; même si seuls des ennemis sont touchés, certains frappent en fonction de leurs PV."
+            },
+            {
+              "order": 2,
+              "action": "Lui retirer de la PO.",
+              "rationale": "Avec Stridicule, Strictus échange de place avec vous jusqu'à 8 PO (10 en coup critique)."
+            },
+            {
+              "order": 3,
+              "action": "Méfiance au corps à corps : Stricannement frappe 500 eau et retire 100 de fuite pour 1 tour.",
+              "rationale": "Il évite parfois de prendre une zone pour pouvoir fuir ensuite."
+            }
+          ]
+        }
+      ],
+      "versionScope": "Dofus 3 (guide mis à jour le 2026-03-02)",
+      "lastVerifiedOn": "2026-10-18",
+      "sources": [
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "À chaque coup reçu à distance (ne fonctionne donc pas si vous frappez depuis la case càc), le monstre va retirer des points de vies aux cibles à plus de 4PO autour de la cible pour 2 tours à hauteur de 50% pour vos alliés et 20% pour vos ennemis.",
+          "locator": "II- Présentation des monstres — Strigide"
+        },
+        {
+          "sourceId": "src.dpln.donjon-du-comte-harebourg",
+          "quote": "Astuce : Retirez lui sa PO, évitez de le taper à distance si l’état Strident est effectif",
+          "locator": "II- Présentation des monstres — Strigide / Astuce"
+        }
+      ]
+    }
+  ]
+}

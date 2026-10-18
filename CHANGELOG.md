@@ -1,5 +1,16 @@
 # Historique des versions
 
+## 0.7.1 — 18/10/2026
+
+- **Comte Harebourg détaillé** : 4 fiches au lieu d'une, avec des étapes claires :
+  - retirer l'invulnérabilité pas à pas (tour pair, où placer l'allié pour l'échange, pièges qui tuent l'équipe) ;
+  - les **confusions** (comment viser quand vos sorts sont redirigés à 90°, 180° ou -90°) ;
+  - son glyphe Mi-temps et ses sorts ;
+  - le plan de combat du donjon (ordre des monstres, composition conseillée).
+- **Astuces pour les monstres** de son donjon : Cycloïde, Granduk, Nocturlabe, Sinistrofu et Strigide (quoi
+  éviter, qui tuer en premier). Tout est vérifié mot pour mot dans le guide Dofus pour les Noobs, et traduit en
+  anglais et en darija.
+
 ## 0.7.0 — 18/10/2026
 
 - **Mises à jour automatiques** : installe une fois `DofusGoldBoss-DGB-win-Setup.exe`. Ensuite, au démarrage,

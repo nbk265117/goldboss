@@ -42,6 +42,7 @@ jobs:
       - name: French OCR language
         shell: pwsh
         continue-on-error: true
+        timeout-minutes: 10
         run: ./scripts/ci-install-ocr.ps1
 
       - name: OCR tests (informative)
