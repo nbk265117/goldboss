@@ -165,3 +165,39 @@ public class VariantBossTests
         Assert.False(v.ContainsKey("boss.grozilla-fatigue")); // its base has no mechanics here
     }
 }
+
+public class ImageFallbackTests
+{
+    [Fact]
+    public void Entities_without_picture_borrow_the_same_thing_s_picture()
+    {
+        GameEntity E(string id, EntityType t, string name, string? img = null) => new()
+        {
+            Id = id, Type = t, CanonicalName = name,
+            Attributes = img is null ? new Dictionary<string, string>() : new Dictionary<string, string> { ["image"] = img },
+        };
+        var entities = new[]
+        {
+            E("boss.guerre-db", EntityType.Boss, "Guerre", "dofusdb/1.png"),
+            E("boss.guerre-tempete", EntityType.Boss, "Guerre (Tempête de l'Eliocalypse)"),
+            E("boss.tynril-ahuri", EntityType.Boss, "Tynril Ahuri", "dofusdb/2.png"),
+            E("boss.tynril", EntityType.Boss, "Tynril"),
+            E("dungeon.labo", EntityType.Dungeon, "Laboratoire du Tynril"),
+            E("dungeon.expe", EntityType.Dungeon, "Expédition - Laboratoire du Tynril"),
+            E("dungeon.empty", EntityType.Dungeon, "Donjon vide"),
+            E("boss.db-chouque", EntityType.Boss, "Le Chouque", "dofusdb/3.png"),
+            E("area.labo", EntityType.Area, "Laboratoire du Tynril"),
+            E("boss.chouque", EntityType.Boss, "Chouque") with { Aliases = [new EntityAlias("Le Chouque", "fr", RecordOrigin.Seed)] },
+        };
+        var relations = new[] { new EntityRelation("boss.tynril", RelationType.LocatedIn, "dungeon.labo") };
+        var img = DofusCompanion.Application.KnowledgeService.WithImageFallbacks(entities, relations)
+            .ToDictionary(e => e.Id, e => e.Attributes.GetValueOrDefault("image"));
+        Assert.Equal("dofusdb/1.png", img["boss.guerre-tempete"]);
+        Assert.Equal("dofusdb/2.png", img["boss.tynril"]);
+        Assert.Equal("dofusdb/2.png", img["dungeon.labo"]);   // from its boss
+        Assert.Equal("dofusdb/2.png", img["dungeon.expe"]);   // from the original dungeon
+        Assert.Null(img["dungeon.empty"]);
+        Assert.Equal("dofusdb/3.png", img["boss.chouque"]); // through its alias
+        Assert.Equal("dofusdb/2.png", img["area.labo"]);    // the dungeon of the same name
+    }
+}

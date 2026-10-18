@@ -201,6 +201,72 @@ public sealed class KnowledgeService(IKnowledgeRepository repository, MechanicsE
         return summary;
     }
 
+    private const string ImageAttribute = "image";
+
+    /// <summary>
+    /// Picture for entities that have none, borrowed from the same thing under another record (in memory only):
+    /// "Guerre (Tempête de l'Eliocalypse)" → "Guerre"; "Tynril" → its variant "Tynril Ahuri"; a dungeon → one of its
+    /// bosses; "Expédition - Antre du Dragon Cochon" → the "Antre du Dragon Cochon" dungeon; a zone → the dungeon of
+    /// the same name.
+    /// </summary>
+    internal static IReadOnlyList<GameEntity> WithImageFallbacks(IReadOnlyList<GameEntity> entities, IReadOnlyList<EntityRelation> relations)
+    {
+        static string? Image(GameEntity e) => e.Attributes.TryGetValue(ImageAttribute, out var v) && !string.IsNullOrWhiteSpace(v) ? v : null;
+        static string Base(string name)
+        {
+            var paren = name.IndexOf(" (", StringComparison.Ordinal);
+            return TextNormalizer.Normalize(paren > 0 ? name[..paren] : name);
+        }
+
+        var creatures = entities.Where(e => e.Type is EntityType.Boss or EntityType.Monster && Image(e) is not null)
+            .Select(e => (Name: TextNormalizer.Normalize(e.CanonicalName), Image: Image(e)!, Boss: e.Type == EntityType.Boss))
+            .OrderByDescending(c => c.Boss).ThenBy(c => c.Name, StringComparer.Ordinal).ToList();
+        var exact = creatures.GroupBy(c => c.Name, StringComparer.Ordinal).ToDictionary(g => g.Key, g => g.First().Image, StringComparer.Ordinal);
+        var images = new Dictionary<string, string>(StringComparer.Ordinal);
+        foreach (var e in entities.Where(e => e.Type is EntityType.Boss or EntityType.Monster && Image(e) is null))
+        {
+            // Its own name first, then its aliases ("Chouque" is "Le Chouque", "Les Guman" are "Ambi Guman"…).
+            var names = new[] { Base(e.CanonicalName) }.Concat(e.Aliases.Select(x => Base(x.Text))).Where(n => n.Length >= 3).Distinct().ToList();
+            var found = names.Select(n => exact.GetValueOrDefault(n)).FirstOrDefault(i => i is not null)
+                        ?? names.Select(n => creatures.FirstOrDefault(c => c.Name.StartsWith(n + " ", StringComparison.Ordinal)).Image).FirstOrDefault(i => i is not null);
+            if (found is not null) images[e.Id] = found;
+        }
+
+        string? CreatureImage(GameEntity e) => Image(e) ?? images.GetValueOrDefault(e.Id);
+        var byId = entities.ToDictionary(e => e.Id, StringComparer.Ordinal);
+        var dungeonByName = entities.Where(e => e.Type == EntityType.Dungeon)
+            .GroupBy(e => TextNormalizer.Normalize(e.CanonicalName), StringComparer.Ordinal).ToDictionary(g => g.Key, g => g.ToList(), StringComparer.Ordinal);
+        string? DungeonImage(GameEntity d) => Image(d) ?? relations
+            .Where(r => r.ToId == d.Id && r.Type == RelationType.LocatedIn && byId.TryGetValue(r.FromId, out var b) && b.Type == EntityType.Boss)
+            .Select(r => CreatureImage(byId[r.FromId])).FirstOrDefault(i => i is not null);
+        foreach (var d in entities.Where(e => e.Type == EntityType.Dungeon && Image(e) is null))
+        {
+            var found = DungeonImage(d);
+            if (found is null)
+            {
+                // "Expédition - X" / "Expédition de l'Audace - X": the dungeon X.
+                var dash = d.CanonicalName.IndexOf(" - ", StringComparison.Ordinal);
+                if (dash > 0 && dungeonByName.TryGetValue(TextNormalizer.Normalize(d.CanonicalName[(dash + 3)..]), out var originals))
+                    found = originals.Where(o => o.Id != d.Id).Select(DungeonImage).FirstOrDefault(i => i is not null);
+            }
+
+            if (found is not null) images[d.Id] = found;
+        }
+
+        // A zone named like a dungeon ("Laboratoire du Tynril") shows that dungeon's picture.
+        foreach (var z in entities.Where(e => e.Type is EntityType.Area or EntityType.Map && Image(e) is null))
+        {
+            if (!dungeonByName.TryGetValue(TextNormalizer.Normalize(z.CanonicalName), out var same)) continue;
+            var found = same.Select(d => Image(d) ?? images.GetValueOrDefault(d.Id)).FirstOrDefault(i => i is not null);
+            if (found is not null) images[z.Id] = found;
+        }
+
+        if (images.Count == 0) return entities;
+        return entities.Select(e => images.TryGetValue(e.Id, out var img)
+            ? e with { Attributes = new Dictionary<string, string>(e.Attributes, StringComparer.Ordinal) { [ImageAttribute] = img } }
+            : e).ToList();
+    }
+
     /// <summary>
     /// Boss without mechanics whose name is a documented boss's name plus a qualifier ("Tynril Ahuri",
     /// "Grozilla Fatigué" → "Tynril", "Grozilla"): variants of the same fight, which share its mechanics.
@@ -303,8 +369,8 @@ public sealed class KnowledgeService(IKnowledgeRepository repository, MechanicsE
             if (_snapshot is { } again) return again;
             var sw = Stopwatch.StartNew();
 
-            var entities = await repository.GetAllEntitiesAsync(ct).ConfigureAwait(false);
             var relations = await repository.GetAllRelationsAsync(ct).ConfigureAwait(false);
+            var entities = WithImageFallbacks(await repository.GetAllEntitiesAsync(ct).ConfigureAwait(false), relations);
             var mechanics = await repository.GetAllMechanicsAsync(ct).ConfigureAwait(false);
             var sources = await repository.GetAllSourcesAsync(ct).ConfigureAwait(false);
             var versions = await repository.GetGameVersionsAsync(ct).ConfigureAwait(false);

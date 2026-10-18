@@ -2,6 +2,10 @@
 
 ## 0.7.1 — 18/10/2026
 
+- **Toutes les images** : les 204 boss et 4 921 des 4 925 monstres ont maintenant leur image (5 125 images
+  incluses). Les boss, donjons et zones qui n'en avaient pas reprennent celle du même boss ou donjon sous un autre
+  nom : « Guerre (Tempête de l'Eliocalypse) », « Tynril », les donjons « Expédition - … », la zone « Laboratoire du
+  Tynril »… Professeur Xa, Julith, Qilby et les autres ont enfin leur image.
 - **35 boss beaucoup mieux expliqués** : leurs fiches ont été réécrites à partir de leur guide Dofus pour les Noobs,
   avec des étapes numérotées et la raison de chaque étape (comment retirer l'invulnérabilité, règles spéciales,
   sorts dangereux, plan de combat et composition conseillée). Chaque citation est vérifiée mot pour mot.
